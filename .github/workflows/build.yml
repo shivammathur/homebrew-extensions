@@ -1,0 +1,39 @@
+name: 'Build Formulae'
+on:
+  push:
+  repository_dispatch:
+  schedule:
+    - cron: '30 0 * * *'
+jobs:
+  extensions:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        extensions: ['pcov', 'xdebug']
+        php-versions: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0']
+        exclude:
+          - extensions: pcov
+            php-versions: '5.6'
+          - extensions: pcov
+            php-versions: '7.0'
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run: sh ./.github/scripts/build_${{ matrix.extensions }}.sh
+      env:
+        GITHUB_ACTIONS: true
+        GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GIT_URL: ${{ github.event.repository.html_url }}
+        HOMEBREW_BINTRAY_USER: ${{ github.repository_owner }}
+        HOMEBREW_BINTRAY_REPO: extensions
+        HOMEBREW_BINTRAY_EMAIL: ${{ secrets.email }}
+        HOMEBREW_BINTRAY_KEY: ${{ secrets.bintray_key }}
+        HOMEBREW_NO_ANALYTICS: 1
+        HOMEBREW_NO_AUTO_UPDATE: 1
+        HOMEBREW_NO_INSTALL_CLEANUP: 1
+        VERSION: ${{ matrix.extensions }}@${{ matrix.php-versions }}
+      continue-on-error: true
