@@ -10,6 +10,8 @@ class XdebugAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    cellar :any_skip_relocation
+    sha256 "059df9b91c1ed141def7f1040163f3cb1e6b55c60934108b950a24a5fa391b1c" => :catalina
   end
 
   def install
