@@ -10,6 +10,8 @@ class PcovAT80 < AbstractPhp80Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    cellar :any_skip_relocation
+    sha256 "c13a34aa92b9f53ec355e16d8528c30dc8628968c2257b456e1db25746f4ccef" => :catalina
   end
 
   def install
