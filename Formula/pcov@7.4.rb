@@ -10,6 +10,8 @@ class PcovAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    cellar :any_skip_relocation
+    sha256 "20c91559f4c40ccd99766f7e40424827f88eeb231d868f349a1b9900e7c7b1e8" => :catalina
   end
 
   def install
