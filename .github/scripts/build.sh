@@ -33,11 +33,12 @@ new_version=$(brew info Formula/"$VERSION".rb | head -n 1 | cut -d',' -f 1 | cut
 existing_version=$(curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" -s https://api.bintray.com/packages/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$package" | sed -e 's/^.*"latest_version":"\([^"]*\)".*$/\1/')
 
 if [ "$EXTENSION" = "pcov" ] ||
+   [ "$EXTENSION" = "grpc" ] ||
    [[ "$VERSION" =~ swoole@7.[1-4] ]] ||
    [[ "$VERSION" =~ xdebug@7.[2-4] ]]; then
   sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
-  url=$(grep tar.gz < ./Formula/"$VERSION".rb | cut -d\" -f 2)
-  checksum=$(curl -sL "$url" | shasum -a 256 | cut -d' ' -f 1)
+  url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
+  checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
   sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   new_version=$(brew info Formula/"$VERSION".rb | head -n 1 | cut -d',' -f 1 | cut -d' ' -f 3)
 fi

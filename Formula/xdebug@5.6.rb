@@ -15,7 +15,7 @@ class XdebugAT56 < AbstractPhp56Extension
   end
 
   def install
-    Dir.chdir "xdebug-#{version}" unless build.head?
+    Dir.chdir "xdebug-#{version}"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
