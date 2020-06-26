@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        extensions: ['pcov', 'xdebug']
+        extensions: ['pcov', 'swoole', 'xdebug']
         php-versions: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0']
         exclude:
           - extensions: pcov
@@ -26,8 +26,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: build
-      run: sh ./.github/scripts/build_${{ matrix.extensions }}.sh
+      run: sh ./.github/scripts/build.sh
       env:
+        EXTENSION: ${{ matrix.extensions }}
         GITHUB_ACTIONS: true
         GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
         GITHUB_REPOSITORY: ${{ github.repository }}
