@@ -4,8 +4,7 @@ class SwooleAT80 < AbstractPhp80Extension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
-  url "https://github.com/swoole/swoole-src/archive/v4.5.2.tar.gz"
-  sha256 "35da484758f93ce0ce172d25a9606316e9042eb73916a427c7badad7ee71c977"
+  url "https://github.com/swoole/swoole-src/archive/master.tar.gz?v=swoole-4.5.2"
   head "https://github.com/swoole/swoole-src.git"
 
   bottle do

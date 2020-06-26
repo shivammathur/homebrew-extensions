@@ -33,7 +33,7 @@ new_version=$(brew info Formula/"$VERSION".rb | head -n 1 | cut -d',' -f 1 | cut
 existing_version=$(curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" -s https://api.bintray.com/packages/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$package" | sed -e 's/^.*"latest_version":"\([^"]*\)".*$/\1/')
 
 if [ "$EXTENSION" = "pcov" ] ||
-   [[ "$VERSION" =~ swoole@(7.[1-4]|8.0) ]] ||
+   [[ "$VERSION" =~ swoole@7.[1-4] ]] ||
    [[ "$VERSION" =~ xdebug@7.[2-4] ]]; then
   sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
   url=$(grep tar.gz < ./Formula/"$VERSION".rb | cut -d\" -f 2)
