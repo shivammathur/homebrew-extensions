@@ -6,6 +6,14 @@
 
 > Homebrew tap for PHP extensions.
 
+## Extensions
+
+|Extension|PHP Version|
+|--- |--- |
+|`pcov`|`PHP 7.1` to `PHP 8.0`|
+|`swoole`|`PHP 5.6` to `PHP 8.0`|
+|`xdebug`|`PHP 5.6` to `PHP 8.0`|
+
 ## Usage
 
 - Check that required PHP version is installed.
@@ -34,7 +42,7 @@ brew tap shivammathur/extensions
 brew install xdebug@7.2
 ```
 
-- To install `pcov` on `PHP 7.2`.
+- To install `PCOV` on `PHP 7.2`.
 
 ```bash
 brew install pcov@7.2
@@ -48,4 +56,5 @@ Please see the [license file](LICENSE) for more information. This project has mu
 ## Dependencies
 
 - [PCOV](https://github.com/krakjoe/pcov "PCOV Upstream")
+- [Swoole](https://github.com/swoole/swoole-src "Swoole Upstream")
 - [Xdebug](https://github.com/xdebug/xdebug "Xdebug Upstream")
