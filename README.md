@@ -21,6 +21,11 @@ brew install php@7.2
 brew link --force --overwrite php@7.2
 ```
 
+- Tap `shivammathur/extensions`
+```
+brew tap shivammathur/extensions
+```
+
 - Then install the required extension. See [Formula](Formula) directory for available formulae.
 
 - To install `Xdebug` on `PHP 7.2`.
@@ -37,7 +42,7 @@ brew install pcov@7.2
 
 ## License
 The code in this project is licensed under the [MIT license](http://choosealicense.com/licenses/mit/).
-Please see the [license file](LICENSE) for more information. This project has multiple [dependencies](#dependencies "Dependencies for this Homebrew tap"). Their licenses can be found in their respective repositories.
+Please see the [license file](LICENSE) for more information. This project has multiple [dependencies](#dependencies "Dependencies for this Homebrew tap"). Their licenses can be found in their respective repositories. The tap is a modification of [homebrew-php](https://github.com/Homebrew/homebrew-php) tap.
 
 
 ## Dependencies

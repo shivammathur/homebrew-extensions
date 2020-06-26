@@ -40,7 +40,7 @@ new_version=$(brew info Formula/"$VERSION".rb | head -n 1 | cut -d',' -f 1 | cut
 echo "existing label: $existing_version"
 echo "new label: $new_version"
 
-if [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_version" ] || [ "$VERSION" = "pcov@8.0" ]; then
+if [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_version" ]; then
   step_log "Filling the Bottle"
   sudo ln -sf "$PWD" "$(brew --prefix)/Homebrew/Library/Taps/$GITHUB_REPOSITORY"
   brew test-bot "$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$VERSION" --root-url=https://dl.bintray.com/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO" --skip-setup --skip-recursive-dependents
