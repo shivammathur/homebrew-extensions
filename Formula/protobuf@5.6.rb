@@ -10,6 +10,8 @@ class ProtobufAT56 < AbstractPhp56Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    cellar :any_skip_relocation
+    sha256 "d98bdbf66544ab79d7645a7df387fbff598da92655138feaa2758e4b2368175c" => :catalina
   end
 
   def install
