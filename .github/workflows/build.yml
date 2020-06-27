@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        extensions: [grpc, pcov, swoole, xdebug]
+        extensions: [grpc, pcov, protobuf, swoole, xdebug]
         php-versions: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0']
         exclude:
           - extensions: pcov
@@ -24,6 +24,8 @@ jobs:
           - extensions: pcov
             php-versions: '7.0'
           - extensions: grpc
+            php-versions: '8.0'
+          - extensions: protobuf
             php-versions: '8.0'
     steps:
     - uses: actions/checkout@v2

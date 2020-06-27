@@ -12,6 +12,7 @@
 |--- |--- |
 |`grpc`|`PHP 5.6` to `PHP 7.4`|
 |`pcov`|`PHP 7.1` to `PHP 8.0`|
+|`protobuf`|`PHP 5.6` to `PHP 7.4`|
 |`swoole`|`PHP 5.6` to `PHP 8.0`|
 |`xdebug`|`PHP 5.6` to `PHP 8.0`|
 
