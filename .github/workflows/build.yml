@@ -8,7 +8,7 @@ on:
       - '**.md'
   repository_dispatch:      
   schedule:
-    - cron: '30 0 * * *'
+    - cron: '0 4 * * *'
 jobs:
   extensions:
     if: "!contains(github.event.head_commit.message, 'skip_build')"
