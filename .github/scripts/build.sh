@@ -77,11 +77,11 @@ if [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_ver
 
     step_log "Updating inventory"
     git config --local user.email homebrew-test-bot@lists.sfconservancy.org
-    git config --local user.name BrewTestBot
+    git config --local user.name BrewTestBot    
     for try in $(seq 10); do
       echo "try: $try" >/dev/null
-      git fetch && git rebase origin/main
-      if git push https://"$GITHUB_REPOSITORY_OWNER":"$GITHUB_TOKEN"@github.com/"$GITHUB_REPOSITORY".git HEAD:main --follow-tags; then
+      git fetch origin master && git rebase origin/master
+      if git push https://"$GITHUB_REPOSITORY_OWNER":"$GITHUB_TOKEN"@github.com/"$GITHUB_REPOSITORY".git HEAD:master --follow-tags; then
         break
       else
         sleep 3s
