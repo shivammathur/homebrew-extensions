@@ -40,8 +40,8 @@ jobs:
       - name: Testing Extensions
         run: |
           php -m
-          php -r "if(phpversion()!=8.0 && ! extension_loaded('grpc')) {throw new Exception('grpc not found');}"
-          php -r "if(phpversion()!=8.0 && ! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
+          php -r "if(substr(phpversion(), 0, 3)!=8.0 && ! extension_loaded('grpc')) {throw new Exception('grpc not found');}"
+          php -r "if(substr(phpversion(), 0, 3)!=8.0 && ! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
           php -r "if(phpversion()>=7.1 && ! extension_loaded('pcov')) {throw new Exception('pcov not found');}"
           php -r "if(! extension_loaded('swoole')) {throw new Exception('swoole not found');}"
           php -r "if(! extension_loaded('xdebug')) {throw new Exception('xdebug not found');}"
