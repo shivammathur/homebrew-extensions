@@ -1,4 +1,3 @@
-require "formula"
 require File.join(File.dirname(__FILE__), "abstract-php-version")
 
 class String
