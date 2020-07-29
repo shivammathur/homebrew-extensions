@@ -4,14 +4,14 @@ class ProtobufAT56 < AbstractPhp56Extension
   init
   desc "Protobuf PHP extension"
   homepage "https://github.com/protocolbuffers/protobuf"
-  url "https://pecl.php.net/get/protobuf-3.12.3.tgz"
-  sha256 "056b815dea3067abf8fe3d7779b2357039129dd847f66b49b80c9ab05d7557a0"
+  url "https://pecl.php.net/get/protobuf-3.12.4.tgz"
+  sha256 "b8826b730355fd0d30bdc9b698f7297a9db13f8d217361882b3db150bdf43681"
   head "https://github.com/protocolbuffers/protobuf.git"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    sha256 "459bcf392db7d041171e4eb8b574378e52561fd12cebf940beed69fe05851a0e" => :catalina
+    sha256 "2e986ed0bc71368895eba85f187fe5acd514f5f80bd9bff7ae35ae82361ed0c2" => :catalina
   end
 
   def install
