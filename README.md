@@ -14,7 +14,7 @@
 |`grpc`|`PHP 5.6` to `PHP 7.4`|
 |`pcov`|`PHP 7.1` to `PHP 8.0`|
 |`protobuf`|`PHP 5.6` to `PHP 7.4`|
-|`swoole`|`PHP 5.6` to `PHP 8.0`|
+|`swoole`|`PHP 5.6` to `PHP 7.4`|
 |`xdebug`|`PHP 5.6` to `PHP 8.0`|
 
 ## Usage
@@ -60,5 +60,6 @@ Please see the [license file](LICENSE) for more information. This project has mu
 
 - [gRPC](https://github.com/grpc/grpc "gRPC Upstream")
 - [PCOV](https://github.com/krakjoe/pcov "PCOV Upstream")
+- [Protobuf](https://github.com/protocolbuffers/protobuf "protocolbuffers Upstream")
 - [Swoole](https://github.com/swoole/swoole-src "Swoole Upstream")
 - [Xdebug](https://github.com/xdebug/xdebug "Xdebug Upstream")

@@ -7,6 +7,7 @@ class GrpcAT71 < AbstractPhp71Extension
   url "https://pecl.php.net/get/grpc-1.30.0.tgz"
   sha256 "7201db290ce5083deb1e74076432a648deaca80224c5e96398bce61cb7c76a67"
   head "https://github.com/grpc/grpc.git"
+  license "Apache License 2.0"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"

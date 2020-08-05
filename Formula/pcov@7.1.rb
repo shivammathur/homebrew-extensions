@@ -7,6 +7,7 @@ class PcovAT71 < AbstractPhp71Extension
   url "https://github.com/krakjoe/pcov/archive/v1.0.6.tar.gz"
   sha256 "3be3b8af91c43db70c4893dd2552c9ee2877e9cf32f59a607846c9ceb64a173b"
   head "https://github.com/krakjoe/pcov.git"
+  license "PHP-3.01"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"

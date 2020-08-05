@@ -7,6 +7,7 @@ class XdebugAT70 < AbstractPhp70Extension
   url "https://github.com/xdebug/xdebug/archive/2.9.0.tar.gz"
   sha256 "d388ad2564a94c52b19eab26983c3686fae8670e13001b51d2cc3b8a1ac4b733"
   head "https://github.com/xdebug/xdebug.git"
+  license "The Xdebug License"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"

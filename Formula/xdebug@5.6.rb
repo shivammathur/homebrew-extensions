@@ -7,6 +7,7 @@ class XdebugAT56 < AbstractPhp56Extension
   url "https://pecl.php.net/get/xdebug-2.5.5.tgz"
   sha256 "72108bf2bc514ee7198e10466a0fedcac3df9bbc5bd26ce2ec2dafab990bf1a4"
   head "https://github.com/xdebug/xdebug.git"
+  license "The Xdebug License"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"

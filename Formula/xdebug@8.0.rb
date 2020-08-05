@@ -6,12 +6,13 @@ class XdebugAT80 < AbstractPhp80Extension
   homepage "https://github.com/xdebug/xdebug"
   url "https://github.com/xdebug/xdebug/archive/master.tar.gz?v=xdebug-3.0.0"
   head "https://github.com/xdebug/xdebug.git"
+  license "The Xdebug License"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    rebuild 29
-    sha256 "7733fd2858437b6a49c13423f3a45ea0ded787da8d9045802d48c75d63dac3dd" => :catalina
+    rebuild 30
+    sha256 "a88ed7705f7f1f1ea1d3dd6b8ecbed0d785ee787793b90a9e81e1c92ef400497" => :catalina
   end
 
   def install
