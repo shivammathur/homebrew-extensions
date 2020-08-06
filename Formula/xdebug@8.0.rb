@@ -6,7 +6,7 @@ class XdebugAT80 < AbstractPhp80Extension
   homepage "https://github.com/xdebug/xdebug"
   url "https://github.com/xdebug/xdebug/archive/master.tar.gz?v=xdebug-3.0.0"
   head "https://github.com/xdebug/xdebug.git"
-  license "The Xdebug License"
+  license "PHP-3.0"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"

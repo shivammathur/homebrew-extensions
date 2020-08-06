@@ -7,7 +7,7 @@ class ProtobufAT74 < AbstractPhp74Extension
   url "https://pecl.php.net/get/protobuf-3.12.4.tgz"
   sha256 "b8826b730355fd0d30bdc9b698f7297a9db13f8d217361882b3db150bdf43681"
   head "https://github.com/protocolbuffers/protobuf.git"
-  license "https://github.com/protocolbuffers/protobuf/blob/master/LICENSE"
+  license "BSD-3-Clause"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"

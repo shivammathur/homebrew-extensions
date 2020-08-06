@@ -7,7 +7,7 @@ class SwooleAT73 < AbstractPhp73Extension
   url "https://github.com/swoole/swoole-src/archive/v4.5.2.tar.gz"
   sha256 "35da484758f93ce0ce172d25a9606316e9042eb73916a427c7badad7ee71c977"
   head "https://github.com/swoole/swoole-src.git"
-  license "Apache License 2.0"
+  license "Apache-2.0"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"

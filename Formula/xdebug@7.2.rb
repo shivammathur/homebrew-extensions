@@ -7,7 +7,7 @@ class XdebugAT72 < AbstractPhp72Extension
   url "https://github.com/xdebug/xdebug/archive/2.9.6.tar.gz"
   sha256 "e330c5ccb77890b06dd7bf093567051450b2438b79fed8e7e6c4834278d46092"
   head "https://github.com/xdebug/xdebug.git"
-  license "The Xdebug License"
+  license "PHP-3.0"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
