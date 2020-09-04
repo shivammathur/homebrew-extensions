@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
+# Class for Xdebug Extension
 class XdebugAT72 < AbstractPhp72Extension
   init
   desc "Xdebug PHP extension"

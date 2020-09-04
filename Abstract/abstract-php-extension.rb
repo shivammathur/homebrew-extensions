@@ -1,11 +1,8 @@
+# frozen_string_literal: true
+
 require File.join(File.dirname(__FILE__), "abstract-php-version")
 
-class String
-  def undent
-    gsub(/^.{#{(slice(/^ +/) || '').length}}/, "")
-  end
-end
-
+# Abstract class for PHP extensions
 class AbstractPhpExtension < Formula
   desc "Abstract class for PHP Extension Formula"
   homepage "https://github.com/shivammathur/homebrew-extensions"
@@ -19,11 +16,11 @@ class AbstractPhpExtension < Formula
   def php_version
     class_name = self.class::PHP_FORMULA
     matches = PHP_REGEX.match(class_name)
-    matches[1] + "." + matches[2] if matches
+    "#{matches[1]}.#{matches[2]}" if matches
   end
 
   def php_formula
-    "php@" + php_version
+    "php@#{php_version}"
   end
 
   def safe_phpize
@@ -38,11 +35,9 @@ class AbstractPhpExtension < Formula
 
   def extension
     class_name = self.class.name.split("::").last.split("AT").first
-    if class_name
-      class_name.downcase
-    else
-      raise "Unable to guess PHP extension name for #{class_name}"
-    end
+    raise "Unable to guess PHP extension name for #{class_name}" unless class_name
+
+    class_name.downcase
   end
 
   def extension_type
@@ -58,7 +53,7 @@ class AbstractPhpExtension < Formula
   end
 
   def config_file
-    <<-EOS.undent
+    <<~EOS
       [#{extension}]
       #{extension_type}="#{module_path}"
     EOS
@@ -77,7 +72,7 @@ class AbstractPhpExtension < Formula
 
   test do
     output = shell_output("#{Formula[php_formula].opt_bin}/php -m").downcase
-    assert_match /#{extension.downcase}/, output, "failed to find extension in php -m output"
+    assert_match(/#{extension.downcase}/, output, "failed to find extension in php -m output")
   end
 
   def config_scandir_path
@@ -100,6 +95,7 @@ class AbstractPhpExtension < Formula
   end
 end
 
+# Abstract class for PHP 5.6 extensions
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
 
@@ -109,6 +105,7 @@ class AbstractPhp56Extension < AbstractPhpExtension
   end
 end
 
+# Abstract class for PHP 7.0 extensions
 class AbstractPhp70Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php70Defs
 
@@ -118,6 +115,7 @@ class AbstractPhp70Extension < AbstractPhpExtension
   end
 end
 
+# Abstract class for PHP 7.1 extensions
 class AbstractPhp71Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php71Defs
 
@@ -127,6 +125,7 @@ class AbstractPhp71Extension < AbstractPhpExtension
   end
 end
 
+# Abstract class for PHP 7.2 extensions
 class AbstractPhp72Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php72Defs
 
@@ -136,6 +135,7 @@ class AbstractPhp72Extension < AbstractPhpExtension
   end
 end
 
+# Abstract class for PHP 7.3 extensions
 class AbstractPhp73Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php73Defs
 
@@ -145,6 +145,7 @@ class AbstractPhp73Extension < AbstractPhpExtension
   end
 end
 
+# Abstract class for PHP 7.4 extensions
 class AbstractPhp74Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php74Defs
 
@@ -154,6 +155,7 @@ class AbstractPhp74Extension < AbstractPhpExtension
   end
 end
 
+# Abstract class for PHP 8.0 extensions
 class AbstractPhp80Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php80Defs
 

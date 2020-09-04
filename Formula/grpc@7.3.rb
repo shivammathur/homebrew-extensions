@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
+# Class for GRPC Extension
 class GrpcAT73 < AbstractPhp73Extension
   init
   desc "gRPC PHP extension"

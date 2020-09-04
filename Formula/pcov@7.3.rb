@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
+# Class for PCOV Extension
 class PcovAT73 < AbstractPhp73Extension
   init
   desc "PCOV PHP extension"
