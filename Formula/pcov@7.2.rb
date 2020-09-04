@@ -12,7 +12,8 @@ class PcovAT72 < AbstractPhp72Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    sha256 "26b23dd2b7b58af32bc61c99f22663bf51392fd8701efa5607df5578b943a864" => :catalina
+    rebuild 1
+    sha256 "309d722ed33a93739434fd9949fd004078b051f26e3c75fe39e1d7250a9f7628" => :catalina
   end
 
   def install
