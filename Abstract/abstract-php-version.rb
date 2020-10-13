@@ -54,10 +54,18 @@ class AbstractPhpVersion < Formula
   end
 
   module Php80Defs
-    PHP_SRC_TARBALL = "https://github.com/php/php-src/archive/master.tar.gz?v=php-8.0.0"
+    PHP_SRC_TARBALL = "https://github.com/php/php-src/archive/PHP-8.0.tar.gz?v=php-8.0.0"
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git"
     PHP_VERSION     = "8.0.0"
     PHP_BRANCH      = "PHP-8.0.0"
     PHP_FORMULA     = "shivammathur/php/php@8.0"
+  end
+
+  module Php81Defs
+    PHP_SRC_TARBALL = "https://github.com/php/php-src/archive/master.tar.gz?v=php-8.1.0"
+    PHP_GITHUB_URL  = "https://github.com/php/php-src.git"
+    PHP_VERSION     = "8.1.0"
+    PHP_BRANCH      = "PHP-8.1.0"
+    PHP_FORMULA     = "shivammathur/php/php@8.1"
   end
 end

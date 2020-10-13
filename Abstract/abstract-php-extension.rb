@@ -164,3 +164,13 @@ class AbstractPhp80Extension < AbstractPhpExtension
     depends_on AbstractPhpVersion::Php80Defs::PHP_FORMULA => [:build, :test]
   end
 end
+
+# Abstract class for PHP 8.1 extensions
+class AbstractPhp81Extension < AbstractPhpExtension
+  include AbstractPhpVersion::Php81Defs
+
+  def self.init
+    super()
+    depends_on AbstractPhpVersion::Php81Defs::PHP_FORMULA => [:build, :test]
+  end
+end
