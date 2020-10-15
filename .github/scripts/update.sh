@@ -14,7 +14,7 @@ case $extension in
   sed -i '' "s/.*tar.gz.*/  url \"https\:\/\/github.com\/swoole/swoole-src\/archive\/$tag.tar.gz\"/g" ./Formula/"$version".rb
   ;;
   "xdebug")
-  tag=$(curl -SsL https://github.com/xdebug/xdebug/tags | awk '/\/tag\/([0-9]+.[0-9]+.[0-9]+)/' | cut -d '"' -f 2 | awk '{n=split($NF,a,"/");print a[n]}' | head -n 1)
+  tag=$(curl -SsL https://github.com/xdebug/xdebug/tags | awk '/\/tag\/([0-9]+.[0-9]+.[0-9]+)">/' | cut -d '"' -f 2 | awk '{n=split($NF,a,"/");print a[n]}' | head -n 1)
   sed -i '' "s/.*tar.gz.*/  url \"https\:\/\/github.com\/xdebug\/xdebug\/archive\/$tag.tar.gz\"/g" ./Formula/"$version".rb
   ;;
 esac
