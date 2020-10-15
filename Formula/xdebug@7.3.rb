@@ -14,6 +14,9 @@ class XdebugAT73 < AbstractPhp73Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    cellar :any_skip_relocation
+    rebuild 1
+    sha256 "a63269e1ebf16ec771c8fb168c1592f354ea1c6d8a0d9f17900750fdeb640de9" => :catalina
   end
 
   def install
