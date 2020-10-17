@@ -23,9 +23,9 @@ jobs:
           - php-versions: '7.0'
             extensions: 'grpc, igbinary, protobuf, swoole, xdebug'
           - php-versions: '8.0'
-            extensions: 'pcov, xdebug'
+            extensions: 'pcov, xdebug, igbinary'
           - php-versions: '8.1'
-            extensions: 'pcov, xdebug'
+            extensions: 'pcov, xdebug, igbinary'
     name: PHP ${{ matrix.php-versions }}
     steps:
       - name: Checkout
