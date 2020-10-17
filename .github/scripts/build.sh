@@ -17,6 +17,9 @@ add_log() {
   fi
 }
 
+message_extension=$(echo "$GITHUB_MESSAGE" | grep -Eo 'build-only-[a-zA-Z]+' | cut -d '-' -f 3)
+[ "$message_extension" != "" ] && [ "$EXTENSION" != "$message_extension" ] && exit 0;
+
 step_log "Housekeeping"
 unset HOMEBREW_DISABLE_LOAD_FORMULA
 brew update-reset "$(brew --repository)" >/dev/null 2>&1
@@ -35,7 +38,8 @@ existing_version=$(curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" 
 if [[ "$EXTENSION" =~ grpc|pcov ]] ||
    [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
    [[ "$VERSION" =~ swoole@7.[1-4] ]] ||
-   [[ "$VERSION" =~ xdebug@7.[1-4] ]]; then
+   [[ "$VERSION" =~ xdebug@7.[1-4] ]] ||
+   [[ "$VERSION" =~ igbinary@(7.[0-4]|8.[0-1]) ]]; then
   sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
   url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
   checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)

@@ -16,12 +16,12 @@ jobs:
       fail-fast: false
       matrix:
         php-versions: ['7.1', '7.2', '7.3', '7.4']
-        extensions: ['grpc, pcov, protobuf, swoole, xdebug']
+        extensions: ['grpc, igbinary, pcov, protobuf, swoole, xdebug']
         include:
           - php-versions: '5.6'
-            extensions: 'grpc, protobuf, swoole, xdebug'
+            extensions: 'grpc, igbinary, protobuf, swoole, xdebug'
           - php-versions: '7.0'
-            extensions: 'grpc, protobuf, swoole, xdebug'
+            extensions: 'grpc, igbinary, protobuf, swoole, xdebug'
           - php-versions: '8.0'
             extensions: 'pcov, xdebug'
           - php-versions: '8.1'
