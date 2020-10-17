@@ -14,6 +14,8 @@ class IgbinaryAT70 < AbstractPhp70Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    cellar :any_skip_relocation
+    sha256 "f87b62eeb707eb9d142cdff4c09faf6feaa2b09022df4183643efd8dfbe8bcdf" => :catalina
   end
 
   def install
