@@ -13,6 +13,7 @@
 |--- |--- |
 |`grpc`|`PHP 5.6` to `PHP 7.4`|
 |`igbinary`|`PHP 5.6` to `PHP 8.1`|
+|`imagick`|`PHP 5.6` to `PHP 7.4`|
 |`pcov`|`PHP 7.1` to `PHP 8.1`|
 |`protobuf`|`PHP 5.6` to `PHP 7.4`|
 |`swoole`|`PHP 5.6` to `PHP 7.4`|
@@ -61,6 +62,7 @@ Please see the [license file](LICENSE) for more information. This project has mu
 
 - [gRPC](https://github.com/grpc/grpc "gRPC Upstream")
 - [igbinary](https://github.com/igbinary/igbinary "igbinary upstream")
+- [Imagick](https://github.com/Imagick/imagick "Imagick upstream")
 - [PCOV](https://github.com/krakjoe/pcov "PCOV Upstream")
 - [Protobuf](https://github.com/protocolbuffers/protobuf "protocolbuffers Upstream")
 - [Swoole](https://github.com/swoole/swoole-src "Swoole Upstream")
