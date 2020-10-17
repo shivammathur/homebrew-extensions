@@ -7,13 +7,14 @@ class ImagickAT73 < AbstractPhp73Extension
   init
   desc "Imagick PHP extension"
   homepage "https://github.com/Imagick/imagick/releases"
-  url "https://github.com/Imagick/imagick/archive/3.4.4.tar.gz"
+  url "https://github.com/imagick/imagick/archive/3.4.4.tar.gz"
   sha256 "8204d228ecbe5f744d625c90364808616127471581227415bca18857af981369"
   head "https://github.com/Imagick/imagick"
   license "PHP-3.01"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 "0c8992ebb4e51d5fbeaf3cc6a1d92845cba7bc404bb81cd5c798cddd65f2d13a" => :catalina
   end
 
   depends_on "pkg-config" => :build
