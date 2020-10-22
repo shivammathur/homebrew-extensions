@@ -7,15 +7,15 @@ class GrpcAT73 < AbstractPhp73Extension
   init
   desc "gRPC PHP extension"
   homepage "https://github.com/grpc/grpc"
-  url "https://pecl.php.net/get/grpc-1.32.0.tgz"
-  sha256 "9d6297e0b624584c4d43cad492325cf96095f70529ed21b618aab5142ec21c39"
+  url "https://pecl.php.net/get/grpc-1.33.1.tgz"
+  sha256 "aa26eb1fb0d66216f709105d2605a8a72b20407076d1e9bb0bd7cb17a277582c"
   head "https://github.com/grpc/grpc.git"
   license "Apache-2.0"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    sha256 "6fa0206e05018c7399207225328affaeb1e0a13aa9794b0895432ce22627b7d5" => :catalina
+    sha256 "916eb2073372c4605a3df3b6aadaa8a7153b4843dbaf155185bfbcd953fd7105" => :catalina
   end
 
   depends_on "grpc"
