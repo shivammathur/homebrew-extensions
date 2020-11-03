@@ -76,6 +76,7 @@ if [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_ver
 
   step_log "Stocking the new Bottle"
   if [ "$(find . -name '*.json' | wc -l 2>/dev/null | wc -l)" != "0" ]; then
+    unset HOMEBREW_DISABLE_LOAD_FORMULA
     curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" -X DELETE https://api.bintray.com/packages/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$package"/versions/"$new_version"
     brew test-bot --ci-upload --tap="$GITHUB_REPOSITORY" --root-url=https://dl.bintray.com/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO" --bintray-org="$HOMEBREW_BINTRAY_USER"
     curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" -X POST https://api.bintray.com/content/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$package"/"$new_version"/publish
@@ -83,7 +84,12 @@ if [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_ver
 
     step_log "Updating inventory"
     git config --local user.email homebrew-test-bot@lists.sfconservancy.org
-    git config --local user.name BrewTestBot    
+    git config --local user.name BrewTestBot
+    git status
+    if [ "$(git status --porcelain=v1 2>/dev/null | wc -l)" != "0" ]; then
+      git add Formula/"$VERSION".rb
+      git commit -m "$VERSION: update $new_version bottle."
+    fi
     for try in $(seq 10); do
       echo "try: $try" >/dev/null
       git fetch origin master && git rebase origin/master
@@ -95,7 +101,7 @@ if [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_ver
     done
   else
     add_log "$cross" "bottle" "broke"
-  fi    
+  fi
 else
   add_log "$tick" "$VERSION $new_version" "Bottle exists"
 fi

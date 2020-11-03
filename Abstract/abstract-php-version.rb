@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 # Abstract class for PHP versions
@@ -30,26 +31,26 @@ class AbstractPhpVersion < Formula
   end
 
   module Php72Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-7.2.31.tar.xz/from/this/mirror"
+    PHP_SRC_TARBALL = "https://php.net/get/php-7.2.34.tar.xz/from/this/mirror"
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git"
-    PHP_VERSION     = "7.2.31"
-    PHP_BRANCH      = "PHP-7.2.31"
+    PHP_VERSION     = "7.2.34"
+    PHP_BRANCH      = "PHP-7.2.34"
     PHP_FORMULA     = "shivammathur/php/php@7.2"
   end
 
   module Php73Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-7.3.19.tar.xz/from/this/mirror"
+    PHP_SRC_TARBALL = "https://php.net/get/php-7.3.24.tar.xz/from/this/mirror"
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git"
-    PHP_VERSION     = "7.3.19"
-    PHP_BRANCH      = "PHP-7.3.19"
+    PHP_VERSION     = "7.3.24"
+    PHP_BRANCH      = "PHP-7.3.24"
     PHP_FORMULA     = "shivammathur/php/php@7.3"
   end
 
   module Php74Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-7.4.7.tar.xz/from/this/mirror"
+    PHP_SRC_TARBALL = "https://php.net/get/php-7.4.12.tar.xz/from/this/mirror"
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git"
-    PHP_VERSION     = "7.4.7"
-    PHP_BRANCH      = "PHP-7.4.7"
+    PHP_VERSION     = "7.4.12"
+    PHP_BRANCH      = "PHP-7.4.12"
     PHP_FORMULA     = "shivammathur/php/php@7.4"
   end
 

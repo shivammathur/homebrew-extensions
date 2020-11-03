@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)

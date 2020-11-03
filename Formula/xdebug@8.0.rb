@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
@@ -13,8 +14,8 @@ class XdebugAT80 < AbstractPhp80Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 118
-    sha256 "fdb0b09027a864278a45ffe5faa82afaa20b3f4504c1e3eb1e135d6a0a8eace5" => :catalina
+    rebuild 120
+    sha256 "8cfcdb13df614593ef5db4294e4b053be459957f359d804123bf38525ef6da02" => :catalina
   end
 
   def install
