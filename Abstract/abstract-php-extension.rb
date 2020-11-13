@@ -8,7 +8,7 @@ class AbstractPhpExtension < Formula
   desc "Abstract class for PHP Extension Formula"
   homepage "https://github.com/shivammathur/homebrew-extensions"
 
-  PHP_REGEX = /[P,p][H,h][P,p]@*([5,7,8])\.([0-9]+)/.freeze
+  PHP_REGEX = /[P,p][H,h][P,p]@*([5,78])\.([0-9]+)/.freeze
 
   def self.init
     depends_on "autoconf" => :build
