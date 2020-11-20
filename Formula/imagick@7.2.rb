@@ -15,7 +15,8 @@ class ImagickAT72 < AbstractPhp72Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    sha256 "f6988ca9ef38fb74bc7bbc0685c4d880e1b99416c4b69b2535fe5d55ea82fb8b" => :catalina
+    rebuild 1
+    sha256 "6bb90d857c39f369b8efaa1a04199c25d1b3c9d881963bee454ec69c0c890bd5" => :catalina
   end
 
   depends_on "pkg-config" => :build
