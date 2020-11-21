@@ -51,6 +51,14 @@ echo "existing label: $existing_version"
 echo "new label: $new_version"
 
 if [[ "$GITHUB_MESSAGE" = *--build-only* ]] || [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_version" ] || [ "$VERSION" = "xdebug@8.0" ] || [ "$VERSION" = "xdebug@8.1" ]; then
+  deps=$(brew info "shivammathur/extensions/$VERSION" | grep -Eo "Required.*" | cut -d ':' -f 2 | sed 's/^ *//g')
+  if [ "$deps" != "" ]; then
+    IFS="," read -r -a deps <<< "$deps"
+    step_log "Syncing dependencies"
+    bash ./.github/scripts/sync.sh "$EXTENSION" "${deps[@]}"
+    add_log "$tick" "$VERSION" "Dependencies synced"
+  fi
+
   step_log "Filling the Bottle"
   sudo ln -sf "$PWD" "$(brew --prefix)/Homebrew/Library/Taps/$GITHUB_REPOSITORY"
   brew test-bot "$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$VERSION" --root-url=https://dl.bintray.com/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO" --skip-setup --skip-recursive-dependents
