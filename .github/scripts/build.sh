@@ -38,7 +38,7 @@ existing_version=$(curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" 
 if [[ "$EXTENSION" =~ grpc|pcov ]] ||
    [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
    [[ "$VERSION" =~ swoole@7.[1-4] ]] ||
-   [[ "$VERSION" =~ xdebug@7.[1-4] ]] ||
+   [[ "$VERSION" =~ xdebug@7.[3-4] ]] ||
    [[ "$VERSION" =~ igbinary@(7.[0-4]|8.[0-1]) ]] ||
    [[ "$VERSION" =~ imagick@(5.6|7.[0-4]) ]]; then
   sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
