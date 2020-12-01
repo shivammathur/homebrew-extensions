@@ -14,8 +14,8 @@ class XdebugAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 43
-    sha256 "3b5f5fcd79ae70e6478e9d4f1555ee35bf0fcda2e520b631cdee8252ad1778c7" => :catalina
+    rebuild 44
+    sha256 "66c709fb694629efd52bd2092da81d11d63ac4c339049dbd991a3ab77f8e9c38" => :catalina
   end
 
   def install
