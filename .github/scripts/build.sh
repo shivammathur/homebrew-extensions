@@ -22,7 +22,7 @@ message_extension=$(echo "$GITHUB_MESSAGE" | grep -Eo 'build-only-[a-zA-Z]+' | c
 
 step_log "Housekeeping"
 unset HOMEBREW_DISABLE_LOAD_FORMULA
-brew update-reset "$(brew --repository)" >/dev/null 2>&1
+brew update-reset >/dev/null 2>&1
 add_log "$tick" "Housekeeping" "Done"
 
 step_log "Adding tap $GITHUB_REPOSITORY"
@@ -32,36 +32,38 @@ add_log "$tick" "$GITHUB_REPOSITORY" "Tap added to brewery"
 
 step_log "Checking label"
 package="${VERSION//@/:}"
+new_version=
+existing_version=
+if [[ "$EXTENSION" =~ imap ]]; then
+  php_version=$(echo "$package" | cut -d':' -f2)
+  brew tap shivammathur/php
+  php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
+  checksum=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  sha256.*" | cut -d\" -f 2)
+  sed -i '' "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
+  [ "$checksum" != "" ] && sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
+else
+  if [[ "$EXTENSION" =~ pcov ]] ||
+     [[ "$VERSION" =~ grpc@7.[0-4] ]] ||
+     [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
+     [[ "$VERSION" =~ swoole@7.[1-4] ]] ||
+     [[ "$VERSION" =~ xdebug@7.[3-4] ]] ||
+     [[ "$VERSION" =~ igbinary@(7.[0-4]|8.[0-1]) ]] ||
+     [[ "$VERSION" =~ imagick@(5.6|7.[0-4]) ]]; then
+    sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
+    url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
+    checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
+    sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
+  fi
+fi
 new_version=$(brew info Formula/"$VERSION".rb | head -n 1 | cut -d',' -f 1 | cut -d' ' -f 3)
 existing_version=$(curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" -s https://api.bintray.com/packages/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$package" | sed -e 's/^.*"latest_version":"\([^"]*\)".*$/\1/')
-
-if [[ "$EXTENSION" =~ grpc|pcov ]] ||
-   [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
-   [[ "$VERSION" =~ swoole@7.[1-4] ]] ||
-   [[ "$VERSION" =~ xdebug@7.[3-4] ]] ||
-   [[ "$VERSION" =~ igbinary@(7.[0-4]|8.[0-1]) ]] ||
-   [[ "$VERSION" =~ imagick@(5.6|7.[0-4]) ]]; then
-  sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
-  url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
-  checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
-  sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
-  new_version=$(brew info Formula/"$VERSION".rb | head -n 1 | cut -d',' -f 1 | cut -d' ' -f 3)
-fi
 echo "existing label: $existing_version"
 echo "new label: $new_version"
 
-if [[ "$GITHUB_MESSAGE" = *--build-only* ]] || [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_version" ] || [ "$VERSION" = "xdebug@8.0" ] || [ "$VERSION" = "xdebug@8.1" ]; then
-  deps=$(brew info "shivammathur/extensions/$VERSION" | grep -Eo "Required.*" | cut -d ':' -f 2 | sed 's/^ *//g')
-  if [ "$deps" != "" ]; then
-    IFS="," read -r -a deps <<< "$deps"
-    step_log "Syncing dependencies"
-    bash ./.github/scripts/sync.sh "$EXTENSION" "${deps[@]}"
-    add_log "$tick" "$VERSION" "Dependencies synced"
-  fi
-
+if [[ "$GITHUB_MESSAGE" = *--build-only* ]] || [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_version" ] || [[ "$VERSION" =~ .*@8.1 ]]; then
   step_log "Filling the Bottle"
   sudo ln -sf "$PWD" "$(brew --prefix)/Homebrew/Library/Taps/$GITHUB_REPOSITORY"
-  brew test-bot "$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$VERSION" --root-url=https://dl.bintray.com/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO" --skip-setup --skip-recursive-dependents
+  brew test-bot "$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$VERSION" --root-url=https://dl.bintray.com/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"
   LC_ALL=C find . -type f -name '*.json' -exec sed -i '' s~homebrew/bottles-extensions~"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"~ {} +
   LC_ALL=C find . -type f -name '*.json' -exec sed -i '' s~bottles-extensions~extensions~ {} +
   LC_ALL=C find . -type f -name '*.json' -exec sed -i '' s~bottles~extensions~ {} +
@@ -107,6 +109,13 @@ if [[ "$GITHUB_MESSAGE" = *--build-only* ]] || [[ "$GITHUB_MESSAGE" = *--build-a
         sleep 3s
       fi
     done
+    deps=$(brew info "shivammathur/extensions/$VERSION" | grep -Eo "Required.*" | cut -d ':' -f 2 | sed 's/^ *//g')
+    if [ "$deps" != "" ]; then
+      IFS="," read -r -a deps <<< "$deps"
+      step_log "Syncing dependencies"
+      bash ./.github/scripts/sync.sh "$EXTENSION" "${deps[@]}"
+      add_log "$tick" "$VERSION" "Dependencies synced"
+    fi
   else
     add_log "$cross" "bottle" "broke"
   fi

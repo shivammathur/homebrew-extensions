@@ -4,9 +4,10 @@ deps=("$@")
 git config --local user.email homebrew-test-bot@lists.sfconservancy.org
 git config --local user.name BrewTestBot
 git config --local pull.rebase true
-
+sudo rm -rf ./*txt ./*.json ./*.gz
 sudo mkdir -p "./.github/deps/$extension"
 for formula in "${deps[@]}"; do
+  formula=$(echo "$formula" | xargs)
   sudo cp "$(brew --prefix)/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/$formula.rb" "./.github/deps/$extension/"
 done
 ls "./.github/deps/$extension"

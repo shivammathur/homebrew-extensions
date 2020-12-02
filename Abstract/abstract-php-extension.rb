@@ -12,6 +12,7 @@ class AbstractPhpExtension < Formula
 
   def self.init
     depends_on "autoconf" => :build
+    depends_on "pkg-config" => :build
   end
 
   def php_version
