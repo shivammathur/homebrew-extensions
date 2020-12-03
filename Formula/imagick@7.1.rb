@@ -3,7 +3,7 @@
 
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
-# Class for GRPC Extension
+# Class for Imagick Extension
 class ImagickAT71 < AbstractPhp71Extension
   init
   desc "Imagick PHP extension"
