@@ -19,7 +19,6 @@ class ImagickAT56 < AbstractPhp56Extension
     sha256 "07d64ab4eb86613ebfe0fe1cc71f5e5846eab20f0241ba78aa6f344d91c9a664" => :catalina
   end
 
-  depends_on "pkg-config" => :build
   depends_on "imagemagick"
 
   def install

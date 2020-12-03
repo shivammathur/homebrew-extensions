@@ -19,7 +19,6 @@ class ImagickAT71 < AbstractPhp71Extension
     sha256 "177b0d20920f7c905f1bb938f8c549e3e14d4940f5e4de7489b5aabb33c87004" => :catalina
   end
 
-  depends_on "pkg-config" => :build
   depends_on "imagemagick"
 
   def install
