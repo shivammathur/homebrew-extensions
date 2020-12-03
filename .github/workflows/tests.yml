@@ -17,16 +17,16 @@ jobs:
       fail-fast: false
       matrix:
         php-versions: ['7.1', '7.2', '7.3', '7.4']
-        extensions: ['grpc, igbinary, imagick, pcov, protobuf, swoole, xdebug']
+        extensions: ['grpc, igbinary, imagick, imap, pcov, protobuf, swoole, xdebug']
         include:
           - php-versions: '5.6'
-            extensions: 'grpc, igbinary, imagick, protobuf, swoole, xdebug'
+            extensions: 'grpc, igbinary, imagick, imap, protobuf, swoole, xdebug'
           - php-versions: '7.0'
-            extensions: 'grpc, igbinary, imagick, protobuf, swoole, xdebug'
+            extensions: 'grpc, igbinary, imagick, imap, protobuf, swoole, xdebug'
           - php-versions: '8.0'
-            extensions: 'pcov, xdebug, igbinary'
+            extensions: 'pcov, xdebug, igbinary, imap'
           - php-versions: '8.1'
-            extensions: 'pcov, xdebug, igbinary'
+            extensions: 'pcov, xdebug, igbinary, imap'
     name: PHP ${{ matrix.php-versions }}
     steps:
       - name: Checkout
