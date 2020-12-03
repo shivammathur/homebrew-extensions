@@ -15,6 +15,7 @@ class AmqpAT56 < AbstractPhp56Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 "92362282a5f10760a16bd3c77c46a41f8a9849ce3fca421c149f1c698afe29bc" => :catalina
   end
 
   depends_on "rabbitmq-c"
