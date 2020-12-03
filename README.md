@@ -14,6 +14,7 @@
 |`grpc`|`PHP 5.6` to `PHP 7.4`|
 |`igbinary`|`PHP 5.6` to `PHP 8.1`|
 |`imagick`|`PHP 5.6` to `PHP 7.4`|
+|`imap`|`PHP 5.6` to `PHP 8.0`|
 |`pcov`|`PHP 7.1` to `PHP 8.1`|
 |`protobuf`|`PHP 5.6` to `PHP 7.4`|
 |`swoole`|`PHP 5.6` to `PHP 7.4`|
