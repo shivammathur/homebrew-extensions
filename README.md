@@ -11,6 +11,7 @@
 
 |Extension|PHP Version|
 |--- |--- |
+|`amqp`|`PHP 5.6` to `PHP 7.4`|
 |`grpc`|`PHP 5.6` to `PHP 7.4`|
 |`igbinary`|`PHP 5.6` to `PHP 8.1`|
 |`imagick`|`PHP 5.6` to `PHP 7.4`|
