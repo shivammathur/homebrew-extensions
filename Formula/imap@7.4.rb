@@ -14,6 +14,7 @@ class ImapAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 "1419135a58343605fb3e86ef06a30039c4400d565e568e72097c59ae86acdee7" => :catalina
   end
 
   depends_on "imap-uw"
