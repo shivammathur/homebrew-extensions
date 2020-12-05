@@ -8,14 +8,14 @@ class XdebugAT74 < AbstractPhp74Extension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/3.0.0.tar.gz"
-  sha256 "b33cd6e20d6f1978324ef1e4d50b6822b8b539e6284283c46440e017ed6fe451"
+  url "https://github.com/xdebug/xdebug/archive/3.0.1.tar.gz"
+  sha256 "e98691000db198fbda0d87bef63b46ec6d7a3aafbc394b22eca91b9059a9e63c"
   head "https://github.com/xdebug/xdebug.git"
   license "PHP-3.0"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    sha256 "e0d7b540a743a61b875328df98938e5e22c4499b5996af93b58728df28549638" => :catalina
+    sha256 "d8278ef8e1ef8e8a0851d7f421ca03db2384ba6e83ac42b0ad5be74598176a61" => :catalina
   end
 
   def install
