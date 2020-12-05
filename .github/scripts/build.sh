@@ -46,7 +46,7 @@ else
      [[ "$VERSION" =~ grpc@7.[0-4] ]] ||
      [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
      [[ "$VERSION" =~ swoole@7.[1-4] ]] ||
-     [[ "$VERSION" =~ xdebug@7.[3-4] ]] ||
+     [[ "$VERSION" =~ xdebug@(7.[3-4]|8.[0-1]) ]] ||
      [[ "$VERSION" =~ igbinary@(7.[0-4]|8.[0-1]) ]] ||
      [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]] ||
      [[ "$VERSION" =~ imagick@(5.6|7.[0-4]) ]]; then
@@ -61,7 +61,7 @@ existing_version=$(curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" 
 echo "existing label: $existing_version"
 echo "new label: $new_version"
 
-if [[ "$GITHUB_MESSAGE" = *--build-only* ]] || [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_version" ] || [[ "$VERSION" =~ .*@8.1 ]]; then
+if [[ "$GITHUB_MESSAGE" = *--build-all* ]] || [ "$new_version" != "$existing_version" ] || [[ "$VERSION" =~ .*@8.1 ]]; then
   step_log "Filling the Bottle"
   sudo ln -sf "$PWD" "$(brew --prefix)/Homebrew/Library/Taps/$GITHUB_REPOSITORY"
   brew test-bot "$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$VERSION" --root-url=https://dl.bintray.com/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"
