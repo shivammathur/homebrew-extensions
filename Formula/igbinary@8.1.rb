@@ -16,8 +16,8 @@ class IgbinaryAT81 < AbstractPhp81Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    rebuild 3
-    sha256 "f96efb302afd8bd32290e1ed39b1a5a52f4a54212ad6b9af0a5f53d5e0942714" => :catalina
+    rebuild 4
+    sha256 "03bc040bb8adb83e3da6a0a76e43c5a2aae2cab5fded037eefa85cfcc2685955" => :catalina
   end
 
   def install
