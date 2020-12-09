@@ -15,7 +15,6 @@ class OpensslAT11 < Formula
 
   bottle do
     sha256 "81fe98e819f1d3554d98cbf615c848cc1837c65b6026cb561b0d58531b0ab65e" => :big_sur
-    sha256 "df428aeac87544250901caf50b4b1d8ed38f1aea713d63fd94c81d7956093cce" => :arm64_big_sur
     sha256 "4e5357c0cfd55cfa4ef0b632c6fc9f49d39337dd070dc12d3c862e28bd28f079" => :catalina
     sha256 "d4ef27b41d0596d20b79a43a43554d4ea1395f0ef9affdcf0ce74114a00e2572" => :mojave
     sha256 "face6b0b99e7d628232e379f02aeb9d0eb7d1b5efba77561e0fd9edba130393d" => :high_sierra

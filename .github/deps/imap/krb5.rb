@@ -12,7 +12,6 @@ class Krb5 < Formula
 
   bottle do
     sha256 "ce41211e7264912be6fc05d8e5ed3bbc141679b0ab6c9b4099a36da811077a9f" => :big_sur
-    sha256 "ea5ca1833bfe4969c6c1551d6c7215c3115a945ab2cdc3f190333d93ed438f22" => :arm64_big_sur
     sha256 "f50ff30a8268899f65150363f294ddcbd1969759f8700efac874caa181bca75d" => :catalina
     sha256 "4e5751f16b7e6d9f27968a9efb1ba5f702292c7fefdb25a32c940ef71f81b7cd" => :mojave
   end
