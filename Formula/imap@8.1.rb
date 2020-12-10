@@ -13,8 +13,8 @@ class ImapAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 5
-    sha256 "51f8904cf2c557a0881a390e133ef09c2519604f13e876ab0d5e1989d6c02868" => :catalina
+    rebuild 6
+    sha256 "08984a5ad281162aa536d8ebb41ce3502cab7f7bae16f3e9bad54c90ebec5b1d" => :catalina
   end
 
   depends_on "imap-uw"
