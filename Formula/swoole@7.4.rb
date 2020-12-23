@@ -8,15 +8,15 @@ class SwooleAT74 < AbstractPhp74Extension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
-  url "https://github.com/swoole/swoole-src/archive/v4.5.2.tar.gz"
-  sha256 "35da484758f93ce0ce172d25a9606316e9042eb73916a427c7badad7ee71c977"
+  url "https://github.com/swoole/swoole-src/archive/v4.5.10.tar.gz"
+  sha256 "164d1a712a908e3186fe855afbfcbc9ff7bbb1e958552b6ad1cc36a32a72b3ab"
   head "https://github.com/swoole/swoole-src.git"
   license "Apache-2.0"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any
-    sha256 "ba480d4a0e09d29759e05febf7adb1eb035f72c87fa8ec8071b59c34d380cba5" => :catalina
+    sha256 "94c62b6a6a53a2159918559691a0a3ddd16a10b9e509c58ced738584baaa89ce" => :catalina
   end
 
   def install
