@@ -25,6 +25,12 @@ jobs:
           - extensions: pcov
             php-versions: '7.0'
         include:
+          - extensions: xdebug2
+            php-versions: '7.2'
+          - extensions: xdebug2
+            php-versions: '7.3'
+          - extensions: xdebug2
+            php-versions: '7.4'
           - extensions: pcov
             php-versions: '8.0'
           - extensions: xdebug
