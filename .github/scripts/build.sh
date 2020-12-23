@@ -60,7 +60,7 @@ else
     sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   fi
 fi
-new_version=$(brew info Formula/"$VERSION".rb | head -n 1 | cut -d',' -f 1 | cut -d' ' -f 3)
+new_version=$(cat Formula/"$VERSION".rb | grep -Eo "[0-9]+\.[0-9]+\.[0-9]+")
 existing_version=$(curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" -s https://api.bintray.com/packages/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$package" | sed -e 's/^.*"latest_version":"\([^"]*\)".*$/\1/')
 echo "existing label: $existing_version"
 echo "new label: $new_version"
