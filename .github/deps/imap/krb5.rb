@@ -11,10 +11,11 @@ class Krb5 < Formula
   end
 
   bottle do
-    sha256 "ce41211e7264912be6fc05d8e5ed3bbc141679b0ab6c9b4099a36da811077a9f" => :big_sur
-    sha256 "9bcf67f6ca1757dd425a7fd4c0fcd2d42273c01b303f4219b16714793c89fd0d" => :arm64_big_sur
-    sha256 "f50ff30a8268899f65150363f294ddcbd1969759f8700efac874caa181bca75d" => :catalina
-    sha256 "4e5751f16b7e6d9f27968a9efb1ba5f702292c7fefdb25a32c940ef71f81b7cd" => :mojave
+    rebuild 1
+    sha256 "a72fae06ddd1d796a6c1ab55a9c8bc15e8e051c67e72412dbc86cea9bcd04c62" => :big_sur
+    sha256 "1ef5fefe3b5811f6588e0182b4594caa831282bc55a2787d83c9df9f666b221e" => :arm64_big_sur
+    sha256 "67f67b210947e2bd62d974b2494f1192f169fae35605f38f7b2f0a9a73eb0633" => :catalina
+    sha256 "3d09843ed22dfe2ce8c193eb3c6183eee9c278e06f179773930a8017d649d312" => :mojave
   end
 
   keg_only :provided_by_macos
@@ -22,6 +23,10 @@ class Krb5 < Formula
   depends_on "openssl@1.1"
 
   uses_from_macos "bison"
+
+  on_linux do
+    depends_on "gettext"
+  end
 
   def install
     cd "src" do
@@ -38,7 +43,8 @@ class Krb5 < Formula
                             "--disable-dependency-tracking",
                             "--disable-silent-rules",
                             "--prefix=#{prefix}",
-                            "--without-system-verto"
+                            "--without-system-verto",
+                            "--without-keyutils"
       system "make"
       system "make", "install"
     end
