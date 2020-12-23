@@ -47,7 +47,7 @@ if [[ "$EXTENSION" =~ imap ]]; then
   [ "$checksum" != "" ] && sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
 else
   if [[ "$EXTENSION" =~ pcov ]] ||
-     [[ "$VERSION" =~ grpc@7.[0-4] ]] ||
+     [[ "$VERSION" =~ grpc@(7.[0-4]|8.0) ]] ||
      [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
      [[ "$VERSION" =~ swoole@7.[1-4] ]] ||
      [[ "$VERSION" =~ xdebug@(7.[3-4]|8.[0-1]) ]] ||

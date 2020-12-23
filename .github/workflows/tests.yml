@@ -24,9 +24,9 @@ jobs:
           - php-versions: '7.0'
             extensions: 'amqp, grpc, igbinary, imagick, imap, protobuf, swoole, xdebug'
           - php-versions: '8.0'
-            extensions: 'pcov, xdebug, igbinary, imap'
+            extensions: 'grpc, igbinary, imap, pcov, swoole, xdebug'
           - php-versions: '8.1'
-            extensions: 'pcov, xdebug, igbinary, imap'
+            extensions: 'igbinary, imap, pcov, xdebug'
     name: PHP ${{ matrix.php-versions }}
     steps:
       - name: Checkout
