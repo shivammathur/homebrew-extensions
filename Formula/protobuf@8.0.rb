@@ -17,7 +17,8 @@ class ProtobufAT80 < AbstractPhp80Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    sha256 "6a9449a319852395732203c69f0d8fcdcf5f0b9540bd5bced573792bd64baf2c" => :catalina
+    rebuild 1
+    sha256 "1a6e5f4fa12bcc796a92c5ae4e7138b4ce93ccf1d1342ce638ae6bc1f20e5b06" => :catalina
   end
 
   def install
