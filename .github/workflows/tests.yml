@@ -42,6 +42,7 @@ jobs:
           php -v
           php -r "if(strpos(phpversion(), '${{ matrix.php-versions }}') === false) {throw new Exception('Wrong PHP version Installed');}"
       - name: Testing Extensions
+        if: matrix.extensions != 'xdebug2'
         run: |
           php -m
           php -r "if(substr(phpversion(), 0, 3)<8.0 && ! extension_loaded('amqp')) {throw new Exception('amqp not found');}"
@@ -53,3 +54,6 @@ jobs:
           php -r "if(! extension_loaded('igbinary')) {throw new Exception('igbinary not found');}"
           php -r "if(! extension_loaded('imap')) {throw new Exception('imap not found');}"
           php -r "if(! extension_loaded('xdebug')) {throw new Exception('xdebug not found');}"
+      - name: Testing Xdebug2
+        if: matrix.extensions == 'xdebug2'
+        run: php -r "if(phpversion('xdebug')!='2.9.8') {throw new Exception('xdebug2 not found');}"
