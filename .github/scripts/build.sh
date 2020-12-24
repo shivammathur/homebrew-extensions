@@ -17,7 +17,7 @@ add_log() {
   fi
 }
 
-message_extension=$(echo "$GITHUB_MESSAGE" | grep -Eo 'build-only-[a-zA-Z]+' | cut -d '-' -f 3)
+message_extension=$(echo "$GITHUB_MESSAGE" | grep -Eo 'build-only-[a-zA-Z0-9]+' | cut -d '-' -f 3)
 [ "$message_extension" != "" ] && [ "$EXTENSION" != "$message_extension" ] && exit 0;
 
 step_log "Housekeeping"
