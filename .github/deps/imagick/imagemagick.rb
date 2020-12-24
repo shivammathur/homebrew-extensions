@@ -1,9 +1,9 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://www.imagemagick.org/"
-  url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-39.tar.xz"
-  mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-39.tar.xz"
-  sha256 "3588f2edcc29b8d9f8669b003a9acd04dba2ff176742b6a9396745b71d690556"
+  url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-52.tar.xz"
+  mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-52.tar.xz"
+  sha256 "8290ab54998f17fe691522606768dc4109690859046c60cea7c362a8602ac627"
   license "ImageMagick"
   head "https://github.com/ImageMagick/ImageMagick.git"
 
@@ -13,9 +13,9 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 "f71172e0ff80a07407427ccb78013e21a0e3d782241d7e9fdc9f9b806557284e" => :big_sur
-    sha256 "466049da081d1ddf706fac272c9f3cdaff52ba085f29f3d51b2b04a98634d43b" => :catalina
-    sha256 "77fd4b720dc4cdebf0ad840c5130f3ea11368f24e4aada9326a42293b022aaf9" => :mojave
+    sha256 "90387b8e5cb6efd13b60348bd7ccf3bca697eb8c42fac6ebc1c80b537bd5595f" => :big_sur
+    sha256 "0daa181e0404b7763e2f4ecaa14fdae1db9a426b351c4d44d145c0bc8f695e66" => :catalina
+    sha256 "4275eb764939e9d75aa0d5e5bbe70fd8bed4a957ed5293fba1855ebe9a5546cb" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -37,6 +37,10 @@ class Imagemagick < Formula
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "libx11"
+  end
 
   skip_clean :la
 
@@ -63,13 +67,16 @@ class Imagemagick < Formula
       --with-lqr
       --without-fftw
       --without-pango
-      --without-x
       --without-wmf
       --enable-openmp
       ac_cv_prog_c_openmp=-Xpreprocessor\ -fopenmp
       ac_cv_prog_cxx_openmp=-Xpreprocessor\ -fopenmp
       LDFLAGS=-lomp\ -lz
     ]
+
+    on_macos do
+      args << "--without-x"
+    end
 
     # versioned stuff in main tree is pointless for us
     inreplace "configure", "${PACKAGE_NAME}-${PACKAGE_VERSION}", "${PACKAGE_NAME}"
