@@ -47,11 +47,10 @@ if [[ "$EXTENSION" =~ imap ]]; then
   [ "$checksum" != "" ] && sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
 else
   if [[ "$EXTENSION" =~ pcov ]] ||
-     [[ "$VERSION" =~ grpc@(7.[0-4]|8.0) ]] ||
      [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
-     [[ "$VERSION" =~ swoole@7.[1-4] ]] ||
+     [[ "$VERSION" =~ swoole@(7.[1-4]|8.[0-1]) ]] ||
      [[ "$VERSION" =~ xdebug@(7.[3-4]|8.[0-1]) ]] ||
-     [[ "$VERSION" =~ igbinary@(7.[0-4]|8.[0-1]) ]] ||
+     [[ "$VERSION" =~ (grpc|igbinary)@(7.[0-4]|8.[0-1]) ]] ||
      [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]] ||
      [[ "$VERSION" =~ imagick@(5.6|7.[0-4]) ]]; then
     sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"

@@ -11,14 +11,14 @@
 
 |Extension|PHP Version|
 |--- |--- |
-|`amqp`|`PHP 5.6` to `PHP 7.4`|
-|`grpc`|`PHP 5.6` to `PHP 8.0`|
+|`amqp`|`PHP 5.6` to `PHP 8.1`|
+|`grpc`|`PHP 5.6` to `PHP 8.1`|
 |`igbinary`|`PHP 5.6` to `PHP 8.1`|
-|`imagick`|`PHP 5.6` to `PHP 7.4`|
+|`imagick`|`PHP 5.6` to `PHP 8.1`|
 |`imap`|`PHP 5.6` to `PHP 8.1`|
 |`pcov`|`PHP 7.1` to `PHP 8.1`|
-|`protobuf`|`PHP 5.6` to `PHP 7.4`|
-|`swoole`|`PHP 5.6` to `PHP 8.0`|
+|`protobuf`|`PHP 5.6` to `PHP 8.1`|
+|`swoole`|`PHP 5.6` to `PHP 8.1`|
 |`xdebug`|`PHP 5.6` to `PHP 8.1`|
 
 ## Usage

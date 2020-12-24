@@ -39,7 +39,7 @@ class AbstractPhpExtension < Formula
     class_name = self.class.name.split("::").last.split("AT").first
     raise "Unable to guess PHP extension name for #{class_name}" unless class_name
 
-    class_name.downcase
+    class_name.downcase.tr("0-9", "")
   end
 
   def extension_type

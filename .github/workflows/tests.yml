@@ -16,21 +16,19 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        extensions: [amqp, grpc, igbinary, imagick, imap, pcov, protobuf, swoole, xdebug]
-        php-versions: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1']
-        exclude:
-          - extensions: pcov
-            php-versions: '5.6'
-          - extensions: pcov
-            php-versions: '7.0'
+        php-versions: ['7.1', '7.2', '7.3', '7.4', '8.0', '8.1']
+        extensions: ['amqp, grpc, igbinary, imagick, imap, pcov, protobuf, swoole, xdebug']
         include:
-          - extensions: xdebug2
-            php-versions: '7.2'
-          - extensions: xdebug2
-            php-versions: '7.3'
-          - extensions: xdebug2
-            php-versions: '7.4'
-    name: PHP ${{ matrix.php-versions }}
+          - php-versions: '5.6'
+            extensions: amqp, grpc, igbinary, imagick, imap, protobuf, swoole, xdebug
+          - php-versions: '7.0'
+            extensions: amqp, grpc, igbinary, imagick, imap, protobuf, swoole, xdebug
+          - php-versions: '7.2'
+            extensions: xdebug2
+          - php-versions: '7.3'
+            extensions: xdebug2
+          - php-versions: '7.4'
+            extensions: xdebug2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
