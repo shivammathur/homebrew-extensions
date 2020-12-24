@@ -8,15 +8,15 @@ class ImapAT81 < AbstractPhp81Extension
   init
   desc "Imap PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/php/php-src/archive/master.tar.gz?v=8.1.0&build_time=1608743785"
+  url "https://github.com/php/php-src/archive/master.tar.gz?v=8.1.0&build_time=1608767389"
   version "8.1.0"
-  sha256 "7ebbf110443192d23dac16a671d7bf498735eee9f3c788614b8ee3dc034e54c2"
+  sha256 "c51ccd0cff3bc90c150a2fd7fbd6949797634a8dd1bf1d9e15b90da68a94f170"
   license "PHP-3.01"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 8
-    sha256 "c30e2c44e3e18a749665b44271ce5a9dc1a25325bd5766ddf7ab25801d29776d" => :catalina
+    rebuild 9
+    sha256 "2085dc46bf924a489ec8b7c93ba1005c47a87fd1ec0db5fdd642060a5be9fc20" => :catalina
   end
 
   depends_on "imap-uw"
