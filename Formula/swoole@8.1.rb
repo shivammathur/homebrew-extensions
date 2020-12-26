@@ -16,8 +16,8 @@ class SwooleAT81 < AbstractPhp81Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any
-    rebuild 1
-    sha256 "7915da3878218e360b6f2d905714e170517835030065f36195668cf291f1e786" => :catalina
+    rebuild 2
+    sha256 "0a47f200dad8caa98e5fed1d46fd8867447503a66448a3c11223422fb8f03278" => :catalina
   end
 
   def install
