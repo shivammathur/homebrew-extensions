@@ -16,9 +16,10 @@ class Grpc < Formula
 
   bottle do
     cellar :any
-    sha256 "138894ca88f8704b6521110684e56227fc9558fdd1a28f1ea8b12eeac795ed0e" => :big_sur
-    sha256 "afb7a2c507cf53ee6b5e49516f1c9c60b6d5d4518866aed1bd4cc3a5659a1a13" => :catalina
-    sha256 "226094cffe117426c593d84ad4c8d736018d0f72de594fac3b9c3c434cb9f934" => :mojave
+    rebuild 1
+    sha256 "94f48994c3cfdf7ed6c0758caddf2ce3ab4382b129a382e6ea263c1f58a659c5" => :big_sur
+    sha256 "674373931a0c55ea13f4931169f01811ac309a942d9f1d10ef10ba5b43ab1c24" => :catalina
+    sha256 "3d0d1ca1014d635e2876cfc36543662312f4a4e3a7ec5c0f711b7e4e0ace6a35" => :mojave
   end
 
   depends_on "autoconf" => :build
@@ -31,6 +32,8 @@ class Grpc < Formula
   depends_on "openssl@1.1"
   depends_on "protobuf"
   depends_on "re2"
+
+  uses_from_macos "zlib"
 
   def install
     mkdir "cmake/build" do
@@ -63,7 +66,7 @@ class Grpc < Formula
       system "cmake", *args
       system "make", "grpc_cli"
       bin.install "grpc_cli"
-      lib.install Dir["libgrpc++_test_config*.dylib"]
+      lib.install Dir["libgrpc++_test_config*.{dylib,so}.*"]
     end
   end
 
