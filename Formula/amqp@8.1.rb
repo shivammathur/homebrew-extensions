@@ -16,8 +16,8 @@ class AmqpAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 3
-    sha256 "4ba01971f464d8179a721cb4b66002e67504a2b51099b0c086baa10f80e73326" => :catalina
+    rebuild 4
+    sha256 "1d87a92780de6aa6a64e121ddd79e6ac6dd6e7ab38b8bc7f0401d2372fac7e97" => :catalina
   end
 
   depends_on "rabbitmq-c"
