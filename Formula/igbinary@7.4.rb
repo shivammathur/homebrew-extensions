@@ -8,15 +8,15 @@ class IgbinaryAT74 < AbstractPhp74Extension
   init
   desc "Igbinary PHP extension"
   homepage "https://github.com/igbinary/igbinary"
-  url "https://github.com/igbinary/igbinary/archive/3.2.0.tar.gz"
-  sha256 "9a1e1e6fd982aeff70e0ae05b822173d8492cfc9550d6172041d905c5e51da68"
+  url "https://github.com/igbinary/igbinary/archive/3.2.1.tar.gz"
+  sha256 "bc26f361f750bc9894741201e6851a3445a20d185969c08bf311264b7dc9cd6b"
   head "https://github.com/igbinary/igbinary.git"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    sha256 "c149da3594a8e4b84c77505b800448e67adb833a938df0ba806a74fb3558823f" => :catalina
+    sha256 "8baa83715a322b169999f4836f7e17494bc85735e354ca18bd5029e332fc26b3" => :catalina
   end
 
   def install
