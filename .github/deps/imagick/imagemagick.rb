@@ -5,6 +5,7 @@ class Imagemagick < Formula
   mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-53.tar.xz"
   sha256 "fee347bac7eab1a60ea5eefaf25f944625a6d6a5b58d40d279913da5e2cf4fb5"
   license "ImageMagick"
+  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git"
 
   livecheck do
@@ -13,10 +14,10 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 "290d11dbab91e769ebf777dc843b04a9daa9f5fae4f544cd20ae938f0f2e3f68" => :big_sur
-    sha256 "b123abed953ee6753b941a8bf626b62466d32b8d295f9aa0e57797184a24608e" => :arm64_big_sur
-    sha256 "ad2f7f53d9378270cb52c060bed93422e8517ff3444a4a6329c93179b4631550" => :catalina
-    sha256 "8a90d32843c24b6408654b62e065a75bf6d7a6bfc3134ab8d238fcc134e2e2a9" => :mojave
+    sha256 "afa8b57f16e00d0d243f28887f7a778323946a4b110785a5aec0fc2e7fc0590d" => :big_sur
+    sha256 "b894c57032c539ec9657385a41a28a9ada6c35b2168d0c97297156d0fcda7284" => :arm64_big_sur
+    sha256 "3f6d1ec8b4276de89c7a840915c97c861d64ffda448f9eabd84c5c28720d6ad6" => :catalina
+    sha256 "b5ff4d19be5c2032f45267056ed8b81d8270b0eb588125ccc1d9edca3298d437" => :mojave
   end
 
   depends_on "pkg-config" => :build
