@@ -16,8 +16,8 @@ class PcovAT81 < AbstractPhp81Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    rebuild 19
-    sha256 "d93f8c515f6037e6e0ed9a555f8e611944b67f0007d394a83be4565baf9b2690" => :catalina
+    rebuild 20
+    sha256 "2795a2d2d06a4837a3b3953aad4430737fc4438a0d9c4b4deab283783d7e5430" => :catalina
   end
 
   def install
