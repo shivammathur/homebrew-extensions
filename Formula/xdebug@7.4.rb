@@ -15,6 +15,7 @@ class XdebugAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 "414edb9214931a65e4bb800299b77a027bb8c074490061e46db7f408249081d4" => :arm64_big_sur
     sha256 "d8278ef8e1ef8e8a0851d7f421ca03db2384ba6e83ac42b0ad5be74598176a61" => :catalina
   end
 
