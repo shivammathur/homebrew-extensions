@@ -141,11 +141,7 @@ jobs:
         run: |
           mkdir bottles
           cd bottles
-          if [[ "${{ github.event.pull_request.title }}" = *@8.1* ]]; then
-            brew test-bot --keep-old --only-formulae --root-url=https://dl.bintray.com/${{ github.repository_owner }}/extensions
-          else
-            brew test-bot --only-formulae --root-url=https://dl.bintray.com/${{ github.repository_owner }}/extensions
-          fi
+          brew test-bot --only-formulae --root-url=https://dl.bintray.com/${{ github.repository_owner }}/extensions
 
       - name: Output brew test-bot --only-formulae failures
         if: always()

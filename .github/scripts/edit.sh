@@ -30,7 +30,7 @@ fetch() {
     else
       sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
     fi
-    [ "$checksum" != "" ] && sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
+    [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   else
     if [[ "$EXTENSION" =~ pcov ]] ||
        [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
@@ -63,14 +63,17 @@ check_version() {
 
 match_args() {
   IFS=' ' read -r -a args <<< "$GITHUB_MESSAGE"
+  found='0'
   for arg in "${args[@]}"; do
     if [[ "$arg" =~ --build-only-"$EXTENSION"$ ]]; then
       fetch
+      found='1'
       break
     fi
   done
-  check_version
-  exit 0
+  if [ $found == '1' ]; then
+    check_version
+  fi
 }
 
 create_package
