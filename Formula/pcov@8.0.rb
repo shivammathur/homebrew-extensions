@@ -17,6 +17,7 @@ class PcovAT80 < AbstractPhp80Extension
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
     rebuild 2
+    sha256 "6bbb19c068527c4f04b476d3cfc6b72d2447c6a4eef876fa0c299c58e19d9122" => :arm64_big_sur
     sha256 "54a5ec7c51c96354fe13a3b92b4aead1282c9d2c637f293651b762c62ad8aa54" => :catalina
   end
 
