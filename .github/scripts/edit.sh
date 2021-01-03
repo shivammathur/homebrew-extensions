@@ -30,7 +30,7 @@ fetch() {
     else
       sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
     fi
-    [ "$checksum" != "" ] && sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
+    [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   else
     if [[ "$EXTENSION" =~ pcov ]] ||
        [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
