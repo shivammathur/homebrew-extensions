@@ -1,7 +1,6 @@
 unbottle() {
   sed -Ei '/    rebuild.*/d' ./Formula/"$VERSION".rb
   sed -Ei '/    sha256.*=> :catalina$/d' ./Formula/"$VERSION".rb
-  sed -Ei '/    sha256.*=> :big_sur$/d' ./Formula/"$VERSION".rb
 }
 
 create_package() {
@@ -27,9 +26,9 @@ fetch() {
     php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
     checksum=$(curl -sSL "$php_url" | shasum -a 256 | cut -d' ' -f 1)
     if [[ "$php_url" = *build_time* ]]; then
-      sed -i '' "s|build_time.*|build_time=$(date +%s)\"|g" ./Formula/"$VERSION".rb
+      sed -i "s|build_time.*|build_time=$(date +%s)\"|g" ./Formula/"$VERSION".rb
     else
-      sed -i '' "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
+      sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
     fi
     [ "$checksum" != "" ] && sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   else
@@ -43,7 +42,7 @@ fetch() {
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
       url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
       checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
-      sed -i '' "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
+      sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
     fi
   fi
   check_version
