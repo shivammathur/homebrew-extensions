@@ -1,14 +1,9 @@
 name: 'Test Formulae'
 on:
-  pull_request:
-    paths-ignore:
-      - '**.md'
-  push:
-    paths-ignore:
-      - '**.md'
+  workflow_dispatch:
   repository_dispatch:
   schedule:
-    - cron: '30 4 * * *'
+    - cron: '30 5 * * *'
 jobs:
   tests:
     if: "!contains(github.event.head_commit.message, 'skip-test')"

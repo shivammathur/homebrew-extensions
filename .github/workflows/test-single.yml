@@ -1,0 +1,40 @@
+name: 'Test Formulae'
+on:
+  workflow_dispatch:
+    inputs:
+      macos:
+        description: macOS version
+        required: true
+      extension:
+        description: Extension name
+        required: true
+      php:
+        description: PHP version
+        required: true
+jobs:
+  tests:
+    runs-on: ${{github.event.inputs.macos}}
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@develop
+        with:
+          php-version: ${{github.event.inputs.php}}
+          extensions: ${{github.event.inputs.extension}}
+      - name: Testing PHP version
+        run: |
+          php -v
+          php -r "if(strpos(phpversion(), '${{ github.event.inputs.php }}') === false) {throw new Exception('Wrong PHP version Installed');}"
+          php -m
+      - name: Testing Extensions
+        if: github.event.inputs.extension != 'xdebug2'
+        run: php -r "if(! extension_loaded('$extension')) {throw new Exception('$extension not found');}"
+        env:
+          extension: github.event.inputs.extension
+
+      - name: Testing Xdebug2
+        if: github.event.inputs.extension == 'xdebug2'
+        run: php -r "if(phpversion('xdebug')!='2.9.8') {throw new Exception('xdebug2 not found');}"
