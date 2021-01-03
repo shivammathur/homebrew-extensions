@@ -16,6 +16,7 @@ class PcovAT71 < AbstractPhp71Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
+    sha256 "b6fe9f2881fe75d89521aff2ce633b5ce3775eaad65e011c17531059d90de796" => :arm64_big_sur
     sha256 "08a4ce99edb88feefe0e2e8f7046ba89ae1f8138a6391ca7cd98d74a2e107c6a" => :catalina
   end
 
