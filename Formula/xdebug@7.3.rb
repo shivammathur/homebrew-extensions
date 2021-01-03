@@ -15,6 +15,7 @@ class XdebugAT73 < AbstractPhp73Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 "7e2cb925d604e3e5c8beb9629cf2ddda1c3eeed79edbd8398f957a0f62dcf455" => :arm64_big_sur
     sha256 "132599e842a99310750aad6244bdeec838ce9961464a64752eaa5852364dbe07" => :catalina
   end
 
