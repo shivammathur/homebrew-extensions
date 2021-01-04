@@ -21,6 +21,11 @@ class ImagickAT70 < AbstractPhp70Extension
 
   depends_on "imagemagick"
 
+  patch do
+    url "https://github.com/Imagick/imagick/commit/b4e676607c23e3b280d5312c0cd2d79786772547.patch"
+    sha256 "3aac4980d1d38ddca16e0469ea257ec6405474ee8438b47d4c00aac94911cc49"
+  end
+
   def install
     safe_phpize
     system "./configure"
