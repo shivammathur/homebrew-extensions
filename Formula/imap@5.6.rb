@@ -14,6 +14,7 @@ class ImapAT56 < AbstractPhp56Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 "8b897ed9ba583450ac4d4cfc7144615a94c9f784429170f05f89966c2ff62995" => :arm64_big_sur
     sha256 "2bcc9aec3c7f63538306eff04f5a06d3ea1dda6241b9701090fcd5d765a57b89" => :catalina
   end
 
