@@ -14,6 +14,7 @@ class ImapAT80 < AbstractPhp80Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 "242b5c3c37920356fdedd22241a5e8cbdc7a5aeb5574f0e7eaebe49313cf85b4" => :arm64_big_sur
     sha256 "8c55e80ee77b7a588d8fcd774c85e6432ba6a8e29f9656d4994efa7fb923e8b9" => :catalina
   end
 
