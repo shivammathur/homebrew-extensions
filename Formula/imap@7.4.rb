@@ -14,6 +14,7 @@ class ImapAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 "2fb4cce828be6949481da32d460c0ece219c7f14d5f8bc0558a0ca29648d94fb" => :arm64_big_sur
     sha256 "1419135a58343605fb3e86ef06a30039c4400d565e568e72097c59ae86acdee7" => :catalina
   end
 
