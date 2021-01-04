@@ -63,17 +63,13 @@ check_version() {
 
 match_args() {
   IFS=' ' read -r -a args <<< "$GITHUB_MESSAGE"
-  found='0'
   for arg in "${args[@]}"; do
     if [[ "$arg" =~ --build-only-"$EXTENSION"$ ]]; then
       fetch
-      found='1'
+      check_version
       break
     fi
   done
-  if [ $found == '1' ]; then
-    check_version
-  fi
 }
 
 create_package
