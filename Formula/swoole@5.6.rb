@@ -16,7 +16,6 @@ class SwooleAT56 < AbstractPhp56Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    sha256 "5608885c4ce9b92d4df80afe30bf197e41b92056471765a20354e3e99aacb1c7" => :catalina
   end
 
   def install
