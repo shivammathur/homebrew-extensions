@@ -35,7 +35,6 @@ class ImapAT81 < AbstractPhp81Extension
            "--with-kerberos"
     system "make"
     prefix.install "modules/imap.so"
-    (include/"php/ext"/extension).install Dir["php_*.h"]
     write_config_file
   end
 end
