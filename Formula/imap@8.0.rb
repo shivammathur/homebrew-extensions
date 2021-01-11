@@ -33,7 +33,6 @@ class ImapAT80 < AbstractPhp80Extension
            "--with-kerberos"
     system "make"
     prefix.install "modules/imap.so"
-    (include/"php/ext"/extension).install Dir["php_*.h"]
     write_config_file
   end
 end
