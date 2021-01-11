@@ -15,6 +15,7 @@ class ImapAT70 < AbstractPhp70Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     rebuild 1
+    sha256 "88cd5bd0d9c457e7a089d3076369723bc853bf1199e06478f59e5ceed631a120" => :arm64_big_sur
     sha256 "8a04c5500e1c4b7f9d8dadd271a0b419c30b90a27ee2f1bdbb20a2ce34e05ab0" => :catalina
   end
 
