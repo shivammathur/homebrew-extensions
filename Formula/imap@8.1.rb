@@ -10,7 +10,7 @@ class ImapAT81 < AbstractPhp81Extension
   homepage "https://github.com/php/php-src"
   url "https://github.com/php/php-src/archive/master.tar.gz?v=8.1.0&build_time=1610380052"
   version "8.1.0"
-  sha256 "8973fc573644c5e106436511c98a3118a4fe83fd7bfbc7686e0934e81f116e4a"
+  sha256 "f40f7f047df1f8405db226b905e1545296ecddfbbffe417a9aa74297ee79f1d2"
   license "PHP-3.01"
 
   bottle do

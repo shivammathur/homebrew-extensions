@@ -1,6 +1,7 @@
 unbottle() {
   sed -Ei '/    rebuild.*/d' ./Formula/"$VERSION".rb
-  sed -Ei '/    sha256.*=> :catalina$/d' ./Formula/"$VERSION".rb
+  sed -Ei '/    sha256.*=> :catalina$/d' ./Formula/"$VERSION".rb || true
+  sed -Ei '/    sha256.*=> :arm64_big_sur$/d' ./Formula/"$VERSION".rb || true
 }
 
 create_package() {
