@@ -16,7 +16,6 @@ class SwooleAT70 < AbstractPhp70Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any
-    sha256 "4e0abf4220c24c5fb62fea6178a5a199709ed0d3b3509acb82d648c3763a6bcb" => :catalina
   end
 
   def install
