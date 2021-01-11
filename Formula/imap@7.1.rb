@@ -15,6 +15,7 @@ class ImapAT71 < AbstractPhp71Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     rebuild 1
+    sha256 "c6ec33e9faaf23bbf9a8aadaf6d09121577184120c9297ab34938f96c1dc86ab" => :arm64_big_sur
     sha256 "53862019fdf5f23fb17029ee6260ee11f23d7415353b4994183f1cadb1642786" => :catalina
   end
 
