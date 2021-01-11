@@ -8,14 +8,13 @@ class ImapAT73 < AbstractPhp73Extension
   init
   desc "Imap PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://www.php.net/distributions/php-7.3.25.tar.xz"
-  sha256 "c71c00ad03079efb78d1a6b8623ca4f725be697dbd9a46debacbcc9a2475f329"
+  url "https://www.php.net/distributions/php-7.3.26.tar.xz"
+  sha256 "d93052f4cb2882090b6a37fd1e0c764be1605a2461152b7f6b8f04fa48875208"
   license "PHP-3.01"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     sha256 "8998ce6b613d1c17ca96b9bfc0330896f61037646c54d0ff2118b7794e1b4861" => :arm64_big_sur
-    sha256 "33d4f095b95c4652271273ac9f0730c111cd657c8b97c81abdde770e2e5789f6" => :catalina
   end
 
   depends_on "imap-uw"
