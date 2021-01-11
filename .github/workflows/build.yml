@@ -106,9 +106,9 @@ jobs:
         os: ['macos-10.15']
 #        os: ['macos-11.0', 'macos-10.15']
         arm: ['0']
-        include:
-          - os: 'macos-11.0-m1'
-            arm: '1'
+#        include:
+#          - os: 'macos-11.0-m1'
+#            arm: '1'
       fail-fast: false
     runs-on: ${{ matrix.os }}
     timeout-minutes: 300

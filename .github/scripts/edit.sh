@@ -35,7 +35,7 @@ fetch() {
   else
     if [[ "$EXTENSION" =~ pcov ]] ||
        [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
-       [[ "$VERSION" =~ swoole@(7.[1-4]|8.[0-1]) ]] ||
+       [[ "$VERSION" =~ swoole@(7.[2-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ xdebug@(7.[3-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ (grpc|igbinary)@(7.[0-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]] ||
