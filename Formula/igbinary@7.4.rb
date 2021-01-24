@@ -16,6 +16,7 @@ class IgbinaryAT74 < AbstractPhp74Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
+    sha256 "ba6cfaeda377cf92c6a06bd61d1aee5da4c1911ae5818a0a27a5124f9e91f317" => :big_sur
     sha256 "64a20280768c3873e2a20f8cad54ca3ca3eff861f93dd5314efd7c9f9bfdda4b" => :arm64_big_sur
     sha256 "8baa83715a322b169999f4836f7e17494bc85735e354ca18bd5029e332fc26b3" => :catalina
   end
