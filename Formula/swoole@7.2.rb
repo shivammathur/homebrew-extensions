@@ -16,6 +16,7 @@ class SwooleAT72 < AbstractPhp72Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any
+    sha256 "a2bb543cdd127867b3b329fdf877832e8a56f21a165a998cfec429862310e1d0" => :big_sur
     sha256 "5ef4f089bc6a39aa30785eca79e3a05452f2cbcb6a5d8ce9e210f9b58a7a715a" => :catalina
   end
 
