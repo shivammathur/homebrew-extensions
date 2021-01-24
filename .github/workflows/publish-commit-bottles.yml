@@ -27,9 +27,6 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Patch brew
-        run: sed -i "s/n.class_type? && n.parent_class&.const_name == \"Formula\"/n.class_type?/" $(brew --repository)/Library/Homebrew/utils/ast.rb
-
       - name: Setup git
         run: |
           git config --local user.email homebrew-test-bot@lists.sfconservancy.org

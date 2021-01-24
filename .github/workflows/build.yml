@@ -103,12 +103,11 @@ jobs:
     if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
     strategy:
       matrix:
-        os: ['macos-10.15']
-#        os: ['macos-11.0', 'macos-10.15']
+        os: ['macos-11.0', 'macos-10.15']
         arm: ['0']
-#        include:
-#          - os: 'macos-11.0-m1'
-#            arm: '1'
+        include:
+          - os: 'macos-11.0-m1'
+            arm: '1'
       fail-fast: false
     runs-on: ${{ matrix.os }}
     timeout-minutes: 300
@@ -133,9 +132,6 @@ jobs:
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
-
-      - name: Patch brew
-        run: sed -i '' "s/n.class_type? && n.parent_class&.const_name == \"Formula\"/n.class_type?/" $(brew --repository)/Library/Homebrew/utils/ast.rb
 
       - name: Run brew test-bot --only-formulae
         run: |
