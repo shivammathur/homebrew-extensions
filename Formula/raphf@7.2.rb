@@ -15,6 +15,10 @@ class RaphfAT72 < AbstractPhp72Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    cellar :any_skip_relocation
+    sha256 "9c89f8bfdda1481c9368113591d65c2b61c74a42d377d564de3adec1fcb5f4cc" => :big_sur
+    sha256 "3517af4e0eb8c7b625fa9e2deed9788fac1b377738b186670c7a3b5275fadcc4" => :arm64_big_sur
+    sha256 "d3ec37c822e6bacc4abbc78ed41aa98f4267d342941f0ac5955b690dd67f06bc" => :catalina
   end
 
   def install
