@@ -16,6 +16,7 @@ class GrpcAT56 < AbstractPhp56Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
+    sha256 "f622cc6a4a7765f6801cea51606bb654c85b856ff3c967c0bce38221690123ee" => :big_sur
     sha256 "a4bea154f0ed31c4f4fe7beb6f3cbe467057a7aad4a44f9db9f1e2c6c545f178" => :catalina
   end
 
