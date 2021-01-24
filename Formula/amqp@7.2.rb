@@ -15,6 +15,7 @@ class AmqpAT72 < AbstractPhp72Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 "8a8056b1e3c4cd1dae1defa8092ce42413b97e4f338840a6b8d9d094b6b8ee88" => :big_sur
     sha256 "95a0c39beed8dcb4ae8a3b31f040f12b8032bdf4d5fabdfcc5c0f183faa79e49" => :catalina
   end
 
