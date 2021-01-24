@@ -16,6 +16,7 @@ class ImagickAT80 < AbstractPhp80Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 "291d56d0d45beba209b198af59a4579444e001a4a6a6f2fb7ab558f84238ebeb" => :big_sur
     sha256 "6e02e1d602552f3613f572b10e386144e4fa2ed51b7c74f625a3ae166b7df391" => :arm64_big_sur
     sha256 "b8c6372efdeb95f7c30eeefa47fb03c98e4ed316a33c231207d16d7f151a3173" => :catalina
   end
