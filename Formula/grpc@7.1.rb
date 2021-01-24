@@ -16,6 +16,7 @@ class GrpcAT71 < AbstractPhp71Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
+    sha256 "7ad05a09e1f6cedb6cdc87f372729ea7d880fcb88cd0866906e8b342d47c6f7d" => :big_sur
     sha256 "2d6c37c8a23ebee19e7bc407ad6a7dfe6e74b23d42e8ae1e96dc7cfd91d9801e" => :catalina
   end
 
