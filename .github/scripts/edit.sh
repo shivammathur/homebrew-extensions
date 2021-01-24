@@ -1,5 +1,6 @@
 unbottle() {
-  sed -Ei '/    rebuild.*/d' ./Formula/"$VERSION".rb
+  sed -Ei 's/\?init=true//' ./Formula"$VERSION".rb || true
+  sed -Ei '/    rebuild.*/d' ./Formula/"$VERSION".rb || true
   sed -Ei '/    sha256.*=> :catalina$/d' ./Formula/"$VERSION".rb || true
   sed -Ei '/    sha256.*=> :big_sur$/d' ./Formula/"$VERSION".rb || true
   sed -Ei '/    sha256.*=> :arm64_big_sur$/d' ./Formula/"$VERSION".rb || true
@@ -38,7 +39,7 @@ fetch() {
        [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
        [[ "$VERSION" =~ swoole@(7.[2-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ xdebug@(7.[3-4]|8.[0-1]) ]] ||
-       [[ "$VERSION" =~ (grpc|igbinary)@(7.[0-4]|8.[0-1]) ]] ||
+       [[ "$VERSION" =~ (grpc|igbinary|propro|raphf)@(7.[0-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]] ||
        [[ "$VERSION" =~ imagick@(5.6|7.[0-4]) ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
@@ -51,12 +52,15 @@ fetch() {
 }
 
 check_version() {
+  package="${VERSION//@/:}"
   new_version=$(grep -Eo "[0-9]+\.[0-9]+\.[0-9]+" Formula/"$VERSION".rb | head -n 1)
-  existing_version=$(curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" -s https://api.bintray.com/packages/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$package" | sed -e 's/^.*"latest_version":"\([^"]*\)".*$/\1/')
-  latest_version=$(printf "%s\n%s" "$new_version" "$existing_version" | sort | tail -n 1)
+  existing_version=$(curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" -s https://api.bintray.com/packages/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$package" | sed -e 's/^.*"latest_version":"\([^"]*\)".*$/\1/' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+')
+  if [ "$existing_version" != '' ]; then
+    new_version=$(printf "%s\n%s" "$new_version" "$existing_version" | sort | tail -n 1)
+  fi
   echo "existing label: $existing_version"
-  echo "latest label: $latest_version"
-  if ! [[ "$GITHUB_MESSAGE" = *--build-all* ]] && [ "$latest_version" = "$existing_version" ] && ! [[ "$VERSION" =~ .*@8.1 ]]; then
+  echo "new label: $new_version"
+  if ! [[ "$GITHUB_MESSAGE" = *--build-all* ]] && [ "$new_version" = "$existing_version" ] && ! [[ "$VERSION" =~ .*@8.1 ]]; then
     sudo cp /tmp/"$VERSION".rb Formula/"$VERSION".rb
   else
     unbottle
