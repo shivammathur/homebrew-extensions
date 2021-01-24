@@ -16,6 +16,7 @@ class IgbinaryAT71 < AbstractPhp71Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
+    sha256 "ff3c4d66eed4334c497121aab8d72096219b9eb2663ea09b371d16adee1b7dc7" => :big_sur
     sha256 "afce5082a3cf67e54fb481e6ac2c41147c4a7c207b81353c6104a908269c445c" => :arm64_big_sur
     sha256 "0a637b2a936102aebf8211ef91f58d8b996398242ea7fd0bb834e9465c4fac87" => :catalina
   end
