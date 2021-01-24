@@ -8,7 +8,7 @@ class ProproAT56 < AbstractPhp56Extension
   init
   desc "Propro PHP extension"
   homepage "https://github.com/m6w6/ext-propro"
-  url "https://pecl.php.net/get/propro-1.0.2.tgz?init=true"
+  url "https://pecl.php.net/get/propro-1.0.2.tgz"
   sha256 "6b4e785adcc8378148c7ad06aa82e71e1d45c7ea5dbebea9ea9a38fee14e62e7"
   head "https://github.com/m6w6/ext-propro.git"
   license "BSD-2-Clause"
