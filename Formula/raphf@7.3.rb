@@ -8,7 +8,7 @@ class RaphfAT73 < AbstractPhp73Extension
   init
   desc "Raphf PHP extension"
   homepage "https://github.com/m6w6/ext-raphf"
-  url "https://pecl.php.net/get/raphf-2.0.1.tgz?init=true"
+  url "https://pecl.php.net/get/raphf-2.0.1.tgz"
   sha256 "da3566db17422e5ef08b7ff144162952aabc14cb22407cc6b1d2a2d095812bd0"
   head "https://github.com/m6w6/ext-raphf.git"
   license "BSD-2-Clause"
