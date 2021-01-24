@@ -17,6 +17,7 @@ class SwooleAT56 < AbstractPhp56Extension
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
     rebuild 1
+    sha256 "d362d6909b98f39ec895c6674187f4b87b47a221655f842237b9c6d89b1b4650" => :big_sur
     sha256 "f28428b883330b4244a7f89185afdcd7f08b5409e95441ee8c11438c3b2ea823" => :arm64_big_sur
     sha256 "ccbb598f8294da5e874c080bbbfbee8c470ef3dd12c7d4c599ccc94c0290c243" => :catalina
   end
