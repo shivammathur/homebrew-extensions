@@ -17,6 +17,7 @@ class Xdebug2AT72 < AbstractPhp72Extension
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
     rebuild 1
+    sha256 "849db23fc149074d58772947adce827f8eb04b95e42dc8a16c109fa8b6f5f8f2" => :big_sur
     sha256 "884c4d7ecff7a25a153b564acfd8ab56cd23d84ff6638ca2330157a39ea84992" => :arm64_big_sur
     sha256 "be532f6cf3d6037d28a6cc03154fc673920f1df41d559eb19ab69c67fe05dece" => :catalina
   end
