@@ -8,16 +8,14 @@ class GrpcAT73 < AbstractPhp73Extension
   init
   desc "gRPC PHP extension"
   homepage "https://github.com/grpc/grpc"
-  url "https://pecl.php.net/get/grpc-1.34.0.tgz"
-  sha256 "70a0f34ac30608e52d83bba9639b2cf6878942813f4aee6d6e842e689ea27485"
+  url "https://pecl.php.net/get/grpc-1.35.0.tgz"
+  sha256 "d8de1ad5df0bc424699a44133141d9d9c936d3803ae01e5510350590b8c1e4ae"
   head "https://github.com/grpc/grpc.git"
   license "Apache-2.0"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    sha256 "9fea8736041db3f1987bad13a3097d49c8064f2a1533f69439e2a46d9da264e3" => :big_sur
-    sha256 "2769a35b65008e336121ccbcf24dd72d8703d46125de80329a04c5a6c9160172" => :catalina
   end
 
   depends_on "grpc"
