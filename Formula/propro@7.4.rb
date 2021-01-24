@@ -15,6 +15,10 @@ class ProproAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    cellar :any_skip_relocation
+    sha256 "9d04dd237f0352806f77c8b50c0c0f94067288d88b04380132923e731110476d" => :big_sur
+    sha256 "0de4a541bce5a2cbda427862ac7221b8af5f5a4c2efeba628b71e110a1646b61" => :arm64_big_sur
+    sha256 "6b4d5901d230a7316c4be3991c29b3997115e147bc40dba88b54ca7d1d1ebc44" => :catalina
   end
 
   def install
