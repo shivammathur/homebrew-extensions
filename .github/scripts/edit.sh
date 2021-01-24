@@ -1,5 +1,5 @@
 unbottle() {
-  sed -Ei 's/\?init=true//' ./Formula"$VERSION".rb || true
+  sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
   sed -Ei '/    rebuild.*/d' ./Formula/"$VERSION".rb || true
   sed -Ei '/    sha256.*=> :catalina$/d' ./Formula/"$VERSION".rb || true
   sed -Ei '/    sha256.*=> :big_sur$/d' ./Formula/"$VERSION".rb || true
@@ -36,10 +36,10 @@ fetch() {
     [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   else
     if [[ "$EXTENSION" =~ pcov ]] ||
-       [[ "$VERSION" =~ protobuf@7.[0-4] ]] ||
+       [[ "$VERSION" =~ (protobuf|propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ swoole@(7.[2-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ xdebug@(7.[3-4]|8.[0-1]) ]] ||
-       [[ "$VERSION" =~ (grpc|igbinary|propro|raphf)@(7.[0-4]|8.[0-1]) ]] ||
+       [[ "$VERSION" =~ (grpc|igbinary|raphf)@(7.[0-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]] ||
        [[ "$VERSION" =~ imagick@(5.6|7.[0-4]) ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"

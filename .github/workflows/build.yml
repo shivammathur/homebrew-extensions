@@ -49,6 +49,10 @@ jobs:
             php: '5.6'
           - extension: pcov
             php: '7.0'
+          - extension: propro
+            php: '8.0'
+          - extension: propro
+            php: '8.1'
         include:
           - extension: xdebug2
             php: '7.2'
