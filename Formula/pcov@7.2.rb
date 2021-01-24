@@ -17,6 +17,7 @@ class PcovAT72 < AbstractPhp72Extension
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
     rebuild 1
+    sha256 "b9846c66ff68e7fb5568bbcf71e6436fb6bda6a0e1ffa75a7bed79b88b1d6e8b" => :big_sur
     sha256 "aca2790ddd4a1ec745d97a9d4c5664d02211b9c85a2ad6aac1d007e9d6a281ba" => :arm64_big_sur
     sha256 "309d722ed33a93739434fd9949fd004078b051f26e3c75fe39e1d7250a9f7628" => :catalina
   end
