@@ -17,6 +17,7 @@ class GrpcAT81 < AbstractPhp81Extension
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
     rebuild 9
+    sha256 "c24f5bdb7c5faa1f9a8b4bc71b626554d2801eb4279e3fc6ba6e274f59c5e465" => :big_sur
     sha256 "dcfe0bec788c87607657a9dc2fd7a7cc851a7b7cce22dc57f6f7ad8b81e55446" => :catalina
   end
 
