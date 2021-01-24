@@ -15,6 +15,10 @@ class RaphfAT56 < AbstractPhp56Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    cellar :any_skip_relocation
+    sha256 "a5d24a8f7d53e4ab02d69c74a106ffdd1ac6f8ee71fa733fdcb137f3d5bc7332" => :big_sur
+    sha256 "e7797c0c43c1f7a12e1de5a44a7c049d49f550bec9cf4a04adab9e969ef8e940" => :arm64_big_sur
+    sha256 "06e552f187a8519541e3fcc3f7cfe91f359f2b062e99468d64f11976ab2f84e4" => :catalina
   end
 
   def install
