@@ -8,7 +8,7 @@ class ProproAT72 < AbstractPhp72Extension
   init
   desc "Propro PHP extension"
   homepage "https://github.com/m6w6/ext-propro"
-  url "https://pecl.php.net/get/propro-2.1.0.tgz?init=true"
+  url "https://pecl.php.net/get/propro-2.1.0.tgz"
   sha256 "7bba0653d90cd8f61816e13ac6c0f7102b4a16dc4c4e966095a121eeb4ae8271"
   head "https://github.com/m6w6/ext-propro.git"
   license "BSD-2-Clause"
