@@ -16,6 +16,10 @@ class ProproAT56 < AbstractPhp56Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
+    rebuild 1
+    sha256 "b3081c164ea776c264f740a8b6a36de5175ae809466db55fe0ed00d98c9b8e0d" => :big_sur
+    sha256 "a3f2e3c010769b49a2ab6ef07873362969b802c12c921f9c65471bf04897467c" => :arm64_big_sur
+    sha256 "a218bca11d1d3923ad2ccbe0142f73f0c04273d7effc3f04a7cff7a96a458767" => :catalina
   end
 
   def install
