@@ -8,7 +8,7 @@ class PeclHttpAT73 < AbstractPhp73Extension
   init
   desc "Pecl_http PHP extension"
   homepage "https://github.com/m6w6/ext-http"
-  url "https://pecl.php.net/get/pecl_http-3.2.4.tgz"
+  url "https://pecl.php.net/get/pecl_http-3.2.4.tgz?init=true"
   sha256 "37354ff7680b9b9839da8b908fff88227af7f6746c2611c873493af41d54f033"
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
@@ -26,7 +26,7 @@ class PeclHttpAT73 < AbstractPhp73Extension
   depends_on "shivammathur/extensions/raphf@7.3"
 
   def install
-    args %W[
+    args = %W[
       --with-http
       --with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}
       --with-http-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
@@ -37,6 +37,8 @@ class PeclHttpAT73 < AbstractPhp73Extension
     ]
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
     Dir.chdir "pecl_http-#{version}"
+    inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@7.3"
+    inreplace "src/php_http_api.h", "ext/propro", "ext/propro@7.3"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

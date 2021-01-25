@@ -8,7 +8,7 @@ class PeclHttpAT81 < AbstractPhp81Extension
   init
   desc "Pecl_http PHP extension"
   homepage "https://github.com/m6w6/ext-http"
-  url "https://pecl.php.net/get/pecl_http-4.0.0.tgz"
+  url "https://pecl.php.net/get/pecl_http-4.0.0.tgz?init=true"
   sha256 "ea9a508578cffd428baf7b78f6d1618badedf3175be06b0809588a8b48889d5f"
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
@@ -25,7 +25,7 @@ class PeclHttpAT81 < AbstractPhp81Extension
   depends_on "shivammathur/extensions/raphf@8.1"
 
   def install
-    args %W[
+    args = %W[
       --with-http
       --with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}
       --with-http-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
@@ -35,6 +35,7 @@ class PeclHttpAT81 < AbstractPhp81Extension
     ]
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
     Dir.chdir "pecl_http-#{version}"
+    inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.1"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

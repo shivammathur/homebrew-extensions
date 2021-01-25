@@ -8,7 +8,7 @@ class PeclHttpAT56 < AbstractPhp56Extension
   init
   desc "Pecl_http PHP extension"
   homepage "https://github.com/m6w6/ext-http"
-  url "https://pecl.php.net/get/pecl_http-2.6.0.tgz"
+  url "https://pecl.php.net/get/pecl_http-2.6.0.tgz?init=true"
   sha256 "ddbf3eea3d1c7004a7dd83b5864aee5f87b1b6032bc281c08ccc62f83b9931ed"
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
@@ -26,7 +26,7 @@ class PeclHttpAT56 < AbstractPhp56Extension
   depends_on "shivammathur/extensions/raphf@5.6"
 
   def install
-    args %W[
+    args = %W[
       --with-http
       --with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}
       --with-http-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
@@ -37,6 +37,8 @@ class PeclHttpAT56 < AbstractPhp56Extension
     ]
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
     Dir.chdir "pecl_http-#{version}"
+    inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@5.6"
+    inreplace "src/php_http_api.h", "ext/propro", "ext/propro@5.6"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

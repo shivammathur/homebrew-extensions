@@ -12,12 +12,12 @@ jobs:
       fail-fast: false
       matrix:
         php-versions: ['7.1', '7.2', '7.3', '7.4', '8.0', '8.1']
-        extensions: ['amqp, grpc, igbinary, imagick, imap, pcov, propro, protobuf, raphf, swoole, xdebug']
+        extensions: ['amqp, grpc, igbinary, imagick, imap, pcov, pecl_http, propro, protobuf, raphf, swoole, xdebug']
         include:
           - php-versions: '5.6'
-            extensions: amqp, grpc, igbinary, imagick, imap, propro, protobuf, raphf, swoole, xdebug
+            extensions: amqp, grpc, igbinary, imagick, pecl_http, imap, propro, protobuf, raphf, swoole, xdebug
           - php-versions: '7.0'
-            extensions: amqp, grpc, igbinary, imagick, imap, propro, protobuf, raphf, swoole, xdebug
+            extensions: amqp, grpc, igbinary, imagick, pecl_http, imap, propro, protobuf, raphf, swoole, xdebug
           - php-versions: '7.2'
             extensions: xdebug2
           - php-versions: '7.3'

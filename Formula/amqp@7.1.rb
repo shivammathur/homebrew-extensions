@@ -22,7 +22,7 @@ class AmqpAT71 < AbstractPhp71Extension
   depends_on "rabbitmq-c"
 
   def install
-    args %W[
+    args = %W[
       --with-amqp=shared
       "--with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}"
     ]
