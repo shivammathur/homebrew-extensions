@@ -16,6 +16,10 @@ class ProproAT72 < AbstractPhp72Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
+    rebuild 1
+    sha256 "cc5527467bb437f1ad6a0bfb532e8d1eef68ab8b7145f32b97a5f08fd2323ef2" => :big_sur
+    sha256 "cae723db6806dac363d3ff01e578ce2e3e75aeea23818ac9c09efe410c3f9d43" => :arm64_big_sur
+    sha256 "49148d2cfac65a0baf5e984732406b6f0bc608eac1fa611f6d65922e472293bb" => :catalina
   end
 
   def install
