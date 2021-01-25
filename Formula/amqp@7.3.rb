@@ -15,9 +15,6 @@ class AmqpAT73 < AbstractPhp73Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
-    sha256 "82ec99c41c57a7c3b089abd47cfc77e32fd9acf1f375d7f7634d94d2edfc115a" => :big_sur
-    sha256 "69fc934f840d5fbd5f05dbf6b50942a8730caa8b7152c40c0ba2c4b238fbae97" => :catalina
   end
 
   depends_on "rabbitmq-c"
