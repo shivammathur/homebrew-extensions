@@ -14,10 +14,6 @@ class ImapAT72 < AbstractPhp72Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
-    sha256 "24bff16e376493696e8e4155a1f831b67fc3830437915827a0ae48dab3112c08" => :big_sur
-    sha256 "c8460c0a60c0307a9edd4d223500192916898debfc3d0449e967d64663efe9b8" => :arm64_big_sur
-    sha256 "9c85eb8f9c3c0fed21f918af212b4e403f1a2d3e2736fd26cd1680bc6d9832ad" => :catalina
   end
 
   depends_on "imap-uw"
