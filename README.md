@@ -17,6 +17,7 @@
 |`imagick`|`PHP 5.6` to `PHP 8.1`|
 |`imap`|`PHP 5.6` to `PHP 8.1`|
 |`pcov`|`PHP 7.1` to `PHP 8.1`|
+|`pecl_http`|`PHP 5.6` to `PHP 8.1`|
 |`propro`|`PHP 5.6` to `PHP 7.4`|
 |`protobuf`|`PHP 5.6` to `PHP 8.1`|
 |`raphf`|`PHP 5.6` to `PHP 8.1`|
