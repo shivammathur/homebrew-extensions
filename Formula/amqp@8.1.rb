@@ -8,7 +8,7 @@ class AmqpAT81 < AbstractPhp81Extension
   init
   desc "Amqp PHP extension"
   homepage "https://github.com/php-amqp/php-amqp"
-  url "https://github.com/php-amqp/php-amqp/archive/df1241852b359cf12c346beaa68de202257efdf1.tar.gz"
+  url "https://github.com/php-amqp/php-amqp/archive/df1241852b359cf12c346beaa68de202257efdf1.tar.gz?init=true"
   version "1.11.0"
   sha256 "c9b27857fc7e39654518af5c35eb947b371556375550412b7166f75c03c8b5c8"
   head "https://github.com/php-amqp/php-amqp"
@@ -26,9 +26,8 @@ class AmqpAT81 < AbstractPhp81Extension
   def install
     args = %W[
       --with-amqp=shared
-      "--with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}"
+      --with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}
     ]
-    Dir.chdir "amqp-#{version}"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
