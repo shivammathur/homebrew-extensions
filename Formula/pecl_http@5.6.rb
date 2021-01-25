@@ -26,7 +26,7 @@ class PeclHttpAT56 < AbstractPhp56Extension
   depends_on "shivammathur/extensions/raphf@5.6"
 
   def install
-    args %W[
+    args = %W[
       --with-http
       --with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}
       --with-http-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
@@ -37,6 +37,8 @@ class PeclHttpAT56 < AbstractPhp56Extension
     ]
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
     Dir.chdir "pecl_http-#{version}"
+    inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@5.6"
+    inreplace "src/php_http_api.h", "ext/propro", "ext/propro@5.6"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

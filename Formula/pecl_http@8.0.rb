@@ -25,7 +25,7 @@ class PeclHttpAT80 < AbstractPhp80Extension
   depends_on "shivammathur/extensions/raphf@8.0"
 
   def install
-    args %W[
+    args = %W[
       --with-http
       --with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}
       --with-http-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
@@ -35,6 +35,7 @@ class PeclHttpAT80 < AbstractPhp80Extension
     ]
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
     Dir.chdir "pecl_http-#{version}"
+    inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.0"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

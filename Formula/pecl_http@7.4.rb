@@ -26,7 +26,7 @@ class PeclHttpAT74 < AbstractPhp74Extension
   depends_on "shivammathur/extensions/raphf@7.4"
 
   def install
-    args %W[
+    args = %W[
       --with-http
       --with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}
       --with-http-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
@@ -37,6 +37,8 @@ class PeclHttpAT74 < AbstractPhp74Extension
     ]
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
     Dir.chdir "pecl_http-#{version}"
+    inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@7.4"
+    inreplace "src/php_http_api.h", "ext/propro", "ext/propro@7.4"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
