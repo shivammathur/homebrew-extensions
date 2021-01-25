@@ -8,7 +8,7 @@ class PeclHttpAT71 < AbstractPhp71Extension
   init
   desc "Pecl_http PHP extension"
   homepage "https://github.com/m6w6/ext-http"
-  url "https://pecl.php.net/get/pecl_http-3.2.4.tgz?init=true"
+  url "https://pecl.php.net/get/pecl_http-3.2.4.tgz"
   sha256 "37354ff7680b9b9839da8b908fff88227af7f6746c2611c873493af41d54f033"
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
