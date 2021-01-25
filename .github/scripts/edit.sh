@@ -39,7 +39,7 @@ fetch() {
        [[ "$VERSION" =~ (protobuf|propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ swoole@(7.[2-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ xdebug@(7.[3-4]|8.[0-1]) ]] ||
-       [[ "$VERSION" =~ (grpc|igbinary|raphf)@(7.[0-4]|8.[0-1]) ]] ||
+       [[ "$VERSION" =~ (grpc|igbinary|raphf|pecl_http)@(7.[0-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]] ||
        [[ "$VERSION" =~ imagick@(5.6|7.[0-4]) ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
@@ -72,7 +72,6 @@ match_args() {
   for arg in "${args[@]}"; do
     if [[ "$arg" =~ --build-only-"$EXTENSION"$ ]]; then
       fetch
-      check_version
       break
     fi
   done

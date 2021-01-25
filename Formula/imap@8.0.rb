@@ -33,7 +33,8 @@ class ImapAT80 < AbstractPhp80Extension
            "--with-imap-ssl=#{Formula["openssl@1.1"].opt_prefix}", \
            "--with-kerberos"
     system "make"
-    prefix.install "modules/imap.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
+    add_include_files
   end
 end

@@ -25,7 +25,7 @@ class IgbinaryAT80 < AbstractPhp80Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-igbinary"
     system "make"
-    prefix.install "modules/igbinary.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
   end
 end

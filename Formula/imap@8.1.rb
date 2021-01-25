@@ -8,9 +8,9 @@ class ImapAT81 < AbstractPhp81Extension
   init
   desc "Imap PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/php/php-src/archive/master.tar.gz?v=8.1.0&build_time=1611484685"
+  url "https://github.com/php/php-src/archive/master.tar.gz?v=8.1.0&build_time=1611541781"
   version "8.1.0"
-  sha256 "8a31a0c134e0131351ee62982592af4071b920871ce35d7cd3c93cc4e662ea11"
+  sha256 "1da1e72b375fd7e43ca79907bc66be28878d8b285ca6e9b781e388d87a314f76"
   license "PHP-3.01"
 
   bottle do
@@ -35,7 +35,8 @@ class ImapAT81 < AbstractPhp81Extension
            "--with-imap-ssl=#{Formula["openssl@1.1"].opt_prefix}", \
            "--with-kerberos"
     system "make"
-    prefix.install "modules/imap.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
+    add_include_files
   end
 end

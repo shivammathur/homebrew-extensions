@@ -20,17 +20,16 @@ class AmqpAT80 < AbstractPhp80Extension
     sha256 "b593f3cf1628ecb99c088a57faef030a5a658521cce61b71db2b2288f44244d6" => :catalina
   end
 
-  depends_on "rabbitmq-c"
-
   def install
+    args %W[
+      --with-amqp=shared
+      "--with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}"
+    ]
+    Dir.chdir "amqp-#{version}"
     safe_phpize
-    system "./configure", \
-           "--prefix=#{prefix}", \
-           phpconfig, \
-           "--with-amqp=shared", \
-           "--with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}"
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
-    prefix.install "modules/amqp.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
   end
 end

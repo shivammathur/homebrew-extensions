@@ -25,7 +25,7 @@ class PcovAT74 < AbstractPhp74Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-pcov"
     system "make"
-    prefix.install "modules/pcov.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
   end
 end

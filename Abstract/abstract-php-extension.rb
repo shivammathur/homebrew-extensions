@@ -50,8 +50,12 @@ class AbstractPhpExtension < Formula
     end
   end
 
+  def module_name
+    extension
+  end
+
   def module_path
-    opt_prefix / "#{extension}.so"
+    opt_prefix / "#{module_name}.so"
   end
 
   def config_file
@@ -74,7 +78,7 @@ class AbstractPhpExtension < Formula
 
   test do
     output = shell_output("#{Formula[php_formula].opt_bin}/php -m").downcase
-    assert_match(/#{extension.downcase}/, output, "failed to find extension in php -m output")
+    assert_match(/#{module_name.downcase}/, output, "failed to find extension in php -m output")
   end
 
   def config_scandir_path
@@ -94,6 +98,11 @@ class AbstractPhpExtension < Formula
       config_scandir_path.mkpath
       config_filepath.write(config_file)
     end
+  end
+
+  def add_include_files
+    files = Dir["php_*.h"]
+    (include/"php/ext/#{module_name}@#{php_version}").install files unless files.empty?
   end
 end
 

@@ -22,15 +22,15 @@ class AmqpAT74 < AbstractPhp74Extension
   depends_on "rabbitmq-c"
 
   def install
+    args %W[
+      --with-amqp=shared
+      "--with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}"
+    ]
     Dir.chdir "amqp-#{version}"
     safe_phpize
-    system "./configure", \
-           "--prefix=#{prefix}", \
-           phpconfig, \
-           "--with-amqp=shared", \
-           "--with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}"
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
-    prefix.install "modules/amqp.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
   end
 end

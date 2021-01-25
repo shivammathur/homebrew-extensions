@@ -26,7 +26,8 @@ class ProproAT70 < AbstractPhp70Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-propro"
     system "make"
-    prefix.install "modules/propro.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
+    add_include_files
   end
 end

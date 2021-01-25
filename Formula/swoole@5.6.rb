@@ -26,7 +26,7 @@ class SwooleAT56 < AbstractPhp56Extension
     safe_phpize
     system "./configure"
     system "make"
-    prefix.install "modules/swoole.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
   end
 end

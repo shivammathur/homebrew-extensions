@@ -27,7 +27,7 @@ class GrpcAT74 < AbstractPhp74Extension
     safe_phpize
     system "./configure", "--enable-grpc"
     system "make"
-    prefix.install "modules/grpc.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
   end
 end

@@ -26,7 +26,8 @@ class RaphfAT70 < AbstractPhp70Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-raphf"
     system "make"
-    prefix.install "modules/raphf.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
+    add_include_files
   end
 end

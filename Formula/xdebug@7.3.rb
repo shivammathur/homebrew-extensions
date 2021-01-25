@@ -24,7 +24,7 @@ class XdebugAT73 < AbstractPhp73Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
-    prefix.install "modules/xdebug.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
   end
 end

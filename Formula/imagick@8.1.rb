@@ -33,7 +33,7 @@ class ImagickAT81 < AbstractPhp81Extension
     safe_phpize
     system "./configure"
     system "make"
-    prefix.install "modules/imagick.so"
+    prefix.install "modules/#{module_name}.so"
     write_config_file
   end
 end
