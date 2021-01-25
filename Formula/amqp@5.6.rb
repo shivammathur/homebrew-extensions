@@ -25,7 +25,7 @@ class AmqpAT56 < AbstractPhp56Extension
   def install
     args = %W[
       --with-amqp=shared
-      "--with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}"
+      --with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}
     ]
     Dir.chdir "amqp-#{version}"
     safe_phpize
