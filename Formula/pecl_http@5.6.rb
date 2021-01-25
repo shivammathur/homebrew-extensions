@@ -28,7 +28,6 @@ class PeclHttpAT56 < AbstractPhp56Extension
   def install
     args = %W[
       --with-http
-      --with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}
       --with-http-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
     ]
     extra_includes = %W[
@@ -39,6 +38,9 @@ class PeclHttpAT56 < AbstractPhp56Extension
     Dir.chdir "pecl_http-#{version}"
     inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@5.6"
     inreplace "src/php_http_api.h", "ext/propro", "ext/propro@5.6"
+    inreplace "config9.m4", "/ext/raphf", "/php/ext/raphf@5.6"
+    inreplace "config9.m4", "/ext/propro", "/php/ext/propro@5.6"
+    inreplace "config9.m4", "$abs_srcdir", "$abs_srcdir ${HOMEBREW_PREFIX}/include"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
