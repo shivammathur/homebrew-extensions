@@ -16,8 +16,6 @@ class AmqpAT80 < AbstractPhp80Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    sha256 "9efeee44c14d869dd22bceff42330175ee77aa8597b9ad9b9f3a7d68da5a8576" => :big_sur
-    sha256 "b593f3cf1628ecb99c088a57faef030a5a658521cce61b71db2b2288f44244d6" => :catalina
   end
 
   def install
