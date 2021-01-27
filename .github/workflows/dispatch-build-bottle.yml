@@ -103,7 +103,11 @@ jobs:
 
       - name: Post Cleanup
         if: always()
-        run: rm -rvf bottles
+        run: |
+          rm -rvf bottles
+          if [ -L "$GITHUB_WORKSPACE" ]; then
+            sudo rm -rf "$GITHUB_WORKSPACE"
+          fi
 
       - name: Post comment on failure
         if: ${{!success() && github.event.inputs.issue > 0}}

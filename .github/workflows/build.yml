@@ -146,11 +146,11 @@ jobs:
             sudo xcode-select -s /Applications/Xcode_12.3.app || exit 1
           fi
 
-      - name: Cleanup Before
+      - name: brew test-bot --only-cleanup-before
         if: steps.check.outputs.build != 'no'
         run: brew test-bot --only-cleanup-before
 
-      - name: Setup
+      - name: brew test-bot --only-setup
         if: steps.check.outputs.build != 'no'
         run: brew test-bot --only-setup
 
@@ -192,6 +192,19 @@ jobs:
           echo "$count bottles"
           echo "::set-output name=count::$count"
 
+      - name: Upload failed bottles
+        if: always() && steps.bottles.outputs.failures > 0 && steps.check.outputs.build != 'no'
+        uses: actions/upload-artifact@main
+        with:
+          name: bottles (${{ matrix.version }})
+          path: bottles/failed
+
+      # Must be run before the `Upload bottles` step so that failed
+      # bottles are not included in the `bottles` artifact.
+      - name: Delete failed bottles
+        if: always() && steps.check.outputs.build != 'no'
+        run: rm -rvf bottles/failed
+
       - name: Upload bottles
         if: always() && steps.bottles.outputs.count > 0 && steps.check.outputs.build != 'no'
         uses: actions/upload-artifact@main
@@ -204,7 +217,11 @@ jobs:
 
       - name: Post Cleanup
         if: always() && steps.check.outputs.build != 'no'
-        run: rm -rvf bottles
+        run: |
+          rm -rvf bottles
+          if [ -L "$GITHUB_WORKSPACE" ]; then
+            sudo rm -rf "$GITHUB_WORKSPACE"
+          fi
 
   label:
     needs: tests
