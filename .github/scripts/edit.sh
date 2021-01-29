@@ -1,9 +1,9 @@
 unbottle() {
   sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
   sed -Ei '/    rebuild.*/d' ./Formula/"$VERSION".rb || true
-  sed -Ei '/    sha256.*=> :catalina$/d' ./Formula/"$VERSION".rb || true
-  sed -Ei '/    sha256.*=> :big_sur$/d' ./Formula/"$VERSION".rb || true
-  sed -Ei '/    sha256.*=> :arm64_big_sur$/d' ./Formula/"$VERSION".rb || true
+  sed -Ei '/    sha256.*catalina:/d' ./Formula/"$VERSION".rb || true
+  sed -Ei '/    sha256.*big_sur:/d' ./Formula/"$VERSION".rb || true
+  sed -Ei '/    sha256.*arm64_big_sur:/d' ./Formula/"$VERSION".rb || true
 }
 
 create_package() {
