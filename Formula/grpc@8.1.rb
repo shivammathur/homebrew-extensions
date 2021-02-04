@@ -15,9 +15,6 @@ class GrpcAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, big_sur: "df1e54510c8369c10817bf2300d99860ed5a56aeb5c5725700bf03c2094f069e"
-    sha256 cellar: :any_skip_relocation, catalina: "e0bcb736b182809c332e0f89469f6d378f311e983beccf920aaf997b0866c1a2"
   end
 
   depends_on "grpc"
