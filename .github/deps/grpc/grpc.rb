@@ -2,11 +2,10 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.33.2",
-      revision: "ee5b762f33a42170144834f5ab7efda9d76c480b",
+      tag:      "v1.35.0",
+      revision: "257d0045ab958eb767a3591c88e9d0c2bdf4b916",
       shallow:  false
   license "Apache-2.0"
-  revision 2
   head "https://github.com/grpc/grpc.git"
 
   livecheck do
@@ -15,19 +14,20 @@ class Grpc < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "3e731c3e9d4c6d24f5293db3b93efc0d277f12f03679b6f35af9e0cea67e613c" => :big_sur
-    sha256 "56d08703d69bc715c72b93a28c848ddaac63f1c2fbad09ebf39b271ff658fe8a" => :catalina
-    sha256 "71b413ceeae0da5f236ef71fe9ea5168849df37462ba70a2ac9d99e1f5bf18c5" => :mojave
+    rebuild 1
+    sha256 arm64_big_sur: "5b5bcc51df9534e7c049ce6c690dd93ca3e6677d599d39352e09f607ce1291a3"
+    sha256 big_sur:       "2c85097b528d4ec6f3e2ef259faa5007cbe135e0da85bdc02d90026eff728bc0"
+    sha256 catalina:      "1efb9da2c1f7be4a6f6200fe0f99b327a36a705e427712658532170c94ee19cf"
+    sha256 mojave:        "6680b665c9decbbd6f5fc1f9757421c947ce75c8275244ccaa87e1128ef507ff"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
   depends_on "libtool" => :build
+  depends_on "pkg-config" => :test
   depends_on "abseil"
   depends_on "c-ares"
-  depends_on "gflags"
   depends_on "openssl@1.1"
   depends_on "protobuf"
   depends_on "re2"
@@ -36,10 +36,11 @@ class Grpc < Formula
 
   def install
     mkdir "cmake/build" do
-      args = %w[
+      args = %W[
         ../..
         -DCMAKE_CXX_STANDARD=17
         -DCMAKE_CXX_STANDARD_REQUIRED=TRUE
+        -DCMAKE_INSTALL_RPATH=#{lib}
         -DBUILD_SHARED_LIBS=ON
         -DgRPC_BUILD_TESTS=OFF
         -DgRPC_INSTALL=ON
@@ -54,18 +55,22 @@ class Grpc < Formula
       system "cmake", *args
       system "make", "install"
 
-      args = %w[
-        ../..
-        -DCMAKE_EXE_LINKER_FLAGS=-lgflags
-        -DCMAKE_SHARED_LINKER_FLAGS=-lgflags
-        -DBUILD_SHARED_LIBS=ON
-        -DgRPC_BUILD_TESTS=ON
-        -DgRPC_GFLAGS_PROVIDER=package
-      ] + std_cmake_args
-      system "cmake", *args
-      system "make", "grpc_cli"
-      bin.install "grpc_cli"
-      lib.install Dir["libgrpc++_test_config*.{dylib,so}.*"]
+      # grpc_cli does not build correctly with a non-/usr/local prefix.
+      # Reported upstream at https://github.com/grpc/grpc/issues/25176
+      # When removing the `unless` block, make sure to do the same for
+      # the test block.
+      unless Hardware::CPU.arm?
+        args = %W[
+          ../..
+          -DCMAKE_INSTALL_RPATH=#{lib}
+          -DBUILD_SHARED_LIBS=ON
+          -DgRPC_BUILD_TESTS=ON
+        ] + std_cmake_args
+        system "cmake", *args
+        system "make", "grpc_cli"
+        bin.install "grpc_cli"
+        lib.install Dir[shared_library("libgrpc++_test_config", "*")]
+      end
     end
   end
 
@@ -78,7 +83,13 @@ class Grpc < Formula
         return GRPC_STATUS_OK;
       }
     EOS
-    system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lgrpc", "-o", "test"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@1.1"].opt_lib/"pkgconfig"
+    pkg_config_flags = shell_output("pkg-config --cflags --libs libcares protobuf re2 grpc++").chomp.split
+    system ENV.cc, "test.cpp", "-L#{Formula["abseil"].opt_lib}", *pkg_config_flags, "-o", "test"
     system "./test"
+    unless Hardware::CPU.arm?
+      output = shell_output("grpc_cli ls localhost:#{free_port} 2>&1", 1)
+      assert_match "Received an error when querying services endpoint.", output
+    end
   end
 end

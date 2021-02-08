@@ -1,11 +1,10 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://www.imagemagick.org/"
-  url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-53.tar.xz"
-  mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-53.tar.xz"
-  sha256 "fee347bac7eab1a60ea5eefaf25f944625a6d6a5b58d40d279913da5e2cf4fb5"
+  url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-62.tar.xz"
+  mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-62.tar.xz"
+  sha256 "98de7cab4d2e223d51d6e59744114e6db6143b5386be647c303ee0412b56cb44"
   license "ImageMagick"
-  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git"
 
   livecheck do
@@ -14,10 +13,10 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 "afa8b57f16e00d0d243f28887f7a778323946a4b110785a5aec0fc2e7fc0590d" => :big_sur
-    sha256 "b894c57032c539ec9657385a41a28a9ada6c35b2168d0c97297156d0fcda7284" => :arm64_big_sur
-    sha256 "3f6d1ec8b4276de89c7a840915c97c861d64ffda448f9eabd84c5c28720d6ad6" => :catalina
-    sha256 "b5ff4d19be5c2032f45267056ed8b81d8270b0eb588125ccc1d9edca3298d437" => :mojave
+    sha256 arm64_big_sur: "7cde5a382da6be1a8f33e4988cce150e6f8df7c46fa9a25fbefb826c4e6d84fe"
+    sha256 big_sur:       "a43cd230ad609c812e488c7dfd25d6f5001aebb64e070497662720b04a9b1286"
+    sha256 catalina:      "616d4677ac3e33403c871a6b505d99a4945787614ea617247df8922e4b31fae1"
+    sha256 mojave:        "29577f2b4518ae48564758c4e6175911afd6c93687700916447820bf700057fb"
   end
 
   depends_on "pkg-config" => :build
@@ -59,6 +58,7 @@ class Imagemagick < Formula
       --enable-shared
       --enable-static
       --with-freetype=yes
+      --with-gvc=no
       --with-modules
       --with-openjp2
       --with-openexr
@@ -81,7 +81,7 @@ class Imagemagick < Formula
     end
 
     # versioned stuff in main tree is pointless for us
-    inreplace "configure", "${PACKAGE_NAME}-${PACKAGE_VERSION}", "${PACKAGE_NAME}"
+    inreplace "configure", "${PACKAGE_NAME}-${PACKAGE_BASE_VERSION}", "${PACKAGE_NAME}"
     system "./configure", *args
     system "make", "install"
   end
