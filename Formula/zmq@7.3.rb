@@ -8,7 +8,7 @@ class ZmqAT73 < AbstractPhp73Extension
   init
   desc "Zmq PHP extension"
   homepage "https://github.com/zeromq/php-zmq"
-  url "https://pecl.php.net/get/zmq-1.1.3.tgz?init=true"
+  url "https://pecl.php.net/get/zmq-1.1.3.tgz"
   sha256 "c492375818bd51b355352798fb94f04d6828c6aeda41ba813849624af74144ce"
   head "https://github.com/zeromq/php-zmq.git"
   license "BSD-3-Clause"
