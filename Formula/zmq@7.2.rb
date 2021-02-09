@@ -16,6 +16,9 @@ class ZmqAT72 < AbstractPhp72Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 arm64_big_sur: "1cac67dec751f0dc6017e6ca2565f8d3428d1cdadc84cb34facc327dd1dcffbc"
+    sha256 big_sur:       "e8b41d757fc234b06dfaad4c48cf882f8b31cfe483a8f5d730e8e6bbe0c3e955"
+    sha256 catalina:      "840773948567ddb3c8059cea8d888c8d4a3b8bc33683bf10c8d00e384d7f5f19"
   end
 
   depends_on "czmq"
