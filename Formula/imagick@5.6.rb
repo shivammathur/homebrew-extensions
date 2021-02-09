@@ -8,8 +8,8 @@ class ImagickAT56 < AbstractPhp56Extension
   init
   desc "Imagick PHP extension"
   homepage "https://github.com/Imagick/imagick/releases"
-  url "https://github.com/Imagick/imagick/archive/448c1cd0d58ba2838b9b6dff71c9b7e70a401b90.tar.gz"
-  sha256 "b1b32d524d11ffbd530b270f15205c5523ce81efde3c1bee94f4d2730246c867"
+  url "https://github.com/imagick/imagick/archive/3.4.4.tar.gz"
+  sha256 "8204d228ecbe5f744d625c90364808616127471581227415bca18857af981369"
   version "3.5.0"
   head "https://github.com/Imagick/imagick"
   license "PHP-3.01"
