@@ -16,6 +16,9 @@ class ZmqAT56 < AbstractPhp56Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 arm64_big_sur: "bf924e8fafddbdec7fef4df7c37e51449cf05224dd8eed2ffa6d6497061fd4ff"
+    sha256 big_sur:       "e7b10f6ccf7a02f7098556f42643ee4217213fa25cae13686a960937b1e183c0"
+    sha256 catalina:      "51def24ecff24cf221b601af7ce2d898904f1cfc991d159f818ac634ccf1af82"
   end
 
   depends_on "czmq"
