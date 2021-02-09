@@ -9,13 +9,12 @@ class ImagickAT56 < AbstractPhp56Extension
   desc "Imagick PHP extension"
   homepage "https://github.com/Imagick/imagick/releases"
   url "https://github.com/imagick/imagick/archive/3.4.4.tar.gz"
-  sha256 "8204d228ecbe5f744d625c90364808616127471581227415bca18857af981369"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   head "https://github.com/Imagick/imagick"
   license "PHP-3.01"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
     sha256 "dea48b750d9dd6e6555bfc9fde8abdd42753ec829ef803fb15589bfd75772167" => :big_sur
     sha256 "8ad049060f7b380bc24db0c658de7bc992e01cd47d98bc74ce86ce3f530b263d" => :arm64_big_sur
     sha256 "07d64ab4eb86613ebfe0fe1cc71f5e5846eab20f0241ba78aa6f344d91c9a664" => :catalina
