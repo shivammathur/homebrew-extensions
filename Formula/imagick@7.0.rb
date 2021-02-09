@@ -16,6 +16,10 @@ class ImagickAT70 < AbstractPhp70Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    rebuild 2
+    sha256 arm64_big_sur: "069b83585451a26a8788c07987bdf91d77c95b5badc09fcceacf96247580aa00"
+    sha256 big_sur:       "4a8691270293c628d859de8f9853b21cfe042adc5cc792b3ada0807c78cce84a"
+    sha256 catalina:      "8e5878204efe18ddb5252b8e41ff915b45abde6f6b981b3a8747f64fce1638f9"
   end
 
   depends_on "imagemagick"
