@@ -17,7 +17,11 @@ for version in "${versions[@]}"; do
   sed -i "s/NODOT/${version/./}/g" "$file"
   sed -i "s/Extension_Title PHP extension/$title PHP extension/" "$file"
   sed -i "s|REPO|$repo|" "$file"
-  sed -i "s/LICENSE_NAME/$license/" "$file"
+  if [ "$license" != 'no' ]; then
+    sed -i "s/LICENSE_NAME/$license/" "$file"
+  else
+    sed -i 's/"LICENSE_NAME"/:cannot_represent/' "$file"
+  fi
   sed -i "s/Class for Extension_Title/Class for $title/" "$file"
   sed -i "s/--enable-extension/--enable-$extension/" "$file"
   sed -i "s/extension.so/$extension.so/" "$file"
