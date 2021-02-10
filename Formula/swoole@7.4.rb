@@ -15,10 +15,9 @@ class SwooleAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    cellar :any
-    sha256 "f32ce44d8bd97f7722de1eea0eb1416da149dc3edab9bb26c4e08376652c2c23" => :big_sur
-    sha256 "4745d79d4d2026afc7b852fc6cd5fc5c0a49ae4b449714ee091958d28f5f024f" => :arm64_big_sur
-    sha256 "7b9aa5446b869ec4e4ee4fc52b365d8a087c0b26adcf7d3190d6b34ebe0f4d6c" => :catalina
+    sha256 cellar: :any, arm64_big_sur: "f227e52ad460e1ddad7386ea671884f9740a1d994fdb3ef9377917b0cc084fc2"
+    sha256 cellar: :any, big_sur:       "ecc5003a75ca6fbb5e97f6ee796c2e802dc295a59d31886228a92110ee7e1020"
+    sha256 cellar: :any, catalina:      "aca262a55f625baa3eb8299c995e2fca0fbb7a23e733c346e6f0c330eb06d35e"
   end
 
   def install
