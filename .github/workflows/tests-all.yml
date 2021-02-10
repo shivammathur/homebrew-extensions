@@ -11,13 +11,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: ['7.1', '7.2', '7.3', '7.4', '8.0', '8.1']
-        extensions: ['amqp, grpc, igbinary, imagick, imap, pcov, pecl_http, propro, protobuf, raphf, swoole, xdebug, zmq']
+        php-versions: ['7.1', '7.2', '7.3', '7.4']
+        extensions: ['amqp, grpc, igbinary, imagick, imap, pecl_http, protobuf, raphf, swoole, xdebug, zmq, pcov, propro']
         include:
           - php-versions: '5.6'
-            extensions: amqp, grpc, igbinary, imagick, pecl_http, imap, propro, protobuf, raphf, swoole, xdebug, zmq
+            extensions: amqp, grpc, igbinary, imagick, imap, pecl_http, protobuf, raphf, swoole, xdebug, zmq, propro
           - php-versions: '7.0'
-            extensions: amqp, grpc, igbinary, imagick, pecl_http, imap, propro, protobuf, raphf, swoole, xdebug, zmq
+            extensions: amqp, grpc, igbinary, imagick, imap, pecl_http, protobuf, raphf, swoole, xdebug, zmq, propro
+          - php-versions: '8.0'
+            extensions: amqp, grpc, igbinary, imagick, imap, pecl_http, protobuf, raphf, swoole, xdebug, zmq, pcov
+          - php-versions: '8.1'
+            extensions: amqp, grpc, igbinary, imagick, imap, pecl_http, protobuf, raphf, swoole, xdebug, zmq, pcov
           - php-versions: '7.2'
             extensions: xdebug2
           - php-versions: '7.3'
@@ -40,16 +44,18 @@ jobs:
         if: matrix.extensions != 'xdebug2'
         run: |
           php -m
-          php -r "if(substr(phpversion(), 0, 3)<8.0 && ! extension_loaded('amqp')) {throw new Exception('amqp not found');}"
-          php -r "if(substr(phpversion(), 0, 3)<8.0 && ! extension_loaded('grpc')) {throw new Exception('grpc not found');}"
-          php -r "if(substr(phpversion(), 0, 3)<8.0 && ! extension_loaded('imagick')) {throw new Exception('imagick not found');}"
-          php -r "if(substr(phpversion(), 0, 3)<8.0 && ! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
-          php -r "if(substr(phpversion(), 0, 3)<8.0 && ! extension_loaded('swoole')) {throw new Exception('swoole not found');}"
           php -r "if(substr(phpversion(), 0, 3)<8.0 && ! extension_loaded('propro')) {throw new Exception('propro not found');}"
           php -r "if(phpversion()>=7.1 && ! extension_loaded('pcov')) {throw new Exception('pcov not found');}"
+          php -r "if(! extension_loaded('amqp')) {throw new Exception('amqp not found');}"
+          php -r "if(! extension_loaded('grpc')) {throw new Exception('grpc not found');}"
+          php -r "if(! extension_loaded('http')) {throw new Exception('http not found');}"
           php -r "if(! extension_loaded('igbinary')) {throw new Exception('igbinary not found');}"
+          php -r "if(! extension_loaded('imagick')) {throw new Exception('imagick not found');}"
           php -r "if(! extension_loaded('imap')) {throw new Exception('imap not found');}"
+          php -r "if(! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
           php -r "if(! extension_loaded('raphf')) {throw new Exception('raphf not found');}"
+          php -r "if(! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
+          php -r "if(! extension_loaded('swoole')) {throw new Exception('swoole not found');}"
           php -r "if(! extension_loaded('xdebug')) {throw new Exception('xdebug not found');}"
           php -r "if(! extension_loaded('zmq')) {throw new Exception('zmq not found');}"
       - name: Testing Xdebug2
