@@ -42,7 +42,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        extension: [amqp, grpc, igbinary, imagick, imap, pcov, pecl_http, propro, protobuf, raphf, swoole, xdebug, zmq]
+        extension: [amqp, grpc, igbinary, imagick, imap, msgpack, pcov, pecl_http, propro, protobuf, raphf, redis, swoole, xdebug, zmq]
         php: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1']
         exclude:
           - extension: pcov
