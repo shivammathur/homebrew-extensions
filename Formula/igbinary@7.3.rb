@@ -15,10 +15,10 @@ class IgbinaryAT73 < AbstractPhp73Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    cellar :any_skip_relocation
-    sha256 "1cb07b72269c41775a24f3929c7798d22e9bd209b05ebfa2ccac20fab6900e3a" => :big_sur
-    sha256 "ae273425bf549a7952a38787048d37e7535d157b3083e7becfccb1e77965ba11" => :arm64_big_sur
-    sha256 "1613346e72179613252fb545bb25f93c41d95c49792dcd496cb88a6525739d92" => :catalina
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7ac2ca3f0745d7b41f5f70599cac0f2bb10cf8a98f4ca2d32b266bf79c5e7c35"
+    sha256 cellar: :any_skip_relocation, big_sur:       "1e04b2f4fb4416cdc97a207ea5f6c1049591b3179fbc3f09129f49fa672a21d5"
+    sha256 cellar: :any_skip_relocation, catalina:      "1c729f6c9992cfd651d75da2d8b35bf699ddcb2bd6214409e692c554e667a686"
   end
 
   def install
