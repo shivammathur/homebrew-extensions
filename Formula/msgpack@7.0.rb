@@ -15,6 +15,9 @@ class MsgpackAT70 < AbstractPhp70Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "036ccde59b09634070df147a6988694f8301c56e2bd89bd6d0e3932197fc3ca8"
+    sha256 cellar: :any_skip_relocation, big_sur:       "d179defa7d3918c8dd116bd24f43ebaebf8e1dbc1b7834ffdac6ce0777b0e2af"
+    sha256 cellar: :any_skip_relocation, catalina:      "32b959a5daedbe671a0d14361e43a5701af83fd69c1c0ff76ac35b1b6de48ac9"
   end
 
   def install
