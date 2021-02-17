@@ -101,7 +101,7 @@ class AbstractPhpExtension < Formula
   end
 
   def add_include_files
-    files = Dir["php_*.h"]
+    files = Dir["*.h"]
     (include/"php/ext/#{module_name}@#{php_version}").install files unless files.empty?
   end
 end

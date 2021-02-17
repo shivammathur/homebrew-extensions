@@ -20,6 +20,12 @@ class RedisAT56 < AbstractPhp56Extension
   depends_on "liblzf"
   depends_on "shivammathur/extensions/igbinary@5.6"
 
+  def patch_redis
+    mkdir_p "include/php/ext/igbinary"
+    headers = Dir["#{Formula["igbinary@5.6"].opt_include}/**/*.h"]
+    (buildpath/"redis-#{version}/include/php/ext/igbinary").install_symlink headers unless headers.empty?
+  end
+
   def install
     args = %W[
       --enable-redis
@@ -28,7 +34,7 @@ class RedisAT56 < AbstractPhp56Extension
       --with-liblzf=#{Formula["liblzf"].opt_prefix}
     ]
     Dir.chdir "redis-#{version}"
-    inreplace "config.m4", "ext/igbinary", "ext/igbinary@5.6"
+    patch_redis
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

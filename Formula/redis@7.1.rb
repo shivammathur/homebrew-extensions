@@ -23,6 +23,14 @@ class RedisAT71 < AbstractPhp71Extension
   depends_on "shivammathur/extensions/msgpack@7.1"
   depends_on "zstd"
 
+  def patch_redis
+    %w[igbinary msgpack].each do |e|
+      mkdir_p "include/php/ext/#{e}"
+      headers = Dir["#{Formula["#{e}@7.1"].opt_include}/**/*.h"]
+      (buildpath/"redis-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
+    end
+  end
+
   def install
     args = %W[
       --enable-redis
@@ -36,8 +44,7 @@ class RedisAT71 < AbstractPhp71Extension
       --with-libzstd=#{Formula["zstd"].opt_prefix}
     ]
     Dir.chdir "redis-#{version}"
-    inreplace "config.m4", "ext/igbinary", "ext/igbinary@7.1"
-    inreplace "config.m4", "ext/msgpack", "ext/msgpack@7.1"
+    patch_redis
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

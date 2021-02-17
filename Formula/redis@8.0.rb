@@ -23,6 +23,14 @@ class RedisAT80 < AbstractPhp80Extension
   depends_on "shivammathur/extensions/msgpack@8.0"
   depends_on "zstd"
 
+  def patch_redis
+    %w[igbinary msgpack].each do |e|
+      mkdir_p "include/php/ext/#{e}"
+      headers = Dir["#{Formula["#{e}@8.0"].opt_include}/**/*.h"]
+      (buildpath/"redis-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
+    end
+  end
+
   def install
     args = %W[
       --enable-redis
@@ -36,8 +44,7 @@ class RedisAT80 < AbstractPhp80Extension
       --with-libzstd=#{Formula["zstd"].opt_prefix}
     ]
     Dir.chdir "redis-#{version}"
-    inreplace "config.m4", "ext/igbinary", "ext/igbinary@8.0"
-    inreplace "config.m4", "ext/msgpack", "ext/msgpack@8.0"
+    patch_redis
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
