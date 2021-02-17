@@ -16,11 +16,13 @@
 |`igbinary`|`PHP 5.6` to `PHP 8.1`|
 |`imagick`|`PHP 5.6` to `PHP 8.1`|
 |`imap`|`PHP 5.6` to `PHP 8.1`|
+|`msgpack`|`PHP 5.6` to `PHP 8.1`|
 |`pcov`|`PHP 7.1` to `PHP 8.1`|
 |`pecl_http`|`PHP 5.6` to `PHP 8.1`|
 |`propro`|`PHP 5.6` to `PHP 7.4`|
 |`protobuf`|`PHP 5.6` to `PHP 8.1`|
 |`raphf`|`PHP 5.6` to `PHP 8.1`|
+|`redis`|`PHP 5.6` to `PHP 8.1`|
 |`swoole`|`PHP 5.6` to `PHP 8.1`|
 |`xdebug`|`PHP 5.6` to `PHP 8.1`|
 |`xdebug2`|`PHP 7.2` to `PHP 7.4`|
@@ -85,11 +87,13 @@ Please see the [license file](LICENSE) for more information. This project has mu
 - [gRPC](https://github.com/grpc/grpc "gRPC Upstream")
 - [igbinary](https://github.com/igbinary/igbinary "igbinary upstream")
 - [Imagick](https://github.com/Imagick/imagick "Imagick upstream")
+- [Msgpack](https://github.com/msgpack/msgpack-php "Msgpack PHP Upstream")
 - [PECL-HTTP](https://github.com/m6w6/ext-http.git "PECL-HTTP Upstream")
 - [PCOV](https://github.com/krakjoe/pcov "PCOV Upstream")
 - [PHP Source](https://github.com/php/php-src "PHP Source")
 - [Propro](https://github.com/m6w6/ext-propro "Propro Upstream")
 - [Protobuf](https://github.com/protocolbuffers/protobuf "protocolbuffers Upstream")
+- [Redis](https://github.com/phpredis/phpredis "PHP Redis Upstream")
 - [Raphf](https://github.com/m6w6/ext-raphf "Raphf Upstream")
 - [Swoole](https://github.com/swoole/swoole-src "Swoole Upstream")
 - [Xdebug](https://github.com/xdebug/xdebug "Xdebug Upstream")
