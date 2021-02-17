@@ -15,6 +15,9 @@ class RedisAT56 < AbstractPhp56Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 arm64_big_sur: "2ee1119eb42fc841c3fc5b8aac4a1b8fa5b33a872dc1ab478affdc191813b117"
+    sha256 big_sur:       "313ba4b0da7e2e3296f2cc9ef43718099d3234d0295f1aa47ef9aa12a00477bd"
+    sha256 catalina:      "ef273037209ec1b12b0a066a43148b9e4202a69e3801e224a5cda298fe052aea"
   end
 
   depends_on "liblzf"
