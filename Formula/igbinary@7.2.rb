@@ -15,6 +15,10 @@ class IgbinaryAT72 < AbstractPhp72Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "dab7c453a2ebfda563087c3bb51bfa7b2de3b2c3244895b9f93c4af82f982d8e"
+    sha256 cellar: :any_skip_relocation, big_sur:       "c196784cfb9ef72204293ff0f0b7a3416007c3f281f1c3f4375ffbb38a49e058"
+    sha256 cellar: :any_skip_relocation, catalina:      "a0edc771cc9f5fdde6fea6be6ff508666d1d76aee7e875a72194654e38936a1c"
   end
 
   def install
