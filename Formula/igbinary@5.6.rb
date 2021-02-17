@@ -15,6 +15,10 @@ class IgbinaryAT56 < AbstractPhp56Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "82e6faa73be9977395206eddb0b2e1be6cf344a6c0d5d3f85493e676bfb67578"
+    sha256 cellar: :any_skip_relocation, big_sur:       "d227ffab322d77df2336aca9d0a39f3412a5c19e8556f6a84a8f39ff93a2ecb2"
+    sha256 cellar: :any_skip_relocation, catalina:      "8108f24ddc10459908e0944d3b371643090c8a4ed811b1c00fc0bb256990fb3e"
   end
 
   def install
