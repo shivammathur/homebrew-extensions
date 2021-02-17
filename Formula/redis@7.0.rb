@@ -15,6 +15,9 @@ class RedisAT70 < AbstractPhp70Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 arm64_big_sur: "fd9ba4f45cdc958e33245c8daaa60844509294f9273986fd8164c147827f7bab"
+    sha256 big_sur:       "15106c3bb9a14b2b5b6ae866fe6249c9723bf8d11162aa3ac2a8ded0ae7e6a0c"
+    sha256 catalina:      "791cefd51ad97999429aeb9ab9b928b42bff8c914d815ac8a1b7633888f96a6e"
   end
 
   depends_on "liblzf"
