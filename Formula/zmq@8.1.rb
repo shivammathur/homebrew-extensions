@@ -16,10 +16,6 @@ class ZmqAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
-    sha256 arm64_big_sur: "48130fd70a77c1e58b7ec8c2b473a3cc4bbbea0c3acfa3701f1a3314f04d6c4f"
-    sha256 big_sur:       "08acaa195552d547bff371f4560fcf5633233565ef0d3ec3bd3b836771d9fcd9"
-    sha256 catalina:      "63f8ecedfd0e5026a273e9b3417e3b134b73508e0f300118b1a916590af91a69"
   end
 
   depends_on "czmq"
