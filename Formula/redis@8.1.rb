@@ -15,9 +15,6 @@ class RedisAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    sha256 arm64_big_sur: "5b7f3e4712a638b79f9652ea8ce6c6549f3a782d2b3103bffe3b5ad51ba8e843"
-    sha256 big_sur:       "9b5dcf7769def2404ad41a32c10131281b9e1f8608fa382fe01a9e9929e9a248"
-    sha256 catalina:      "3556e58f80c8f16473525d3ac7bc7cc1a66f05bc5a661add3cd1799b675eb421"
   end
 
   depends_on "liblzf"
