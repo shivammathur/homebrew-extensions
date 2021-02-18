@@ -15,6 +15,10 @@ class ImapAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    rebuild 26
+    sha256 arm64_big_sur: "c9957472cde2675e660da6e50511002b384410a127a8bf226012c62a8d8cb826"
+    sha256 big_sur:       "0d34a49dd67ef32e848ab8a892ec55f1316baf1ad8c429b806cbf7b418f12d2b"
+    sha256 catalina:      "fac59667bf618fa374ce55dc92b660e0af69fe5e5e7a2df70badfd47fb73bcc1"
   end
 
   depends_on "imap-uw"
