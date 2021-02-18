@@ -15,9 +15,9 @@ class GrpcAT73 < AbstractPhp73Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    cellar :any_skip_relocation
-    sha256 "68fc5680bb78e3f6ec7de78c2c246214eede4511fc7c668c559c612a23761afd" => :big_sur
-    sha256 "7730a8709e9c0ee031254b2a8906d82f08288a61cb51ed980c7f8bd5ce854c26" => :catalina
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bec4ea577bc9103b625974baa584fdf5bdfafbbc560732f53848500aba0b568e"
+    sha256 cellar: :any_skip_relocation, big_sur:       "68fc5680bb78e3f6ec7de78c2c246214eede4511fc7c668c559c612a23761afd"
+    sha256 cellar: :any_skip_relocation, catalina:      "7730a8709e9c0ee031254b2a8906d82f08288a61cb51ed980c7f8bd5ce854c26"
   end
 
   depends_on "grpc"
