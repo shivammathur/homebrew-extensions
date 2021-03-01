@@ -75,6 +75,10 @@ match_args() {
   done
 }
 
+
+if [[ "$GITHUB_MESSAGE" = *--skip-nightly* ]] && [[ "$VERSION" =~ .*@8.1 ]]; then
+  exit 0
+fi
 create_package
 if [[ "$GITHUB_MESSAGE" = *--build-only* ]]; then
   match_args
