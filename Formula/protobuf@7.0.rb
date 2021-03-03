@@ -15,10 +15,9 @@ class ProtobufAT70 < AbstractPhp70Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    cellar :any_skip_relocation
-    sha256 "c6dc12bf13843da1ca626901e4e734162a6e21408a9c27d34d686f31925801ff" => :big_sur
-    sha256 "653a56e1191790a4fac4227d88d1490b2bb2b7ae5f106ae0953cbcd1f9dc8c05" => :arm64_big_sur
-    sha256 "7fc9a45ba2cf9072261d8549a39714fb43373c75a4e058b06dcf2ceffbbf70c7" => :catalina
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "da57f1981854184370b7ea6adc01dd67d748661fdb45a9d7fd2cabff07b4f843"
+    sha256 cellar: :any_skip_relocation, big_sur:       "b45ac610898a65131a599df23601b0d628f1c45cbcb93ad2ae79f3eec87996eb"
+    sha256 cellar: :any_skip_relocation, catalina:      "6699deef375adb4efae96683495cb7b42adf1beff929048e020bb9cb839b32de"
   end
 
   def install
