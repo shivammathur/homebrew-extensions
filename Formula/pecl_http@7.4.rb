@@ -16,6 +16,10 @@ class PeclHttpAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    rebuild 1
+    sha256 arm64_big_sur: "9c98c454a5c4721da5fc6acf22ab3f7a217fd6c9dfefef3ef1aa368410d3fb68"
+    sha256 big_sur:       "3e8882800c2f2b8eabd3d1c0b8ae787abd73c4640215cf8170b2bb7021beefc0"
+    sha256 catalina:      "72bf1504afc7a5b85a56cce6763a5aba4790bf09b36133ab3c4e50589fe48b7d"
   end
 
   depends_on "brotli"
