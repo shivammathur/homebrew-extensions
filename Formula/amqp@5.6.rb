@@ -16,8 +16,9 @@ class AmqpAT56 < AbstractPhp56Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     rebuild 1
-    sha256 "d596e7101a2f74932025879ddf775f0dee63bf7ea94b705011bc54d49e3259c7" => :big_sur
-    sha256 "f024a45a21351fbf4656722032c2441217318688da49b1dba48dd629b92351d0" => :catalina
+    sha256 arm64_big_sur: "6757756e5634061cb558900db06b30be00d7c2c70e13c3ff6a0edc50f3edc59a"
+    sha256 big_sur:       "d596e7101a2f74932025879ddf775f0dee63bf7ea94b705011bc54d49e3259c7"
+    sha256 catalina:      "f024a45a21351fbf4656722032c2441217318688da49b1dba48dd629b92351d0"
   end
 
   depends_on "rabbitmq-c"
