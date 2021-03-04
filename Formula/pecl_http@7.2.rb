@@ -12,6 +12,7 @@ class PeclHttpAT72 < AbstractPhp72Extension
   sha256 "37354ff7680b9b9839da8b908fff88227af7f6746c2611c873493af41d54f033"
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
