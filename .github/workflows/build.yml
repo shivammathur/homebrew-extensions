@@ -129,7 +129,7 @@ jobs:
           brew link --force --overwrite jq || true
           PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
           labels=$(curl -u "${{github.repository_owner}}:${{secrets.GITHUB_TOKEN}}" -H "Accept: application/vnd.github.v3+json" -sL https://api.github.com/repos/${{github.repository}}/issues/"$PR_NUMBER"/labels | jq -r .[].name)
-          if [ "${{matrix.arm}}" = '1' ] && [[ "$labels" =~ .*(grpc|amqp).* ]]; then
+          if [ "${{matrix.arm}}" = '1' ] && [[ "$labels" =~ .*(amqp).* ]]; then
             echo "::set-output name=build::no"
           else
             echo "::set-output name=build::yes"
