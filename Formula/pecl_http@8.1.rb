@@ -12,6 +12,7 @@ class PeclHttpAT81 < AbstractPhp81Extension
   sha256 "ea9a508578cffd428baf7b78f6d1618badedf3175be06b0809588a8b48889d5f"
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"

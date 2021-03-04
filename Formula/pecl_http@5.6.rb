@@ -12,6 +12,7 @@ class PeclHttpAT56 < AbstractPhp56Extension
   sha256 "ddbf3eea3d1c7004a7dd83b5864aee5f87b1b6032bc281c08ccc62f83b9931ed"
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
