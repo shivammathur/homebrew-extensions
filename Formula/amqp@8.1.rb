@@ -28,6 +28,7 @@ class AmqpAT81 < AbstractPhp81Extension
       --with-amqp=shared
       --with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}
     ]
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

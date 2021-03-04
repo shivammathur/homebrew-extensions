@@ -104,6 +104,13 @@ class AbstractPhpExtension < Formula
     files = Dir["*.h"]
     (include/"php/ext/#{module_name}@#{php_version}").install files unless files.empty?
   end
+
+  def patch_spl_symbols
+    %w[Aggregate ArrayAccess Countable Iterator Serializable Stringable Traversable].each do |s|
+      files = Dir["**/*"].select { |f| File.file?(f) && File.read(f).scrub.include?("spl_ce_#{s}") }
+      inreplace files, "spl_ce_#{s}", "zend_ce_#{s}".downcase unless files.empty?
+    end
+  end
 end
 
 # Abstract class for PHP 5.6 extensions

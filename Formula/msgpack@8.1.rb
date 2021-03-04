@@ -23,6 +23,7 @@ class MsgpackAT81 < AbstractPhp81Extension
 
   def install
     Dir.chdir "msgpack-#{version}"
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-msgpack"
     system "make"

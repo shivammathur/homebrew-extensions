@@ -49,6 +49,7 @@ class RedisAT81 < AbstractPhp81Extension
     ]
     Dir.chdir "redis-#{version}"
     patch_redis
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

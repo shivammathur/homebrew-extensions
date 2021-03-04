@@ -23,6 +23,7 @@ class RaphfAT81 < AbstractPhp81Extension
 
   def install
     Dir.chdir "raphf-#{version}"
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-raphf"
     system "make"

@@ -24,6 +24,7 @@ class GrpcAT81 < AbstractPhp81Extension
 
   def install
     Dir.chdir "grpc-#{version}"
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--enable-grpc"
     system "make"

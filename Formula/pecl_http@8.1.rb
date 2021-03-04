@@ -40,6 +40,7 @@ class PeclHttpAT81 < AbstractPhp81Extension
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
     Dir.chdir "pecl_http-#{version}"
     inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.1"
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

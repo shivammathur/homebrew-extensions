@@ -22,6 +22,7 @@ class PcovAT81 < AbstractPhp81Extension
   end
 
   def install
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-pcov"
     system "make"

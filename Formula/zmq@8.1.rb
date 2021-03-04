@@ -34,6 +34,7 @@ class ZmqAT81 < AbstractPhp81Extension
     inreplace "package.xml", "@PACKAGE_VERSION@", version
     inreplace "php-zmq.spec", "@PACKAGE_VERSION@", version
     inreplace "php_zmq.h", "@PACKAGE_VERSION@", version
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

@@ -25,6 +25,7 @@ class ProtobufAT81 < AbstractPhp81Extension
   def install
     Dir.chdir "php/ext/google/protobuf"
     system "cp", "-a", "../../../../third_party", "./"
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--enable-protobuf"
     system "make"
