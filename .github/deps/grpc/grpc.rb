@@ -2,11 +2,10 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.36.0",
-      revision: "736e3758351ced3cd842bad3ba4e2540f01bbc48",
+      tag:      "v1.36.1",
+      revision: "3b7f86e3516746c5f0db1947e0d65e94159bcb12",
       shallow:  false
   license "Apache-2.0"
-  revision 1
   head "https://github.com/grpc/grpc.git"
 
   livecheck do
@@ -15,10 +14,10 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "97f7e92fb5f93f9bad3492e9ce45d6352474299101f10cbcf7e29e1c9579c4ef"
-    sha256 big_sur:       "c7436a8932ffa15452044626efe70cedd7d5767757085db52697319e88f26620"
-    sha256 catalina:      "54b03077201bc405839da0988076df6c5537fe6ae67c342b52c705a9e1f88588"
-    sha256 mojave:        "957a614406efdfb26a91f37204bc5d9385648e0308f09e5578b43a29e000f4bd"
+    sha256 arm64_big_sur: "26fb8a4bdedb16e38a84af083fb1ce52535745e1326f91beb53a6b777c3a3bea"
+    sha256 big_sur:       "932389bc5e1c9e881cbf0e8cda5f70a640b3b9fc1adfc7c5658bdc736d80007e"
+    sha256 catalina:      "1f4fe0d219c072f293c0e9dbb86d47ab5b85cee71e4bcdb02283a6712e78bd54"
+    sha256 mojave:        "8fc79604d4726178a1c7c1b893488906b914cf07fd7a778e749e370ffd2288fc"
   end
 
   depends_on "autoconf" => :build
