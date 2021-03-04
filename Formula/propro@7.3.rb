@@ -16,7 +16,6 @@ class ProproAT73 < AbstractPhp73Extension
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
     cellar :any_skip_relocation
-    rebuild 1
     sha256 "1408e8905034edd3edb2e04fc78020101e8e086e523658fed566c46618f45dc5" => :big_sur
     sha256 "a93b664bf36dc6dbc34ec5b96c670f82a2b9ea463f99b5171d1ca7b378aca6be" => :arm64_big_sur
     sha256 "e3ba502d1d7b9bbba41874a1163a9e6a0e213faa97540de618200bd32226e413" => :catalina
