@@ -8,16 +8,13 @@ class ProtobufAT74 < AbstractPhp74Extension
   init
   desc "Protobuf PHP extension"
   homepage "https://github.com/protocolbuffers/protobuf"
-  url "https://pecl.php.net/get/protobuf-3.15.3.tgz"
-  sha256 "16b7b261e5fb843fdfe01b2161906aa6eb23817cad50c5b0eadd7d59150e3c16"
+  url "https://pecl.php.net/get/protobuf-3.15.4.tgz"
+  sha256 "ec806ba823784836cc10a8a36896f40bb070a3462b8e84e902f51a7cc97238d9"
   head "https://github.com/protocolbuffers/protobuf.git"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f4580343a5b8d28d1afbb9db9db80aae343911c2fab3dcfdb4c10da57a25eca1"
-    sha256 cellar: :any_skip_relocation, big_sur:       "ff1a8dbbf3e79541e952c56d2e72f61215638032ef0f8c2cd4cc3a3e3c14182d"
-    sha256 cellar: :any_skip_relocation, catalina:      "199005cdfd0cdf34eb80f590730d1ee396c52e7128371f72b2476ca8955aacb7"
   end
 
   def install
