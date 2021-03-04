@@ -16,7 +16,10 @@ class PeclHttpAT56 < AbstractPhp56Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    cellar :any
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b0f8f7d2266f47b8ac9d2097a3db9dbb45ca076ef73a8e8173c91cd8fcd74243"
+    sha256 cellar: :any,                 big_sur:       "898fe55edfa1aded3e96cf2108cc57452530ef78f2b1512c485786409319d278"
+    sha256 cellar: :any,                 catalina:      "72639493861b0b41dc4391f236f968261badfba16cb720323ebef14b3b35feec"
   end
 
   depends_on "brotli"
