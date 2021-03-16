@@ -15,6 +15,9 @@ class SwooleAT73 < AbstractPhp73Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 cellar: :any, arm64_big_sur: "76660c6f5d5223bee431df1682b24ff817856ba61269ed01a2e29e81f8998058"
+    sha256 cellar: :any, big_sur:       "173e293ee804691008c133645d22dd60137489d68aaab289751ea98fdb3d4404"
+    sha256 cellar: :any, catalina:      "a44293660fb42f8cc1641c2447e7aa5fd7a4dbfc0a9734961104bcd262705020"
   end
 
   def install
