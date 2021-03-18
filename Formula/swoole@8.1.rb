@@ -20,6 +20,7 @@ class SwooleAT81 < AbstractPhp81Extension
   def install
     patch_spl_symbols
     inreplace "ext-src/php_swoole_cxx.cc", "_ex(file.c_str(), ", "_ex("
+    inreplace "ext-src/php_swoole_cxx.cc", "zend_file_handle_dtor", "zend_destroy_file_handle"
     safe_phpize
     system "./configure"
     system "make"
