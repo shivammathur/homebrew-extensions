@@ -16,6 +16,10 @@ class PeclHttpAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    rebuild 4
+    sha256 arm64_big_sur: "ac63ded84c87963e358bd55ade51caebb34c828a68e0b44be6e9846c13f23484"
+    sha256 big_sur:       "31ac19965fc59910b68142fb7a12629d43a54937786069574f6b9d0e90aa1d3b"
+    sha256 catalina:      "63f1077542e09e2cd96ca59e5ee16097546936be538c50ad85e3e2e9709e4e9f"
   end
 
   depends_on "brotli"
