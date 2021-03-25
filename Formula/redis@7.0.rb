@@ -8,16 +8,13 @@ class RedisAT70 < AbstractPhp70Extension
   init
   desc "Redis PHP extension"
   homepage "https://github.com/phpredis/phpredis"
-  url "https://pecl.php.net/get/redis-5.3.3.tgz"
-  sha256 "37789161e164cd52239a30c9a238da61fec5c8395cdac385b6ed8f0c50fd92f0"
+  url "https://pecl.php.net/get/redis-5.3.4.tgz"
+  sha256 "4b39056f3356f135255e059efd76398d1c7607c86bd52513e6341bb07a3fb4cc"
   head "https://github.com/phpredis/phpredis.git"
   license "PHP-3.01"
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    sha256 arm64_big_sur: "fd9ba4f45cdc958e33245c8daaa60844509294f9273986fd8164c147827f7bab"
-    sha256 big_sur:       "15106c3bb9a14b2b5b6ae866fe6249c9723bf8d11162aa3ac2a8ded0ae7e6a0c"
-    sha256 catalina:      "791cefd51ad97999429aeb9ab9b928b42bff8c914d815ac8a1b7633888f96a6e"
   end
 
   depends_on "liblzf"
