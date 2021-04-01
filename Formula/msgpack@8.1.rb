@@ -15,6 +15,10 @@ class MsgpackAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    rebuild 8
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "83b73fee1302c4717e2e30d91439d3d217a2fe8e91373947f6a03d69842a619b"
+    sha256 cellar: :any_skip_relocation, big_sur:       "e4d7bfd716498c1dca9f4e07496dbd771c65de7cb9f075322e09d63b9086499e"
+    sha256 cellar: :any_skip_relocation, catalina:      "2ddbc59077e88ff17e9662a29837bd745274abdc22960e064ba650db747aee38"
   end
 
   def install
