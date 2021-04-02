@@ -8,7 +8,7 @@ class ApcuAT72 < AbstractPhp72Extension
   init
   desc "Apcu PHP extension"
   homepage "https://github.com/krakjoe/apcu"
-  url "https://pecl.php.net/get/apcu-5.1.20.tgz?init=true"
+  url "https://pecl.php.net/get/apcu-5.1.20.tgz"
   sha256 "b99d40fafec06f4d132fcee53e7526ddbfc1d041ea6e04e17389dfad28f9c390"
   head "https://github.com/krakjoe/apcu.git"
   license "PHP-3.01"
