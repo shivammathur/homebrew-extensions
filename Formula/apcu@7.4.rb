@@ -15,6 +15,9 @@ class ApcuAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c6bc44a946d756ce3b5e02a08cd5ebdf1eac94275c160b9c1a24a569cf422b68"
+    sha256 cellar: :any_skip_relocation, big_sur:       "5d22cbd3c60d954325af5b3b3f85b3d3ec94b5008bdf45cce6568d0bb32fa775"
+    sha256 cellar: :any_skip_relocation, catalina:      "fe6d8c466531f8dd0a602d531d62b5edcbe34dea1acc6ee9bfeb9baa11113292"
   end
 
   def install
