@@ -47,6 +47,7 @@ jobs:
           php -r "if(substr(phpversion(), 0, 3)<8.0 && ! extension_loaded('propro')) {throw new Exception('propro not found');}"
           php -r "if(phpversion()>=7.1 && ! extension_loaded('pcov')) {throw new Exception('pcov not found');}"
           php -r "if(! extension_loaded('amqp')) {throw new Exception('amqp not found');}"
+          php -r "if(! extension_loaded('apcu')) {throw new Exception('apcu not found');}"
           php -r "if(! extension_loaded('grpc')) {throw new Exception('grpc not found');}"
           php -r "if(! extension_loaded('http')) {throw new Exception('http not found');}"
           php -r "if(! extension_loaded('igbinary')) {throw new Exception('igbinary not found');}"

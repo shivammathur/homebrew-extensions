@@ -12,6 +12,7 @@
 |Extension|PHP Version|
 |--- |--- |
 |`amqp`|`PHP 5.6` to `PHP 8.1`|
+|`apcu`|`PHP 5.6` to `PHP 8.1`|
 |`grpc`|`PHP 5.6` to `PHP 8.1`|
 |`igbinary`|`PHP 5.6` to `PHP 8.1`|
 |`imagick`|`PHP 5.6` to `PHP 8.1`|
@@ -47,7 +48,7 @@ php -v
 
 ```zsh
 brew tap shivammathur/php
-brew install php@7.4
+brew install shivammathur/php/php@7.4
 brew link --force --overwrite php@7.4
 ```
 
@@ -84,6 +85,7 @@ Please see the [license file](LICENSE) for more information. This project has mu
 ## Dependencies
 
 - [amqp](https://github.com/php-amqp/php-amqp "amqp Upstream")
+- [APCu](https://github.com/krakjoe/apcu "APCu Upstream")
 - [gRPC](https://github.com/grpc/grpc "gRPC Upstream")
 - [igbinary](https://github.com/igbinary/igbinary "igbinary upstream")
 - [Imagick](https://github.com/Imagick/imagick "Imagick upstream")
