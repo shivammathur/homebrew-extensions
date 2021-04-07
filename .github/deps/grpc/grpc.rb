@@ -6,6 +6,7 @@ class Grpc < Formula
       revision: "3e53dbe8213137d2c731ecd4d88ebd2948941d75",
       shallow:  false
   license "Apache-2.0"
+  revision 1
   head "https://github.com/grpc/grpc.git"
 
   livecheck do
@@ -14,10 +15,10 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "50cae3f7c0e151ed74804875c9eb033dbd2e475ae69df217a9bcdf2091df362a"
-    sha256 big_sur:       "6f1dcef07cc4f3b8b2880ab121a6113e93d97fac4620664ecb606f7d8b8678f5"
-    sha256 catalina:      "55402728a380a470750c9a55f7fa398020a2af774d6e523f1a0eefe2bb450b1e"
-    sha256 mojave:        "58ea9c29d6b768535f9828ef36b73fc586e369d2df9e99042ee015de71fe55dc"
+    sha256 arm64_big_sur: "9b067833fdc4ec3f6bf087410b774e81e1ed906b1ae3fc882421bd553712f42a"
+    sha256 big_sur:       "17531240482c6f10c02582cb8597ca423d952a3cb42af86219f7a93c68742006"
+    sha256 catalina:      "bb505054689cc41935a3f9d6980d4e8225a2413262dcf77dda850d15852b0cf1"
+    sha256 mojave:        "d23ab851339dafacbc72f066719980f1df87251956cfa269a4ac34de018b43ed"
   end
 
   depends_on "autoconf" => :build
