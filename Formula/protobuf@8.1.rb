@@ -16,6 +16,10 @@ class ProtobufAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    rebuild 21
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "103dbd9e06d0f4b16900c7599859b9df6354329811d238522d6b76b561b6f02c"
+    sha256 cellar: :any_skip_relocation, big_sur:       "0d66946ce28a344d445f5ba96a2fc16db947d10e7d49837a2dd86b722837a5b2"
+    sha256 cellar: :any_skip_relocation, catalina:      "e1c23bfd2d321d6f23fa5d093c0a72354f0b6ccb1e8dce44efee2bdd5466ffd0"
   end
 
   def install
