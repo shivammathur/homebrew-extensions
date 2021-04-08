@@ -15,6 +15,10 @@ class ApcuAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "73027bb6815a8cb55848bb56fe2b347489970de239ec497be77bd4f15037d347"
+    sha256 cellar: :any_skip_relocation, big_sur:       "035a22f63301e607d7176612a6b350256883973cb368310fc9e4e7f7283db714"
+    sha256 cellar: :any_skip_relocation, catalina:      "993705559d78046fa900ab048bb01d672af3ec5bf477655cf8d5ec796eb55022"
   end
 
   def install
