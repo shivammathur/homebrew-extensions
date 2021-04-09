@@ -14,7 +14,7 @@ class SwooleAT81 < AbstractPhp81Extension
   license "Apache-2.0"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 4
     sha256 cellar: :any, arm64_big_sur: "3af6a2bab92d6887e89514fa0a083c9cb5fea6e62e8c0e490bab05ffce071584"
     sha256 cellar: :any, big_sur:       "e813aacf627a51e5bea9bf5aecc2c928663eeea465b3f9b74da49637534d5656"

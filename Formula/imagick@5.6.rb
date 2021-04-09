@@ -15,8 +15,7 @@ class ImagickAT56 < AbstractPhp56Extension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 3
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_big_sur: "a986f3f8a5d0e1ab2d944f521c88062aa799244d0919077171630a98afa6dbcd"
     sha256 big_sur:       "94d410627700142936b6496f18ed85c991c13fef4d991d296a19d54d13ab8572"
     sha256 catalina:      "e2fce4af6004207bf0a3a0c5271b219bda8253ee59e4cc68962a12a8aecf9b7a"

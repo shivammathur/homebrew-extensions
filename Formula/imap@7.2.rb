@@ -13,8 +13,7 @@ class ImapAT72 < AbstractPhp72Extension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 2
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_big_sur: "b4420e5764679b18fe46e7a99c6db667fede559218130b898e8cbfc07d1e8467"
     sha256 big_sur:       "45228067734f63a8d27dd99f96d3f0fd5f190be00bf2bd11b4bedd48d26cda24"
     sha256 catalina:      "38391d5298159e2844c39f7541a94396fc1e89bbfcaadf573eff32344511d6b3"

@@ -67,10 +67,6 @@ jobs:
         env:
           GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          HOMEBREW_BINTRAY_URL: https://dl.bintray.com/${{ github.repository_owner }}/extensions
-          HOMEBREW_BINTRAY_USER: ${{ github.repository_owner }}
-          HOMEBREW_BINTRAY_REPO: extensions
-          HOMEBREW_BINTRAY_KEY: ${{ secrets.HOMEBREW_BINTRAY_KEY }}
           EXTENSION: ${{ matrix.extension }}
           VERSION: ${{ matrix.extension }}@${{ matrix.php }}
         run: bash ./.github/scripts/edit.sh
@@ -81,8 +77,8 @@ jobs:
         with:
           token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           commit-message: Update ${{ matrix.extension }}@${{ matrix.php }}
-          committer: BrewTestBot <homebrew-test-bot@lists.sfconservancy.org>
-          author: BrewTestBot <homebrew-test-bot@lists.sfconservancy.org>
+          committer: BrewTestBot <1589480+BrewTestBot@users.noreply.github.com>
+          author: BrewTestBot <1589480+BrewTestBot@users.noreply.github.com>
           signoff: false
           base: master
           branch: update-${{ matrix.extension }}@${{ matrix.php }}
@@ -145,7 +141,7 @@ jobs:
           if [ "${{ matrix.os }}" = "macos-10.15" ]; then
             sudo xcode-select -s /Applications/Xcode_11.7.app || exit 1
           else
-            sudo xcode-select -s /Applications/Xcode_12.3.app || exit 1
+            sudo xcode-select -s /Applications/Xcode_12.4.app || exit 1
           fi
 
       - name: brew test-bot --only-cleanup-before
@@ -161,7 +157,7 @@ jobs:
         run: |
           mkdir bottles
           cd bottles
-          brew test-bot --only-formulae --root-url=https://dl.bintray.com/${{ github.repository_owner }}/extensions
+          brew test-bot --only-formulae --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions"
 
       - name: Output brew test-bot --only-formulae failures
         if: always() && steps.check.outputs.build != 'no'
@@ -230,7 +226,9 @@ jobs:
     if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build') && github.event.pull_request.user.login == github.repository_owner
     runs-on: ubuntu-latest
     steps:
-      - name: "Add Label"
-        run: |
-          PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
-          curl -u "${{github.repository_owner}}:${{secrets.GITHUB_TOKEN}}" -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${{github.repository}}/issues/"$PR_NUMBER"/labels -d '{"labels":["build-complete"]}'
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Add Label
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr edit "$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')" --add-label "build-complete"

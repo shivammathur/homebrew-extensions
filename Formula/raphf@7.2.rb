@@ -14,8 +14,7 @@ class RaphfAT72 < AbstractPhp72Extension
   license "BSD-2-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "b6fc0c220a75384aad4dbbb80e53fea3105c7448e586bfe0a0be806bd1b1335e"
     sha256 cellar: :any_skip_relocation, big_sur:       "4fdac471855ed81bcc3f4cbf5d18e8d87b1e7a30077d1fb989e8c899497cd891"
     sha256 cellar: :any_skip_relocation, catalina:      "98fd7b39a11c90fba3d60e2287eca11daccdca90fdec9475295d17ddba2c832c"

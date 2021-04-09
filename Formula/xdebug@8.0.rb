@@ -14,7 +14,7 @@ class XdebugAT80 < AbstractPhp80Extension
   license "PHP-3.0"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_big_sur: "d024b4a1d5b93ae73a51f0280b18ba50d373527ade009c9b6c39f3938a7301ad"
     sha256 big_sur:       "dec33c9f8a8584db514e61f428d325f5f6a9633ee8144033a86843bbeffe7640"
     sha256 catalina:      "4606badcc86861b7109322eb17dd0fa825ab62a17f452eb0f47116c1d110005b"

@@ -14,7 +14,7 @@ class RedisAT72 < AbstractPhp72Extension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_big_sur: "a37784018473583fdd46c3218eb1fd482b2b009039cd3cede98f3bcd958495fe"
     sha256 big_sur:       "40577fbd598d25e6c332f51c567180c9d9667af9ce231f986807519375a33201"
     sha256 catalina:      "055ec7b7ce077f307b535656b69129af76f75e383f30e23d3beceff17a76259a"

@@ -6,21 +6,6 @@ unbottle() {
   sed -Ei '/    sha256.*arm64_big_sur/d' ./Formula/"$VERSION".rb || true
 }
 
-create_package() {
-  package="${VERSION//@/:}"
-  curl \
-  --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" \
-  --header "Content-Type: application/json" \
-  --data " \
-  {\"name\": \"$package\", \
-  \"vcs_url\": \"$GITHUB_REPOSITORY\", \
-  \"licenses\": [\"MIT\"], \
-  \"public_download_numbers\": true, \
-  \"public_stats\": true \
-  }" \
-  https://api.bintray.com/packages/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO" >/dev/null 2>&1 || true
-}
-
 fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   if [[ "$EXTENSION" =~ imap ]]; then
@@ -52,7 +37,7 @@ fetch() {
 check_version() {
   package="${VERSION//@/:}"
   new_version=$(grep -Eo "[0-9]+\.[0-9]+\.[0-9]+" Formula/"$VERSION".rb | head -n 1)
-  existing_version=$(curl --user "$HOMEBREW_BINTRAY_USER":"$HOMEBREW_BINTRAY_KEY" -s https://api.bintray.com/packages/"$HOMEBREW_BINTRAY_USER"/"$HOMEBREW_BINTRAY_REPO"/"$package" | sed -e 's/^.*"latest_version":"\([^"]*\)".*$/\1/' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+')
+  existing_version=$(grep -Eo "[0-9]+\.[0-9]+\.[0-9]+" /tmp/"$VERSION".rb | head -n 1)
   if [ "$existing_version" != '' ]; then
     new_version=$(printf "%s\n%s" "$new_version" "$existing_version" | sort | tail -n 1)
   fi
@@ -75,11 +60,9 @@ match_args() {
   done
 }
 
-
 if [[ "$GITHUB_MESSAGE" = *--skip-nightly* ]] && [[ "$VERSION" =~ .*@8.1 ]]; then
   exit 0
 fi
-create_package
 if [[ "$GITHUB_MESSAGE" = *--build-only* ]]; then
   match_args
 else

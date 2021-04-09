@@ -15,8 +15,7 @@ class ImagickAT74 < AbstractPhp74Extension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 3
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_big_sur: "c9c39420a3b29dd98017f35e4983b608341f22b3bce6c08a7327402c2813e1f7"
     sha256 big_sur:       "f52c5fa41992eef65d67334e89f9ec7bc6e20365e8ae1c31ceca46aaa99b38e8"
     sha256 catalina:      "b228331c51b84a649cf3b45909e50043b9049abad13afa92ffeeacf6e8103a4d"

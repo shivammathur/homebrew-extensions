@@ -15,7 +15,7 @@ class ZmqAT73 < AbstractPhp73Extension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_big_sur: "cfb413e94ee3625e48d2134e0d84e2317294a354610f1f72cdcd7fd779604be2"
     sha256 big_sur:       "13eba1ba47468cec0e66cc060668912fbaa8e4260d82ddffa40e2edc06aec9fd"
     sha256 catalina:      "2889c4cd792a3f60c55a601abc71fa2c77ebc676a36977e402e88763970385d5"

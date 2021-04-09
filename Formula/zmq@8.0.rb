@@ -15,7 +15,7 @@ class ZmqAT80 < AbstractPhp80Extension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_big_sur: "7f936bb49e9df8b6fb2dc41a2a685802c1ceecac16414830630aba5cae7e70a8"
     sha256 big_sur:       "ba40b5d1f4c99e227c1b3a5ce57b1aa3c3cdb01a675a6d905eb1f88bb3f9d2df"
     sha256 catalina:      "a57f360bb467153135f94ec9935335260178277f108fb80777a5566e362757eb"

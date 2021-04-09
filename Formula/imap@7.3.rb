@@ -13,7 +13,7 @@ class ImapAT73 < AbstractPhp73Extension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_big_sur: "c1f0d83ffb72b3f182604bdd7bfc3fb13aa2c190733c2325762eb0ba66824693"
     sha256 big_sur:       "f2a427989799b09b1d8becbb220e23bc273d44d42f3ad0f838464e4a007d3f82"
     sha256 catalina:      "a66038bd8c3c698aba3e3fe7e8439e9f919572c5135bd99015fadb1015acd9fb"

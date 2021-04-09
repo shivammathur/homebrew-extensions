@@ -14,7 +14,7 @@ class PcovAT73 < AbstractPhp73Extension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "dfff932d65ce91477bd0f8f73604c6cc7ceea6c9bfc3d62f69de035c5de0c3e2"
     sha256 cellar: :any_skip_relocation, big_sur:       "8afc12e3d09c1f947e24703f5411b5029c5897d72a6bbaaed07fd6c94c10277b"
     sha256 cellar: :any_skip_relocation, catalina:      "e6f22b8d8acb63589f52c813c06f5e795c9849074262f3d4367d6eb85a24395a"

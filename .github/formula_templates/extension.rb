@@ -14,7 +14,7 @@ class Extension_TitleATNODOT < AbstractPhpNODOTExtension
   license "LICENSE_NAME"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
   end
 
   def install

@@ -15,7 +15,7 @@ class PeclHttpAT81 < AbstractPhp81Extension
   revision 1
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 6
     sha256 arm64_big_sur: "0f1cd1385284f7d462dd7e86c754f709dc271e29a228fb1f51d44d4ec4e3e22e"
     sha256 big_sur:       "60a4a51db2004bbf60f6ac87a662d9bf3a59d45ce045023e6d6ecb99c30fbb11"

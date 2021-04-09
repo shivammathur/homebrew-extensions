@@ -15,11 +15,11 @@ class PeclHttpAT70 < AbstractPhp70Extension
   revision 1
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 2
-    sha256 arm64_big_sur: "dae586e27e9e640dfa7c95fecfcb21c84327178115ca73059c32c349b49aab14"
-    sha256 big_sur:       "1680a253c8eee4368c9bed4f944ca808fcbdabb6fa8c30c06ca516f69ce369d4"
-    sha256 catalina:      "0b4a4f6ab750c817d15fbb97af97ad9143c63f2d03cfcf340ef82d6a0e77e133"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 3
+    sha256 arm64_big_sur: "549004de5b1389bc914ef10460bc5d613e320d38ba724f9edbc0b3aac1f5c508"
+    sha256 big_sur:       "7cb226872c2a25539cd743feea317a2407abc2130cdeb1fe35e4770f8283c359"
+    sha256 catalina:      "6e1d687a374758c79e5666260c9cc285d38952a66d97067992b5bf73c6c32c58"
   end
 
   depends_on "brotli"

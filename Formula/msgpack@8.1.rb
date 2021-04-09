@@ -14,7 +14,7 @@ class MsgpackAT81 < AbstractPhp81Extension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 9
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "da75825695cf265773cccefd019e6cba5b93b35056b248668a0251a3549c619d"
     sha256 cellar: :any_skip_relocation, big_sur:       "4aab4043aafbdc3b573026eaec5a50b72d7405be2d1bea9ad568a9cc8c2223fa"
