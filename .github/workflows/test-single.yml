@@ -1,4 +1,4 @@
-name: 'Test Formulae'
+name: 'Test Single Formula'
 on:
   workflow_dispatch:
     inputs:

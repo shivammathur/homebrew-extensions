@@ -15,8 +15,7 @@ class ProtobufAT80 < AbstractPhp80Extension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "dafadd86428c98192bfe7484de971e25a68ed0bfc360ae5a55e9d6a008511ed4"
     sha256 cellar: :any_skip_relocation, big_sur:       "7859bb91c3d6c269b710a782352e4c384d29818829a564982129d5b0bf3ba031"
     sha256 cellar: :any_skip_relocation, catalina:      "1a6e5f4fa12bcc796a92c5ae4e7138b4ce93ccf1d1342ce638ae6bc1f20e5b06"

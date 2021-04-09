@@ -14,7 +14,7 @@ class SwooleAT72 < AbstractPhp72Extension
   license "Apache-2.0"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any, arm64_big_sur: "93af473d968a2ae4d0ec1e3958a7c5b3af1ab3be0470dfa5a43f2f18cbfbeb61"
     sha256 cellar: :any, big_sur:       "29b6fbbdc3ac6132eca0b7aba875f226bcd0eaf6eff33cd400f4022a505ff4d3"
     sha256 cellar: :any, catalina:      "cc170ae72e947200fda88cf03ff46d68ac5aeff763f3a911be16006c18db0864"

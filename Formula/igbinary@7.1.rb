@@ -14,8 +14,7 @@ class IgbinaryAT71 < AbstractPhp71Extension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 2
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "363c5cb150b27eaf44b12cae45b980f7a3dfd431930728df76dba42daa1dea5a"
     sha256 cellar: :any_skip_relocation, big_sur:       "6ce373bb202cc678095e04126b9a82567e90f61b564a610f83337f5f8121b173"
     sha256 cellar: :any_skip_relocation, catalina:      "b25c8f964833a35878d4c282b6bddc7edd60ba67d334b898b6685dde78162894"

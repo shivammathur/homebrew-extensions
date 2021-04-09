@@ -13,7 +13,7 @@ done
 wait "${to_wait[@]}"
 ls "./.github/deps/$extension"
 if [ "$(git status --porcelain=v1 2>/dev/null | wc -l)" != "0" ]; then
-  git config --local user.email homebrew-test-bot@lists.sfconservancy.org
+  git config --local user.email 1589480+BrewTestBot@users.noreply.github.com
   git config --local user.name BrewTestBot
   git config --local pull.rebase true
   git stash

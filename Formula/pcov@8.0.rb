@@ -14,7 +14,7 @@ class PcovAT80 < AbstractPhp80Extension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "d97d5ad6d9f427bc7c11659a25ec506aee1b2069d1028a97223f2a95d84644f9"
     sha256 cellar: :any_skip_relocation, big_sur:       "e34ec459d634f728ddc4137a4a068a03acf4065b66b6790170f81da1135f882d"
     sha256 cellar: :any_skip_relocation, catalina:      "f309420695d8d03421b3926294531c9e2d0b24dbd6661118a6e79d5a66d6ae54"

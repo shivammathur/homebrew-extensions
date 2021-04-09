@@ -13,8 +13,7 @@ class ImapAT56 < AbstractPhp56Extension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 2
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_big_sur: "ba83a07ff9d1b3c7dccdecad406d8191a545066867646fc1e4c4aa4daa61bb9d"
     sha256 big_sur:       "40361f7c8b8561a536185d823283ab0f71ed7d7a586216b624ad8cd2b80d6258"
     sha256 catalina:      "1fe208cfc69e94ddc95a2f472e0ca2e9c4a5393361fd718c82e62ad22fe1eea6"

@@ -14,8 +14,7 @@ class XdebugAT71 < AbstractPhp71Extension
   license "PHP-3.0"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "4fa906e4e575df3df5ecbdf76854c388817ad014689927ee6b202e102cb5efe1"
     sha256 cellar: :any_skip_relocation, big_sur:       "a47a76c5abceaf29d9ce37ca5a5cd299dd604649517a894e885486789f2b7b75"
     sha256 cellar: :any_skip_relocation, catalina:      "6bbd0da640e9b1060634f15909ae53804efb34afdce1fcb0793cbf7bc7f2fcb3"

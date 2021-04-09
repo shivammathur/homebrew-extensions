@@ -14,8 +14,7 @@ class ProproAT70 < AbstractPhp70Extension
   license "BSD-2-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "e3f4b4dc694ce15893c489e393e0a5222f6dc20958513134203d0954d76d2688"
     sha256 cellar: :any_skip_relocation, big_sur:       "f8ca706b86225ab7689389bd3dca10c834dd700d08b0a494d30273309ab9ce60"
     sha256 cellar: :any_skip_relocation, catalina:      "2353fad55635fcc5d56d409b34884a2249128b15cbdbfd45d1af8b7f600bd86f"

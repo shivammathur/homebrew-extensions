@@ -14,7 +14,7 @@ class GrpcAT74 < AbstractPhp74Extension
   license "Apache-2.0"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "592eb9686a1987e4c48735d7834d53f2b5febbcd9c4fb97dbfb14e1642b1005f"
     sha256 cellar: :any_skip_relocation, big_sur:       "d1b7c3ed945794c70edad47b84bf47cc511b13c93429585e0481421a4e4e0488"
     sha256 cellar: :any_skip_relocation, catalina:      "c9292f424d4183c7ff7fd3509bccfe2e3d05680ee7db31b520e761bb1f2502b7"

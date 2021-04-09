@@ -14,8 +14,7 @@ class ProproAT56 < AbstractPhp56Extension
   license "BSD-2-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "a3f2e3c010769b49a2ab6ef07873362969b802c12c921f9c65471bf04897467c"
     sha256 cellar: :any_skip_relocation, big_sur:       "b3081c164ea776c264f740a8b6a36de5175ae809466db55fe0ed00d98c9b8e0d"
     sha256 cellar: :any_skip_relocation, catalina:      "a218bca11d1d3923ad2ccbe0142f73f0c04273d7effc3f04a7cff7a96a458767"

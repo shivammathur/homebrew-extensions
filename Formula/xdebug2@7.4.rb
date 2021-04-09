@@ -14,8 +14,7 @@ class Xdebug2AT74 < AbstractPhp74Extension
   license "PHP-3.0"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "b7a780f4925f7ec3becafd5bedd6e56256aab21d1ace4330158775aa90be0f58"
     sha256 cellar: :any_skip_relocation, big_sur:       "cad5e99bd3b9b35c9bfd9c2325630a1e7f34f40f74eadaa1f0f0fcfa445db77f"
     sha256 cellar: :any_skip_relocation, catalina:      "bdae44ba3d4b4ce595efc702599e2aa5ef690e109886f6c966f138b9f8bc105c"

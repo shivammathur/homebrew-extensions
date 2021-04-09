@@ -14,7 +14,7 @@ class ProtobufAT71 < AbstractPhp71Extension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "b134372c223aa99d5e48c3b67ce5735582fe0b371ea3de6e1c4174f287d58339"
     sha256 cellar: :any_skip_relocation, big_sur:       "d98ac9e49c914a3a18233a1a8247fc97630a63cf341d66d19ef13141b9e679d5"
     sha256 cellar: :any_skip_relocation, catalina:      "37ce6735edea6ec3f87a916405247ca7059cf126dc4bb600768e53cfcb8dac00"

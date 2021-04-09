@@ -14,7 +14,7 @@ class RedisAT80 < AbstractPhp80Extension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_big_sur: "9b95cb684414723f1904483c68d4f283ac80064e3f02bc44f8b27eb281e21d54"
     sha256 big_sur:       "83f9f5e583c70067995994ac6b8225f6d7a651dec22aee73e3a1fb6549d5342d"
     sha256 catalina:      "25776e658a88abde16a244269b90a9278298bd4dfb087bd4fca23773e8cf0665"

@@ -14,8 +14,7 @@ class RaphfAT56 < AbstractPhp56Extension
   license "BSD-2-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
-    rebuild 1
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "6f828ddb01134c57d9d8aaf8a5c739671f6a7744995a80a0bc5040b29b5216c2"
     sha256 cellar: :any_skip_relocation, big_sur:       "cc06f69d08d8d5b9710ab5858c799788e7a1662361e1640902b819b379006ff9"
     sha256 cellar: :any_skip_relocation, catalina:      "50b3b5781c82add904f128e5c8b82b2da2543093feab1e1c41a1cfb8744d257e"

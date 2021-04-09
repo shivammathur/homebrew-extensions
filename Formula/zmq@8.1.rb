@@ -15,7 +15,7 @@ class ZmqAT81 < AbstractPhp81Extension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 10
     sha256 arm64_big_sur: "9ee5d20cb4a267d899fcacae6c473861ea9d024ae80907badb768615e19df260"
     sha256 big_sur:       "cbe0546fccd34650a411f7f74b7dea888eeb7bff5c3c58b9ded822415ece7ef6"

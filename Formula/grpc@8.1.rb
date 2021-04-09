@@ -14,7 +14,7 @@ class GrpcAT81 < AbstractPhp81Extension
   license "Apache-2.0"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/extensions"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 6
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "66f80b04b420a4d79959acae6d10612831afd5872916d126bde0eabc1349892a"
     sha256 cellar: :any_skip_relocation, big_sur:       "6175326560a195c43283eca3746032c9fdd71bd93b32d056bd4fcb451e9cc304"
