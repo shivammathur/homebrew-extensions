@@ -15,11 +15,10 @@ class XdebugAT56 < AbstractPhp56Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "cf4e988a3805069c2fc0ff876cbda1ef84ea1474971a3b358122bf7109956b40" => :big_sur
-    sha256 "41becc4471bec61058f9684636e5b7b5eca8e8b7ae7c2aa4d6427c69ac7b8985" => :arm64_big_sur
-    sha256 "ddc7ec2f15a6615f8b1c07da9819e06419801d74c5b0a2be0f3b44ec1a08699f" => :catalina
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "41becc4471bec61058f9684636e5b7b5eca8e8b7ae7c2aa4d6427c69ac7b8985"
+    sha256 cellar: :any_skip_relocation, big_sur:       "cf4e988a3805069c2fc0ff876cbda1ef84ea1474971a3b358122bf7109956b40"
+    sha256 cellar: :any_skip_relocation, catalina:      "ddc7ec2f15a6615f8b1c07da9819e06419801d74c5b0a2be0f3b44ec1a08699f"
   end
 
   def install

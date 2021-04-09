@@ -15,11 +15,10 @@ class XdebugAT70 < AbstractPhp70Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "120570f8b53a5de19d77783c9d2448d97e4139844110b22460bdfe4f2aa55942" => :big_sur
-    sha256 "6c312503e93358753ba98ed8598d58694c838f00a013a879a7c89b79a51d5f54" => :arm64_big_sur
-    sha256 "34d32d37617c0cb5b133bd6e69f73d6a9a53ef538f44686df79237ab532de3dc" => :catalina
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6c312503e93358753ba98ed8598d58694c838f00a013a879a7c89b79a51d5f54"
+    sha256 cellar: :any_skip_relocation, big_sur:       "120570f8b53a5de19d77783c9d2448d97e4139844110b22460bdfe4f2aa55942"
+    sha256 cellar: :any_skip_relocation, catalina:      "34d32d37617c0cb5b133bd6e69f73d6a9a53ef538f44686df79237ab532de3dc"
   end
 
   def install

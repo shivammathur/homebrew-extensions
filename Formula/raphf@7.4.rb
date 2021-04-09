@@ -15,11 +15,10 @@ class RaphfAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "ba37c42c75f6efb00b9d68c800f40944ff22189084dce55005f38045237f70c8" => :big_sur
-    sha256 "24e18099cb842677b79609ad30de747fa4eb7934d4b5cd800cb1a7a6fe837994" => :arm64_big_sur
-    sha256 "7ca2639cd4cbd8041a12d1e885453b3dc3e6029b1a3358dc7bfe35f477caefe1" => :catalina
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "24e18099cb842677b79609ad30de747fa4eb7934d4b5cd800cb1a7a6fe837994"
+    sha256 cellar: :any_skip_relocation, big_sur:       "ba37c42c75f6efb00b9d68c800f40944ff22189084dce55005f38045237f70c8"
+    sha256 cellar: :any_skip_relocation, catalina:      "7ca2639cd4cbd8041a12d1e885453b3dc3e6029b1a3358dc7bfe35f477caefe1"
   end
 
   def install

@@ -15,11 +15,10 @@ class RaphfAT80 < AbstractPhp80Extension
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/extensions"
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "cba2ff8ac7e2bdfec8821e78ffa7db4b4f06e4f15cb3eecd0e74d8b7465b82da" => :big_sur
-    sha256 "b2cee0646806785fbbdfdfe9dd6bc87fc67446a7ff45124c9f20001593343935" => :arm64_big_sur
-    sha256 "745386fcb989a3daa0551b41dd12b0d5ab171558071838d4963f31a6396731a8" => :catalina
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b2cee0646806785fbbdfdfe9dd6bc87fc67446a7ff45124c9f20001593343935"
+    sha256 cellar: :any_skip_relocation, big_sur:       "cba2ff8ac7e2bdfec8821e78ffa7db4b4f06e4f15cb3eecd0e74d8b7465b82da"
+    sha256 cellar: :any_skip_relocation, catalina:      "745386fcb989a3daa0551b41dd12b0d5ab171558071838d4963f31a6396731a8"
   end
 
   def install
