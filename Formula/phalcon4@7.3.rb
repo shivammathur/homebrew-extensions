@@ -4,7 +4,7 @@ class Phalcon4AT73 < AbstractPhp73Extension
   init
   desc "Full-stack PHP framework"
   homepage "https://phalcon.io/en-us"
-  url "https://github.com/phalcon/cphalcon/archive/v4.1.0.tar.gz?init=true"
+  url "https://github.com/phalcon/cphalcon/archive/v4.1.0.tar.gz"
   sha256 "3b98df3fd15560f30abbcf37b498536ad4d287699f5957b3ec37703491d3b594"
   head "https://github.com/phalcon/cphalcon.git"
 
