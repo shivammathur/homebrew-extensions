@@ -10,6 +10,9 @@ class PsrAT74 < AbstractPhp74Extension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ad9b3a32a09e306cb7285bede81519a0276194a8e9b527b7044d327d940530cd"
+    sha256 cellar: :any_skip_relocation, big_sur:       "e13510b69981ee241d6840180010cf19372da859ab738c19376a702ee30488ed"
+    sha256 cellar: :any_skip_relocation, catalina:      "804d7eda726b484ce149fcc3033b322520ae304e0ab816cb3750daf06cc57896"
   end
 
   depends_on "pcre"
