@@ -12,16 +12,16 @@ jobs:
       fail-fast: false
       matrix:
         php-versions: ['7.1', '7.2', '7.3', '7.4']
-        extensions: ['amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, raphf, redis, swoole, xdebug, zmq, pcov, propro']
+        extensions: ['amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, pcov, propro']
         include:
           - php-versions: '5.6'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, raphf, redis, swoole, xdebug, zmq, propro
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, propro
           - php-versions: '7.0'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, raphf, redis, swoole, xdebug, zmq, propro
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, propro
           - php-versions: '8.0'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, raphf, redis, swoole, xdebug, zmq, pcov
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, pcov
           - php-versions: '8.1'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, raphf, redis, swoole, xdebug, zmq, pcov
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, pcov
           - php-versions: '7.2'
             extensions: xdebug2
           - php-versions: '7.3'
@@ -58,6 +58,7 @@ jobs:
           php -r "if(! extension_loaded('raphf')) {throw new Exception('raphf not found');}"
           php -r "if(! extension_loaded('redis')) {throw new Exception('redis not found');}"
           php -r "if(! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
+          php -r "if(! extension_loaded('psr')) {throw new Exception('psr not found');}"
           php -r "if(! extension_loaded('swoole')) {throw new Exception('swoole not found');}"
           php -r "if(! extension_loaded('xdebug')) {throw new Exception('xdebug not found');}"
           php -r "if(! extension_loaded('zmq')) {throw new Exception('zmq not found');}"
