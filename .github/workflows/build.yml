@@ -12,10 +12,9 @@ env:
   HOMEBREW_GITHUB_ACTIONS: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
 jobs:
-  tap_syntax:
+  tap-syntax:
     if: "!contains(github.event.head_commit.message, 'skip-build')"
     runs-on: ubuntu-latest
-
     env:
       HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
     steps:
@@ -35,31 +34,35 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
+  get-matrix:
+    if: github.event_name != 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
+    needs: tap-syntax
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Get matrix
+        id: set-matrix
+        run: |
+           json_array=()
+           mapfile -t extensions < <(find ./Formula -name "*.rb" -print0 | xargs -0 basename -a | sed "s/@.*//" | sort | uniq)
+           for extension in ${extensions[@]}; do
+             for formula in ./Formula/$extension@*.rb; do
+               json_array+=("{\"php\": \"$(echo $formula | grep -Eo '[0-9]+\.[0-9]+')\", \"extension\": \"$extension\"}")
+             done
+           done
+           echo "::set-output name=matrix::{\"include\":[$(echo ${json_array[@]} | sed -e 's|} {|}, {|g')]}"
+
   create-pr:
     if: github.event_name != 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
-    needs: tap_syntax
+    needs: get-matrix
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        extension: [amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pcov, pecl_http, propro, protobuf, psr, raphf, redis, swoole, xdebug, zmq]
-        php: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1']
-        exclude:
-          - extension: pcov
-            php: '5.6'
-          - extension: pcov
-            php: '7.0'
-          - extension: propro
-            php: '8.0'
-          - extension: propro
-            php: '8.1'
-        include:
-          - extension: xdebug2
-            php: '7.2'
-          - extension: xdebug2
-            php: '7.3'
-          - extension: xdebug2
-            php: '7.4'
+      matrix: ${{fromJson(needs.get-matrix.outputs.matrix)}}
     steps:
       - uses: actions/checkout@v2
 
@@ -99,8 +102,8 @@ jobs:
           echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
           echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
 
-  tests:
-    needs: tap_syntax
+  build-formula:
+    needs: tap-syntax
     if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
     strategy:
       matrix:
@@ -221,8 +224,8 @@ jobs:
             sudo rm -rf "$GITHUB_WORKSPACE"
           fi
 
-  label:
-    needs: tests
+  add-label:
+    needs: build-formula
     if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build') && github.event.pull_request.user.login == github.repository_owner
     runs-on: ubuntu-latest
     steps:
