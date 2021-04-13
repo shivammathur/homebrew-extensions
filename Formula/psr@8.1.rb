@@ -10,6 +10,9 @@ class PsrAT81 < AbstractPhp81Extension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "389169cef2870aa42d4089e07dd8299b18b1995bc70e1e4b7307b4f4372fbfc2"
+    sha256 cellar: :any_skip_relocation, big_sur:       "b1a96ef065598f0158702c3cc4ba4a1c6fdf48ed7334a455092ee9cfa369f5b5"
+    sha256 cellar: :any_skip_relocation, catalina:      "52666e479f531e37a03e79a6a4253401f8b019ea812740ccc713b109c388c722"
   end
 
   depends_on "pcre"
