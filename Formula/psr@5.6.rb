@@ -4,7 +4,7 @@ class PsrAT56 < AbstractPhp56Extension
   init
   desc "PHP extension providing the accepted PSR interfaces "
   homepage "https://github.com/jbboehr/php-psr"
-  url "https://pecl.php.net/get/psr-0.6.1.tgz?init=true"
+  url "https://pecl.php.net/get/psr-0.6.1.tgz"
   sha256 "57ccc6293ddb56b3cae2620bb3dc00f145d5edb42e38b160d93ed968fcbb1bae"
   head "https://github.com/jbboehr/php-psr.git"
 
