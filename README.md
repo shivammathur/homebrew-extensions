@@ -1,9 +1,17 @@
 # shivammathur/homebrew-extensions
 
-<a href="https://github.com/shivammathur/homebrew-extensions" title="Homebrew tap for PHP extensions"><img alt="Build status" src="https://github.com/shivammathur/homebrew-extensions/workflows/Build%20Formulae/badge.svg"></a>
-<a href="https://github.com/shivammathur/homebrew-extensions" title="Homebrew tap for PHP extensions"><img alt="Build status" src="https://github.com/shivammathur/homebrew-extensions/workflows/Test%20Formulae/badge.svg"></a>
-<a href="https://github.com/shivammathur/homebrew-extensions/blob/master/LICENSE" title="license"><img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg"></a>
-<a href="https://github.com/shivammathur/homebrew-extensions/tree/master/Formula" title="Formulae"><img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg"></a>
+<a href="https://github.com/shivammathur/homebrew-extensions" title="Homebrew tap for PHP extensions">
+  <img alt="Build status" src="https://github.com/shivammathur/homebrew-extensions/workflows/Build%20Formulae/badge.svg">
+</a>
+<a href="https://github.com/shivammathur/homebrew-extensions" title="Homebrew tap for PHP extensions">
+  <img alt="Build status" src="https://github.com/shivammathur/homebrew-extensions/workflows/Test%20Formulae/badge.svg">
+</a>
+<a href="https://github.com/shivammathur/homebrew-extensions/blob/master/LICENSE" title="license">
+  <img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg?logo=open%20source%20initiative&logoColor=white&labelColor=555555">
+</a>
+<a href="https://github.com/shivammathur/homebrew-extensions/tree/master/Formula" title="Formulae for PHP extensions">
+  <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.1-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
+</a>
 
 > Homebrew tap for PHP extensions.
 
@@ -20,8 +28,11 @@
 |`msgpack`|`PHP 5.6` to `PHP 8.1`|
 |`pcov`|`PHP 7.1` to `PHP 8.1`|
 |`pecl_http`|`PHP 5.6` to `PHP 8.1`|
+|`phalcon3`|`PHP 5.6` to `PHP 7.3`|
+|`phalcon4`|`PHP 7.2` to `PHP 7.4`|
 |`propro`|`PHP 5.6` to `PHP 7.4`|
 |`protobuf`|`PHP 5.6` to `PHP 8.1`|
+|`psr`|`PHP 5.6` to `PHP 8.1`|
 |`raphf`|`PHP 5.6` to `PHP 8.1`|
 |`redis`|`PHP 5.6` to `PHP 8.1`|
 |`swoole`|`PHP 5.6` to `PHP 8.1`|
@@ -52,9 +63,9 @@ brew install shivammathur/php/php@7.4
 brew link --force --overwrite php@7.4
 ```
 
-Refer to [shivammathur/tap](https://github.com/shivammathur/homebrew-php) for more information about installing PHP.
+Refer to [shivammathur/php](https://github.com/shivammathur/homebrew-php) tap for more information about installing PHP.
 
-### Install Extensions
+### Install PHP Extensions
 
 - Add Tap `shivammathur/extensions`
 ```zsh
@@ -84,19 +95,21 @@ Please see the [license file](LICENSE) for more information. This project has mu
 
 ## Dependencies
 
-- [amqp](https://github.com/php-amqp/php-amqp "amqp Upstream")
-- [APCu](https://github.com/krakjoe/apcu "APCu Upstream")
-- [gRPC](https://github.com/grpc/grpc "gRPC Upstream")
-- [igbinary](https://github.com/igbinary/igbinary "igbinary upstream")
-- [Imagick](https://github.com/Imagick/imagick "Imagick upstream")
-- [Msgpack](https://github.com/msgpack/msgpack-php "Msgpack PHP Upstream")
-- [PECL-HTTP](https://github.com/m6w6/ext-http.git "PECL-HTTP Upstream")
-- [PCOV](https://github.com/krakjoe/pcov "PCOV Upstream")
+- [amqp](https://github.com/php-amqp/php-amqp "amqp")
+- [APCu](https://github.com/krakjoe/apcu "APCu")
+- [gRPC](https://github.com/grpc/grpc "gRPC")
+- [igbinary](https://github.com/igbinary/igbinary "igbinary")
+- [Imagick](https://github.com/Imagick/imagick "Imagick")
+- [Msgpack](https://github.com/msgpack/msgpack-php "Msgpack")
+- [PECL-HTTP](https://github.com/m6w6/ext-http.git "PECL-HTTP")
+- [PCOV](https://github.com/krakjoe/pcov "PCOV")
+- [Phalcon](https://github.com/phalcon/cphalcon "Phalcon")
 - [PHP Source](https://github.com/php/php-src "PHP Source")
-- [Propro](https://github.com/m6w6/ext-propro "Propro Upstream")
-- [Protobuf](https://github.com/protocolbuffers/protobuf "protocolbuffers Upstream")
-- [Redis](https://github.com/phpredis/phpredis "PHP Redis Upstream")
-- [Raphf](https://github.com/m6w6/ext-raphf "Raphf Upstream")
-- [Swoole](https://github.com/swoole/swoole-src "Swoole Upstream")
-- [Xdebug](https://github.com/xdebug/xdebug "Xdebug Upstream")
-- [zmq](https://github.com/zeromq/php-zmq "ZMQ Upstream")
+- [Propro](https://github.com/m6w6/ext-propro "Propro")
+- [Protobuf](https://github.com/protocolbuffers/protobuf "protocolbuffers")
+- [Psr](https://github.com/jbboehr/php-psr "Psr")
+- [Redis](https://github.com/phpredis/phpredis "Redis")
+- [Raphf](https://github.com/m6w6/ext-raphf "Raphf")
+- [Swoole](https://github.com/swoole/swoole-src "Swoole")
+- [Xdebug](https://github.com/xdebug/xdebug "Xdebug")
+- [zmq](https://github.com/zeromq/php-zmq "ZMQ")
