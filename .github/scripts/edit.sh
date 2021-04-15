@@ -9,15 +9,11 @@ unbottle() {
 fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   if [[ "$EXTENSION" =~ imap ]]; then
-    php_version=$(echo "$package" | cut -d':' -f2)
+    php_version=$(echo "$VERSION" | cut -d'@' -f2)
     brew tap shivammathur/php
     php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
     checksum=$(curl -sSL "$php_url" | shasum -a 256 | cut -d' ' -f 1)
-    if [[ "$php_url" = *build_time* ]]; then
-      sed -i "s|build_time.*|build_time=$(date +%s)\"|g" ./Formula/"$VERSION".rb
-    else
-      sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
-    fi
+    sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
     [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   else
     if [[ "$EXTENSION" =~ pcov ]] ||
