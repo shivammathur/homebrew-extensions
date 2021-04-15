@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Swoole Extension
-class SwooleAT80 < AbstractPhp80Extension
+class SwooleAT80 < AbstractPhpExtension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
@@ -24,7 +24,7 @@ class SwooleAT80 < AbstractPhp80Extension
     safe_phpize
     system "./configure"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
   end
 end

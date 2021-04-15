@@ -1,6 +1,6 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
-class Phalcon3AT56 < AbstractPhp56Extension
+class Phalcon3AT56 < AbstractPhpExtension
   init
   desc "Full-stack PHP framework"
   homepage "https://phalcon.io/en-us"

@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Amqp Extension
-class AmqpAT80 < AbstractPhp80Extension
+class AmqpAT80 < AbstractPhpExtension
   init
   desc "Amqp PHP extension"
   homepage "https://github.com/php-amqp/php-amqp"
@@ -31,7 +31,7 @@ class AmqpAT80 < AbstractPhp80Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
   end
 end

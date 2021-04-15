@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Redis Extension
-class RedisAT81 < AbstractPhp81Extension
+class RedisAT81 < AbstractPhpExtension
   init
   desc "Redis PHP extension"
   homepage "https://github.com/phpredis/phpredis"
@@ -53,7 +53,7 @@ class RedisAT81 < AbstractPhp81Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
     add_include_files
   end

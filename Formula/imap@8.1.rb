@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Imap Extension
-class ImapAT81 < AbstractPhp81Extension
+class ImapAT81 < AbstractPhpExtension
   init
   desc "Imap PHP extension"
   homepage "https://github.com/php/php-src"
@@ -35,7 +35,7 @@ class ImapAT81 < AbstractPhp81Extension
            "--with-imap-ssl=#{Formula["openssl@1.1"].opt_prefix}", \
            "--with-kerberos"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
     add_include_files
   end

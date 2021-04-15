@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Propro Extension
-class ProproAT74 < AbstractPhp74Extension
+class ProproAT74 < AbstractPhpExtension
   init
   desc "Propro PHP extension"
   homepage "https://github.com/m6w6/ext-propro"
@@ -25,7 +25,7 @@ class ProproAT74 < AbstractPhp74Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-propro"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
     add_include_files
   end
