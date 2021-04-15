@@ -14,7 +14,10 @@ class SwooleAT74 < AbstractPhp74Extension
   license "Apache-2.0"
 
   bottle do
-    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    root_url "https://ghcr.io/v2//shivammathur/extensions"
+    sha256 cellar: :any, arm64_big_sur: "a39b06fa997f4c6552af2ff148a43d0210dc344d67201d1121559df08798a650"
+    sha256 cellar: :any, big_sur:       "ae4133106cd0a5bf4c2d3ff038b4aa93b00d6e2f4e77ab4f0129d192d2f9a383"
+    sha256 cellar: :any, catalina:      "c5d4a68974cb20b6ccea702a0fe0e21958819399b7754fa8a6554123227237ac"
   end
 
   def install
