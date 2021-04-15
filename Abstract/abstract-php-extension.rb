@@ -1,71 +1,10 @@
 # typed: false
 # frozen_string_literal: true
 
-require File.join(File.dirname(__FILE__), "abstract-php-version")
-
 # Abstract class for PHP extensions
 class AbstractPhpExtension < Formula
   desc "Abstract class for PHP Extension Formula"
   homepage "https://github.com/shivammathur/homebrew-extensions"
-
-  PHP_REGEX = /[P,p][H,h][P,p]@*([5,78])\.([0-9]+)/.freeze
-
-  def self.init
-    depends_on "autoconf" => :build
-    depends_on "pkg-config" => :build
-  end
-
-  def php_version
-    class_name = self.class::PHP_FORMULA
-    matches = PHP_REGEX.match(class_name)
-    "#{matches[1]}.#{matches[2]}" if matches
-  end
-
-  def php_formula
-    "php@#{php_version}"
-  end
-
-  def safe_phpize
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-    system "#{Formula[php_formula].opt_bin}/phpize"
-  end
-
-  def phpconfig
-    "--with-php-config=#{Formula[php_formula].opt_bin}/php-config"
-  end
-
-  def extension
-    class_name = self.class.name.split("::").last.split("AT").first
-    raise "Unable to guess PHP extension name for #{class_name}" unless class_name
-
-    class_name.downcase.tr("0-9", "")
-  end
-
-  def extension_type
-    if extension == "xdebug"
-      "zend_extension"
-    else
-      "extension"
-    end
-  end
-
-  def module_name
-    extension
-  end
-
-  def module_path
-    opt_prefix / "#{module_name}.so"
-  end
-
-  def config_file
-    <<~EOS
-      [#{extension}]
-      #{extension_type}="#{module_path}"
-    EOS
-  rescue error
-    raise error
-  end
 
   def caveats
     <<~EOS
@@ -78,7 +17,40 @@ class AbstractPhpExtension < Formula
 
   test do
     output = shell_output("#{Formula[php_formula].opt_bin}/php -m").downcase
-    assert_match(/#{module_name.downcase}/, output, "failed to find extension in php -m output")
+    assert_match(/#{extension.downcase}/, output, "failed to find extension in php -m output")
+  end
+
+  private
+
+  delegate [:php_version, :extension] => :"self.class"
+
+  def php_formula
+    "php@#{php_version}"
+  end
+
+  def phpconfig
+    "--with-php-config=#{Formula[php_formula].opt_bin}/php-config"
+  end
+
+  def extension_type
+    if extension == "xdebug"
+      "zend_extension"
+    else
+      "extension"
+    end
+  end
+
+  def module_path
+    opt_prefix / "#{extension}.so"
+  end
+
+  def config_file
+    <<~EOS
+      [#{extension}]
+      #{extension_type}="#{module_path}"
+    EOS
+  rescue error
+    raise error
   end
 
   def config_scandir_path
@@ -87,6 +59,12 @@ class AbstractPhpExtension < Formula
 
   def config_filepath
     config_scandir_path / "#{extension}.ini"
+  end
+
+  def safe_phpize
+    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    system "#{Formula[php_formula].opt_bin}/phpize"
   end
 
   def write_config_file
@@ -102,7 +80,7 @@ class AbstractPhpExtension < Formula
 
   def add_include_files
     files = Dir["*.h"]
-    (include/"php/ext/#{module_name}@#{php_version}").install files unless files.empty?
+    (include/"php/ext/#{extension}@#{php_version}").install files unless files.empty?
   end
 
   def patch_spl_symbols
@@ -111,84 +89,18 @@ class AbstractPhpExtension < Formula
       inreplace files, "spl_ce_#{s}", "zend_ce_#{s}".downcase unless files.empty?
     end
   end
-end
 
-# Abstract class for PHP 5.6 extensions
-class AbstractPhp56Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php56Defs
+  class << self
+    attr_reader :php_version, :extension
 
-  def self.init
-    super()
-    depends_on AbstractPhpVersion::Php56Defs::PHP_FORMULA => [:build, :test]
-  end
-end
-
-# Abstract class for PHP 7.0 extensions
-class AbstractPhp70Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php70Defs
-
-  def self.init
-    super()
-    depends_on AbstractPhpVersion::Php70Defs::PHP_FORMULA => [:build, :test]
-  end
-end
-
-# Abstract class for PHP 7.1 extensions
-class AbstractPhp71Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php71Defs
-
-  def self.init
-    super()
-    depends_on AbstractPhpVersion::Php71Defs::PHP_FORMULA => [:build, :test]
-  end
-end
-
-# Abstract class for PHP 7.2 extensions
-class AbstractPhp72Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php72Defs
-
-  def self.init
-    super()
-    depends_on AbstractPhpVersion::Php72Defs::PHP_FORMULA => [:build, :test]
-  end
-end
-
-# Abstract class for PHP 7.3 extensions
-class AbstractPhp73Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php73Defs
-
-  def self.init
-    super()
-    depends_on AbstractPhpVersion::Php73Defs::PHP_FORMULA => [:build, :test]
-  end
-end
-
-# Abstract class for PHP 7.4 extensions
-class AbstractPhp74Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php74Defs
-
-  def self.init
-    super()
-    depends_on AbstractPhpVersion::Php74Defs::PHP_FORMULA => [:build, :test]
-  end
-end
-
-# Abstract class for PHP 8.0 extensions
-class AbstractPhp80Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php80Defs
-
-  def self.init
-    super()
-    depends_on AbstractPhpVersion::Php80Defs::PHP_FORMULA => [:build, :test]
-  end
-end
-
-# Abstract class for PHP 8.1 extensions
-class AbstractPhp81Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php81Defs
-
-  def self.init
-    super()
-    depends_on AbstractPhpVersion::Php81Defs::PHP_FORMULA => [:build, :test]
+    def init
+      class_name = name.split("::").last
+      matches = /(\w+)AT(\d)(\d)/.match(class_name)
+      @extension = matches[1].downcase.tr("0-9", "").gsub("pecl", "") if matches
+      @php_version = "#{matches[2]}.#{matches[3]}" if matches
+      depends_on "autoconf" => :build
+      depends_on "pkg-config" => :build
+      depends_on "shivammathur/php/php@#{@php_version}" => [:build, :test]
+    end
   end
 end

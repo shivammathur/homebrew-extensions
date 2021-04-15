@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Zmq Extension
-class ZmqAT74 < AbstractPhp74Extension
+class ZmqAT74 < AbstractPhpExtension
   init
   desc "Zmq PHP extension"
   homepage "https://github.com/zeromq/php-zmq"
@@ -36,7 +36,7 @@ class ZmqAT74 < AbstractPhp74Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
     add_include_files
   end

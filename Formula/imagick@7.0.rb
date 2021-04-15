@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Imagick Extension
-class ImagickAT70 < AbstractPhp70Extension
+class ImagickAT70 < AbstractPhpExtension
   init
   desc "Imagick PHP extension"
   homepage "https://github.com/Imagick/imagick/releases"
@@ -27,7 +27,7 @@ class ImagickAT70 < AbstractPhp70Extension
     safe_phpize
     system "./configure"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
   end
 end

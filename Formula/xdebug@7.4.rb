@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Xdebug Extension
-class XdebugAT74 < AbstractPhp74Extension
+class XdebugAT74 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
@@ -24,7 +24,7 @@ class XdebugAT74 < AbstractPhp74Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
   end
 end

@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Pecl_http Extension
-class PeclHttpAT56 < AbstractPhp56Extension
+class PeclHttpAT56 < AbstractPhpExtension
   init
   desc "Pecl_http PHP extension"
   homepage "https://github.com/m6w6/ext-http"
@@ -49,11 +49,7 @@ class PeclHttpAT56 < AbstractPhp56Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
-  end
-
-  def module_name
-    "http"
   end
 end

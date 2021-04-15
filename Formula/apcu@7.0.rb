@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Apcu Extension
-class ApcuAT70 < AbstractPhp70Extension
+class ApcuAT70 < AbstractPhpExtension
   init
   desc "Apcu PHP extension"
   homepage "https://github.com/krakjoe/apcu"
@@ -25,7 +25,7 @@ class ApcuAT70 < AbstractPhp70Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-apcu"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
     add_include_files
   end

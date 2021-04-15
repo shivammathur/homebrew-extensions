@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Raphf Extension
-class RaphfAT81 < AbstractPhp81Extension
+class RaphfAT81 < AbstractPhpExtension
   init
   desc "Raphf PHP extension"
   homepage "https://github.com/m6w6/ext-raphf"
@@ -27,7 +27,7 @@ class RaphfAT81 < AbstractPhp81Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-raphf"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
     add_include_files
   end

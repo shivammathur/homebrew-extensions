@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Igbinary Extension
-class IgbinaryAT81 < AbstractPhp81Extension
+class IgbinaryAT81 < AbstractPhpExtension
   init
   desc "Igbinary PHP extension"
   homepage "https://github.com/igbinary/igbinary"
@@ -26,7 +26,7 @@ class IgbinaryAT81 < AbstractPhp81Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-igbinary"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
     Dir.chdir "src/php7"
     add_include_files

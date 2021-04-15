@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Protobuf Extension
-class ProtobufAT81 < AbstractPhp81Extension
+class ProtobufAT81 < AbstractPhpExtension
   init
   desc "Protobuf PHP extension"
   homepage "https://github.com/protocolbuffers/protobuf"
@@ -26,7 +26,7 @@ class ProtobufAT81 < AbstractPhp81Extension
     safe_phpize
     system "./configure", "--enable-protobuf"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
   end
 

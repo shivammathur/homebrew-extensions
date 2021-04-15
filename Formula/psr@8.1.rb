@@ -1,6 +1,6 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
-class PsrAT81 < AbstractPhp81Extension
+class PsrAT81 < AbstractPhpExtension
   init
   desc "PHP extension providing the accepted PSR interfaces "
   homepage "https://github.com/jbboehr/php-psr"

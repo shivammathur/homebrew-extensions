@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for GRPC Extension
-class GrpcAT81 < AbstractPhp81Extension
+class GrpcAT81 < AbstractPhpExtension
   init
   desc "gRPC PHP extension"
   homepage "https://github.com/grpc/grpc"
@@ -28,7 +28,7 @@ class GrpcAT81 < AbstractPhp81Extension
     safe_phpize
     system "./configure", "--enable-grpc"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
   end
 end

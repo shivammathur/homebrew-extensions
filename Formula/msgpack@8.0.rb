@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Msgpack Extension
-class MsgpackAT80 < AbstractPhp80Extension
+class MsgpackAT80 < AbstractPhpExtension
   init
   desc "Msgpack PHP extension"
   homepage "https://github.com/msgpack/msgpack-php"
@@ -25,7 +25,7 @@ class MsgpackAT80 < AbstractPhp80Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-msgpack"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
     add_include_files
   end
