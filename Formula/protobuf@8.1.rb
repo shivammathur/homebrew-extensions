@@ -19,6 +19,7 @@ class ProtobufAT81 < AbstractPhp81Extension
 
   def install
     Dir.chdir "protobuf-#{version}"
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--enable-protobuf"
     system "make"
