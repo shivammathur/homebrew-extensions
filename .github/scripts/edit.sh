@@ -17,9 +17,9 @@ fetch() {
     [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   else
     if [[ "$EXTENSION" =~ pcov ]] ||
-       [[ "$VERSION" =~ (protobuf|propro)@7.[0-4] ]] ||
+       [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ (swoole|xdebug)@(7.[2-4]|8.[0-1]) ]] ||
-       [[ "$VERSION" =~ (apcu|grpc|igbinary|msgpack|pecl_http|psr|raphf|redis)@(7.[0-4]|8.[0-1]) ]] ||
+       [[ "$VERSION" =~ (apcu|grpc|igbinary|msgpack|pecl_http|protobuf|psr|raphf|redis)@(7.[0-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
       url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)

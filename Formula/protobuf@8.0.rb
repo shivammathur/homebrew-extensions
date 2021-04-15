@@ -8,22 +8,17 @@ class ProtobufAT80 < AbstractPhp80Extension
   init
   desc "Protobuf PHP extension"
   homepage "https://github.com/protocolbuffers/protobuf"
-  url "https://github.com/protocolbuffers/protobuf/archive/776406c36f6a07a77854702e7865ce26535a8f7c.tar.gz"
-  version "3.15.0"
-  sha256 "4afbffc3068b7d12c340372afeea0beb59ec3500ac06463365fcffc4c5888254"
+  url "https://pecl.php.net/get/protobuf-3.15.8.tgz"
+  sha256 "8d36414a81ac731f5c010def3b33b62ca881df99f9b9b1f3e019d9fd93dd7bd8"
   head "https://github.com/protocolbuffers/protobuf.git"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "dafadd86428c98192bfe7484de971e25a68ed0bfc360ae5a55e9d6a008511ed4"
-    sha256 cellar: :any_skip_relocation, big_sur:       "7859bb91c3d6c269b710a782352e4c384d29818829a564982129d5b0bf3ba031"
-    sha256 cellar: :any_skip_relocation, catalina:      "1a6e5f4fa12bcc796a92c5ae4e7138b4ce93ccf1d1342ce638ae6bc1f20e5b06"
   end
 
   def install
-    Dir.chdir "php/ext/google/protobuf"
-    system "cp", "-a", "../../../../third_party", "./"
+    Dir.chdir "protobuf-#{version}"
     safe_phpize
     system "./configure", "--enable-protobuf"
     system "make"
