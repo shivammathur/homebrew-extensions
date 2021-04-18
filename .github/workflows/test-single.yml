@@ -8,33 +8,46 @@ on:
       extension:
         description: Extension name
         required: true
-      php:
-        description: PHP version
-        required: true
 jobs:
+  get-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get matrix
+        id: set-matrix
+        run: |
+           json_array=()
+           extension=${{ github.event.inputs.extension }}
+           for formula in ./Formula/$extension@*.rb; do
+             json_array+=("{\"php\": \"$(echo $formula | grep -Eo '[0-9]+\.[0-9]+')\", \"extension\": \"$extension\"}")
+           done
+           echo "::set-output name=matrix::{\"include\":[$(echo ${json_array[@]} | sed -e 's|} {|}, {|g')]}"
   tests:
-    runs-on: ${{github.event.inputs.macos}}
+    needs: get-matrix
+    runs-on: ${{ github.event.inputs.macos }}
     strategy:
       fail-fast: false
+      matrix: ${{ fromJson(needs.get-matrix.outputs.matrix )}}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup PHP
         uses: shivammathur/setup-php@develop
         with:
-          php-version: ${{github.event.inputs.php}}
-          extensions: ${{github.event.inputs.extension}}
+          php-version: ${{ matrix.php }}
+          extensions: ${{ github.event.inputs.extension }}
       - name: Testing PHP version
         run: |
           php -v
-          php -r "if(strpos(phpversion(), '${{ github.event.inputs.php }}') === false) {throw new Exception('Wrong PHP version Installed');}"
           php -m
       - name: Testing Extensions
         if: github.event.inputs.extension != 'xdebug2'
         run: php -r "if(! extension_loaded('$extension')) {throw new Exception('$extension not found');}"
         env:
-          extension: github.event.inputs.extension
-
+          extension: ${{ github.event.inputs.extension }}
       - name: Testing Xdebug2
         if: github.event.inputs.extension == 'xdebug2'
         run: php -r "if(phpversion('xdebug')!='2.9.8') {throw new Exception('xdebug2 not found');}"
