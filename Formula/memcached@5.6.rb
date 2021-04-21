@@ -15,6 +15,9 @@ class MemcachedAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 arm64_big_sur: "640e31e897e82e8abc201cb31faa0807a5c1d3e1b1b8b2fb3f255d9b6cedacbc"
+    sha256 big_sur:       "6d9f00d588706ad361c46ebd028a752e7e51146b6caaec8e2cdb5ee2af06d741"
+    sha256 catalina:      "89ec4e27957c3dfba1e7f2c5bc442e474f5a194eec9ab70293a9fffd64062b57"
   end
 
   depends_on "libevent"
