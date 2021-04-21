@@ -7,6 +7,7 @@ class Phalcon3AT70 < AbstractPhpExtension
   url "https://github.com/phalcon/cphalcon/archive/v3.4.5.tar.gz"
   sha256 "4c56420641a4a12f95e93e65a107aba8ef793817da57a4c29346c012faf66777"
   head "https://github.com/phalcon/cphalcon.git"
+  license "BSD-3-Clause"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"

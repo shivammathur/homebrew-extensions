@@ -7,6 +7,7 @@ class PsrAT72 < AbstractPhpExtension
   url "https://pecl.php.net/get/psr-1.1.0.tgz"
   sha256 "4feb8eeea4237894bcab1ea064cefc3421c909778d39c977184c16e725cfbfb2"
   head "https://github.com/jbboehr/php-psr.git"
+  license "BSD-2-Clause"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
