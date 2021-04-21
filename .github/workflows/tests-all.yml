@@ -12,16 +12,16 @@ jobs:
       fail-fast: false
       matrix:
         php-versions: ['7.1', '7.2', '7.3', '7.4']
-        extensions: ['amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, pcov, propro']
+        extensions: ['amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, pcov, propro']
         include:
           - php-versions: '5.6'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, propro
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, propro
           - php-versions: '7.0'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, propro
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, propro
           - php-versions: '8.0'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, pcov
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, pcov
           - php-versions: '8.1'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, pcov
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, msgpack, pecl_http, protobuf, psr, raphf, redis, swoole, xdebug, zmq, pcov
           - php-versions: '7.2'
             extensions: xdebug2
           - php-versions: '7.3'
@@ -53,6 +53,8 @@ jobs:
           php -r "if(! extension_loaded('igbinary')) {throw new Exception('igbinary not found');}"
           php -r "if(! extension_loaded('imagick')) {throw new Exception('imagick not found');}"
           php -r "if(! extension_loaded('imap')) {throw new Exception('imap not found');}"
+          php -r "if(! extension_loaded('memcache')) {throw new Exception('memcache not found');}"
+          php -r "if(! extension_loaded('memcached')) {throw new Exception('memcached not found');}"
           php -r "if(! extension_loaded('msgpack')) {throw new Exception('msgpack not found');}"
           php -r "if(! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
           php -r "if(! extension_loaded('raphf')) {throw new Exception('raphf not found');}"

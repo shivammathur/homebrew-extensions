@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Extension_Title Extension
-class Extension_TitleATNODOT < AbstractPhpNODOTExtension
+class Extension_TitleATNODOT < AbstractPhpExtension
   init
   desc "Extension_Title PHP extension"
   homepage "https://github.com/REPO"
@@ -22,7 +22,7 @@ class Extension_TitleATNODOT < AbstractPhpNODOTExtension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-extension"
     system "make"
-    prefix.install "modules/#{module_name}.so"
+    prefix.install "modules/#{extension}.so"
     write_config_file
     add_include_files
   end
