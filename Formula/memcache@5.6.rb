@@ -15,6 +15,9 @@ class MemcacheAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "11d8fedc7fe97c92785b7c1f392e340f0fdd51b85182e43de590caf77289dde7"
+    sha256 cellar: :any_skip_relocation, big_sur:       "d7bd1b237c7e262f312ae2437d39a930c913bb42ac0e4878d96f5bb462849988"
+    sha256 cellar: :any_skip_relocation, catalina:      "50a2035da542a11457a9d7f00bfd87f55b8adf07d60258f1b6e1507e0ef7a65b"
   end
 
   def install
