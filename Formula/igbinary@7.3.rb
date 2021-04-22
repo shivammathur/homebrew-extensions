@@ -8,16 +8,13 @@ class IgbinaryAT73 < AbstractPhpExtension
   init
   desc "Igbinary PHP extension"
   homepage "https://github.com/igbinary/igbinary"
-  url "https://github.com/igbinary/igbinary/archive/3.2.1.tar.gz"
-  sha256 "bc26f361f750bc9894741201e6851a3445a20d185969c08bf311264b7dc9cd6b"
+  url "https://github.com/igbinary/igbinary/archive/3.2.2.tar.gz"
+  sha256 "3f8927d5578ae5536b966ff3dcedaecf5e8b87a8f33f7fe3a78a0a6da30f4005"
   head "https://github.com/igbinary/igbinary.git"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e5c2c11cf2e3bf4f614969c69eeee0ce7422207ffe6e9a6a07c494edc58aa681"
-    sha256 cellar: :any_skip_relocation, big_sur:       "7950f7fcfff1b26ec77124e7850456c94b9a31f33aa382e9c1b979e9c3dbbf1d"
-    sha256 cellar: :any_skip_relocation, catalina:      "ab941df08c9434c2525250e0214a198394e85e40b0bf00901ccf9dfe62fc0405"
   end
 
   def install
