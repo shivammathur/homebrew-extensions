@@ -1,6 +1,7 @@
 unbottle() {
   sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
   sed -Ei '/    rebuild.*/d' ./Formula/"$VERSION".rb || true
+  sed -Ei '/    revision.*/d' ./Formula/"$VERSION".rb || true
   sed -Ei '/    sha256.*catalina/d' ./Formula/"$VERSION".rb || true
   sed -Ei '/    sha256.*big_sur/d' ./Formula/"$VERSION".rb || true
   sed -Ei '/    sha256.*arm64_big_sur/d' ./Formula/"$VERSION".rb || true
@@ -32,7 +33,6 @@ fetch() {
 }
 
 check_version() {
-  package="${VERSION//@/:}"
   new_version=$(grep -Eo "[0-9]+\.[0-9]+\.[0-9]+" Formula/"$VERSION".rb | head -n 1)
   existing_version=$(curl -sL https://github.com/users/shivammathur/packages/container/package/extensions%2F"${VERSION/@/%2F}" | grep -Eo "extensions/${VERSION/@//}:[0-9]+\.[0-9]+\.[0-9]+" | cut -d ':' -f 2)
   if [ "$existing_version" != '' ]; then
@@ -40,7 +40,7 @@ check_version() {
   fi
   echo "existing label: $existing_version"
   echo "new label: $new_version"
-  if ! [[ "$GITHUB_MESSAGE" = *--build-all* ]] && [ "$new_version" = "$existing_version" ] && ! [[ "$VERSION" =~ .*@8.1 ]]; then
+  if ! [[ "$GITHUB_MESSAGE" = *--build-all* ]] && [ "$new_version" = "$existing_version" ]; then
     sudo cp /tmp/"$VERSION".rb Formula/"$VERSION".rb
   else
     unbottle
@@ -57,9 +57,6 @@ match_args() {
   done
 }
 
-if [[ "$GITHUB_MESSAGE" = *--skip-nightly* ]] && [[ "$VERSION" =~ .*@8.1 ]]; then
-  exit 0
-fi
 if [[ "$GITHUB_MESSAGE" = *--build-only* ]]; then
   match_args
 else
