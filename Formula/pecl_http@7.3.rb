@@ -16,10 +16,9 @@ class PeclHttpAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 3
-    sha256 arm64_big_sur: "ddb1121b97f2236c4c8a350a6b84207df3825ebd707f49395b7a53124f2ad314"
-    sha256 big_sur:       "6b614cb72d34f893bc4b25a50b191ea7328ceb3d689e004a25403fa4e45f74e4"
-    sha256 catalina:      "653e3f90b64f99f91e6e1f7844ed2a150d9121988a349647cd5b8771160859de"
+    sha256 arm64_big_sur: "0f971311ce6bafb3fc6c6efb3c01ca16c8f6ecd25346760136bf5b1d27f5a888"
+    sha256 big_sur:       "e7a56fb41cb8dd8314bc50f2a94a6c3c0bf18ac0bd3af06ff717d662ca6c4162"
+    sha256 catalina:      "99a0f8b4c9e7e228aefca28c1bb9061b1d22c01ae6273a094a7f6ad09c3395bb"
   end
 
   depends_on "brotli"
