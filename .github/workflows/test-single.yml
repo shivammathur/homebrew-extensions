@@ -45,7 +45,9 @@ jobs:
           php -m
       - name: Testing Extensions
         if: github.event.inputs.extension != 'xdebug2'
-        run: php -r "if(! extension_loaded('$extension')) {throw new Exception('$extension not found');}"
+        run: |
+          extension=${extension/pecl_/}
+          php -r "if(! extension_loaded('$extension')) {throw new Exception('$extension not found');}"
         env:
           extension: ${{ github.event.inputs.extension }}
       - name: Testing Xdebug2
