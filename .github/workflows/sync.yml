@@ -12,10 +12,9 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: master
       - name: sync
         run: bash ./.github/scripts/sync.sh
         env:
+          $GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
