@@ -6,7 +6,7 @@ class Grpc < Formula
       revision: "3e53dbe8213137d2c731ecd4d88ebd2948941d75",
       shallow:  false
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/grpc/grpc.git"
 
   livecheck do
@@ -15,10 +15,10 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "9b067833fdc4ec3f6bf087410b774e81e1ed906b1ae3fc882421bd553712f42a"
-    sha256 big_sur:       "17531240482c6f10c02582cb8597ca423d952a3cb42af86219f7a93c68742006"
-    sha256 catalina:      "bb505054689cc41935a3f9d6980d4e8225a2413262dcf77dda850d15852b0cf1"
-    sha256 mojave:        "d23ab851339dafacbc72f066719980f1df87251956cfa269a4ac34de018b43ed"
+    sha256 cellar: :any, arm64_big_sur: "123883d5fcb234baabbdd2123c5afabaab42b76923ad9a4f83473e1e45fa9f8c"
+    sha256 cellar: :any, big_sur:       "3928041f47f3d9cfbcb8c52e9fef66bbeaf44b8805ba2808af3607fce47bd2c5"
+    sha256 cellar: :any, catalina:      "5faf2cedba74b706a66e5976d80711eabfcbd349b46be581169d131761bf9de9"
+    sha256 cellar: :any, mojave:        "7d026f00c805d4fb729cc4804d7f1ae50fa1c1f93d0f686fb91769ef6533b6a7"
   end
 
   depends_on "autoconf" => :build
@@ -40,7 +40,7 @@ class Grpc < Formula
         ../..
         -DCMAKE_CXX_STANDARD=17
         -DCMAKE_CXX_STANDARD_REQUIRED=TRUE
-        -DCMAKE_INSTALL_RPATH=#{lib}
+        -DCMAKE_INSTALL_RPATH=#{rpath}
         -DBUILD_SHARED_LIBS=ON
         -DgRPC_BUILD_TESTS=OFF
         -DgRPC_INSTALL=ON
@@ -62,7 +62,7 @@ class Grpc < Formula
       unless Hardware::CPU.arm?
         args = %W[
           ../..
-          -DCMAKE_INSTALL_RPATH=#{lib}
+          -DCMAKE_INSTALL_RPATH=#{rpath}
           -DBUILD_SHARED_LIBS=ON
           -DgRPC_BUILD_TESTS=ON
         ] + std_cmake_args
