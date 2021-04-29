@@ -107,83 +107,62 @@ jobs:
     if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
     strategy:
       matrix:
-        os: ['macos-11.0', 'macos-10.15']
-        arm: ['0']
-        include:
-          - os: 'macos-11.0-m1'
-            arm: '1'
+        os: ['macos-11.0-m1', 'macos-11.0', 'macos-10.15']
       fail-fast: false
     runs-on: ${{ matrix.os }}
     timeout-minutes: 300
     env:
       PATH: '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin'
       HOMEBREW_DEVELOPER: 1
+      HOMEBREW_CHANGE_ARCH_TO_ARM: 1
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      HOMEBREW_CHANGE_ARCH_TO_ARM: ${{ matrix.arm }}
     steps:
-      - name: Check for non arm formula
-        id: check
-        run: |
-          brew install jq || true
-          brew link --force --overwrite jq || true
-          PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
-          labels=$(curl -u "${{github.repository_owner}}:${{secrets.GITHUB_TOKEN}}" -H "Accept: application/vnd.github.v3+json" -sL https://api.github.com/repos/${{github.repository}}/issues/"$PR_NUMBER"/labels | jq -r .[].name)
-          if [ "${{matrix.arm}}" = '1' ] && [[ "$labels" =~ .*(skip-arm).* ]]; then
-            echo "::set-output name=build::no"
-          else
-            echo "::set-output name=build::yes"
-          fi
       - name: Set up Homebrew
-        if: steps.check.outputs.build != 'no'
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Setup Xcode
-        if: steps.check.outputs.build != 'no'
         run: |
           if [ "${{ matrix.os }}" = "macos-10.15" ]; then
             sudo xcode-select -s /Applications/Xcode_11.7.app || exit 1
           else
-            sudo xcode-select -s /Applications/Xcode_12.4.app || exit 1
+            sudo xcode-select -s /Applications/Xcode_12.5.app || exit 1
           fi
 
       - name: brew test-bot --only-cleanup-before
-        if: steps.check.outputs.build != 'no'
         run: brew test-bot --only-cleanup-before
 
       - name: brew test-bot --only-setup
-        if: steps.check.outputs.build != 'no'
         run: brew test-bot --only-setup
 
       - name: Run brew test-bot --only-formulae
-        if: steps.check.outputs.build != 'no'
         run: |
           mkdir bottles
           cd bottles
           brew test-bot --only-formulae --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions"
 
       - name: Output brew test-bot --only-formulae failures
-        if: always() && steps.check.outputs.build != 'no'
+        if: always()
         run: |
           cat bottles/steps_output.txt
           rm bottles/steps_output.txt
 
       - name: Upload logs
-        if: failure() && steps.check.outputs.build != 'no'
+        if: failure()
         uses: actions/upload-artifact@main
         with:
           name: logs (${{ matrix.os }})
           path: bottles/logs
 
       - name: Delete logs and home
-        if: always() && steps.check.outputs.build != 'no'
+        if: always()
         run: |
           rm -rvf bottles/logs
           rm -rvf bottles/home
 
       - name: Count bottles
         id: bottles
-        if: always() && steps.check.outputs.build != 'no'
+        if: always()
         run: |
           cd bottles
           LC_ALL=C find . -type f -name '*.json' -exec sed -i '' s~homebrew/bottles-extensions~${{ github.repository_owner }}/extensions~ {} +
@@ -194,7 +173,7 @@ jobs:
           echo "::set-output name=count::$count"
 
       - name: Upload failed bottles
-        if: always() && steps.bottles.outputs.failures > 0 && steps.check.outputs.build != 'no'
+        if: always() && steps.bottles.outputs.failures > 0
         uses: actions/upload-artifact@main
         with:
           name: bottles (${{ matrix.version }})
@@ -203,21 +182,21 @@ jobs:
       # Must be run before the `Upload bottles` step so that failed
       # bottles are not included in the `bottles` artifact.
       - name: Delete failed bottles
-        if: always() && steps.check.outputs.build != 'no'
+        if: always()
         run: rm -rvf bottles/failed
 
       - name: Upload bottles
-        if: always() && steps.bottles.outputs.count > 0 && steps.check.outputs.build != 'no'
+        if: always() && steps.bottles.outputs.count > 0
         uses: actions/upload-artifact@main
         with:
           name: bottles
           path: bottles
 
       - run: brew test-bot --only-cleanup-after
-        if: always() && steps.check.outputs.build != 'no'
+        if: always()
 
       - name: Post Cleanup
-        if: always() && steps.check.outputs.build != 'no'
+        if: always()
         run: |
           rm -rvf bottles
           if [ -L "$GITHUB_WORKSPACE" ]; then
