@@ -1,18 +1,15 @@
 unbottle() {
   sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
-  sed -Ei '/    rebuild.*/d' ./Formula/"$VERSION".rb || true
-  sed -Ei '/    revision.*/d' ./Formula/"$VERSION".rb || true
-  sed -Ei '/    sha256.*catalina/d' ./Formula/"$VERSION".rb || true
-  sed -Ei '/    sha256.*big_sur/d' ./Formula/"$VERSION".rb || true
-  sed -Ei '/    sha256.*arm64_big_sur/d' ./Formula/"$VERSION".rb || true
+  sed -Ei '/^    rebuild.*/d' ./Formula/"$VERSION".rb || true
+  sed -Ei '/^    revision.*/d' ./Formula/"$VERSION".rb || true
+  sed -Ei '/^    sha256.*:.*/d' ./Formula/"$VERSION".rb
 }
 
 fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   if [[ "$EXTENSION" =~ imap ]]; then
     php_version=$(echo "$VERSION" | cut -d'@' -f2)
-    brew tap shivammathur/php
-    php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
+    php_url=$(curl -sL https://raw.githubusercontent.com/shivammathur/homebrew-php/master/Formula/php@"$php_version".rb | grep -e "^  url.*" | cut -d\" -f 2)
     checksum=$(curl -sSL "$php_url" | shasum -a 256 | cut -d' ' -f 1)
     sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
     [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
@@ -29,36 +26,24 @@ fetch() {
       sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
     fi
   fi
-  check_version
 }
 
-check_version() {
-  new_version=$(grep -Eo "[0-9]+\.[0-9]+\.[0-9]+" Formula/"$VERSION".rb | head -n 1)
-  existing_version=$(curl -sL https://github.com/users/shivammathur/packages/container/package/extensions%2F"${VERSION/@/%2F}" | grep -Eo "extensions/${VERSION/@//}:[0-9]+\.[0-9]+\.[0-9]+" | cut -d ':' -f 2)
-  if [ "$existing_version" != '' ]; then
-    new_version=$(printf "%s\n%s" "$new_version" "$existing_version" | sort | tail -n 1)
-  fi
-  echo "existing label: $existing_version"
-  echo "new label: $new_version"
-  if ! [[ "$GITHUB_MESSAGE" = *--build-all* ]] && [ "$new_version" = "$existing_version" ]; then
+check_changes() {
+  new_url="$(grep -e "^  url.*" ./Formula/"$VERSION".rb | cut -d\" -f 2)"
+  old_url="$(grep -e "^  url.*" /tmp/"$VERSION".rb | cut -d\" -f 2)"
+  new_checksum="$(grep -e "^  sha256.*" ./Formula/"$VERSION".rb | cut -d\" -f 2)"
+  old_checksum="$(grep -e "^  sha256.*" /tmp/"$VERSION".rb | cut -d\" -f 2)"
+  echo "new_url: $new_url"
+  echo "old_url: $old_url"
+  echo "new_checksum: $new_checksum"
+  echo "old_checksum: $old_checksum"
+  if [ "$new_url" = "$old_url" ] && [ "$new_checksum" = "$old_checksum" ]; then
     sudo cp /tmp/"$VERSION".rb Formula/"$VERSION".rb
-  else
-    unbottle
   fi
 }
 
-match_args() {
-  IFS=' ' read -r -a args <<< "$GITHUB_MESSAGE"
-  for arg in "${args[@]}"; do
-    if [[ "$arg" =~ --build-only-"$EXTENSION"$ ]]; then
-      fetch
-      break
-    fi
-  done
-}
-
-if [[ "$GITHUB_MESSAGE" = *--build-only* ]]; then
-  match_args
-else
-  fetch
+fetch
+if [[ "$GITHUB_MESSAGE" != *--build-only-"$EXTENSION" ]] &&
+   [[ "$GITHUB_MESSAGE" != *--build-all* ]]; then
+  check_changes
 fi
