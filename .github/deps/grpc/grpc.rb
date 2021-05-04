@@ -2,11 +2,10 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.36.4",
-      revision: "3e53dbe8213137d2c731ecd4d88ebd2948941d75",
+      tag:      "v1.37.1",
+      revision: "8664c8334c05d322fbbdfb9e3b24601a23e9363c",
       shallow:  false
   license "Apache-2.0"
-  revision 2
   head "https://github.com/grpc/grpc.git"
 
   livecheck do
@@ -15,10 +14,10 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "123883d5fcb234baabbdd2123c5afabaab42b76923ad9a4f83473e1e45fa9f8c"
-    sha256 cellar: :any, big_sur:       "3928041f47f3d9cfbcb8c52e9fef66bbeaf44b8805ba2808af3607fce47bd2c5"
-    sha256 cellar: :any, catalina:      "5faf2cedba74b706a66e5976d80711eabfcbd349b46be581169d131761bf9de9"
-    sha256 cellar: :any, mojave:        "7d026f00c805d4fb729cc4804d7f1ae50fa1c1f93d0f686fb91769ef6533b6a7"
+    sha256 cellar: :any, arm64_big_sur: "2f11475d08ab3bad8577f3cd7577da5af575bf6e5072f75769f5e9dd85b782a1"
+    sha256 cellar: :any, big_sur:       "60262977e20371b8e818b7820792698a899999985d356c6ceee1b36289dbb128"
+    sha256 cellar: :any, catalina:      "b02be4642bfce958727bf03bff51d2acf6e180830a67566969ce975a8a37f0a8"
+    sha256 cellar: :any, mojave:        "9b3f8b20776fc5607a59bd0bad8c65c4c9d0a90e9e1fc44d2584581b236883f2"
   end
 
   depends_on "autoconf" => :build
@@ -34,7 +33,20 @@ class Grpc < Formula
 
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "llvm" => :build if MacOS.version <= :mojave
+  end
+
+  fails_with :clang do
+    build 1100
+    cause "Requires C++17 features not yet implemented"
+  end
+
   def install
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
+    on_macos do
+      ENV.llvm_clang if MacOS.version <= :mojave
+    end
     mkdir "cmake/build" do
       args = %W[
         ../..
