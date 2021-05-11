@@ -24,6 +24,9 @@ class SwooleAT81 < AbstractPhpExtension
     patch_spl_symbols
     inreplace "ext-src/swoole_coroutine.cc", "const char *error_filename", "_zend_string *error_filename"
     inreplace "ext-src/swoole_server.cc", "? PG(last_error_file)", "? PG(last_error_file)->val"
+    inreplace "ext-src/php_swoole.cc", "arg_count = 0", "fci = empty_fcall_info"
+    inreplace "ext-src/php_swoole.cc", "arguments = NULL", "fci_cache = empty_fcall_info_cache"
+    inreplace "ext-src/php_swoole.cc", ".function_name", ".fci.function_name"
     safe_phpize
     system "./configure"
     system "make"
