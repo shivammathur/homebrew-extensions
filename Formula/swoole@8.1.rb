@@ -28,6 +28,7 @@ class SwooleAT81 < AbstractPhpExtension
     inreplace "ext-src/php_swoole.cc", "arg_count = 0", "fci = empty_fcall_info"
     inreplace "ext-src/php_swoole.cc", "arguments = NULL", "fci_cache = empty_fcall_info_cache"
     inreplace "ext-src/php_swoole.cc", ".function_name", ".fci.function_name"
+    inreplace "ext-src/php_swoole_library.h", "Serializable, ", ""
     safe_phpize
     system "./configure"
     system "make"
