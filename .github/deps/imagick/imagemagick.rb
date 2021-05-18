@@ -4,6 +4,7 @@ class Imagemagick < Formula
   url "https://www.imagemagick.org/download/releases/ImageMagick-7.0.11-12.tar.xz"
   sha256 "8d43bb409fb8b31184e7345429b4481a7ee0353dca0048d56e8782b79790bbea"
   license "ImageMagick"
+  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git"
 
   livecheck do
@@ -12,10 +13,10 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "e9b89a72c3454cb15070ef170d6fa7e8700ed04fe69d9c294a24a65cabf4c066"
-    sha256 big_sur:       "ab304846df59cad0ea45cbaf74931eb10f067457cd89ee886a6aaaedc703e606"
-    sha256 catalina:      "8c0f181b90c980c84992d33e26fc79a0502d98e4a2d86d82117c977471a211e9"
-    sha256 mojave:        "29d1821c8bb7ff183730c90013dfce45631c925d339bc11d767400423f4a108b"
+    sha256 arm64_big_sur: "5f3c0ff4d82d752709e6705c37c805fd3759988beb54094b3252be4f24248653"
+    sha256 big_sur:       "fcf6dda49530c09b4b6252e4f310310952948f4b620230dcd3b977b12468b5ab"
+    sha256 catalina:      "c330a9070a62e518ef153ba79bce7b1f71536289534e6f7e6e2250d5e1cfd820"
+    sha256 mojave:        "100462d8143f92b85fa2422f83f6a0f88a687ad321c8cc701e4861982645c4fc"
   end
 
   depends_on "pkg-config" => :build
