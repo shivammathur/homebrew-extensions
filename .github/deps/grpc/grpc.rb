@@ -6,6 +6,7 @@ class Grpc < Formula
       revision: "8664c8334c05d322fbbdfb9e3b24601a23e9363c",
       shallow:  false
   license "Apache-2.0"
+  revision 1
   head "https://github.com/grpc/grpc.git"
 
   livecheck do
@@ -14,10 +15,10 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "2f11475d08ab3bad8577f3cd7577da5af575bf6e5072f75769f5e9dd85b782a1"
-    sha256 cellar: :any, big_sur:       "60262977e20371b8e818b7820792698a899999985d356c6ceee1b36289dbb128"
-    sha256 cellar: :any, catalina:      "b02be4642bfce958727bf03bff51d2acf6e180830a67566969ce975a8a37f0a8"
-    sha256 cellar: :any, mojave:        "9b3f8b20776fc5607a59bd0bad8c65c4c9d0a90e9e1fc44d2584581b236883f2"
+    sha256 cellar: :any, arm64_big_sur: "acc54d42cb0a9bb54bfaba6351cb6b065253ebd35cf2809fc27566c6c39a9df0"
+    sha256 cellar: :any, big_sur:       "a290fd745d2f5508b74ba9cea3db3bf057f0a17793cdb646719ce56f9db39f6c"
+    sha256 cellar: :any, catalina:      "04783738edea2c92d82f0b40c5108fbb61875bc9e5acf702b73b82341fe5c474"
+    sha256 cellar: :any, mojave:        "298bd6caf34410bfe42eb443f75c98e40541b18adf7e526df292fbeb8eb16348"
   end
 
   depends_on "autoconf" => :build
