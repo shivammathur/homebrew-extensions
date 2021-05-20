@@ -10,7 +10,7 @@ case $extension in
   sed -i "s/^  url .*/  url \"https\:\/\/github.com\/krakjoe\/pcov\/archive\/$tag.tar.gz\"/g" ./Formula/"$version".rb
   ;;
   "swoole")
-  tag=$(curl -SsL https://github.com/swoole/swoole-src/tags | awk '/\/tag\/v([0-9]+.[0-9]+.[0-9]+)/' | cut -d '"' -f 2 | awk '{n=split($NF,a,"/");print a[n]}' | head -n 1)
+  tag=$(curl -SsL https://github.com/swoole/swoole-src/releases/latest | grep 'swoole-src/tree' | grep -Po "v[0-9]+\.[0-9]+\.[0-9]+" | head -1)
   sed -i "s/^  url .*/  url \"https\:\/\/github.com\/swoole\/swoole-src\/archive\/$tag.tar.gz\"/g" ./Formula/"$version".rb
   ;;
   xdebug|igbinary|imagick)
