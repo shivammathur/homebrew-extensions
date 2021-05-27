@@ -15,9 +15,9 @@ class GrpcAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "debbfe2ab764e87fb1001f2f980cf5b6ab2ec6af497c1a18fc3c5726f6f112b9"
-    sha256 cellar: :any_skip_relocation, big_sur:       "e8444a4996cf78d7ac15a9fb866e2b6eb48058d04d26180b3c6004f32721cc3d"
-    sha256 cellar: :any_skip_relocation, catalina:      "c3d596f231faf999661f1133a3998a1b77a2d2673067323a78aa36167364d71d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e5bb7fb6a033f6fd71297cad3853caf67811d9f990c34a53d7186a623acb6dcb"
+    sha256 cellar: :any_skip_relocation, big_sur:       "50f7dd9e88546dcdba0f4352daf27f64fc8860f5cab9595f4e39b26a0c2ffbcf"
+    sha256 cellar: :any_skip_relocation, catalina:      "1ff967d15704d5683f14767035a139a291b8727a6dc41e75292e24a4ef58ad98"
   end
 
   depends_on "grpc"
