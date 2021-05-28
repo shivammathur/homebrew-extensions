@@ -7,10 +7,11 @@ class RabbitmqC < Formula
   head "https://github.com/alanxz/rabbitmq-c.git"
 
   bottle do
-    sha256 arm64_big_sur: "8c99de9859b3c8fd847d02a777f9f607942742c8e8c7ab11961c9f82cdd7521c"
-    sha256 big_sur:       "d8e5e9610c9209804710a07ad2accdd9e07df7c6ec0dbbc987193fb724801c0f"
-    sha256 catalina:      "2f15cd210e177b5d9156d3884f2b5fe735352820cc7b900a1c9dc951f56cb8e0"
-    sha256 mojave:        "ad16aaef6f362020519025f174bd72c4c74d007965209d9c89b55d0d989752cc"
+    rebuild 1
+    sha256 cellar: :any, arm64_big_sur: "d060c016414d8d55afa295308d1582fee4db9f36cc43770600fa8bc480e42511"
+    sha256 cellar: :any, big_sur:       "efe8285e7bdfc661fa5cfede54785b44e817b38fa800e64f75dec2755ae69a7a"
+    sha256 cellar: :any, catalina:      "1ae238a471c056d01372fed68b25dbcfe5a29a88f144b9cf09b859a4f287af98"
+    sha256 cellar: :any, mojave:        "80ecbc2444e12039a77f178dbd7557bcda2795ea182bc7fd788f16e7f5e48e4c"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +22,7 @@ class RabbitmqC < Formula
   def install
     system "cmake", ".", *std_cmake_args, "-DBUILD_EXAMPLES=OFF",
                          "-DBUILD_TESTS=OFF", "-DBUILD_API_DOCS=OFF",
-                         "-DBUILD_TOOLS=ON", "-DCMAKE_INSTALL_RPATH=#{opt_lib}"
+                         "-DBUILD_TOOLS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "make", "install"
   end
 
