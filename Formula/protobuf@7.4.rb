@@ -15,9 +15,9 @@ class ProtobufAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a98d817f3e981bd7041a3a4ee4da55f4795429a14e8622c89eb7491598e4a3e4"
-    sha256 cellar: :any_skip_relocation, big_sur:       "7b2c483d4bb21816b24f70672f14518b215bb9afdb7c4d03180ceeb57ba93bd0"
-    sha256 cellar: :any_skip_relocation, catalina:      "2fd38e55a1a48f7968d78c9d45e0896e2c680f05f032cb946508443d250786eb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "27c00aee5ad47050a38f6c8a16bbadca1f729d225ead782fe08ee50b759f57f4"
+    sha256 cellar: :any_skip_relocation, big_sur:       "2de7fd78cf9234a3b579bef18546f012be64baa1e2b47fc57d947c83555dd502"
+    sha256 cellar: :any_skip_relocation, catalina:      "2378e1b73b8435a7b451bd823df08920153dc6cb6206e1143e16ddc7895a73f3"
   end
 
   def install
