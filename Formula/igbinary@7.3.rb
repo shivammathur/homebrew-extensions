@@ -15,9 +15,9 @@ class IgbinaryAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7a5b1f5f8bb0cf9046a4be07eb9f1f3e6a8fe126f227ecf9972fa14d4d50c09f"
-    sha256 cellar: :any_skip_relocation, big_sur:       "e412889d5b91894060c38f97e90982df5bcf0881bc233cd40df332e43408c75b"
-    sha256 cellar: :any_skip_relocation, catalina:      "018a7ca6560f0b8b0a3bd6fbddcdaa94e4424bfae59fdaa8ab30be5994520d27"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "78715499910e73690607096609a7d903c538b89343db309855d2828f0820f6db"
+    sha256 cellar: :any_skip_relocation, big_sur:       "c74bfb6a41b464959834ade583aac3470f5321d6eca57cf8fe329e711011716f"
+    sha256 cellar: :any_skip_relocation, catalina:      "f90c0da1b8a2c4afc88699aa3107da35f7a8b685949ae23a0bbbac5dea263a83"
   end
 
   def install
