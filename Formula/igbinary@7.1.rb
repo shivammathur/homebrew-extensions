@@ -8,8 +8,8 @@ class IgbinaryAT71 < AbstractPhpExtension
   init
   desc "Igbinary PHP extension"
   homepage "https://github.com/igbinary/igbinary"
-  url "https://github.com/igbinary/igbinary/archive/3.2.2.tar.gz"
-  sha256 "3f8927d5578ae5536b966ff3dcedaecf5e8b87a8f33f7fe3a78a0a6da30f4005"
+  url "https://github.com/igbinary/igbinary/archive/3.2.3.tar.gz"
+  sha256 "c6bb38235e166ddf5713f464f9ab6d16e85783eefa7825824efd252eea6ac4e5"
   head "https://github.com/igbinary/igbinary.git"
   license "BSD-3-Clause"
 
