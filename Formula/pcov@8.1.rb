@@ -15,10 +15,9 @@ class PcovAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8bd77e59455ec57566d027c917a8d86e524303fb55ad002f7cb0643a6a76288a"
-    sha256 cellar: :any_skip_relocation, big_sur:       "2ec33ed2b1e1a5d0b140432143266835c48e1001a0536fe0512236bebf125c12"
-    sha256 cellar: :any_skip_relocation, catalina:      "1945d5eeaa9391c4af02f8ab1e87ec1849edb8967e0ed4345d56721545f26b0d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "676e37e7a9177101eba884745bfc4a02ef022e228507400bdb63c6fb940a6d9b"
+    sha256 cellar: :any_skip_relocation, big_sur:       "db358fc96661381215b3cd6ccea8c14ca06de1ca7708e1b1c1b46b16a378ac2e"
+    sha256 cellar: :any_skip_relocation, catalina:      "718d44a40baebd50fe26aca4b863b83b0e496ac465e62ce959c562cfe6ddc911"
   end
 
   def install
