@@ -1,0 +1,36 @@
+name: Dispatch rebottle all
+on:
+  workflow_dispatch:
+    inputs:
+      extension:
+        description: Extension name
+        required: true
+      issue:
+        description: Issue number, where comment on failure would be posted
+        required: false
+      upload:
+        description: Whether to upload built bottles or not
+        required: false
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: ${{github.event.inputs.formula}}
+        id: print_details
+        run: |
+          echo sender=${{github.event.sender.login}}
+          echo extension=${{github.event.inputs.extension}}
+          echo issue=${{github.event.inputs.issue}}
+          echo upload=${{github.event.inputs.upload}}
+
+      - name: Dispatch
+        run: |
+           json_array=()
+           extension=${{github.event.inputs.extension}}
+           for formula in ./Formula/$extension@*.rb; do
+             json="{\"formula\": \"$(basename ${formula%.*})\", \"issue\":\"${{github.event.inputs.issue}}\", \"upload\":\"${{github.event.inputs.upload}}\"}"
+             echo $json | GITHUB_TOKEN=${{ secrets.HOMEBREW_GITHUB_API_TOKEN }} gh workflow run dispatch-rebottle.yml --json
+           done
