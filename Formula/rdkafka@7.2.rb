@@ -8,7 +8,7 @@ class RdkafkaAT72 < AbstractPhpExtension
   init
   desc "Rdkafka PHP extension"
   homepage "https://github.com/arnaud-lb/php-rdkafka"
-  url "https://pecl.php.net/get/rdkafka-5.0.0.tgz?init=true"
+  url "https://pecl.php.net/get/rdkafka-5.0.0.tgz"
   sha256 "432fbaae43dcce177115b0e172ece65132cc3d45d86741da85e0c1864878157b"
   head "https://github.com/arnaud-lb/php-rdkafka.git"
   license "MIT"
