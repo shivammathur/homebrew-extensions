@@ -44,7 +44,6 @@ check_changes() {
 }
 
 fetch
-if [[ "$GITHUB_MESSAGE" != *--build-only-"$EXTENSION" ]] &&
-   [[ "$GITHUB_MESSAGE" != *--build-all* ]]; then
+if [[ "$GITHUB_MESSAGE" != *--rebuild* ]]; then
   check_changes
 fi

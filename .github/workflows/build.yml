@@ -46,9 +46,15 @@ jobs:
 
       - name: Get matrix
         id: set-matrix
+        env:
+          GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
            json_array=()
-           mapfile -t extensions < <(find ./Formula -name "*.rb" -print0 | xargs -0 basename -a | sed "s/@.*//" | sort | uniq)
+           if [[ "$GITHUB_MESSAGE" != *--build-only-* ]]; then
+             mapfile -t extensions < <(find ./Formula -name "*.rb" -print0 | xargs -0 basename -a | sed "s/@.*//" | sort | uniq)
+           else
+             IFS=, read -a extensions <<< $(echo "$GITHUB_MESSAGE" | grep -Po 'build-only-.*' | cut -d '-' -f 3-)
+           fi
            for extension in ${extensions[@]}; do
              for formula in ./Formula/$extension@*.rb; do
                json_array+=("{\"php\": \"$(echo $formula | grep -Eo '[0-9]+\.[0-9]+')\", \"extension\": \"$extension\"}")
