@@ -16,10 +16,10 @@ class ImagickAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 arm64_big_sur: "ca1149b839245f9a3302db6c5aefbb63f7cf909a591acc272611e6888aa5641b"
-    sha256 big_sur:       "ea376f07ca9bce77fb60725ae8b6edac49401f3876794732db6173f140c7edc0"
-    sha256 catalina:      "e5dd51e293d5487f297b1e67c75b6dad9b9f71dfa373d4b642c4e02fac77d97c"
+    rebuild 2
+    sha256 arm64_big_sur: "bc4d4735efa3f12e1337df50cbc6e3be41f00176dbfe7b230002513b8fdae549"
+    sha256 big_sur:       "cccd209c8ccb3e62e51d26fcb1bbba124927eed63461d2ac1d818ed8e6694969"
+    sha256 catalina:      "aa3f3d5ed595d9091c8f795de2bff6c6fc260d6d1ef8b3a80f4d0cc88336b85f"
   end
 
   depends_on "imagemagick"
