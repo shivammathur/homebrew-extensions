@@ -48,6 +48,7 @@
 |`protobuf`|`PHP 5.6` to `PHP 8.1`|
 |`psr`|`PHP 5.6` to `PHP 8.1`|
 |`raphf`|`PHP 5.6` to `PHP 8.1`|
+|`rdkafka`|`PHP 5.6` to `PHP 8.1`|
 |`redis`|`PHP 5.6` to `PHP 8.1`|
 |`swoole`|`PHP 5.6` to `PHP 8.1`|
 |`xdebug`|`PHP 5.6` to `PHP 8.1`|
@@ -60,6 +61,7 @@
 |--- |--- |
 |macOS Catalina|`x86_64`|
 |macOS Big Sur|`x86_64`, `arm64`|
+|macOS Monterey|`x86_64`, `arm64`|
 
 ## Usage
 
@@ -146,6 +148,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 
 ### Extensions
 
+- [arnaud-lb/php-rdkafka](https://github.com/arnaud-lb/php-rdkafka "rdkafka")
 - [grpc/grpc](https://github.com/grpc/grpc "gRPC")
 - [igbinary/igbinary](https://github.com/igbinary/igbinary "igbinary")
 - [Imagick/imagick](https://github.com/Imagick/imagick "Imagick")
@@ -189,6 +192,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [libidn2](https://formulae.brew.sh/formula/libidn2 "libidn2")
 - [liblzf](https://formulae.brew.sh/formula/liblzf "liblzf")
 - [libmemcached](https://formulae.brew.sh/formula/libmemcached "libmemcached")
+- [librdkafka](https://formulae.brew.sh/formula/librdkafka "librdkafka")
 - [lz4](https://formulae.brew.sh/formula/lz4 "lz4")
 - [openssl](https://formulae.brew.sh/formula/openssl@1.1 "openssl")
 - [pcre](https://formulae.brew.sh/formula/pcre "pcre")
