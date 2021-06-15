@@ -15,6 +15,10 @@ class RdkafkaAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 arm64_big_sur: "8a59408e99cfd0b9c792c56f2add2cd17ae4af142f13c8e351a067808d860701"
+    sha256 big_sur:       "ffda785d9c29f1e322895f9f55b3d1af0eb1994c465f08cfe6ebc801d91664bd"
+    sha256 catalina:      "cc587517ec9aec45d1671f3e0bc5e11dd6fafbeb5e59ec34f7f580734fd2b451"
   end
 
   depends_on "librdkafka"
