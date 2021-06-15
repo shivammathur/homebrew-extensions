@@ -58,6 +58,7 @@ jobs:
           php -r "if(! extension_loaded('msgpack')) {throw new Exception('msgpack not found');}"
           php -r "if(! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
           php -r "if(! extension_loaded('raphf')) {throw new Exception('raphf not found');}"
+          php -r "if(! extension_loaded('rdkafka')) {throw new Exception('rdkafka not found');}"
           php -r "if(! extension_loaded('redis')) {throw new Exception('redis not found');}"
           php -r "if(! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
           php -r "if(! extension_loaded('psr')) {throw new Exception('psr not found');}"
