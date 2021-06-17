@@ -7,6 +7,7 @@ unbottle() {
 
 fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
+  [[ "$GITHUB_MESSAGE" =~ .*--init.* ]] && return
   if [[ "$EXTENSION" =~ imap ]]; then
     php_version=$(echo "$VERSION" | cut -d'@' -f2)
     brew tap shivammathur/php
@@ -38,13 +39,14 @@ check_changes() {
   echo "old_url: $old_url"
   echo "new_checksum: $new_checksum"
   echo "old_checksum: $old_checksum"
-  if [ "$new_url" = "$old_url" ] && [ "$new_checksum" = "$old_checksum" ]; then
+  if [ "$new_url" = "$old_url" ] &&
+     [ "$new_checksum" = "$old_checksum" ] &&
+     [[ ! "$GITHUB_MESSAGE" =~ .*--(rebuild|init).* ]]; then
     sudo cp /tmp/"$VERSION".rb Formula/"$VERSION".rb
+  else
+    unbottle
   fi
 }
 
-unbottle
 fetch
-if [[ "$GITHUB_MESSAGE" != *--rebuild* ]]; then
-  check_changes
-fi
+check_changes
