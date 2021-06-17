@@ -16,9 +16,6 @@ class ZmqAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 arm64_big_sur: "8845372eaa9b9e6c4f82f36cc938f025be0694a24c432c8bb58136529cac231c"
-    sha256 big_sur:       "0c79a553843b1d11c5f7c21f996d8b5579e863d4d12dec8349fc0207bb304cd0"
-    sha256 catalina:      "38594d08474f2146930144c34be9383366fc54ee1412b37281d9a1f27fe45f41"
   end
 
   depends_on "czmq"
