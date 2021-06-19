@@ -25,7 +25,6 @@ class ImagickAT81 < AbstractPhpExtension
   depends_on "imagemagick"
 
   def install
-    patch_spl_symbols
     safe_phpize
     system "./configure"
     system "make"
