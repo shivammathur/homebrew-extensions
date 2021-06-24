@@ -48,8 +48,11 @@ jobs:
         run: |
           extension=${extension/pecl_/}
           php -r "if(! extension_loaded('$extension')) {throw new Exception('$extension not found');}"
+          php -r "echo '$extension version: ' . phpversion('$extension');"
         env:
           extension: ${{ github.event.inputs.extension }}
       - name: Testing Xdebug2
         if: github.event.inputs.extension == 'xdebug2'
-        run: php -r "if(phpversion('xdebug')!='2.9.8') {throw new Exception('xdebug2 not found');}"
+        run: |
+          php -r "if(phpversion('xdebug')!='2.9.8') {throw new Exception('xdebug2 not found');}"
+          php -r "echo 'xdebug version: ' . phpversion('xdebug');"
