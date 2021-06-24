@@ -7,10 +7,10 @@ require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 class ImagickAT80 < AbstractPhpExtension
   init
   desc "Imagick PHP extension"
-  homepage "https://github.com/Imagick/imagick/releases"
-  url "https://github.com/imagick/imagick/archive/3.5.0.tar.gz"
-  sha256 "f32fb86fefb8531fc32768b9732305f8ada14f249cf3b74c9aaa664c6ae38c27"
-  head "https://github.com/Imagick/imagick"
+  homepage "https://github.com/Imagick/imagick"
+  url "https://pecl.php.net/get/imagick-3.5.0.tgz"
+  sha256 "795db7c36fbacd3d33a4f53ff2d38584c846e80a04dcd04c55e9e46c28f5d229"
+  head "https://github.com/Imagick/imagick.git"
   license "PHP-3.01"
 
   bottle do
@@ -23,6 +23,7 @@ class ImagickAT80 < AbstractPhpExtension
   depends_on "imagemagick"
 
   def install
+    Dir.chdir "imagick-#{version}"
     safe_phpize
     system "./configure"
     system "make"
