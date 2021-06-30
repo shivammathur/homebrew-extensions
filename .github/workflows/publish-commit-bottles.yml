@@ -51,6 +51,12 @@ jobs:
       - name: Install gems
         run: brew install-bundler-gems
 
+      - name: Get PR info
+        id: pr-info
+        env:
+          GITHUB_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
+        run: echo "::set-output name=pr_branch::$(gh pr view ${{github.event.inputs.pull_request}} --json headRefName | jq -r .headRefName)"
+
       - name: Setup git
         run: |
           git config --local user.email 1589480+BrewTestBot@users.noreply.github.com
@@ -61,7 +67,14 @@ jobs:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
           HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.repository_owner }}
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: brew pr-pull --debug --workflows=build.yml --verbose --tap=${{ github.repository_owner }}/extensions --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions" ${{github.event.inputs.args}} ${{github.event.inputs.pull_request}}
+        run: |
+          sudo sed -i 's/Closes ##{pr}/[skip ci]/g' "$(brew --repository)"/Library/Homebrew/dev-cmd/pr-pull.rb
+          brew pr-pull --debug --workflows=build.yml --verbose --tap=${{ github.repository_owner }}/extensions --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions" ${{github.event.inputs.args}} ${{github.event.inputs.pull_request}}
+
+      - name: Merge PR branch
+        env:
+          GITHUB_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
+        run: gh pr merge ${{github.event.inputs.pull_request}} --delete-branch --rebase
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
