@@ -51,12 +51,6 @@ jobs:
       - name: Install gems
         run: brew install-bundler-gems
 
-      - name: Get PR info
-        id: pr-info
-        env:
-          GITHUB_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-        run: echo "::set-output name=pr_branch::$(gh pr view ${{github.event.inputs.pull_request}} --json headRefName | jq -r .headRefName)"
-
       - name: Setup git
         run: |
           git config --local user.email 1589480+BrewTestBot@users.noreply.github.com
