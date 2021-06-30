@@ -9,15 +9,11 @@ class ImapAT72 < AbstractPhpExtension
   desc "Imap PHP extension"
   homepage "https://github.com/php/php-src"
   url "https://github.com/shivammathur/php-src-backports/archive/7.2.34.tar.gz"
-  sha256 "72c9ae7a6b0b55b2837679d8b649e9bb141d5c16eff80d0dd06eae09a999e9bf"
+  sha256 "01e0d039f916050aefa0d3bba2fb406e3ba1fa5ed46a5b1245b633c40a0c50f9"
   license "PHP-3.01"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 arm64_big_sur: "5fd6fe66cd0affbe314183d187c805a292692c037b75a62fab548670ea4242b9"
-    sha256 big_sur:       "a25a4c3e8ebc350dfc545f53b96f9eb40ccef8225af579584962f6d401de810c"
-    sha256 catalina:      "3456e38a329d4c639795bebae28877dff94e276f6c2d1fc4f7def8b5d398409c"
   end
 
   depends_on "imap-uw"
