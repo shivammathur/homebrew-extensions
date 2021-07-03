@@ -12,10 +12,11 @@ class Libidn2 < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "f5338389f4d1ba865b01ea508c9d1f07edc83258a4161e6789aade42c3d11723"
-    sha256 big_sur:       "5cdc0013d853962d6d3d3cc6c091a72f853bca9934d106dbe4046b20ee142055"
-    sha256 catalina:      "1d9ba7c36ba4071f958f030dc99aabff2d84de58586aae737111add263959e0f"
-    sha256 mojave:        "f99226cc8ab879de19a05ed036101e413c6fdc89b3cf4fcd83d1920dd3ad56f1"
+    rebuild 1
+    sha256 arm64_big_sur: "01ffa4ee0e56a4190329e352543a2c11eb13801f0ec19577e37ef89440679504"
+    sha256 big_sur:       "25c6ccfc501690f453ebcb4ce56609bcfa3ba915da6dd29ecbf9afe0e3ef321b"
+    sha256 catalina:      "0ca13baf4da29a9a0fd0f4bab818318f0c555d1dfab586ed3addfc5a716f3440"
+    sha256 mojave:        "b2707eb113d2a31e0e1ca8385777939948f71a78d2312085f15b2df8c79581af"
   end
 
   head do
@@ -25,6 +26,7 @@ class Libidn2 < Formula
     depends_on "automake" => :build
     depends_on "gengetopt" => :build
     depends_on "libtool" => :build
+    depends_on "ronn" => :build
   end
 
   depends_on "pkg-config" => :build
@@ -32,12 +34,7 @@ class Libidn2 < Formula
   depends_on "libunistring"
 
   def install
-    if build.head?
-      ENV["GEM_HOME"] = buildpath/"gem_home"
-      system "gem", "install", "ronn"
-      ENV.prepend_path "PATH", buildpath/"gem_home/bin"
-      system "./bootstrap"
-    end
+    system "./bootstrap" if build.head?
 
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",

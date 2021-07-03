@@ -15,6 +15,7 @@ class Krb5 < Formula
     sha256 big_sur:       "d544c1111503eb27b253e190998b948889ea224b1ebecbceb6a4dd912317eb53"
     sha256 catalina:      "6a41de7c23c35b555a22349963df4114c498c5b91c345126a1e7deb7acbe31ea"
     sha256 mojave:        "7697a5ffefab32cacc4d34aec34cb03dab185776025d56d7442d6350cd9fadc1"
+    sha256 x86_64_linux:  "66786d7f83dda619a4a3687045b686fd0507abd475ec9053a94fd2341c31ea12"
   end
 
   keg_only :provided_by_macos
