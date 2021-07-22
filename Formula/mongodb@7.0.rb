@@ -8,7 +8,7 @@ class MongodbAT70 < AbstractPhpExtension
   init
   desc "Mongodb PHP extension"
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://pecl.php.net/get/mongodb-1.9.2.tgz?init=true"
+  url "https://pecl.php.net/get/mongodb-1.9.2.tgz"
   sha256 "95e832c5d48ae6e947bdc79f35a9f8f0bbd518f4aa00f1cef6c9eafbae02187d"
   head "https://github.com/mongodb/mongo-php-driver.git"
   license "Apache-2.0"
