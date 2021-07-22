@@ -39,6 +39,7 @@
 |`imap`|`PHP 5.6` to `PHP 8.1`|
 |`memcache`|`PHP 5.6` to `PHP 8.1`|
 |`memcached`|`PHP 5.6` to `PHP 8.1`|
+|`mongodb`|`PHP 5.6` to `PHP 8.1`|
 |`msgpack`|`PHP 5.6` to `PHP 8.1`|
 |`pcov`|`PHP 7.1` to `PHP 8.1`|
 |`pecl_http`|`PHP 5.6` to `PHP 8.1`|
@@ -158,6 +159,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [m6w6/ext-http](https://github.com/m6w6/ext-http.git "PECL-HTTP")
 - [m6w6/ext-propro](https://github.com/m6w6/ext-propro "Propro")
 - [m6w6/ext-raphf](https://github.com/m6w6/ext-raphf "Raphf")
+- [mongodb/mongo-php-driver](https://github.com/mongodb/mongo-php-driver "Mongodb")
 - [msgpack/msgpack](https://github.com/msgpack/msgpack-php "Msgpack")
 - [phalcon/cphalcon](https://github.com/phalcon/cphalcon "Phalcon")
 - [php-amqp/php-amqp](https://github.com/php-amqp/php-amqp "amqp")
@@ -186,7 +188,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [grpc](https://formulae.brew.sh/formula/grpc "grpc")
 - [icu4c](https://formulae.brew.sh/formula/icu4c "icu4c")
 - [imagemagick](https://formulae.brew.sh/formula/imagemagick "imagemagick")
-- [imap-uw](/https://formulae.brew.sh/formulaimap-uw "imap")
+- [imap-uw](https://formulae.brew.sh/formula/imap-uw "imap")
 - [krb5](https://formulae.brew.sh/formula/krb5 "krb5")
 - [libevent](https://formulae.brew.sh/formula/libevent "libevent")
 - [libidn2](https://formulae.brew.sh/formula/libidn2 "libidn2")
@@ -196,6 +198,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [lz4](https://formulae.brew.sh/formula/lz4 "lz4")
 - [openssl](https://formulae.brew.sh/formula/openssl@1.1 "openssl")
 - [pcre](https://formulae.brew.sh/formula/pcre "pcre")
-- [rabbitmq-c](/https://formulae.brew.sh/formularabbitmq-c "rabbitmq")
+- [rabbitmq-c](https://formulae.brew.sh/formula/rabbitmq-c "rabbitmq")
+- [snappy](https://formulae.brew.sh/formula/snappy "snappy")
 - [zeromq](https://formulae.brew.sh/formula/zeromq "zeromq")
 - [zstd](https://formulae.brew.sh/formula/zstd "zstd")
