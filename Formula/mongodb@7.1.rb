@@ -15,6 +15,10 @@ class MongodbAT71 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 arm64_big_sur: "067c66da5a4fe8e485691a731e9b3d2dbc1a8da645d18cbb5a78a38f99e16059"
+    sha256 big_sur:       "6b4b8a2393abd2af4362b1bd2289ad1952e04cf87d2289145110c7efbf2faa7b"
+    sha256 catalina:      "24c64a8817aca0d7a8a47e843126f12d1ff486ce677024030b1cb9a4461f119b"
   end
 
   depends_on "icu4c"
