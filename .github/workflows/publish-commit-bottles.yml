@@ -23,6 +23,8 @@ jobs:
           bot_body: ':robot: A scheduled task has [triggered a merge](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot: BrewTestBot
 
+      - uses: actions/checkout@v2
+
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
@@ -68,7 +70,7 @@ jobs:
       - name: Merge PR branch
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: gh pr merge ${{github.event.inputs.pull_request}} --delete-branch --rebase
+        run: bash .github/scripts/retry.sh 5 5 gh pr merge ${{github.event.inputs.pull_request}} --delete-branch --rebase
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master

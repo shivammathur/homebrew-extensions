@@ -11,35 +11,41 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: ['7.1', '7.2', '7.3', '7.4']
+        php: ['7.1', '7.2', '7.3', '7.4']
         extensions: ['amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, zmq, pcov, propro']
         include:
-          - php-versions: '5.6'
+          - php: '5.6'
             extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, zmq, propro
-          - php-versions: '7.0'
+          - php: '7.0'
             extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, zmq, propro
-          - php-versions: '8.0'
+          - php: '8.0'
             extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, zmq, pcov
-          - php-versions: '8.1'
+          - php: '8.1'
             extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, zmq, pcov
-          - php-versions: '7.2'
+          - php: '7.2'
             extensions: xdebug2
-          - php-versions: '7.3'
+          - php: '7.3'
             extensions: xdebug2
-          - php-versions: '7.4'
+          - php: '7.4'
             extensions: xdebug2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Setup cache environment
+        uses: shivammathur/cache-extensions@develop
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: ${{ matrix.extensions }}
+          key: homebrew-extensions-all-v1
       - name: Setup PHP
         uses: shivammathur/setup-php@develop
         with:
-          php-version: ${{ matrix.php-versions }}
+          php-version: ${{ matrix.php }}
           extensions: ${{ matrix.extensions }}
       - name: Testing PHP version
         run: |
           php -v
-          php -r "if(strpos(phpversion(), '${{ matrix.php-versions }}') === false) {throw new Exception('Wrong PHP version Installed');}"
+          php -r "if(strpos(phpversion(), '${{ matrix.php }}') === false) {throw new Exception('Wrong PHP version Installed');}"
       - name: Testing Extensions
         if: matrix.extensions != 'xdebug2'
         run: |

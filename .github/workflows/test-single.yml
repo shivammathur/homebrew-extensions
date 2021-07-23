@@ -34,6 +34,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Setup cache environment
+        uses: shivammathur/cache-extensions@develop
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: ${{ github.event.inputs.extension }}
+          key: homebrew-extensions-single-v1
       - name: Setup PHP
         uses: shivammathur/setup-php@develop
         with:
