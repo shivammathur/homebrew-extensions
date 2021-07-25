@@ -28,7 +28,7 @@ module.exports = async ({github, context, core}) => {
         console.log('No CI-long-timeout label found. Setting short GitHub Actions timeout.')
         core.setOutput('timeout-minutes', '180')
     }
-    core.setOutput('container', 'ghcr.io/homebrew/ubuntu20.04:master')
+    core.setOutput('container', 'homebrew/ubuntu20.04:latest')
     const test_bot_formulae_args = ["--only-formulae", "--junit", "--only-json-tab", "--skip-dependents"]
     test_bot_formulae_args.push('--root-url="https://ghcr.io/v2/shivammathur/extensions"')
     test_bot_formulae_args.push('--testing-formulae=${{needs.tap_syntax.outputs.testing_formulae}}')
