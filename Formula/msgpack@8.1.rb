@@ -8,18 +8,14 @@ class MsgpackAT81 < AbstractPhpExtension
   init
   desc "Msgpack PHP extension"
   homepage "https://github.com/msgpack/msgpack-php"
-  url "https://github.com/msgpack/msgpack-php/archive/831b665e05007a820e841ba585e250d639986328.tar.gz"
-  sha256 "4d20d70321eacf43634dea5103f1dc81820d6965a50ff8cfc6aff17df0fbea73"
+  url "https://pecl.php.net/get/msgpack-2.1.2.tgz"
+  sha256 "912ff4d33f323ea7cb04569df5ae23c09ce614412a65c39c2ca11f52802abe82"
   version "2.1.2"
   head "https://github.com/msgpack/msgpack-php.git"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 11
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "39f2d3f3f4d74faa6b7793c5149b77087ba853d7dee5a17564b83849887f1133"
-    sha256 cellar: :any_skip_relocation, big_sur:       "b0279c152bf2abe9286ba25552b2a1799a6bde4bd9e7613818d2b873df3143a5"
-    sha256 cellar: :any_skip_relocation, catalina:      "aafc6eaaa4f2707fe17ef48b06ae0a9a1f533fe3edc989f4dc98c686ff32624a"
   end
 
   def install
