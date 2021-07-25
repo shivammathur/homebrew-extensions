@@ -112,7 +112,7 @@ jobs:
   set-environment:
     if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
     runs-on: ubuntu-latest
-    needs: tap_syntax
+    needs: tap-syntax
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
       runners: ${{ steps.check-labels.outputs.runners }}
