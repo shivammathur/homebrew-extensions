@@ -16,8 +16,6 @@ jobs:
   tap-syntax:
     if: "!contains(github.event.head_commit.message, 'skip-build')"
     runs-on: ubuntu-latest
-    container:
-      image: homebrew/ubuntu20.04:latest
     env:
       HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
     outputs:
@@ -28,6 +26,16 @@ jobs:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Cache Bundler RubyGems
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ runner.os }}-rubygems-
+
+      - name: Install Bundler RubyGems
+        run: brew install-bundler-gems
 
       - run: brew test-bot --only-tap-syntax
 
