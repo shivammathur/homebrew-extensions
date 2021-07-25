@@ -149,16 +149,11 @@ jobs:
       HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
       - name: Set environment variables
+        if: runner.os == 'macOS'
         run: |
-          if [ "$RUNNER_OS" = 'macOS' ]; then
-            echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> $GITHUB_ENV
-            if [ "${{matrix.runner}}" = 'macos-11.0-arm' ]; then
-              echo 'GITHUB_ACTIONS_HOMEBREW_MACOS_SELF_HOSTED=1' >> $GITHUB_ENV
-            fi
-          else
-            # No PATH needed on Linux as set by Docker
-            echo 'HOMEBREW_FORCE_HOMEBREW_ON_LINUX=1' >> $GITHUB_ENV
-            echo 'HOMEBREW_CORE_GIT_REMOTE=https://github.com/Homebrew/linuxbrew-core' >> $GITHUB_ENV
+          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> $GITHUB_ENV
+          if [ "${{matrix.runner}}" = 'macos-11.0-arm' ]; then
+            echo 'GITHUB_ACTIONS_HOMEBREW_MACOS_SELF_HOSTED=1' >> $GITHUB_ENV
           fi
 
       - name: Set up Linux Homebrew Docker container
