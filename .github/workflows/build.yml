@@ -175,6 +175,7 @@ jobs:
             ${{needs.setup_tests.outputs.container}} \
             sleep inf
           # Fix working directory permissions
+          docker exec --user linuxbrew ${{github.sha}} brew tap shivammathur/homebrew-extensions
           docker exec --user root ${{github.sha}} chmod 777 /tmp/bottles
           docker exec --workdir "$TAP_PATH" ${{github.sha}} git remote set-url origin ${{github.event.repository.html_url}}
           docker exec --workdir "$TAP_PATH" ${{github.sha}} git fetch origin ${{github.sha}} '+refs/heads/*:refs/remotes/origin/*'
