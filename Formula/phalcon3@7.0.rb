@@ -14,6 +14,7 @@ class Phalcon3AT70 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "a1f2fd4253af4d70cf34f3a4de8538df6de6a0257dd2bb73144ab7e91ea4619e"
     sha256 cellar: :any_skip_relocation, big_sur:       "ab5c8dc72a33bd6d701eb2808a94779284ca5315d2ad4b709b7af9305fb7fa31"
     sha256 cellar: :any_skip_relocation, catalina:      "0cf41782d5d48537bbe9335409f9b9e8771624591aa38c32634d1297fc171269"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e09294c9125d48abfe14acd92278f0ef803dacfb5ed20fce4aecde39a8ddd02c"
   end
 
   depends_on "pcre"
