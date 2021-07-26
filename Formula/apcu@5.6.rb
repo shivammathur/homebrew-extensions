@@ -18,6 +18,7 @@ class ApcuAT56 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "2b3e0b3e325becfc38f23b61b6d6971408cf8b0a5cc7abadafbc986d1a0e4227"
     sha256 cellar: :any_skip_relocation, big_sur:       "cbbd4ece1390be2ce37a92e5edcc37b6943922b6a63b8805f3827f1d33145ecc"
     sha256 cellar: :any_skip_relocation, catalina:      "05a2015c696c7af16f78caea49c53d080ab0fd62639bec86f0a6d173d80945e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18df7209023c77b357e39613b6c1317671425e6ccaf9b57d790a274090e0a3ab"
   end
 
   def install
