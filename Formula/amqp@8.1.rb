@@ -17,9 +17,10 @@ class AmqpAT81 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 24
-    sha256 arm64_big_sur: "e1fbfd0b5e0e30d0986f8029514a5c6edde8caec28713f413b24214dc1dea2aa"
-    sha256 big_sur:       "56b0165fa1f10115b926535acd2ceb67dfec3acb493d253d2e893d10e34f9b41"
-    sha256 catalina:      "d3b1979e6845bac1595882bec7b6a52fa6ae614397f945cad1796ee80da8b739"
+    sha256                               arm64_big_sur: "e1fbfd0b5e0e30d0986f8029514a5c6edde8caec28713f413b24214dc1dea2aa"
+    sha256                               big_sur:       "56b0165fa1f10115b926535acd2ceb67dfec3acb493d253d2e893d10e34f9b41"
+    sha256                               catalina:      "d3b1979e6845bac1595882bec7b6a52fa6ae614397f945cad1796ee80da8b739"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0681734d9d6ddb524106868f3dfd03d6cbb10ccb53423b8d5b6ca7efa9c90450"
   end
 
   depends_on "rabbitmq-c"
