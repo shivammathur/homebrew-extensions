@@ -18,6 +18,7 @@ class XdebugAT70 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "6c312503e93358753ba98ed8598d58694c838f00a013a879a7c89b79a51d5f54"
     sha256 cellar: :any_skip_relocation, big_sur:       "120570f8b53a5de19d77783c9d2448d97e4139844110b22460bdfe4f2aa55942"
     sha256 cellar: :any_skip_relocation, catalina:      "34d32d37617c0cb5b133bd6e69f73d6a9a53ef538f44686df79237ab532de3dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c70988193b7858199c7af08bd5d7b8b56b1554d8dfcba636b11aca725ad4513"
   end
 
   def install
