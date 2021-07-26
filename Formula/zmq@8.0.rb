@@ -21,20 +21,26 @@ class ZmqAT80 < AbstractPhpExtension
     sha256 catalina:      "a57f360bb467153135f94ec9935335260178277f108fb80777a5566e362757eb"
   end
 
-  depends_on "czmq"
   depends_on "zeromq"
+
+  on_macos do
+    depends_on "czmq"
+  end
 
   def install
     ENV["PKG_CONFIG"] = "#{HOMEBREW_PREFIX}/bin/pkg-config"
     ENV.append "PKG_CONFIG_PATH", "#{Formula["libsodium"].opt_prefix}/lib/pkgconfig"
     args = %W[
-      --with-czmq=#{Formula["czmq"].opt_prefix}
+      prefix=#{prefix}
     ]
+    on_macos do
+      args << "--with-czmq=#{Formula["czmq"].opt_prefix}"
+    end
     inreplace "package.xml", "@PACKAGE_VERSION@", version
     inreplace "php-zmq.spec", "@PACKAGE_VERSION@", version
     inreplace "php_zmq.h", "@PACKAGE_VERSION@", version
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", phpconfig, *args
+    system "./configure", phpconfig, *args
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file
