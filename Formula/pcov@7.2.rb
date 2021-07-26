@@ -18,6 +18,7 @@ class PcovAT72 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "91009e398369f46a301006c7577342c058a2e07ddaf65237d1d7f76c28bf18de"
     sha256 cellar: :any_skip_relocation, big_sur:       "cc668e91aada5789b19341da88674826dcf8c6cbd67b67823847a88deb141949"
     sha256 cellar: :any_skip_relocation, catalina:      "409ff3a80c704205cdeb34d37c689a2119d302246807c7cf081ab943c016ce33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce1f1261c6e823be091c13f00a8a7d4550bbe371005a1b7fe86812024909865e"
   end
 
   def install
