@@ -20,6 +20,7 @@ class MsgpackAT81 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "39f2d3f3f4d74faa6b7793c5149b77087ba853d7dee5a17564b83849887f1133"
     sha256 cellar: :any_skip_relocation, big_sur:       "b0279c152bf2abe9286ba25552b2a1799a6bde4bd9e7613818d2b873df3143a5"
     sha256 cellar: :any_skip_relocation, catalina:      "aafc6eaaa4f2707fe17ef48b06ae0a9a1f533fe3edc989f4dc98c686ff32624a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bd91cdcd8af9856df3c9848416071fcf0adee95721e065aab0dcfcf5129efca"
   end
 
   def install
