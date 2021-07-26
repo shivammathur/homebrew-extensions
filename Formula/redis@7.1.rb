@@ -35,13 +35,14 @@ class RedisAT71 < AbstractPhpExtension
   end
 
   def install
-    args = %w[
+    args = %W[
       --enable-redis
       --enable-redis-igbinary
       --enable-redis-lz4
       --enable-redis-lzf
       --enable-redis-msgpack
       --enable-redis-zstd
+      --with-liblz4=#{Formula["lz4"].opt_prefix}
       --with-libzstd=#{Formula["zstd"].opt_prefix}
     ]
 

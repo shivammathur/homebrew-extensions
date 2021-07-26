@@ -36,7 +36,7 @@ class RedisAT81 < AbstractPhpExtension
   end
 
   def install
-    args = %w[
+    args = %W[
       --enable-redis
       --enable-redis-igbinary
       --enable-redis-lz4
