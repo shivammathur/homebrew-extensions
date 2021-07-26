@@ -18,6 +18,7 @@ class RaphfAT73 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "795900a304ff0335ce30d2bc2aeb5376676599c3b171da12b616da25848f9bd7"
     sha256 cellar: :any_skip_relocation, big_sur:       "ab4319ce0dec76ca9516ed7f5b4f384816c042fb0159c14343b7d795c7352307"
     sha256 cellar: :any_skip_relocation, catalina:      "4ceb842871da3b198a5d726ae7144d529b505e442385a80b72b0d7c9b68200cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f5b2c2ab8443dc442187a37abc00acb47f610273c12a0febb25b0abc596755e"
   end
 
   def install
