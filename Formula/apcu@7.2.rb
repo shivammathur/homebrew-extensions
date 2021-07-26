@@ -18,6 +18,7 @@ class ApcuAT72 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "da0491b24121f6910e24d9914f93000a4b5560a11244329136a29f40c684c9c5"
     sha256 cellar: :any_skip_relocation, big_sur:       "6ed02d732c4b94123f81022d63e806c3d6823552146b92771763a8f3ec37c11e"
     sha256 cellar: :any_skip_relocation, catalina:      "0fbacc769b1bbe360b91e994902f644399badd9d1a61e2d86d04703ec254f847"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b06d0cb6582654c416f1b32d29e74ae05cd8122aa8140aef5c96d0f09cfff79"
   end
 
   def install
