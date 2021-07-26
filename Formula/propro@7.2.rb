@@ -18,6 +18,7 @@ class ProproAT72 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "cae723db6806dac363d3ff01e578ce2e3e75aeea23818ac9c09efe410c3f9d43"
     sha256 cellar: :any_skip_relocation, big_sur:       "cc5527467bb437f1ad6a0bfb532e8d1eef68ab8b7145f32b97a5f08fd2323ef2"
     sha256 cellar: :any_skip_relocation, catalina:      "49148d2cfac65a0baf5e984732406b6f0bc608eac1fa611f6d65922e472293bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d82b8dc7265eab716babc21516d16a49bdfa208086d373ada82ac9c8ec80a1"
   end
 
   def install
