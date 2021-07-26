@@ -30,12 +30,16 @@ class RedisAT56 < AbstractPhpExtension
   end
 
   def install
-    args = %W[
+    args = %w[
       --enable-redis
       --enable-redis-igbinary
       --enable-redis-lzf
-      --with-liblzf=#{Formula["liblzf"].opt_prefix}
     ]
+
+    on_macos do
+      args << "--with-liblzf=#{Formula["liblzf"].opt_prefix}"
+    end
+
     Dir.chdir "redis-#{version}"
     patch_redis
     safe_phpize

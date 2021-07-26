@@ -36,17 +36,21 @@ class RedisAT81 < AbstractPhpExtension
   end
 
   def install
-    args = %W[
+    args = %w[
       --enable-redis
       --enable-redis-igbinary
       --enable-redis-lz4
       --enable-redis-lzf
       --enable-redis-msgpack
       --enable-redis-zstd
-      --with-liblzf=#{Formula["liblzf"].opt_prefix}
       --with-liblz4=#{Formula["lz4"].opt_prefix}
       --with-libzstd=#{Formula["zstd"].opt_prefix}
     ]
+
+    on_macos do
+      args << "--with-liblzf=#{Formula["liblzf"].opt_prefix}"
+    end
+
     Dir.chdir "redis-#{version}"
     patch_redis
     patch_spl_symbols
