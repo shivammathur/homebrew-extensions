@@ -18,6 +18,7 @@ class XdebugAT80 < AbstractPhpExtension
     sha256 arm64_big_sur: "ccd59cc6b57ac4a598e16f6af3786d8e5b390b29cf5241f964ff5bc4bfae4cbd"
     sha256 big_sur:       "cce2106f067283e827e89860a8faad8d48083c42d747205ea3161b4ff991706e"
     sha256 catalina:      "a73f1f3ae428a7c74afce7492a356e5bf7b1d5ec4ea4f5e4bd5aaa599ac060be"
+    sha256 x86_64_linux:  "e0e4308d0e8de61c40c5af07c5707788ae10ed1feb7d4097c1b24bbb7c752661"
   end
 
   def install
