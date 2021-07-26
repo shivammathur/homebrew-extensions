@@ -12,7 +12,13 @@ module.exports = async ({github, context, core}, formula_detect) => {
         console.log('No CI-syntax-only label found. Running tests job.')
         core.setOutput('syntax-only', 'false')
     }
-    const runners = ["macos-11.0-m1", "macos-11.0", "macos-10.15", "ubuntu-latest"]
+    let runners = ["macos-11.0-m1", "macos-11.0", "macos-10.15"]
+    if (label_names.includes('CI-no-linux')) {
+        console.log('CI-no-linux label found.')
+    } else {
+        console.log('No CI-no-linux label found.')
+        runners.push('ubuntu-latest')
+    }
     core.setOutput('runners', JSON.stringify(runners))
     if (label_names.includes('CI-no-fail-fast')) {
         console.log('CI-no-fail-fast label found. Continuing tests despite failing matrix builds.')
@@ -31,9 +37,15 @@ module.exports = async ({github, context, core}, formula_detect) => {
     core.setOutput('container', 'homebrew/ubuntu18.04:latest')
     const test_bot_formulae_args = ["--only-formulae", "--junit", "--only-json-tab", "--skip-dependents"]
     test_bot_formulae_args.push('--root-url="https://ghcr.io/v2/shivammathur/extensions"')
-    test_bot_formulae_args.push(`--testing-formulae=${formula_detect.testing_formulae}`)
-    test_bot_formulae_args.push(`--added-formulae=${formula_detect.added_formulae}`)
-    test_bot_formulae_args.push(`--deleted-formulae=${formula_detect.deleted_formulae}`)
+    if(formula_detect.testing_formulae) {
+        test_bot_formulae_args.push(`--testing-formulae=${formula_detect.testing_formulae}`)
+    }
+    if(formula_detect.added_formulae) {
+        test_bot_formulae_args.push(`--added-formulae=${formula_detect.added_formulae}`)
+    }
+    if(formula_detect.deleted_formulae) {
+        test_bot_formulae_args.push(`--deleted-formulae=${formula_detect.deleted_formulae}`)
+    }
     const test_bot_dependents_args = ["--only-formulae-dependents", "--junit"]
     test_bot_dependents_args.push(`--testing-formulae=${formula_detect.testing_formulae}`)
     if (label_names.includes('CI-force-arm')) {

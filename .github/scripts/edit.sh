@@ -49,3 +49,7 @@ check_changes() {
 
 fetch
 check_changes
+
+if [[ "$EXTENSION" =~ memcached|imap|zmq ]]; then
+  echo "::set-output name=labels::CI-no-linux"
+fi

@@ -82,6 +82,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Patch formula
+        id: patch
         env:
           GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
           GITHUB_REPOSITORY: ${{ github.repository }}
@@ -105,7 +106,7 @@ jobs:
           title: 'Update ${{ matrix.extension }}@${{ matrix.php }}'
           body: |
             Build ${{ matrix.extension }}@${{ matrix.php }}
-          labels: ${{ matrix.extension }}@${{ matrix.php }},automated-pr
+          labels: ${{ matrix.extension }}@${{ matrix.php }},automated-pr,${{steps.patch.outputs.labels}}
           assignees: ${{ github.repository_owner }}
           team-reviewers: |
             owners
