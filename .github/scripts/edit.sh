@@ -1,8 +1,5 @@
 unbottle() {
   sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
-  sed -Ei '/^    rebuild.*/d' ./Formula/"$VERSION".rb || true
-  sed -Ei '/^    revision.*/d' ./Formula/"$VERSION".rb || true
-  sed -Ei '/^    sha256.*:.*/d' ./Formula/"$VERSION".rb
 }
 
 fetch() {

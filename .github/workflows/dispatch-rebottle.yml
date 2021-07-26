@@ -11,6 +11,10 @@ on:
       upload:
         description: Whether to upload built bottles or not
         required: false
+      fail-fast:
+        description: "Whether to fail immediately on a single macOS version failure (default: true)"
+        default: "true"
+        required: false
 env:
   HOMEBREW_DEVELOPER: 1
   HOMEBREW_GITHUB_ACTIONS: 1
@@ -20,9 +24,9 @@ jobs:
   bottle:
     strategy:
       matrix:
-        os: ['macos-11.0', 'macos-10.15', 'macos-11.0-m1']
-      fail-fast: false
-    runs-on: ${{ matrix.os }}
+        runner: ['macos-11.0', 'macos-10.15', 'macos-11.0-m1']
+      fail-fast: ${{fromJson(github.event.inputs.fail-fast)}}
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 300
     env:
       PATH: '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin'
@@ -52,13 +56,13 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - name: Run brew test-bot --only-formulae
+      - name: Run brew test-bot --only-json-tab --only-formulae --skip-dependents
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           mkdir bottles
           cd bottles
-          brew test-bot --only-formulae --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions" ${{ github.repository_owner }}/extensions/${{github.event.inputs.formula}}
+          brew test-bot --only-json-tab --only-formulae --skip-dependents --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions" ${{ github.repository_owner }}/extensions/${{github.event.inputs.formula}}
 
       - name: Output brew test-bot --only-formulae failures
         if: always()
@@ -104,6 +108,7 @@ jobs:
       - name: Post Cleanup
         if: always()
         run: |
+          brew test-bot --only-cleanup-after
           rm -rvf bottles
           if [ -L "$GITHUB_WORKSPACE" ]; then
             sudo rm -rf "$GITHUB_WORKSPACE"
