@@ -19,6 +19,7 @@ class MemcacheAT81 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "4e071e176caa335f0dd72c803dde49f5c1f5a50378ab7956ba91e238728e0364"
     sha256 cellar: :any_skip_relocation, big_sur:       "98ce19000489af2c11d48712625209f58404bcf098c2f2c543d962d6d508653f"
     sha256 cellar: :any_skip_relocation, catalina:      "4fe56ecbea3b0124337d9810dfffb91bb0d6c6b21af0d11f2d6990d9d22d0dae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf111c9888d2da659604a9f1df745709f9f0778590de3c3d78ac52cef298df69"
   end
 
   def install
