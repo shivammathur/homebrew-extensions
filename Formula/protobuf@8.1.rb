@@ -18,6 +18,7 @@ class ProtobufAT81 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "e8b8ffc46a3fa658ebdadaecee5b5f98a5cf99beec7ad18f09511f8ddfad83ff"
     sha256 cellar: :any_skip_relocation, big_sur:       "0372f3eed5fc725405a42c814b42dc54dee50c7f56cda8a9acc776e1ba16f6c8"
     sha256 cellar: :any_skip_relocation, catalina:      "6c29d156d976a6998905d1dcd02c708968e63ba4c4d93deb058d994391c4bc4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "973558ff2eb9fa468ac82b29e7cf9deae1bc0c4a6f9757922607cb3f7c857e83"
   end
 
   def install
