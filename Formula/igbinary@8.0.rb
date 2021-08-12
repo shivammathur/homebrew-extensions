@@ -15,10 +15,10 @@ class IgbinaryAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "338b040a7633f966faf83484c48a23bd3e42efbd4b2331ebca98c885d8342608"
-    sha256 cellar: :any_skip_relocation, big_sur:       "4cc50393ff650e4b88e97dcb0c25baea11adb1d3402705c091b2410861d271e6"
-    sha256 cellar: :any_skip_relocation, catalina:      "b6bb90c6a91c8320c423b69f8ad705d9881f011a33a18dd808f98810d4239237"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "173ee0f94dbe1c8b23fae7d2e73c76fe77e21e209d8459e89ed4471b954147c5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8ec005e3eb5487fb8218dfde220d364259b03e3fea1b2acc9536d3ba3a9a2851"
+    sha256 cellar: :any_skip_relocation, big_sur:       "3da771857cc11b4750c441712992d13b3b4f591ed4a19bf8c319429811b8ca5e"
+    sha256 cellar: :any_skip_relocation, catalina:      "7d980cb63cfcbf8ba346c9fc4b8e51a7f5b0fb8b60ec0fb776b9eafb1a1343d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b2d73b95032681f06cf04ecf179bd9ab20faf3e728f584cf13fc0c87924f26f"
   end
 
   def install
