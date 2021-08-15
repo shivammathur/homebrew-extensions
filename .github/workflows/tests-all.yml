@@ -12,16 +12,16 @@ jobs:
       fail-fast: false
       matrix:
         php: ['7.1', '7.2', '7.3', '7.4']
-        extensions: ['amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, zmq, pcov, propro']
+        extensions: ['amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, yaml, zmq, pcov, propro']
         include:
           - php: '5.6'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, zmq, propro
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, yaml, zmq, propro
           - php: '7.0'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, zmq, propro
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, yaml, zmq, propro
           - php: '8.0'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, zmq, pcov
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, yaml, zmq, pcov
           - php: '8.1'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, zmq, pcov
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, yaml, zmq, pcov
           - php: '7.2'
             extensions: xdebug2
           - php: '7.3'
@@ -73,6 +73,7 @@ jobs:
           php -r "if(! extension_loaded('psr')) {throw new Exception('psr not found');}"
           php -r "if(! extension_loaded('swoole')) {throw new Exception('swoole not found');}"
           php -r "if(! extension_loaded('xdebug')) {throw new Exception('xdebug not found');}"
+          php -r "if(! extension_loaded('yaml')) {throw new Exception('yaml not found');}"
           php -r "if(! extension_loaded('zmq')) {throw new Exception('zmq not found');}"
       - name: Testing Xdebug2
         if: matrix.extensions == 'xdebug2'

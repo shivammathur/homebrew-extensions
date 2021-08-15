@@ -17,7 +17,7 @@ fetch() {
        [[ "$VERSION" =~ (memcache)@8.[0-1] ]] ||
        [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ (swoole|xdebug)@(7.[2-4]|8.[0-1]) ]] ||
-       [[ "$VERSION" =~ (mongodb)@(7.[1-4]|8.[0-1]) ]] ||
+       [[ "$VERSION" =~ (mongodb|yaml)@(7.[1-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ (apcu|pecl_http|msgpack)@(7.[0-4]|8.0]) ]] ||
        [[ "$VERSION" =~ (grpc|igbinary|protobuf|psr|raphf|rdkafka|redis)@(7.[0-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]]; then
