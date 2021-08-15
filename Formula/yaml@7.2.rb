@@ -15,6 +15,11 @@ class YamlAT72 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_big_sur: "f817be9791e5a5b06b2d81e045657dc7c2a6b97dabd1ae417ad621e279148ad2"
+    sha256 cellar: :any,                 big_sur:       "915723685a80309be7ea3909ccc5cc06b1b5cf0c2e98eddafa7af123175f0261"
+    sha256 cellar: :any,                 catalina:      "5aa2166f91ce657f3a1beaaa3a0083f1f1e0764f18a20d28f96e30a359796a9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58bc4d2e0d2c3c30672d50220df9088cf39369674d32a0085b7b880ce91a2ebe"
   end
 
   depends_on "libyaml"
