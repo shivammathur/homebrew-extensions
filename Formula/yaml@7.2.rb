@@ -7,10 +7,10 @@ require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 class YamlAT72 < AbstractPhpExtension
   init
   desc "Yaml PHP extension"
-  homepage "https://github.com/https://github.com/php/pecl-file_formats-yaml"
-  url "https://pecl.php.net/get/yaml-2.2.1.tgz"
+  homepage "https://github.com/php/pecl-file_formats-yaml"
+  url "https://pecl.php.net/get/yaml-2.2.1.tgz?init=true"
   sha256 "e17ad04e752e25fd099bddd2df9d26dfef183c8d00c4179bc9d7a2e1c97d7819"
-  head "https://github.com/https://github.com/php/pecl-file_formats-yaml.git"
+  head "https://github.com/php/pecl-file_formats-yaml.git"
   license "PHP-3.01"
 
   bottle do
