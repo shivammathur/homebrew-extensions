@@ -54,6 +54,7 @@
 |`swoole`|`PHP 5.6` to `PHP 8.1`|
 |`xdebug`|`PHP 5.6` to `PHP 8.1`|
 |`xdebug2`|`PHP 7.2` to `PHP 7.4`|
+|`yaml`|`PHP 5.6` to `PHP 8.1`|
 |`zmq`|`PHP 5.6` to `PHP 8.1`|
 
 ## OS Support
@@ -164,6 +165,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [phalcon/cphalcon](https://github.com/phalcon/cphalcon "Phalcon")
 - [php-amqp/php-amqp](https://github.com/php-amqp/php-amqp "amqp")
 - [php-memcached-dev/php-memcached](https://github.com/php-memcached-dev/php-memcached "Memcached")
+- [php/pecl-file_formats-yaml](https://github.com/php/pecl-file_formats-yaml "PHP YAML")
 - [php/php-src](https://github.com/php/php-src "PHP Source")
 - [phpredis/phpredis](https://github.com/phpredis/phpredis "Redis")
 - [protocolbuffers/protobuf](https://github.com/protocolbuffers/protobuf "protocolbuffers")
@@ -195,6 +197,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [liblzf](https://formulae.brew.sh/formula/liblzf "liblzf")
 - [libmemcached](https://formulae.brew.sh/formula/libmemcached "libmemcached")
 - [librdkafka](https://formulae.brew.sh/formula/librdkafka "librdkafka")
+- [libyaml](https://formulae.brew.sh/formula/libyaml "libyaml")
 - [lz4](https://formulae.brew.sh/formula/lz4 "lz4")
 - [openssl](https://formulae.brew.sh/formula/openssl@1.1 "openssl")
 - [pcre](https://formulae.brew.sh/formula/pcre "pcre")
