@@ -27,7 +27,7 @@ class MemcachedAT71 < AbstractPhpExtension
 
   on_linux do
     depends_on "cyrus-sasl"
-  done
+  end
 
   def patch_memcached
     %w[igbinary msgpack].each do |e|
