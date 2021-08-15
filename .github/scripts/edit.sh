@@ -18,8 +18,8 @@ fetch() {
        [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ (swoole|xdebug)@(7.[2-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ (mongodb)@(7.[1-4]|8.[0-1]) ]] ||
-       [[ "$VERSION" =~ (apcu|pecl_http)@(7.[0-4]|8.0]) ]] ||
-       [[ "$VERSION" =~ (grpc|igbinary|msgpack|protobuf|psr|raphf|rdkafka|redis)@(7.[0-4]|8.[0-1]) ]] ||
+       [[ "$VERSION" =~ (apcu|pecl_http|msgpack)@(7.[0-4]|8.0]) ]] ||
+       [[ "$VERSION" =~ (grpc|igbinary|protobuf|psr|raphf|rdkafka|redis)@(7.[0-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
       url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
@@ -50,6 +50,6 @@ check_changes() {
 fetch
 check_changes
 
-if [[ "$EXTENSION" =~ memcached|imap ]]; then
+if [[ "$EXTENSION" =~ imap ]]; then
   echo "::set-output name=labels::CI-no-linux"
 fi
