@@ -25,10 +25,6 @@ class MemcachedAT73 < AbstractPhpExtension
   depends_on "shivammathur/extensions/igbinary@7.3"
   depends_on "shivammathur/extensions/msgpack@7.3"
 
-  on_linux do
-    depends_on "cyrus-sasl"
-  end
-
   def patch_memcached
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
@@ -43,7 +39,7 @@ class MemcachedAT73 < AbstractPhpExtension
       --enable-memcached-igbinary
       --enable-memcached-json
       --enable-memcached-msgpack
-      --enable-memcached-sasl
+      --disable-memcached-sasl
       --enable-memcached-session
       --with-libmemcached-dir=#{Formula["libmemcached"].opt_prefix}
       --with-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
