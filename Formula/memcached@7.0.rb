@@ -25,6 +25,10 @@ class MemcachedAT70 < AbstractPhpExtension
   depends_on "shivammathur/extensions/igbinary@7.0"
   depends_on "shivammathur/extensions/msgpack@7.0"
 
+  on_linux do
+    depends_on "cyrus-sasl"
+  done
+
   def patch_memcached
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
