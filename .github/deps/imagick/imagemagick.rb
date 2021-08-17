@@ -50,31 +50,31 @@ class Imagemagick < Formula
     # Avoid references to shim
     inreplace Dir["**/*-config.in"], "@PKG_CONFIG@", Formula["pkg-config"].opt_bin/"pkg-config"
 
-    args = %W[
-      --enable-osx-universal-binary=no
-      --prefix=#{prefix}
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --disable-opencl
-      --enable-shared
-      --enable-static
-      --with-freetype=yes
-      --with-gvc=no
-      --with-modules
-      --with-openjp2
-      --with-openexr
-      --with-webp=yes
-      --with-heic=yes
-      --with-gslib
-      --with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts
-      --with-lqr
-      --without-fftw
-      --without-pango
-      --without-wmf
-      --enable-openmp
-      ac_cv_prog_c_openmp=-Xpreprocessor\ -fopenmp
-      ac_cv_prog_cxx_openmp=-Xpreprocessor\ -fopenmp
-      LDFLAGS=-lomp\ -lz
+    args = [
+      "--enable-osx-universal-binary=no",
+      "--prefix=#{prefix}",
+      "--disable-dependency-tracking",
+      "--disable-silent-rules",
+      "--disable-opencl",
+      "--enable-shared",
+      "--enable-static",
+      "--with-freetype=yes",
+      "--with-gvc=no",
+      "--with-modules",
+      "--with-openjp2",
+      "--with-openexr",
+      "--with-webp=yes",
+      "--with-heic=yes",
+      "--with-gslib",
+      "--with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts",
+      "--with-lqr",
+      "--without-fftw",
+      "--without-pango",
+      "--without-wmf",
+      "--enable-openmp",
+      "ac_cv_prog_c_openmp=-Xpreprocessor -fopenmp",
+      "ac_cv_prog_cxx_openmp=-Xpreprocessor -fopenmp",
+      "LDFLAGS=-lomp -lz",
     ]
 
     on_macos do
