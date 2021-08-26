@@ -14,10 +14,10 @@ class ImapAT72 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 2
-    sha256 arm64_big_sur: "3626f1cb97192f303e5a8f4a4396c68854d72e78537f66112786c194e1be03c5"
-    sha256 big_sur:       "3a0a507c367557068328520faaf00a0c74b00c199f0bc8e5a4d0da7052a3b022"
-    sha256 catalina:      "54e9c60ac72f280d3599ae7eea985a0f6198452cbc0ee1843d148ff50801dbef"
+    rebuild 3
+    sha256 cellar: :any, arm64_big_sur: "de8639e053cf959c65ed79ddb481d8a1cdd8bbf1d79bb5a5bd3b675fd734263f"
+    sha256 cellar: :any, big_sur:       "718eed548909732b25f7c34c93ed080f40e8e30de4633f127bfd84b736e9e618"
+    sha256 cellar: :any, catalina:      "5a79082440efe55a09b125545771ce531614315e2511db53804501a97e2ca0d6"
   end
 
   depends_on "imap-uw"
