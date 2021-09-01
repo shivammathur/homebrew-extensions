@@ -161,9 +161,6 @@ jobs:
           name: bottles
           path: bottles
 
-      - run: brew test-bot --only-cleanup-after
-        if: always()
-
       - name: Post Cleanup
         if: always()
         run: |
