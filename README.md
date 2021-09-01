@@ -17,7 +17,7 @@
       <img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg?logo=open%20source%20initiative&logoColor=white&labelColor=555555">
     </a>
     <a href="https://github.com/shivammathur/homebrew-extensions/tree/master/Formula" title="Formulae for PHP extensions">
-      <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.1-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
+      <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.2-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
     </a>
     <a href="https://github.com/shivammathur/homebrew-extensions#os-support" title="Apple Intel x86_64 supported">
       <img alt="macOS architectures supported" src="https://img.shields.io/badge/macOS-Intel%20x86__64%20-007DC3?logo=apple&logoColor=555555&labelColor=ffffff">
@@ -31,32 +31,32 @@
 
 |Extension|PHP Version|
 |--- |---
-|`amqp`|`PHP 5.6` to `PHP 8.1`
-|`apcu`|`PHP 5.6` to `PHP 8.1`|
-|`grpc`|`PHP 5.6` to `PHP 8.1`|
-|`igbinary`|`PHP 5.6` to `PHP 8.1`|
-|`imagick`|`PHP 5.6` to `PHP 8.1`|
-|`imap`|`PHP 5.6` to `PHP 8.1`|
-|`memcache`|`PHP 5.6` to `PHP 8.1`|
-|`memcached`|`PHP 5.6` to `PHP 8.1`|
-|`mongodb`|`PHP 5.6` to `PHP 8.1`|
-|`msgpack`|`PHP 5.6` to `PHP 8.1`|
-|`pcov`|`PHP 7.1` to `PHP 8.1`|
-|`pecl_http`|`PHP 5.6` to `PHP 8.1`|
+|`amqp`|`PHP 5.6` to `PHP 8.2`
+|`apcu`|`PHP 5.6` to `PHP 8.2`|
+|`grpc`|`PHP 5.6` to `PHP 8.2`|
+|`igbinary`|`PHP 5.6` to `PHP 8.2`|
+|`imagick`|`PHP 5.6` to `PHP 8.2`|
+|`imap`|`PHP 5.6` to `PHP 8.2`|
+|`memcache`|`PHP 5.6` to `PHP 8.2`|
+|`memcached`|`PHP 5.6` to `PHP 8.2`|
+|`mongodb`|`PHP 5.6` to `PHP 8.2`|
+|`msgpack`|`PHP 5.6` to `PHP 8.2`|
+|`pcov`|`PHP 7.1` to `PHP 8.2`|
+|`pecl_http`|`PHP 5.6` to `PHP 8.2`|
 |`phalcon3`|`PHP 5.6` to `PHP 7.3`|
 |`phalcon4`|`PHP 7.2` to `PHP 7.4`|
 |`propro`|`PHP 5.6` to `PHP 7.4`|
-|`protobuf`|`PHP 5.6` to `PHP 8.1`|
-|`psr`|`PHP 5.6` to `PHP 8.1`|
-|`raphf`|`PHP 5.6` to `PHP 8.1`|
-|`rdkafka`|`PHP 5.6` to `PHP 8.1`|
-|`redis`|`PHP 5.6` to `PHP 8.1`|
-|`swoole`|`PHP 5.6` to `PHP 8.1`|
-|`vips`|`PHP 7.0` to `PHP 8.1`|
-|`xdebug`|`PHP 5.6` to `PHP 8.1`|
+|`protobuf`|`PHP 5.6` to `PHP 8.2`|
+|`psr`|`PHP 5.6` to `PHP 8.2`|
+|`raphf`|`PHP 5.6` to `PHP 8.2`|
+|`rdkafka`|`PHP 5.6` to `PHP 8.2`|
+|`redis`|`PHP 5.6` to `PHP 8.2`|
+|`swoole`|`PHP 5.6` to `PHP 8.2`|
+|`vips`|`PHP 7.0` to `PHP 8.2`|
+|`xdebug`|`PHP 5.6` to `PHP 8.2`|
 |`xdebug2`|`PHP 7.2` to `PHP 7.4`|
-|`yaml`|`PHP 5.6` to `PHP 8.1`|
-|`zmq`|`PHP 5.6` to `PHP 8.1`|
+|`yaml`|`PHP 5.6` to `PHP 8.2`|
+|`zmq`|`PHP 5.6` to `PHP 8.2`|
 
 ## OS Support
 
