@@ -2,6 +2,25 @@ unbottle() {
   sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
 }
 
+join() { local IFS="$1"; shift; echo "$*"; }
+
+add_labels() {
+  if [[ "$EXTENSION" =~ imap ]]; then
+    echo "::set-output name=labels::CI-no-linux"
+  fi
+
+  init_labels=()
+  if [[ "$GITHUB_MESSAGE" =~ .*--init.* ]]; then
+    if ! [[ "$GITHUB_MESSAGE" =~ .*--skip-arm.* ]]; then
+      init_labels+=("CI-force-arm")
+    fi
+    if ! [[ "$GITHUB_MESSAGE" =~ .*--skip-linux.* ]]; then
+      init_labels+=("CI-force-linux")
+    fi
+    echo "::set-output name=labels::$(join , "${init_labels[@]}")"
+  fi
+}
+
 fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   [[ "$GITHUB_MESSAGE" =~ .*--init.* ]] && return
@@ -49,7 +68,4 @@ check_changes() {
 
 fetch
 check_changes
-
-if [[ "$EXTENSION" =~ imap ]]; then
-  echo "::set-output name=labels::CI-no-linux"
-fi
+add_labels
