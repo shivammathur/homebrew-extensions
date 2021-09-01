@@ -35,7 +35,7 @@ class PeclHttpAT82 < AbstractPhpExtension
       -I#{Formula["shivammathur/extensions/raphf@8.2"].opt_include}/php
     ]
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
-    inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.1"
+    inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.2"
     patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
