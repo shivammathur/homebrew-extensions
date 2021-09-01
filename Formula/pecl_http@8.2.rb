@@ -23,7 +23,7 @@ class PeclHttpAT82 < AbstractPhpExtension
   depends_on "icu4c"
   depends_on "libevent"
   depends_on "libidn2"
-  depends_on "shivammathur/extensions/raphf@8.1"
+  depends_on "shivammathur/extensions/raphf@8.2"
 
   def install
     args = %W[
@@ -32,7 +32,7 @@ class PeclHttpAT82 < AbstractPhpExtension
       --with-http-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
     ]
     extra_includes = %W[
-      -I#{Formula["shivammathur/extensions/raphf@8.1"].opt_include}/php
+      -I#{Formula["shivammathur/extensions/raphf@8.2"].opt_include}/php
     ]
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
     inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.1"
