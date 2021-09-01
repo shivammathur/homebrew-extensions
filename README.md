@@ -52,6 +52,7 @@
 |`rdkafka`|`PHP 5.6` to `PHP 8.1`|
 |`redis`|`PHP 5.6` to `PHP 8.1`|
 |`swoole`|`PHP 5.6` to `PHP 8.1`|
+|`vips`|`PHP 7.0` to `PHP 8.1`|
 |`xdebug`|`PHP 5.6` to `PHP 8.1`|
 |`xdebug2`|`PHP 7.2` to `PHP 7.4`|
 |`yaml`|`PHP 5.6` to `PHP 8.1`|
@@ -61,9 +62,15 @@
 
 |Operating System|Architecture|
 |--- |--- |
+|Linux 4.18+|`x86_64`|
 |macOS Catalina|`x86_64`|
 |macOS Big Sur|`x86_64`, `arm64`|
 |macOS Monterey|`x86_64`, `arm64`|
+
+- On Linux, GLIBC 2.27 or newer is required, so distributions with Linux kernel 4.18 and newer are supported.
+For example: Ubuntu 18.04, Debian 10, CentOS 8, Fedora 28, and newer versions of these distributions.
+
+- All extensions except `imap` and `vips` are built on Linux.
 
 ## Usage
 
@@ -157,6 +164,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [jbboehr/php-psr](https://github.com/jbboehr/php-psr "Psr")
 - [krakjoe/apcu](https://github.com/krakjoe/apcu "APCu")
 - [krakjoe/pcov](https://github.com/krakjoe/pcov "PCOV")
+- [libvips/php-vips-ext](https://github.com/libvips/php-vips-ext "Vips")
 - [m6w6/ext-http](https://github.com/m6w6/ext-http.git "PECL-HTTP")
 - [m6w6/ext-propro](https://github.com/m6w6/ext-propro "Propro")
 - [m6w6/ext-raphf](https://github.com/m6w6/ext-raphf "Raphf")
@@ -203,5 +211,6 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [pcre](https://formulae.brew.sh/formula/pcre "pcre")
 - [rabbitmq-c](https://formulae.brew.sh/formula/rabbitmq-c "rabbitmq")
 - [snappy](https://formulae.brew.sh/formula/snappy "snappy")
+- [vips](https://formulae.brew.sh/formula/vips "vips")
 - [zeromq](https://formulae.brew.sh/formula/zeromq "zeromq")
 - [zstd](https://formulae.brew.sh/formula/zstd "zstd")
