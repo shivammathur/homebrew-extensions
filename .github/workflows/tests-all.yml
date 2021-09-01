@@ -12,16 +12,16 @@ jobs:
       fail-fast: false
       matrix:
         php: ['7.1', '7.2', '7.3', '7.4']
-        extensions: ['amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, yaml, zmq, pcov, propro']
+        extensions: ['amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, vips, xdebug, yaml, zmq, pcov, propro']
         include:
           - php: '5.6'
             extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, yaml, zmq, propro
           - php: '7.0'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, yaml, zmq, propro
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, vips, xdebug, yaml, zmq, propro
           - php: '8.0'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, yaml, zmq, pcov
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, vips, xdebug, yaml, zmq, pcov
           - php: '8.1'
-            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, xdebug, yaml, zmq, pcov
+            extensions: amqp, apcu, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, swoole, vips, xdebug, yaml, zmq, pcov
           - php: '7.2'
             extensions: xdebug2
           - php: '7.3'
@@ -54,6 +54,7 @@ jobs:
           php -m
           php -r "if(substr(phpversion(), 0, 3)<8.0 && ! extension_loaded('propro')) {throw new Exception('propro not found');}"
           php -r "if(phpversion()>=7.1 && ! extension_loaded('pcov')) {throw new Exception('pcov not found');}"
+          php -r "if(phpversion()>=7.0 && ! extension_loaded('vips')) {throw new Exception('vips not found');}"
           php -r "if(! extension_loaded('amqp')) {throw new Exception('amqp not found');}"
           php -r "if(! extension_loaded('apcu')) {throw new Exception('apcu not found');}"
           php -r "if(! extension_loaded('grpc')) {throw new Exception('grpc not found');}"

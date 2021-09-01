@@ -2,6 +2,25 @@ unbottle() {
   sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
 }
 
+join() { local IFS="$1"; shift; echo "$*"; }
+
+add_labels() {
+  if [[ "$EXTENSION" =~ imap|vips ]]; then
+    echo "::set-output name=labels::CI-no-linux"
+  fi
+
+  init_labels=()
+  if [[ "$GITHUB_MESSAGE" =~ .*--init.* ]]; then
+    if ! [[ "$GITHUB_MESSAGE" =~ .*--skip-arm.* ]]; then
+      init_labels+=("CI-force-arm")
+    fi
+    if ! [[ "$GITHUB_MESSAGE" =~ .*--skip-linux.* ]]; then
+      init_labels+=("CI-force-linux")
+    fi
+    echo "::set-output name=labels::$(join , "${init_labels[@]}")"
+  fi
+}
+
 fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   [[ "$GITHUB_MESSAGE" =~ .*--init.* ]] && return
@@ -19,7 +38,7 @@ fetch() {
        [[ "$VERSION" =~ (swoole|xdebug)@(7.[2-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ (mongodb|yaml)@(7.[1-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ (apcu|pecl_http|msgpack)@(7.[0-4]|8.0]) ]] ||
-       [[ "$VERSION" =~ (grpc|igbinary|protobuf|psr|raphf|rdkafka|redis)@(7.[0-4]|8.[0-1]) ]] ||
+       [[ "$VERSION" =~ (grpc|igbinary|protobuf|psr|raphf|rdkafka|redis|vips)@(7.[0-4]|8.[0-1]) ]] ||
        [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
       url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
@@ -49,7 +68,4 @@ check_changes() {
 
 fetch
 check_changes
-
-if [[ "$EXTENSION" =~ imap ]]; then
-  echo "::set-output name=labels::CI-no-linux"
-fi
+add_labels
