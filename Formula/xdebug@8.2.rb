@@ -19,6 +19,7 @@ class XdebugAT82 < AbstractPhpExtension
 
   def install
     patch_spl_symbols
+    inreplace "config.m4", "80200", "80300"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
