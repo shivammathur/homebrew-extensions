@@ -10,6 +10,7 @@ class MongodbAT81 < AbstractPhpExtension
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://github.com/mongodb/mongo-php-driver/archive/c0dbf158c99c84cfd487f0bf58f2a25cdc0e872a.tar.gz"
   sha256 "4b5daeec3975bcacb1457b96720dee53069666b651235957da85d5e2bc7ad7af"
+  version "1.10.0"
   head "https://github.com/mongodb/mongo-php-driver.git"
   license "Apache-2.0"
 
