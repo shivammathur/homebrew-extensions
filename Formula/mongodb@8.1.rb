@@ -8,8 +8,8 @@ class MongodbAT81 < AbstractPhpExtension
   init
   desc "Mongodb PHP extension"
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://pecl.php.net/get/mongodb-1.10.0.tgz"
-  sha256 "8033dce1a5a5139a4bda690c15c2c98beb18c996429da6a17796dd0c4fc26a73"
+  url "https://github.com/mongodb/mongo-php-driver/archive/c0dbf158c99c84cfd487f0bf58f2a25cdc0e872a.tar.gz"
+  sha256 "4b5daeec3975bcacb1457b96720dee53069666b651235957da85d5e2bc7ad7af"
   head "https://github.com/mongodb/mongo-php-driver.git"
   license "Apache-2.0"
 
@@ -27,11 +27,6 @@ class MongodbAT81 < AbstractPhpExtension
   depends_on "zstd"
 
   def install
-    Dir.chdir "mongodb-#{version}"
-    inreplace "php_phongo.h" do |s|
-      s.gsub! "ZEND_ACC_FINAL", "ZEND_ACC_FINAL|ZEND_ACC_NOT_SERIALIZABLE"
-      s.gsub!(/ce->(un)?serialize.*/, "\\")
-    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mongodb"
     system "make"
