@@ -8,9 +8,8 @@ class MsgpackAT82 < AbstractPhpExtension
   init
   desc "Msgpack PHP extension"
   homepage "https://github.com/msgpack/msgpack-php"
-  url "https://github.com/msgpack/msgpack-php/archive/831b665e05007a820e841ba585e250d639986328.tar.gz"
-  sha256 "4d20d70321eacf43634dea5103f1dc81820d6965a50ff8cfc6aff17df0fbea73"
-  version "2.1.2"
+  url "https://pecl.php.net/get/msgpack-2.2.0RC1.tgz"
+  sha256 "55ad876ba2340233450fc246978229772078f16d83edbab0f6ccb2cc4b7ca63f"
   head "https://github.com/msgpack/msgpack-php.git"
   license "BSD-3-Clause"
 
@@ -24,7 +23,7 @@ class MsgpackAT82 < AbstractPhpExtension
   end
 
   def install
-    patch_spl_symbols
+    Dir.chdir "msgpack-#{version}"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-msgpack"
     system "make"
