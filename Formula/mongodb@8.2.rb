@@ -10,7 +10,7 @@ class MongodbAT82 < AbstractPhpExtension
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://github.com/mongodb/mongo-php-driver.git",
       branch:   "master",
-      revision: "c0dbf158c99c84cfd487f0bf58f2a25cdc0e872a"
+      revision: "b27fa4d01995fc3325ac4318d63d4c96d5d2660c"
   version "1.10.0"
   head "https://github.com/mongodb/mongo-php-driver.git"
   license "Apache-2.0"
