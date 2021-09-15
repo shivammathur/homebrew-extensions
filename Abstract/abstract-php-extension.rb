@@ -92,8 +92,8 @@ class AbstractPhpExtension < Formula
 
   def stage_expect_lib
     expect_lib = Dir["#{Formula["expect"].opt_lib}/expect*/libexpect*"].first
-    buildpath.install_symlink expect_lib => "libexpect#{File.extname(expect_lib)}" if expect_lib
-    ENV.append "LDFLAGS", "-L#{buildpath}"
+    lib.install_symlink expect_lib => "libexpect#{File.extname(expect_lib)}" if expect_lib
+    ENV.append "LDFLAGS", "-L#{lib}"
   end
 
   class << self
