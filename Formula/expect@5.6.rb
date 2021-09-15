@@ -15,6 +15,11 @@ class ExpectAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_big_sur: "1a85ea368935ef0e1f0b5e2bda009dfdb9e9b3dbc1c81c7d3908fb95b6684d80"
+    sha256 cellar: :any,                 big_sur:       "62d958a8ec74d7fb9d54a3896cccac2682a64bd55fe6ed1d3c9d88a130452b2e"
+    sha256 cellar: :any,                 catalina:      "41c33fcb271a9da43b4c56ec4a84679ca9604c27daef5142f533932382fe1676"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d6ee92d47241b9fc6a3cdf68e37dc7caab56b9e8e735e480ac752cf209497ef"
   end
 
   depends_on "expect"
