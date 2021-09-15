@@ -16,8 +16,8 @@ add_labels() {
     if ! [[ "$GITHUB_MESSAGE" =~ .*--skip-linux.* ]]; then
       labels+=("CI-force-linux")
     fi
-    echo "::set-output name=labels::$(join , "${labels[@]}")"
   fi
+  echo "::set-output name=labels::$(join , "${labels[@]}")"
 }
 
 fetch() {
@@ -31,14 +31,14 @@ fetch() {
     sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
     [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   else
-    if [[ "$EXTENSION" =~ pcov|imagick ]] ||
+    if [[ "$EXTENSION" =~ expect|pcov|imagick ]] ||
        [[ "$VERSION" =~ (memcache)@8.[0-2] ]] ||
        [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ (swoole|xdebug)@(7.[2-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (mongodb)@(7.[1-4]|8.0) ]] ||
        [[ "$VERSION" =~ (apcu|pecl_http|msgpack|rdkafka)@(7.[0-4]|8.0]) ]] ||
-       [[ "$VERSION" =~ (grpc|igbinary|protobuf|psr|raphf|redis|vips)@(7.[0-4]|8.[0-2]) ]] ||
+       [[ "$VERSION" =~ (grpc|igbinary|protobuf|psr|raphf|redis|ssh2|vips)@(7.[0-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
       url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
