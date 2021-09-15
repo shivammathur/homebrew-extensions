@@ -90,6 +90,12 @@ class AbstractPhpExtension < Formula
     end
   end
 
+  def stage_expect_lib
+    expect_lib = Dir["#{Formula["expect"].opt_lib}/expect*/libexpect*"].first
+    buildpath.install_symlink expect_lib => "libexpect#{File.extname(expect_lib)}" if expect_lib
+    ENV.append "LDFLAGS", "-L#{buildpath}"
+  end
+
   class << self
     attr_reader :php_version, :extension
 
