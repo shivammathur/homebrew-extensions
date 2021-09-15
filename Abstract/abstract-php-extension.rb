@@ -102,7 +102,8 @@ class AbstractPhpExtension < Formula
     def init
       class_name = name.split("::").last
       matches = /(\w+)AT(\d)(\d)/.match(class_name)
-      @extension = matches[1].downcase.tr("0-9", "").gsub("pecl", "") if matches
+      @extension = matches[1].downcase if matches
+      @extension = (@extension != "ssh2") ? matches[1].downcase.tr("0-9", "").gsub("pecl", "") : "ssh2"
       @php_version = "#{matches[2]}.#{matches[3]}" if matches
       depends_on "autoconf" => :build
       depends_on "pkg-config" => :build
