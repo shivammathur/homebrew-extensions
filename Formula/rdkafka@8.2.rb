@@ -8,8 +8,9 @@ class RdkafkaAT82 < AbstractPhpExtension
   init
   desc "Rdkafka PHP extension"
   homepage "https://github.com/arnaud-lb/php-rdkafka"
-  url "https://pecl.php.net/get/rdkafka-5.0.0.tgz"
-  sha256 "432fbaae43dcce177115b0e172ece65132cc3d45d86741da85e0c1864878157b"
+  url "https://github.com/arnaud-lb/php-rdkafka/archive/e570ef17571f22ec973094904e0854a1871bc4d1.tar.gz"
+  sha256 "7c7f5225f6a87826da67eedd2667cb2dbb970d698b1437efa5b18c45ba495be4"
+  version "5.0.0"
   head "https://github.com/arnaud-lb/php-rdkafka.git"
   license "MIT"
 
@@ -25,7 +26,6 @@ class RdkafkaAT82 < AbstractPhpExtension
   depends_on "librdkafka"
 
   def install
-    Dir.chdir "rdkafka-#{version}"
     patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-rdkafka=#{Formula["librdkafka"].opt_prefix}"
