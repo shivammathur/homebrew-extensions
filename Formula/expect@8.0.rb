@@ -30,7 +30,7 @@ class ExpectAT80 < AbstractPhpExtension
       --with-expect=shared,#{Formula["expect"].opt_prefix}
       --with-tcldir=#{Formula["tcl-tk"].opt_prefix}/lib
     ]
-    stage_expect_lib
+    add_expect_lib
     Dir.chdir "expect-#{version}"
     inreplace "expect_fopen_wrapper.c", " TSRMLS_DC", ""
     inreplace "expect.c" do |s|

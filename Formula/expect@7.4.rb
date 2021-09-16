@@ -30,7 +30,7 @@ class ExpectAT74 < AbstractPhpExtension
       --with-expect=shared,#{Formula["expect"].opt_prefix}
       --with-tcldir=#{Formula["tcl-tk"].opt_prefix}/lib
     ]
-    stage_expect_lib
+    add_expect_lib
     Dir.chdir "expect-#{version}"
     inreplace "expect.c", "ulong", "zend_ulong"
     safe_phpize
