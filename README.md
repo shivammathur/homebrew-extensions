@@ -33,6 +33,7 @@
 |--- |---
 |`amqp`|`PHP 5.6` to `PHP 8.2`
 |`apcu`|`PHP 5.6` to `PHP 8.2`|
+|`expect`|`PHP 5.6` to `PHP 8.2`|
 |`grpc`|`PHP 5.6` to `PHP 8.2`|
 |`igbinary`|`PHP 5.6` to `PHP 8.2`|
 |`imagick`|`PHP 5.6` to `PHP 8.2`|
@@ -51,6 +52,7 @@
 |`raphf`|`PHP 5.6` to `PHP 8.2`|
 |`rdkafka`|`PHP 5.6` to `PHP 8.2`|
 |`redis`|`PHP 5.6` to `PHP 8.2`|
+|`ssh2`|`PHP 5.6` to `PHP 8.2`|
 |`swoole`|`PHP 5.6` to `PHP 8.2`|
 |`vips`|`PHP 7.0` to `PHP 8.2`|
 |`xdebug`|`PHP 5.6` to `PHP 8.2`|
@@ -174,9 +176,11 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [php-amqp/php-amqp](https://github.com/php-amqp/php-amqp "amqp")
 - [php-memcached-dev/php-memcached](https://github.com/php-memcached-dev/php-memcached "Memcached")
 - [php/pecl-file_formats-yaml](https://github.com/php/pecl-file_formats-yaml "PHP YAML")
+- [php/pecl-networking-ssh2](https://github.com/php/pecl-networking-ssh2 "PHP SSH2")
 - [php/php-src](https://github.com/php/php-src "PHP Source")
 - [phpredis/phpredis](https://github.com/phpredis/phpredis "Redis")
 - [protocolbuffers/protobuf](https://github.com/protocolbuffers/protobuf "protocolbuffers")
+- [sibaz/pecl-expect](https://github.com/sibaz/pecl-expect "expect")
 - [swoole/swoole-src](https://github.com/swoole/swoole-src "Swoole")
 - [websupport-sk/pecl-memcache](https://github.com/websupport-sk/pecl-memcache "Memcache")
 - [xdebug/xdebug](https://github.com/xdebug/xdebug "Xdebug")
@@ -195,6 +199,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [brotli](https://formulae.brew.sh/formula/brotli "brotli")
 - [curl](https://formulae.brew.sh/formula/curl "curl")
 - [czmq](https://formulae.brew.sh/formula/czmq "czmq")
+- [expect](https://formulae.brew.sh/formula/expect "expect")
 - [grpc](https://formulae.brew.sh/formula/grpc "grpc")
 - [icu4c](https://formulae.brew.sh/formula/icu4c "icu4c")
 - [imagemagick](https://formulae.brew.sh/formula/imagemagick "imagemagick")
@@ -205,6 +210,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [liblzf](https://formulae.brew.sh/formula/liblzf "liblzf")
 - [libmemcached](https://formulae.brew.sh/formula/libmemcached "libmemcached")
 - [librdkafka](https://formulae.brew.sh/formula/librdkafka "librdkafka")
+- [libssh2](https://formulae.brew.sh/formula/libssh2 "libssh2")
 - [libyaml](https://formulae.brew.sh/formula/libyaml "libyaml")
 - [lz4](https://formulae.brew.sh/formula/lz4 "lz4")
 - [openssl](https://formulae.brew.sh/formula/openssl@1.1 "openssl")
