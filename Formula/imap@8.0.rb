@@ -14,9 +14,9 @@ class ImapAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_big_sur: "1dd5b2a24d6206c0ef322e4c9eee8a34f7a7d2031974facc8c815abf4f8612ed"
-    sha256 cellar: :any, big_sur:       "a357a1e6454d8ffcdd6594c85c81f80e94eca25dc90ae5e1797c51545805c1ce"
-    sha256 cellar: :any, catalina:      "424b7dac411adff94d2985f221145c9a16c2c971dfb69caa5bb7f61e93c6fecd"
+    sha256 cellar: :any, arm64_big_sur: "acd7e77133c1e2ccd00ba4e42e6bae1046495dd8cb8a3edf871847817f853777"
+    sha256 cellar: :any, big_sur:       "420b4615442f0b651c958e4ec69f9e7d3fc10be71e7be1758093a40b066eb1dd"
+    sha256 cellar: :any, catalina:      "72658d2d10e8ec59d1425e3958e93e9a061eefa5d3f024da191d4bc5cd95c264"
   end
 
   depends_on "imap-uw"
