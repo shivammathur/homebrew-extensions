@@ -40,7 +40,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: ${{ matrix.extensions }}
-          key: homebrew-extensions-all-v1
+          key: homebrew-extensions-all-v2
       - name: Setup PHP
         uses: shivammathur/setup-php@develop
         with:
