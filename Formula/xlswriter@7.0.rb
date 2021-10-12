@@ -8,7 +8,7 @@ class XlswriterAT70 < AbstractPhpExtension
   init
   desc "Xlswriter PHP extension"
   homepage "https://github.com/viest/php-ext-xlswriter"
-  url "https://pecl.php.net/get/xlswriter-1.5.0.tgz?init=true"
+  url "https://pecl.php.net/get/xlswriter-1.5.0.tgz"
   sha256 "05698726e123e4c339ccaaab80f0a81705b9bc9c21377f0951c9ad51df4718c6"
   head "https://github.com/viest/php-ext-xlswriter.git"
   license "BSD-2-Clause"
