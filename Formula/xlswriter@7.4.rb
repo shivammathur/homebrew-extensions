@@ -18,7 +18,7 @@ class XlswriterAT74 < AbstractPhpExtension
   end
 
   def install
-    args = %W[
+    args = %w[
       --with-xlswriter
       --enable-reader
     ]
