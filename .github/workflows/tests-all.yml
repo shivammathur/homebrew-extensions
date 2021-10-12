@@ -12,18 +12,18 @@ jobs:
       fail-fast: false
       matrix:
         php: ['7.1', '7.2', '7.3', '7.4']
-        extensions: ['amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, vips, xdebug, yaml, zmq, pcov, propro']
+        extensions: ['amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, vips, xdebug, yaml, xlswriter, zmq, pcov, propro']
         include:
           - php: '5.6'
             extensions: amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, xdebug, yaml, zmq, propro
           - php: '7.0'
-            extensions: amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, vips, xdebug, yaml, zmq, propro
+            extensions: amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, vips, xdebug, yaml, xlswriter, zmq, propro
           - php: '8.0'
-            extensions: amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, vips, xdebug, yaml, zmq, pcov
+            extensions: amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, vips, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.1'
-            extensions: amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, vips, xdebug, yaml, zmq, pcov
+            extensions: amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, vips, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.2'
-            extensions: amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, vips, xdebug, yaml, zmq, pcov
+            extensions: amqp, apcu, expect, grpc, igbinary, imagick, imap, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, ssh2, swoole, vips, xdebug, yaml, xlswriter, zmq, pcov
           - php: '7.2'
             extensions: xdebug2
           - php: '7.3'
