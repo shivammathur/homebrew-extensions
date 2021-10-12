@@ -57,6 +57,7 @@
 |`vips`|`PHP 7.0` to `PHP 8.2`|
 |`xdebug`|`PHP 5.6` to `PHP 8.2`|
 |`xdebug2`|`PHP 7.2` to `PHP 7.4`|
+|`xlswriter`|`PHP 7.0` to `PHP 8.2`|
 |`yaml`|`PHP 5.6` to `PHP 8.2`|
 |`zmq`|`PHP 5.6` to `PHP 8.2`|
 
@@ -184,6 +185,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [swoole/swoole-src](https://github.com/swoole/swoole-src "Swoole")
 - [websupport-sk/pecl-memcache](https://github.com/websupport-sk/pecl-memcache "Memcache")
 - [xdebug/xdebug](https://github.com/xdebug/xdebug "Xdebug")
+- [xlswriter](https://github.com/viest/php-ext-xlswriter.git "xlswriter")
 - [zeromq/php-zmq](https://github.com/zeromq/php-zmq "ZMQ")
 
 ### Homebrew
