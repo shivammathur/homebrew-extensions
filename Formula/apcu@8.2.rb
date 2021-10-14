@@ -8,9 +8,8 @@ class ApcuAT82 < AbstractPhpExtension
   init
   desc "Apcu PHP extension"
   homepage "https://github.com/krakjoe/apcu"
-  url "https://github.com/shivammathur/apcu/archive/90279ca8fe062a8c595ceebac339a3e4c9a3ebab.tar.gz"
-  sha256 "b0e3b1ede3fdc98d56d40952600405bb69ba23f3d39c2a6821af8be09b6110eb"
-  version "5.1.20"
+  url "https://pecl.php.net/get/apcu-5.1.21.tgz?init=true"
+  sha256 "1033530448696ee7cadec85050f6df5135fb1330072ef2a74569392acfecfbc1"
   head "https://github.com/krakjoe/apcu.git"
   license "PHP-3.01"
 
@@ -24,6 +23,7 @@ class ApcuAT82 < AbstractPhpExtension
   end
 
   def install
+    Dir.chdir "apcu-#{version}"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-apcu"
     system "make"
