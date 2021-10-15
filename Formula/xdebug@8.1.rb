@@ -15,10 +15,10 @@ class XdebugAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 arm64_big_sur: "f401495863775a0bc7a9224ba171c8e0f987b985fce2fd24401eba574ac71db6"
-    sha256 big_sur:       "beb9a9646a25014a947497106efc34064e40db893ba5fec02a546eba122f832d"
-    sha256 catalina:      "bafd8b7ef730f0f34663dc3afac8d51c95e0eb60f25aac504c34ab1200712557"
-    sha256 x86_64_linux:  "c962120bf11c74ea47fdeadf9c209dc3bd05f69e37000aee695b9ebc23af2e73"
+    sha256 arm64_big_sur: "7371dfbf39cef16134626f652554dc56622d5acdd731456ffc7b86e3933449f4"
+    sha256 big_sur:       "84ffa0f73d8b6722e9a8105cc5bc065fa14a1d037eed5b01e7676cd6d0e3d49a"
+    sha256 catalina:      "5b6cda1878f164470a334251009a28c4f3c7663929e5e605d397b7a8184086ea"
+    sha256 x86_64_linux:  "c3289cd99afbdb659d8a92a198a618d60dc0d0e0ce43f32392a087dbfb431206"
   end
 
   def install
