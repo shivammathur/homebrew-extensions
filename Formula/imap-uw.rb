@@ -85,6 +85,7 @@ class ImapUw < Formula
               "SSLLIB=#{Formula["openssl@1.1"].opt_lib}"
       s.gsub! "-DMAC_OSX_KLUDGE=1", ""
     end
+    inreplace "src/osdep/unix/Makefile", ".$(VERSION)", ""
     inreplace "src/osdep/unix/ssl_unix.c", "#include <x509v3.h>\n#include <ssl.h>",
                                            "#include <ssl.h>\n#include <x509v3.h>"
 
