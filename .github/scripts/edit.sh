@@ -6,7 +6,7 @@ join() { local IFS="$1"; shift; echo "$*"; }
 
 add_labels() {
   labels=()
-  if [[ "$EXTENSION" =~ imap|vips ]]; then
+  if [[ "$EXTENSION" =~ vips ]]; then
     labels+=("CI-no-linux")
   fi
   if [[ "$GITHUB_MESSAGE" =~ .*--init.* ]]; then
