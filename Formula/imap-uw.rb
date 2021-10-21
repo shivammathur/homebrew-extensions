@@ -1,25 +1,18 @@
 class ImapUw < Formula
-  # imap-uw is unmaintained software; the author has passed away and there is
-  # no active successor project.
+  # This is a fork of imap-uw formula as homebrew/core no longer accepts patches to it.
   desc "University of Washington IMAP toolkit"
   homepage "https://web.archive.org/web/20191028114408/https://www.washington.edu/imap/"
   url "https://mirrorservice.org/sites/ftp.cac.washington.edu/imap/imap-2007f.tar.gz"
   mirror "https://fossies.org/linux/misc/old/imap-2007f.tar.gz"
   sha256 "53e15a2b5c1bc80161d42e9f69792a3fa18332b7b771910131004eb520004a28"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     skip "Not maintained"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "c2f21ac938fd8cad640bb7c5ffc7f9fbc74d783485483914554742f0c1fe0cd8"
-    sha256 cellar: :any,                 big_sur:       "fe7f15381a9216ce51e4b2e89c9243bc15569948c896ce122e561bde9e85d327"
-    sha256 cellar: :any,                 catalina:      "df3de76ba2934218f8f484f2d7e6c760956ba52eecacdb1b623d0b54d872165f"
-    sha256 cellar: :any,                 mojave:        "19d971ab778840ba44c24c3eef1316d1c65e6e0b6e1540933ad051c77ee745e0"
-    sha256 cellar: :any,                 sierra:        "8c1c4d2cbbd6df372f258d7cc95b040db4f3c759c8928cfbde7c54da4fa6a426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec9548b94b2c2dc20aa41a9805d062d4d4598be6c927ce7a42e6aca860ff40be"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
   end
 
   depends_on "openssl@1.1"
@@ -28,15 +21,51 @@ class ImapUw < Formula
 
   on_linux do
     depends_on "linux-pam"
+
+    # Build shared c-client library on Linux.
+    patch do
+      url "https://salsa.debian.org/holmgren/uw-imap/raw/master/debian/patches/1001_shlibs.patch"
+      sha256 "9dfc0eb969e87a12daa50fe7418c9863749abf1ae36bafc7a67d6ba5cba8747e"
+    end
+
+    # Use poll instead of select to support more than 1024 file descriptors.
+    patch do
+      url "https://salsa.debian.org/holmgren/uw-imap/raw/master/debian/patches/1005_poll.patch"
+      sha256 "f3460f74308eb9f82ba5d854624a2bbd8a65fb504657a72be147d85aa36af7e1"
+    end
   end
 
-  # Two patches below are from Debian, to fix OpenSSL 1.1 compatibility
-  # https://salsa.debian.org/holmgren/uw-imap/tree/master/debian/patches
+  # Correct the order of arguments to syslog.
+  patch do
+    url "https://salsa.debian.org/holmgren/uw-imap/raw/master/debian/patches/1002_flock_fix_syslog_args.patch"
+    sha256 "d3e345f82b73e692fb4072ca5c1afa738e4df9f69a237dd69a030e3bd9b489e6"
+  end
+
+  # Properly zero out len when mail_fetch_body() returns an empty string.
+  patch do
+    url "https://salsa.debian.org/holmgren/uw-imap/raw/master/debian/patches/1003_fix_zero_len_when_mail_fetch_body_is_empty.patch"
+    sha256 "b3718b3d645a04d9804ee1239b048693f65669e3070e2d8034ee940ec9f3e5c9"
+  end
+
+  # Add support for IMAP extension METADATA (rfc5464).
+  patch do
+    url "https://salsa.debian.org/holmgren/uw-imap/raw/master/debian/patches/1004_support_rfc5464_METADATA.patch"
+    sha256 "5559dbf285e2418ee9483056ba7e933c15bcd6e109747d402ffed4a61eb6f87f"
+  end
+
+  # Add support for OpenSSL 1.1.
   patch do
     url "https://salsa.debian.org/holmgren/uw-imap/raw/master/debian/patches/1006_openssl1.1_autoverify.patch"
     sha256 "7c41c4aec4f25546c998593a09386bbb1d6c526ba7d6f65e3f55a17c20644d0a"
   end
 
+  # [CVE-2018-19518] Disable access to IMAP mailboxes through running imapd over rsh.
+  patch do
+    url "https://salsa.debian.org/holmgren/uw-imap/raw/master/debian/patches/2013_disable_rsh.patch"
+    sha256 "1a913ccc0cb22ebfa1d1d3abb04b72d423abd3d7a11c5427bd2bd60075f51467"
+  end
+
+  # Add support for TLSv1.3.
   patch do
     url "https://salsa.debian.org/holmgren/uw-imap/raw/master/debian/patches/2014_openssl1.1.1_sni.patch"
     sha256 "9db45ba5462292acd04793ac9fa856e332b37506f1e0991960136dff170a2cd3"
@@ -57,12 +86,14 @@ class ImapUw < Formula
     # Skip IPv6 warning on Linux as libc should be IPv6 safe.
     touch "ip6"
 
-    target = if OS.mac?
-      "oxp"
+    if OS.mac?
+      system "make", "oxp"
     else
-      "ldb"
+      system "make", "ldbs"
+      lib.install "c-client/libc-client.so"
+      system "make", "clean"
+      system "make", "ldb"
     end
-    system "make", target
 
     # email servers:
     sbin.install "imapd/imapd", "ipopd/ipop2d", "ipopd/ipop3d"

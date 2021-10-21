@@ -19,9 +19,9 @@ class ImapAT73 < AbstractPhpExtension
     sha256 cellar: :any, catalina:      "b2fcf8168c20aadccbb1aefa0e4eb5422f5721155f1918e5519238a4df14324f"
   end
 
-  depends_on "imap-uw"
-  depends_on "openssl@1.1"
   depends_on "krb5"
+  depends_on "openssl@1.1"
+  depends_on "shivammathur/extensions/imap-uw"
 
   def install
     Dir.chdir "ext/#{extension}"

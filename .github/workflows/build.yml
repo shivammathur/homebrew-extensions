@@ -61,7 +61,7 @@ jobs:
         run: |
            json_array=()
            if [[ "$GITHUB_MESSAGE" != *--build-only-* ]]; then
-             mapfile -t extensions < <(find ./Formula -name "*.rb" -print0 | xargs -0 basename -a | sed "s/@.*//" | sort | uniq)
+             mapfile -t extensions < <(find ./Formula -name "*@*.rb" -print0 | xargs -0 basename -a | sed "s/@.*//" | sort | uniq)
            else
              IFS=, read -a extensions <<< $(echo "$GITHUB_MESSAGE" | grep -Po 'build-only-.*' | cut -d '-' -f 3-)
            fi

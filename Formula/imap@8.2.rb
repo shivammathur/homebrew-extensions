@@ -21,7 +21,6 @@ class ImapAT82 < AbstractPhpExtension
     sha256 cellar: :any, catalina:      "3f146bedec90fbd5fb82e9ac0768e6b1f3d1e4ca7dec342cae9958e348075b94"
   end
 
-  depends_on "imap-uw"
   depends_on "openssl@1.1"
   depends_on "krb5"
 
