@@ -13,6 +13,11 @@ class ImapUw < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_big_sur: "9ecd1e54c87ef0225201d5aaa9431c062c980b46f534b3307a5dfa8a3b5e29c0"
+    sha256 cellar: :any,                 big_sur:       "61ce3545878b7c183ff0ba8942735b7916f6703e54e2de63644f4371a3c3b5c9"
+    sha256 cellar: :any,                 catalina:      "9ce29ffc2f520c9735eb9ff963caa303171dac6fb7309f8f1813bdce7b20f0f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d394ab3435e4ed8b47b4329e776a2233952fa7a9c228e490424d75d8c92841b"
   end
 
   depends_on "openssl@1.1"
