@@ -15,11 +15,10 @@ class XlswriterAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6b8872be325328670b2451c092afa3f254047338ebe30e6cc373d1ddfcda6c20"
-    sha256 cellar: :any_skip_relocation, big_sur:       "3642e9c42e8437200486bde6e354cea2ce6ce56a4b9073fd7b5a50293a28436a"
-    sha256 cellar: :any_skip_relocation, catalina:      "a01964ee774d96c2ef2e553be2e1c78d05dd2cc95d7d2188f1820ea1ab586658"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2f6d91d12308b7632ac76b273a141308e09651bab51fbcff286c1c455f3b64e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "171220fa7ed5dd7c4fe195c50929fe53576e0d4c6ca1e4c289a5976fb322a075"
+    sha256 cellar: :any_skip_relocation, big_sur:       "95b30044bedc1c01e0b89440217a9163541da88273fa36c8ca1e39337b5c8f6e"
+    sha256 cellar: :any_skip_relocation, catalina:      "ef18291ea7c05e4370700496e56e001ed5790abbd6e6fc0da24cab9bb960ff74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae4e231a936eae5e7ddabde0d2196d576b20fe8e176f4428ee23c9dfd6dd3dbc"
   end
 
   def install
