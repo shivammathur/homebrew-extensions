@@ -8,9 +8,9 @@ class AmqpAT80 < AbstractPhpExtension
   init
   desc "Amqp PHP extension"
   homepage "https://github.com/php-amqp/php-amqp"
-  url "https://github.com/php-amqp/php-amqp/archive/df1241852b359cf12c346beaa68de202257efdf1.tar.gz"
+  url "https://github.com/php-amqp/php-amqp/archive/4090bd39b91c4ad8bb671f6b4c6161eaf89da3cd.tar.gz"
   version "1.11.0"
-  sha256 "c9b27857fc7e39654518af5c35eb947b371556375550412b7166f75c03c8b5c8"
+  sha256 "a0c40334cc0119727334b71ce236aee16e385e2ad087d7f98aa146f00c46a7e7"
   head "https://github.com/php-amqp/php-amqp"
   license "PHP-3.01"
 
