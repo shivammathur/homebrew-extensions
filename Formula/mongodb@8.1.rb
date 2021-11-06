@@ -8,10 +8,8 @@ class MongodbAT81 < AbstractPhpExtension
   init
   desc "Mongodb PHP extension"
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://github.com/mongodb/mongo-php-driver.git",
-      branch:   "master",
-      revision: "b27fa4d01995fc3325ac4318d63d4c96d5d2660c"
-  version "1.10.0"
+  url "https://pecl.php.net/get/mongodb-1.11.1.tgz"
+  sha256 "838a5050de50d51f959026bd8cec7349d8af37058c0fe07295a0bc960a82d7ef"
   head "https://github.com/mongodb/mongo-php-driver.git"
   license "Apache-2.0"
 
@@ -29,6 +27,7 @@ class MongodbAT81 < AbstractPhpExtension
   depends_on "zstd"
 
   def install
+    Dir.chdir "mongodb-#{version}"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mongodb"
     system "make"
