@@ -16,11 +16,11 @@ class AmqpAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_big_sur: "3d5fd1cf07a3244fe3897f8fe48d7271976af569d29dcdafa6d0d0e066a38d92"
-    sha256 cellar: :any,                 big_sur:       "13203de849d34a257b2a59c7b287a127756fa0087c31a536f8adab9841f4fba5"
-    sha256 cellar: :any,                 catalina:      "46474c1aca9334a479a3de98d36b6e0ab36f91d704e8766f922edbff4959a0fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e91c686449a5e99b0e29dc36d72e2cef4fb0e94067a5f1da2fc96840315992da"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_big_sur: "96a7306bd481d4e99f8d9ac98174ff7760b0aa9145b033fc9de8dfdd28d73891"
+    sha256 cellar: :any,                 big_sur:       "fd167403ef146300a9281217b498819675213ea0de77fc0f436c431b3e932a73"
+    sha256 cellar: :any,                 catalina:      "21dcdb4ef23eecb55f21bf1d078313390f817994f587c93fc1e7167cd4b86a94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1e38ab83fce538c79e517a8a94999e91f848cd99dde241d6946e12022da23b9"
   end
 
   depends_on "rabbitmq-c"
