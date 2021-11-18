@@ -15,10 +15,10 @@ class SwooleAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_big_sur: "3ac5a1a061282880398ef9eb88eabf7b43e54bbdc12c74aa8c5151f66d9e56d7"
-    sha256 cellar: :any,                 big_sur:       "e277dbfea80fa5a8cfbacb1ef4a8c8ecf55135ef809661574c92e7682dfa10b7"
-    sha256 cellar: :any,                 catalina:      "eafd6409195fda8cc3fda732a84af7d3ce04a03ac79824f437ba23ce7fa431cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "440096992412766553310f94976e1d6e121309c73fc958f9a081308bf56105fc"
+    sha256 cellar: :any,                 arm64_big_sur: "844738a6b0c95706a33b3f80096ab7dd33dd1485a81f64d0f53f1a470c67e126"
+    sha256 cellar: :any,                 big_sur:       "8edc90b5e01e1efdb0c4b7d6d4a195561ba6c2fd1ab8ad5f11c03c9075ed17e7"
+    sha256 cellar: :any,                 catalina:      "f4e0dbab54428886fd1f18906f1bc92733b31884b03b836aecb0acc967481218"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2df13a6522bd9161603798f54fd8392d41919a71db0538b5ba45a3c22f0de2e"
   end
 
   def install
