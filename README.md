@@ -153,7 +153,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 
 ## Related Projects
 
-- [shivammathur/homebrew-php](https://github.com/shivammathur/homebrew-extensions "Tap for PHP extensions")
+- [shivammathur/homebrew-php](https://github.com/shivammathur/homebrew-php "Tap for PHP")
 - [shivammathur/setup-php](https://github.com/shivammathur/setup-php "Setup PHP in GitHub Actions")
 
 ## Dependencies
