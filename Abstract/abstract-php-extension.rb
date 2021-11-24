@@ -25,7 +25,7 @@ class AbstractPhpExtension < Formula
   delegate [:php_version, :extension] => :"self.class"
 
   def php_formula
-    "php@#{php_version}"
+    "shivammathur/php/php@#{php_version}"
   end
 
   def phpconfig
