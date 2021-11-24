@@ -29,8 +29,8 @@ fetch() {
        [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ (swoole|xdebug)@(7.[2-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (mongodb|yaml)@(7.[1-4]|8.[0-2]) ]] ||
-       [[ "$VERSION" =~ (pecl_http|msgpack|rdkafka)@(7.[0-4]|8.0) ]] ||
-       [[ "$VERSION" =~ (apcu|grpc|igbinary|protobuf|psr|raphf|redis|ssh2|vips|xlswriter)@(7.[0-4]|8.[0-2]) ]] ||
+       [[ "$VERSION" =~ (pecl_http|msgpack)@(7.[0-4]|8.0) ]] ||
+       [[ "$VERSION" =~ (apcu|grpc|igbinary|protobuf|psr|raphf|rdkafka|redis|ssh2|vips|xlswriter)@(7.[0-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ amqp@(5.6|7.[0-4]) ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
       url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
