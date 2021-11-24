@@ -9,14 +9,7 @@ add_labels() {
   if [[ "$EXTENSION" =~ vips ]]; then
     labels+=("CI-no-linux")
   fi
-  if [[ "$GITHUB_MESSAGE" =~ .*--init.* ]]; then
-    if ! [[ "$GITHUB_MESSAGE" =~ .*--skip-arm.* ]]; then
-      labels+=("CI-force-arm")
-    fi
-    if ! [[ "$GITHUB_MESSAGE" =~ .*--skip-linux.* ]]; then
-      labels+=("CI-force-linux")
-    fi
-  fi
+
   echo "::set-output name=labels::$(join , "${labels[@]}")"
 }
 
