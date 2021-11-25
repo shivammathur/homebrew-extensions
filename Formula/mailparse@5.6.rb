@@ -8,7 +8,7 @@ class MailparseAT56 < AbstractPhpExtension
   init
   desc "Mailparse PHP extension"
   homepage "https://github.com/php/pecl-mail-mailparse"
-  url "https://pecl.php.net/get/mailparse-2.1.6.tgz?init=true"
+  url "https://pecl.php.net/get/mailparse-2.1.6.tgz"
   sha256 "73705197d2b2ee782efa5477eb2a21432f592c2cb05a72c3a037bbe39e02b5cc"
   head "https://github.com/php/pecl-mail-mailparse.git"
   license "PHP-3.01"
