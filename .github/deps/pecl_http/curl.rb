@@ -7,6 +7,7 @@ class Curl < Formula
   mirror "http://fresh-center.net/linux/www/legacy/curl-7.80.0.tar.bz2"
   sha256 "dd0d150e49cd950aff35e16b628edf04927f0289df42883750cf952bb858189c"
   license "curl"
+  revision 1
 
   livecheck do
     url "https://curl.se/download/"
@@ -14,12 +15,12 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "3f94f33930219bcc493263d2bdcfc414a35785f138f97d62795380e35fbacc30"
-    sha256 cellar: :any,                 arm64_big_sur:  "11d8378566d2f9cddfc3e6306d722f7fb311075d93caa201abbb5b4e28ef161e"
-    sha256 cellar: :any,                 monterey:       "d67815dec700ffae985fec37be2ec396d6b6eb8e1290acfb8889676722fbbcdb"
-    sha256 cellar: :any,                 big_sur:        "e0f327c92e695e92bb13f6c1fd564b7ae4095c1b903d70da84ab2186ebe4cf49"
-    sha256 cellar: :any,                 catalina:       "b52ae2384ef3b51de09bb955ef9ea28e73e8eff7c00d57c3aa58a402943147db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3854b26c08652d6db2a4ea26812e067772a9e2206123addf64eb1678572a8f5b"
+    sha256 cellar: :any,                 arm64_monterey: "ebc127b7deba2fa4ecb2fd084ca2a77896917489c1f0f267541293611933f156"
+    sha256 cellar: :any,                 arm64_big_sur:  "87953b899cb953cf39ef8d3827a7c7e09d81183c7bf7437810c30e281abd02f0"
+    sha256 cellar: :any,                 monterey:       "09eceb07be36e526ed08c0fdae0fdac799466828a4a84afd2df79afde20a0f30"
+    sha256 cellar: :any,                 big_sur:        "fcfc53d0117e56105009fd8609ccbc9dc6472c56c0e6cf59f1f13ab7e4dc08ff"
+    sha256 cellar: :any,                 catalina:       "665bb69230d188c36248a2c493ced5eb2610bd62b9566160e93e2aa7895859bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d38adc63685eee2196aed86d79f0c8274184bb28015452430ba12e7a1d4fee93"
   end
 
   head do
