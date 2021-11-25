@@ -38,6 +38,7 @@
 |`igbinary`|`PHP 5.6` to `PHP 8.2`|
 |`imagick`|`PHP 5.6` to `PHP 8.2`|
 |`imap`|`PHP 5.6` to `PHP 8.2`|
+|`mailparse`|`PHP 5.6` to `PHP 8.2`|
 |`memcache`|`PHP 5.6` to `PHP 8.2`|
 |`memcached`|`PHP 5.6` to `PHP 8.2`|
 |`mongodb`|`PHP 5.6` to `PHP 8.2`|
@@ -177,6 +178,7 @@ If you face any issues while using this tap or want to suggest a feature/improve
 - [php-amqp/php-amqp](https://github.com/php-amqp/php-amqp "amqp")
 - [php-memcached-dev/php-memcached](https://github.com/php-memcached-dev/php-memcached "Memcached")
 - [php/pecl-file_formats-yaml](https://github.com/php/pecl-file_formats-yaml "PHP YAML")
+- [php/pecl-mail-mailparse](https://github.com/php/pecl-mail-mailparse "PHP Mailparse")
 - [php/pecl-networking-ssh2](https://github.com/php/pecl-networking-ssh2 "PHP SSH2")
 - [php/php-src](https://github.com/php/php-src "PHP Source")
 - [phpredis/phpredis](https://github.com/phpredis/phpredis "Redis")
