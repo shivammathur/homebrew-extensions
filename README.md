@@ -91,12 +91,12 @@ brew update
 ```zsh
 php -v
 ```
-- If not, install the required PHP version, For example to install `PHP 7.4`:
+- If not, install the required PHP version, For example to install `PHP 8.0`:
 
 ```zsh
 brew tap shivammathur/php
-brew install shivammathur/php/php@7.4
-brew link --force --overwrite php@7.4
+brew install shivammathur/php/php@8.0
+brew link --force --overwrite shivammathur/php/php@8.0
 ```
 
 Refer to [shivammathur/php](https://github.com/shivammathur/homebrew-php) tap for more information about installing PHP.
@@ -111,18 +111,18 @@ brew tap shivammathur/extensions
 
 - Then install the required extension. See [Formula](Formula) directory for available formulae.
 
-- For example, to install `Xdebug` on `PHP 7.4`:
+- For example, to install `Xdebug` on `PHP 8.0`:
 
 ```zsh
-brew install xdebug@7.4
+brew install xdebug@8.0
 ```
 
 ### Upgrade extensions
 
-- For example, to upgrade `Xdebug` on `PHP 7.4`.
+- For example, to upgrade `Xdebug` on `PHP 8.0`.
 
 ```zsh
-brew upgrade xdebug@7.4
+brew upgrade xdebug@8.0
 ```
 
 ## Debugging
