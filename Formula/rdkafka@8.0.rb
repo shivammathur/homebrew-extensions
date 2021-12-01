@@ -15,10 +15,10 @@ class RdkafkaAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_big_sur: "ab0c505d66c407b7d94aabf0d52f4cbb0dac6f9034737ad2b1c763c52bd8f060"
-    sha256 cellar: :any,                 big_sur:       "f9f5563ef8fe07e52864a71ea87f5b26efb682983dbd21ad6a00a6f875ba2cbf"
-    sha256 cellar: :any,                 catalina:      "3303e03fb64451871047acc8ec4e9fecd0e48ac38e4c0163126f90f53177d98e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40e1987b75014dc86a6668857832f0ea1cac2690bb3a6357ceb5752a0444b1f6"
+    sha256 cellar: :any,                 arm64_big_sur: "a436b4ff2dd5a69debfdfb726a5b92301fe6104a0f8de8d5ec75da82287356f9"
+    sha256 cellar: :any,                 big_sur:       "d1e9782b7ade3b44afa5e6f2906f193d9369100a4e98f423ed83b6567619d468"
+    sha256 cellar: :any,                 catalina:      "07fc68080db511f1444662afb798204160c41b58d77663c5e3fe9a0b60f5eaed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d0f6c78ba5ad5ceac8524a9269b41de3a339441b16d30cef15d26281747072e"
   end
 
   depends_on "librdkafka"
