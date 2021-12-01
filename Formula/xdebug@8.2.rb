@@ -21,9 +21,10 @@ class XdebugAT82 < AbstractPhpExtension
     sha256 x86_64_linux:  "5d0363ccc220504a5cd5a8c3d049f0b1c0c719d75cc6596cb6159ebc57e2a298"
   end
 
+  uses_from_macos "zlib"
+
   def install
     patch_spl_symbols
-    inreplace "config.m4", "80200", "80300"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"

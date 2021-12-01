@@ -21,6 +21,8 @@ class XdebugAT81 < AbstractPhpExtension
     sha256 x86_64_linux:  "c3289cd99afbdb659d8a92a198a618d60dc0d0e0ce43f32392a087dbfb431206"
   end
 
+  uses_from_macos "zlib"
+
   def install
     patch_spl_symbols
     safe_phpize

@@ -21,6 +21,10 @@ class SwooleAT72 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbf1e44f9c3d142b5381f20850fac949335d079a65313ce10d7d26be51288985"
   end
 
+  depends_on "brotli"
+
+  uses_from_macos "zlib"
+
   def install
     safe_phpize
     system "./configure"

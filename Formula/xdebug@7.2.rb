@@ -21,6 +21,8 @@ class XdebugAT72 < AbstractPhpExtension
     sha256 x86_64_linux:  "9cc1f7deaf843194ba1957b181e415a4b7a43c4aab7bdc86d9ea972734ddb968"
   end
 
+  uses_from_macos "zlib"
+
   def install
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
