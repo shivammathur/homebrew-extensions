@@ -8,9 +8,8 @@ class AmqpAT80 < AbstractPhpExtension
   init
   desc "Amqp PHP extension"
   homepage "https://github.com/php-amqp/php-amqp"
-  url "https://github.com/php-amqp/php-amqp/archive/4090bd39b91c4ad8bb671f6b4c6161eaf89da3cd.tar.gz"
-  version "1.11.0"
-  sha256 "a0c40334cc0119727334b71ce236aee16e385e2ad087d7f98aa146f00c46a7e7"
+  url "https://pecl.php.net/get/amqp-1.11.0.tgz"
+  sha256 "dc5212b4785f59955118a219bbfbcedb7aa6ab2a91e8038a0ad1898f331c2f08"
   head "https://github.com/php-amqp/php-amqp"
   license "PHP-3.01"
 
@@ -30,6 +29,7 @@ class AmqpAT80 < AbstractPhpExtension
       --with-amqp=shared
       --with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}
     ]
+    Dir.chdir "amqp-#{version}"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
