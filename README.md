@@ -74,7 +74,7 @@
 - On Linux, GLIBC 2.27 or newer is required, so distributions with Linux kernel 4.18 and newer are supported.
 For example: Ubuntu 18.04, Debian 10, CentOS 8, Fedora 28, and newer versions of these distributions.
 
-- All extensions except `imap` and `vips` are built on Linux.
+- All extensions except `vips` are built on Linux.
 
 ## Usage
 
@@ -150,7 +150,7 @@ Please see the [license file](LICENSE) for more information. This project has mu
 
 Contributions are welcome!
 Please see [Contributor's Guide](.github/CONTRIBUTING.md "shivammathur/homebrew-extensions contribution guide") before you start.
-If you face any issues while using this tap or want to suggest a feature/improvement, create an discussion thread [here](https://github.com/shivammathur/homebrew-extensions/discussions "shivammathur/extensions discussions").
+If you face any issues while using this tap or want to suggest a feature/improvement, create a discussion thread [here](https://github.com/shivammathur/homebrew-extensions/discussions "shivammathur/extensions discussions").
 
 ## Related Projects
 
