@@ -23,7 +23,10 @@ class MongodbAT56 < AbstractPhpExtension
   end
 
   depends_on "icu4c"
+  depends_on "openssl@1.1"
   depends_on "snappy"
+
+  uses_from_macos "zlib"
 
   def install
     Dir.chdir "mongodb-#{version}"

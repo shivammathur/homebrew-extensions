@@ -22,6 +22,7 @@ class MongodbAT71 < AbstractPhpExtension
   end
 
   depends_on "icu4c"
+  depends_on "openssl@1.1"
   depends_on "snappy"
   depends_on "zstd"
 

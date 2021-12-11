@@ -26,6 +26,8 @@ class MemcachedAT74 < AbstractPhpExtension
   depends_on "shivammathur/extensions/igbinary@7.4"
   depends_on "shivammathur/extensions/msgpack@7.4"
 
+  uses_from_macos "zlib"
+
   def patch_memcached
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
