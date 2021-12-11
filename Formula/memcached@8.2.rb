@@ -16,11 +16,11 @@ class MemcachedAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_big_sur: "6275255074adb680714eacffee3bbc3cd0587b7eec9b973a8d5bd3681f177808"
-    sha256 cellar: :any,                 big_sur:       "0cedf8906eaa6b7e8f8ec512a566bab6a5201fd4f8daa895b0787007c85b5201"
-    sha256 cellar: :any,                 catalina:      "27d9081b3784cb72f3f67f3304f14bca9980343c963513b47d45df71bdc0a37c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "640fc0e11987cd8f123c154b19e0aae26f28d22d1ec50acc0d44cd329b824688"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_big_sur: "c3ed97d717fcbf7f7fe03580ef28c8861df4fc1b5ede6f6ff887be3b584f0091"
+    sha256 cellar: :any,                 big_sur:       "1070d90b3fd90f0add9b6cbb30c0a95c7ae59fdd5de28697671e3011c0e2995d"
+    sha256 cellar: :any,                 catalina:      "ace019b8e99b27aec01afdfdb60ccd8b4e7c997896be4e1ad8dd55214700d669"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cffe99d964e0e0654e3ce7265ff61fe91d2822d9aa8fdf9a44326931ff74d4f2"
   end
 
   depends_on "libevent"
