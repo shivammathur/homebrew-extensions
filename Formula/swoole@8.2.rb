@@ -15,10 +15,11 @@ class SwooleAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_big_sur: "7e1e14b18ae303ffb1473e567682ea7412157e79939bef626912ab1dc86e2110"
-    sha256 cellar: :any,                 big_sur:       "701ffeac1b9d17128da03aa1854cfb83376a60359aab35aa0b47f40031f5353d"
-    sha256 cellar: :any,                 catalina:      "3b6b739a1542ccaca6f8498468d531f4b6ccac4461eb4f3c6718f6f82e2b6327"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86dc4fdeb0d2475f92f7e81f8b7812dc799eefcab97cf6da5e2c706168a255d5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_big_sur: "8934a726608a5834170793dcb2f6ced7cc0072364bc6f170720cc4a32811863a"
+    sha256 cellar: :any,                 big_sur:       "2805bca6c653991cd85e36735e31221d9b1be0ccd479cdc5909c118560cb1ad2"
+    sha256 cellar: :any,                 catalina:      "0c8d1ecef915dcfd156a2c08ca985a828baa42c2a93baa4c1a015ad27fd5f2fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a58ccf61e01eaab854a8a11c143e8b47dfa54fd1adf4f4b8f747eabf554e3718"
   end
 
   depends_on "brotli"
