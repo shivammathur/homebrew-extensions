@@ -12,17 +12,17 @@ class Librdkafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "bcb3cc5c93dd98e7ff80f352f7027433a60c319526d9bae92be12510065eff5b"
-    sha256 cellar: :any,                 arm64_big_sur:  "bc890f80174ca6b7cff7a38363bf2316212d8e06ecf4c8741f629394963b0491"
-    sha256                               monterey:       "b6f0c3555863c69c2a4d1a6702201a400f4b6c2ba7929da32c7c30f1a88f1a4a"
-    sha256                               big_sur:        "8796c66a69f7a152b258b37a9465c921e5c818c73c3b8a552d6a833fdd72934e"
-    sha256                               catalina:       "73e5a509a5a333db1ed43c37f8cb1b492b12b8a7e9ead4d99b8ae0118c0b4d07"
-    sha256                               mojave:         "cc144350515cbb2ba6dbfc866d87af21cfd50d35c9222c316376b0f01a60bfda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09a57969b09efa0d39eb4fa06931ef2191e35da3fbb12e7b8cf1a53a90a57677"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "62d464f0c91804cbc7e243d2947a3684fbe7f984fed62a61911c4e758274b213"
+    sha256 cellar: :any,                 arm64_big_sur:  "f173038bf4ca75233c4d323dd07743d04accce68aa8513284b4ec1465a689589"
+    sha256                               monterey:       "a3852aef4d08f02186ac10d3ac20dbbf5270b1ded8c8a2ceac004bfde3936488"
+    sha256                               big_sur:        "40c00838eb97e3781930de8c4c743319fb126cbfd63195cd3ccc561380835c02"
+    sha256                               catalina:       "00b5f82f5bdc5e71d80355125634e30ec04059fce88dac2b4560259bdabbe990"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e11b1becd5dc7eabf9f453e92cd4a9f71fa0e16ff92a07baa265021f4efebd99"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.10" => :build
   depends_on "lz4"
   depends_on "lzlib"
   depends_on "openssl@1.1"
