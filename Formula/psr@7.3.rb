@@ -11,10 +11,10 @@ class PsrAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ff98226e520133721b8bc972ee915e15bc022dbbdab699c3f04dff05d87f2a19"
-    sha256 cellar: :any_skip_relocation, big_sur:       "69349fec904d591870fbabbedfa52616597e16bd59f1a9b4d2d6c694522c4af9"
-    sha256 cellar: :any_skip_relocation, catalina:      "6536c6a3ed3c1411ccfb268d560674f5aa73c527fee2f9435b03fc710cb56fa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0e72e600c805a749b419f9498951e927cf6a68d2e0175f276df5559a9b95ea8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a76535e65564a7a25ee69729654d9436b13339e0be24ba660894a2aa9282d91f"
+    sha256 cellar: :any_skip_relocation, big_sur:       "19a50b2521ade395bfe7ccab04aeb419f14571346e9f6664df6f4733a836fbaf"
+    sha256 cellar: :any_skip_relocation, catalina:      "03719e953db671e720983d0907198006958cc5074a0b6191b883cb7530df83c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11380d18a6fd7ee2495528b4ed7f2c7c31793bd53aa8bf906924756459f41acc"
   end
 
   depends_on "pcre"
