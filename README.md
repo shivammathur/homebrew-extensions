@@ -19,6 +19,11 @@
     <a href="https://github.com/shivammathur/homebrew-extensions/tree/master/Formula" title="Formulae for PHP extensions">
       <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.2-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
     </a>
+</p>
+<p align="center">
+    <a href="https://github.com/shivammathur/homebrew-extensions#os-support" title="Linux x86_64 supported">
+      <img alt="Linux architectures supported" src="https://img.shields.io/badge/Linux-x86__64%20-f6ab01?logo=linux&logoColor=555555&labelColor=ffffff">
+    </a>
     <a href="https://github.com/shivammathur/homebrew-extensions#os-support" title="Apple Intel x86_64 supported">
       <img alt="macOS architectures supported" src="https://img.shields.io/badge/macOS-Intel%20x86__64%20-007DC3?logo=apple&logoColor=555555&labelColor=ffffff">
     </a>  
@@ -127,7 +132,7 @@ brew upgrade xdebug@8.0
 
 ## Debugging
 
-- Make sure you ran `brew update` before installing PHP.
+- Make sure you ran `brew update` before installing a PHP extension.
 
 - Run `brew doctor` and fix the warnings it reports.
 
@@ -151,6 +156,16 @@ Please see the [license file](LICENSE) for more information. This project has mu
 Contributions are welcome!
 Please see [Contributor's Guide](.github/CONTRIBUTING.md "shivammathur/homebrew-extensions contribution guide") before you start.
 If you face any issues while using this tap or want to suggest a feature/improvement, create a discussion thread [here](https://github.com/shivammathur/homebrew-extensions/discussions "shivammathur/extensions discussions").
+
+## Sponsors
+
+We use [MacStadium](https://www.macstadium.com/opensource/members) for our CI infrastructure.
+
+<a href="https://www.macstadium.com/opensource/members"><img src="https://setup-php.com/sponsors/macstadium.png" alt="Powered by MacStadium" width="200px"></a>
+
+This project is generously supported by many other users and organisations via [GitHub Sponsors](https://github.com/sponsors/shivammathur).
+
+<a href="https://github.com/sponsors/shivammathur"><img src="https://setup-php.com/sponsors.svg?" alt="Sponsor shivammathur"></a>
 
 ## Related Projects
 
