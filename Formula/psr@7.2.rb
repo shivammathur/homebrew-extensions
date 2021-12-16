@@ -4,8 +4,8 @@ class PsrAT72 < AbstractPhpExtension
   init
   desc "PHP extension providing the accepted PSR interfaces "
   homepage "https://github.com/jbboehr/php-psr"
-  url "https://pecl.php.net/get/psr-1.1.0.tgz"
-  sha256 "4feb8eeea4237894bcab1ea064cefc3421c909778d39c977184c16e725cfbfb2"
+  url "https://pecl.php.net/get/psr-1.2.0.tgz"
+  sha256 "9c3d2a0d9770916d86e2bc18dfe6513ad9b2bfe00f0d03c1531ef403bee38ebe"
   head "https://github.com/jbboehr/php-psr.git"
   license "BSD-2-Clause"
 
