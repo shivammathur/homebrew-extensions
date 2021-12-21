@@ -8,8 +8,8 @@ class PcovAT81 < AbstractPhpExtension
   init
   desc "PCOV PHP extension"
   homepage "https://github.com/krakjoe/pcov"
-  url "https://github.com/krakjoe/pcov/archive/v1.0.10.tar.gz"
-  sha256 "1fd2748f2db4dbbf5f6ac1691b6bd528d23522e0fcdeeda63cbb9de2a0e8d445"
+  url "https://github.com/krakjoe/pcov/archive/v1.0.11.tar.gz"
+  sha256 "2ca64444a8f02401e60637b2ab579b952a542e4193c5a47f4bd593c348fb4aad"
   head "https://github.com/krakjoe/pcov.git"
   license "PHP-3.01"
 
