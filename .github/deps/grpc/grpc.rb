@@ -5,6 +5,7 @@ class Grpc < Formula
       tag:      "v1.43.0",
       revision: "b0f37a22bbae12a4b225a88be6d18d5e41dce881"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/grpc/grpc.git", branch: "master"
 
   livecheck do
@@ -13,12 +14,12 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "895989b8148ae4363754a23f9a53e2480bd47943b107afd08d8eab659a91718c"
-    sha256 cellar: :any,                 arm64_big_sur:  "cd2adf45597d96b6df0330ec3f3023a2835d6bcecbce28bcd2c27b51673cb927"
-    sha256 cellar: :any,                 monterey:       "e42fcca6418258cec28aee9d0663d69afd8ae788f38ad022abc764fa3f9e2d8d"
-    sha256 cellar: :any,                 big_sur:        "9bc16aee2da2eb316a47615060fab392b8629b7df9a8d80ca285fc1187ac9f71"
-    sha256 cellar: :any,                 catalina:       "8074b7da76bced5569566457a17c3bb5b5fa31e5a2b6eaeebc16e967c47882f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb659421ce5a0e509d29b6e857c7810cdea45770d29149695e6e2715ddb7fb84"
+    sha256 cellar: :any,                 arm64_monterey: "7c481f7a60fa739fda7f8b5f6356e2212354971ee9064fe67b44930b2932c50e"
+    sha256 cellar: :any,                 arm64_big_sur:  "eeb10f8f283ee86e01de2c383c0c0374f0f7261e446bc411ccfd68b187252684"
+    sha256 cellar: :any,                 monterey:       "85db6d7edf4899d233c250869bf1941c7833a8b83f2f590bdcc445e6fbdbcd6a"
+    sha256 cellar: :any,                 big_sur:        "594533f3a5c880f74a9e8a171565a8654484fe330627f9015cbd33c424dd2b27"
+    sha256 cellar: :any,                 catalina:       "655599e0548de282dbf36d2ca6403b124b6d5e0e94120aa910a3eab303c01878"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be7b437c7cc6daa09edff257f197e27b9fec475dffde7f2bd18b857b81a392c0"
   end
 
   depends_on "autoconf" => :build
