@@ -5,6 +5,7 @@ class TclTk < Formula
   mirror "https://fossies.org/linux/misc/tcl8.6.12-src.tar.gz"
   sha256 "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
   license "TCL"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +13,12 @@ class TclTk < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "5faf1681a1a424487d580601238ecc1f3d83fd11db6ac237683f314e9b21dcf0"
-    sha256 arm64_big_sur:  "a2fab3435e8e70bc55af3497f55a169c52d7a4567a9c9e8affc17c26ba3ccadd"
-    sha256 monterey:       "c50ec17604de23c4a82165cf24cc402de0aa480e6fff7a805dc638eb88610e35"
-    sha256 big_sur:        "71c450d2b7a19364c07d09a08434692dd2aaeaf3afe478566e984ef90ed28194"
-    sha256 catalina:       "0a7368698d7fe08e77efc96a99d2d20ae0611906bac7454e64049790cc298e77"
-    sha256 x86_64_linux:   "d1ca9796772743d35c5671771969c7db998493a94f8bfc285b4b46c0050e7d54"
+    sha256 arm64_monterey: "8accfee37564f1f390c27ba44a1e501ae3a2ba23fb8ecf126da43c105aa3411c"
+    sha256 arm64_big_sur:  "6097b84f40aded10af8c4bd300e1b82cd89f2f019bf05721cc433a78c553932a"
+    sha256 monterey:       "6dd6e9147cab000f8fee32efb4b7069f8128d2b0eb0f6d45fc96ddcedb936afe"
+    sha256 big_sur:        "ed8b2d7204d9afc96153af7df2954714c4a07af6f2cbd90b60da15f270a82977"
+    sha256 catalina:       "73092f5fab605e4e35c05721d9689c93e728e6005eb2a0c564d5a8c08f9628cc"
+    sha256 x86_64_linux:   "9be465cbb1307669acc2e62c5788611c8ff5917d4007437b1d32796de68de7ad"
   end
 
   keg_only :provided_by_macos
@@ -125,6 +126,16 @@ class TclTk < Formula
 
     # Conflicts with perl
     mv man/"man3/Thread.3", man/"man3/ThreadTclTk.3"
+
+    # Use the sqlite-analyzer formula instead
+    # https://github.com/Homebrew/homebrew-core/pull/82698
+    rm bin/"sqlite3_analyzer"
+  end
+
+  def caveats
+    <<~EOS
+      The sqlite3_analyzer binary is in the `sqlite-analyzer` formula.
+    EOS
   end
 
   test do
