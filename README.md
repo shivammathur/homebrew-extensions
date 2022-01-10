@@ -79,8 +79,6 @@
 - On Linux, GLIBC 2.27 or newer is required, so distributions with Linux kernel 4.18 and newer are supported.
 For example: Ubuntu 18.04, Debian 10, CentOS 8, Fedora 28, and newer versions of these distributions.
 
-- All extensions except `vips` are built on Linux.
-
 ## Usage
 
 ### Prerequisites

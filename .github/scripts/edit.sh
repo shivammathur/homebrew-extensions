@@ -2,20 +2,6 @@ unbottle() {
   sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
 }
 
-join() {
-  local IFS="$1"
-  shift
-  echo "$*"
-}
-
-add_labels() {
-  labels=()
-  if [[ "$EXTENSION" =~ vips ]]; then
-    labels+=("CI-no-linux")
-  fi
-  echo "::set-output name=labels::$(join , "${labels[@]}")"
-}
-
 fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   [[ "$GITHUB_MESSAGE" =~ .*--init.* ]] && return
@@ -63,4 +49,3 @@ check_changes() {
 
 fetch
 check_changes
-add_labels
