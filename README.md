@@ -35,10 +35,11 @@
 ## Extensions
 
 |Extension|PHP Version|
-|--- |---
+|-- |---
 |`amqp`|`PHP 5.6` to `PHP 8.2`
 |`apcu`|`PHP 5.6` to `PHP 8.2`|
 |`expect`|`PHP 5.6` to `PHP 8.2`|
+|`gnupg`|`PHP 5.6` to `PHP 8.2`|
 |`grpc`|`PHP 5.6` to `PHP 8.2`|
 |`igbinary`|`PHP 5.6` to `PHP 8.2`|
 |`imagick`|`PHP 5.6` to `PHP 8.2`|
@@ -189,6 +190,7 @@ This project is generously supported by many other users and organisations via [
 - [msgpack/msgpack](https://github.com/msgpack/msgpack-php "Msgpack")
 - [phalcon/cphalcon](https://github.com/phalcon/cphalcon "Phalcon")
 - [php-amqp/php-amqp](https://github.com/php-amqp/php-amqp "amqp")
+- [php-gnupg/php-gnupg](https://github.com/php-gnupg/php-gnupg "gnupg")
 - [php-memcached-dev/php-memcached](https://github.com/php-memcached-dev/php-memcached "Memcached")
 - [php/pecl-file_formats-yaml](https://github.com/php/pecl-file_formats-yaml "PHP YAML")
 - [php/pecl-mail-mailparse](https://github.com/php/pecl-mail-mailparse "PHP Mailparse")
@@ -217,6 +219,7 @@ This project is generously supported by many other users and organisations via [
 - [curl](https://formulae.brew.sh/formula/curl "curl")
 - [czmq](https://formulae.brew.sh/formula/czmq "czmq")
 - [expect](https://formulae.brew.sh/formula/expect "expect")
+- [gpgme](https://formulae.brew.sh/formula/gpgme "gpgme")
 - [grpc](https://formulae.brew.sh/formula/grpc "grpc")
 - [icu4c](https://formulae.brew.sh/formula/icu4c "icu4c")
 - [imagemagick](https://formulae.brew.sh/formula/imagemagick "imagemagick")
