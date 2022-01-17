@@ -1,7 +1,7 @@
 extension=$1
 version=$2
 case $extension in
-  amqp|apcu|expect|grpc|imagick|msgpack|protobuf|propro|psr|raphf|rdkafka|redis|mailparse|memcached|mongodb|ssh2|vips|xlswriter|yaml)
+  amqp|apcu|expect|gnupg|grpc|imagick|msgpack|protobuf|propro|psr|raphf|rdkafka|redis|mailparse|memcached|mongodb|ssh2|vips|xlswriter|yaml)
   tag=$(curl -sSL "https://pecl.php.net/rest/r/$extension/allreleases.xml" | grep -m 1 -Eo "([0-9]+.[0-9]+(.[0-9]+)?(.[0-9]+)?)(<)" | cut -d '<' -f 1)
   sed -i "s/  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
   ;;
