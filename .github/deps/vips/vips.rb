@@ -11,11 +11,12 @@ class Vips < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "9c25395fd7c46809cd1fbc887fd53d7e1dadc74182ff48fc361c6f34b4706a68"
-    sha256 monterey:      "3671ae76c280fda2dc28bdaf967669e5512f37b3d870e4fe020b07ab7bd119dd"
-    sha256 big_sur:       "3ca7cf19414b876ca30e4451b015cff9f9055495dafdad804b38bfb3dfb93043"
-    sha256 catalina:      "aaebf8e5098d8a4c9b11fa868176a0c18dd7c139fda45f642bc0de91b9fcc4e1"
-    sha256 x86_64_linux:  "36ab07426a800f4913a513ada5493ba47def5cadf65e071061dc4468ed798570"
+    sha256 arm64_monterey: "86e751f24a0962423d436e312c401bdcf635bf403064587cb7757e1609548e84"
+    sha256 arm64_big_sur:  "9c25395fd7c46809cd1fbc887fd53d7e1dadc74182ff48fc361c6f34b4706a68"
+    sha256 monterey:       "3671ae76c280fda2dc28bdaf967669e5512f37b3d870e4fe020b07ab7bd119dd"
+    sha256 big_sur:        "3ca7cf19414b876ca30e4451b015cff9f9055495dafdad804b38bfb3dfb93043"
+    sha256 catalina:       "aaebf8e5098d8a4c9b11fa868176a0c18dd7c139fda45f642bc0de91b9fcc4e1"
+    sha256 x86_64_linux:   "36ab07426a800f4913a513ada5493ba47def5cadf65e071061dc4468ed798570"
   end
 
   depends_on "pkg-config" => :build
