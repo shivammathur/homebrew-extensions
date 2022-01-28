@@ -2,10 +2,9 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.43.0",
-      revision: "b0f37a22bbae12a4b225a88be6d18d5e41dce881"
+      tag:      "v1.43.2",
+      revision: "dc78581af30da834b7b95572f109bf6c708686e0"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/grpc/grpc.git", branch: "master"
 
   livecheck do
@@ -14,12 +13,12 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "1fdc820ef00649291bfacb6a378f0ed47892a12d18d6246b29b2196b9cf366c9"
-    sha256 cellar: :any,                 arm64_big_sur:  "3c7be53b01337009d0f08f4a641d7f5d9f58d33b95c6060137d397ef5592858b"
-    sha256 cellar: :any,                 monterey:       "d357572a81c2f946141c96f9fe711ddaf7be0c04df0bdca14c6ca3bba7a0445e"
-    sha256 cellar: :any,                 big_sur:        "491cae15482bb2efc6aa67476fbeb15dc427a256745613e1a9a455e204f73d91"
-    sha256 cellar: :any,                 catalina:       "d09af57c107eb9468d56f65a6b6b073b2f2104f6a76ecef5bd352cc5083aa9a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e07deba0c44980f2a762d6522f28f1ef84338ccf0ed5adaf6cf4b07facec1613"
+    sha256 cellar: :any,                 arm64_monterey: "81bd2790d9c8c3199b73c8e379707e44fd63f564c0ac4bbdf7b7e38856ecadd0"
+    sha256 cellar: :any,                 arm64_big_sur:  "6e30374c3401d2db4a2955424ee04a0a12c7f278febd6f578c83a62e39c00530"
+    sha256 cellar: :any,                 monterey:       "909f83d52b2fe4d9c2c2185183940162a4b2e189103d6f65a92b14714ec3abd6"
+    sha256 cellar: :any,                 big_sur:        "88952fc56136943924d2af93cbe483c2e1191d6b5a4cd6445abfb0aee68c39f2"
+    sha256 cellar: :any,                 catalina:       "81415a1e8fb92a450fbcbab6effa3899cb4ab510c0ebac64360beffcb34ac727"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14aa74e76f39c519807c437ef2398139f93902b68666bf2acd9b4ad5b30f01ce"
   end
 
   depends_on "autoconf" => :build
