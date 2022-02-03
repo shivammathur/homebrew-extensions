@@ -22,7 +22,7 @@ fetch() {
        [[ "$VERSION" =~ (psr)@(7.[3-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (memcache)@8.[0-2] ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
-      url=$(grep '  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
+      url=$(grep '^  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
       checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
       sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
     fi
