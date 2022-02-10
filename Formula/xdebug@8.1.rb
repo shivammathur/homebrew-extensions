@@ -16,10 +16,10 @@ class XdebugAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 arm64_big_sur: "de3854ec4512d5ee063e561408debaa71e86f8ecce8f1767eb30bbd26dd498ee"
-    sha256 big_sur:       "f473377640c00d2c47548d021641855e2253e57249978599c7c5560682471982"
-    sha256 catalina:      "a2901507018327713dd42e709127ed8463e51b418f1d0739227ac7fa3ef25815"
-    sha256 x86_64_linux:  "13589e2171a39c3e403a8156e68c12a2ae2ed9d324e2e013125d53b56c351768"
+    sha256 arm64_big_sur: "f1a4b42d231228c8276ffdf52330d88cc4171497f583c75f7b47557b23f57ae2"
+    sha256 big_sur:       "00ff13eda4d99ab693c80eacff125df63c15a6bcb3f6d51e9a6164b4cdd0d021"
+    sha256 catalina:      "0201df495a2ba6417cb86ed84fe6b0a03a39eaa396d517b28cde9ac65fb7c0e5"
+    sha256 x86_64_linux:  "3aa78a69ce7d90bd731d43b99764233de3ef1c4c983245f830dd49a80bde0c61"
   end
 
   uses_from_macos "zlib"
