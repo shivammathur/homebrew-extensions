@@ -129,6 +129,21 @@ brew install xdebug@8.0
 brew upgrade xdebug@8.0
 ```
 
+### Restart your webserver
+
+If you are using `Apache` or `Nginx` with `php-fpm`, restart your webserver after installing or updating any PHP extensions.
+
+- For Apache (`httpd`):
+
+```zsh
+brew services restart httpd
+```
+- For Nginx:
+
+```zsh
+brew services restart nginx
+```
+
 ## Debugging
 
 - Make sure you ran `brew update` before installing a PHP extension.
@@ -160,7 +175,12 @@ If you face any issues while using this tap or want to suggest a feature/improve
 
 We use [MacStadium](https://www.macstadium.com/opensource/members) for our CI infrastructure.
 
-<a href="https://www.macstadium.com/opensource/members"><img src="https://setup-php.com/sponsors/macstadium.png" alt="Powered by MacStadium" width="200px"></a>
+<a href="https://www.macstadium.com/opensource/members#gh-light-mode-only">
+  <img src="https://setup-php.com/sponsors/macstadium.png" alt="Mac Stadium" width="200px">
+</a>
+<a href="https://www.macstadium.com/opensource/members#gh-dark-mode-only">
+  <img src="https://setup-php.com/sponsors/macstadium-white.png" alt="Mac Stadium" width="200px">
+</a>
 
 This project is generously supported by many other users and organisations via [GitHub Sponsors](https://github.com/sponsors/shivammathur).
 
