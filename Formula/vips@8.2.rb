@@ -8,8 +8,8 @@ class VipsAT82 < AbstractPhpExtension
   init
   desc "Vips PHP extension"
   homepage "https://github.com/libvips/php-vips-ext"
-  url "https://pecl.php.net/get/vips-1.0.12.tgz"
-  sha256 "c638250de6cad89d8648bff972af5224316ccb5b5b0a7c9201607709d5385282"
+  url "https://pecl.php.net/get/vips-1.0.13.tgz"
+  sha256 "4e655843e5ee8150c927c10853dfa0d2a3b924bc2453ed8fb5e5a2a90e686f8f"
   head "https://github.com/libvips/php-vips-ext.git"
   license "MIT"
 
