@@ -15,10 +15,10 @@ class RedisAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_big_sur: "86c208aa849109f24dd6c6687a1ce568d1a69d5466fb6493a55e641e1b523d35"
-    sha256 cellar: :any,                 big_sur:       "51ecaa842632afc902cdd775d382bce16ba2b2b1f279b7ad68ded5a01211499b"
-    sha256 cellar: :any,                 catalina:      "67a76b37ecd761eb4270fb8c46157ebf8c527283fbe7a422acb2bc217add211c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64c70abf999bba68ec59ffd8b3dfe2a21cf506ea0f0d517f7a5ad69fef282449"
+    sha256 cellar: :any,                 arm64_big_sur: "e0308481a678da516a114f6637afcb334299bad0bb2d15c0446ddd97a82baa23"
+    sha256 cellar: :any,                 big_sur:       "7984d578a61ce6b7127d698bc03dc470af13b8118b2df8151bf273a226eb8729"
+    sha256 cellar: :any,                 catalina:      "3d3bcfc61230dc509faeb8504d94f9fda33bb587d80be68975ff5ff3b74be6c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa3e0a930c14aef058ce55f25c747f24b8fb83c91d0c69e7319231f0a309b0fd"
   end
 
   depends_on "liblzf"
