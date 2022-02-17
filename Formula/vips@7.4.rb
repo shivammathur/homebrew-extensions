@@ -15,11 +15,10 @@ class VipsAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_big_sur: "637d1297630035d1632059bddd828ddc24e6d2255faf6bf11c3fb8d2a765abfb"
-    sha256 cellar: :any,                 big_sur:       "a20824df88b5f1c522c0cc89ef9c0891523e4a16e9dc27434af302a0a252116e"
-    sha256 cellar: :any,                 catalina:      "05a90806b0155273cc632459d880c54ac16e76ba58c321f29799e5b299f5ff46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "434aa68e5782dcadd486c3aaa8170d4e51e84083ba1aae40909e3c957885d54b"
+    sha256 cellar: :any,                 arm64_big_sur: "dcbc2086ebebcdc3f16ec8911ed2c78ae833d6322237c578a720477954083e0c"
+    sha256 cellar: :any,                 big_sur:       "0c30a0ed539d62744f3968195f325b061f33ab4fc7dd02ffe2ae87455f962da5"
+    sha256 cellar: :any,                 catalina:      "3130d93fb580139d309fa2d53523f23e3ac9309029bf16665ba406d8ab25122b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "659c1443872ce35105f3ccb146ba1a1164286b2690087609ca1d0de6d5a78cc6"
   end
 
   depends_on "vips"
