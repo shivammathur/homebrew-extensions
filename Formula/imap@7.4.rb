@@ -14,10 +14,10 @@ class ImapAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_big_sur: "3a07ab7923d862a686c216cbb30fcf852f582abdba05bc3ae37aa80f3c0e0545"
-    sha256 cellar: :any,                 big_sur:       "7056a6a4a49ad1b0106001e2e5395fcd3027e9bae745c4c8e7cdd63718758fda"
-    sha256 cellar: :any,                 catalina:      "fdf378f9e6f94cc11b2c2ff4545bf54872b01acfd62fd05ea3b0af5ea924cbca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff4fe22145929f2bbcac772b2ea63939d3835d029e2c38f644d64f2e08bd860a"
+    sha256 cellar: :any,                 arm64_big_sur: "353919dfc58cbd467df95531b6f373924e13aa4726ffd442b38e063a8924047a"
+    sha256 cellar: :any,                 big_sur:       "015870ffee5f98107524b71aea92155c9f2348a4f727e105ede5aafb1575d8d0"
+    sha256 cellar: :any,                 catalina:      "72b88e097a2d66b829e5eb71893d7e6a5d6224e8c318150d5eb68c7e15a1a5e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "813082a532d5b1f34a7cb5a60bf6003f673ac552512bd034042cbc9fb51fbce7"
   end
 
   depends_on "krb5"
