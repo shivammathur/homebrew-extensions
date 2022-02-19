@@ -8,8 +8,8 @@ class SwooleAT72 < AbstractPhpExtension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
-  url "https://github.com/swoole/swoole-src/archive/v4.8.6.tar.gz"
-  sha256 "0234d336dd19f56b7e175dddd7ce61b17b00ba24426072018d781c9815c263ac"
+  url "https://github.com/swoole/swoole-src/archive/v4.8.7.tar.gz"
+  sha256 "2083f7b5f8715ab1074b8640255f503ab91d77c6633c53421e381d8ae3bcb67e"
   head "https://github.com/swoole/swoole-src.git"
   license "Apache-2.0"
 
@@ -26,6 +26,7 @@ class SwooleAT72 < AbstractPhpExtension
   uses_from_macos "zlib"
 
   def install
+    inreplace "config.m4", "PHP_ADD_LIBRARY(atomic", ": #"
     safe_phpize
     system "./configure"
     system "make"
