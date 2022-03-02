@@ -23,7 +23,7 @@ jobs:
           bot_body: ':robot: A scheduled task has [triggered a merge](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot: BrewTestBot
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Homebrew
         id: set-up-homebrew

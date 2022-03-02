@@ -52,7 +52,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Get matrix
         id: set-matrix
@@ -80,7 +80,7 @@ jobs:
       fail-fast: false
       matrix: ${{fromJson(needs.get-matrix.outputs.matrix)}}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Patch formula
         id: patch
@@ -132,7 +132,7 @@ jobs:
       test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
       test-bot-dependents-args: ${{ steps.check-labels.outputs.test-bot-dependents-args }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Check for CI labels
         id: check-labels
         uses: actions/github-script@v3
@@ -351,7 +351,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Add Label
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
