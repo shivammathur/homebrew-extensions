@@ -8,9 +8,8 @@ class PeclHttpAT82 < AbstractPhpExtension
   init
   desc "Pecl_http PHP extension"
   homepage "https://github.com/m6w6/ext-http"
-  url "https://github.com/m6w6/ext-http/archive/efddbd955ca4706f06c461692a561d7d9431adb9.tar.gz"
-  sha256 "6f6add7287c4397e92cb8432ef6ed1f680ac39aa1e5caf0cd703987b67056ad6"
-  version "4.2.1"
+  url "https://pecl.php.net/get/pecl_http-4.2.2.tgz"
+  sha256 "c338afd29259f0093f07f4e99b80705a2d5bb046c7ab32e5938eef29bbb63a6e"
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
 
@@ -40,6 +39,7 @@ class PeclHttpAT82 < AbstractPhpExtension
       -I#{Formula["shivammathur/extensions/raphf@8.2"].opt_include}/php
     ]
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
+    Dir.chdir "pecl_http-#{version}"
     inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.2"
     patch_spl_symbols
     safe_phpize
