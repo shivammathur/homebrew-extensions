@@ -8,11 +8,10 @@ class PeclHttpAT71 < AbstractPhpExtension
   init
   desc "Pecl_http PHP extension"
   homepage "https://github.com/m6w6/ext-http"
-  url "https://pecl.php.net/get/pecl_http-3.2.4.tgz"
-  sha256 "37354ff7680b9b9839da8b908fff88227af7f6746c2611c873493af41d54f033"
+  url "https://pecl.php.net/get/pecl_http-3.2.5.tgz"
+  sha256 "38f9345cee2e60b4919af73a6a291e1d3b90543c61edc9def6bd783f3b100728"
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
