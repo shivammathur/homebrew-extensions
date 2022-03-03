@@ -10,6 +10,7 @@ class MongodbAT72 < AbstractPhpExtension
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://pecl.php.net/get/mongodb-1.12.1.tgz"
   sha256 "925d7e6005c6e84bb40a25019c12b0ee4bda625c6449769dce7d5b026983f433"
+  revision 1
   head "https://github.com/mongodb/mongo-php-driver.git"
   license "Apache-2.0"
 
