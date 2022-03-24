@@ -15,10 +15,10 @@ class MongodbAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_big_sur: "3db1af9d46ca0de1029f4e96a22d96d667d44df0dbcaa61b78822b0e3d859a63"
-    sha256 cellar: :any,                 big_sur:       "0f7b4a3ac28cae24f762a33329ecc4eb051ce226120be0dba2fd60f280851d2e"
-    sha256 cellar: :any,                 catalina:      "ccfaab2dd4defc38c191af013aacb9149eaddc39fb4bfcbdf9c5f97fa93df490"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d65b11272392cf3ae29d3895e2b76c162fc9f138bed8c2fa2d96118e15ef1210"
+    sha256 cellar: :any,                 arm64_big_sur: "8f7ec93a6f1566dc5821a5b88f7cee8566dfd0496d9e58245846dd81d41fc8b2"
+    sha256 cellar: :any,                 big_sur:       "b301cff65c33669393b0e727132bbadd431837f395f3aafaf9b341d24cf8fec6"
+    sha256 cellar: :any,                 catalina:      "2194d801b681f1533c6f7aba0fce3b9051ae1073bd377cb18c37a46160b3f2b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7547169c23fd021e27f0264e313e6d25624b76cba330ab88ab9fa2edf1b298dd"
   end
 
   depends_on "icu4c"
