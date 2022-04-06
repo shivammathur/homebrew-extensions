@@ -6,7 +6,7 @@ unbottle() {
 fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   [[ "$GITHUB_MESSAGE" =~ .*--init.* ]] && return
-  if [[ "$EXTENSION" =~ imap ]]; then
+  if [[ "$EXTENSION" =~ imap ]] || [[ "$VERSION" =~ (mcrypt)@(5.6|7.[0-1]) ]]; then
     php_version=$(echo "$VERSION" | cut -d'@' -f2)
     brew tap shivammathur/php
     php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
@@ -19,7 +19,7 @@ fetch() {
        [[ "$VERSION" =~ (pecl_http|msgpack)@(7.[0-4]|8.0) ]] ||
        [[ "$VERSION" =~ (apcu|grpc|igbinary|mailparse|protobuf|raphf|rdkafka|redis|ssh2|vips|xlswriter)@(7.[0-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-2]) ]] ||
-       [[ "$VERSION" =~ (mongodb|swoole|xdebug)@(7.[2-4]|8.[0-2]) ]] ||
+       [[ "$VERSION" =~ (mcrypt|mongodb|swoole|xdebug)@(7.[2-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (psr)@(7.[3-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (memcache)@8.[0-2] ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
