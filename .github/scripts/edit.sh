@@ -1,5 +1,6 @@
 unbottle() {
   sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
+  sed -Ei '/  revision.*/d' ./Formula/"$VERSION".rb || true
 }
 
 fetch() {
