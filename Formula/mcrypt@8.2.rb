@@ -15,6 +15,13 @@ class McryptAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "f4502db7c3116a68412328c783bc1f92158f6eec73f60193de47ae738f60045b"
+    sha256 cellar: :any,                 arm64_big_sur:  "e57c78fc2e0cd2b24cdc702453c5445b7bd8c84026e960efed04a91f71e0a66b"
+    sha256 cellar: :any,                 monterey:       "847a4bed9fe661cab8e33b3fcf5f724cbe52385cbc5ec347f9f822aa1e01b500"
+    sha256 cellar: :any,                 big_sur:        "e76e4d40a33b3a57d4ed599ae9334393acd3349a16d9d63b31c948b9214f6c46"
+    sha256 cellar: :any,                 catalina:       "558e549d90f2d0a1758635adbd7a218c61d7d71c747cf45b27ef7b78d1c3e134"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2daca517c534a00f1eb05ca75a48789a8f27c0e0f9b88bddc9dcef192e476c8b"
   end
 
   depends_on "automake" => :build
