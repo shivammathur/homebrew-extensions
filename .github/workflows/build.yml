@@ -67,9 +67,7 @@ jobs:
              IFS=, read -a extensions <<< $(echo "$GITHUB_MESSAGE" | grep -Po 'build-only-.*' | cut -d '-' -f 3-)
            fi
            for extension in ${extensions[@]}; do
-             for formula in ./Formula/$extension@*.rb; do
-               json_array+=("{\"php\": \"$(echo $formula | grep -Eo '[0-9]+\.[0-9]+')\", \"extension\": \"$extension\"}")
-             done
+             json_array+=("{\"extension\": \"$extension\"}")
            done
            echo "::set-output name=matrix::{\"include\":[$(echo ${json_array[@]} | sed -e 's|} {|}, {|g')]}"
 
@@ -86,39 +84,14 @@ jobs:
       - name: Patch formula
         id: patch
         env:
-          GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
           EXTENSION: ${{ matrix.extension }}
-          VERSION: ${{ matrix.extension }}@${{ matrix.php }}
-        run: bash ./.github/scripts/edit.sh
-
-      - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v3
-        with:
-          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-          commit-message: Update ${{ matrix.extension }}@${{ matrix.php }}
-          committer: BrewTestBot <1589480+BrewTestBot@users.noreply.github.com>
-          author: BrewTestBot <1589480+BrewTestBot@users.noreply.github.com>
-          signoff: false
-          base: master
-          branch: update-${{ matrix.extension }}@${{ matrix.php }}
-          branch-suffix: short-commit-hash
-          delete-branch: true
-          title: 'Update ${{ matrix.extension }}@${{ matrix.php }}'
-          body: |
-            Build ${{ matrix.extension }}@${{ matrix.php }}
-          labels: ${{ matrix.extension }}@${{ matrix.php }},automated-pr,${{steps.patch.outputs.labels}}
-          assignees: ${{ github.repository_owner }}
-          team-reviewers: |
-            owners
-            maintainers
-          draft: false
-
-      - name: Check outputs
-        run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+          GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
+          GITHUB_DEFAULT_BRANCH: master
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: bash ./.github/scripts/pr.sh
 
   set-environment:
     if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
