@@ -8,7 +8,7 @@ class McryptAT71 < AbstractPhpExtension
   init
   desc "Mcrypt PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/77410e5d0f8171b6cc5d4beddb8012e38b1fed49.tar.gz?init=true"
+  url "https://github.com/shivammathur/php-src-backports/archive/77410e5d0f8171b6cc5d4beddb8012e38b1fed49.tar.gz"
   version "7.1.33"
   sha256 "9c38535a49a6b837d1710d6a993bca1a8806f5ebbc38a3dfa055c09509bc6882"
   license "PHP-3.01"
@@ -18,6 +18,7 @@ class McryptAT71 < AbstractPhpExtension
   end
 
   depends_on "automake" => :build
+  depends_on "libtool"
 
   resource "libmcrypt" do
     url "https://downloads.sourceforge.net/project/mcrypt/Libmcrypt/2.5.8/libmcrypt-2.5.8.tar.gz"
@@ -33,6 +34,9 @@ class McryptAT71 < AbstractPhpExtension
       %w[config.guess config.sub].each do |fn|
         cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}", fn
       end
+
+      # Avoid flat_namespace usage on macOS
+      inreplace "./configure", "${wl}-flat_namespace ${wl}-undefined ${wl}suppress", "" if OS.mac?
 
       system "./configure", "--prefix=#{prefix}",
                             "--mandir=#{man}"
