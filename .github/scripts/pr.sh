@@ -16,9 +16,9 @@ for formula in ./Formula/"$EXTENSION"@*.rb; do
   if ! git diff --exit-code; then
     git add "$formula"
     git commit -m "Update $VERSION"
+    git push origin "$BRANCH"
     gh label list | grep "$VERSION" || gh label create "$VERSION"
-    gh pr create --head "$BRANCH" \
-                 --title "Update $VERSION" \
+    gh pr create --title "Update $VERSION" \
                  --body "Build $VERSION" \
                  --base "$GITHUB_DEFAULT_BRANCH" \
                  --assignee "$GITHUB_REPOSITORY_OWNER" \
