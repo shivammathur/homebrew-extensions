@@ -10,6 +10,7 @@ for formula in ./Formula/"$EXTENSION"@*.rb; do
   if ! git diff --exit-code; then
     git add "$formula"
     git commit -m "Update $VERSION"
+    gh label list | grep "$VERSION" || gh label create "$VERSION"
     gh pr create --head "$BRANCH" \
                  --title "Update $VERSION" \
                  --body "Build $VERSION" \
