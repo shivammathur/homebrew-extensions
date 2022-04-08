@@ -45,6 +45,7 @@
 |`imagick`|`PHP 5.6` to `PHP 8.2`|
 |`imap`|`PHP 5.6` to `PHP 8.2`|
 |`mailparse`|`PHP 5.6` to `PHP 8.2`|
+|`mcrypt`|`PHP 5.6` to `PHP 8.2`|
 |`memcache`|`PHP 5.6` to `PHP 8.2`|
 |`memcached`|`PHP 5.6` to `PHP 8.2`|
 |`mongodb`|`PHP 5.6` to `PHP 8.2`|
@@ -214,6 +215,7 @@ This project is generously supported by many other users and organisations via [
 - [php-memcached-dev/php-memcached](https://github.com/php-memcached-dev/php-memcached "Memcached")
 - [php/pecl-file_formats-yaml](https://github.com/php/pecl-file_formats-yaml "PHP YAML")
 - [php/pecl-mail-mailparse](https://github.com/php/pecl-mail-mailparse "PHP Mailparse")
+- [php/pecl-encryption-mcrypt](https://github.com/php/pecl-encryption-mcrypt "PHP Mcrypt")
 - [php/pecl-networking-ssh2](https://github.com/php/pecl-networking-ssh2 "PHP SSH2")
 - [php/php-src](https://github.com/php/php-src "PHP Source")
 - [phpredis/phpredis](https://github.com/phpredis/phpredis "Redis")
@@ -248,6 +250,7 @@ This project is generously supported by many other users and organisations via [
 - [libevent](https://formulae.brew.sh/formula/libevent "libevent")
 - [libidn2](https://formulae.brew.sh/formula/libidn2 "libidn2")
 - [liblzf](https://formulae.brew.sh/formula/liblzf "liblzf")
+- [libmcrypt](https://sourceforge.net/projects/mcrypt/files/Libmcrypt/ "libmcrypt")
 - [libmemcached](https://formulae.brew.sh/formula/libmemcached "libmemcached")
 - [librdkafka](https://formulae.brew.sh/formula/librdkafka "librdkafka")
 - [libssh2](https://formulae.brew.sh/formula/libssh2 "libssh2")
