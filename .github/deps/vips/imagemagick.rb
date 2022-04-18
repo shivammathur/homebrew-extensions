@@ -1,10 +1,9 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-29.tar.xz"
-  sha256 "a89df63da5ec823ae77049d747bf6b370bc867a06659b410f42652e5773fc62c"
+  url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-30.tar.xz"
+  sha256 "0b08200440a5967b35bdc2d26515613b01c747d1340796901a93d83bad15fafb"
   license "ImageMagick"
-  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "3f7869ce2213888f8c7bdfcaeb9f1d0c7c106eb3cec98b748c56b95ca072152b"
-    sha256 arm64_big_sur:  "9cb13a173479d36b466e581bb21c442503d8e630229bde4517a85f3efc11c79d"
-    sha256 monterey:       "175e70f75770b4857f82bd0cf948b7f6a6f34bb7ff196ea9ff5ae9e41b22d361"
-    sha256 big_sur:        "701f4b9d350e7493e84134842d990f8b48eacc95fe18d059c39088686cacdc17"
-    sha256 catalina:       "441130be83e543fe374e6545f122c91846fc2b853fef6817e246841e082d1d01"
-    sha256 x86_64_linux:   "87ad5729d54b8fe55f725bb01d712bd15a4f5ad086c1a6108b9fff1b241146a9"
+    sha256 arm64_monterey: "74a75181605b9ba4911eae47d116a8ce30cf63af24cc717a937d92408725e73e"
+    sha256 arm64_big_sur:  "3a9ca60ee11bd9af137fa5d83615247e39780242353f193a941fe5e839145219"
+    sha256 monterey:       "c63843c5aedc2698402be0976ee7dc60198dde8563cc102bf11fa69b27889b9f"
+    sha256 big_sur:        "cc325733575cc7a0bc624fc932edcf8ba4c125abef2b2082c3c6cf343cf60d70"
+    sha256 catalina:       "fc99f5a124d26d621c93e35755c3f5fdd091ec376f1b050a1d6f18603e1d2690"
+    sha256 x86_64_linux:   "434ea6388bde991e118a18f6d8032e3a6d0f7a8180a5e6551cb7b4c3610642f5"
   end
 
   depends_on "pkg-config" => :build
@@ -99,7 +98,7 @@ class Imagemagick < Formula
 
     # Check support for a few specific image formats, mostly to ensure LibRaw linked correctly.
     formats = shell_output("#{bin}/magick -list format")
-    ["AVIF* HEIC      rw+", "ARW  DNG       r--", "DNG  DNG       r--"].each do |format|
+    ["AVIF  HEIC      rw+", "ARW  DNG       r--", "DNG  DNG       r--"].each do |format|
       assert_match format, formats
     end
     assert_match "Helvetica", shell_output("#{bin}/magick -list font")
