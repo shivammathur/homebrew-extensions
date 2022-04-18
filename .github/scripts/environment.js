@@ -35,7 +35,7 @@ module.exports = async ({github, context, core}, formula_detect) => {
         core.setOutput('timeout-minutes', '180')
     }
     core.setOutput('container', 'homebrew/ubuntu18.04:latest')
-    const test_bot_formulae_args = ["--local", "--only-formulae", "--junit", "--only-json-tab", "--skip-dependents"]
+    const test_bot_formulae_args = ["--only-formulae", "--junit", "--only-json-tab", "--skip-dependents"]
     test_bot_formulae_args.push('--root-url="https://ghcr.io/v2/shivammathur/extensions"')
     if(formula_detect.testing_formulae) {
         test_bot_formulae_args.push(`--testing-formulae=${formula_detect.testing_formulae}`)
@@ -46,7 +46,7 @@ module.exports = async ({github, context, core}, formula_detect) => {
     if(formula_detect.deleted_formulae) {
         test_bot_formulae_args.push(`--deleted-formulae=${formula_detect.deleted_formulae}`)
     }
-    const test_bot_dependents_args = ["--local", "--only-formulae-dependents", "--junit"]
+    const test_bot_dependents_args = ["--only-formulae-dependents", "--junit"]
     test_bot_dependents_args.push(`--testing-formulae=${formula_detect.testing_formulae}`)
     if (label_names.includes('CI-test-bot-fail-fast')) {
         console.log('CI-test-bot-fail-fast label found. Passing --fail-fast to brew test-bot.')
