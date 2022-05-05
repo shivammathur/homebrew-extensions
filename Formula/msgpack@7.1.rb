@@ -17,6 +17,7 @@ class MsgpackAT71 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "07256c9ab36883755c7fcf43f64605b7bc1bd92cd42cee18a113413f9c1da247"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7eca115963fb7e129d19859adfddb75744cc5a1dcd7a3e56704168f41d304dc"
+    sha256 cellar: :any_skip_relocation, monterey:       "bf211c012f154e94b504d898b84c23071ac6c396bb530c31bcc832731eab33ea"
     sha256 cellar: :any_skip_relocation, big_sur:        "50ac13aa700bd2c475af28effcf750053266b6761f61628c589bc0d123bf7ef0"
     sha256 cellar: :any_skip_relocation, catalina:       "6e138af9f229bd438ceca5da382c8efedb446e5b37ee8b3803a7e5f00b33ecf1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "485082e8b92153f1de4e6ed556ac48a3d73c3da9d237140ea0fe02bfe53f6b59"
