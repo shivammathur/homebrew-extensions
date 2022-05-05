@@ -15,10 +15,13 @@ class IgbinaryAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "596da3185a76b018e5ac190c64df71f5f2bfef6513b3848b8cd42097fc3d1a13"
-    sha256 cellar: :any_skip_relocation, big_sur:       "d0795fbfc5f44d8ed93bb146a644c0c42ca5c67dcbcf90aab1a9e2d524c92317"
-    sha256 cellar: :any_skip_relocation, catalina:      "387937050bad2e0446ce2661bab6178610f9df2d10fbcb8f020290902b379d1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46b40afff16e373a71b0715fbcdd2c310c8a0886ae119d40f7425aa3ec25c1b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ad5ca37e62ccc6ec2ebd2957edc998d4bb851574c82c3b7feed4be57d2583de"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "11873234522d259a71140dba6fb1132c9cca82719baa414e995ffdfb996c8faf"
+    sha256 cellar: :any_skip_relocation, monterey:       "1410b9a05d521df1781462e6dcd00bce4b9d8c793ab81efd8a3cd406e3c629af"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a9a303dc169cb15fc18a6d350d1a8e53ae35c6a15ce2d68209a69a00d7c93914"
+    sha256 cellar: :any_skip_relocation, catalina:       "8aa8e549c1f7f33c2ca1a5a172595e368500f273f9c9a415cf7eb99c60ae1340"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05546ff969a7bf853a9a66dcb49254d0115209873ead8aa561fc45b9ed15092f"
   end
 
   def install
