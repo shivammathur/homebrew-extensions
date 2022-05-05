@@ -15,11 +15,12 @@ class RedisAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256                               arm64_big_sur: "2ee1119eb42fc841c3fc5b8aac4a1b8fa5b33a872dc1ab478affdc191813b117"
-    sha256 cellar: :any,                 monterey:      "ed073690308558ea38e14beb39c10527a62d8497fe2c4ca90f7fabc1d4d558dc"
-    sha256                               big_sur:       "313ba4b0da7e2e3296f2cc9ef43718099d3234d0295f1aa47ef9aa12a00477bd"
-    sha256                               catalina:      "ef273037209ec1b12b0a066a43148b9e4202a69e3801e224a5cda298fe052aea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "688baafc60d31dd85c38efc7ec84ece03db5ab42337363cb80202bcf3ad7c556"
+    sha256 cellar: :any,                 arm64_monterey: "430f331a8f3d6e28f5aa8f0d8db3b9e3745b5348857d84025511d153c6edb7b3"
+    sha256                               arm64_big_sur:  "2ee1119eb42fc841c3fc5b8aac4a1b8fa5b33a872dc1ab478affdc191813b117"
+    sha256 cellar: :any,                 monterey:       "ed073690308558ea38e14beb39c10527a62d8497fe2c4ca90f7fabc1d4d558dc"
+    sha256                               big_sur:        "313ba4b0da7e2e3296f2cc9ef43718099d3234d0295f1aa47ef9aa12a00477bd"
+    sha256                               catalina:       "ef273037209ec1b12b0a066a43148b9e4202a69e3801e224a5cda298fe052aea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "688baafc60d31dd85c38efc7ec84ece03db5ab42337363cb80202bcf3ad7c556"
   end
 
   depends_on "liblzf"
