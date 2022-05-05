@@ -15,10 +15,11 @@ class MsgpackAT72 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6092c688b25adf2b00dfbd3289dd4f8017072299ac1cff11b082739e2ffd4285"
-    sha256 cellar: :any_skip_relocation, big_sur:       "54c05a506033c87401b49264d93746d60af87538e8db7ac23587d96b56c4c76f"
-    sha256 cellar: :any_skip_relocation, catalina:      "af05e5a297f01e74208a7dd3dde8624c07ca94a857fc9e47b0af39fd45589392"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3a2c2b09ae3ad38b44eeed6d76aa7e88f65de371a328d27bb9f3be453a22857"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8b70175244b8520cac9b682b70c09d3170922cb701bd42a98814ede19af7e4a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6092c688b25adf2b00dfbd3289dd4f8017072299ac1cff11b082739e2ffd4285"
+    sha256 cellar: :any_skip_relocation, big_sur:        "54c05a506033c87401b49264d93746d60af87538e8db7ac23587d96b56c4c76f"
+    sha256 cellar: :any_skip_relocation, catalina:       "af05e5a297f01e74208a7dd3dde8624c07ca94a857fc9e47b0af39fd45589392"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3a2c2b09ae3ad38b44eeed6d76aa7e88f65de371a328d27bb9f3be453a22857"
   end
 
   def install
