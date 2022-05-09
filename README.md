@@ -119,7 +119,7 @@ brew tap shivammathur/extensions
 - For example, to install `Xdebug` on `PHP 8.0`:
 
 ```zsh
-brew install xdebug@8.0
+brew install shivammathur/extensions/xdebug@8.0
 ```
 
 ### Upgrade extensions
@@ -127,7 +127,7 @@ brew install xdebug@8.0
 - For example, to upgrade `Xdebug` on `PHP 8.0`.
 
 ```zsh
-brew upgrade xdebug@8.0
+brew upgrade shivammathur/extensions/xdebug@8.0
 ```
 
 ### Restart your webserver
