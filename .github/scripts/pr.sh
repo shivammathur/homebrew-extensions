@@ -1,9 +1,3 @@
-# TODO: Remove this once the GitHub Actions image is updated
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-sudo apt-get update
-sudo apt-get install gh -y
-
 git config --global user.name "BrewTestBot"
 git config --global user.email "1589480+BrewTestBot@users.noreply.github.com"
 for formula in ./Formula/"$EXTENSION"@*.rb; do
