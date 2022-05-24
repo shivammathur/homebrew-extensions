@@ -38,6 +38,7 @@
 |-- |---
 |`amqp`|`PHP 5.6` to `PHP 8.2`
 |`apcu`|`PHP 5.6` to `PHP 8.2`|
+|`couchbase`|`PHP 5.6` to `PHP 8.2`|
 |`expect`|`PHP 5.6` to `PHP 8.2`|
 |`gnupg`|`PHP 5.6` to `PHP 8.2`|
 |`grpc`|`PHP 5.6` to `PHP 8.2`|
@@ -197,6 +198,7 @@ This project is generously supported by many other users and organisations via [
 ### Extensions
 
 - [arnaud-lb/php-rdkafka](https://github.com/arnaud-lb/php-rdkafka "rdkafka")
+- [couchbase/couchbase-php-client](https://github.com/couchbase/couchbase-php-client "couchbase")
 - [grpc/grpc](https://github.com/grpc/grpc "gRPC")
 - [igbinary/igbinary](https://github.com/igbinary/igbinary "igbinary")
 - [Imagick/imagick](https://github.com/Imagick/imagick "Imagick")
@@ -250,6 +252,7 @@ This project is generously supported by many other users and organisations via [
 - [libevent](https://formulae.brew.sh/formula/libevent "libevent")
 - [libidn2](https://formulae.brew.sh/formula/libidn2 "libidn2")
 - [liblzf](https://formulae.brew.sh/formula/liblzf "liblzf")
+- [libcouchbase](https://formulae.brew.sh/formula/libcouchbase "libcouchbase")
 - [libmcrypt](https://sourceforge.net/projects/mcrypt/files/Libmcrypt/ "libmcrypt")
 - [libmemcached](https://formulae.brew.sh/formula/libmemcached "libmemcached")
 - [librdkafka](https://formulae.brew.sh/formula/librdkafka "librdkafka")
