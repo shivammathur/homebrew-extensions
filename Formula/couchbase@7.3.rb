@@ -8,7 +8,7 @@ class CouchbaseAT73 < AbstractPhpExtension
   init
   desc "Couchbase PHP extension"
   homepage "https://github.com/couchbase/php-couchbase"
-  url "https://pecl.php.net/get/couchbase-3.2.2.tgz?init=true"
+  url "https://pecl.php.net/get/couchbase-3.2.2.tgz"
   sha256 "d8bd785ccce818e0beb9694cd02ab01ed26e0cf9b19217d2bc2e92b38b21c9c1"
   head "https://github.com/couchbase/php-couchbase.git"
   license "Apache-2.0"
@@ -18,11 +18,15 @@ class CouchbaseAT73 < AbstractPhpExtension
   end
 
   depends_on "libcouchbase"
+  depends_on "zlib"
 
   def install
     Dir.chdir "couchbase-#{version}"
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-couchbase"
+    system "./configure", \
+           "--prefix=#{prefix}", \
+           phpconfig, \
+           "--with-couchbase=#{Formula["libcouchbase"].opt_prefix}"
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file
