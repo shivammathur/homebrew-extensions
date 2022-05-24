@@ -15,6 +15,13 @@ class CouchbaseAT72 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "f5719cb4755c466f3ac11b289769160ae57f3afd400eddd83ee1740925dd33a8"
+    sha256 cellar: :any,                 arm64_big_sur:  "7c37fc5facb2a1cfeea2acf05f2fbc2c8f58907346c4af76d96af6b283c5122d"
+    sha256 cellar: :any,                 monterey:       "3ba2e0eec774983371d9e1d5d50e7b4928b41e786f77196f12ef3263e3bc99a8"
+    sha256 cellar: :any,                 big_sur:        "099102be6c86aefc55a97e238fb6b3bc442e1b4c7e312cbad239482ced272eef"
+    sha256 cellar: :any,                 catalina:       "8d7ac9f94fc9d27770ceff5061ef59f770e6f8ec4b4d1719311a52283db5ad10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ac84a11c8f974b4a257bfddb71d9b4818505bd1cf6b83ab3d567a54ebeb0dbf"
   end
 
   depends_on "libcouchbase"
