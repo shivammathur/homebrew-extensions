@@ -8,7 +8,7 @@ class CouchbaseAT80 < AbstractPhpExtension
   init
   desc "Couchbase PHP extension"
   homepage "https://github.com/couchbase/couchbase-php-client"
-  url "https://pecl.php.net/get/couchbase-4.0.0.tgz?init=true"
+  url "https://pecl.php.net/get/couchbase-4.0.0.tgz"
   sha256 "caa67e972a8e0f50b920088434eea14671902f253fb5bfb854b7e8d3898bcd26"
   head "https://github.com/couchbase/couchbase-php-client.git"
   license "Apache-2.0"
@@ -19,21 +19,24 @@ class CouchbaseAT80 < AbstractPhpExtension
 
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
+  depends_on "zlib"
 
-  def post_install
-    extension_dir = Utils.safe_popen_read("#{Formula[php_formula].opt_bin}/php-config", "--extension-dir").chomp
-    php_basename = File.basename(extension_dir)
-    php_ext_dir = opt_prefix/"lib/php"/php_basename
-    php_ext_dir.install "modules/libcouchbase_php_core.dylib"
+  on_linux do
+    depends_on "gcc" # C++17
   end
+
+  fails_with gcc: "7"
 
   def install
     ENV["OPENSSL_ROOT_DIR"] = "#{Formula["openssl@1.1"]}.opt_prefix"
     Dir.chdir "couchbase-#{version}"
     safe_phpize
+    inreplace "configure",
+      "EXTENSION_DIR=`$PHP_CONFIG --extension-dir 2>/dev/null`",
+      "EXTENSION_DIR=#{prefix}"
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-couchbase"
     system "make"
-    prefix.install "modules/#{extension}.so"
+    system "make", "phpincludedir=#{include}/php", "install"
     write_config_file
   end
 end
