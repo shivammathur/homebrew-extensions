@@ -8,8 +8,8 @@ class McryptAT72 < AbstractPhpExtension
   init
   desc "Mcrypt PHP extension"
   homepage "https://github.com/php/pecl-encryption-mcrypt"
-  url "https://pecl.php.net/get/mcrypt-1.0.4.tgz"
-  sha256 "98153e78958d7a48dcd0dcfe1fc3c16ec987121a0cb2d7c273d280ee7e4ea00d"
+  url "https://pecl.php.net/get/mcrypt-1.0.5.tgz"
+  sha256 "c9f51e211640a15d2a983f5d80e26660656351651d6f682d657bdf1cfa07d8a3"
   head "https://github.com/php/pecl-encryption-mcrypt.git"
   license "PHP-3.01"
 
