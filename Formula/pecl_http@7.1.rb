@@ -15,10 +15,10 @@ class PeclHttpAT71 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_big_sur: "2b227bcc4012b5b652052b0d64c15363a42f725887f4afdb0f25fb996688de19"
-    sha256 cellar: :any,                 big_sur:       "34563c99bd20b494d3eda4130ed9e6e51e669b283bf988fda2ffde1342838abb"
-    sha256 cellar: :any,                 catalina:      "52c6289f6064cec04c660a4312910b098e7912d69fd47fdeaedbdf951c2e0603"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aceab86e97600a3b09bda79085e7d797086605ca025bf6d4b642ce57806c490"
+    sha256 cellar: :any,                 arm64_big_sur: "6c66655e951a3bb8863818e902f3b82c190ab2b376364c0e68c1f5e41a136c30"
+    sha256 cellar: :any,                 big_sur:       "d0e221d0f08c401d0e30238a38f581d87ef9ce0878a11def464f6d5a5eb3618b"
+    sha256 cellar: :any,                 catalina:      "3ab41495cbdbe71f7386447c4696bc09ec74e2f1c4578936045ba3b86c8430a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80efa768b178cb8f807a3d629f678b82a4b4b7e89ce2996cce896a594e14a189"
   end
 
   depends_on "brotli"
