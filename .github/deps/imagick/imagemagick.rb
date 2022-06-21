@@ -1,24 +1,23 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-37.tar.xz"
-  sha256 "9a0cb5218ea687fad28eedf143dff9f0724eb62c73264231d690fe844ecce5ec"
+  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.0-39.tar.xz"
+  sha256 "a82c632449a790b6ad78d281b94bdb17a6054ed8afd4f2f21e8304b1f2d2416f"
   license "ImageMagick"
-  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
-    url "https://download.imagemagick.org/ImageMagick/download/"
+    url "https://imagemagick.org/archive/"
     regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_monterey: "a8b5180421d2772ce0b67573a1a0abc57970112438aa7789c68407f53c9f6048"
-    sha256 arm64_big_sur:  "c1066074db4c4c02937d79f73a26b4a28f2599ff94790b794bda026d6fac473f"
-    sha256 monterey:       "a4f30fa919bbedffcdc8a1d8625b142d43f44a9890fb805dc1de7383eb12db1b"
-    sha256 big_sur:        "fd94e36115a4a28dac2717f9c38ac76210baeb564173eed6aec6237b815b86da"
-    sha256 catalina:       "cbb8eb68cfdf9bb84dc9d24623585200bf8191a15e81b27a0cff1b078cffc9a6"
-    sha256 x86_64_linux:   "171668b81578c4e172fbce56464cb12d1408a569dc11036c01a7348a2090f226"
+    sha256 arm64_monterey: "b9ff070399db472c6ef2e58a5f1f90ebafd25dc3a47239bcbcfaad345bdb7835"
+    sha256 arm64_big_sur:  "b78886063bdfed89959b0f68c9c329f113f7bbe46519bfa0521aa7cc71ff7964"
+    sha256 monterey:       "4bb8720c1c7d10bfcd483039f570ffdb0cf9989f331e59aa36da84f39a198c6f"
+    sha256 big_sur:        "d1fb60064d364b63005919ccf480cbb6eabf381a96feaa85d95259db8f65e811"
+    sha256 catalina:       "bc86ef66c5b288202dc67b0ef18c5007f7e9d8ce225e375d042d93d1767caba3"
+    sha256 x86_64_linux:   "7132338515ed854717e9ef8f02a5bc65775016c99c34911e77c868267b54119a"
   end
 
   depends_on "pkg-config" => :build
@@ -46,10 +45,13 @@ class Imagemagick < Formula
   end
 
   on_linux do
+    depends_on "gcc"
     depends_on "libx11"
   end
 
   skip_clean :la
+
+  fails_with gcc: "5" # ghostscript is built with GCC
 
   def install
     # Avoid references to shim
