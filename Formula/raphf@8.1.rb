@@ -17,6 +17,7 @@ class RaphfAT81 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 15
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "6b5a99689cc175f4265ebbd967e65270e58a1df5a358c71352511bcdc1caf5a4"
+    sha256 cellar: :any_skip_relocation, monterey:      "dfd1ba4e4d017bee6c844068982b416032ddaa96259607586284e576772ce40c"
     sha256 cellar: :any_skip_relocation, big_sur:       "a12bcb1d31595e838f79aecd53286fadfed2081ca874d7f27cad95b6dab3906a"
     sha256 cellar: :any_skip_relocation, catalina:      "02384709d799224d44312b6cb69bc6ca4bf4cbcaa73f95c3f62bc57d2d604292"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "12c008163f0240b142307d38eccd165cab1f0489ad6e8e49eaf0f22d03e9cfe9"
