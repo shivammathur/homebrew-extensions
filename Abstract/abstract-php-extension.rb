@@ -51,7 +51,7 @@ class AbstractPhpExtension < Formula
     opt_prefix / "#{extension}.so"
   end
 
-  def config_file
+  def config_file_content
     <<~EOS
       [#{extension}]
       #{extension_type}="#{module_path}"
@@ -79,16 +79,11 @@ class AbstractPhpExtension < Formula
   end
 
   def write_config_file
-    mv config_filepath, priority_config_filepath if config_filepath.exist?
-
-    if priority_config_filepath.file?
-      inreplace priority_config_filepath do |s|
-        s.gsub!(/^(;)?(\s*)(zend_)?extension=.+$/, "\\1\\2#{extension_type}=\"#{module_path}\"")
-      end
-    elsif config_file
-      config_scandir_path.mkpath
-      priority_config_filepath.write(config_file)
-    end
+    config_file = config_filepath
+    priority_config_file = priority_config_filepath
+    mv config_file, priority_config_file if config_file.exist?
+    config_scandir_path.mkpath
+    priority_config_file.write(config_file_content)
   end
 
   def add_include_files
