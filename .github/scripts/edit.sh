@@ -18,7 +18,7 @@ fetch() {
        [[ "$VERSION" =~ (couchbase)@(7.4|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||
-       [[ "$VERSION" =~ (apcu|grpc|igbinary|mailparse|pecl_http|protobuf|raphf|rdkafka|redis|ssh2|vips|xlswriter)@(7.[0-4]|8.[0-2]) ]] ||
+       [[ "$VERSION" =~ (apcu|grpc|igbinary|mailparse|memcached|pecl_http|protobuf|raphf|rdkafka|redis|ssh2|vips|xlswriter)@(7.[0-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (mcrypt|mongodb|swoole|xdebug)@(7.[2-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (psr)@(7.[3-4]|8.[0-2]) ]] ||
