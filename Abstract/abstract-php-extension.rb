@@ -6,6 +6,11 @@ class AbstractPhpExtension < Formula
   desc "Abstract class for PHP Extension Formula"
   homepage "https://github.com/shivammathur/homebrew-extensions"
 
+  def initialize(*)
+    super
+    @priority = self.class.priority || "20"
+  end
+
   def caveats
     <<~EOS
       To finish installing #{extension} for PHP #{php_version}:
@@ -21,6 +26,8 @@ class AbstractPhpExtension < Formula
   end
 
   private
+
+  attr_reader :priority
 
   delegate [:php_version, :extension] => :"self.class"
 
@@ -61,6 +68,10 @@ class AbstractPhpExtension < Formula
     config_scandir_path / "#{extension}.ini"
   end
 
+  def priority_config_filepath
+    config_scandir_path / "#{priority}-#{extension}.ini"
+  end
+
   def safe_phpize
     ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
     ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
@@ -68,13 +79,15 @@ class AbstractPhpExtension < Formula
   end
 
   def write_config_file
-    if config_filepath.file?
-      inreplace config_filepath do |s|
+    mv config_filepath, priority_config_filepath if config_filepath.exist?
+
+    if priority_config_filepath.file?
+      inreplace priority_config_filepath do |s|
         s.gsub!(/^(;)?(\s*)(zend_)?extension=.+$/, "\\1\\2#{extension_type}=\"#{module_path}\"")
       end
     elsif config_file
       config_scandir_path.mkpath
-      config_filepath.write(config_file)
+      priority_config_filepath.write(config_file)
     end
   end
 
@@ -98,6 +111,8 @@ class AbstractPhpExtension < Formula
 
   class << self
     attr_reader :php_version, :extension
+
+    attr_rw :priority
 
     def init
       class_name = name.split("::").last
