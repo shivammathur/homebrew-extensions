@@ -15,12 +15,13 @@ class MsgpackAT72 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8b70175244b8520cac9b682b70c09d3170922cb701bd42a98814ede19af7e4a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6092c688b25adf2b00dfbd3289dd4f8017072299ac1cff11b082739e2ffd4285"
-    sha256 cellar: :any_skip_relocation, monterey:       "c592ad510613b36ab08aeee551733c97ef35a26d4fca6bc59eb628bfe6710f73"
-    sha256 cellar: :any_skip_relocation, big_sur:        "54c05a506033c87401b49264d93746d60af87538e8db7ac23587d96b56c4c76f"
-    sha256 cellar: :any_skip_relocation, catalina:       "af05e5a297f01e74208a7dd3dde8624c07ca94a857fc9e47b0af39fd45589392"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3a2c2b09ae3ad38b44eeed6d76aa7e88f65de371a328d27bb9f3be453a22857"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "93386440da57dfe9ebb378b04237f0d18007646719edba94f71ee283d9279436"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea65a13a9e4c45e778f4fde007f0ec03603cf8b28519db480cc3703af494eb13"
+    sha256 cellar: :any_skip_relocation, monterey:       "f859e11a84e243763e3fdeea04fdfedcb64a92337ec7da2b5afc0bfd291298ba"
+    sha256 cellar: :any_skip_relocation, big_sur:        "79749a0ab705afe28bcd1a4bf6845b09b209251769fbf5e4d60214c75c59bda5"
+    sha256 cellar: :any_skip_relocation, catalina:       "271f6efee3644314828f2dcec86b58eb65527efb9ffd1109805c538406b920fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa6b422006098648dda416c314bc4d94cd20e30262c3485fddadb686cbb4b4ad"
   end
 
   def install
