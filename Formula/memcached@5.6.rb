@@ -39,6 +39,8 @@ class MemcachedAT56 < AbstractPhpExtension
     end
   end
 
+  priority "30"
+
   def install
     args = %W[
       --enable-memcached
