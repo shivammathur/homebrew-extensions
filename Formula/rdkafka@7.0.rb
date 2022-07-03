@@ -15,12 +15,12 @@ class RdkafkaAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_monterey: "364b66eff42c79842c3a385f68404e7d4c29ea399604f07d555149486b4bea0b"
-    sha256 cellar: :any,                 arm64_big_sur:  "0393f0795c8d3acf5232c8e3ba4d371e647285122876e8d9779b8d7328b119eb"
-    sha256 cellar: :any,                 monterey:       "3c01b62697f118be2b6640fce18b942d2b97294e530484f3234c73303c7fbc68"
-    sha256 cellar: :any,                 big_sur:        "94eb09ac7b376bd0e036bae52af59a29eb4c74c122b980581e19ffa8dc1aeee2"
-    sha256 cellar: :any,                 catalina:       "2c943bd0c9df4cce2309b24951a7382332c41969a3f8af812f4172b064a752d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b848149482558bdbd79d0acd22f0746b852165714bf219a15a4fad6f9fda197a"
+    sha256 cellar: :any,                 arm64_monterey: "6de196ce1c0186c1593711bed5236deb0987dd5fffe99c0a7c85b433988b1905"
+    sha256 cellar: :any,                 arm64_big_sur:  "16b849ab5f94d1187a11c6441495e2165bcea5a98c24c5ec595f2d71107ccb40"
+    sha256 cellar: :any,                 monterey:       "45012b525474dffb1ee89619de90e912ebc0c7aa63587353f0e51dd2013b0210"
+    sha256 cellar: :any,                 big_sur:        "566ddfb765ba73237c1242618776157d454982d582869a2d0ec5c467257406a8"
+    sha256 cellar: :any,                 catalina:       "6b596f7e0e60206d7879807dffdfdd71e5f6002733880d44822a80684bb82c48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cce585fca1b6e6405b5c0fec56e900b4af556aab998debb0124dda81476b5912"
   end
 
   depends_on "librdkafka"
