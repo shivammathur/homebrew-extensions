@@ -14,7 +14,7 @@ fetch() {
     sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
     [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   else
-    if [[ "$EXTENSION" =~ amqp|expect|gnupg|pcov|imagick ]] ||
+    if [[ "$EXTENSION" =~ amqp|event|expect|gnupg|pcov|imagick ]] ||
        [[ "$VERSION" =~ (couchbase)@(7.4|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||

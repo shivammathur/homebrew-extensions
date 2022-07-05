@@ -34,53 +34,54 @@
 
 ## Extensions
 
-|Extension|PHP Version|
-|-- |---
-|`amqp`|`PHP 5.6` to `PHP 8.2`
-|`apcu`|`PHP 5.6` to `PHP 8.2`|
-|`couchbase`|`PHP 5.6` to `PHP 8.2`|
-|`expect`|`PHP 5.6` to `PHP 8.2`|
-|`gnupg`|`PHP 5.6` to `PHP 8.2`|
-|`grpc`|`PHP 5.6` to `PHP 8.2`|
-|`igbinary`|`PHP 5.6` to `PHP 8.2`|
-|`imagick`|`PHP 5.6` to `PHP 8.2`|
-|`imap`|`PHP 5.6` to `PHP 8.2`|
-|`mailparse`|`PHP 5.6` to `PHP 8.2`|
-|`mcrypt`|`PHP 5.6` to `PHP 8.2`|
-|`memcache`|`PHP 5.6` to `PHP 8.2`|
-|`memcached`|`PHP 5.6` to `PHP 8.2`|
-|`mongodb`|`PHP 5.6` to `PHP 8.2`|
-|`msgpack`|`PHP 5.6` to `PHP 8.2`|
-|`pcov`|`PHP 7.1` to `PHP 8.2`|
-|`pecl_http`|`PHP 5.6` to `PHP 8.2`|
-|`phalcon3`|`PHP 5.6` to `PHP 7.3`|
-|`phalcon4`|`PHP 7.2` to `PHP 7.4`|
-|`propro`|`PHP 5.6` to `PHP 7.4`|
-|`protobuf`|`PHP 5.6` to `PHP 8.2`|
-|`psr`|`PHP 5.6` to `PHP 8.2`|
-|`raphf`|`PHP 5.6` to `PHP 8.2`|
-|`rdkafka`|`PHP 5.6` to `PHP 8.2`|
-|`redis`|`PHP 5.6` to `PHP 8.2`|
-|`ssh2`|`PHP 5.6` to `PHP 8.2`|
-|`swoole`|`PHP 5.6` to `PHP 8.2`|
-|`vips`|`PHP 7.0` to `PHP 8.2`|
-|`xdebug`|`PHP 5.6` to `PHP 8.2`|
-|`xdebug2`|`PHP 7.2` to `PHP 7.4`|
-|`xlswriter`|`PHP 7.0` to `PHP 8.2`|
-|`yaml`|`PHP 5.6` to `PHP 8.2`|
-|`zmq`|`PHP 5.6` to `PHP 8.2`|
+| Extension   | PHP Version            |
+|-------------|------------------------|
+| `amqp`      | `PHP 5.6` to `PHP 8.2` | 
+| `apcu`      | `PHP 5.6` to `PHP 8.2` |
+| `couchbase` | `PHP 5.6` to `PHP 8.2` |
+| `event`     | `PHP 5.6` to `PHP 8.2` |
+| `expect`    | `PHP 5.6` to `PHP 8.2` |
+| `gnupg`     | `PHP 5.6` to `PHP 8.2` |
+| `grpc`      | `PHP 5.6` to `PHP 8.2` |
+| `igbinary`  | `PHP 5.6` to `PHP 8.2` |
+| `imagick`   | `PHP 5.6` to `PHP 8.2` |
+| `imap`      | `PHP 5.6` to `PHP 8.2` |
+| `mailparse` | `PHP 5.6` to `PHP 8.2` |
+| `mcrypt`    | `PHP 5.6` to `PHP 8.2` |
+| `memcache`  | `PHP 5.6` to `PHP 8.2` |
+| `memcached` | `PHP 5.6` to `PHP 8.2` |
+| `mongodb`   | `PHP 5.6` to `PHP 8.2` |
+| `msgpack`   | `PHP 5.6` to `PHP 8.2` |
+| `pcov`      | `PHP 7.1` to `PHP 8.2` |
+| `pecl_http` | `PHP 5.6` to `PHP 8.2` |
+| `phalcon3`  | `PHP 5.6` to `PHP 7.3` |
+| `phalcon4`  | `PHP 7.2` to `PHP 7.4` |
+| `propro`    | `PHP 5.6` to `PHP 7.4` |
+| `protobuf`  | `PHP 5.6` to `PHP 8.2` |
+| `psr`       | `PHP 5.6` to `PHP 8.2` |
+| `raphf`     | `PHP 5.6` to `PHP 8.2` |
+| `rdkafka`   | `PHP 5.6` to `PHP 8.2` |
+| `redis`     | `PHP 5.6` to `PHP 8.2` |
+| `ssh2`      | `PHP 5.6` to `PHP 8.2` |
+| `swoole`    | `PHP 5.6` to `PHP 8.2` |
+| `vips`      | `PHP 7.0` to `PHP 8.2` |
+| `xdebug`    | `PHP 5.6` to `PHP 8.2` |
+| `xdebug2`   | `PHP 7.2` to `PHP 7.4` |
+| `xlswriter` | `PHP 7.0` to `PHP 8.2` |
+| `yaml`      | `PHP 5.6` to `PHP 8.2` |
+| `zmq`       | `PHP 5.6` to `PHP 8.2` |
 
 ## OS Support
 
-|Operating System|Architecture|
-|--- |--- |
-|Linux 4.18+|`x86_64`|
-|macOS Catalina|`x86_64`|
-|macOS Big Sur|`x86_64`, `arm64`|
-|macOS Monterey|`x86_64`, `arm64`|
+| Operating System | Architecture      |
+|------------------|-------------------|
+| Linux 4.18+      | `x86_64`          |
+| macOS Catalina   | `x86_64`          |
+| macOS Big Sur    | `x86_64`, `arm64` |
+| macOS Monterey   | `x86_64`, `arm64` |
 
 - On Linux, GLIBC 2.27 or newer is required, so distributions with Linux kernel 4.18 and newer are supported.
-For example: Ubuntu 18.04, Debian 10, CentOS 8, Fedora 28, and newer versions of these distributions.
+  For example: Ubuntu 18.04, Debian 10, CentOS 8, Fedora 28, and newer versions of these distributions.
 
 ## Usage
 
@@ -175,16 +176,23 @@ If you face any issues while using this tap or want to suggest a feature/improve
 
 ## Sponsors
 
-We use [MacStadium](https://www.macstadium.com/opensource/members) for our CI infrastructure.
+In addition to GitHub Actions, we use [MacStadium](https://www.macstadium.com/opensource/members) and [Scaleway](https://www.scaleway.com/en/about-us/open-source-program) for our CI infrastructure.
 
 <a href="https://www.macstadium.com/opensource/members#gh-light-mode-only">
-  <img src="https://setup-php.com/sponsors/macstadium.png" alt="Mac Stadium" width="200px">
+    <img src="https://setup-php.com/sponsors/macstadium.png" alt="Mac Stadium" width="200px">
 </a>
 <a href="https://www.macstadium.com/opensource/members#gh-dark-mode-only">
-  <img src="https://setup-php.com/sponsors/macstadium-white.png" alt="Mac Stadium" width="200px">
+    <img src="https://setup-php.com/sponsors/macstadium-white.png" alt="Mac Stadium" width="200px">
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.scaleway.com/en/about-us/open-source-program#gh-light-mode-only">
+    <img src="https://setup-php.com/sponsors/scaleway.png" alt="Scaleway" width="236">
+</a>
+<a href="https://www.scaleway.com/en/about-us/open-source-program#gh-dark-mode-only">
+    <img src="https://setup-php.com/sponsors/scaleway-white.png" alt="Scaleway" width="236">
 </a>
 
-This project is generously supported by many other users and organisations via [GitHub Sponsors](https://github.com/sponsors/shivammathur).
+This project is also generously supported by many other users and organisations via [GitHub Sponsors](https://github.com/sponsors/shivammathur).
 
 <a href="https://github.com/sponsors/shivammathur"><img src="https://setup-php.com/sponsors.svg?" alt="Sponsor shivammathur"></a>
 
@@ -211,6 +219,7 @@ This project is generously supported by many other users and organisations via [
 - [m6w6/ext-raphf](https://github.com/m6w6/ext-raphf "Raphf")
 - [mongodb/mongo-php-driver](https://github.com/mongodb/mongo-php-driver "Mongodb")
 - [msgpack/msgpack](https://github.com/msgpack/msgpack-php "Msgpack")
+- [osmanov/pecl-event](https://bitbucket.org/osmanov/pecl-event "Event")
 - [phalcon/cphalcon](https://github.com/phalcon/cphalcon "Phalcon")
 - [php-amqp/php-amqp](https://github.com/php-amqp/php-amqp "amqp")
 - [php-gnupg/php-gnupg](https://github.com/php-gnupg/php-gnupg "gnupg")
