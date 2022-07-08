@@ -2,7 +2,7 @@ class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
   license "MIT"
-  revision 2
+  revision 3
 
   stable do
     url "https://download.gnome.org/sources/libxml2/2.9/libxml2-2.9.14.tar.xz"
@@ -12,6 +12,13 @@ class Libxml2 < Formula
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    end
+
+    # Don't require ICU headers when using libxml2's public headers.
+    # Remove with 2.10 or later.
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/a248d94d777c70f440d07032956a13c8158b7f0a/libxml2/2.9-icu-headers.diff"
+      sha256 "4b139cf66913fbeb60e9beef8872060c7a533d974b5a46ec81b85234a75a1430"
     end
   end
 
@@ -23,12 +30,12 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "10f2630faa3eb5d1840210bf461ef2ec00f30bf84e7732bf8f7793177336878d"
-    sha256 cellar: :any,                 arm64_big_sur:  "1121cf5f532c4a7e8e01173d78fb13b9f2afbec433c49a691df47f86508c6e0f"
-    sha256 cellar: :any,                 monterey:       "9ef0a3cefa07728a1b4b08db180de0f1aba8a827e9e58fe4549fbd68dfbbb3e2"
-    sha256 cellar: :any,                 big_sur:        "023456bec0dc12b1ea765a2ed4bd9d67117dad4ba14e0dfd21bc1cc598b8943f"
-    sha256 cellar: :any,                 catalina:       "573f91a92d66c022482b943b258e4d883ff75ec9aa9c32df6a3203aec3003b24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e83b54acd9f5967af5f7a7bafbf963c69942a7fd6a615dd45c32e153675b63e"
+    sha256 cellar: :any,                 arm64_monterey: "196b1d9de0be78fc90e33dfa61dcb43ed060f7ff0c001c13cc9faaa86e3a0098"
+    sha256 cellar: :any,                 arm64_big_sur:  "8863dc376bf4150fa1f889b4a355940eed94e4122ebaa97653b560b9b770d324"
+    sha256 cellar: :any,                 monterey:       "56fef01e0a6a25e5691234709e6fb759479c5afe8421cf0ce523311cdca26753"
+    sha256 cellar: :any,                 big_sur:        "98209f8e14bad338ac1ee9d122be856165f233b5c87ed2178b21f1b583b2a2eb"
+    sha256 cellar: :any,                 catalina:       "f9a4269a4317bdfde65c28277e1599fc0c62ceff29f8ce3b9ff3fb33f6d9818c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f2f9d3ec1c992a8f508b28ab2d132b97cfef9d5b2d73de2227b8188446e4333"
   end
 
   head do
@@ -42,6 +49,7 @@ class Libxml2 < Formula
 
   keg_only :provided_by_macos
 
+  depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.9" => [:build, :test]
   depends_on "pkg-config" => :test
   depends_on "icu4c"
@@ -69,18 +77,27 @@ class Libxml2 < Formula
                           "--without-lzma"
     system "make", "install"
 
-    # Homebrew-specific workaround to add include path for `icu4c` because
-    # it is in a different directory than `libxml2`.
-    inreplace [bin/"xml2-config", lib/"pkgconfig/libxml-2.0.pc"],
-              "-I${includedir}/libxml2 ",
-              "-I${includedir}/libxml2 -I#{Formula["icu4c"].opt_include}"
-
     cd "python" do
-      sdk_include = OS.mac? ? MacOS.sdk_path_if_needed/"usr/include" : HOMEBREW_PREFIX/"include"
+      sdk_include = if OS.mac?
+        sdk = MacOS.sdk_path_if_needed
+        sdk/"usr/include" if sdk
+      else
+        HOMEBREW_PREFIX/"include"
+      end
+
+      includes = [include, sdk_include].compact.map do |inc|
+        "'#{inc}',"
+      end.join(" ")
+
       # We need to insert our include dir first
       inreplace "setup.py", "includes_dir = [",
-                            "includes_dir = ['#{include}', '#{sdk_include}',"
+                            "includes_dir = [#{includes}"
+
       system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
+
+      site_packages_310 = Language::Python.site_packages(Formula["python@3.10"].opt_bin/"python3")
+      system Formula["python@3.10"].opt_bin/"python3", *Language::Python.setup_install_args(prefix),
+                                                       "--install-lib=#{prefix/site_packages_310}"
     end
   end
 
@@ -111,8 +128,11 @@ class Libxml2 < Formula
     system ENV.cc, *args
     system "./test"
 
-    xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
-    ENV.prepend_path "PYTHONPATH", lib/"python#{xy}/site-packages"
-    system Formula["python@3.9"].opt_bin/"python3", "-c", "import libxml2"
+    orig_pypath = ENV["PYTHONPATH"]
+    ["3.9", "3.10"].each do |xy|
+      ENV.prepend_path "PYTHONPATH", lib/"python#{xy}/site-packages"
+      system Formula["python@#{xy}"].opt_bin/"python3", "-c", "import libxml2"
+      ENV["PYTHONPATH"] = orig_pypath
+    end
   end
 end
