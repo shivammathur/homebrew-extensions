@@ -19,7 +19,7 @@ for extension in "${extensions[@]}"; do
     for formula in "${deps[@]//shivammathur*}"; do
       if [ "x$formula" != "x" ]; then
         sudo curl -o "./.github/deps/$extension/$formula.rb" -sL "$trunk"/"$formula".rb
-        grep -q "Formula" "$trunk"/"$formula".rb || exit 1
+        grep -q "Formula" "./.github/deps/$extension/$formula.rb" || exit 1
       fi
     done
     ls "./.github/deps/$extension"
