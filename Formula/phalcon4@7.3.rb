@@ -4,8 +4,8 @@ class Phalcon4AT73 < AbstractPhpExtension
   init
   desc "Full-stack PHP framework"
   homepage "https://phalcon.io/en-us"
-  url "https://github.com/phalcon/cphalcon/archive/v4.1.0.tar.gz"
-  sha256 "3b98df3fd15560f30abbcf37b498536ad4d287699f5957b3ec37703491d3b594"
+  url "https://github.com/phalcon/cphalcon/archive/v4.1.3.tar.gz"
+  sha256 "d6f157e033c7ebfd428190b7fe4c5db73b3cd77e8b8c291cf36d687e666a6533"
   head "https://github.com/phalcon/cphalcon.git"
   license "BSD-3-Clause"
 
