@@ -6,7 +6,11 @@ git config --local pull.rebase true
 trunk=https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula
 mapfile -t extensions < <(find ./Formula -maxdepth 1 -name "*@*.rb" -print0 | xargs -0 basename -a | sed "s/@.*//" | sort | uniq)
 for extension in "${extensions[@]}"; do
-  mapfile -t deps < <(grep "depends_on" ./Formula/"$extension"@7.2.rb | tr -d '"' | cut -d' ' -f 4)
+  formula_file=./Formula/"$extension"@7.2.rb
+  if ! [ -e "$formula_file" ]; then
+    formula_file=./Formula/"$extension"@7.4.rb
+  fi
+  mapfile -t deps < <(grep "depends_on" "$formula_file" | tr -d '"' | cut -d' ' -f 4)
   if [ "$extension" = "vips" ]; then
     mapfile -t vips_deps < <(curl -sL "$trunk"/vips.rb | grep "depends_on" | tr -d '"' | cut -d' ' -f 4)
     deps=( "${deps[@]}" "${vips_deps[@]}" )
