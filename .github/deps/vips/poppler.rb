@@ -4,6 +4,7 @@ class Poppler < Formula
   url "https://poppler.freedesktop.org/poppler-22.06.0.tar.xz"
   sha256 "a0f9aaa3918bad781039fc307a635652a14d1b391cd559b66edec4bedba3c5d7"
   license "GPL-2.0-only"
+  revision 1
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Poppler < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "736380c33aeff2bd6c99fa046e1a8a3523ae8ee93753498ba1c36596e4a14a29"
-    sha256 arm64_big_sur:  "c4075780c3be05e6e44c0089e1e247ef8121ccaa64d4705decf846ca664feb07"
-    sha256 monterey:       "6921f27a185554eec9c46516289f70c452f9f5463d0d91f95e5f7af31042f326"
-    sha256 big_sur:        "994bcebc29bf9f1ea6f562356d8ecd7c41cef9f51fc922d05fa72d0626602637"
-    sha256 catalina:       "a0209b622d99165666e9d1fb8d540ba269d4f90d14caec7603bd0f6ec902f929"
-    sha256 x86_64_linux:   "37fac3dbcd06608f5771d5ecc3933d515c65723be8dd4c638185eda3ea39b295"
+    sha256 arm64_monterey: "14ced29b6c7d9c6e0f2d08c4b49a3e65268d01bbec2218f97ebd67a9316b23f8"
+    sha256 arm64_big_sur:  "9465fb3af40332c03f0c5a280ee99aca991e4c9980c7d0b99032560560157228"
+    sha256 monterey:       "4a1167be001a77ffc4e75e0fe0d57508f8273e02181d8fdbfaca3fa2357b31a6"
+    sha256 big_sur:        "a7275fe3a98b6d0766cf530e6e3530f5748a1543611d7f850ec696ab5b35d704"
+    sha256 catalina:       "2f1587d91535a047d2e640ffcc8a544df7a3a433df768e7ab977d3b461fda81c"
+    sha256 x86_64_linux:   "5878e292c4da8ac666353b4c635fa0c8b1a108e3965fe03ad78e096981472a5c"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +36,6 @@ class Poppler < Formula
   depends_on "nspr"
   depends_on "nss"
   depends_on "openjpeg"
-  depends_on "qt"
 
   uses_from_macos "gperf" => :build
   uses_from_macos "curl"
@@ -58,15 +58,16 @@ class Poppler < Formula
   def install
     ENV.cxx11
 
-    args = std_cmake_args + %w[
+    args = std_cmake_args + %W[
       -DBUILD_GTK_TESTS=OFF
       -DENABLE_BOOST=OFF
       -DENABLE_CMS=lcms2
       -DENABLE_GLIB=ON
       -DENABLE_QT5=OFF
-      -DENABLE_QT6=ON
+      -DENABLE_QT6=OFF
       -DENABLE_UNSTABLE_API_ABI_HEADERS=ON
       -DWITH_GObjectIntrospection=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
     system "cmake", ".", *args
@@ -79,20 +80,6 @@ class Poppler < Formula
     lib.install "glib/libpoppler-glib.a"
     resource("font-data").stage do
       system "make", "install", "prefix=#{prefix}"
-    end
-
-    if OS.mac?
-      libpoppler = (lib/"libpoppler.dylib").readlink
-      [
-        "#{lib}/libpoppler-cpp.dylib",
-        "#{lib}/libpoppler-glib.dylib",
-        "#{lib}/libpoppler-qt#{Formula["qt"].version.major}.dylib",
-        *Dir["#{bin}/*"],
-      ].each do |f|
-        macho = MachO.open(f)
-        macho.change_dylib("@rpath/#{libpoppler}", "#{opt_lib}/#{libpoppler}")
-        macho.write!
-      end
     end
   end
 
