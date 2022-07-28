@@ -4,25 +4,26 @@ class Webp < Formula
   url "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.2.3.tar.gz"
   sha256 "f5d7ab2390b06b8a934a4fc35784291b3885b557780d099bd32f09241f9d83f9"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "dd0682d7262da6160c7306d8a2e32c9d30ea4f7431e5d17f32c5179e60607f62"
-    sha256 cellar: :any,                 arm64_big_sur:  "30cdefea2ff436295ac1154d311f646a360314b0a08c80f6ec20c78a080e29a8"
-    sha256 cellar: :any,                 monterey:       "ee3231b25e579ebbc4f31bdb492a660f400357c27351f13945315872f03dbff5"
-    sha256 cellar: :any,                 big_sur:        "cb810f94a063ece1fef498631b1409684f8a6191b84aa95794efba528ee1f609"
-    sha256 cellar: :any,                 catalina:       "72ece3118d0803094e8e286da12b118dc919f4a3e48fca2ae83b47b10e29da8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93dab01f9143ef3a77e5070e0a4c94652f6cda7031de43020e359def715761d0"
+    sha256 cellar: :any,                 arm64_monterey: "c421bfcdd0b6e294554c8db1361880f1c2336421f33d7429b5e2882635982599"
+    sha256 cellar: :any,                 arm64_big_sur:  "0174c48cd6b6ef60529d9ed22f38d871d80e70a2b23fcebdbfc269b47e7218e5"
+    sha256 cellar: :any,                 monterey:       "aeb7b8d7d4e6738c171d8078205ffbfa9ccfe3aa03436b564b34febc816d5274"
+    sha256 cellar: :any,                 big_sur:        "f8ee3c889b0f61ce396fc6e3bd37a0511168c144f2519ad6372e062d0f23c1cd"
+    sha256 cellar: :any,                 catalina:       "708e35dfe3d8e88b996d74dc0b7447e4a1df708515c0b4f6fc9b41c959e351a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0d531bfdd8cb06b09a60e07bd731d8f9a50e90f15cf26623b45e47adecdf577"
   end
 
   head do
-    url "https://chromium.googlesource.com/webm/libwebp.git"
+    url "https://chromium.googlesource.com/webm/libwebp.git", branch: "main"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
 
   depends_on "giflib"
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
 
