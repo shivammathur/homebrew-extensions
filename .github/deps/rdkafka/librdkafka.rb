@@ -1,8 +1,8 @@
 class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/edenhill/librdkafka"
-  url "https://github.com/edenhill/librdkafka/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "3a54cf375218977b7af4716ed9738378e37fe400a6c5ddb9d622354ca31fdc79"
+  url "https://github.com/edenhill/librdkafka/archive/refs/tags/v1.9.2.tar.gz"
+  sha256 "3fba157a9f80a0889c982acdd44608be8a46142270a389008b22d921be1198ad"
   license "BSD-2-Clause"
   head "https://github.com/edenhill/librdkafka.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Librdkafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "0bf9a0fcb366e69b06bb98fcba8e220bd09ba47d2c45b3097488b6e2228eaef7"
-    sha256 cellar: :any,                 arm64_big_sur:  "1a78e97248c3ed1a91617654971190b2f5765a9eaf106e7ce7a571cffa80b7d5"
-    sha256                               monterey:       "7d17d195ba71d77be14ac6307eb45f40e1a592411bf148fd206d4e991e1224ff"
-    sha256                               big_sur:        "c6facc3398c7a18b456fd8dffb9fa3535c1e7175ecb4af13005362d285555a7f"
-    sha256                               catalina:       "f4d5ea655375f120a69a0ebaf97c0c67484cf89b3c72783028c0c6b7edb9c0b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7aef625f105238db7cf50baa1ca0729607c37bb89cc916ec713846dfc36a4260"
+    sha256 cellar: :any,                 arm64_monterey: "51cf809caf8626828668859f212e29dd644a8cbe6bbd1740c10edf0b565f0c2f"
+    sha256 cellar: :any,                 arm64_big_sur:  "71fd99b66724e9cde7fc862eadd2043b3c0a072c5ef564d6400da24b47e4d26c"
+    sha256                               monterey:       "9b56f5818e278cec646eb2c93f3d32b19eddfeacb1ec96bff9ba95b7232031fd"
+    sha256                               big_sur:        "939f96a1a1f5fc8caeeb5e0256fe2ea3a319d27f7519739b2699aef96f1bbebb"
+    sha256                               catalina:       "09dee2fe5791509406023eb4510bd19ac9f32e675adbfebcdba3288864927083"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "939c1bf09ef24b036644cb8cd1f15c517e74f4ea6f015082308ac828ad135ee0"
   end
 
   depends_on "pkg-config" => :build

@@ -1,10 +1,9 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.0-44.tar.xz"
-  sha256 "c937c29c31ddd37ad441c13ce45e569ec911d3bb427dfaad6aa8450e5eef09a6"
+  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.0-45.tar.xz"
+  sha256 "2b5e88d3b895be4a7a6fc70ab4603d02f84477b8c15d3819f0b2c4b3ad1447a0"
   license "ImageMagick"
-  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
@@ -12,13 +11,14 @@ class Imagemagick < Formula
     regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
   end
 
+  # Linux bottle removed for GCC 12 migration
   bottle do
-    sha256 arm64_monterey: "95b0648c58b827d9d9b4480f5cf58dcd70ca3c6e8945c197681abc9ae379cff7"
-    sha256 arm64_big_sur:  "87c4079030b4732fd919b96d7b782944ac4b2a2551110d141d53232d10c78489"
-    sha256 monterey:       "786f467c6efec4ae9c26311356f5fcc34ee260eeb52791eec76c85f3ca05ee6d"
-    sha256 big_sur:        "2cb1cbdf7cb671c1338bba083953a00f1aca30de97f2eb7c7af076c7cdbbaab6"
-    sha256 catalina:       "b5c9ea0399df39214ec8f0657528f70abff68f32f912ba0b96fdbe40fa4ae700"
-    sha256 x86_64_linux:   "5e130dbdcdf9ca0f0ac5c1b575dff3d0c200e79facf3ee7dbe956ef06ed268c0"
+    sha256 arm64_monterey: "59b175f274e796a0f426c09fd4bfbd6a2def28ed23e2c80c2dca36d16dd44d71"
+    sha256 arm64_big_sur:  "ff67c8a22b12c2e9499981142fcbdd399ed6a49d86eb14b0cae8fb879551c590"
+    sha256 monterey:       "5c3ee32115784d230675ac64372651f4701a84ea7f920a88a6141a504d7ae090"
+    sha256 big_sur:        "249e5aa8c3f0518af1696503283c446600a65d86d3eb945e5c449b92a7bc8a1a"
+    sha256 catalina:       "ee57cb93ab5da15954fd6cabcd0e509589504f4c44f308319ac163b03fa1096a"
+    sha256 x86_64_linux:   "c7b396c47cb3c65fbc5ac1904afbd42594f49d82920249a5beb1779514097d1b"
   end
 
   depends_on "pkg-config" => :build
@@ -46,7 +46,6 @@ class Imagemagick < Formula
   end
 
   on_linux do
-    depends_on "gcc"
     depends_on "libx11"
   end
 
