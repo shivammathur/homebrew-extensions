@@ -11,7 +11,6 @@ class Imagemagick < Formula
     regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
   end
 
-  # Linux bottle removed for GCC 12 migration
   bottle do
     sha256 arm64_monterey: "59b175f274e796a0f426c09fd4bfbd6a2def28ed23e2c80c2dca36d16dd44d71"
     sha256 arm64_big_sur:  "ff67c8a22b12c2e9499981142fcbdd399ed6a49d86eb14b0cae8fb879551c590"
@@ -46,6 +45,7 @@ class Imagemagick < Formula
   end
 
   on_linux do
+    depends_on "gcc"
     depends_on "libx11"
   end
 
