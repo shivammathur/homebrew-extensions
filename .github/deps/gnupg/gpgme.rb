@@ -4,6 +4,7 @@ class Gpgme < Formula
   url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.17.1.tar.bz2"
   sha256 "711eabf5dd661b9b04be9edc9ace2a7bc031f6bd9d37a768d02d0efdef108f5f"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpgme/"
@@ -11,19 +12,28 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "9ae8d80734f26c576a6bba331cc2d297fd8381529cc5837caadbb0848514fa54"
-    sha256 cellar: :any,                 arm64_big_sur:  "35f92cc8f4d09dbfdbe2b2e98ae86a6810106d5f060e6a57b5bedc1c0ab32ffd"
-    sha256 cellar: :any,                 monterey:       "d984b2487bd72c40a04edfb26b884a873eeca7ad1cecdacc60b41d774991ce55"
-    sha256 cellar: :any,                 big_sur:        "306af04ce2798e3227e643806824fade33961b45a327a36ea5aaf56d27d6b9ec"
-    sha256 cellar: :any,                 catalina:       "a529ae88cf38d8c578e81b90c871dfdfcaf2675ffb5aa173f2e62dd0bc005cdb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "faec7ead15b656c2655f7a43cec3a5bc6bf9886763349b2fc03e5b85dd8b2abc"
+    sha256 cellar: :any,                 arm64_monterey: "5c3c3b5cc635574cec5670ecd56c7c3f7fb209b07feac5d06ed15ae27eabde35"
+    sha256 cellar: :any,                 arm64_big_sur:  "a1a1ff0f3fcd571c3a33f3d2498a94784cdcc42d34ebce0210d7d2bac7a47f8c"
+    sha256 cellar: :any,                 monterey:       "15d0bb6dc60e5b5625e7dfab00f298049b44f64fea848bae947d38db0819509a"
+    sha256 cellar: :any,                 big_sur:        "9a1e47bde50a16222dd2844af84f61fac80caf2db6af0682c05b41bd01948cec"
+    sha256 cellar: :any,                 catalina:       "73ee81d3ec9fafdc4568b2f32b2290072ee304df497ff92df2da69bcce75c068"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a6ea6f488a90c3921d2ceef44c22c6c138e5aa61fb59f66c8326b54ca3083ca"
   end
 
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.10" => [:build, :test]
   depends_on "swig" => :build
   depends_on "gnupg"
   depends_on "libassuan"
   depends_on "libgpg-error"
+
+  # Fix detection of Python 3.10 version string. We use Arch Linux's configure
+  # patch to avoid having to regenerate with autoconf. There is an open upstream
+  # PR for m4 and configure.ac changes, but it is still pending review.
+  # Ref: https://dev.gnupg.org/D546
+  patch do
+    url "https://raw.githubusercontent.com/archlinux/svntogit-packages/6a4d7746de4670dbd245e1855584f7bb5ae10934/trunk/python310.patch"
+    sha256 "5de2f6bcb6b30642d0cbc3fbd86803c9460d732f44a526f44cedee8bb78d291a"
+  end
 
   def install
     ENV["PYTHON"] = which("python3")
@@ -31,9 +41,14 @@ class Gpgme < Formula
     # Remove when distutils is no longer used. Related PR: https://dev.gnupg.org/D545
     ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
 
-    system "./configure", "--disable-dependency-tracking",
+    # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
+    # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
+    inreplace "lang/python/Makefile.in",
+              /^\s*install\s*\\\n\s*--prefix "\$\(DESTDIR\)\$\(prefix\)"/,
+              "\\0 --install-lib=#{prefix/Language::Python.site_packages("python3")}"
+
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}",
                           "--enable-static"
     system "make"
     system "make", "install"
@@ -44,6 +59,6 @@ class Gpgme < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/gpgme-tool --lib-version")
-    system Formula["python@3.9"].opt_bin/"python3", "-c", "import gpg; print(gpg.version.versionstr)"
+    system Formula["python@3.10"].opt_bin/"python3", "-c", "import gpg; print(gpg.version.versionstr)"
   end
 end
