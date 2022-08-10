@@ -38,6 +38,7 @@
 |-------------|------------------------|
 | `amqp`      | `PHP 5.6` to `PHP 8.2` | 
 | `apcu`      | `PHP 5.6` to `PHP 8.2` |
+| `ast`       | `PHP 7.0` to `PHP 8.2` |
 | `couchbase` | `PHP 5.6` to `PHP 8.2` |
 | `event`     | `PHP 5.6` to `PHP 8.2` |
 | `expect`    | `PHP 5.6` to `PHP 8.2` |
@@ -232,6 +233,7 @@ This project is also generously supported by many other users and organisations 
 - [php/php-src](https://github.com/php/php-src "PHP Source")
 - [phpredis/phpredis](https://github.com/phpredis/phpredis "Redis")
 - [protocolbuffers/protobuf](https://github.com/protocolbuffers/protobuf "protocolbuffers")
+- [nikic/php-ast](https://github.com/nikic/php-ast "PHP AST")
 - [sibaz/pecl-expect](https://github.com/sibaz/pecl-expect "expect")
 - [swoole/swoole-src](https://github.com/swoole/swoole-src "Swoole")
 - [websupport-sk/pecl-memcache](https://github.com/websupport-sk/pecl-memcache "Memcache")

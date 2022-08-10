@@ -15,14 +15,13 @@ fetch() {
     [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   else
     if [[ "$EXTENSION" =~ amqp|event|expect|gnupg|pcov|imagick ]] ||
-       [[ "$VERSION" =~ (ast)@(7.[0-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (couchbase)@(7.4|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (phalcon5)@(7.4|8.[0-1]) ]] ||
        [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||
        [[ "$VERSION" =~ (apcu|grpc|igbinary|mailparse|memcached|pecl_http|protobuf|raphf|rdkafka|redis|ssh2|vips|xlswriter)@(7.[0-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-2]) ]] ||
-       [[ "$VERSION" =~ (mcrypt|mongodb|xdebug)@(7.[2-4]|8.[0-2]) ]] ||
+       [[ "$VERSION" =~ (ast|mcrypt|mongodb|xdebug)@(7.[2-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (psr)@(7.[3-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (memcache|swoole)@8.[0-2] ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
