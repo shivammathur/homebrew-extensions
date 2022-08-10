@@ -15,6 +15,13 @@ class AstAT71 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "477e5283b2263c510ad0c9ff38ed5799547999cd0048665e262dba5bf2f5fbf8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c0a0439a7ca580fa40ee38e61138225e2fbc487e688c0dbb67ee813a0e11f9ac"
+    sha256 cellar: :any_skip_relocation, monterey:       "caa89a0afd5f41873bcf63ba29cae936409af8f2e03c11d84b262cc47db73753"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b0790c7e79fd426429f8d215d16470dbe87d9c4e556317cc698eed812304a81a"
+    sha256 cellar: :any_skip_relocation, catalina:       "4d42af8e5acfe0c298460e97f40ad4c74f7cd79097a433ca18da81f6beb30ba1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e95824496ec04ff89d9dc63abee9db0061a95c10225c6d0a35e81f6a8fb03c9"
   end
 
   def install
