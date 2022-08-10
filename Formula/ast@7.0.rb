@@ -8,7 +8,7 @@ class AstAT70 < AbstractPhpExtension
   init
   desc "Ast PHP extension"
   homepage "https://github.com/nikic/php-ast"
-  url "https://pecl.php.net/get/ast-1.0.16.tgz?init=true"
+  url "https://pecl.php.net/get/ast-1.0.16.tgz"
   sha256 "45bda34b780c4661ce77cf65cd8a504fb56526d4b456edcc97d791c86f3879ce"
   head "https://github.com/nikic/php-ast.git"
   license "BSD-3-Clause"
