@@ -15,6 +15,7 @@ fetch() {
     [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   else
     if [[ "$EXTENSION" =~ amqp|event|expect|gnupg|pcov|imagick ]] ||
+       [[ "$VERSION" =~ (ast)@(7.[0-4]|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (couchbase)@(7.4|8.[0-2]) ]] ||
        [[ "$VERSION" =~ (phalcon5)@(7.4|8.[0-1]) ]] ||
        [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
