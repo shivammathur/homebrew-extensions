@@ -1,11 +1,11 @@
 class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.se"
-  url "https://curl.se/download/curl-7.84.0.tar.bz2"
-  mirror "https://github.com/curl/curl/releases/download/curl-7_84_0/curl-7.84.0.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/curl-7.84.0.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/legacy/curl-7.84.0.tar.bz2"
-  sha256 "702fb26e73190a3bd77071aa146f507b9817cc4dfce218d2ab87f00cd3bc059d"
+  url "https://curl.se/download/curl-7.85.0.tar.bz2"
+  mirror "https://github.com/curl/curl/releases/download/curl-7_84_0/curl-7.85.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/curl-7.85.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/legacy/curl-7.85.0.tar.bz2"
+  sha256 "21a7e83628ee96164ac2b36ff6bf99d467c7b0b621c1f7e317d8f0d96011539c"
   license "curl"
 
   livecheck do
@@ -14,12 +14,12 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "00b2bfb12b8fd68992872941d19f8c38971cfb7f6c34fe72ebb014b8110ebc07"
-    sha256 cellar: :any,                 arm64_big_sur:  "bfe2e627bbc57300b521aa008baeedf3da854dbc9189232839786102c0666bc2"
-    sha256 cellar: :any,                 monterey:       "17fc00c4141f772fd4d3bf8b11a699a92e2c333ab1b5af881f747c95ed7a566d"
-    sha256 cellar: :any,                 big_sur:        "dfa8a24a169a856879e531fc70b91d05b31e0e330134dd92c82f0bffa77eb95f"
-    sha256 cellar: :any,                 catalina:       "b014d8a1951cedb87b3d1887d0c9cebe932be7d30f5705ccdf00a2c2c5c2d682"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a61990df5672904e6f5ce492e5466dfc4a0ee1e3115a19b26625354c0fbe117"
+    sha256 cellar: :any,                 arm64_monterey: "3dc6972b2f75130b3a9dc053a5fd277f18576c577b6f0053b9daefb9ba950b4e"
+    sha256 cellar: :any,                 arm64_big_sur:  "64419ca6486705f31f43fbf8ab813e6b85c9d836eeadc1229e720f4bc8cd3efe"
+    sha256 cellar: :any,                 monterey:       "3aa7c14fefd1953775e8d8a04daa85aaefe23f1b203a1c06dada2ea5a5651de4"
+    sha256 cellar: :any,                 big_sur:        "a98877da21bb8b87140022d501eda212ee4e86179d9554e951c2a7ba5e0c78c3"
+    sha256 cellar: :any,                 catalina:       "cd3475ba674b19428755722d4d447fceb3ef963779c645b7ddaa6ebb1868819a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70821b581c24e08df332b0e244773044b344a980c255abf5f44b07883b5cb0f1"
   end
 
   head do
