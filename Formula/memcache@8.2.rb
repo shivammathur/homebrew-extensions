@@ -22,6 +22,8 @@ class MemcacheAT82 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "295a5f50113b23fe7edf41a73c8e37529edb7640901f3fcc3fb76f9d28e6f684"
   end
 
+  depends_on "zlib"
+
   def install
     args = %W[
       --enable-memcache
