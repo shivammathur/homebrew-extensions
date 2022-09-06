@@ -17,7 +17,7 @@ env:
 jobs:
   tap-syntax:
     if: "!contains(github.event.head_commit.message, 'skip-build')"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
     outputs:
@@ -48,7 +48,7 @@ jobs:
   get-matrix:
     if: github.event_name != 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
     needs: tap-syntax
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -74,7 +74,7 @@ jobs:
   create-pr:
     if: github.event_name != 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
     needs: get-matrix
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix: ${{fromJson(needs.get-matrix.outputs.matrix)}}
@@ -95,7 +95,7 @@ jobs:
 
   set-environment:
     if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: tap-syntax
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
@@ -323,7 +323,7 @@ jobs:
   add-label:
     needs: build-formula
     if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build') && github.event.pull_request.user.login == github.repository_owner
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3

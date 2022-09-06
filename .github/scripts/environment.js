@@ -17,7 +17,7 @@ module.exports = async ({github, context, core}, formula_detect) => {
         console.log('CI-no-linux label found.')
     } else {
         console.log('No CI-no-linux label found.')
-        runners.push('ubuntu-latest')
+        runners.push('ubuntu-22.04')
     }
     core.setOutput('runners', JSON.stringify(runners))
     if (label_names.includes('CI-no-fail-fast')) {
@@ -34,7 +34,7 @@ module.exports = async ({github, context, core}, formula_detect) => {
         console.log('No CI-long-timeout label found. Setting short GitHub Actions timeout.')
         core.setOutput('timeout-minutes', '180')
     }
-    core.setOutput('container', 'homebrew/ubuntu18.04:latest')
+    core.setOutput('container', 'homebrew/ubuntu22.04:latest')
     const test_bot_formulae_args = ["--only-formulae", "--junit", "--only-json-tab", "--skip-dependents"]
     test_bot_formulae_args.push('--root-url="https://ghcr.io/v2/shivammathur/extensions"')
     if(formula_detect.testing_formulae) {

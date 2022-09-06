@@ -25,7 +25,7 @@ jobs:
   bottle:
     strategy:
       matrix:
-        runner: ['macos-12', 'macos-11', 'macos-10.15', 'macos-11-arm64', 'macos-12-arm64', 'ubuntu-latest']
+        runner: ['macos-12', 'macos-11', 'macos-10.15', 'macos-11-arm64', 'macos-12-arm64', 'ubuntu-22.04']
       fail-fast: ${{fromJson(github.event.inputs.fail-fast)}}
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 300
@@ -186,7 +186,7 @@ jobs:
           bot_body: ':x: Bottle request for ${{github.event.inputs.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot: BrewTestBot
   upload:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: bottle
     if: github.event.inputs.upload
     env:
