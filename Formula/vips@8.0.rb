@@ -15,11 +15,13 @@ class VipsAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_big_sur: "9f37b85ab75fba8f5f91367dad1fbfd2f6573df64d2ec0d4d04d6b3ecf336578"
-    sha256 cellar: :any,                 big_sur:       "4725309f1a1d57e0da62c6e799328d005a18378b85463c4f68b973ab3995de79"
-    sha256 cellar: :any,                 catalina:      "2525984bb36902f39e384ba3998c9a0e2baf7158a97bea2d98c004bbd5ab3960"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c13e36ea6b7b30e75158702660cccb1e51f17f8b2666dba68edcd646dc1abda"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_monterey: "4e598f0fe520329673080294c0cacdc9cf2f232bd27f0f2e61513a2aca1d1ae4"
+    sha256 cellar: :any,                 arm64_big_sur:  "7e95104a4e7e868b20db3c30725841d13694bb5d2e4ea5a78cb471af3535e64a"
+    sha256 cellar: :any,                 monterey:       "36d7550fb5e32a318ad8d8ce670b0a9ccd2cb432db195d943dad42ab5888002b"
+    sha256 cellar: :any,                 big_sur:        "9441a2b5918d4069f18d6c9192e6cbc2dfa9ed1412f1346cce1d5d2d153046e4"
+    sha256 cellar: :any,                 catalina:       "75cbe37743be7a991d8983139c6edd725e8d6144dfcaf98311e66d1013dec9c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f0b5bac038616c6eacd092346b46a57710d3a687400ac5bd9d77a80565368a6"
   end
 
   depends_on "vips"
