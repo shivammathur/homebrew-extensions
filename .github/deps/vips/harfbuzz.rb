@@ -1,36 +1,29 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
+  url "https://github.com/harfbuzz/harfbuzz/archive/5.1.0.tar.gz"
+  sha256 "5352ff2eec538ea9a63a485cf01ad8332a3f63aa79921c5a2e301cef185caea1"
   license "MIT"
+  revision 1
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
-  stable do
-    url "https://github.com/harfbuzz/harfbuzz/archive/4.4.1.tar.gz"
-    sha256 "1a95b091a40546a211b6f38a65ccd0950fa5be38d95c77b5c4fa245130b418e1"
-
-    # Fix build on GCC <7, remove on next release.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/ae5613e951257f508f4b17e9e24a3ea2ccb43a3f/harfbuzz/fix-pregcc7-build.patch"
-      sha256 "17abbae47e09a0daa3f5afa5f6ba37353db00c2f0fe025a014856d8b023672b6"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any, arm64_monterey: "43eb9dffca6648a3b4718b7ba7a7a51dde9a9b5342c52ce3c586dfbf23f97c5f"
-    sha256 cellar: :any, arm64_big_sur:  "c420a6936767080423fed5c12063be25d9e12c71372d07a3dee6dd3d5a17a970"
-    sha256 cellar: :any, monterey:       "073d043d408cc4defd7d3b337d30b8fcdfac18c07e6928002038687102b90c90"
-    sha256 cellar: :any, big_sur:        "2ee365068d158bb4e885b4ca73297e7c8def54b6adbc1b6bb34b56258a4b7a00"
-    sha256 cellar: :any, catalina:       "60d36dcca15c1102e6b29ec41937ca87d56fd0467ea1ebb59efee1462c9da92d"
-    sha256               x86_64_linux:   "130224a18f8f53fc96386bc6cb47b0868ff5434d725e83a352c035d06f195f32"
+    sha256 cellar: :any, arm64_monterey: "924ac84d17623828541d4585f653bee6d293a128aad070af9ef4f85a3ca4a057"
+    sha256 cellar: :any, arm64_big_sur:  "686884d720afe3db1e2798dba1b1f2954bc5cffe77e393c51b142c7f2a27fb08"
+    sha256 cellar: :any, monterey:       "0ae9a507668a64649d083818c02b66e5f97d7c6ca0fb3f67f3fee0d8b889b25b"
+    sha256 cellar: :any, big_sur:        "59c58d735e7d21632fc9648623748850c6ab641bfd6bf1b3ab8cad9b163e65c5"
+    sha256 cellar: :any, catalina:       "bac3693891bf564c1ea767a7681fbd239ed2ba656dcf6029a0bc3184f2dc2ec2"
+    sha256               x86_64_linux:   "249b5e97c383242cb0043c6040f4ce0b190be13c3afd6f56cfb78d77c5966ca2"
   end
 
-  depends_on "glib-utils" => :build
+  depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "python@3.10" => [:build, :test]
+  depends_on "pygobject3" => :test
   depends_on "cairo"
   depends_on "freetype"
   depends_on "glib"
-  depends_on "gobject-introspection"
   depends_on "graphite2"
   depends_on "icu4c"
 
@@ -52,11 +45,9 @@ class Harfbuzz < Formula
       -Dintrospection=enabled
     ]
 
-    mkdir "build" do
-      system "meson", *std_meson_args, *args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args, *args
+    system "meson", "compile", "-C", "build"
+    system "meson", "install", "-C", "build"
   end
 
   test do
@@ -64,5 +55,6 @@ class Harfbuzz < Formula
       shape = `echo 'സ്റ്റ്' | #{bin}/hb-shape 270b89df543a7e48e206a2d830c0e10e5265c630.ttf`.chomp
       assert_equal "[glyph201=0+1183|U0D4D=0+0]", shape
     end
+    system Formula["python@3.10"].opt_bin/"python3", "-c", "from gi.repository import HarfBuzz"
   end
 end

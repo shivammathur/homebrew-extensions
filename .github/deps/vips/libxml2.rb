@@ -1,26 +1,10 @@
 class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
+  url "https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.2.tar.xz"
+  sha256 "d240abe6da9c65cb1900dd9bf3a3501ccf88b3c2a1cb98317d03f272dda5b265"
   license "MIT"
-  revision 3
-
-  stable do
-    url "https://download.gnome.org/sources/libxml2/2.9/libxml2-2.9.14.tar.xz"
-    sha256 "60d74a257d1ccec0475e749cba2f21559e48139efba6ff28224357c7c798dfee"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-
-    # Don't require ICU headers when using libxml2's public headers.
-    # Remove with 2.10 or later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/a248d94d777c70f440d07032956a13c8158b7f0a/libxml2/2.9-icu-headers.diff"
-      sha256 "4b139cf66913fbeb60e9beef8872060c7a533d974b5a46ec81b85234a75a1430"
-    end
-  end
+  revision 1
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -30,12 +14,12 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "196b1d9de0be78fc90e33dfa61dcb43ed060f7ff0c001c13cc9faaa86e3a0098"
-    sha256 cellar: :any,                 arm64_big_sur:  "8863dc376bf4150fa1f889b4a355940eed94e4122ebaa97653b560b9b770d324"
-    sha256 cellar: :any,                 monterey:       "56fef01e0a6a25e5691234709e6fb759479c5afe8421cf0ce523311cdca26753"
-    sha256 cellar: :any,                 big_sur:        "98209f8e14bad338ac1ee9d122be856165f233b5c87ed2178b21f1b583b2a2eb"
-    sha256 cellar: :any,                 catalina:       "f9a4269a4317bdfde65c28277e1599fc0c62ceff29f8ce3b9ff3fb33f6d9818c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f2f9d3ec1c992a8f508b28ab2d132b97cfef9d5b2d73de2227b8188446e4333"
+    sha256 cellar: :any,                 arm64_monterey: "7281512e642f45f7ce883de48ae32786a2942a0252b0133a23cc62633f2f2851"
+    sha256 cellar: :any,                 arm64_big_sur:  "a92b48bea7270ae1ad549225dc06a12b94b234121033a40b7f19886621b910e9"
+    sha256 cellar: :any,                 monterey:       "b153b19cd51d3e13f9fa3c21f546d1cfa3fb04afa866baf8507c71cec54e274b"
+    sha256 cellar: :any,                 big_sur:        "bfc635ea5b8428255183f1de146e8e83d6cb41cdfe6467874a4207ee3f96b985"
+    sha256 cellar: :any,                 catalina:       "eb853d351e63c98fa9fe05b1a53f801ba03e0dc9bcf0b67499bb5e53c86baa34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c53fce421547511201e757c2556a3fe53fc1ec2e98e3bb8db5d92b7ce3277dd"
   end
 
   head do
@@ -93,11 +77,9 @@ class Libxml2 < Formula
       inreplace "setup.py", "includes_dir = [",
                             "includes_dir = [#{includes}"
 
-      system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
-
-      site_packages_310 = Language::Python.site_packages(Formula["python@3.10"].opt_bin/"python3")
-      system Formula["python@3.10"].opt_bin/"python3", *Language::Python.setup_install_args(prefix),
-                                                       "--install-lib=#{prefix/site_packages_310}"
+      ["3.9", "3.10"].each do |xy|
+        system "python#{xy}", *Language::Python.setup_install_args(prefix, "python#{xy}")
+      end
     end
   end
 
@@ -131,7 +113,7 @@ class Libxml2 < Formula
     orig_pypath = ENV["PYTHONPATH"]
     ["3.9", "3.10"].each do |xy|
       ENV.prepend_path "PYTHONPATH", lib/"python#{xy}/site-packages"
-      system Formula["python@#{xy}"].opt_bin/"python3", "-c", "import libxml2"
+      system Formula["python@#{xy}"].opt_bin/"python#{xy}", "-c", "import libxml2"
       ENV["PYTHONPATH"] = orig_pypath
     end
   end
