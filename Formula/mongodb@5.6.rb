@@ -16,10 +16,13 @@ class MongodbAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_big_sur: "1a48155f878bc48d8e179461d4dabd690484423a31e338692c918681a7b69bb6"
-    sha256 cellar: :any,                 big_sur:       "067609ab597cbc82d0dde8076cffef5a110d1f495ee9f54ff046b6cc444605bc"
-    sha256 cellar: :any,                 catalina:      "95643ce7414d5657c07c57f04ae76a68349bdf7a39dbdcd307aba909b2c2ad6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb3fa2c806e00838fd78a7b3de3c874ed8dc63ec3a4efaefd83ab6724a27a21b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "935fce23bb0c23be5de3fd969f9842ce266f69fc7eaf0ec73118ef11156b1f49"
+    sha256 cellar: :any,                 arm64_big_sur:  "f9b1bd9809ccd2bb730510fe4d6ef54633ffc137b985922c826e4d7ecaf10147"
+    sha256 cellar: :any,                 monterey:       "c45d9e1c8d03e5402d00a2ce0e29371ad3c0d795415758c2446d05ff5fd53463"
+    sha256 cellar: :any,                 big_sur:        "62738f87610453b967ed16c0b53347d7ac2dec7eb0c7a40ed5fe2eff06c4d306"
+    sha256 cellar: :any,                 catalina:       "d0795bc206763473c7d10f05f13da5c8fa583e8511a894f0875b141e1e7252e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f6c064176aae1fabd96d1ef15004d8485ec6fc56ff699a0912caf94eab250cd"
   end
 
   depends_on "icu4c"
