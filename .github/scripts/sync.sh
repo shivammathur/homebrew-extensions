@@ -22,6 +22,7 @@ for extension in "${extensions[@]}"; do
     echo "${deps[@]//shivammathur*}"
     sudo mkdir -p "./.github/deps/$extension"
     for formula in "${deps[@]//shivammathur*}"; do
+      [ "$formula" = "python" ] && continue;
       if [ "x$formula" != "x" ]; then
         sudo curl -o "./.github/deps/$extension/$formula.rb" -sL "$trunk"/"$formula".rb
         grep -q "Formula" "./.github/deps/$extension/$formula.rb" || exit 1
