@@ -14,6 +14,7 @@ for extension in "${extensions[@]}"; do
   if [ "$extension" = "vips" ]; then
     mapfile -t vips_deps < <(curl -sL "$trunk"/vips.rb | grep "depends_on" | tr -d '"' | cut -d' ' -f 4)
   fi
+  deps=( "${deps[@]}" "${vips_deps[@]}" )
   
   if [[ -n "${deps// }" ]]; then
     printf "\n----- %s -----\n" "$extension"
