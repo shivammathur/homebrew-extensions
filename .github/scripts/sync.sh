@@ -12,8 +12,8 @@ for extension in "${extensions[@]}"; do
   fi
   mapfile -t deps < <(grep "depends_on" "$formula_file" | tr -d '"' | cut -d' ' -f 4)
   if [ "$extension" = "vips" ]; then
-    curl -o /tmp/vips.rb -sL "$trunk"/vips.rb
-    mapfile -t vips_deps < <(brew deps --formula /tmp/vips.rb)    
+    curl -o $(brew --repo homebrew/core)/Formula/vips.rb -sL "$trunk"/vips.rb
+    mapfile -t vips_deps < <(brew deps vips)
   fi
   deps=( "${deps[@]}" "${vips_deps[@]}" )
   
