@@ -14,8 +14,8 @@ for extension in "${extensions[@]}"; do
   if [ "$extension" = "vips" ]; then
     curl -o $(brew --repo homebrew/core)/Formula/vips.rb -sL "$trunk"/vips.rb
     mapfile -t vips_deps < <(brew deps vips)
-  fi
-  deps=( "${deps[@]}" "${vips_deps[@]}" )
+    deps=( "${deps[@]}" "${vips_deps[@]}" )
+  fi  
   
   if [[ -n "${deps// }" ]]; then
     printf "\n----- %s -----\n" "$extension"
