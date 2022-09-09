@@ -4,7 +4,7 @@ class OpenMpi < Formula
   url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.4.tar.bz2"
   sha256 "92912e175fd1234368c8730c03f4996fe5942e7479bb1d10059405e7f2b3930d"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url :homepage
@@ -12,13 +12,12 @@ class OpenMpi < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_monterey: "a2d31ec8594e73c2c4a1bba865d8e81c610b0ff01f039f96efefe0317535d339"
-    sha256 arm64_big_sur:  "7ff7d8a4ea8395d2601bf72ad17ea422fa326325c38a47dd572add58ca36cbf8"
-    sha256 monterey:       "0af78dd3d07df75329c6ba30a9fccf16d6cf7e4a9eb5d8f2af3b892496df47d2"
-    sha256 big_sur:        "e6c45885f7dbbe4a8e112c493293976d7dc67739dd6c5fa7511413fc1210ac23"
-    sha256 catalina:       "ca1c09fd3cf0b9fee16b1d31759e1c0a3ad9b964b4165354f22c51606059306a"
-    sha256 x86_64_linux:   "6858cb1171181e721a6b8f2d9fb9d43eaae2c8fef7ebc5b6076f133484332485"
+    sha256 arm64_monterey: "6fce4b7846d2ac61b339fed64109f83fbfe3fca5e29123d219c4aec7264b17b8"
+    sha256 arm64_big_sur:  "270edb8b3f965fabae4c6f25136fdd129072a0bb560127ed2a26eef4f7a05953"
+    sha256 monterey:       "7b119eb6403ba68bc7488400b743dfefb09162a8d094659110a23491782925f6"
+    sha256 big_sur:        "e8f418ade2643371972f22ea27dfd1283659b58efaac5e271916961845d00f6f"
+    sha256 catalina:       "340edd884d2c78cd6939de7bf859f501f77a3af469aad6a3e05fcee64ac32b7a"
+    sha256 x86_64_linux:   "07c71e5e4e4a6fae6bb0fb7ed19c4f50c434478438d6468df62b2ff328a15fcc"
   end
 
   head do
@@ -44,12 +43,14 @@ class OpenMpi < Formula
       oshmem/tools/oshmem_info/param.c
     ]
 
-    inreplace inreplace_files, "OMPI_CXX_ABSOLUTE", "\"#{ENV.cxx}\""
+    cxx = OS.linux? ? "g++" : ENV.cxx
+    inreplace inreplace_files, "OMPI_CXX_ABSOLUTE", "\"#{cxx}\""
 
     inreplace_files << "orte/tools/orte-info/param.c" unless build.head?
     inreplace_files << "opal/mca/pmix/pmix3x/pmix/src/tools/pmix_info/support.c" unless build.head?
 
-    inreplace inreplace_files, /(OPAL|PMIX)_CC_ABSOLUTE/, "\"#{ENV.cc}\""
+    cc = OS.linux? ? "gcc" : ENV.cc
+    inreplace inreplace_files, /(OPAL|PMIX)_CC_ABSOLUTE/, "\"#{cc}\""
 
     ENV.cxx11
     ENV.runtime_cpu_detection
