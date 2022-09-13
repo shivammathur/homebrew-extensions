@@ -1,8 +1,8 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.0-47.tar.xz"
-  sha256 "9565918fcc6f8857c7907a8a73cf1c1f23fa37b77cf869886d98fcf03f89adf3"
+  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.0-48.tar.xz"
+  sha256 "eb2d4dc3cc9fd3d4686aa64562177ca5067b1d40bcb6ec75fa1003eaf8c37f4e"
   license "ImageMagick"
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "b6082b989d0477541725ad38976c55744d5b0d1ead75282350de11b555cb83e4"
-    sha256 arm64_big_sur:  "6f30e374c6aa3993d9b04880d8a069a1af89a8aa0a6b0534e8baa43ea48b6be8"
-    sha256 monterey:       "79d86bc12202e8d0ecf7301abb267a0280f797849891d1389266ec2b591ebc60"
-    sha256 big_sur:        "dbd5c5521f14dc98675dcf719bf429aa5b7213b5cd0f81de7fceb8419906ac90"
-    sha256 catalina:       "2edc6459b04c2ccd7e9773d46f1bd0296f361af0c9882eafe409aa4c04da3a01"
-    sha256 x86_64_linux:   "b23290ee6b050a85ce5e87c6fef387cafc5fbac65454f1aea2b0161310830cd5"
+    sha256 arm64_monterey: "d576454f8a68f60d0affced886046823fdfab8b918b73f37da4468fef3373b23"
+    sha256 arm64_big_sur:  "9e1a3616691d9fd73f12011107226b33f439412cb12de683f1eee0a5a5b35162"
+    sha256 monterey:       "72ff36bacbf09fba817600a88e7e536c9b94cef8e0a609c73407845be721e9bf"
+    sha256 big_sur:        "35e691a7b3379a2beab0fbc707b19fc0af7dfc6a50c9466f015af065b5ac6a87"
+    sha256 catalina:       "96d80aa43e1adcf1d686d0ce040831999bd83ad7b563f87c0555cd3fb976d696"
+    sha256 x86_64_linux:   "2d8c80ef8f69ff878ee538e0236b04e6ba2e4b40f74363c99dd4cb2bd8ba3ffa"
   end
 
   depends_on "pkg-config" => :build
@@ -45,13 +45,10 @@ class Imagemagick < Formula
   end
 
   on_linux do
-    depends_on "gcc"
     depends_on "libx11"
   end
 
   skip_clean :la
-
-  fails_with gcc: "5" # ghostscript is built with GCC
 
   def install
     # Avoid references to shim
