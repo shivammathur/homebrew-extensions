@@ -12,12 +12,13 @@ class JpegXl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "a603bfaffbd444d11e882f8d72beaf3833cbf91473c4bb8c964c00bd94b07d65"
-    sha256 cellar: :any,                 arm64_big_sur:  "d1ba28b49a63312dd1632bfe5a5fd2dfe91c5ca8f3d4c5961ea61a65f5c96834"
-    sha256 cellar: :any,                 monterey:       "e310aca584c333e593054342050241e58b88676c408aedd5442a317f10597870"
-    sha256 cellar: :any,                 big_sur:        "797bd4ddd8716f8feaf99d725c832b616273a49cb0ed779c10e90d8bebc359bf"
-    sha256 cellar: :any,                 catalina:       "946101b747602ef79712852a3fdb0517cb0c6341c485639aa9b65dbae67649fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "362eb1bd31e6f791f8e8ff44290932c87ed0652d941c71bc1f3fca3559a60538"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "efa983104c85a9e21f6a08e37073c610766d22daeac69b6b49c21a4422ebc118"
+    sha256 cellar: :any,                 arm64_big_sur:  "e94c361b1a55d4f616cf827cf2165531a2c52670c94e4a7096825a0228bfb2c8"
+    sha256 cellar: :any,                 monterey:       "a70d4e98566703e213ba1463e4bd40093065bf6554c8bd653e592093ddf9e8f7"
+    sha256 cellar: :any,                 big_sur:        "1e2f93a68c8c57fd0a59168cf0ba9db3aa91d3b3ffbfb97de3d9d3ad4047907c"
+    sha256 cellar: :any,                 catalina:       "1c7e4211b53c2c5a50ae372aa76fd62e813c6fddf2c670e3357292440af8e92b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd47dfe014cbd90b2da30c65d7d084c374d90f14dd44b44e1738363ddcdb8629"
   end
 
   depends_on "cmake" => :build
@@ -32,10 +33,6 @@ class JpegXl < Formula
 
   uses_from_macos "libxml2" => :build
   uses_from_macos "libxslt" => :build # for xsltproc
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with gcc: "5"
   fails_with gcc: "6"
