@@ -17,12 +17,13 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "568c39ad7d9610f41bcb34209cb427e9b79d367bdd36fb3d7feecba05758fced"
-    sha256 cellar: :any,                 arm64_big_sur:  "368def753bba0318add78063e1ddf700791d93c2a461df64c58b9f8496fe1212"
-    sha256 cellar: :any,                 monterey:       "620229f74c80fab4b0fdb5fb8fa251566261c3ec48f93ebe4594a21100f3cb5f"
-    sha256 cellar: :any,                 big_sur:        "2fc59389644e24a64c8900f0c9da4b6c1bc546cea62aff5a40128271b618d4a8"
-    sha256 cellar: :any,                 catalina:       "4a64e22eb6c832174fd04630b838af5225d0b5aa9ce2f3f0b620047ad9381dc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0acd012d2e2281dba7412472f271daefc5b1f30a020dbf24f1e661246df98fc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "6c04088af10e7324797dff66822f4648db91146600f4a7b49732d5025038aaae"
+    sha256 cellar: :any,                 arm64_big_sur:  "2c140085c58e7be3337dcbc851eaff34888e5fdc2c2b85dc715a207abfc6a4cd"
+    sha256 cellar: :any,                 monterey:       "c2191c276db0718a645bc2235c508d3d19055684e0dd327d4f2d11705272be53"
+    sha256 cellar: :any,                 big_sur:        "3cb3cacdce542a123aafd15a3baf79476d8ad88d3d2cb05ea9544b92e4a2762c"
+    sha256 cellar: :any,                 catalina:       "3a42f597be3f40a050648cf470524ccc5c789436419124e5df37bad30c7feb53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df35510faef2492b8e9784c1e759901266bf9c7de5f98ea5cb7d018e017edd2b"
   end
 
   depends_on "autoconf" => :build
@@ -42,10 +43,6 @@ class Grpc < Formula
     # This shouldn't be needed for `:test`, but there's a bug in `brew`:
     # CompilerSelectionError: pdnsrec cannot be built with any available compilers.
     depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version <= 1100
-  end
-
-  on_linux do
-    depends_on "gcc"
   end
 
   fails_with :clang do
