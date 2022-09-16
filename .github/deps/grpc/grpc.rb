@@ -2,8 +2,8 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.48.1",
-      revision: "d52ed193d11dee797c0d51dc8db06032998b33f4"
+      tag:      "v1.49.0",
+      revision: "8f8edfd04b46ee67f90454b3f6a70aa58ff82c2d"
   license "Apache-2.0"
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -17,13 +17,12 @@ class Grpc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_monterey: "6c04088af10e7324797dff66822f4648db91146600f4a7b49732d5025038aaae"
-    sha256 cellar: :any,                 arm64_big_sur:  "2c140085c58e7be3337dcbc851eaff34888e5fdc2c2b85dc715a207abfc6a4cd"
-    sha256 cellar: :any,                 monterey:       "c2191c276db0718a645bc2235c508d3d19055684e0dd327d4f2d11705272be53"
-    sha256 cellar: :any,                 big_sur:        "3cb3cacdce542a123aafd15a3baf79476d8ad88d3d2cb05ea9544b92e4a2762c"
-    sha256 cellar: :any,                 catalina:       "3a42f597be3f40a050648cf470524ccc5c789436419124e5df37bad30c7feb53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df35510faef2492b8e9784c1e759901266bf9c7de5f98ea5cb7d018e017edd2b"
+    sha256 cellar: :any,                 arm64_monterey: "587ec26e29886e8fbface5dab2dd5ace9bac1ad99e11c089490e4263cd74e860"
+    sha256 cellar: :any,                 arm64_big_sur:  "eb281e79ca346f9315eb0132e0c6ba46a80e64ec09b637a9ede0c142056e44e4"
+    sha256 cellar: :any,                 monterey:       "91a077b462b09839af2c796576a97e56db76794e50ed3c4aef839274cb89d57d"
+    sha256 cellar: :any,                 big_sur:        "dfe176b0c3523607315f3f7ccebbe593b8b33b1c45b74102ee44ad7e9df89553"
+    sha256 cellar: :any,                 catalina:       "37ec956fbd0caf711f00e4ed4c9a2ac8644d2b655cd57e60766417012ee4872b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bfe7de1d749305d44a5f052ddede64cd10cd15f27d25f40bd2a9501aa66a5d7"
   end
 
   depends_on "autoconf" => :build

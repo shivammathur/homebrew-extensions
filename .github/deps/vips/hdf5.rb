@@ -4,7 +4,7 @@ class Hdf5 < Formula
   url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.2/src/hdf5-1.12.2.tar.bz2"
   sha256 "1a88bbe36213a2cea0c8397201a459643e7155c9dc91e062675b3fb07ee38afe"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   version_scheme 1
 
   # This regex isn't matching filenames within href attributes (as we normally
@@ -16,12 +16,12 @@ class Hdf5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "b037458007f1ed0b4efff36eda7d90e3ab69b64dd35dc6446b856718f75aacc9"
-    sha256 cellar: :any,                 arm64_big_sur:  "c6f69f0d07115eb0737dbf079de9be2c241696a6473208160eb7afc24d9672ca"
-    sha256 cellar: :any,                 monterey:       "ee1e47f8d2ddf6b5ad900265a8d9a820e11aec0d9cf0b0fa3539192d75da47c3"
-    sha256 cellar: :any,                 big_sur:        "ff4c735a6540da3e743e3b57e60f624ecd817e60ed6d93360d22abfcd64040f5"
-    sha256 cellar: :any,                 catalina:       "02415d16e1b73a3e989a9a1cb9791399c0d8d335ff83ba1885b641209dd5ee52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8eae6a47c9c08c2ce5a63d6d57dacc44eed0a34b86fd774b177d1a8a9112591"
+    sha256 cellar: :any,                 arm64_monterey: "be3e935473b18d51e1d8fcd3ac08ab24084bad5304fca18f55811ffd21bb4c74"
+    sha256 cellar: :any,                 arm64_big_sur:  "86cb013d39a9b59dc71fbcdb12fcc2051f2e3fa3abcc47e49a44b9447ada3a49"
+    sha256 cellar: :any,                 monterey:       "4857771f10068ad7bde8c0fd7bad17069a3ccd58862a0ab19ce1f093dc173ab4"
+    sha256 cellar: :any,                 big_sur:        "42b85f81e839ad8e5c0667d13b55ab56e83336a00809538c4bbb84c72825c00d"
+    sha256 cellar: :any,                 catalina:       "c4a7d6bc2b3c233b802f8584e30236eb7d62f911274f93c99321bcae61df49cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "308e114d6b3c43eec5e6933d2fd823d59dc1ec0e0444598278f9599cacd73e28"
   end
 
   depends_on "autoconf" => :build
