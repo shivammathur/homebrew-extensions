@@ -12,12 +12,13 @@ class Poppler < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "a2f098c3bdb79a810d1a88f5492b405b165f2f71e5a0152db5abc180cfc0647a"
-    sha256 arm64_big_sur:  "157869bc6537f08b996f33aa3e993d11de71634db860acd9e2067da4e45944f3"
-    sha256 monterey:       "40d3b7ae291de1c94c41749a7806c197eb833fcb4351a0459d22941e6a0f4afb"
-    sha256 big_sur:        "d3b93d4e8de01235e40fb13b1dc373b4ced6fd20595562f85c19f9c2713e2d93"
-    sha256 catalina:       "87fd7582ecde41c95f49b9c64480c3282a4978c2e9f64a46a307aface7fb3b08"
-    sha256 x86_64_linux:   "72c377e8e00865e5257124ff201fb5da8c8d3937c8ec5d4c50acbb694af6a0dd"
+    rebuild 1
+    sha256 arm64_monterey: "7d082645e0272f32dce02ba14e538961daafbadc0506104c24aa8704e348caca"
+    sha256 arm64_big_sur:  "eecb637cec87c66ac8ff95e2215a632e31e4ec1e8d797dbbddc6b016c341adcf"
+    sha256 monterey:       "7677b6f6205b0cea6269c1dc8c5580e25b7183d64869b3c5493e0f4f2f89b717"
+    sha256 big_sur:        "f27f2e75915739ca671a4c524527f80add251b44076ccd818a0225a7acc37207"
+    sha256 catalina:       "4b7c11b5a1c1fb89435662a0761b1922250eac8727be6f3524a72fe67904ea2e"
+    sha256 x86_64_linux:   "954439909c67a1f4f105040e267be6a58be9a20956e57a29bc7a1cc504a19bd9"
   end
 
   depends_on "cmake" => :build
@@ -39,10 +40,6 @@ class Poppler < Formula
   uses_from_macos "gperf" => :build
   uses_from_macos "curl", since: :catalina # 7.55.0 required by poppler
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   conflicts_with "pdftohtml", "pdf2image", "xpdf",
     because: "poppler, pdftohtml, pdf2image, and xpdf install conflicting executables"
