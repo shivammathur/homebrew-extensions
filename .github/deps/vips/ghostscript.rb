@@ -1,26 +1,24 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
-  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostpdl-9.56.1.tar.xz"
-  sha256 "05e64c19853e475290fd608a415289dc21892c4d08ee9086138284b6addcb299"
+  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostpdl-10.0.0.tar.xz"
+  sha256 "8f2b7941f60df694b4f5c029b739007f7c4e0d43858471ae481e319a967d5d8b"
   license "AGPL-3.0-or-later"
-  revision 1
 
   # We check the tags from the `head` repository because the GitHub tags are
   # formatted ambiguously, like `gs9533` (corresponding to version 9.53.3).
   livecheck do
-    url :stable
-    regex(/href=.*?ghostpdl[._-]v?(\d+(?:\.\d+)+)\.t/i)
-    strategy :github_latest
+    url :head
+    regex(/^ghostpdl[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 arm64_monterey: "c84daf7a848fac53bf2968239151361290ccb277accae6f11b0b39a7acb5f914"
-    sha256 arm64_big_sur:  "a4f21885ac9b57f6e5511a1208b9d36ad0aa473180a2e080a9b4c23de2a5b6e9"
-    sha256 monterey:       "38729b0c92a70014d82ddd57d33190019822f999efdb69d3f95e2e4cbe38fb71"
-    sha256 big_sur:        "d1c4c864b2c954cf10c9023b5468652f60fb943d5ba91c190a85ef9d8224571f"
-    sha256 catalina:       "335d57520e942b8547d79f62b505cc87a8afee12ecc50baccebe9dad32a0f0d0"
-    sha256 x86_64_linux:   "478b2bb55a41d3afbfbdf55956180e6f653a981219dd137ba5728fbce8bed6ea"
+    sha256 arm64_monterey: "07becfb977ec79a7cdd2b6c5298fbb3d24ba61599106d903a7e1ea51d23b3df3"
+    sha256 arm64_big_sur:  "6d71b98737f6113d18b963ca01d454e46218458b7b6eb8e2a5ae4c59359c5d30"
+    sha256 monterey:       "c61d7421c9835d33d293fd0d496ce8fb983d8ee9351a6c59e3efbd621a4bec30"
+    sha256 big_sur:        "eaf18fcce3a87ea2513439b58733a675c96a650ec91c4302293927e0054b43c6"
+    sha256 catalina:       "0a200d59567de71739729720e96e9012961e1149c3a8cfe4ff79ca44b6a24a43"
+    sha256 x86_64_linux:   "95c5e86cc3e8d68e61b7c7c7659aa75b6673d399f67e99ab815418d9f165ce22"
   end
 
   head do
@@ -46,10 +44,6 @@ class Ghostscript < Formula
   uses_from_macos "expat"
   uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "gcc"
-  end
-
   fails_with gcc: "5"
 
   # https://sourceforge.net/projects/gs-fonts/
@@ -69,38 +63,17 @@ class Ghostscript < Formula
   end
 
   def install
-    # Fix vendored tesseract build error: 'cstring' file not found
-    # Remove when possible to link to system tesseract
-    ENV.append_to_cflags "-stdlib=libc++" if ENV.compiler == :clang
-
-    # Fix VERSION file incorrectly included as C++20 <version> header
-    # Remove when possible to link to system tesseract
-    rm "tesseract/VERSION"
-
     # Delete local vendored sources so build uses system dependencies
-    rm_rf "expat"
-    rm_rf "freetype"
-    rm_rf "jbig2dec"
-    rm_rf "jpeg"
-    rm_rf "lcms2mt"
-    rm_rf "libpng"
-    rm_rf "openjpeg"
-    rm_rf "tiff"
-    rm_rf "zlib"
+    libs = %w[expat freetype jbig2dec jpeg lcms2mt libpng openjpeg tiff zlib]
+    libs.each { |l| (buildpath/l).rmtree }
 
-    args = %w[
-      --disable-compile-inits
-      --disable-cups
-      --disable-gtk
-      --with-system-libtiff
-      --without-x
-    ]
-
-    if build.head?
-      system "./autogen.sh", *std_configure_args, *args
-    else
-      system "./configure", *std_configure_args, *args
-    end
+    configure = build.head? ? "./autogen.sh" : "./configure"
+    system configure, *std_configure_args,
+                      "--disable-compile-inits",
+                      "--disable-cups",
+                      "--disable-gtk",
+                      "--with-system-libtiff",
+                      "--without-x"
 
     # Install binaries and libraries
     system "make", "install"

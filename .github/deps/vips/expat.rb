@@ -1,27 +1,29 @@
 class Expat < Formula
   desc "XML 1.0 parser"
   homepage "https://libexpat.github.io/"
-  url "https://github.com/libexpat/libexpat/releases/download/R_2_4_8/expat-2.4.8.tar.xz"
-  sha256 "f79b8f904b749e3e0d20afeadecf8249c55b2e32d4ebb089ae378df479dcaf25"
+  url "https://github.com/libexpat/libexpat/releases/download/R_2_4_9/expat-2.4.9.tar.xz"
+  sha256 "6e8c0728fe5c7cd3f93a6acce43046c5e4736c7b4b68e032e9350daa0efc0354"
   license "MIT"
 
   livecheck do
     url :stable
-    strategy :github_latest
-    regex(/href=.*?expat[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(%r{href=["']?[^"' >]*?/tag/\D*?(\d+(?:[._]\d+)*)["' >]}i)
+    strategy :github_latest do |page, regex|
+      page.scan(regex).map { |match| match[0].tr("_", ".") }
+    end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "6c87cbc27a23da1b9c22382d830a3553309bb1475201a375af648941330af9f4"
-    sha256 cellar: :any,                 arm64_big_sur:  "9eff463ed55b86e151c5490d671933ebaefeefa0c6fb5233a74ac204b79185a2"
-    sha256 cellar: :any,                 monterey:       "4a4f446d62d57087d1220c8bc145c0025b50086b94a9edaa2776d7246c5a0e6f"
-    sha256 cellar: :any,                 big_sur:        "8148cbc1408b80b38c3811da65daea299a39858ff673cb355f3ac3b85bb93e66"
-    sha256 cellar: :any,                 catalina:       "68dcfe4b36668a6dc84296c50a3f3ac6ec8cada56de37bfe233fd4fb7c500c06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db13166d6a5bd0e19f82e9cd19f4a951ffff40cdfc29197e8143780444d0c204"
+    sha256 cellar: :any,                 arm64_monterey: "d2aecb76db9667c371242d0d6f610249e15ee78e792cd0c53d3fb0e00ba7f3ac"
+    sha256 cellar: :any,                 arm64_big_sur:  "c7010f5ae496405695a9c14e00def88cdc3d983029bc3943c85bf266c6b16082"
+    sha256 cellar: :any,                 monterey:       "33de0fb29eaca0a761486736ba635361fc9d9ed6f2dbd512db3604a68079eba4"
+    sha256 cellar: :any,                 big_sur:        "132a9beedd4682a30a58409f7f4ef0c77fbd4e60cb436d008b0632ad47062fea"
+    sha256 cellar: :any,                 catalina:       "7ba700e0cc0e1e5684fdf01392bf8be36178f4201b6dc6dda12d78c51c45cfba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65f4d2e3ae86f20f3252d050485b36e7fab8851355cde4e90f260768e254c371"
   end
 
   head do
-    url "https://github.com/libexpat/libexpat.git"
+    url "https://github.com/libexpat/libexpat.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "docbook2x" => :build
