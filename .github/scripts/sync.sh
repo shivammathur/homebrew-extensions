@@ -16,6 +16,11 @@ for extension in "${extensions[@]}"; do
     mapfile -t vips_deps < <(brew deps vips)
     deps=( "${deps[@]}" "${vips_deps[@]}" )
   fi  
+  if [ "$extension" = "imagick" ]; then
+    curl -o $(brew --repo homebrew/core)/Formula/imagemagick.rb -sL "$trunk"/imagemagick.rb
+    mapfile -t imagick_deps < <(brew deps imagemagick)
+    deps=( "${deps[@]}" "${imagick_deps[@]}" )
+  fi  
   
   if [[ -n "${deps// }" ]]; then
     printf "\n----- %s -----\n" "$extension"
