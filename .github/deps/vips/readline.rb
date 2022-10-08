@@ -1,19 +1,18 @@
 class Readline < Formula
   desc "Library for command-line editing"
   homepage "https://tiswww.case.edu/php/chet/readline/rltop.html"
-  url "https://ftp.gnu.org/gnu/readline/readline-8.1.tar.gz"
-  mirror "https://ftpmirror.gnu.org/readline/readline-8.1.tar.gz"
-  version "8.1.2"
-  sha256 "f8ceb4ee131e3232226a17f51b164afc46cd0b9e6cef344be87c65962cb82b02"
+  url "https://ftp.gnu.org/gnu/readline/readline-8.2.tar.gz"
+  mirror "https://ftpmirror.gnu.org/readline/readline-8.2.tar.gz"
+  version "8.2.1"
+  sha256 "3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35"
   license "GPL-3.0-or-later"
 
   %w[
-    001 682a465a68633650565c43d59f0b8cdf149c13a874682d3c20cb4af6709b9144
-    002 e55be055a68cb0719b0ccb5edc9a74edcc1d1f689e8a501525b3bc5ebad325dc
+    001 bbf97f1ec40a929edab5aa81998c1e2ef435436c597754916e6a5868f273aff7
   ].each_slice(2) do |p, checksum|
     patch :p0 do
-      url "https://ftp.gnu.org/gnu/readline/readline-8.1-patches/readline81-#{p}"
-      mirror "https://ftpmirror.gnu.org/readline/readline-8.1-patches/readline81-#{p}"
+      url "https://ftp.gnu.org/gnu/readline/readline-8.2-patches/readline82-#{p}"
+      mirror "https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-#{p}"
       sha256 checksum
     end
   end
@@ -55,12 +54,12 @@ class Readline < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "9d9d9512c80c6ae7c8281da84533222d90cb5e06accdfa98e0bff37672793cec"
-    sha256 cellar: :any,                 arm64_big_sur:  "08efc469d237689a9619ec6b3ea931793d03597e89bd622ebd122b7256d7a446"
-    sha256 cellar: :any,                 monterey:       "976185ec243284d74eb8b9c554d944cbc0208c26495193bcd28fdf12a08f134e"
-    sha256 cellar: :any,                 big_sur:        "1eaadc077c1584e296810abbcefd2e90bc055ddbcb675f0668e86f95f2229212"
-    sha256 cellar: :any,                 catalina:       "7346c1c37bfa5f9b9661450e8d7b627012dfc551813e3df48508a4fa1a05e6e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b46aff4f720e0f15601aecb2efd4ae7c2a3454b2fad91b196728ed4ee4f12c3"
+    sha256 cellar: :any,                 arm64_monterey: "9406afa0f7aefbbef37ee193b3b17dd0e08bb2a80e99680cde732289f4819ad2"
+    sha256 cellar: :any,                 arm64_big_sur:  "7012f0f3d05e9ca181c67bd55ffeee000aa557aedcee0e260d75085215e80234"
+    sha256 cellar: :any,                 monterey:       "19e6b02f577010a1a33c6ae6f09e40772d6ab22d94b6cf3455cfed9d301d28cf"
+    sha256 cellar: :any,                 big_sur:        "e6dfc7d95895f18657c0fb15e77a8c104362bb87bafdff770a6a352301cc1082"
+    sha256 cellar: :any,                 catalina:       "ef32c6905cc91e0ff5acfce9ad9e7aba1eecbcc5c79ee4e1e3abfe25fa4bf1a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dc8f7ebbfcb22adcd5535a8da083ed8aa3c42c8579c465a2263d778868bc058"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BSD libedit"
@@ -68,17 +67,12 @@ class Readline < Formula
   uses_from_macos "ncurses"
 
   def install
-    args = ["--prefix=#{prefix}"]
-    args << "--with-curses" if OS.linux?
-    system "./configure", *args
-
-    args = []
-    args << "SHLIB_LIBS=-lcurses" if OS.linux?
-    # There is no termcap.pc in the base system, so we have to comment out
-    # the corresponding Requires.private line.
-    # Otherwise, pkg-config will consider the readline module unusable.
-    inreplace "readline.pc", /^(Requires.private: .*)$/, "# \\1"
-    system "make", "install", *args
+    system "./configure", "--prefix=#{prefix}", "--with-curses"
+    # FIXME: Setting `SHLIB_LIBS` should not be needed, but, on Linux,
+    #        many dependents expect readline to link with ncurses and
+    #        are broken without it. Readline should be agnostic about
+    #        the terminfo library on Linux.
+    system "make", "install", "SHLIB_LIBS=-lcurses"
   end
 
   test do
@@ -93,8 +87,8 @@ class Readline < Formula
         return 0;
       }
     EOS
+
     system ENV.cc, "-L", lib, "test.c", "-L#{lib}", "-lreadline", "-o", "test"
-    assert_equal "test> Hello, World!\nHello, World!",
-      pipe_output("./test", "Hello, World!\n").strip
+    assert_equal "test> Hello, World!\nHello, World!", pipe_output("./test", "Hello, World!\n").strip
   end
 end
