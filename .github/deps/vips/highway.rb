@@ -7,18 +7,26 @@ class Highway < Formula
   head "https://github.com/google/highway.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "3cdf11ce370958e7ab8a632f72f2314f158ad11589530039761dacd0cfb38c73"
-    sha256 cellar: :any,                 arm64_big_sur:  "5b75f29e2d9696b39705face1c606f373f71695492b5027454e32196206198d0"
-    sha256 cellar: :any,                 monterey:       "5e8cf8ae1bd0a2d1f87a58c70522fd6f5ce0a411acbe4be141a74fca21fdce25"
-    sha256 cellar: :any,                 big_sur:        "bf41f04b4711c00fe930bf6ed4ce3f269d70ae9b732609aa3dc7bf246abe32cf"
-    sha256 cellar: :any,                 catalina:       "5400bcc779804a0e2a4e8a5d4653bcd68a478f5d1f0129ed72c0bc5e7d31e991"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17c99eda57fca375f1e94eda95d3892d2a8a47cf2c0c47cb8526cc805f650e9d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "301fe3b3ffb3875b47ef48cc80f1f6ec2796ba648fe9c5785501c577eb784a80"
+    sha256 cellar: :any,                 arm64_big_sur:  "ab6cc22dcd2b1baf85a8fb6bb6f67e098087a6e02e72c3b8c3dbdd446ce63176"
+    sha256 cellar: :any,                 monterey:       "0a64c83377262ac734da3001b4d2bba1dcac60fb7ec8fab2e3a68f28cff46de0"
+    sha256 cellar: :any,                 big_sur:        "0c9e42c9c4f7ee57aee7ad16ecd8976b59c3bdff0a41c3b21a141955b04ba994"
+    sha256 cellar: :any,                 catalina:       "0ff04ecf1b79966e71936d7eed1ddab6a563b290dd0ffdf3ead6e6bcb6fd7c75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f76843e127c89e5da439264ee292103846991c720bd63070cebbed132125164"
   end
 
   depends_on "cmake" => :build
 
   # These used to be bundled with `jpeg-xl`.
   link_overwrite "include/hwy/*", "lib/pkgconfig/libhwy*"
+
+  # Fix missing missing exec_prefix variable in libhwy_test.pc.
+  # Remove with the next release.
+  patch do
+    url "https://github.com/google/highway/commit/357e21beabb1af037f20130b4195fa5d0e6bbbfb.patch?full_index=1"
+    sha256 "35ae4d7cd0cdaaca83c5b6da01b9c19f34c3f293b6892f3c3afdb202255f523a"
+  end
 
   def install
     ENV.runtime_cpu_detection
