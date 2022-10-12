@@ -1,39 +1,27 @@
 class Gettext < Formula
   desc "GNU internationalization (i18n) and localization (l10n) library"
   homepage "https://www.gnu.org/software/gettext/"
-  url "https://ftp.gnu.org/gnu/gettext/gettext-0.21.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gettext/gettext-0.21.tar.gz"
-  mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.21.tar.gz"
-  sha256 "c77d0da3102aec9c07f43671e60611ebff89a996ef159497ce8e59d075786b12"
+  url "https://ftp.gnu.org/gnu/gettext/gettext-0.21.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gettext/gettext-0.21.1.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.21.1.tar.gz"
+  sha256 "e8c3650e1d8cee875c4f355642382c1df83058bd5a11ee8555c0cf276d646d45"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_monterey: "6e2c829031949c0cbd758d0701ed62c191387736e76a98a046c0619907632225"
-    sha256 arm64_big_sur:  "339b62b52ba86dfa73091d37341104b46c01ae354ca425000732df689305442b"
-    sha256 monterey:       "0e93b5264879cd5ece6efb644fd6320b0b96cce36de3901c1926e53f851d14c7"
-    sha256 big_sur:        "a025e143fe3f5f7e24a936b8b0a4926acfdd025b11d62024e3d355c106536d56"
-    sha256 catalina:       "cdea54f52b7c36ebcb5fe26a1cf736d7cd6fd5f2fd016dd8357a8624ffd6b5f8"
-    sha256 mojave:         "99707d4dcc731faf980333365a694e9500f2f012f84c0bcb6d8cb5d620c2ce08"
-    sha256 high_sierra:    "5ac5783e31205b92907b46bfaaa142620aea7ee3fc4d996876b0913fd2315695"
-    sha256 x86_64_linux:   "33f840e667c6ee0f674adb279e644ca4a1b3cd1606894c85d9bbce1b5acc0273"
+    sha256 arm64_monterey: "356b52e24b883af3ef092d13b6727b76e0137154c2c9eb42fe7c272bb7d3edec"
+    sha256 arm64_big_sur:  "90da957f7b8ad3d47fff7045a684060168e0433631921463fbbff09b5dc4b772"
+    sha256 monterey:       "9318777367eae475e9ea226d2bcbd19ef8281d1dd2af3a92c20c00246677145b"
+    sha256 big_sur:        "95086fa8b1b6a913ca7ef3a7c7c49e147823c26ba239003f9140cfe1252587ba"
+    sha256 catalina:       "aba2b94f406a9d8784bb08f9763440297c645a7ea99f4c4dbfeccb325053322a"
+    sha256 x86_64_linux:   "991579fa170ca491fd6332844b570095978961a9764e57f00180002d471cf3b8"
   end
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    directory "gettext-runtime/libasprintf"
-  end
-
   def install
     args = [
-      "--disable-dependency-tracking",
       "--disable-silent-rules",
-      "--disable-debug",
-      "--prefix=#{prefix}",
       "--with-included-glib",
       "--with-included-libcroco",
       "--with-included-libunistring",
@@ -57,7 +45,7 @@ class Gettext < Formula
     else
       "--with-libxml2-prefix=#{Formula["libxml2"].opt_prefix}"
     end
-    system "./configure", *args
+    system "./configure", *std_configure_args, *args
     system "make"
     ENV.deparallelize # install doesn't support multiple make jobs
     system "make", "install"
