@@ -18,8 +18,10 @@ case $extension in
   sed -i "s/^  url .*/  url \"https\:\/\/github.com\/swoole\/swoole-src\/archive\/$tag.tar.gz\"/g" ./Formula/"$version".rb
   ;;
   xdebug|igbinary)
+  pip3 install packaging
   [[ "$version" =~ xdebug@(7.[2-4]|8.[0-1]) ]] && regex='[0-9]+\.[0-9]+\.[0-9]+$' || regex='(^[0-9]\.).*'
-  tag=$(gh api /repos/"$extension"/"$extension"/git/refs/tags | jq -r .[].ref | cut -d '/' -f 3 | grep -E "$regex" | sed '/-/!{s/$/_/}' | sort -V | sed 's/_$//' | tail -1)
+  tags=$(gh api /repos/"$extension"/"$extension"/git/refs/tags | jq -r .[].ref | cut -d '/' -f 3 | grep -E "$regex" | sed -z 's/\n/","/g;s/,$/\n/' | sed -E 's|","$||g')
+  tag=$(python3 -c "from packaging import version; print(sorted([\"$tags\"], key=lambda x: version.Version(x))[-1])")
   sed -i "s/^  url .*/  url \"https\:\/\/github.com\/$extension\/$extension\/archive\/$tag.tar.gz\"/g" ./Formula/"$version".rb
   ;;
   "pecl_http")
