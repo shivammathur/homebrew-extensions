@@ -4,21 +4,21 @@ git config --local user.name BrewTestBot
 git config --local pull.rebase true
 
 trunk=https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula
-mapfile -t extensions < <(find ./Formula -maxdepth 1 -name "*@*.rb" -print0 | xargs -0 basename -a | sed "s/@.*//" | sort | uniq)
+IFS=' ' read -r -a extensions <<<"$(find ./Formula -maxdepth 1 -name '*@*.rb' -print0 | xargs -0 basename -a | sed 's/@.*//' | sort | uniq | tr '\n' ' ')"
 for extension in "${extensions[@]}"; do
   formula_file=./Formula/"$extension"@7.2.rb
   if ! [ -e "$formula_file" ]; then
     formula_file=./Formula/"$extension"@7.4.rb
   fi
-  mapfile -t deps < <(grep "depends_on" "$formula_file" | tr -d '"' | cut -d' ' -f 4)
+  IFS=' ' read -r -a deps <<<"$(grep 'depends_on' "$formula_file" | tr -d '\"' | cut -d' ' -f 4 | tr '\n' ' ')"
   if [ "$extension" = "vips" ]; then
     curl -o $(brew --repo homebrew/core)/Formula/vips.rb -sL "$trunk"/vips.rb
-    mapfile -t vips_deps < <(brew deps vips)
+    IFS=' ' read -r -a vips_deps <<<"$(brew deps vips | tr '\n' ' ')"
     deps=( "${deps[@]}" "${vips_deps[@]}" )
   fi  
   if [ "$extension" = "imagick" ]; then
     curl -o $(brew --repo homebrew/core)/Formula/imagemagick.rb -sL "$trunk"/imagemagick.rb
-    mapfile -t imagick_deps < <(brew deps imagemagick)
+    IFS=' ' read -r -a imagick_deps <<<"$(brew deps imagemagick | tr '\n' ' ')"
     deps=( "${deps[@]}" "${imagick_deps[@]}" )
   fi  
   
