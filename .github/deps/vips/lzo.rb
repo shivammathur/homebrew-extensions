@@ -11,6 +11,7 @@ class Lzo < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "a565c627b13f2dc7fc4550aa8290a4c3feb2f48fcaa45c9f7f4bc4fe4535aa66"
     sha256 cellar: :any,                 arm64_monterey: "e16072e8ef7a8810284ccea232a7333a2b620367814b133a455217d22e89ae8e"
     sha256 cellar: :any,                 arm64_big_sur:  "76d0933f626d8a1645b559b1709396a2a6fd57dbd556d2f1f1848b5fddfcd327"
     sha256 cellar: :any,                 monterey:       "0a20a578e6a31ebbe3c5d708af38b1c3ca5ba503612ed28a197cd326505d31dd"

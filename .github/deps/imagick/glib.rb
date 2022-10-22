@@ -8,6 +8,7 @@ class Glib < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 arm64_ventura:  "e3975e0937384fc951875d7e19a95ee4d797cb240e61e81c96d61439cdaf93b3"
     sha256 arm64_monterey: "08af01b696f9abfae1255324cac774c44b46820bd3c651fa141a56fa674aa22a"
     sha256 arm64_big_sur:  "772b6f5f227ee6baf2c473a38e6be1fbc1e5e030438afb409625cc0319eaecd9"
     sha256 monterey:       "226a940bbed1b1ba38dea05e14f6cdc3d35e6fcd4cfe7cf39b760bf2d4718178"

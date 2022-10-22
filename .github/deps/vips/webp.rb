@@ -6,6 +6,7 @@ class Webp < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "d6cc5a2a21f783077fc0c40e61809d14b52f9c878a682cefe750364222f51551"
     sha256 cellar: :any,                 arm64_monterey: "f2857acd2c645e441e7363903906492e96cda8c52a1fe0c9ddb668fd12f63e53"
     sha256 cellar: :any,                 arm64_big_sur:  "90cc74768d434a5476cf49144d02ef5dd24cfeb2dead12f1210ffa468e024c85"
     sha256 cellar: :any,                 monterey:       "51401f60176f19559cd04e37873da32c470fe3ac6ba0a9e096a4fafda5cd8065"

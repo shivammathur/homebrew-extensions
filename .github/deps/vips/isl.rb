@@ -26,6 +26,7 @@ class Isl < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "93e737d38d526bb8e78379124c237b3a532c2c8a77562dcf178baa955b193a97"
     sha256 cellar: :any,                 arm64_monterey: "764bde8aa0d015c13cbf53891489f3ef56a5951f617ad9906aea34382dc1f4d1"
     sha256 cellar: :any,                 arm64_big_sur:  "24f86a50eea8a2d4dbc24ecb5f8b8ded61f6f7cd7054886b5dafcb82854b28ed"
     sha256 cellar: :any,                 monterey:       "568dd08209728ad3a036cf45287ff8384b9ed821460a216a9a79fa80fdcfbf52"

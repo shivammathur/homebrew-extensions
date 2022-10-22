@@ -11,6 +11,7 @@ class Mpdecimal < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "5b1c62c08b42feb6e48c461a9de4751803f3ccc76830213a517f0905178dbbef"
     sha256 cellar: :any,                 arm64_monterey: "726e8ec0713eb452bb744fe9147771bacc2c3713a128aaee03b6ddcc78011d1a"
     sha256 cellar: :any,                 arm64_big_sur:  "eebbc5c7e71710c848eb60b90f946aefdee1b5269c840c30b8098d6bb758500b"
     sha256 cellar: :any,                 monterey:       "73e9acc9ca851c0d7fb92fdb223bf63595c319d7c5e01049388ce7989777852c"

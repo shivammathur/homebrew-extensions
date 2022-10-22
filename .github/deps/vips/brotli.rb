@@ -9,6 +9,7 @@ class Brotli < Formula
   head "https://github.com/google/brotli.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "dda0779953c24b98703ae950195fdd7f5ae6dbd697e026cb65520d13ea8b1258"
     sha256 cellar: :any,                 arm64_monterey: "5e9bddd862bda5b950307710430f3adf65486554d12e29629f67df8a0c5b881c"
     sha256 cellar: :any,                 arm64_big_sur:  "bcd00b6f423ec35f98aec55bc2c1cf433b6e70e915cdf04dd2c3a3707f1ce341"
     sha256 cellar: :any,                 monterey:       "985ce69f1aece701dc8103ef8775d57deaf99936782339583e16177ceb1259f3"

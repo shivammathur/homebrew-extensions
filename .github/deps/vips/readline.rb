@@ -54,6 +54,7 @@ class Readline < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "fba42a9bd6feaa8902ae4491ffdf177662e0a165a0d0ddef0988ad6ecf0f23dd"
     sha256 cellar: :any,                 arm64_monterey: "9406afa0f7aefbbef37ee193b3b17dd0e08bb2a80e99680cde732289f4819ad2"
     sha256 cellar: :any,                 arm64_big_sur:  "7012f0f3d05e9ca181c67bd55ffeee000aa557aedcee0e260d75085215e80234"
     sha256 cellar: :any,                 monterey:       "19e6b02f577010a1a33c6ae6f09e40772d6ab22d94b6cf3455cfed9d301d28cf"

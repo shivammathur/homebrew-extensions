@@ -8,6 +8,7 @@ class Libunistring < Formula
   license any_of: ["GPL-2.0-only", "LGPL-3.0-or-later"]
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "25cdc9367877f369283d003e0d092c7fb8fef6f0b973a9571e1d2a8d097920f2"
     sha256 cellar: :any,                 arm64_monterey: "b8b2f6fe30eefd002bf0dbb5fc0e5c6dc0d5f9b9219f4d6fcddc48e3bc229b23"
     sha256 cellar: :any,                 arm64_big_sur:  "df13d54b58c8c86c0e609f7343677175eae0a58ba0cceabbceb08023d23021c3"
     sha256 cellar: :any,                 monterey:       "18a1691229db1dbc9c716236df52f447aa9949121c36ae65b4d6fdf284d260c6"

@@ -12,6 +12,7 @@ class Hwloc < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "e2cb861fdebc680fe87cf93e10da9691ca63b5fd421fc7dda465d9c212da4021"
     sha256 cellar: :any,                 arm64_monterey: "5a490d201828781f1d09be139c066761c8a21da6fe94eaeeb7833afeae694855"
     sha256 cellar: :any,                 arm64_big_sur:  "c7b3b0ae09b9dbee5ffeb91120082ed0de28d4add7201a7f2399d5bc887f2838"
     sha256 cellar: :any,                 monterey:       "42fdb0904f29f3f6635783d2d73a70e3ca44e5c95bf9295bdb4d00d23493d10f"

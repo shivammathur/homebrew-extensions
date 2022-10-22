@@ -11,6 +11,7 @@ class Pixman < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "6d3b22b80045f4f42289b412bb95febd88dd228fc96a18594000c849c8b0e209"
     sha256 cellar: :any,                 arm64_monterey: "3dbb0582d3c6fcb87fc1d99a42064e8b81d409951ba7b863c2482957792f837b"
     sha256 cellar: :any,                 arm64_big_sur:  "da951aa8e872276034458036321dfa78e7c8b5c89b9de3844d3b546ff955c4c3"
     sha256 cellar: :any,                 monterey:       "300fc41cc99dfc7ba11862149f9cb88ab9976200bf88b5b944ff09796ed05f40"

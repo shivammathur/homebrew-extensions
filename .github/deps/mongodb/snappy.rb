@@ -8,6 +8,7 @@ class Snappy < Formula
   head "https://github.com/google/snappy.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "c7d3ceead31da3cbf20393cf83f0a31a67a30c9f0bd3dbb2188683a705798de3"
     sha256 cellar: :any,                 arm64_monterey: "8259999a686e6998350672e5e67425d9b5c3afaa139e14b0ad81aa6ac0b3dfa9"
     sha256 cellar: :any,                 arm64_big_sur:  "19b5a3afc6646dcec7a1803921b44fb5c57b6734fc0e32f025633f14d1da05ec"
     sha256 cellar: :any,                 monterey:       "fafb5142d8503a35d03d7db786cbcc44f6c625fefdcfa39a1024d5670c87d56c"

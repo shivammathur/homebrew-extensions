@@ -6,6 +6,7 @@ class LibpthreadStubs < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06a9f3556eefaa9d243d18b484a38f89bcc999b84d3e9722ddf3645479bce44b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "06a9f3556eefaa9d243d18b484a38f89bcc999b84d3e9722ddf3645479bce44b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "66f717674d23f63fae9357bc6432f98c9e40702a1112af2b65ba4b3b22ed3192"
     sha256 cellar: :any_skip_relocation, monterey:       "06a9f3556eefaa9d243d18b484a38f89bcc999b84d3e9722ddf3645479bce44b"

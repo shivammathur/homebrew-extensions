@@ -13,6 +13,7 @@ class Libidn2 < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "36c7aec542d2d8f15c109d1e4cf1217e52649132c7eab423553d3e9cd8499afd"
     sha256 arm64_monterey: "e2d5ad350bd11194d179b2bf199103ce3a0f4aa57cca95fc8ac1f0bc104912c3"
     sha256 arm64_big_sur:  "8ff0838515b514f57fffa8964669815e5fe9e9fc21eeb559210e1f5634ac5483"
     sha256 monterey:       "1ed7a729a0e671778e89599ccf3df8536e41b95b30052827ee2a53a252a06519"

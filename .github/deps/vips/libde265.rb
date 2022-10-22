@@ -1,19 +1,18 @@
 class Libde265 < Formula
   desc "Open h.265 video codec implementation"
   homepage "https://github.com/strukturag/libde265"
-  url "https://github.com/strukturag/libde265/releases/download/v1.0.8/libde265-1.0.8.tar.gz"
-  sha256 "24c791dd334fa521762320ff54f0febfd3c09fc978880a8c5fbc40a88f21d905"
+  url "https://github.com/strukturag/libde265/releases/download/v1.0.9/libde265-1.0.9.tar.gz"
+  sha256 "29bc6b64bf658d81a4446a3f98e0e4636fd4fd3d971b072d440cef987d5439de"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "e50069b8cfb753b45940ea5f95d0a44683ccfb582986947b7369d8ec404de46e"
-    sha256 cellar: :any,                 arm64_big_sur:  "856e3db9a951f15fc2e3c416ddf64c8336d405fc1e407e4728804009034367e6"
-    sha256 cellar: :any,                 monterey:       "2b6de4ce4fd4899e31114857b06a0993a915ef1eb55e4039b770775372d8ba62"
-    sha256 cellar: :any,                 big_sur:        "6c809d037d6fe6c99a4c1492882c1e4ba720c9ead911b587da26dcb352fc5524"
-    sha256 cellar: :any,                 catalina:       "774fe5c9c849784aa10648fe3fae971c7d702a47807b6954c8a8763368bce9fc"
-    sha256 cellar: :any,                 mojave:         "344e3a6eab4addecd812a51ef0d6e0db5e894c26a455603a6b4f4972757a5994"
-    sha256 cellar: :any,                 high_sierra:    "bcb11c6ab6f03a76ae39a1972ed5a8779e785fdc6a62591823bdf8e2ac102890"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c77fa36a474fb41cb046ea5215313b160e5b61ac206b268574f75d2cac1ab18"
+    sha256 cellar: :any,                 arm64_ventura:  "e088b089bec796671d7a00c3d8aad4e2911efd0d649dcd72c15ee4cf97756e31"
+    sha256 cellar: :any,                 arm64_monterey: "1e98138f0c8b39ef2d30ee5e27a2dfc67fd9c58585911517f9602e3e770c9ce7"
+    sha256 cellar: :any,                 arm64_big_sur:  "448d589857e6ebac7a90f49e18cfc83ecf5c2bd45df346f8bbb85fe4f01103c4"
+    sha256 cellar: :any,                 monterey:       "2d258e7db5020ce6f359b4825b62b497de6e4a689bb0ad1502e46c49c8b139dc"
+    sha256 cellar: :any,                 big_sur:        "f8af61259e67183de915096ab18424d2571c4dbafd1a029036933e604df4155c"
+    sha256 cellar: :any,                 catalina:       "9e41b946c4c67a9f318415d18e0b00748d6bf8eec92977c0381e315e5fc94c83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a108482084ad30968aa38ef253df0a28e23e0b45a9feda60af2cc95fc8afc37"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.

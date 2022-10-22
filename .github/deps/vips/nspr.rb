@@ -11,6 +11,7 @@ class Nspr < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "f687611cbb5d48ff8a9e5312eebac9f12f31fb700c3cc1f5a8d2732c0cae9afc"
     sha256 cellar: :any,                 arm64_monterey: "466fd0ffb45153ddc9ce8d882440bc3f2c9c2e1e5ff1caf00ea3e5a7f2dbff0c"
     sha256 cellar: :any,                 arm64_big_sur:  "2e3a32904cb5f089c1dba35df40a81513b2519c1e33b5b29af0c06a639cc554f"
     sha256 cellar: :any,                 monterey:       "7b4bd4b9800bad2ae7322c125defee4da9a94a2cc6abeb6c3897af64a8f023a3"

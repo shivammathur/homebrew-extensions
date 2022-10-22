@@ -7,6 +7,7 @@ class Libtool < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "924534e0a6c2f0562d3b6d033be241bfb0554211103daa14c46790803b9a8b9e"
     sha256 cellar: :any,                 arm64_monterey: "5f92327e52a1196e8742cb5b3a64498c811d51aed658355c205858d2a835fdc9"
     sha256 cellar: :any,                 arm64_big_sur:  "6f676b306c72b04dd0e24cc96f51117e91719a4743743dc5527c16bf03f21320"
     sha256 cellar: :any,                 monterey:       "33bf8379256791a8e8752541bf4e182090dcef5f73aa8faa5f6521d16414a6ca"

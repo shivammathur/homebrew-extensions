@@ -8,6 +8,7 @@ class Aom < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "3bde7b2c3cc3529eb67664ddfc24f20a479510661c7f224c9e62618430ed37e6"
     sha256 cellar: :any,                 arm64_monterey: "8e185cf8b310b04bf065728d20f4395750b17a375278cff207c55de359ba1564"
     sha256 cellar: :any,                 arm64_big_sur:  "43b802f7fad4634272150fb042887c0f4c6931f2c1b5bca23b1f2ea1af88d06c"
     sha256 cellar: :any,                 monterey:       "e4fa96ccd7bfc3fe509302dc4aa74255c332b4b699368d3f79b77a0122a5f27f"
@@ -17,13 +18,16 @@ class Aom < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "yasm" => :build
 
   # `jpeg-xl` is currently not bottled on Linux
   on_macos do
     depends_on "pkg-config" => :build
     depends_on "jpeg-xl"
     depends_on "libvmaf"
+  end
+
+  on_intel do
+    depends_on "yasm" => :build
   end
 
   resource "homebrew-bus_qcif_15fps.y4m" do

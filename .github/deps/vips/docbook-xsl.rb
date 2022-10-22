@@ -14,6 +14,7 @@ class DocbookXsl < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4b44849aed92229742c0b4b981a111cdadbe94a7457ef29426bf8888638557c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b3c4423c37cd6fbe99b9e1a78a294036805bfc5291a4ff5b8a3b8b52ea50e3a5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9604b8989c3cc180c641b00f595e59d887aa85fbd410fb85bf4d459c6fb9f823"
     sha256 cellar: :any_skip_relocation, monterey:       "b3c4423c37cd6fbe99b9e1a78a294036805bfc5291a4ff5b8a3b8b52ea50e3a5"

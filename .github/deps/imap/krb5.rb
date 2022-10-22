@@ -11,6 +11,7 @@ class Krb5 < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "9227c4c720f7ee4cc1193fcda2977f84103a26b8b5264be82c17d0bc44ef2df6"
     sha256 arm64_monterey: "ad559a03cc8661b668d51d71d3dc44b84eb853b35415aa0cc0a75fefc15bfeb6"
     sha256 arm64_big_sur:  "8f6f51da9bf8693e7976954aee19d444d483070cf33ad6453219f032b1bcd1ec"
     sha256 monterey:       "99e8f567b0f70cc50309acf37f5e4b792dcd8fbd034e869e58e3e0f38ad73ec9"

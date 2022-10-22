@@ -9,6 +9,7 @@ class Ncurses < Formula
   license "MIT"
 
   bottle do
+    sha256 arm64_ventura:  "b534276b8519970e057330ceb2f16c3788cb33fd4aa2b6dc157e3edd598d6eba"
     sha256 arm64_monterey: "a1aabfa5d0fd9b2735b3d83d5378a447049190a34d85c3df9f2983beecbf83d5"
     sha256 arm64_big_sur:  "dec526d7259a034bb8622cfd2d3bfad738ecc42d03e2d1f79019cfbadbd45b16"
     sha256 monterey:       "b23144507b0e799235e12b2f6dfb1a595c18384ef773c680a05eb785724d9dc5"

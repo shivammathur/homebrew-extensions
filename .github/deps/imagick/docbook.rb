@@ -12,6 +12,7 @@ class Docbook < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dcab543bb0e0ae56e0aa106b61f77a111d52aa002c0418aae93f9fe6ac3cb332"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dcab543bb0e0ae56e0aa106b61f77a111d52aa002c0418aae93f9fe6ac3cb332"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "53a9dc79db8b2d06dc75009d5d09fc797ddcd5eb4ca040d606efd35ae4fa3829"
     sha256 cellar: :any_skip_relocation, monterey:       "dcab543bb0e0ae56e0aa106b61f77a111d52aa002c0418aae93f9fe6ac3cb332"

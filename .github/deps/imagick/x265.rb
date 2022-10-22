@@ -8,6 +8,7 @@ class X265 < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "fc0bf01af954762a85e8b808d5b03d28b9e36e8e71035783e39bb9dc0307abea"
     sha256 cellar: :any,                 arm64_monterey: "e60559191a9aba607e512ad33ac9f66688b12837df7e6a3cf57ceae26968235b"
     sha256 cellar: :any,                 arm64_big_sur:  "adc617eed2e065af669994fb5b538195fd46db4ac7b13c7ca2490dc8abaf6466"
     sha256 cellar: :any,                 monterey:       "be446f5c7cb4872205f260b8821fc7ebd5bd7c4b8837888c98c08e051dff2e3f"

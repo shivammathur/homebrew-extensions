@@ -15,6 +15,7 @@ class Icu4c < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "551de1e60e6f979676ee4e829a8485c2d326a71e6b736299356880c71ec3bc8c"
     sha256 cellar: :any,                 arm64_monterey: "0bf3c66f005e2d7662375b4baadd3022d57294947f421f9f8628799008a987f4"
     sha256 cellar: :any,                 arm64_big_sur:  "5cbb7c32192790d114f179ca9456df9a5cbd0094a9e2383c9ae8e4ec5e5cd568"
     sha256 cellar: :any,                 monterey:       "87617a04333c53236f5174f5a3fa70458d61d735024ed477c0484adf2c3f80d3"

@@ -8,6 +8,7 @@ class Gettext < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 arm64_ventura:  "28c5b06e66800aa2d460336d001379e35e664310d12638de35a1b0f2b9a44913"
     sha256 arm64_monterey: "356b52e24b883af3ef092d13b6727b76e0137154c2c9eb42fe7c272bb7d3edec"
     sha256 arm64_big_sur:  "90da957f7b8ad3d47fff7045a684060168e0433631921463fbbff09b5dc4b772"
     sha256 monterey:       "9318777367eae475e9ea226d2bcbd19ef8281d1dd2af3a92c20c00246677145b"

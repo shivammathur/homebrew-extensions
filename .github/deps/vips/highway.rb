@@ -8,6 +8,7 @@ class Highway < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "653698108d325401541783c640c7832f06ac7cd0c06cd1dfd163077381f63d03"
     sha256 cellar: :any,                 arm64_monterey: "301fe3b3ffb3875b47ef48cc80f1f6ec2796ba648fe9c5785501c577eb784a80"
     sha256 cellar: :any,                 arm64_big_sur:  "ab6cc22dcd2b1baf85a8fb6bb6f67e098087a6e02e72c3b8c3dbdd446ce63176"
     sha256 cellar: :any,                 monterey:       "0a64c83377262ac734da3001b4d2bba1dcac60fb7ec8fab2e3a68f28cff46de0"

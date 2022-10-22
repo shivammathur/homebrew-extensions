@@ -11,6 +11,7 @@ class LibgpgError < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "1955fb0ad761875d609cce71140d83b0b313d0b8e09f7a4d10de021aa04a474a"
     sha256 arm64_monterey: "9cfc7363abb102b284578c13d0e9b99a786bcd262e159541eebf6283c21c66c5"
     sha256 arm64_big_sur:  "c023005814ffc801b659d5819ce7dc3aef4906fa538b90ad5526bfbc5fdd8a98"
     sha256 monterey:       "ffd831497a499fd7af47d69ab535a2eea51fcc85cea1db07ca748da77f64272c"

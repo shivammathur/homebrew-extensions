@@ -7,6 +7,7 @@ class Gdbm < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any, arm64_ventura:  "a7321472cc9ff32a54c549556340dd1ad9dd95415828149005fb4959d04e83b7"
     sha256 cellar: :any, arm64_monterey: "62a2c1994737a2677f318a97ac64a32690f9f958086310a49f37e3fcfd5b6731"
     sha256 cellar: :any, arm64_big_sur:  "09f52f15b2a2d126213ea5631bdd35722006540f0086bd285a4f611a4b4b8a78"
     sha256 cellar: :any, monterey:       "0d0aeea95f9e7b4ccfa1e8d7f3a83b3b4d604eac1178e4f88ad51d132ad1f7cd"

@@ -13,6 +13,7 @@ class TclTk < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "917109df4937513b4b743ccb3eef29b5a8ca9f4fa1310432680519ed13c609b4"
     sha256 arm64_monterey: "8accfee37564f1f390c27ba44a1e501ae3a2ba23fb8ecf126da43c105aa3411c"
     sha256 arm64_big_sur:  "6097b84f40aded10af8c4bd300e1b82cd89f2f019bf05721cc433a78c553932a"
     sha256 monterey:       "6dd6e9147cab000f8fee32efb4b7069f8128d2b0eb0f6d45fc96ddcedb936afe"
