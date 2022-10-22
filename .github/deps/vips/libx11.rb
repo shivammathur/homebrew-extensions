@@ -6,6 +6,7 @@ class Libx11 < Formula
   license "MIT"
 
   bottle do
+    sha256 arm64_ventura:  "d4c0c1abc81101c3f63cb1024f5e90c166e2852dc809e961fe56729f9b72cb32"
     sha256 arm64_monterey: "dc03a6058d4ac7ae5c58f30e3cc78a056d26417388190f75947e6b58dc306160"
     sha256 arm64_big_sur:  "fe550c503a924fd78a9865793706a8e208752b890713a6699282630b28d7ad50"
     sha256 monterey:       "cf5034cc7c677f80d4301bff99b6135df077fdd0a7933a1054e5f505152da21b"

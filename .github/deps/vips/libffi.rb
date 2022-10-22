@@ -6,6 +6,7 @@ class Libffi < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "6b17a8e36d00f2b19fda7f875d20adbdd7d36bbf1015a2db36fcbe2bddec4b59"
     sha256 cellar: :any,                 arm64_monterey: "da9471634d8a66ea91002692497e5db2327ef1c9ca788a8522a0bf8534dccac3"
     sha256 cellar: :any,                 arm64_big_sur:  "4bb30919db7aeb02703e33ce81a6b04575c9bddd976c4ce1b8166605f318a752"
     sha256 cellar: :any,                 monterey:       "1d0154601d1960b54e6a95b41e85693fab93989c4dbb8245cd0e92d97d6c0a8f"
