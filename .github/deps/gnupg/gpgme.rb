@@ -11,6 +11,7 @@ class Gpgme < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "098e980fcd33419161e2cb0b8726d397c4779ea049776b653a1c086e9b0ddbff"
     sha256 cellar: :any,                 arm64_monterey: "599b8b1949126487b1c24443b6dd8eb2842eac3884b0e0b3f2d19f5209762a4d"
     sha256 cellar: :any,                 arm64_big_sur:  "fd420b38b733615029bad30f1fdd1f8eadd8dc7530617e6d101fcf0f08d1dd78"
     sha256 cellar: :any,                 monterey:       "aad0354292aa298b7c318dd7b08a09fc60ec153d71a7f60c0d92174f6df3dae1"

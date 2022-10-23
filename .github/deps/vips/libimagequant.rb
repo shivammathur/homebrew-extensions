@@ -6,6 +6,7 @@ class Libimagequant < Formula
   license :cannot_represent
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "5c39366e84e66ab75bedea1c60fec6097f1e59c3193b3c3975125ce4181b21bb"
     sha256 cellar: :any,                 arm64_monterey: "2cc9dc452441dcbda9a7148aa4a499df01da6ebd9ab8503fc6b904098a51ceb2"
     sha256 cellar: :any,                 arm64_big_sur:  "52af38599a5b23e03e15a62585f371a68d719f74989f806aa2cec2be859ee9f8"
     sha256 cellar: :any,                 monterey:       "c1e3bd9e9a63213b48edbbff00d1a79aa195e868a8b6e531a48b887540804fde"

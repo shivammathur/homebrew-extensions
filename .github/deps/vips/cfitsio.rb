@@ -10,6 +10,7 @@ class Cfitsio < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "bb88a06bf9a7699e3dc69e5143fde488ae117f3803337f81c095106b68e18215"
     sha256 cellar: :any,                 arm64_monterey: "0269cf18a5dd1ce217c799461fb5831db284edb3d05c2b144ce30a7a1566f246"
     sha256 cellar: :any,                 arm64_big_sur:  "f95d18fe4f060505e6695bef0cf5ea228493b872e71052c68aa4d03c8378804e"
     sha256 cellar: :any,                 monterey:       "62cf2942b05394dc7b906aba1fc6b2b27c24caf81fc85263d1697ed488fc230a"
