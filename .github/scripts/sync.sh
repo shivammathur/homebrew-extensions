@@ -25,6 +25,7 @@ for extension in "${extensions[@]}"; do
   if [[ -n "${deps// }" ]]; then
     printf "\n----- %s -----\n" "$extension"
     echo "${deps[@]//shivammathur*}"
+    sudo rm -rf "./.github/deps/$extension"
     sudo mkdir -p "./.github/deps/$extension"
     for formula in "${deps[@]//shivammathur*}"; do
       [ "$formula" = "python" ] && continue;
