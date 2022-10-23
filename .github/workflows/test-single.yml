@@ -24,7 +24,7 @@ jobs:
            for formula in ./Formula/$extension@*.rb; do
              json_array+=("{\"php\": \"$(echo $formula | grep -Eo '[0-9]+\.[0-9]+')\", \"extension\": \"$extension\"}")
            done
-           echo "::set-output name=matrix::{\"include\":[$(echo ${json_array[@]} | sed -e 's|} {|}, {|g')]}"
+           echo "matrix={\"include\":[$(echo ${json_array[@]} | sed -e 's|} {|}, {|g')]}" >> "$GITHUB_OUTPUT"
   tests:
     needs: get-matrix
     runs-on: ${{ github.event.inputs.macos }}

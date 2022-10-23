@@ -72,7 +72,7 @@ jobs:
            for extension in ${extensions[@]}; do
              json_array+=("{\"extension\": \"$extension\"}")
            done
-           echo "::set-output name=matrix::{\"include\":[$(echo ${json_array[@]} | sed -e 's|} {|}, {|g')]}"
+           echo "matrix={\"include\":[$(echo ${json_array[@]} | sed -e 's|} {|}, {|g')]}" >> "$GITHUB_OUTPUT"
 
   create-pr:
     if: github.event_name != 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
@@ -288,10 +288,10 @@ jobs:
           cd bottles
           count=$(ls *.json | wc -l | xargs echo -n)
           echo "$count bottles"
-          echo "::set-output name=count::$count"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
           failures=$(ls failed/*.json | wc -l | xargs echo -n)
           echo "$failures failed bottles"
-          echo "::set-output name=failures::$failures"
+          echo "failures=$failures" >> "$GITHUB_OUTPUT"
 
       - name: Upload failed bottles
         if: always() && steps.bottles.outputs.failures > 0
