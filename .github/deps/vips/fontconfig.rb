@@ -1,8 +1,8 @@
 class Fontconfig < Formula
   desc "XML-based font configuration API for X Windows"
   homepage "https://wiki.freedesktop.org/www/Software/fontconfig/"
-  url "https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14.0.tar.xz"
-  sha256 "dcbeb84c9c74bbfdb133d535fe1c7bedc9f2221a8daf3914b984c44c520e9bac"
+  url "https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14.1.tar.xz"
+  sha256 "298e883f6e11d2c5e6d53c8a8394de58d563902cfab934e6be12fb5a5f361ef0"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Fontconfig < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "243211699bfb1369aa888a5c30ab18e803ee89f0b6c3b3d206d8120ab8e431b0"
-    sha256 arm64_monterey: "1590366d6e44095fdb999241d64e81747215d0502378c191f73981ea4b21968a"
-    sha256 arm64_big_sur:  "c603b1b3842e3de3e0681914d01063e923c50bbb5b5f17c4f93611541b28aee5"
-    sha256 monterey:       "6bd89f45f20c5739ba53348933f843d256383eb30b28723d1a64a23ad565b1bc"
-    sha256 big_sur:        "b2d63813898c4dfa6f33d344a9f54a6ec8e31a2b326e70906bff8bc2a18411a2"
-    sha256 catalina:       "6bd0d5ba7717d89e987125e1cdde7900bcba4d116ce78b9d151a221c637188b2"
-    sha256 x86_64_linux:   "1c1706b94f8b9408ce14a9880d67e9dbd22724b85f7ba9eb625c9d91fd43323f"
+    sha256 arm64_ventura:  "d0dc5e1f28f8c7ded2351b6da95dc10c483f6a302390660b2b861a3b94c6cd18"
+    sha256 arm64_monterey: "decbdcc8765f8aa654452570b3f2b151e319944210479a5637d6614a44dc0947"
+    sha256 arm64_big_sur:  "143b68331a6332cc0e1e3883e2863d65139869ac5bf1823bbe49fd2127d2c7f5"
+    sha256 monterey:       "e910d7850f921d5d0b5bdd50080c3985213e2a0eff0181bab4fd6f375d386862"
+    sha256 big_sur:        "8479e4d4cb8c71606a221e9fad0c0d1d7089302eaece07e47489429a5dac1fd3"
+    sha256 catalina:       "1d6767bcdcf4390f88c120ca0beff6104d3339880950342802ad8b4b51520a6e"
+    sha256 x86_64_linux:   "0c84e31071c824f713407a666947cc4c6968c8a6c2a8733dd7818cfbab469749"
   end
 
   head do
