@@ -13,13 +13,13 @@ class ImapUw < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_monterey: "242217503356b37382c539019d7d62f54d4108dbf6c51fbab1dccb4e9a6b25bb"
-    sha256 cellar: :any,                 arm64_big_sur:  "06b10eaafa103894a8b75287cb56b58e7d3f0338d6230dc189c9a4112e322dac"
-    sha256 cellar: :any,                 monterey:       "b36fa2a2dfff5bae7e6f9d837385a71a99f0082fd0f7d110472ac4272c25977a"
-    sha256 cellar: :any,                 big_sur:        "9ac09b14756bfe8779a436c36d19eb7660fb236beb9aaf9b1f24d1283c387b4e"
-    sha256 cellar: :any,                 catalina:       "3a3a035f6149a5f5471e452bb988b79bbda12c5da0af29905637f2633c1e488a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f58099004929c2c1270633f40ac8ee86c14a6cfe887ec1f5ea6465d08a4db0bb"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_monterey: "15218db6a2249d9cdb6de0dde1e389cc57dc5ee23bfed4e47363d142ce5cc7f5"
+    sha256 cellar: :any,                 arm64_big_sur:  "6c7a59788bd0d0007d532da7dc98f7b2e6dc88f1015ac2004e23fc4ad879eacf"
+    sha256 cellar: :any,                 monterey:       "87542cc8e6c7fc2c96c668f9536de3775a72374a42119bfc566a759106e0a04b"
+    sha256 cellar: :any,                 big_sur:        "59f85eab1f8545fec7c0cd5ec3b849d72de78f67aee34a17593c962111ce7ed9"
+    sha256 cellar: :any,                 catalina:       "01cc2ea5bdf95bfebdcbc2aac4d06d64f56dfaabbc7d359573d252b1db68df61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa09ba7319179b97aa440bbe76aab35ad5ff72f651174a052f570d51321f17a4"
   end
 
   depends_on "openssl@1.1"
