@@ -15,6 +15,13 @@ class DsAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "332ec62472aac204793745bfce285c3ba17db8ac1abec475525ac9d036a685fd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "42fc9dc8ae8ba49626649840327df40b95f12129c06cc2515b11cfb3794c1731"
+    sha256 cellar: :any_skip_relocation, monterey:       "299741c2a088229853038c9675d415689da9a95a38d57b9fb236f1d273ef42e5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b5394d77df8d8f6f0c36324b6351eb8ab447dca11216303e58c850082e19bb86"
+    sha256 cellar: :any_skip_relocation, catalina:       "2876189ca00ca7c3994396958e8663e33271586f8e3d0c0a9207b89b5dbd285e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1824028434c2a55d44ce93986e07711873ba1c201ce5a95adc1666856c7e96b4"
   end
 
   def install
