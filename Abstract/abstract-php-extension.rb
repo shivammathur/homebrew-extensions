@@ -68,10 +68,6 @@ class AbstractPhpExtension < Formula
     config_scandir_path / "#{extension}.ini"
   end
 
-  def priority_config_filepath
-    config_scandir_path / "#{priority}-#{extension}.ini"
-  end
-
   def safe_phpize
     ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
     ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
@@ -80,7 +76,7 @@ class AbstractPhpExtension < Formula
 
   def write_config_file
     config_file = config_filepath
-    priority_config_file = priority_config_filepath
+    priority_config_file = config_scandir_path / "#{priority}-#{extension}.ini"
     mv config_file, priority_config_file if config_file.exist?
     config_scandir_path.mkpath
     priority_config_file.write(config_file_content)
@@ -109,11 +105,16 @@ class AbstractPhpExtension < Formula
 
     attr_rw :priority
 
+    def parse_extension(matches)
+      @extension = matches[1].downcase if matches
+      @extension = (@extension != "ssh2") ? matches[1].downcase.tr("0-9", "") : "ssh2"
+      @extension.gsub("pecl", "").gsub("pdo", "pdo_")
+    end
+
     def init
       class_name = name.split("::").last
       matches = /(\w+)AT(\d)(\d)/.match(class_name)
-      @extension = matches[1].downcase if matches
-      @extension = (@extension != "ssh2") ? matches[1].downcase.tr("0-9", "").gsub("pecl", "").gsub("pdo", "pdo_") : "ssh2"
+      @extension = parse_extension matches
       @php_version = "#{matches[2]}.#{matches[3]}" if matches
       depends_on "autoconf" => :build
       depends_on "pkg-config" => :build
