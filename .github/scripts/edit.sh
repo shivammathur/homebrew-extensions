@@ -1,8 +1,3 @@
-unbottle() {
-  sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
-  sed -Ei '/  revision.*/d' ./Formula/"$VERSION".rb || true
-}
-
 fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   [[ "$GITHUB_MESSAGE" =~ .*--init.* ]] && return
@@ -41,12 +36,12 @@ check_changes() {
   echo "old_url: $old_url"
   echo "new_checksum: $new_checksum"
   echo "old_checksum: $old_checksum"
-  if [ "$new_url" = "$old_url" ] &&
-     [ "$new_checksum" = "$old_checksum" ] &&
-     [[ ! "$GITHUB_MESSAGE" =~ .*--(rebuild|init).* ]]; then
+  if [[ "$GITHUB_MESSAGE" =~ .*--init.* ]]; then
+    sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
+  elif [[ ! "$GITHUB_MESSAGE" =~ .*--rebuild.* ]]; then
+    sed -Ei '/  revision.*/d' ./Formula/"$VERSION".rb || true
+  elif [[ "$new_url" = "$old_url" && "$new_checksum" = "$old_checksum" ]]; then
     sudo cp /tmp/"$VERSION".rb Formula/"$VERSION".rb
-  else
-    unbottle
   fi
 }
 
