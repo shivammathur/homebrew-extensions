@@ -4,9 +4,9 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Pdo_sqlsrv Extension
-class Pdo_sqlsrvAT70 < AbstractPhpExtension
+class PdoSqlsrvAT70 < AbstractPhpExtension
   init
-  desc "Pdo_sqlsrv PHP extension"
+  desc "pdo_sqlsrv PHP extension"
   homepage "https://github.com/Microsoft/msphpsql"
   url "https://pecl.php.net/get/pdo_sqlsrv-5.9.0.tgz?init=true"
   sha256 "0fce417b33879fdae3d50cc1aa5b284ab12662147ea2206fa6e1fadde8b48c58"
