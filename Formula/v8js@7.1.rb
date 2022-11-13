@@ -8,8 +8,9 @@ class V8jsAT71 < AbstractPhpExtension
   init
   desc "V8js PHP extension"
   homepage "https://github.com/phpv8/v8js"
-  url "https://pecl.php.net/get/v8js-2.1.2.tgz?init=true"
-  sha256 "65b7730111ad6d92c00195280ccbc1e55d52cdab3103ae28a057037278cc03ca"
+  url "https://github.com/phpv8/v8js/archive/9afd1a941eb65c02a076550fa7fa4648c6087b03.tar.gz"
+  version "2.1.2"
+  sha256 "505416bc7db6fed9d52ff5e6ca0cafe613a86b4a73c4630d777ae7e89db59250"
   head "https://github.com/phpv8/v8js.git"
   license "MIT"
 
@@ -23,7 +24,10 @@ class V8jsAT71 < AbstractPhpExtension
     args = %W[
       --with-v8js=#{Formula["v8"].opt_prefix}
     ]
-    Dir.chdir "v8js-#{version}"
+    ENV.append "CPPFLAGS", "-DV8_COMPRESS_POINTERS"
+    ENV.append "CXXFLAGS", "-Wno-c++11-narrowing"
+    ENV.append "LDFLAGS", "-lstdc++"
+    inreplace "config.m4", "$PHP_LIBDIR", "libexec"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
