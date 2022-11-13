@@ -8,7 +8,7 @@ class LuaAT56 < AbstractPhpExtension
   init
   desc "Lua PHP extension"
   homepage "https://github.com/laruence/php-lua"
-  url "https://pecl.php.net/get/lua-1.1.0.tgz?init=true"
+  url "https://pecl.php.net/get/lua-1.1.0.tgz"
   sha256 "f063fb8e8ba5cfe5e120d179b84db77ea3344ce08288b48864ccb883a9826554"
   head "https://github.com/laruence/php-lua.git"
   license "PHP-3.01"
@@ -24,6 +24,10 @@ class LuaAT56 < AbstractPhpExtension
       --with-lua=#{Formula["lua"].opt_prefix}
     ]
     Dir.chdir "lua-#{version}"
+    inreplace "config.m4", "include/lua.h", "include/lua/lua.h"
+    inreplace "php_lua.h", "include \"l", "include \"lua/l"
+    inreplace "lua_closure.c", "include \"l", "include \"lua/l"
+    inreplace "lua.c", /.*LUA_ERRGCMM.*/, ""
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
