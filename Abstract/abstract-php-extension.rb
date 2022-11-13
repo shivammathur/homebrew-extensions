@@ -107,8 +107,7 @@ class AbstractPhpExtension < Formula
 
     def parse_extension(matches)
       @extension = matches[1].downcase if matches
-      @extension = (@extension != "ssh2") ? matches[1].downcase.tr("0-9", "") : "ssh2"
-      @extension.gsub("pecl", "").gsub("pdo", "pdo_")
+      @extension.gsub("pecl", "").gsub("pdo", "pdo_").gsub("xdebug2", "xdebug")
     end
 
     def init
