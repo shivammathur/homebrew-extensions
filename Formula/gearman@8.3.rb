@@ -8,7 +8,7 @@ class GearmanAT83 < AbstractPhpExtension
   init
   desc "Gearman PHP extension"
   homepage "https://github.com/php/pecl-networking-gearman"
-  url "https://pecl.php.net/get/gearman-2.1.0.tgz?init=true"
+  url "https://pecl.php.net/get/gearman-2.1.0.tgz"
   sha256 "77075fc250fac2d3878deb255d44efc3ad76cf7b2c7f1af420cb17839a03c0bc"
   head "https://github.com/php/pecl-networking-gearman.git"
   license "PHP-3.01"
