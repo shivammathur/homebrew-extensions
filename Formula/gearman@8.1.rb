@@ -15,6 +15,13 @@ class GearmanAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "c18e1bf2a6fa352a856b5ed54b4183df2530912964bd6d9582578c5dedb51fc6"
+    sha256 cellar: :any,                 arm64_big_sur:  "714c281fbacd0cd8dd205f4f97a9b34ba1455906bf8a0c4d7a91fd4c95bcd05b"
+    sha256 cellar: :any,                 monterey:       "4cb85f15d2b94fad163670c13eec1e1b651917429cf8d4b9556b09bc58a87879"
+    sha256 cellar: :any,                 big_sur:        "cdd8a44bb0b2641830b49d337c1d807282b086f961bf63409bf5ca212d49b43b"
+    sha256 cellar: :any,                 catalina:       "776d4d47c9f2c62a8ed8d637d96a813a54641cdf4debca1fa4cc15f0c14102db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0337d6942370521d783edf63895a2d97447da73cf7eb584fb3f683d85d33bdc3"
   end
 
   depends_on "gearman"
