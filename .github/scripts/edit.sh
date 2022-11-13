@@ -14,7 +14,7 @@ fetch() {
        [[ "$VERSION" =~ (phalcon5)@(7.4|8.[0-1]) ]] ||
        [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
        [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||
-       [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|memcached|pecl_http|protobuf|raphf|rdkafka|redis|ssh2|vips|xlswriter)@(7.[0-4]|8.[0-3]) ]] ||
+       [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|memcached|pecl_http|protobuf|raphf|rdkafka|redis|ssh2|vips|xlswriter)@(7.[0-4]|8.[0-3]) ]] ||
        [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-3]) ]] ||
        [[ "$VERSION" =~ (ast|mcrypt|mongodb|xdebug)@(7.[2-4]|8.[0-3]) ]] ||
        [[ "$VERSION" =~ (ds|mailparse|pdo_sqlsrv|psr|sqlsrv)@(7.[3-4]|8.[0-3]) ]] ||
