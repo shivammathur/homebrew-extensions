@@ -16,6 +16,13 @@ class V8jsAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 arm64_monterey: "d10237ee3a1f52348e5dce3c85f4223c71cd6c06012ae9e697d30e8a53a30058"
+    sha256 arm64_big_sur:  "a897ae087a2796bd7445587410851bd64896a95e48a8e154e85da6825bf78751"
+    sha256 monterey:       "aa4f3774af1e513782601dd5db81d31ca8757f85d37df01db3130c8c4b74bc22"
+    sha256 big_sur:        "dec948089c93e9eddae96a5c0ef069e68f939143bfa798c94c5d621138855429"
+    sha256 catalina:       "f1be206aa26564ce91946ae8cfc2653426c7ba362aadf13cf05a40ab5b970db1"
+    sha256 x86_64_linux:   "d46d75e6ee8fa38eb3fd563bd5fe81bd0b146d6b9bb6071c1653f92f32fe4db1"
   end
 
   depends_on "v8"
