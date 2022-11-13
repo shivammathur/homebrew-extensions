@@ -8,7 +8,7 @@ class V8jsAT56 < AbstractPhpExtension
   init
   desc "V8js PHP extension"
   homepage "https://github.com/phpv8/v8js"
-  url "https://pecl.php.net/get/v8js-0.6.4.tgz?init=true"
+  url "https://pecl.php.net/get/v8js-0.6.4.tgz"
   sha256 "88af2c98482374a36b24e317df4684b9eecc92d4883022fc8036a16f2641ca43"
   head "https://github.com/phpv8/v8js.git"
   license "MIT"
