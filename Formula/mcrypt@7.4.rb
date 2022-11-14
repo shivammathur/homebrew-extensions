@@ -27,7 +27,7 @@ class McryptAT74 < AbstractPhpExtension
   depends_on "libtool"
 
   resource "libmcrypt" do
-    url "https://downloads.sourceforge.net/project/mcrypt/Libmcrypt/2.5.8/libmcrypt-2.5.8.tar.gz"
+    url "https://pecl.php.net/get/mcrypt-1.0.5.tgz"
     sha256 "e4eb6c074bbab168ac47b947c195ff8cef9d51a211cdd18ca9c9ef34d27a373e"
   end
 
