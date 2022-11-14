@@ -34,44 +34,50 @@
 
 ## Extensions
 
-| Extension   | PHP Version            |
-|-------------|------------------------|
-| `amqp`      | `PHP 5.6` to `PHP 8.2` | 
-| `apcu`      | `PHP 5.6` to `PHP 8.2` |
-| `ast`       | `PHP 7.0` to `PHP 8.2` |
-| `couchbase` | `PHP 5.6` to `PHP 8.2` |
-| `event`     | `PHP 5.6` to `PHP 8.2` |
-| `expect`    | `PHP 5.6` to `PHP 8.2` |
-| `gnupg`     | `PHP 5.6` to `PHP 8.2` |
-| `grpc`      | `PHP 5.6` to `PHP 8.2` |
-| `igbinary`  | `PHP 5.6` to `PHP 8.2` |
-| `imagick`   | `PHP 5.6` to `PHP 8.2` |
-| `imap`      | `PHP 5.6` to `PHP 8.2` |
-| `mailparse` | `PHP 5.6` to `PHP 8.2` |
-| `mcrypt`    | `PHP 5.6` to `PHP 8.2` |
-| `memcache`  | `PHP 5.6` to `PHP 8.2` |
-| `memcached` | `PHP 5.6` to `PHP 8.2` |
-| `mongodb`   | `PHP 5.6` to `PHP 8.2` |
-| `msgpack`   | `PHP 5.6` to `PHP 8.2` |
-| `pcov`      | `PHP 7.1` to `PHP 8.2` |
-| `pecl_http` | `PHP 5.6` to `PHP 8.2` |
-| `phalcon3`  | `PHP 5.6` to `PHP 7.3` |
-| `phalcon4`  | `PHP 7.2` to `PHP 7.4` |
-| `phalcon5`  | `PHP 7.4` to `PHP 8.1` |
-| `propro`    | `PHP 5.6` to `PHP 7.4` |
-| `protobuf`  | `PHP 5.6` to `PHP 8.2` |
-| `psr`       | `PHP 5.6` to `PHP 8.2` |
-| `raphf`     | `PHP 5.6` to `PHP 8.2` |
-| `rdkafka`   | `PHP 5.6` to `PHP 8.2` |
-| `redis`     | `PHP 5.6` to `PHP 8.2` |
-| `ssh2`      | `PHP 5.6` to `PHP 8.2` |
-| `swoole`    | `PHP 5.6` to `PHP 8.2` |
-| `vips`      | `PHP 7.0` to `PHP 8.2` |
-| `xdebug`    | `PHP 5.6` to `PHP 8.2` |
-| `xdebug2`   | `PHP 7.2` to `PHP 7.4` |
-| `xlswriter` | `PHP 7.0` to `PHP 8.2` |
-| `yaml`      | `PHP 5.6` to `PHP 8.2` |
-| `zmq`       | `PHP 5.6` to `PHP 8.2` |
+| Extension    | PHP Version            |
+|--------------|------------------------|
+| `amqp`       | `PHP 5.6` to `PHP 8.3` |
+| `apcu`       | `PHP 5.6` to `PHP 8.3` |
+| `ast`        | `PHP 7.0` to `PHP 8.3` |
+| `couchbase`  | `PHP 5.6` to `PHP 8.3` |
+| `ds`         | `PHP 7.0` to `PHP 8.3` |
+| `event`      | `PHP 5.6` to `PHP 8.3` |
+| `expect`     | `PHP 5.6` to `PHP 8.3` |
+| `gearman`    | `PHP 5.6` to `PHP 8.3` |
+| `gnupg`      | `PHP 5.6` to `PHP 8.3` |
+| `grpc`       | `PHP 5.6` to `PHP 8.3` |
+| `igbinary`   | `PHP 5.6` to `PHP 8.3` |
+| `imagick`    | `PHP 5.6` to `PHP 8.3` |
+| `imap`       | `PHP 5.6` to `PHP 8.3` |
+| `lua`        | `PHP 5.6` to `PHP 7.4` |
+| `mailparse`  | `PHP 5.6` to `PHP 8.3` |
+| `mcrypt`     | `PHP 5.6` to `PHP 8.3` |
+| `memcache`   | `PHP 5.6` to `PHP 8.3` |
+| `memcached`  | `PHP 5.6` to `PHP 8.3` |
+| `mongodb`    | `PHP 5.6` to `PHP 8.3` |
+| `msgpack`    | `PHP 5.6` to `PHP 8.3` |
+| `pcov`       | `PHP 7.1` to `PHP 8.3` |
+| `pdo_sqlsrv` | `PHP 7.0` to `PHP 8.3` |
+| `pecl_http`  | `PHP 5.6` to `PHP 8.3` |
+| `phalcon3`   | `PHP 5.6` to `PHP 7.3` |
+| `phalcon4`   | `PHP 7.2` to `PHP 7.4` |
+| `phalcon5`   | `PHP 7.4` to `PHP 8.1` |
+| `propro`     | `PHP 5.6` to `PHP 7.4` |
+| `protobuf`   | `PHP 5.6` to `PHP 8.3` |
+| `psr`        | `PHP 5.6` to `PHP 8.3` |
+| `raphf`      | `PHP 5.6` to `PHP 8.3` |
+| `rdkafka`    | `PHP 5.6` to `PHP 8.3` |
+| `redis`      | `PHP 5.6` to `PHP 8.3` |
+| `sqlsrv`     | `PHP 7.0` to `PHP 8.3` |
+| `ssh2`       | `PHP 5.6` to `PHP 8.3` |
+| `swoole`     | `PHP 5.6` to `PHP 8.3` |
+| `v8js`       | `PHP 7.0` to `PHP 8.3` |
+| `vips`       | `PHP 7.0` to `PHP 8.3` |
+| `xdebug`     | `PHP 5.6` to `PHP 8.3` |
+| `xdebug2`    | `PHP 7.2` to `PHP 7.4` |
+| `xlswriter`  | `PHP 7.0` to `PHP 8.3` |
+| `yaml`       | `PHP 5.6` to `PHP 8.3` |
+| `zmq`        | `PHP 5.6` to `PHP 8.3` |
 
 ## OS Support
 
@@ -81,6 +87,7 @@
 | macOS Catalina   | `x86_64`          |
 | macOS Big Sur    | `x86_64`, `arm64` |
 | macOS Monterey   | `x86_64`, `arm64` |
+| macOS Ventura    | `x86_64`, `arm64` |
 
 ## Usage
 
