@@ -15,13 +15,13 @@ class PeclHttpAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_monterey: "1aa75755c1ba43232aa7ff1dafbf5f8b559644d142dd54301532cc478a7e7dfc"
-    sha256 cellar: :any,                 arm64_big_sur:  "d5542e6933b2505e62838f381c4682ca31ce579d9a71189673f2a23a633bca04"
-    sha256 cellar: :any,                 monterey:       "00a27e0b77c4917f9b9bfed7214b1f29606b907b37ea6dcb73db81e32e01d1f9"
-    sha256 cellar: :any,                 big_sur:        "48c2e614a553d6a312ef3c0ffcf14ac65042bea156c78e4f4a137a1b69ae4f36"
-    sha256 cellar: :any,                 catalina:       "93afbd96423db9361264e9a117928231f610cf4456d5d8592eb98fe239e8147e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83521b5fdd8aa98af05d3b6b5a32535288d3009c15ba6baf6575e32c59a12741"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_monterey: "bb04f5eee9c3a699ab12a51c641137d6fa36a68e181d290885c22b8be96e52ec"
+    sha256 cellar: :any,                 arm64_big_sur:  "0640531a824eda75c08c447dd1c60e7013ab119e7eee78cd635b169c9c86b98f"
+    sha256 cellar: :any,                 monterey:       "8824919bb96632c6e5e188be4924bcf798d02a066a9e73dec7a6a3b670010d3a"
+    sha256 cellar: :any,                 big_sur:        "927d09231ac8a652d207dc825a9218c2fb95d4dd51de2d7fecf24df3e505f2fc"
+    sha256 cellar: :any,                 catalina:       "0ffa0a32439f754bf0a572f5e816718d2d50546c67471df13096ac90e5dfc923"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27fdee3a57351050e4b63cd8241c813d722d5914183fe294d0226a14708158fd"
   end
 
   depends_on "brotli"
