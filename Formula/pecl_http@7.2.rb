@@ -13,6 +13,8 @@ class PeclHttpAT72 < AbstractPhpExtension
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
 
+  priority "30"
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2

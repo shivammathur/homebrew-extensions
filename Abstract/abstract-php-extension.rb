@@ -65,7 +65,7 @@ class AbstractPhpExtension < Formula
   end
 
   def config_filepath
-    config_scandir_path / "#{extension}.ini"
+    config_scandir_path / "#{priority}-#{extension}.ini"
   end
 
   def safe_phpize
@@ -75,11 +75,11 @@ class AbstractPhpExtension < Formula
   end
 
   def write_config_file
-    config_file = config_filepath
-    priority_config_file = config_scandir_path / "#{priority}-#{extension}.ini"
-    mv config_file, priority_config_file if config_file.exist?
+    Dir[config_scandir_path / "*#{extension}*.ini"].each do |ini_file|
+      rm ini_file
+    end
     config_scandir_path.mkpath
-    priority_config_file.write(config_file_content)
+    config_filepath.write(config_file_content)
   end
 
   def add_include_files

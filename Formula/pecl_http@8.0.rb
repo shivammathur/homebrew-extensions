@@ -31,6 +31,8 @@ class PeclHttpAT80 < AbstractPhpExtension
   depends_on "libidn2"
   depends_on "shivammathur/extensions/raphf@8.0"
 
+  priority "30"
+
   def install
     args = %W[
       --with-http

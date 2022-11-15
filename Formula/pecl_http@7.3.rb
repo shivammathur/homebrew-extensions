@@ -32,6 +32,8 @@ class PeclHttpAT73 < AbstractPhpExtension
   depends_on "shivammathur/extensions/propro@7.3"
   depends_on "shivammathur/extensions/raphf@7.3"
 
+  priority "30"
+
   def install
     args = %W[
       --with-http
