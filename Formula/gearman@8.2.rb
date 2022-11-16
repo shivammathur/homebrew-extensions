@@ -15,13 +15,13 @@ class GearmanAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_monterey: "6c523330f35cef91857407f66f12393dc58ce368e228e8cc16bb8eb94f321da5"
-    sha256 cellar: :any,                 arm64_big_sur:  "83b30779ebdc0cbb349f5b155ff66fa42e962360d56b6f59d70aa2599ec8e9d8"
-    sha256 cellar: :any,                 monterey:       "6ec03b9681471cfd1ac98a3f0bb3c2d8e59ce52983d5957d8aaadff2b93e36b7"
-    sha256 cellar: :any,                 big_sur:        "445bb64d5a44015d6badbccc5e541083037e5571103d09bd45754d7270db87bb"
-    sha256 cellar: :any,                 catalina:       "3d8134e1f9af1884c0518e3bd77d0fb52ba88111565ddd0f90fec2b95d607b37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c4c4964526cf343b87603493f3734609fcd5eb6d0a9771ce20c11f6b82d0042"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_monterey: "e90df88d696e89994fc0ffae1ca94f23c858a7851ef4da7cfba2d1f919a18016"
+    sha256 cellar: :any,                 arm64_big_sur:  "19bbb1b639092b9b4e2034ab9047b62fe2c65795f527d0a6fefc0c549c2538a7"
+    sha256 cellar: :any,                 monterey:       "238267544a5dc5dca98a86d046417407e9b6180aa7132439bdba76fa49bfa7ed"
+    sha256 cellar: :any,                 big_sur:        "2401446cdab52cba1981f5b300c771c78d48563ffbc9e743b5101e2a6da938db"
+    sha256 cellar: :any,                 catalina:       "352fd2c37de4411f59d7da66134c086a58dc06877a0273a74e667975047e6159"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61c6eaf512e7b288d6dcc1917135fc94af14ab35ea67b61e59f5929757073928"
   end
 
   depends_on "gearman"
