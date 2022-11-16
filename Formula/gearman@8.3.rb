@@ -31,6 +31,7 @@ class GearmanAT83 < AbstractPhpExtension
       --with-gearman=#{Formula["gearman"].opt_prefix}
     ]
     Dir.chdir "gearman-#{version}"
+    inreplace "php_gearman_worker.c", "ZVAL_NEW_ARR", "array_init"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
