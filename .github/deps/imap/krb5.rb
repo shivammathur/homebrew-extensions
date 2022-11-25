@@ -1,8 +1,8 @@
 class Krb5 < Formula
   desc "Network authentication protocol"
   homepage "https://web.mit.edu/kerberos/"
-  url "https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz"
-  sha256 "7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f"
+  url "https://kerberos.org/dist/krb5/1.20/krb5-1.20.1.tar.gz"
+  sha256 "704aed49b19eb5a7178b34b2873620ec299db08752d6a8574f95d41879ab8851"
   license :cannot_represent
 
   livecheck do
@@ -11,14 +11,14 @@ class Krb5 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "9227c4c720f7ee4cc1193fcda2977f84103a26b8b5264be82c17d0bc44ef2df6"
-    sha256 arm64_monterey: "ad559a03cc8661b668d51d71d3dc44b84eb853b35415aa0cc0a75fefc15bfeb6"
-    sha256 arm64_big_sur:  "8f6f51da9bf8693e7976954aee19d444d483070cf33ad6453219f032b1bcd1ec"
-    sha256 ventura:        "24ce56e9423a8cc76f277c548644a520187f1eb44077065939ec0993a981dd96"
-    sha256 monterey:       "99e8f567b0f70cc50309acf37f5e4b792dcd8fbd034e869e58e3e0f38ad73ec9"
-    sha256 big_sur:        "8e6be25060a0223ec6e8935e575d4b07ff9235f3b5c7e273bd8c79b401a0abfc"
-    sha256 catalina:       "6e8e5a00dff92c729f276ba9d287689e0222a4293f7c8c502ee2781c2a1d4a2e"
-    sha256 x86_64_linux:   "17c3f6518fc7f836cd1bcc8ae0f2d8a8cc9d8ca063fa78d2faaf67158bf3318d"
+    sha256 arm64_ventura:  "671c6257abcf1a03022ef9a8d7a1338abd7d2ecdad39fd918370af865595ed69"
+    sha256 arm64_monterey: "a6ef38ba592b8b2b541db10011c301006c25f94b1db786b0a8f7c904755a3e1e"
+    sha256 arm64_big_sur:  "000cda91ae0da2d286b8329765eaeb3da555e93a33990a0df1901c9b14891a5f"
+    sha256 ventura:        "273a7b14a23c96a18cb1a59549d0446502ee979f90de438185c970c9ecfb2d01"
+    sha256 monterey:       "c529cf22c6e2191065a6c60c35875f83de8247cd4fbad5c84d0c9ed40d806a3f"
+    sha256 big_sur:        "5f825fc34ad2db50f2acdb6c770035bbde7b2de486eb67659ced48e0644f9cec"
+    sha256 catalina:       "2c050f2444b887f5da029ee28a9add072729906bce035632ffd15f886de86ce4"
+    sha256 x86_64_linux:   "e3ea64db62d46cd9ecdb3f869254c53970440dea6b959e4f62f9bd8ffe8d8e35"
   end
 
   keg_only :provided_by_macos
@@ -26,6 +26,7 @@ class Krb5 < Formula
   depends_on "openssl@1.1"
 
   uses_from_macos "bison"
+  uses_from_macos "libedit"
 
   def install
     cd "src" do

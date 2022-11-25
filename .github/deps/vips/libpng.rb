@@ -1,9 +1,9 @@
 class Libpng < Formula
   desc "Library for manipulating PNG images"
   homepage "http://www.libpng.org/pub/png/libpng.html"
-  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.38/libpng-1.6.38.tar.xz"
-  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.38/libpng-1.6.38.tar.xz"
-  sha256 "b3683e8b8111ebf6f1ac004ebb6b0c975cd310ec469d98364388e9cedbfa68be"
+  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.39/libpng-1.6.39.tar.xz"
+  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.39/libpng-1.6.39.tar.xz"
+  sha256 "1f4696ce70b4ee5f85f1e1623dc1229b210029fa4b7aee573df3e2ba7b036937"
   license "libpng-2.0"
 
   livecheck do
@@ -12,14 +12,14 @@ class Libpng < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "458bfff0e75bcc6145456a24255406a5bf663af4867331e5a54db74045487a35"
-    sha256 cellar: :any,                 arm64_monterey: "f2be24349bfc0c8a394cf49a2894f696124678dedbef660a5619d7ba43b01bef"
-    sha256 cellar: :any,                 arm64_big_sur:  "8bb66c5e3b69b2d8d230d6981b5cad0705123a6bd1f595588d5e351d188ba4b2"
-    sha256 cellar: :any,                 ventura:        "d3c41e0d88b8820d1d8c7b0c032f74dbcd16f47449d6eef6e84a90e7ca401190"
-    sha256 cellar: :any,                 monterey:       "e75fbecd6315ba103d809ba3865aa68d8d31545596b0c17ef571383f01e71dee"
-    sha256 cellar: :any,                 big_sur:        "f7c24d520a5fd31a2239c8dce881bb901ddd2a7ec6e73036b89a9ce8d46d6478"
-    sha256 cellar: :any,                 catalina:       "65855205eec15c0c1c6cf47f9a3293c338df5feef348525887da82fb0ad4a448"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64f8a82224209e8c412cf03593ef322112e3674ac87ad54ee46114c9f40d0a6e"
+    sha256 cellar: :any,                 arm64_ventura:  "5fcb6945c7fe220f8b983c18edd7a42d8d84a9d62696b4fec001c1697300fb61"
+    sha256 cellar: :any,                 arm64_monterey: "c437aaaf373f369e94825937854374a0b17bf965c1ba2a0faf22818111372038"
+    sha256 cellar: :any,                 arm64_big_sur:  "a19d1b6b4df35819a43ab5def000101bb902fbc85222d548ba9c1964578d41f7"
+    sha256 cellar: :any,                 ventura:        "b6a613111f86af2e0e50994f225626f257adbca25e48c3f824ed68340b08bf63"
+    sha256 cellar: :any,                 monterey:       "f7217880961411f37b5ba86376f5a6772bf45d1ae98ee86a01677439ce381cc0"
+    sha256 cellar: :any,                 big_sur:        "af1e13deeaa14eebacdbfb075e1cf245409cc1e2d2d7991e55b017262648245c"
+    sha256 cellar: :any,                 catalina:       "13780286d987167f7e50aea65947e1460a6616d0f1b224b37f8351775eab72f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c5a372a45b230cca6717e4cbfb9f85d4218118028c3961409e09c7cd4b85beb"
   end
 
   head do

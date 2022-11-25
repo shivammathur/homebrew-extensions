@@ -4,6 +4,7 @@ class Gpgme < Formula
   url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.18.0.tar.bz2"
   sha256 "361d4eae47ce925dba0ea569af40e7b52c645c4ae2e65e5621bf1b6cdd8b0e9e"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpgme/"
@@ -11,17 +12,17 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "098e980fcd33419161e2cb0b8726d397c4779ea049776b653a1c086e9b0ddbff"
-    sha256 cellar: :any,                 arm64_monterey: "599b8b1949126487b1c24443b6dd8eb2842eac3884b0e0b3f2d19f5209762a4d"
-    sha256 cellar: :any,                 arm64_big_sur:  "fd420b38b733615029bad30f1fdd1f8eadd8dc7530617e6d101fcf0f08d1dd78"
-    sha256 cellar: :any,                 ventura:        "aae8b3b5e142b60f35e5b5e778e6f81b23ef7df2cdaa2f78a38d590a117eccc7"
-    sha256 cellar: :any,                 monterey:       "aad0354292aa298b7c318dd7b08a09fc60ec153d71a7f60c0d92174f6df3dae1"
-    sha256 cellar: :any,                 big_sur:        "52b3c86c85fe3ec3af6581bc23a89416354c75457f01a26b6a1cc5f853d4f1cf"
-    sha256 cellar: :any,                 catalina:       "0e1b99075c6656336f906821bf8dfdf2b7610f2182cd7fc901608f02590b74e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "452ff2184c01bbea45b034d71799f3575ea0858b5427c71554ca8360832f1f64"
+    sha256 cellar: :any,                 arm64_ventura:  "09eb6844769020807f538ccd6ff6fd916a2428e7cbe495eab1d20c751849304e"
+    sha256 cellar: :any,                 arm64_monterey: "f2f1b75a4d35488bca401ca201d5c4f5a89a5acaa2bebe19a44fc802b5bc0bfc"
+    sha256 cellar: :any,                 arm64_big_sur:  "bad5ec42359aa1170e1e533a9c498bc07520ecaf0572549c7b36e91dca1c9252"
+    sha256 cellar: :any,                 ventura:        "d59f5b10eef0d6f07726d815abb2e3ff424616897c89feef05aa3266298a0155"
+    sha256 cellar: :any,                 monterey:       "c58808e22d846af48572e08e85ea92d96a661dc44efb0ac065fe05f43f28cea0"
+    sha256 cellar: :any,                 big_sur:        "80181351cad6da30c7068b48b446727185bf2ee8483418863a30e4ec379a1ce4"
+    sha256 cellar: :any,                 catalina:       "b359235849a1eaa43513f81458eec55a2e166daa5e91d56d0f82ce789214d0db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bc50e268a85ec9b611c979a1e08108d985be0a51d02474011864afa1ab2ff79"
   end
 
-  depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
   depends_on "swig" => :build
   depends_on "gnupg"
   depends_on "libassuan"
@@ -36,9 +37,16 @@ class Gpgme < Formula
     sha256 "5de2f6bcb6b30642d0cbc3fbd86803c9460d732f44a526f44cedee8bb78d291a"
   end
 
+  def python3
+    "python3.11"
+  end
+
   def install
-    python = "python3.10"
-    ENV["PYTHON"] = python
+    ENV["PYTHON"] = python3
+    # HACK: Stop build from ignoring our PYTHON input. As python versions are
+    # hardcoded, the Arch Linux patch that changed 3.9 to 3.10 can't detect 3.11
+    inreplace "configure", /# Reset everything.*\n\s*unset PYTHON$/, ""
+
     # setuptools>=60 prefers its own bundled distutils, which breaks the installation
     # Remove when distutils is no longer used. Related PR: https://dev.gnupg.org/D545
     ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
@@ -51,7 +59,7 @@ class Gpgme < Formula
     # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
     inreplace "lang/python/Makefile.in",
               /^\s*install\s*\\\n\s*--prefix "\$\(DESTDIR\)\$\(prefix\)"/,
-              "\\0 --install-lib=#{prefix/Language::Python.site_packages(python)}"
+              "\\0 --install-lib=#{prefix/Language::Python.site_packages(python3)}"
 
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
@@ -65,6 +73,6 @@ class Gpgme < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/gpgme-tool --lib-version")
-    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import gpg; print(gpg.version.versionstr)"
+    system python3, "-c", "import gpg; print(gpg.version.versionstr)"
   end
 end

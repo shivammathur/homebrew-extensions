@@ -5,7 +5,7 @@ class TclTk < Formula
   mirror "https://fossies.org/linux/misc/tcl8.6.12-src.tar.gz"
   sha256 "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
   license "TCL"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -13,14 +13,14 @@ class TclTk < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "917109df4937513b4b743ccb3eef29b5a8ca9f4fa1310432680519ed13c609b4"
-    sha256 arm64_monterey: "8accfee37564f1f390c27ba44a1e501ae3a2ba23fb8ecf126da43c105aa3411c"
-    sha256 arm64_big_sur:  "6097b84f40aded10af8c4bd300e1b82cd89f2f019bf05721cc433a78c553932a"
-    sha256 ventura:        "267052b0136365d371d62d27057f23408efa221672127744175f3ba7c5d7643e"
-    sha256 monterey:       "6dd6e9147cab000f8fee32efb4b7069f8128d2b0eb0f6d45fc96ddcedb936afe"
-    sha256 big_sur:        "ed8b2d7204d9afc96153af7df2954714c4a07af6f2cbd90b60da15f270a82977"
-    sha256 catalina:       "73092f5fab605e4e35c05721d9689c93e728e6005eb2a0c564d5a8c08f9628cc"
-    sha256 x86_64_linux:   "9be465cbb1307669acc2e62c5788611c8ff5917d4007437b1d32796de68de7ad"
+    sha256 arm64_ventura:  "55a38f29acf61f16d9a7d91546e14bb102708b9ece4dce5e243cf94a22134259"
+    sha256 arm64_monterey: "03f3d27e2c369dc54fd6ddf037991c7c9eb3bf1e4af9efea87a5f0425cc171d8"
+    sha256 arm64_big_sur:  "f9f9c8e0e9fbea41b9a2890045a2a01f94a74ac8890e49406cc098782fb7e4d3"
+    sha256 ventura:        "6891661ab80a18459d23ac3ebaffa9def7e996bd6f15f229a1a5291faad047fd"
+    sha256 monterey:       "ca15b6e71d81499f80bce95b854138b07bc3843fc8c8d832edef1585da698996"
+    sha256 big_sur:        "7d61f627dce342477e4ebd5e86c226fa2aa77dde6e1e0feb6ae3b5f54cecb7cd"
+    sha256 catalina:       "a6c5e70dcaa9144148b330f06af8209ddae6a6438799ed6aea3d0ca4d97c5444"
+    sha256 x86_64_linux:   "d519790e632e4f6d8ce636c09eef1847335c959ff1ed87d71a7535b27ec53d80"
   end
 
   keg_only :provided_by_macos
@@ -70,6 +70,7 @@ class TclTk < Formula
       --enable-64bit
     ]
 
+    ENV["TCL_PACKAGE_PATH"] = "#{HOMEBREW_PREFIX}/lib"
     cd "unix" do
       system "./configure", *args
       system "make"
@@ -141,6 +142,7 @@ class TclTk < Formula
   end
 
   test do
+    assert_match "#{HOMEBREW_PREFIX}/lib", pipe_output("#{bin}/tclsh", "puts $auto_path\n")
     assert_equal "honk", pipe_output("#{bin}/tclsh", "puts honk\n").chomp
 
     # Fails with: no display name and no $DISPLAY environment variable
