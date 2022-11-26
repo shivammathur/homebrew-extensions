@@ -1,20 +1,19 @@
 class Gearman < Formula
   desc "Application framework to farm out work to other machines or processes"
   homepage "http://gearman.org/"
-  url "https://github.com/gearman/gearmand/releases/download/1.1.19.1/gearmand-1.1.19.1.tar.gz"
-  sha256 "8ea6e0d16a0c924e6a65caea8a7cd49d3840b9256d440d991de4266447166bfb"
+  url "https://github.com/gearman/gearmand/releases/download/1.1.20/gearmand-1.1.20.tar.gz"
+  sha256 "2f60fa207dcd730595ef96a9dc3ca899566707c8176106b3c63ecf47edc147a6"
   license "BSD-3-Clause"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "df0394804cdf3de1302729a22ea1e9497aa95b338c887f885f74822b04d3a90f"
-    sha256 cellar: :any,                 arm64_monterey: "2f0a2a49ce3a773f7c1a6843209a6cd08685cd4006c9a9a42027ba49aaa3e8df"
-    sha256 cellar: :any,                 arm64_big_sur:  "e4ead0b0570c3c6d45bf2d819ab72ac18d23818fa738bfde4e85567afccab5aa"
-    sha256 cellar: :any,                 ventura:        "51996bf5e0b52769e10cdefe015beb2fc56fc7050d999218ee937031a0750ec0"
-    sha256 cellar: :any,                 monterey:       "2abbf0333fc05b02a35ae4b2a0ab87a477c39594028a7f6a778dbebded6c6b03"
-    sha256 cellar: :any,                 big_sur:        "acfaeab90270a909593744b93f070eac9c0a304a72e5aa9e8239a1611fd7232c"
-    sha256 cellar: :any,                 catalina:       "70b0a28d14bf035972ad57d124d1bb968c47e016f2788567ee5bb6e44f35e74e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "495913ba7fe75023898cde122e9b7a3d8a89094a4f3ae8cf941bc66a6e7a4877"
+    sha256 cellar: :any,                 arm64_ventura:  "95b2c5141c5811012eb63f2bde53ce34b8b10d44091d83ca26fdb9f90f952c7f"
+    sha256 cellar: :any,                 arm64_monterey: "47ae5c4a1e46839d326f9d0a8645db99667faa9421d6b1f24ef8428d88114fc0"
+    sha256 cellar: :any,                 arm64_big_sur:  "9f4604a39f29d820d364501feec99fe4224d365d308dc4b1a2e85499b14fd906"
+    sha256 cellar: :any,                 ventura:        "fb41eeff69f94675705274a2a9791d576659898b6a34a49b8ea4385dbeed3785"
+    sha256 cellar: :any,                 monterey:       "a07630494be1b88b82cc38c9f255ca29f6387b85dfe7cf239b29652b7a632309"
+    sha256 cellar: :any,                 big_sur:        "1d99f2e4f0dff33a17832e43e1b3b7b4c749311bd838e3c8796548adf8e48be2"
+    sha256 cellar: :any,                 catalina:       "cf60ac6edfc875eebdbaacb3831247a294e1e844441eb1417d4c648f4e0d91c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f8b04328b9fbfa337b299811b3dc21c12c47448692a881080e955633b2f5279"
   end
 
   depends_on "pkg-config" => :build
@@ -28,12 +27,6 @@ class Gearman < Formula
 
   on_linux do
     depends_on "util-linux" # for libuuid
-  end
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
