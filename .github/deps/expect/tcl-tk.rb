@@ -1,11 +1,10 @@
 class TclTk < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl-lang.org"
-  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.12/tcl8.6.12-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/tcl8.6.12-src.tar.gz"
-  sha256 "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.13/tcl8.6.13-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/tcl8.6.13-src.tar.gz"
+  sha256 "43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066"
   license "TCL"
-  revision 2
 
   livecheck do
     url :stable
@@ -13,14 +12,13 @@ class TclTk < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "55a38f29acf61f16d9a7d91546e14bb102708b9ece4dce5e243cf94a22134259"
-    sha256 arm64_monterey: "03f3d27e2c369dc54fd6ddf037991c7c9eb3bf1e4af9efea87a5f0425cc171d8"
-    sha256 arm64_big_sur:  "f9f9c8e0e9fbea41b9a2890045a2a01f94a74ac8890e49406cc098782fb7e4d3"
-    sha256 ventura:        "6891661ab80a18459d23ac3ebaffa9def7e996bd6f15f229a1a5291faad047fd"
-    sha256 monterey:       "ca15b6e71d81499f80bce95b854138b07bc3843fc8c8d832edef1585da698996"
-    sha256 big_sur:        "7d61f627dce342477e4ebd5e86c226fa2aa77dde6e1e0feb6ae3b5f54cecb7cd"
-    sha256 catalina:       "a6c5e70dcaa9144148b330f06af8209ddae6a6438799ed6aea3d0ca4d97c5444"
-    sha256 x86_64_linux:   "d519790e632e4f6d8ce636c09eef1847335c959ff1ed87d71a7535b27ec53d80"
+    sha256 arm64_ventura:  "53300b4a5e2d7ef71b25b5ecb7b1b20ae435234dd114d2163e643d5857b1de21"
+    sha256 arm64_monterey: "c5878a4780414050c132dfd8cefaf7f009d8809f55ee3049dd7122a54e50dea9"
+    sha256 arm64_big_sur:  "4cab30160b2e7d926c52ad639c53a1471844b114a15cd19b414829615385ad67"
+    sha256 monterey:       "e175685883ef770c7220b5c0b3058acd61dedddc8bbefae348828b68cbeb6514"
+    sha256 big_sur:        "3d0f9ac84a5a01f5d9d241005b6fa93e1a4f356b329dd56746242ff402649d7f"
+    sha256 catalina:       "9a0d3538f62527944ea7905d32532ad8239f6a6dd45f94742a3b2cb72d9f1c10"
+    sha256 x86_64_linux:   "7183c92a7b716deaf436a4a468c6866936a9f1f2b145516c7e6d83f323369da0"
   end
 
   keg_only :provided_by_macos
@@ -42,8 +40,8 @@ class TclTk < Formula
   end
 
   resource "tcllib" do
-    url "https://downloads.sourceforge.net/project/tcllib/tcllib/1.20/tcllib-1.20.tar.xz"
-    sha256 "199e8ec7ee26220e8463bc84dd55c44965fc8ef4d4ac6e4684b2b1c03b1bd5b9"
+    url "https://downloads.sourceforge.net/project/tcllib/tcllib/1.21/tcllib-1.21.tar.xz"
+    sha256 "10c7749e30fdd6092251930e8a1aa289b193a3b7f1abf17fee1d4fa89814762f"
   end
 
   resource "tcltls" do
@@ -52,9 +50,9 @@ class TclTk < Formula
   end
 
   resource "tk" do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.12/tk8.6.12-src.tar.gz"
-    mirror "https://fossies.org/linux/misc/tk8.6.12-src.tar.gz"
-    sha256 "12395c1f3fcb6bed2938689f797ea3cdf41ed5cb6c4766eec8ac949560310630"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.13/tk8.6.13-src.tar.gz"
+    mirror "https://fossies.org/linux/misc/tk8.6.13-src.tar.gz"
+    sha256 "2e65fa069a23365440a3c56c556b8673b5e32a283800d8d9b257e3f584ce0675"
   end
 
   resource "itk4" do
