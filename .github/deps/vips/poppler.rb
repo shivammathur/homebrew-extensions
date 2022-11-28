@@ -1,8 +1,8 @@
 class Poppler < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-22.08.0.tar.xz"
-  sha256 "b493328721402f25cb7523f9cdc2f7d7c59f45ad999bde75c63c90604db0f20b"
+  url "https://poppler.freedesktop.org/poppler-22.11.0.tar.xz"
+  sha256 "093ba9844ed774285517361c15e21a31ba4df278a499263d4403cca74f2da828"
   license "GPL-2.0-only"
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
@@ -12,15 +12,14 @@ class Poppler < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "0f4133a4f9f614220457adb5f2010f5e38507003ea683f2b495ddbe7849b85eb"
-    sha256 arm64_monterey: "7d082645e0272f32dce02ba14e538961daafbadc0506104c24aa8704e348caca"
-    sha256 arm64_big_sur:  "eecb637cec87c66ac8ff95e2215a632e31e4ec1e8d797dbbddc6b016c341adcf"
-    sha256 ventura:        "7f191ff7754a1ea08e25aa4302d6896eea4c681e44ca4e42f3ce8ba89f0fc103"
-    sha256 monterey:       "7677b6f6205b0cea6269c1dc8c5580e25b7183d64869b3c5493e0f4f2f89b717"
-    sha256 big_sur:        "f27f2e75915739ca671a4c524527f80add251b44076ccd818a0225a7acc37207"
-    sha256 catalina:       "4b7c11b5a1c1fb89435662a0761b1922250eac8727be6f3524a72fe67904ea2e"
-    sha256 x86_64_linux:   "954439909c67a1f4f105040e267be6a58be9a20956e57a29bc7a1cc504a19bd9"
+    sha256 arm64_ventura:  "ff30dc71068cdf540a3cd25069aebf3ccdcd20a1e759b12ff0833cbe1912076f"
+    sha256 arm64_monterey: "2b7097ac988058bb0215ca05f06ac9ef8738af6ebedfedc29cb1614b17b9fecf"
+    sha256 arm64_big_sur:  "5089ad95740841275a4f6580fe1a9ec5fc2ecc25dd853624eb8c008ffe431420"
+    sha256 ventura:        "534a4ef54ceec4fbcf9efbfb850167059d18ad64f67c7dd1022faa2a945c7ae0"
+    sha256 monterey:       "5cdd5683ea933739fd6cec7723ad7568005c238f8a9f838ef1234da5a40e451f"
+    sha256 big_sur:        "06c62a5a3d3302dfcca23b193a7810b45f6c6f091741a54f4f6ff6da176162ea"
+    sha256 catalina:       "1149cb0f7d16c3f55a771bb1effa512eb783c0ed16b892d6603f847d64e8d88b"
+    sha256 x86_64_linux:   "1abe4e5b95b5cf0b9e47d2ab797bd4214173175ef795c6592156ab3537ed45a1"
   end
 
   depends_on "cmake" => :build
@@ -55,10 +54,6 @@ class Poppler < Formula
 
   def install
     ENV.cxx11
-
-    # Fix for BSD sed. Reported upstream at:
-    # https://gitlab.freedesktop.org/poppler/poppler/-/issues/1290
-    inreplace "CMakeLists.txt", "${SED} -i", "\\0 -e"
 
     # removes /usr/include from CFLAGS (not clear why)
     ENV["PKG_CONFIG_SYSTEM_INCLUDE_PATH"] = "/usr/include" if MacOS.version < :mojave
