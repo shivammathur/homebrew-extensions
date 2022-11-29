@@ -23,15 +23,15 @@ class Gcc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_ventura:  "8f274798b5ce632bf4bbcf499a67a80e58b0bdee71aa5f965290ef56a42f06c6"
-    sha256                               arm64_monterey: "f37b8d3764f63e11a6e11dc23774eba527453de89fedb4e3b13aa3996059d386"
-    sha256                               arm64_big_sur:  "5d98731c711f17707fe13276090a6a3669a9d68e766e56ead8c842465ff164bb"
-    sha256                               ventura:        "bdfde44b04290f5d6cbc1a8bcce6dee4186e9d2ef29b6f64607bf766c494cd80"
-    sha256                               monterey:       "453199069048503be8f072463aaa3cd60fc2764875528f234374872354528564"
-    sha256                               big_sur:        "1f2aca239e706f455125dcb2c08df7744b8905b5b62d7aed4cdeae6cf5d5fcee"
-    sha256                               catalina:       "98f37e3468e2a15343e02f613a2f8d7761d30eead960d04b2317f8292122e9ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7f773f9af560766b2d971d815a8d224c267088c05ed1f2b864bd1d9ebc26e1a"
+    rebuild 2
+    sha256                               arm64_ventura:  "d0dd262f7d681d5bbcc39bea85d0dd355f2f962060afe4de16432fbe9596bf8c"
+    sha256                               arm64_monterey: "7bc86ca650f1e2764ed66e6c46852c035a336de89e1a373b6447e3980a4c0d8d"
+    sha256                               arm64_big_sur:  "2d450754fbe7125c9a1e30f8f865fdbd7f3adc730d2c6459fb43256f7bba9042"
+    sha256                               ventura:        "85b24fd8be088fd53cbf596fb98f77d616598e6410e4e48df7b61faf6b41f126"
+    sha256                               monterey:       "0b47a35b2d5405a3b414435b7c00875d349107a8f3f7471088ff183f62a57247"
+    sha256                               big_sur:        "7f97476baa2573f5f8df510b47f4ff5ce725622d1b57f4771b896b1b70d02ddb"
+    sha256                               catalina:       "6ba7396b412441e59eec2b67a349f3f5f7374a9b772eb33e0c4707f6c77f5bc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2080ede63b45e711bbb05c474af6affe3edc255fecf81009a85e23429b509e2"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -105,6 +105,9 @@ class Gcc < Formula
 
       # Fix Linux error: gnu/stubs-32.h: No such file or directory.
       args << "--disable-multilib"
+
+      # Enable to PIE by default to match what the host GCC uses
+      args << "--enable-default-pie"
 
       # Change the default directory name for 64-bit libraries to `lib`
       # https://stackoverflow.com/a/54038769
