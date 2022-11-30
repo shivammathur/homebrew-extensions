@@ -23,6 +23,7 @@ class Hdf5 < Formula
     sha256 cellar: :any,                 ventura:        "f5c508938bb6a0801afe86a3ba7f2bb0095ad91f907dc422c4fd94d0aa93f160"
     sha256 cellar: :any,                 monterey:       "e89540a3626665e98679fdd64f9b2d007bd12d489e1a67b4f5a48b09021a686c"
     sha256 cellar: :any,                 big_sur:        "61cb53a7c7915fcc8e0a8f623a382c4e73d7047c6723ede57c070918678743f8"
+    sha256 cellar: :any,                 catalina:       "b3be3911f2100587685f7c4d089001becb7a3405f3fd2e7dfbcacceb672894b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "507a340a5132018ee60fab34e90effc08fa06c6401bbf3e920b012a90a0525a9"
   end
 
