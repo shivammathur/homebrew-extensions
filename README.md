@@ -84,7 +84,6 @@
 | Operating System | Architecture      |
 |------------------|-------------------|
 | Linux            | `x86_64`          |
-| macOS Catalina   | `x86_64`          |
 | macOS Big Sur    | `x86_64`, `arm64` |
 | macOS Monterey   | `x86_64`, `arm64` |
 | macOS Ventura    | `x86_64`, `arm64` |

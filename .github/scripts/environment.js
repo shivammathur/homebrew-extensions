@@ -12,7 +12,7 @@ module.exports = async ({github, context, core}, formula_detect) => {
         console.log('No CI-syntax-only label found. Running tests job.')
         core.setOutput('syntax-only', 'false')
     }
-    let runners = ["macos-12-arm64", "macos-11-arm64", "macos-12", "macos-11", "macos-10.15"]
+    let runners = ["macos-12-arm64", "macos-11-arm64", "macos-12", "macos-11"]
     if (label_names.includes('CI-no-linux')) {
         console.log('CI-no-linux label found.')
     } else {
