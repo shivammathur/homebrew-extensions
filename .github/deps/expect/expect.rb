@@ -4,7 +4,7 @@ class Expect < Formula
   url "https://downloads.sourceforge.net/project/expect/Expect/5.45.4/expect5.45.4.tar.gz"
   sha256 "49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34"
   license :public_domain
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,15 +12,14 @@ class Expect < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4a49c4ad71978deb1a4c526b2e90891b9173251e4178e2f2649e1344b1ed7cf6"
-    sha256 arm64_monterey: "865f91b99656011e6c4cb681a5d5306805f97532158e25eaa6ba74685c9cfc72"
-    sha256 arm64_big_sur:  "aacaef6b4ae9a82f8039722e623ad66117e1154f9ddc0f4cf3a7c450147ba010"
-    sha256 ventura:        "75af989c1abdd8b9a2cffee0e5a747fec4309b0ffd6e42fe6123bfe89e30f08d"
-    sha256 monterey:       "65f7837ddba5bc6efe90b201e853fa117a617e711074546444b98c665238f1d8"
-    sha256 big_sur:        "b7824e3cc83c7b063198bb7505bbd723481327ff40d36ac91ba8950621bcbc49"
-    sha256 catalina:       "366066798dba96afbfbbf5b262bb3df9e6405e79b1e4d7160dd9610308ec4b3e"
-    sha256 mojave:         "da69b859dd682d61f2380523c3e1afbed2d06e453d4e88e0ce6bb5566df24082"
-    sha256 x86_64_linux:   "518fab49b38bf1b7ce6118907dec39e476c4f57e0c1a3dbfc2113d95a6c1760b"
+    sha256 arm64_ventura:  "41694fc786b834187a385fdff5719a44c8c2c61000907cf7e682eb67f6339d3b"
+    sha256 arm64_monterey: "9d52fecd2233cf0b3c895c63f8ab03912fd74075244221196e9882334e743f08"
+    sha256 arm64_big_sur:  "70d13137d6fc17c78f565f07c5bf9a23404fc8e658f9cf2015a8ecd3d69d4dc6"
+    sha256 ventura:        "98df9a7371c178be65065294d2567deba4af4c057ff3ab09ff5474581b91985a"
+    sha256 monterey:       "db086c31928306bb3e9735bdef4a06b1bdcce0e4d60bb78968e40d3e31064858"
+    sha256 big_sur:        "c45b66b3d9c4a6c2b0fa68d9daec2b48bed4df6ab564ff652ce0cf41040419c3"
+    sha256 catalina:       "b4899f933cfe9caea23ffa18529be2d2e2d66d828de427f9a2b3f7e1795bd10e"
+    sha256 x86_64_linux:   "f5fa2ccf3978e434b52d22920f3e5a27d2f922e1838e5eede42ed6332d5d7031"
   end
 
   # Autotools are introduced here to regenerate configure script. Remove
@@ -33,13 +32,14 @@ class Expect < Formula
   conflicts_with "ircd-hybrid", because: "both install an `mkpasswd` binary"
 
   def install
+    tcltk = Formula["tcl-tk"]
     args = %W[
       --prefix=#{prefix}
       --exec-prefix=#{prefix}
       --mandir=#{man}
       --enable-shared
       --enable-64bit
-      --with-tcl=#{Formula["tcl-tk"].opt_lib}
+      --with-tcl=#{tcltk.opt_lib}
     ]
 
     # Temporarily workaround build issues with building 5.45.4 using Xcode 12.
@@ -62,9 +62,17 @@ class Expect < Formula
     system "make"
     system "make", "install"
     lib.install_symlink Dir[lib/"expect*/libexpect*"]
+    if OS.mac?
+      bin.env_script_all_files libexec/"bin",
+                               PATH:       "#{tcltk.opt_bin}:$PATH",
+                               TCLLIBPATH: lib.to_s
+      # "expect" is already linked to "tcl-tk", no shim required
+      bin.install libexec/"bin/expect"
+    end
   end
 
   test do
-    system "#{bin}/mkpasswd"
+    assert_match "works", shell_output("echo works | #{bin}/timed-read 1")
+    assert_equal "", shell_output("{ sleep 3; echo fails; } | #{bin}/timed-read 1 2>&1")
   end
 end
