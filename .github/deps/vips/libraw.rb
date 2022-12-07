@@ -4,7 +4,7 @@ class Libraw < Formula
   url "https://www.libraw.org/data/LibRaw-0.20.2.tar.gz"
   sha256 "dc1b486c2003435733043e4e05273477326e51c3ea554c6864a4eafaff1004a6"
   license any_of: ["LGPL-2.1-only", "CDDL-1.0"]
-  revision 3
+  revision 4
 
   livecheck do
     url "https://www.libraw.org/download/"
@@ -12,14 +12,13 @@ class Libraw < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e4ab08ff590549de7c1aa488e2e225a74e1186a1b51e71956488dc909a7bd8ee"
-    sha256 cellar: :any,                 arm64_monterey: "8fabdbb3e0bea64967859d1566709b7a1eb20100548f8dde61300a0982f3d78c"
-    sha256 cellar: :any,                 arm64_big_sur:  "5587bd22619b0f9942337f66054fbf8f3dc943aeb09f258bd1216eea779439e6"
-    sha256 cellar: :any,                 ventura:        "3b1f4caf1e17e245871ae31ab827c63bac71938bf5994b4258b54dd765a55d43"
-    sha256 cellar: :any,                 monterey:       "7c67db7c1d4da6c580782470bc3b9ca9b2ab310d912bae0d04b0fe1b400da1ff"
-    sha256 cellar: :any,                 big_sur:        "49845b546bb0df84878d6a9e9dec4f5ce210c76ce57713f1fe9aa73cb0af56e6"
-    sha256 cellar: :any,                 catalina:       "a0207e575f4846216b3e7485d8e384bf3f7f5357adc68fb93537555f859223cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2ad0da2bae19eea705cdfdc0841a5acf80d5a8abb65a72fe1e560059591da2d"
+    sha256 cellar: :any,                 arm64_ventura:  "8b4256545b2414b6aaad493155d810adb1d393b25df0169f12e95c156957e915"
+    sha256 cellar: :any,                 arm64_monterey: "d013f4cee6561de346ee4e327f9362bf9d260ba99db77e85406b93a8cfec0858"
+    sha256 cellar: :any,                 arm64_big_sur:  "8adb515b95e5497c82372c7b9b30d721e397e5667a94ab18371722d5650d4a36"
+    sha256 cellar: :any,                 ventura:        "eea5b7c0f6ab30bc90cb4c77ff63f37ec0cb5777fbe7587bf1a00b365c155854"
+    sha256 cellar: :any,                 monterey:       "5da67713d8abe8bc6ddeab64c92438dcda76b2c80493f36d7cf7283c8e4dc800"
+    sha256 cellar: :any,                 big_sur:        "518cd6c21dc988a821963dde1b871fe5fe3223664ed0c906d324430bc1289b0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f84a11ebca75c0a2be9b7fc2fe9c53d083fc354fc2d24e24bcb9891cce34bf1"
   end
 
   depends_on "autoconf" => :build
