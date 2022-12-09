@@ -1,19 +1,18 @@
 class Libspng < Formula
   desc "C library for reading and writing PNG format files"
   homepage "https://libspng.org/"
-  url "https://github.com/randy408/libspng/archive/v0.7.2.tar.gz"
-  sha256 "4acf25571d31f540d0b7ee004f5461d68158e0a13182505376805da99f4ccc4e"
+  url "https://github.com/randy408/libspng/archive/v0.7.3.tar.gz"
+  sha256 "a50cadbe808ffda1a7fab17d145f52a23b163f34b3eb3696c7ecb5a52340fc1d"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "3abf9e800bffec5d364bc8f1aa827e94b796746638ddcc08ba2c3018db50c41b"
-    sha256 cellar: :any, arm64_monterey: "beee48ecc0e830637aa96f467641e2659a6376f3e34e07d2af6d920f1a84e79d"
-    sha256 cellar: :any, arm64_big_sur:  "e47bb6a47f616846ae372120b4dd020f199472a4d0fe1ff2c3b9baa9ac3702fb"
-    sha256 cellar: :any, ventura:        "dc7805748b90b4d0df7aad7cf82f3ae3215a5999660c1c3e6564a509ee729d44"
-    sha256 cellar: :any, monterey:       "a2bba026efdb034044e7ec823496ff2efbc8b92103e086f78dbf70326e2eb82d"
-    sha256 cellar: :any, big_sur:        "aaa167306934c3d4ee31c169d2c5a19c50d596d7025078f9713603313599098d"
-    sha256 cellar: :any, catalina:       "044c6073f223d86ee52ca20af47cc3a08605dabd526090d772f3a18318b680fc"
-    sha256               x86_64_linux:   "c3e593fb1fe1cdb1ec2453984d2893cc753e4fd96d2da444a0fddf5f53c1f526"
+    sha256 cellar: :any,                 arm64_ventura:  "deb3a3d4552e7c993cb6f91645f52488ba1e7c310c60f07544e16b2918ff7575"
+    sha256 cellar: :any,                 arm64_monterey: "84b61c16e0cf8ec194780d6616eb3670c26369d0b79f4670c63a5583b646c223"
+    sha256 cellar: :any,                 arm64_big_sur:  "a152fb7f0a64b0ddac056e29578c6cebb64dae60cba7509ed4f82f3c59ac1591"
+    sha256 cellar: :any,                 ventura:        "d8784bef29e67699a913680022e5a48d6f499bf19564228383efdfbb9a518c8a"
+    sha256 cellar: :any,                 monterey:       "c3190740fd003e35cbeb8b71c0cae74bbc49478a5581781289bcd6a3966afaee"
+    sha256 cellar: :any,                 big_sur:        "fa2c6820fcdfe82921c55d077c696210bfcf7185e84a384fd8a14779117e212f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8590ea4e1f4679adf589ceef9ad5a39b32aa24678d75cd6194d8b1114ef2747"
   end
 
   depends_on "meson" => :build
