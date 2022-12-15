@@ -16,9 +16,9 @@ fetch() {
        [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||
        [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|memcached|pecl_http|protobuf|raphf|rdkafka|redis|ssh2|vips|xlswriter)@(7.[0-4]|8.[0-3]) ]] ||
        [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-3]) ]] ||
-       [[ "$VERSION" =~ (ast|mcrypt|mongodb|xdebug)@(7.[2-4]|8.[0-3]) ]] ||
+       [[ "$VERSION" =~ (ast|mcrypt|mongodb)@(7.[2-4]|8.[0-3]) ]] ||
        [[ "$VERSION" =~ (ds|mailparse|pdo_sqlsrv|psr|sqlsrv)@(7.[3-4]|8.[0-3]) ]] ||
-       [[ "$VERSION" =~ (memcache|swoole)@8.[0-3] ]]; then
+       [[ "$VERSION" =~ (memcache|swoole|xdebug)@8.[0-3] ]]; then
       sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
       url=$(grep '^  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
       checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
