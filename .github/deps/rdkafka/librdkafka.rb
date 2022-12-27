@@ -12,18 +12,18 @@ class Librdkafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fa9511e6ed4fa44e60d2b6f1f380d7c646b8aaedd10ecbe564b7650ac35c43b3"
-    sha256 cellar: :any,                 arm64_monterey: "51cf809caf8626828668859f212e29dd644a8cbe6bbd1740c10edf0b565f0c2f"
-    sha256 cellar: :any,                 arm64_big_sur:  "71fd99b66724e9cde7fc862eadd2043b3c0a072c5ef564d6400da24b47e4d26c"
-    sha256                               ventura:        "abb618447accfb2ba3138ed01a4ed336aa904961a38cc828c25ded2e03fe1cfd"
-    sha256                               monterey:       "9b56f5818e278cec646eb2c93f3d32b19eddfeacb1ec96bff9ba95b7232031fd"
-    sha256                               big_sur:        "939f96a1a1f5fc8caeeb5e0256fe2ea3a319d27f7519739b2699aef96f1bbebb"
-    sha256                               catalina:       "09dee2fe5791509406023eb4510bd19ac9f32e675adbfebcdba3288864927083"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "939c1bf09ef24b036644cb8cd1f15c517e74f4ea6f015082308ac828ad135ee0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "aaf5be4abca614fec8e7b1ce7de8cd1ca2bc3289a5987b35e76bc4492572e817"
+    sha256 cellar: :any,                 arm64_monterey: "3ad6b84bb1812a86b79037ef3712cac8c655378d391baf34f7e7c7a78ce35bca"
+    sha256 cellar: :any,                 arm64_big_sur:  "5b9081eb9326f365f263869ac727aa1c54f93a6e81a4a6bf6ea5f45d56e5bfd3"
+    sha256                               ventura:        "853179bfed485e17203f48bce282df6e9e4cbb8c28a6682cb2891d05d9e83851"
+    sha256                               monterey:       "6fdf31963089900e263a2ecf9b9d9d4311663cd70e3f333d925262c6b41c976c"
+    sha256                               big_sur:        "e56ea38be19a683be72690eead6e4394f00ca008de64f34008fe477d2539dd6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "146e7981060c0a030695cea369cfbc587c139f1dc024ebc01d4872883837241e"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on "lz4"
   depends_on "lzlib"
   depends_on "openssl@1.1"

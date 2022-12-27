@@ -6,23 +6,25 @@ class Libxcb < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "1c61b275a2a61d1f0d089e7c0836e3515f0d344726ff5098f7ae550577b47b4a"
-    sha256 cellar: :any,                 arm64_monterey: "0cdfcc168853b8f09f431c1790ae9b8de5d8567b5fab5381f26af300bb7dc5b3"
-    sha256 cellar: :any,                 arm64_big_sur:  "6bf77051114dec12e0c541bc478d7833a992792047553fc821f3e1a17b82ec38"
-    sha256 cellar: :any,                 ventura:        "87313e4ffe14ad6a8495a2b909963625886a82869e4463c7dc26ee803ad8d23a"
-    sha256 cellar: :any,                 monterey:       "3847eca62ce6198e7a728df8ae431f628091fb8e83956efdc9d527f4d2795ef3"
-    sha256 cellar: :any,                 big_sur:        "c1436addb2cb20e446f6147c10752e517336245b6dcdd946273537e60aa040eb"
-    sha256 cellar: :any,                 catalina:       "035b1d299e3f1b41581e759981cf9a83aee2754c4b744cdcad4c7fe32de83ffb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8e96bb6f8a1e84ddc0b7e32ca3bd3ae05e4006785ca58b8356db00bd81879fa"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "2a2826a150a07d7cb11afc60822d235156f4b0e26fce2b40127aa427c1d702d5"
+    sha256 cellar: :any,                 arm64_monterey: "34c950a057d5ab61955426066cf0b4028aba0d5d8ddd7c556b7d989dce2b0ec2"
+    sha256 cellar: :any,                 arm64_big_sur:  "ce95f3522bad8371d68f1e7aa27f0a88dc884b25eab0cc53f78eb8bcee0e6026"
+    sha256 cellar: :any,                 ventura:        "393ade919790d2f0ce71b512dbc7fe2c130b96583be8134b4979ed2e429b36ec"
+    sha256 cellar: :any,                 monterey:       "1f471c5dbe29f01607bf6ea8002ffd3aa4f8c4cba499b922a0f4934cbec1e8f5"
+    sha256 cellar: :any,                 big_sur:        "7be267fa471ac12bcf57d239da4f50a274752b025387fb5e8e592537cf93dfe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbcc3c77c22a8193a29762a400d259b6f7836b31a0b04c2e76ac7fe5e0c83466"
   end
 
   depends_on "pkg-config" => :build
   depends_on "python@3.11" => :build # match version in `xcb-proto`
   depends_on "xcb-proto" => :build
-  depends_on "libpthread-stubs"
   depends_on "libxau"
   depends_on "libxdmcp"
+
+  # Drop libpthread-stubs on macOS
+  # remove in next release
+  patch :DATA
 
   def install
     python3 = "python3.11"
@@ -98,3 +100,18 @@ class Libxcb < Formula
     assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end
+
+__END__
+diff --git a/configure b/configure
+index 2503d4b..0c36685 100755
+--- a/configure
++++ b/configure
+@@ -20662,7 +20662,7 @@ printf "%s\n" "yes" >&6; }
+ fi
+ NEEDED="xau >= 0.99.2"
+ case $host_os in
+-linux*) ;;
++linux*|darwin*) ;;
+      *) NEEDED="$NEEDED pthread-stubs" ;;
+ esac
+ 
