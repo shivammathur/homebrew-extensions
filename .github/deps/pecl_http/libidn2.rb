@@ -6,6 +6,7 @@ class Libidn2 < Formula
   mirror "http://ftp.gnu.org/gnu/libidn/libidn2-2.3.4.tar.gz"
   sha256 "93caba72b4e051d1f8d4f5a076ab63c99b77faee019b72b9783b267986dbb45f"
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
+  revision 1
 
   livecheck do
     url :stable
@@ -13,14 +14,13 @@ class Libidn2 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "733adfd62ece847bb7f36e57434c58582020cd7c572a2b37b6113811108ac1c1"
-    sha256 arm64_monterey: "38eed5a97aaddeebf0c510ed609466c2c0d1fdc996452e380a4ed9366000fe5e"
-    sha256 arm64_big_sur:  "3b7b3d218a6b04a8264174da41af73e638fc75a7dcbb4f41150f2f37166d5cb9"
-    sha256 ventura:        "3561d710120deb93c7b30c1c3a9639e9649e41fc7360b25ce6a8bc53424a43da"
-    sha256 monterey:       "335207a9dc5fdab95f75b5639108c66e57d9b3fe0c632a829e05947d8e0b31ff"
-    sha256 big_sur:        "d2db4a1e16ed4293bb44a0aca0166e9a4eda64f219d655c0aa56a1014398e0ff"
-    sha256 catalina:       "9cf7ddcc4469e80d0a81bc95312e2481bdddb2b5fdd9f1a20ca8b0b37eb38af3"
-    sha256 x86_64_linux:   "e95765dc4efb32e9b9d24f3b02624d40f9c6f2753a091296900f107ada06f106"
+    sha256 arm64_ventura:  "5550bc39dcb606b7a89893d18e665603f40b741a6c2d9b0c06fc4be30ae568d7"
+    sha256 arm64_monterey: "baf8ea36355b9ebdefea47a68899a5774b0cdd4310fdf9381548ff1cd92ed917"
+    sha256 arm64_big_sur:  "670adac962dad9344631839771a3b2db4206f1b4ea1ff03313c7af953c48d90b"
+    sha256 ventura:        "d6aad8bc36d9c4e3b60e8eceb8efff287bc70be8a41d625ce823a84b666997ac"
+    sha256 monterey:       "b3f82e7085f5b3275ce37c010ae972c810d01857fe18256dd7e1fcbfa357ac32"
+    sha256 big_sur:        "542dd4872c2c94152f7b253f923fd2187d8e87e65eff9f3437739ce9426edff0"
+    sha256 x86_64_linux:   "eddbc802ee4f200770aff95da72c0c0f052a75970a3f17103d3fb42b36615819"
   end
 
   head do
