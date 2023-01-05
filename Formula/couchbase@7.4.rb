@@ -8,8 +8,8 @@ class CouchbaseAT74 < AbstractPhpExtension
   init
   desc "Couchbase PHP extension"
   homepage "https://github.com/couchbase/couchbase-php-client"
-  url "https://pecl.php.net/get/couchbase-4.0.0.tgz"
-  sha256 "caa67e972a8e0f50b920088434eea14671902f253fb5bfb854b7e8d3898bcd26"
+  url "https://pecl.php.net/get/couchbase-.tgz"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   head "https://github.com/couchbase/couchbase-php-client.git"
   license "Apache-2.0"
 
