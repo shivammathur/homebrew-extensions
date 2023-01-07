@@ -10,17 +10,7 @@ for extension in "${extensions[@]}"; do
   if ! [ -e "$formula_file" ]; then
     formula_file=./Formula/"$extension"@7.4.rb
   fi
-  IFS=' ' read -r -a deps <<<"$(grep 'depends_on' "$formula_file" | tr -d '\"' | cut -d' ' -f 4 | tr '\n' ' ')"
-  if [ "$extension" = "vips" ]; then
-    curl -o $(brew --repo homebrew/core)/Formula/vips.rb -sL "$trunk"/vips.rb
-    IFS=' ' read -r -a vips_deps <<<"$(brew deps vips | tr '\n' ' ')"
-    deps=( "${deps[@]}" "${vips_deps[@]}" )
-  fi  
-  if [ "$extension" = "imagick" ]; then
-    curl -o $(brew --repo homebrew/core)/Formula/imagemagick.rb -sL "$trunk"/imagemagick.rb
-    IFS=' ' read -r -a imagick_deps <<<"$(brew deps imagemagick | tr '\n' ' ')"
-    deps=( "${deps[@]}" "${imagick_deps[@]}" )
-  fi  
+  IFS=' ' read -r -a deps <<<"$(brew deps "$formula_file" | tr '\n' ' ')"
   
   if [[ -n "${deps// }" ]]; then
     printf "\n----- %s -----\n" "$extension"
