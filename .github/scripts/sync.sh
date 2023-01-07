@@ -3,6 +3,8 @@ git config --local user.email 1589480+BrewTestBot@users.noreply.github.com
 git config --local user.name BrewTestBot
 git config --local pull.rebase true
 
+brew tap shivammathur/php
+
 trunk=https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula
 IFS=' ' read -r -a extensions <<<"$(find ./Formula -maxdepth 1 -name '*@*.rb' -print0 | xargs -0 basename -a | sed 's/@.*//' | sort | uniq | tr '\n' ' ')"
 for extension in "${extensions[@]}"; do
@@ -10,7 +12,7 @@ for extension in "${extensions[@]}"; do
   if ! [ -e "$formula_file" ]; then
     formula_file=./Formula/"$extension"@7.4.rb
   fi
-  IFS=' ' read -r -a deps <<<"$(brew deps "$formula_file" | tr '\n' ' ')"
+  IFS=' ' read -r -a deps <<<"$(brew deps --formula "$formula_file" | tr '\n' ' ')"
   
   if [[ -n "${deps// }" ]]; then
     printf "\n----- %s -----\n" "$extension"
