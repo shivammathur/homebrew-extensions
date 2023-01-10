@@ -15,13 +15,6 @@ class UuidAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_monterey: "SHA"
-    sha256 cellar: :any,                 arm64_big_sur:  "SHA"
-    sha256 cellar: :any,                 monterey:       "SHA"
-    sha256 cellar: :any,                 big_sur:        "SHA"
-    sha256 cellar: :any,                 catalina:       "SHA"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "SHA"
   end
 
   depends_on "libuuid"
