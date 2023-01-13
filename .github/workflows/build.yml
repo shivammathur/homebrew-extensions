@@ -181,7 +181,6 @@ jobs:
 
       - name: Set up Homebrew
         id: set-up-homebrew
-        if: runner.os == 'macOS'
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Setup Xcode
