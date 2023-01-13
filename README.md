@@ -56,6 +56,7 @@
 | `memcached`  | `PHP 5.6` to `PHP 8.3` |
 | `mongodb`    | `PHP 5.6` to `PHP 8.3` |
 | `msgpack`    | `PHP 5.6` to `PHP 8.3` |
+| `newrelic`   | `PHP 7.4` to `PHP 8.1` |
 | `pcov`       | `PHP 7.1` to `PHP 8.3` |
 | `pdo_sqlsrv` | `PHP 7.0` to `PHP 8.3` |
 | `pecl_http`  | `PHP 5.6` to `PHP 8.3` |
@@ -243,6 +244,7 @@ This project is also generously supported by many other users and organisations 
 - [xdebug/xdebug](https://github.com/xdebug/xdebug "Xdebug")
 - [xlswriter](https://github.com/viest/php-ext-xlswriter.git "xlswriter")
 - [zeromq/php-zmq](https://github.com/zeromq/php-zmq "ZMQ")
+- [newrelic/newrelic-php-agent](https://github.com/newrelic/newrelic-php-agent "newrelic")
 
 ### Homebrew
 
