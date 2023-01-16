@@ -4,6 +4,7 @@ class Boost < Formula
   url "https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2"
   sha256 "71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa"
   license "BSL-1.0"
+  revision 1
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -15,13 +16,13 @@ class Boost < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2cd208a24de2aa9bbbf1c743baecff601e49fd0e510f7648997d0bc18cb6c785"
-    sha256 cellar: :any,                 arm64_monterey: "431b5bb8cbf057ececff635584cd74ec66fa9f0ceff5b682d32a061719be78ea"
-    sha256 cellar: :any,                 arm64_big_sur:  "826ec4c314e0d6c3736cc729994a8e8420cbba29d7c6fd1fbd7b42a6843ce3e5"
-    sha256 cellar: :any,                 ventura:        "c43386b152ca48f6c6ef4b5e6f67384be3d1fa796cb8e7dc320ee81f8f919954"
-    sha256 cellar: :any,                 monterey:       "120c4a7f11c8f0465fc2350717aa122f228a1c2f0b5714b30d35b4bde3271a31"
-    sha256 cellar: :any,                 big_sur:        "4b0cac3b4399c2c6eae0e16b47ba0bd2b46dfd937924179da042fb3e7969d52b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b71c28e842e5daca8d11329cf00cd9635a869c2a96cda903cbe30cbac1d34e84"
+    sha256 cellar: :any,                 arm64_ventura:  "8a4a21f28eea820cdfb2ca94d6a9c2ecad40592b145de06698283dc3c7ae0eeb"
+    sha256 cellar: :any,                 arm64_monterey: "da47f5dce669699eb052452fe166e5cd118a6f6d3f64abe4cae53461743a2cc2"
+    sha256 cellar: :any,                 arm64_big_sur:  "640b02baab8cf76935b79203660de45e0721f1428697b9916327b06e86b9300a"
+    sha256 cellar: :any,                 ventura:        "b3fc7aade48d9a8bec56ac3cc57a3c5ead36d67365cf3447c578cd31ddb8fbee"
+    sha256 cellar: :any,                 monterey:       "160aabda5d6497dc72a389dd251becc971e37d4702763b3b45a5c7bbc29f0419"
+    sha256 cellar: :any,                 big_sur:        "51a2646e51a7a304848efa7cca17312c4a3acc5e28ef664037d0675c5c9a1e83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26a83186402f3625806df9d7f6e41a1188d726d7f21ee5ccbfb3310e763d1ebc"
   end
 
   depends_on "icu4c"
