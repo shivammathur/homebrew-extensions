@@ -15,13 +15,12 @@ class RaphfAT81 < AbstractPhpExtension
   revision 1
 
   bottle do
-    root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
+    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/raphf@8.1-2.0.1_1"
+    rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8b35713dd47fcf7fef50f9e33e67d4e38ef62e593bb2e29157994d6c16de1b2b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3a0c73ffc70c6af5d992c76ef4453c1e2275efb0a98a0bb1f0a88489cd9127f"
-    sha256 cellar: :any_skip_relocation, monterey:       "26972bd3b7713447d7911e78ec11a6449ed8670d85f36901caa16e26199cdc64"
+    sha256 cellar: :any_skip_relocation, monterey:       "2258d2ca2345b1dc3a97c5b199e95cef4cd18cf29eaf8a0b999306a98df8aa6b"
     sha256 cellar: :any_skip_relocation, big_sur:        "b345122c2ff0c6376dde10aaf89fff957f8c9fa6851d84a3948621ada774ff4b"
-    sha256 cellar: :any_skip_relocation, catalina:       "255a275edae78b59aa4e022936beadf46c5c9c1a3fb9bab388f6bd9e805b4da7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c6712fd6b530781b1494c19504a0a677ff9a5df95c68f4d27d69d50210debab"
   end
 
