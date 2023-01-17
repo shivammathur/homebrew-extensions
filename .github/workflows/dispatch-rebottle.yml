@@ -29,26 +29,19 @@ permissions:
   contents: read
 
 jobs:
-  setup:
-    runs-on: ubuntu-22.04
-    container:
-      image: ghcr.io/homebrew/ubuntu22.04:master
-    outputs:
-      runners: ${{steps.determine-runners.outputs.runners}}
-    steps:
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-
-      - name: Determine runners
-        id: determine-runners
-        run: brew determine-rebottle-runners "${{github.event.inputs.formula}}" "${{github.event.inputs.timeout}}"
-
   bottle:
-    needs: setup
     strategy:
       matrix:
-        include: ${{fromJson(needs.setup.outputs.runners)}}
+        include:
+          - runner: 'macos-12-arm64'
+          - runner: 'macos-11-arm64'
+          - runner: 'macos-12'
+          - runner: 'macos-11'
+          - runner: 'ubuntu-22.04'
+            container:
+              image:   "ghcr.io/homebrew/ubuntu22.04:master"
+              options: "--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"
+            workdir: /github/home
       fail-fast: ${{fromJson(github.event.inputs.fail-fast)}}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
