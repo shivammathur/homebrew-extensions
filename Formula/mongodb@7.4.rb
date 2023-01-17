@@ -14,13 +14,13 @@ class MongodbAT74 < AbstractPhpExtension
   license "Apache-2.0"
 
   bottle do
-    root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_monterey: "10231a8e6353053f2197bae03f34b6e6646a54c2f1172f865d50bb51b91f0b62"
-    sha256 cellar: :any,                 arm64_big_sur:  "9e858578ff3fabf9525ab7dc4179247d9e343f662b739449f6e2e1736faf48b0"
-    sha256 cellar: :any,                 monterey:       "d1b2454347d16ed73a36bee14d87514abd0fac6a24a59d859ca4a341abca59b5"
-    sha256 cellar: :any,                 big_sur:        "67d0a09a44248e3415cf527751e4a7a81fb9bf7ba5cd1674ac7cbfa69f891b7f"
-    sha256 cellar: :any,                 catalina:       "3f8e39f3113e1ff3f3f692209fc661da945e2604cf590daf3e4c213d34e3a3cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ed0b43629496a739e72a48b26f607836c4a0556b1426bcfb27a42a3925b3ddf"
+    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/mongodb@7.4-1.15.0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "eec84faeaf0868697bc2eecacc321bdce3bd28343cf73fe3f7ef3b627273bbef"
+    sha256 cellar: :any,                 arm64_big_sur:  "2b2c2dcfb20f2090ff43631a45a3fb71b531a97ac47f35f749706d3d68b6a58d"
+    sha256 cellar: :any,                 monterey:       "cbe878da9b7995e0cf9083d5d1727b25af63d0113ee7df84530fc74840f08d0f"
+    sha256 cellar: :any,                 big_sur:        "f4d78e55ebd3a95fdf4b8c0dce2a7d9564baddbd45fd89111d298ee716be7ad4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b99d65380484a7c77a5785c508008e0b7184605698edaf79ab8015b7423a9476"
   end
 
   depends_on "icu4c"
