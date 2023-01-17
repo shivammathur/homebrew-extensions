@@ -14,14 +14,13 @@ class MsgpackAT74 < AbstractPhpExtension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
+    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/msgpack@7.4-2.1.2"
+    rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_monterey: "543936f0f9ce9268fdbdbabd268dc486d84b4cbbe277818ff950feea1169dc27"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "334c8b4c7cfcced9e061ae850363cd36f2ad5af60f0254446bd2c3db719e3075"
-    sha256 cellar: :any_skip_relocation, monterey:       "7248c157f217bc340d2d53951ed7375e244d3d82c35a3b3c634a79ffb60b9607"
+    sha256 cellar: :any_skip_relocation, monterey:       "5957f7ffcd7d20d5032b8ed12fb8463bd9b6deca359047949462ad5773c7347e"
     sha256 cellar: :any_skip_relocation, big_sur:        "0754aad2f063893f2da2e0fdfd8230ca86e7eb387ca71289fb9723767985df98"
-    sha256 cellar: :any_skip_relocation, catalina:       "e66b93438dc456a63bde52ee4d8bc0ed02d41c4da4594c22afaf51e24f201e1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bcb89138368fd700276312400e4e7e41816947288984dbc5c935c2a306fe1a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a25ab27a47d62974ef2938c2eee27c64853d839b315275b3d68c9550b6883d6c"
   end
 
   def install
