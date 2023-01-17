@@ -14,7 +14,7 @@ class MsgpackAT83 < AbstractPhpExtension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/msgpack@8.3-2.2.0RC1"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5828858d1ba6ce8cef098a77bf92b7348fd2f9a62268d083e0e626f713be46f6"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "45347e09adb828af25fd7e3c8a16a14798e3ecb240a4616afcc7b552633c42f5"

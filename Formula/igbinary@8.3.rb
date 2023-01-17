@@ -14,7 +14,7 @@ class IgbinaryAT83 < AbstractPhpExtension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/igbinary@8.3-3.2.12"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9976a4017fc3eb596395c7957a60187a1f0ad50d0dacc747fe26db126ee66d6e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6be85bc8e4ac4080859e4ae63dde49135d579489347284744aaa5a2a0153e915"

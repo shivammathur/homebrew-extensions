@@ -14,7 +14,7 @@ class VipsAT80 < AbstractPhpExtension
   license "MIT"
 
   bottle do
-    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/vips@8.0-1.0.13"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 4
     sha256 cellar: :any,                 arm64_monterey: "63220a32ccb0bd5dbe99e6358c645d7b2de4a088cfeb1e6bd42597a11fa3fc4d"
     sha256 cellar: :any,                 arm64_big_sur:  "c3910e7d51c14af36ecc2454386b245a591ebeac651b091e15a8fa3fc7c1545e"

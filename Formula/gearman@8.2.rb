@@ -14,7 +14,7 @@ class GearmanAT82 < AbstractPhpExtension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/gearman@8.2-2.1.0"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 3
     sha256 cellar: :any,                 arm64_monterey: "e90df88d696e89994fc0ffae1ca94f23c858a7851ef4da7cfba2d1f919a18016"
     sha256 cellar: :any,                 arm64_big_sur:  "19bbb1b639092b9b4e2034ab9047b62fe2c65795f527d0a6fefc0c549c2538a7"

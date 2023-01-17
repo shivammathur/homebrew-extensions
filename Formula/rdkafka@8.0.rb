@@ -14,7 +14,7 @@ class RdkafkaAT80 < AbstractPhpExtension
   license "MIT"
 
   bottle do
-    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/rdkafka@8.0-6.0.3"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
     sha256 cellar: :any,                 arm64_monterey: "89f1d603e48453f14d460ff990e8ef7a7566113e1c46358f97c5c81aacc913b0"
     sha256 cellar: :any,                 arm64_big_sur:  "b5bc9b82403e0b5cca32cb0536e5d227fce6d98d0bb3deaf2e3b078108c57a41"

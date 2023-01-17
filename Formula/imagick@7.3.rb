@@ -14,7 +14,7 @@ class ImagickAT73 < AbstractPhpExtension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/imagick@7.3-3.7.0"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
     sha256 cellar: :any,                 arm64_monterey: "dbb41412b744fee3d2575a25180e370fa1071d4965641f353f31d0c2e5260ecd"
     sha256 cellar: :any,                 arm64_big_sur:  "c65d9c83bb6518358b99f340d430dcb529b50dcd03e8df2f624149e40e6a11ec"

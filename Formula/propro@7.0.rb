@@ -15,7 +15,7 @@ class ProproAT70 < AbstractPhpExtension
   revision 1
 
   bottle do
-    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/propro@7.0-2.1.0_1"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bccbaa9b3fa407d60429025d3957ba63dc2b3d9a1038dacd76fe2b680cbc3754"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e20aa5721d8d97b992c866845f2096eb11c89ba1defc3d589240f7707d52fd4"

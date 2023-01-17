@@ -92,7 +92,7 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - name: Run brew test-bot --only-formulae --keep-old --only-json-tab --skip-online-checks --skip-dependents ${{github.event.inputs.formula}}
+      - name: Run brew test-bot --only-formulae --keep-old --only-json-tab --skip-online-checks --skip-dependents --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions" ${{github.event.inputs.formula}}
         run: |
           mkdir bottles
           cd bottles

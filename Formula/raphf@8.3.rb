@@ -15,7 +15,7 @@ class RaphfAT83 < AbstractPhpExtension
   revision 1
 
   bottle do
-    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/raphf@8.3-2.0.1_1"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fcefb164b21d88f2c2fc7350eddd851a1aa2b1ae5c57be71feb9724bd49ccca2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e7bc73be8a18e18d855281fc67d2ab8db5361e4d2f06018b60dcfcc56f2217c"

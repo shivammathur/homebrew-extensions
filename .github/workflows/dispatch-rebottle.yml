@@ -79,7 +79,7 @@ jobs:
         run: |
           mkdir bottles
           cd bottles
-          brew test-bot --only-formulae --only-json-tab --skip-online-checks --skip-dependents ${{github.event.inputs.formula}}
+          brew test-bot --only-formulae --only-json-tab --skip-online-checks --skip-dependents --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions" ${{github.event.inputs.formula}}
 
       - name: Failures summary for brew test-bot --only-formulae
         if: always()

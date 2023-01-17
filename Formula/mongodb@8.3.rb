@@ -14,7 +14,7 @@ class MongodbAT83 < AbstractPhpExtension
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/mongodb@8.3-1.15.0"
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
     sha256 cellar: :any,                 arm64_monterey: "8b0630fcecfc08780382a319524166690009c7f46b466efac0b54947697ead03"
     sha256 cellar: :any,                 arm64_big_sur:  "744a393f4424717c9bce35cb93a410598955af4a85e44b1b0936b77a210fbd85"
