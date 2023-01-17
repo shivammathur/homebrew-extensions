@@ -14,12 +14,12 @@ class IgbinaryAT74 < AbstractPhpExtension
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/igbinary@7.4-3.2.12"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5e2151672749e883a9dbfbc4528602600e59b4776a63e301bb32a20990fdbe0f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "697c0d2673272ba3abc1611e31e98231960911e2066a562ee1b1936183e2ec8d"
-    sha256 cellar: :any_skip_relocation, monterey:       "8f5efaea1802f4a0223d2b1ebca8ef106f8995340163776410ad6209703e6e59"
+    sha256 cellar: :any_skip_relocation, monterey:       "ff015e2166472c0eb1706b7d036627afc24395065063c743755f34c4494cf6ea"
     sha256 cellar: :any_skip_relocation, big_sur:        "eeea7701c091aa6c57b2e44c011fe1850e6f9887de332a2165e529b5158110a8"
-    sha256 cellar: :any_skip_relocation, catalina:       "323feef7603892778864492b7b2092e69efb6c7c8a856f67999649cd13d07975"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ff014ca1dff9fce06c11d84117b32deced80901001d8780da2281eb4ac223da"
   end
 
