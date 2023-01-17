@@ -12,8 +12,11 @@ env:
   HOMEBREW_DEVELOPER: 1
   HOMEBREW_GITHUB_ACTIONS: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
-  HOMEBREW_CHANGE_ARCH_TO_ARM: 1
   HOMEBREW_RELOCATE_RPATHS: 1
+
+permissions:
+  contents: read
+
 jobs:
   tap-syntax:
     if: "!contains(github.event.head_commit.message, 'skip-build')"
@@ -170,7 +173,7 @@ jobs:
         run: |
           sudo chmod 777 ${{matrix.workdir || github.workspace}}
           sudo useradd _www
-          brew update
+
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
@@ -180,6 +183,7 @@ jobs:
         run: |
           latest_stable_xcode_path="$(find -E /Applications -maxdepth 1 -regex '.*Xcode_13.[0-9]+.app' | sort -V | tail -1)"
           sudo xcode-select -s "$latest_stable_xcode_path" || exit 1
+
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
@@ -190,33 +194,39 @@ jobs:
           mkdir bottles
           cd bottles
           brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
+
       - name: Failures summary for brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
         if: always()
         run: |
           touch bottles/steps_output.txt
           cat bottles/steps_output.txt
           rm bottles/steps_output.txt
+
       - name: Output brew linkage result
         if: always()
         run: |
           cat bottles/linkage_output.txt
           rm bottles/linkage_output.txt
+
       - name: Output brew bottle result
         if: always()
         run: |
           cat bottles/bottle_output.txt
           rm bottles/bottle_output.txt
+
       - name: Run brew test-bot ${{ needs.set-environment.outputs.test-bot-dependents-args }} --skipped-or-failed-formulae=${{ steps.brew-test-bot-formulae.outputs.skipped_or_failed_formulae }}
         if: ${{(success() || failure()) && fromJson(needs.set-environment.outputs.test-dependents)}}
         run: |
           cd bottles
           brew test-bot ${{ needs.set-environment.outputs.test-bot-dependents-args }} --skipped-or-failed-formulae=${{ steps.brew-test-bot-formulae.outputs.skipped_or_failed_formulae }}
+
       - name: Failures summary for brew test-bot ${{ needs.set-environment.outputs.test-bot-dependents-args }} --skipped-or-failed-formulae=${{ steps.brew-test-bot-formulae.outputs.skipped_or_failed_formulae }}
         if: ${{always() && fromJson(needs.set-environment.outputs.test-dependents) == true}}
         run: |
           touch bottles/steps_output.txt
           cat bottles/steps_output.txt
           rm bottles/steps_output.txt
+
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@main
@@ -230,6 +240,7 @@ jobs:
         run: |
           rm -rvf bottles/logs
           rm -rvf bottles/home
+
       - name: Count bottles
         id: bottles
         if: always()
@@ -241,6 +252,7 @@ jobs:
           failures=$(ls failed/*.json | wc -l | xargs echo -n)
           echo "$failures failed bottles"
           echo "failures=$failures" | sudo tee -a "$GITHUB_OUTPUT"
+
       - name: Upload failed bottles
         if: always() && steps.bottles.outputs.failures > 0
         uses: actions/upload-artifact@main
