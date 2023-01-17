@@ -14,14 +14,13 @@ class VipsAT80 < AbstractPhpExtension
   license "MIT"
 
   bottle do
-    root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 3
-    sha256 cellar: :any,                 arm64_monterey: "15fdce562e14914642f5a2c862058199899451987aaf8ab69816ca48096d3642"
-    sha256 cellar: :any,                 arm64_big_sur:  "ccf256aa47dfe528d0138e360d98118a3eab15d1959c1d7910bfe45863a21370"
-    sha256 cellar: :any,                 monterey:       "48ebda7421775916c38303c98ad61f8ffd3a9985255af935aa600c52f084424d"
-    sha256 cellar: :any,                 big_sur:        "913c8fb8d5200bd595196f7062151917b01e197a9917984ed34f2c976a332427"
-    sha256 cellar: :any,                 catalina:       "fd7a3a6da175f151cb45cdceed00d66c67df3fa37dbf5c902cb912102857ad77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27a63410da52c04b9e7e24ab76a0a5155194d3976a97e5deeb83bb4cf8df4d9a"
+    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/vips@8.0-1.0.13"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_monterey: "63220a32ccb0bd5dbe99e6358c645d7b2de4a088cfeb1e6bd42597a11fa3fc4d"
+    sha256 cellar: :any,                 arm64_big_sur:  "c3910e7d51c14af36ecc2454386b245a591ebeac651b091e15a8fa3fc7c1545e"
+    sha256 cellar: :any,                 monterey:       "2cf58a7802a8e5a50bd71d8c69a77e3b3c7342a42fbedc71cf7264165a3c70a4"
+    sha256 cellar: :any,                 big_sur:        "31db9b72c938411f0537ab8f3d559616d8a566d244818f07c257098d253acdf7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6bab3591b5774081d67f17076c07a65e562831a70e0a72eebe3417f2741ab56"
   end
 
   depends_on "vips"
