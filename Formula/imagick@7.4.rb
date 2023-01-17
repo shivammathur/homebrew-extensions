@@ -14,14 +14,13 @@ class ImagickAT74 < AbstractPhpExtension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_monterey: "fe32f0b12cf4dbf873cfe992a33a6c5031d14215e5d6c57342968698f40c8c8e"
-    sha256 cellar: :any,                 arm64_big_sur:  "caa3f5e20c13b4c92504f29bd337006c72ec999087a86823ca0c4accfa076a6d"
-    sha256 cellar: :any,                 monterey:       "4a7ee17d6ef1dcdd8d7bbb8ca5fd237123c3c9ebf34e103e2951f7903d146634"
-    sha256 cellar: :any,                 big_sur:        "07f4f4c563cf3835358ccbc1743f2b1933f1b9ed139522dcb691639faf012b55"
-    sha256 cellar: :any,                 catalina:       "78dab8fcc1816d8010bad78e8a599bd7530bd7f1971436600fa569f9f5381248"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dc3fa9b976ef368546c3b604851c22538aed6b034cdc20d774de3c3e4d579e2"
+    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/imagick@7.4-3.7.0"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_monterey: "f321c1ebc01f7a377b6eb41cadd9c6d280a46edb9f4f45514c2d0d6d75c6f95c"
+    sha256 cellar: :any,                 arm64_big_sur:  "3f499f95687a0d4cf134e6111e6107a26a123f7d954119b540715a88d44dfbff"
+    sha256 cellar: :any,                 monterey:       "8aa883ca83c7ed4a2733c22e8b9fc9590b30cb334399bfa1cf102c10308f8fbe"
+    sha256 cellar: :any,                 big_sur:        "ce0ee544a03272396ec420171a432c195b2674e7707b70fe00f14d1815e69fe1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "492b24eb4dfdbc13d0c05fa14833af09723829d3e3df949540081952f5d3319f"
   end
 
   depends_on "imagemagick"
