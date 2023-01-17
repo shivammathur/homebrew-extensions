@@ -14,14 +14,13 @@ class GearmanAT74 < AbstractPhpExtension
   license "PHP-3.01"
 
   bottle do
-    root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
+    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/gearman@7.4-2.1.0"
+    rebuild 2
     sha256 cellar: :any,                 arm64_monterey: "a96e9405cfe0ffb3dfdb363e51a903043a3af5ceee5f6c34c882affd8e769d28"
     sha256 cellar: :any,                 arm64_big_sur:  "2f24197554ec41be1cf98e338d08204e58c6cb97288e685189a22e89d2e0bae2"
-    sha256 cellar: :any,                 monterey:       "c10ce034170fb86f3d7c202f9178b2e26f76f32b840ddda38d713940ca914cb7"
+    sha256 cellar: :any,                 monterey:       "03cea4ce8ce8dd4f382710c6ed31f8ba204cb2a3ecded222257213722ed21a63"
     sha256 cellar: :any,                 big_sur:        "21a8667363a3d23f395f887440da8feec117aea2cec3fe75ac3ce7d9ab360675"
-    sha256 cellar: :any,                 catalina:       "f9270d7063c2ded4b7136ba4ab7c53dc940d8f1500a59ee5240c51e39348b975"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dab2ecde0dc36c82ba4b8bcd765b06b3db7a8410d041a0b90318e9e09812f151"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a51b4fb5d0f0408cda58275f32efdec5b739ced4c3407a23dac5dd6a129a024b"
   end
 
   depends_on "gearman"
