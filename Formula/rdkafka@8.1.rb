@@ -14,13 +14,13 @@ class RdkafkaAT81 < AbstractPhpExtension
   license "MIT"
 
   bottle do
-    root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_monterey: "39df9b515eb9ec0b3dcd86d9f3bc65049af1f93f592947942c309e5e99e7e4f9"
-    sha256 cellar: :any,                 arm64_big_sur:  "6ee91224bc525ba25caeff5afbca83f4ccd5208b97c7fabad62694123c076c9d"
-    sha256 cellar: :any,                 monterey:       "589cec906caea148bd868086b10d1ec2ce399e1a0fcb365f90b5772a711a85df"
-    sha256 cellar: :any,                 big_sur:        "6394cf247f026a7be97aa87476363d921222b960cb78b995a053c61a325e8ccb"
-    sha256 cellar: :any,                 catalina:       "9af76259e1503b304b7bcd375beeae7c3232ad8626a2b91cd15342b54c139fb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f5afe7b07a1bf8956dd40fe0c2620823dab89ccf963554939cb026673434edd"
+    root_url "https://github.com/shivammathur/homebrew-extensions/releases/download/rdkafka@8.1-6.0.3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "3a5bf34a49f049c037e84119ac52189c413d6c17444b779ed5bcc9817fa0157b"
+    sha256 cellar: :any,                 arm64_big_sur:  "69f785d58e2b47c9196ae788361cfb6da2d9db29b4c01eaf0842c961a71cf125"
+    sha256 cellar: :any,                 monterey:       "93f9c6b495ca47dbe8f17f5d726408f33b24d3bc26756da3a9890cdfc0cfba7a"
+    sha256 cellar: :any,                 big_sur:        "2f418182d6ef700e24241d92a75af246d1ec0d67a439e262addbfe4ca94344b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49e535d3fa8c2f99b2c317cb6d96bcb5639bbfb369cb64c301da2d8859e18aea"
   end
 
   depends_on "librdkafka"
