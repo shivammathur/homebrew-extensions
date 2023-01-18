@@ -14,13 +14,14 @@ class Libidn2 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "5550bc39dcb606b7a89893d18e665603f40b741a6c2d9b0c06fc4be30ae568d7"
-    sha256 arm64_monterey: "baf8ea36355b9ebdefea47a68899a5774b0cdd4310fdf9381548ff1cd92ed917"
-    sha256 arm64_big_sur:  "670adac962dad9344631839771a3b2db4206f1b4ea1ff03313c7af953c48d90b"
-    sha256 ventura:        "d6aad8bc36d9c4e3b60e8eceb8efff287bc70be8a41d625ce823a84b666997ac"
-    sha256 monterey:       "b3f82e7085f5b3275ce37c010ae972c810d01857fe18256dd7e1fcbfa357ac32"
-    sha256 big_sur:        "542dd4872c2c94152f7b253f923fd2187d8e87e65eff9f3437739ce9426edff0"
-    sha256 x86_64_linux:   "eddbc802ee4f200770aff95da72c0c0f052a75970a3f17103d3fb42b36615819"
+    rebuild 1
+    sha256 arm64_ventura:  "b044c66cc0f1feea87d229f3f4016c5ff29a0fb0f712d0d5219f05465247b10f"
+    sha256 arm64_monterey: "64f5b404f308f58ea4dbe787559fb802abd9b624dabd9a1703aa241a2a86d0fb"
+    sha256 arm64_big_sur:  "e6c723cf6d603fad95bc7c7110d114d879555c38c2bed239f5a3e977ecc29434"
+    sha256 ventura:        "322028f5aaf50cac890a5eab03e3a21ecef83d76449c7d8f8d769d1c0887a7b7"
+    sha256 monterey:       "5dcfc410f76c7885fffea633054c58c61e8a5dd2a6cfae33c2ea94e27ae0e96b"
+    sha256 big_sur:        "234beba5f85ebd599ede74b4963e2cc5d2595e05b15bbe5bd528c8bc852bdc1d"
+    sha256 x86_64_linux:   "af78945967847cdf33779abbd1142cabb31d6b5d428f367e23bc068f1d240e49"
   end
 
   head do
@@ -29,22 +30,31 @@ class Libidn2 < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "gengetopt" => :build
+    depends_on "gettext" => :build
+    depends_on "help2man" => :build
     depends_on "libtool" => :build
     depends_on "ronn" => :build
+
+    uses_from_macos "gperf" => :build
+
+    on_system :linux, macos: :ventura_or_newer do
+      depends_on "texinfo" => :build
+    end
   end
 
   depends_on "pkg-config" => :build
-  depends_on "gettext"
   depends_on "libunistring"
 
-  def install
-    system "./bootstrap" if build.head?
+  on_macos do
+    depends_on "gettext"
+  end
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--with-libintl-prefix=#{Formula["gettext"].opt_prefix}",
-                          "--with-packager=Homebrew"
+  def install
+    args = ["--disable-silent-rules", "--with-packager=Homebrew"]
+    args << "--with-libintl-prefix=#{Formula["gettext"].opt_prefix}" if OS.mac?
+
+    system "./bootstrap", "--skip-po" if build.head?
+    system "./configure", *std_configure_args, *args
     system "make", "install"
   end
 
