@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
-  url "https://github.com/v8/v8/archive/10.9.194.9.tar.gz"
-  sha256 "c85a6049a70d646e99bd6348751f47391367ad4e9c7db56a1cf5a5d3a50e8250"
+  url "https://github.com/v8/v8/archive/10.9.194.10.tar.gz"
+  sha256 "33393452d9354789ed899cc159d798e3172a38c010796dfb54c6c38a2fcc8a69"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,13 +12,13 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2ba5d14a28ac37ead5c1826fc10e31539fa415e389c893a28dabb61915f17a6b"
-    sha256 cellar: :any,                 arm64_monterey: "42fa5b9748621b0c961f2ba0fb47782103c809a90d65c1a2d6d25a77b6b9f833"
-    sha256 cellar: :any,                 arm64_big_sur:  "1db13ec89fe88a89636260391087b6d1090aafbb9ea2f0855c2b3c1f7ae28972"
-    sha256 cellar: :any,                 ventura:        "5f02f14c7d06155eedb6e0f6a01e831a467249c96f88368544bb73fac6fd3ac0"
-    sha256 cellar: :any,                 monterey:       "4a21a3f3dfa15c73c06401e06ec99e93195cd288bc66a3c9c4d32a3c7cc6e5f6"
-    sha256 cellar: :any,                 big_sur:        "cb21da06f2af8026f35ca35f73cf930e5d67192d0981b85aec4aa4ce0b4f4335"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "283c5106e8c337d781deb5bdd370d78372edf22ef98f3b03aeada5a412bea570"
+    sha256 cellar: :any,                 arm64_ventura:  "cf8465ef6874e800696a6a922084b787d61597dacc58681c93498f0ed542dc37"
+    sha256 cellar: :any,                 arm64_monterey: "26e495136fe438ed309fa78b8691699bd4577bed528e52d112c8500c9b813607"
+    sha256 cellar: :any,                 arm64_big_sur:  "905e8e849c618e8920df8bffbab6fea79ef34dc53d6308f41fc6c89b4da7df4c"
+    sha256 cellar: :any,                 ventura:        "7b4cc86709de006c69332373eeb71a70fee8b261fbc3b22012bbfda481f30483"
+    sha256 cellar: :any,                 monterey:       "c019f128e31c8d78790f35d8f1c4a174f9b8f273c18276a75ce4de62b8cec83e"
+    sha256 cellar: :any,                 big_sur:        "bccc842f7f8a968f967f7385ad796852e92959d43f9489f9df525fe539534baf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa024b67246d603004a8072a959bd8aa5777fa64522709524b508de9d8cf5bdb"
   end
 
   depends_on "ninja" => :build
