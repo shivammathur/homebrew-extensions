@@ -4,15 +4,16 @@ class Libheif < Formula
   url "https://github.com/strukturag/libheif/releases/download/v1.14.2/libheif-1.14.2.tar.gz"
   sha256 "d016905e247d6952cd7ee4f9b90957350b6a6caa466bc76fdfe6eb302b6d088c"
   license "LGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7d29c850d7b82f0a983c12c0d6c7fef074112bd1314faad3f6cdfd724599a798"
-    sha256 cellar: :any,                 arm64_monterey: "72e03dc47c1610fd9cb5efad52bab6e14bef95801b9f2730e362faa137defa5b"
-    sha256 cellar: :any,                 arm64_big_sur:  "ea9692d6f45ea703c36c197d1fae996e59434138f44cf0b0aef6a3e3c000fa1c"
-    sha256 cellar: :any,                 ventura:        "27f2646f9f32331fffa2b85785a69772136d46b6d2e960cef1cc36b3280a998b"
-    sha256 cellar: :any,                 monterey:       "af29a0c1c1773a7c5a3933c98bb1da669c4de25513e4e9149a7547ee87b27160"
-    sha256 cellar: :any,                 big_sur:        "4ce7b5d8d5d7798898b5c3971deb2e1c9b10c973f1e43bac947a9b1a536af047"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56459426ca044e911104995106decb4bb8c674dee83c7ca47c972b08d5d5d1c5"
+    sha256 cellar: :any,                 arm64_ventura:  "af70b6bf74488aa57f19f1774c3b0ddd6f576e8c9f3c8a328482d88ef1d9c199"
+    sha256 cellar: :any,                 arm64_monterey: "4f6d1be9ead93c33743bc1b1b8430c8feaf44ff6af6a79115321f343cf9055a2"
+    sha256 cellar: :any,                 arm64_big_sur:  "4b8987c4c8d203ae3e715a58622188eaeb291b7d8a4ffa56db339c81a4acdd3c"
+    sha256 cellar: :any,                 ventura:        "38578cb6f08eb56f887d9ec72fb1a3acdc519b1b8495225bba274bf8e5af5ced"
+    sha256 cellar: :any,                 monterey:       "8aee905ee0896d3f2abdcef30319d3f60ce3df84e967f25145bcbabbc07fd17a"
+    sha256 cellar: :any,                 big_sur:        "59a2a2cd71247e235d9ae8c9f2e40980586aafcf51762978228a5ac76c7daeba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82b90374e032ae9eeced09ed0f37c02b077f2c35f729a344c260f885a00cfca1"
   end
 
   depends_on "pkg-config" => :build
