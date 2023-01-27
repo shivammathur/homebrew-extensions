@@ -1,33 +1,19 @@
 class Guile < Formula
   desc "GNU Ubiquitous Intelligent Language for Extensions"
   homepage "https://www.gnu.org/software/guile/"
+  url "https://ftp.gnu.org/gnu/guile/guile-3.0.9.tar.xz"
+  mirror "https://ftpmirror.gnu.org/guile/guile-3.0.9.tar.xz"
+  sha256 "1a2625ac72b2366e95792f3fe758fd2df775b4044a90a4a9787326e66c0d750d"
   license "LGPL-3.0-or-later"
-  revision 4
-
-  stable do
-    url "https://ftp.gnu.org/gnu/guile/guile-3.0.8.tar.xz"
-    mirror "https://ftpmirror.gnu.org/guile/guile-3.0.8.tar.xz"
-    sha256 "daa7060a56f2804e9b74c8d7e7fe8beed12b43aab2789a38585183fcc17b8a13"
-
-    patch do
-      # A patch to fix JIT on Apple Silicon is embedded below, this fixes:
-      #   https://debbugs.gnu.org/cgi/bugreport.cgi?bug=44505
-      # We should remove it from here once Guile 3.0.9 is released.
-      on_macos do
-        url "https://git.savannah.gnu.org/cgit/guile.git/patch/?id=3bdcc3668fd8f9a5b6c9a313ff8d70acb32b2a52"
-        sha256 "3deeb4c01059615df97081e53056c76bcc465030aaaaf01f5941fbea4d16cb6f"
-      end
-    end
-  end
 
   bottle do
-    sha256 arm64_ventura:  "48357e0f3887432c278fc30c2b85c598c4e696ae0ca0be7666438b14d73479cf"
-    sha256 arm64_monterey: "a2318872c5d2c61bc078cc6bb9baf188052a669481908230a9f7a214161de981"
-    sha256 arm64_big_sur:  "2df409e1621d404500811fb4a05da8b1574a7b15c429bfc77545b2ce06c5b7ab"
-    sha256 ventura:        "176e59c17769821509bc216f0344abaef0a02ee95b8ed8309f1ed5b98e796e12"
-    sha256 monterey:       "0f06358bf9c4c00cb9f346b1f8959157143ed8dc460f496cce523582851f5787"
-    sha256 big_sur:        "57763df1905d84eb09785df36cdb7341e4fda5c25489457fa9b37d9cdc904510"
-    sha256 x86_64_linux:   "10cee80e4a2db3936da4010b891f995e857bf06af986b0f362b1a62f3fda1534"
+    sha256 arm64_ventura:  "c19a09aefa173045b658cd01ff1d17415f7f9f82c71a53011d83b656317c09e7"
+    sha256 arm64_monterey: "ddfffea5985814ae9799e24ed9e76dd41498c47253afb1ea3c7c03cea03a2ecb"
+    sha256 arm64_big_sur:  "b2f76cff34fb8136665a9306235db817844bd440fad61e1886fb0fb94d530b88"
+    sha256 ventura:        "b3665ca29b94ffc47d5a208f5e159b6de82046f352a79cf37cf16cdd84a62573"
+    sha256 monterey:       "2680f7c109ed8ff19d28846a91d192563d2fe6ce41a6492d0d9e2a416bae6dd9"
+    sha256 big_sur:        "94aab47e1449b6535a233a7266ddefc65fd5f316182c58d4db11c3745e88544b"
+    sha256 x86_64_linux:   "a70bb44636a8afe8f60592652964028b3c5bd5fcd6ff642567b7137391128d16"
   end
 
   head do
