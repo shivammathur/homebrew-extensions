@@ -7,13 +7,14 @@ class Guile < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "c19a09aefa173045b658cd01ff1d17415f7f9f82c71a53011d83b656317c09e7"
-    sha256 arm64_monterey: "ddfffea5985814ae9799e24ed9e76dd41498c47253afb1ea3c7c03cea03a2ecb"
-    sha256 arm64_big_sur:  "b2f76cff34fb8136665a9306235db817844bd440fad61e1886fb0fb94d530b88"
-    sha256 ventura:        "b3665ca29b94ffc47d5a208f5e159b6de82046f352a79cf37cf16cdd84a62573"
-    sha256 monterey:       "2680f7c109ed8ff19d28846a91d192563d2fe6ce41a6492d0d9e2a416bae6dd9"
-    sha256 big_sur:        "94aab47e1449b6535a233a7266ddefc65fd5f316182c58d4db11c3745e88544b"
-    sha256 x86_64_linux:   "a70bb44636a8afe8f60592652964028b3c5bd5fcd6ff642567b7137391128d16"
+    rebuild 1
+    sha256 arm64_ventura:  "802b09beab5de8794ee71ee9556e78347f0d70b76c34fa8bde2799cbe0bdd64c"
+    sha256 arm64_monterey: "5bd0d6a721847e049d42e53a5aab7f062ecfd816d5dcf79047fc9cf6e39767cf"
+    sha256 arm64_big_sur:  "815898ea4478f76b02c7cf6b87570abb68da29fd07de2a233ee0f7ae95a9bf31"
+    sha256 ventura:        "6d6a9327705cc6d1910b20e6e0d5cf8e9264340302276e2e1be1cbbe32b00fbd"
+    sha256 monterey:       "9c0a36654c77db52102d4344be4bd468b5a96482383f65a6a0ab5c6c0ecce29b"
+    sha256 big_sur:        "07cfc8d1991c784e5d3a25dd939b6027c7d603e03bdc62c1bb8cb4a2ecb97803"
+    sha256 x86_64_linux:   "000f48044f48d7008a21691cf321bb77764dd7ee85e48c8a5088c66514bd9ed1"
   end
 
   head do
@@ -25,11 +26,6 @@ class Guile < Formula
     uses_from_macos "flex" => :build
   end
 
-  # Remove with Guile 3.0.9 release.
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "gettext" => :build
-
   depends_on "gnu-sed" => :build
   depends_on "bdw-gc"
   depends_on "gmp"
@@ -37,9 +33,6 @@ class Guile < Formula
   depends_on "libunistring"
   depends_on "pkg-config" # guile-config is a wrapper around pkg-config.
   depends_on "readline"
-
-  # Remove with Guile 3.0.9 release.
-  uses_from_macos "flex" => :build
 
   uses_from_macos "gperf"
   uses_from_macos "libffi", since: :catalina
@@ -50,9 +43,6 @@ class Guile < Formula
     inreplace "meta/guile-config.in", "@PKG_CONFIG@", Formula["pkg-config"].opt_bin/"pkg-config"
 
     system "./autogen.sh" unless build.stable?
-
-    # Remove with Guile 3.0.9 release.
-    system "autoreconf", "-vif" if OS.mac? && build.stable?
 
     system "./configure", *std_configure_args,
                           "--with-libreadline-prefix=#{Formula["readline"].opt_prefix}",
