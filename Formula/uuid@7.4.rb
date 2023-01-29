@@ -15,6 +15,11 @@ class UuidAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_monterey: "83025b435d1592b3b679aa0a68ef65aceba7c648ec45dbb75db265dbd0bea2d3"
+    sha256 cellar: :any,                 arm64_big_sur:  "230168896feb566bb6177f4780afaf746be153c8f98b0e6e26a302fc55ade3a7"
+    sha256 cellar: :any,                 monterey:       "e584bd9aefd60c7386689b2390da44bab754de43a51e731ecf6df5c6e9048c8b"
+    sha256 cellar: :any,                 big_sur:        "39e9971a3642284a0cb60428dddd628249b0f2e20584418549e7a3c9b6319978"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21d07e58b41e2be60090559975e88abe147806e6eed4ccf114b82d95721ee9ec"
   end
 
   def uuid_dependency
