@@ -4,9 +4,10 @@
 
 extension=$1
 repo=$2
-license=$3
-type=$4
-shift 4
+branch=$3
+license=$4
+type=$5
+shift 5
 versions=("$@")
 title="$(tr '[:lower:]' '[:upper:]' <<< "${extension:0:1}")${extension:1}"
 for version in "${versions[@]}"; do
@@ -17,6 +18,7 @@ for version in "${versions[@]}"; do
   sed -i "s/NODOT/${version/./}/g" "$file"
   sed -i "s/Extension_Title PHP extension/$title PHP extension/" "$file"
   sed -i "s|REPO|$repo|" "$file"
+  sed -i "s|REPO_BRANCH|$branch|" "$file"
   if [ "$license" != 'no' ]; then
     sed -i "s/LICENSE_NAME/$license/" "$file"
   else

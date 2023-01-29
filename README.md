@@ -72,6 +72,7 @@
 | `sqlsrv`     | `PHP 7.0` to `PHP 8.3` |
 | `ssh2`       | `PHP 5.6` to `PHP 8.3` |
 | `swoole`     | `PHP 5.6` to `PHP 8.3` |
+| `uuid`       | `PHP 5.6` to `PHP 8.3` |
 | `v8js`       | `PHP 7.0` to `PHP 8.3` |
 | `vips`       | `PHP 7.0` to `PHP 8.3` |
 | `xdebug`     | `PHP 5.6` to `PHP 8.3` |
@@ -234,6 +235,7 @@ This project is also generously supported by many other users and organisations 
 - [php/pecl-mail-mailparse](https://github.com/php/pecl-mail-mailparse "PHP Mailparse")
 - [php/pecl-encryption-mcrypt](https://github.com/php/pecl-encryption-mcrypt "PHP Mcrypt")
 - [php/pecl-networking-ssh2](https://github.com/php/pecl-networking-ssh2 "PHP SSH2")
+- [php/pecl-networking-uuid](https://github.com/php/pecl-networking-uuid "PHP UUID")
 - [php/php-src](https://github.com/php/php-src "PHP Source")
 - [phpredis/phpredis](https://github.com/phpredis/phpredis "Redis")
 - [protocolbuffers/protobuf](https://github.com/protocolbuffers/protobuf "protocolbuffers")
@@ -277,6 +279,7 @@ This project is also generously supported by many other users and organisations 
 - [libyaml](https://formulae.brew.sh/formula/libyaml "libyaml")
 - [lz4](https://formulae.brew.sh/formula/lz4 "lz4")
 - [openssl](https://formulae.brew.sh/formula/openssl@1.1 "openssl")
+- [ossp-uuid](https://formulae.brew.sh/formula/ossp-uuid "ossp-uuid")
 - [pcre](https://formulae.brew.sh/formula/pcre "pcre")
 - [rabbitmq-c](https://formulae.brew.sh/formula/rabbitmq-c "rabbitmq")
 - [snappy](https://formulae.brew.sh/formula/snappy "snappy")
