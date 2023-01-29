@@ -10,7 +10,7 @@ class Extension_TitleATNODOT < AbstractPhpExtension
   homepage "https://github.com/REPO"
   url "URL"
   sha256 "SHA"
-  head "https://github.com/REPO.git"
+  head "https://github.com/REPO.git", branch: "REPO_BRANCH"
   license "LICENSE_NAME"
 
   bottle do
