@@ -61,13 +61,13 @@ jobs:
 
       - name: Merge PR branch
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
         run: bash .github/scripts/retry.sh 5 5 gh pr merge ${{github.event.inputs.pull_request}} --delete-branch --rebase
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
         with:
-          token: ${{secrets.GITHUB_TOKEN}}
+          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
 
       - name: Post comment on failure
         if: ${{!success()}}
