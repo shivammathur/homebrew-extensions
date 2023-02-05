@@ -6,6 +6,13 @@ class JpegTurbo < Formula
   license "IJG"
   head "https://github.com/libjpeg-turbo/libjpeg-turbo.git", branch: "main"
 
+  # Versions with a 90+ patch are unstable (e.g., 2.1.90 corresponds to
+  # 3.0 beta1) and this regex should only match the stable versions.
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/libjpeg-turbo[._-]v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)\.t}i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "d00e1ed5362087315ba0d537102311e6d8432c5cbe9296697141a02d53a6cdbe"
     sha256 cellar: :any,                 arm64_monterey: "3a3c98f98547a73ed8a7d63df80d2693b090157c23b284e4cdc768984e17ebbb"

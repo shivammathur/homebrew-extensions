@@ -1,8 +1,8 @@
 class JpegXl < Formula
   desc "New file format for still image compression"
   homepage "https://jpeg.org/jpegxl/index.html"
-  url "https://github.com/libjxl/libjxl/archive/v0.8.0.tar.gz"
-  sha256 "6b4c140c1738acbed6b7d22858e0526373f0e9938e3f6c0a6b8943189195aad1"
+  url "https://github.com/libjxl/libjxl/archive/v0.8.1.tar.gz"
+  sha256 "60f43921ad3209c9e180563025eda0c0f9b1afac51a2927b9ff59fff3950dc56"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class JpegXl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ed917915e08fac5108f4682a4351d046a844a7729355b45452f7abe011152471"
-    sha256 cellar: :any,                 arm64_monterey: "164305ccff8619c4bd29b438a203219a9f86c4325db5e81dc1829ed2d3ae8c3f"
-    sha256 cellar: :any,                 arm64_big_sur:  "f0f6bb989089e2825316260b9cdcdc9894328b2a98a334f6ad069b8f93438f1a"
-    sha256 cellar: :any,                 ventura:        "566735feb5cf0ab6f53ae3e8ce88fc71951318ba497ea0b1b611e2b92d2bccc7"
-    sha256 cellar: :any,                 monterey:       "051508b719eabbeaf079ae17366442d1ff4cb93799e706b681b9cde76ccac879"
-    sha256 cellar: :any,                 big_sur:        "cc8cd901e436533c8d7d76548076ddd62e4ed09db7d668012d31abfb217f0679"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52d92785a2b8803557090e942c4751b245f989732296cb097c1b596e4685db05"
+    sha256 cellar: :any,                 arm64_ventura:  "09c59266fd1ae62615a71512597b4325c6e8cce2268efd2f56dd17bd6fb49724"
+    sha256 cellar: :any,                 arm64_monterey: "f0fcfea7ac4b1c74b19742cba995cc8e94b2556125c6038ad4e469c65f8716d6"
+    sha256 cellar: :any,                 arm64_big_sur:  "43207ed935381a19aa87ddf35ddfee7f0db29bddaea0707fa02da9627a1e9bfc"
+    sha256 cellar: :any,                 ventura:        "d1c3e4e4deb2bc363b4365034571b6f6fc876d3d2c99e423b94585c40dbf4ae1"
+    sha256 cellar: :any,                 monterey:       "38a0fe93650936ad5076820e9bfa3471584937be31b2262c9e06a1ba341019ec"
+    sha256 cellar: :any,                 big_sur:        "508ad71458b58f2464fc05419ebd64b7a93a58656d933c019b6472941c144f3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41362a352dd6f980d07845337dd51bfc1e4aabd90101129c544406f65ba41e0b"
   end
 
   depends_on "cmake" => :build
