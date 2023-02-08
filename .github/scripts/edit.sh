@@ -1,29 +1,19 @@
 fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
-  [[ "$GITHUB_MESSAGE" =~ .*--init.* ]] && return
-  if [[ "$EXTENSION" =~ imap ]] || [[ "$VERSION" =~ (mcrypt)@(5.6|7.[0-1]) ]]; then
-    php_version=$(echo "$VERSION" | cut -d'@' -f2)
-    brew tap shivammathur/php
-    php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
-    checksum=$(curl -sSL "$php_url" | shasum -a 256 | cut -d' ' -f 1)
-    sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$VERSION".rb
-    [ "$checksum" != "" ] && sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
-  else
-    if [[ "$EXTENSION" =~ amqp|event|expect|gnupg|pcov|imagick ]] ||
-       [[ "$VERSION" =~ (couchbase)@(7.4|8.[0-3]) ]] ||
-       [[ "$VERSION" =~ (phalcon5)@(7.4|8.[0-1]) ]] ||
-       [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
-       [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||
-       [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|memcached|pecl_http|protobuf|raphf|rdkafka|redis|ssh2|uuid|vips|xlswriter)@(7.[0-4]|8.[0-3]) ]] ||
-       [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-3]) ]] ||
-       [[ "$VERSION" =~ (ast|mcrypt|mongodb)@(7.[2-4]|8.[0-3]) ]] ||
-       [[ "$VERSION" =~ (ds|mailparse|pdo_sqlsrv|psr|sqlsrv)@(7.[3-4]|8.[0-3]) ]] ||
-       [[ "$VERSION" =~ (memcache|swoole|xdebug)@8.[0-3] ]]; then
-      sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
-      url=$(grep '^  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
-      checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
-      sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
-    fi
+  if [[ "$EXTENSION" =~ amqp|event|expect|gnupg|imagick|imap|mcrypt|pcov|snmp ]] ||
+     [[ "$VERSION" =~ (couchbase)@(7.4|8.[0-3]) ]] ||
+     [[ "$VERSION" =~ (phalcon5)@(7.4|8.[0-1]) ]] ||
+     [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
+     [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||
+     [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|memcached|pecl_http|protobuf|raphf|rdkafka|redis|ssh2|uuid|vips|xlswriter)@(7.[0-4]|8.[0-3]) ]] ||
+     [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-3]) ]] ||
+     [[ "$VERSION" =~ (ast|mcrypt|mongodb)@(7.[2-4]|8.[0-3]) ]] ||
+     [[ "$VERSION" =~ (ds|mailparse|pdo_sqlsrv|psr|sqlsrv)@(7.[3-4]|8.[0-3]) ]] ||
+     [[ "$VERSION" =~ (memcache|swoole|xdebug)@8.[0-3] ]]; then
+    sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
+    url=$(grep '^  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
+    checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
+    sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
   fi
 }
 

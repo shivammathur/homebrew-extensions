@@ -29,6 +29,8 @@ for version in "${versions[@]}"; do
   sed -i "s/extension.so/$extension.so/" "$file"
   if [ "$type" = 'pecl' ]; then
     sed -i "s/CHDIR/Dir.chdir \"$extension-#{version}\"/" "$file"
+  elif [ "$type" = 'php' ]; then
+    sed -i "s/CHDIR/Dir.chdir \"ext/#{extension}\"/" "$file"
   else
     sed -i '/CHDIR/d' "$file"
   fi
