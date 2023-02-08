@@ -8,8 +8,8 @@ class SwooleAT83 < AbstractPhpExtension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
-  url "https://github.com/swoole/swoole-src/archive/v5.0.1.tar.gz"
-  sha256 "8db635960f25b8b986f5214b44941f499d61d037867e11e27da108c19dc855c3"
+  url "https://github.com/swoole/swoole-src/archive/v5.0.2.tar.gz"
+  sha256 "14d442d5e945fe67a3e912d332175b2386a50c38a674c4559d2d0211db23362e"
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -24,13 +24,21 @@ class SwooleAT83 < AbstractPhpExtension
   end
 
   depends_on "brotli"
+  depends_on "openssl@1.1"
 
   uses_from_macos "zlib"
 
   def install
-    patch_spl_symbols
+    args = %W[
+      --enable-brotli
+      --enable-openssl
+      --enable-swoole
+      --with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}
+      --with-brotli-dir=#{Formula["brotli"].opt_prefix}
+    ]
+    inreplace "ext-src/php_swoole_private.h", "0, NULL, 0, ", ""
     safe_phpize
-    system "./configure"
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file
