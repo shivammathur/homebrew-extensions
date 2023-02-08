@@ -24,13 +24,21 @@ class SwooleAT73 < AbstractPhpExtension
   end
 
   depends_on "brotli"
+  depends_on "openssl@1.1"
 
   uses_from_macos "zlib"
 
   def install
+    args = %W[
+      --enable-brotli
+      --enable-openssl
+      --enable-swoole
+      --with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}
+      --with-brotli-dir=#{Formula["brotli"].opt_prefix}
+    ]
     inreplace "config.m4", "PHP_ADD_LIBRARY(atomic", ": #"
     safe_phpize
-    system "./configure"
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file
