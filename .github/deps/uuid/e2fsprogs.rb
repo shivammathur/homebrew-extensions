@@ -1,8 +1,8 @@
 class E2fsprogs < Formula
   desc "Utilities for the ext2, ext3, and ext4 file systems"
   homepage "https://e2fsprogs.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.46.6/e2fsprogs-1.46.6.tar.gz"
-  sha256 "bf2fcc7ee5178fe73a3057f7e2aa3fe52e98b7bb461509c67b021ba00f94c6f7"
+  url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.0/e2fsprogs-1.47.0.tar.gz"
+  sha256 "6667afde56eef0c6af26684974400e4d2288ea49e9441bf5e6229195d51a3578"
   license all_of: [
     "GPL-2.0-or-later",
     "LGPL-2.0-or-later", # lib/ex2fs
@@ -18,13 +18,13 @@ class E2fsprogs < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "e0f6bc2a122f8907b42911d45cf0d30f7acbc9ab9a30e8488a712b458307d42b"
-    sha256 arm64_monterey: "c152340d0ebce9eb437a15b747cc92ef5f08fa61c58b7a1d9386104728fa8fc3"
-    sha256 arm64_big_sur:  "bd4c36e5f5741471df258d4164ffaf53790467e4206a4c248c47f6667ec1e564"
-    sha256 ventura:        "a5d8fcd407f09d7ef11e7180ec5e1ad2db7143e66dfbb5f0cb2276b53b508a89"
-    sha256 monterey:       "899d70651a9a571aa55ab7b8a3f6e4616e1f4cc0856e22c2a5c79b5b64bbd25f"
-    sha256 big_sur:        "d9251812c87a30083a9f1b9a12605f8dce0e443a9aa09e85a5891544f356c54c"
-    sha256 x86_64_linux:   "b2854383f1ee6e3b360012d2a53b7e0043c480084d5b35a9d1b8d9f639e26252"
+    sha256 arm64_ventura:  "32c3579e1a33775074fb35ae5e6f499682da918d6310a653600bb3a97b3ac235"
+    sha256 arm64_monterey: "b7fe9f7b148e778ef9b4d9d6bc97d39fdc942436692b33b518ff1cc85d2b123b"
+    sha256 arm64_big_sur:  "b81365c6dafa1ddf9d37fb0ac9b748f70c832ed01c48a97ccb030bfe35ced118"
+    sha256 ventura:        "e3bb6dbd23b93bfa37ada501134be5ab997ea98b62d800f3e448cd1e627a9bcb"
+    sha256 monterey:       "bc1f1731ebae67bcfd0426e72e0dda411d0737103996344cf351f469e5c6b5f6"
+    sha256 big_sur:        "5fb3d45aa2cd60cd733f346f2433f3b203c7f06065d901efbcb28d207081186e"
+    sha256 x86_64_linux:   "fd9a98171952631479167b5777230f041b2b81cab97f68b2437e3821e472aed4"
   end
 
   keg_only "this installs several executables which shadow macOS system commands"
