@@ -69,6 +69,7 @@
 | `raphf`      | `PHP 5.6` to `PHP 8.3` |
 | `rdkafka`    | `PHP 5.6` to `PHP 8.3` |
 | `redis`      | `PHP 5.6` to `PHP 8.3` |
+| `snmp`       | `PHP 5.6` to `PHP 8.3` |
 | `sqlsrv`     | `PHP 7.0` to `PHP 8.3` |
 | `ssh2`       | `PHP 5.6` to `PHP 8.3` |
 | `swoole`     | `PHP 5.6` to `PHP 8.3` |
@@ -105,12 +106,12 @@ brew update
 ```zsh
 php -v
 ```
-- If not, install the required PHP version, For example to install `PHP 8.0`:
+- If not, install the required PHP version, For example to install `PHP 8.1`:
 
 ```zsh
 brew tap shivammathur/php
-brew install shivammathur/php/php@8.0
-brew link --force --overwrite shivammathur/php/php@8.0
+brew install shivammathur/php/php@8.1
+brew link --force --overwrite shivammathur/php/php@8.1
 ```
 
 Refer to [shivammathur/php](https://github.com/shivammathur/homebrew-php) tap for more information about installing PHP.
@@ -125,18 +126,18 @@ brew tap shivammathur/extensions
 
 - Then install the required extension. See [Formula](Formula) directory for available formulae.
 
-- For example, to install `Xdebug` on `PHP 8.0`:
+- For example, to install `Xdebug` on `PHP 8.1`:
 
 ```zsh
-brew install shivammathur/extensions/xdebug@8.0
+brew install shivammathur/extensions/xdebug@8.1
 ```
 
 ### Upgrade extensions
 
-- For example, to upgrade `Xdebug` on `PHP 8.0`.
+- For example, to upgrade `Xdebug` on `PHP 8.1`.
 
 ```zsh
-brew upgrade shivammathur/extensions/xdebug@8.0
+brew upgrade shivammathur/extensions/xdebug@8.1
 ```
 
 ### Restart your webserver
@@ -278,6 +279,7 @@ This project is also generously supported by many other users and organisations 
 - [libssh2](https://formulae.brew.sh/formula/libssh2 "libssh2")
 - [libyaml](https://formulae.brew.sh/formula/libyaml "libyaml")
 - [lz4](https://formulae.brew.sh/formula/lz4 "lz4")
+- [net-snmp](https://formulae.brew.sh/formula/net-snmp "net-snmp")
 - [openssl](https://formulae.brew.sh/formula/openssl@1.1 "openssl")
 - [ossp-uuid](https://formulae.brew.sh/formula/ossp-uuid "ossp-uuid")
 - [pcre](https://formulae.brew.sh/formula/pcre "pcre")

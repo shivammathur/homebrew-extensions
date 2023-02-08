@@ -1,7 +1,7 @@
 extension=$1
 version=$2
 case $extension in
-  amqp|apcu|ast|couchbase|ds|expect|event|gearman|gnupg|grpc|imagick|lua|msgpack|protobuf|propro|psr|raphf|rdkafka|redis|mailparse|memcached|mcrypt|mongodb|ssh2|sqlsrv|pdo_sqlsrv|uuid|vips|xlswriter|yaml)
+  amqp|apcu|ast|couchbase|ds|expect|event|gearman|gnupg|grpc|imagick|lua|msgpack|protobuf|propro|psr|raphf|rdkafka|redis|mailparse|memcached|mongodb|ssh2|sqlsrv|pdo_sqlsrv|uuid|vips|xlswriter|yaml)
   tag=$(curl -sSL "https://pecl.php.net/rest/r/$extension/allreleases.xml" | grep -m 1 -Eo "([0-9]+.[0-9]+(.[0-9]+)?(.[0-9]+)?)(<)" | cut -d '<' -f 1)
   sed -i "s/  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
   ;;
@@ -35,4 +35,22 @@ case $extension in
     sed -i "s/^  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
   esac
   ;;
+  imap|snmp)
+    php_version=$(echo "$version" | cut -d'@' -f2)
+    brew tap shivammathur/php
+    php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
+    sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$version".rb
+  ;;
+  "mcrypt")
+  case $version in
+    mcrypt@5.6|mcrypt@7.0|mcrypt@7.1|mcrypt@7.2)
+    php_version=$(echo "$version" | cut -d'@' -f2)
+    brew tap shivammathur/php
+    php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
+    sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$version".rb
+    ;;
+    *)
+    tag=$(curl -sSL "https://pecl.php.net/rest/r/$extension/allreleases.xml" | grep -m 1 -Eo "([0-9]+.[0-9]+(.[0-9]+)?(.[0-9]+)?)(<)" | cut -d '<' -f 1)
+    sed -i "s/  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
+  esac
 esac
