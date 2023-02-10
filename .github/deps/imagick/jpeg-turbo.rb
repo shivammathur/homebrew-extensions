@@ -1,8 +1,8 @@
 class JpegTurbo < Formula
   desc "JPEG image codec that aids compression and decompression"
   homepage "https://www.libjpeg-turbo.org/"
-  url "https://downloads.sourceforge.net/project/libjpeg-turbo/2.1.5/libjpeg-turbo-2.1.5.tar.gz"
-  sha256 "bc12bc9dce55300c6bf4342bc233bcc26bd38bf289eedf147360d731c668ddaf"
+  url "https://downloads.sourceforge.net/project/libjpeg-turbo/2.1.5.1/libjpeg-turbo-2.1.5.1.tar.gz"
+  sha256 "2fdc3feb6e9deb17adec9bafa3321419aa19f8f4e5dea7bf8486844ca22207bf"
   license "IJG"
   head "https://github.com/libjpeg-turbo/libjpeg-turbo.git", branch: "main"
 
@@ -14,13 +14,13 @@ class JpegTurbo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d00e1ed5362087315ba0d537102311e6d8432c5cbe9296697141a02d53a6cdbe"
-    sha256 cellar: :any,                 arm64_monterey: "3a3c98f98547a73ed8a7d63df80d2693b090157c23b284e4cdc768984e17ebbb"
-    sha256 cellar: :any,                 arm64_big_sur:  "3f665c70d244ee7db9619b5ac7523f1a5f77d5a983280751fb4e7e727173026e"
-    sha256 cellar: :any,                 ventura:        "c42a466d35b221dceeb01f1d2533c861a2e0c711e8e9e8586d840a44b3da2a23"
-    sha256 cellar: :any,                 monterey:       "b3ac7986c12826bbdc6e9eb512d2edcc26ae53ddd1e977e1d97c9dc28dbd0054"
-    sha256 cellar: :any,                 big_sur:        "c72bd1ef2c9ea4d6bc68809ee29536b9044243a3f48d682eab784b3919e66505"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b9c322a9fb4658e1c0d97bb3c53ea0dbd4be116d66ea4c8e12f3bc214e76c01"
+    sha256 cellar: :any,                 arm64_ventura:  "24657182233e7669e645d675a7a954f277510c9de37fdbeedbeee777246cdaea"
+    sha256 cellar: :any,                 arm64_monterey: "844f7f6b0883d91c6e5f16c2c752d05566cea571def6f262b580c6d35a928e14"
+    sha256 cellar: :any,                 arm64_big_sur:  "9f88f50b6fb148d2edc5dd9138ee78e9d9c1a0f075e311b3a1398c6e43ca07df"
+    sha256 cellar: :any,                 ventura:        "776ff10759a35f1ad39676e3a77ee25d88ae4d50fe31935fdba0fe197e455962"
+    sha256 cellar: :any,                 monterey:       "203e5e3e6f9f53e16f532d9019c16c88dcbc411a06cc29a98e4e993f64377e0f"
+    sha256 cellar: :any,                 big_sur:        "88632579a1730a7be4ad57d23e46b54c522d2ae511c9184fae81612fc349e596"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04d6d5a7ca948d8dc163f5a1f163ef097b63266a41e5dbddd88f41918d3a3698"
   end
 
   depends_on "cmake" => :build
