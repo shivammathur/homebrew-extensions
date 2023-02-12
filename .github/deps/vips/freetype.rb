@@ -1,9 +1,9 @@
 class Freetype < Formula
   desc "Software library to render fonts"
   homepage "https://www.freetype.org/"
-  url "https://downloads.sourceforge.net/project/freetype/freetype2/2.12.1/freetype-2.12.1.tar.xz"
-  mirror "https://download.savannah.gnu.org/releases/freetype/freetype-2.12.1.tar.xz"
-  sha256 "4766f20157cc4cf0cd292f80bf917f92d1c439b243ac3018debf6b9140c41a7f"
+  url "https://downloads.sourceforge.net/project/freetype/freetype2/2.13.0/freetype-2.13.0.tar.xz"
+  mirror "https://download.savannah.gnu.org/releases/freetype/freetype-2.13.0.tar.xz"
+  sha256 "5ee23abd047636c24b2d43c6625dcafc66661d1aca64dec9e0d05df29592624c"
   license "FTL"
 
   livecheck do
@@ -12,14 +12,13 @@ class Freetype < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f91e2b53f5f3753508ba81d17a01974285b90696033053837fbe20aac876883f"
-    sha256 cellar: :any,                 arm64_monterey: "3e190f2fa02702aa86e46cf33e7dde1d93e879f1de38f3d1b61e301f8367136d"
-    sha256 cellar: :any,                 arm64_big_sur:  "deb09510fb83adf76d9bb0d4ac4a3d3a2ddfff0d0154e09d3719edb73b058278"
-    sha256 cellar: :any,                 ventura:        "845ec00b1ba8e57841751de476e9f706536ed54c5d38fa10e8c0b0329a69b5f1"
-    sha256 cellar: :any,                 monterey:       "3d4afd3f040571ea464c7afc010be38faf77665f919a79f557369d2eceee13d1"
-    sha256 cellar: :any,                 big_sur:        "69a5d61245af56e6b088986b16c6e5b842c3d4f5896c34e013341ca94f4a45d1"
-    sha256 cellar: :any,                 catalina:       "cafa6fee3a0ca54b1659f433667a145acef2c2d2061292d2f8bc088db7f0ea4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43be70d09e51402bb453d491d69021af20f0d0c5154092bd5571b365673d4e2f"
+    sha256 cellar: :any,                 arm64_ventura:  "65ed8248089c18ea551ef9b5fb3c73169474fc65265e8a2add4a26b3aa148786"
+    sha256 cellar: :any,                 arm64_monterey: "d033f56061ca56a706a77ba559236035f945c308bf0eb4fb566df5d03f22ab84"
+    sha256 cellar: :any,                 arm64_big_sur:  "4c58a078509f7dae12f54f7e6a37c187f01841147c8c8e742e3efb005c39e65d"
+    sha256 cellar: :any,                 ventura:        "bd4a977cbe23bafdf3fe0a03a48030b0d2358494ba3ed3d996b2d3e4b0782c7c"
+    sha256 cellar: :any,                 monterey:       "01062aba71dad8de5e56a6f312fe589838f456b0741bf451a468423e0dea7978"
+    sha256 cellar: :any,                 big_sur:        "deb64487830d468d5a2d9b4fd840ed383cf283d496e37e2c3b9b6897dea99733"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cc9ca454d4115c028b018f5aa7098b09099dea807fa4a5d5b928acc8d5c965c"
   end
 
   depends_on "libpng"
