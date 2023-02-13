@@ -8,9 +8,9 @@ class V8jsAT81 < AbstractPhpExtension
   init
   desc "V8js PHP extension"
   homepage "https://github.com/phpv8/v8js"
-  url "https://github.com/phpv8/v8js/archive/461230be276dc423d8eebf0c9ea769c71d47b7f6.tar.gz"
+  url "https://github.com/phpv8/v8js/archive/7c40690ec0bb6df72a2ff7eaa510afc7f0adb8a7.tar.gz"
   version "2.1.2"
-  sha256 "61effd3cde61dc002e9ddda28fbea86654a8fcfe70f0a895e8a46f27b914cc78"
+  sha256 "389cd0810f4330b7e503510892a00902ca3a481dc74423802e06decff966881f"
   head "https://github.com/phpv8/v8js.git"
   license "MIT"
 
@@ -26,11 +26,6 @@ class V8jsAT81 < AbstractPhpExtension
   end
 
   depends_on "v8"
-
-  patch do
-    url "https://patch-diff.githubusercontent.com/raw/phpv8/v8js/pull/490.patch"
-    sha256 "2590f7ba4df798078e6c3a9a73a9ec3028d7e2e66b49f5561e40bdc1577536cd"
-  end
 
   def install
     args = %W[
