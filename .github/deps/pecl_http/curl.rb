@@ -1,11 +1,11 @@
 class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.se"
-  url "https://curl.se/download/curl-7.87.0.tar.bz2"
-  mirror "https://github.com/curl/curl/releases/download/curl-7_84_0/curl-7.87.0.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/curl-7.87.0.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/legacy/curl-7.87.0.tar.bz2"
-  sha256 "5d6e128761b7110946d1276aff6f0f266f2b726f5e619f7e0a057a474155f307"
+  url "https://curl.se/download/curl-7.88.0.tar.bz2"
+  mirror "https://github.com/curl/curl/releases/download/curl-7_84_0/curl-7.88.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/curl-7.88.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/legacy/curl-7.88.0.tar.bz2"
+  sha256 "c81f439ed02442f6a9b95836dfb3a98e0c477610ca7b2f4d5aa1fc329543d33f"
   license "curl"
 
   livecheck do
@@ -14,13 +14,13 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fe0cb294a13b62cdf031f9a33e5c41dc44726a5a6e7c473d615769b42f162aff"
-    sha256 cellar: :any,                 arm64_monterey: "bb61fd89bf7b336f05192f505520dfddc6459e303fbd2685a690594a92d80240"
-    sha256 cellar: :any,                 arm64_big_sur:  "47882084f55244d05faec7e1a526c4046ea712e467af105739456929cd52c5e0"
-    sha256 cellar: :any,                 ventura:        "024436c8f9289be56f65a023d989dbc9925832da7487bc2ea9e85c5edcf0ad46"
-    sha256 cellar: :any,                 monterey:       "2fd90860e86005f871b2c86d8ec1a9151a49bb79939b8dfbb9416141176575c9"
-    sha256 cellar: :any,                 big_sur:        "11e5f63a85e5f40e53bd4cb58419d61b3c716b822df932b2f5e70bbe9c2ead5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6406ab3ded7afe973ce7464262c427d6ef97099fc7916309205401bdf6a828c2"
+    sha256 cellar: :any,                 arm64_ventura:  "b7b94684fe4ea7770ba19c4315c432040411b80089a2161bea33be2c59b4f914"
+    sha256 cellar: :any,                 arm64_monterey: "2332c8172a2633d0069b159737d0d2ee4776b2d401c3ec3db5e904305607bf96"
+    sha256 cellar: :any,                 arm64_big_sur:  "e4af774fd65c58b3abfd611fc8769843ee915e51da25669e1f8c6248aa5d41ce"
+    sha256 cellar: :any,                 ventura:        "a9354d2e35f2f9d9c74f55545abb3dbbc7f0ece734b648c2fa8eaaeb2c5450b0"
+    sha256 cellar: :any,                 monterey:       "ec501fe145fc23c1fd814b5d696c5c52cc6c8401ee07b2750f4868478ad5b9a1"
+    sha256 cellar: :any,                 big_sur:        "d5b62541fe469948b659a08d01f5de6c8b2e67bc6b5084034c7ef2778bb2b697"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fb1e7e69498fc6e579480b427b00a9632987837dc3a2312eeb7b77b4721ec32"
   end
 
   head do
