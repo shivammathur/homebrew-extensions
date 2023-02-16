@@ -43,7 +43,7 @@ case $extension in
   ;;
   "mcrypt")
   case $version in
-    mcrypt@5.6|mcrypt@7.0|mcrypt@7.1|mcrypt@7.2)
+    mcrypt@5.6|mcrypt@7.0|mcrypt@7.1)
     php_version=$(echo "$version" | cut -d'@' -f2)
     brew tap shivammathur/php
     php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
