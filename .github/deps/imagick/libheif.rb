@@ -1,19 +1,18 @@
 class Libheif < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://github.com/strukturag/libheif/releases/download/v1.14.2/libheif-1.14.2.tar.gz"
-  sha256 "d016905e247d6952cd7ee4f9b90957350b6a6caa466bc76fdfe6eb302b6d088c"
+  url "https://github.com/strukturag/libheif/releases/download/v1.15.1/libheif-1.15.1.tar.gz"
+  sha256 "28d5a376fe7954d2d03453f983aaa0b7486f475c27c7806bda31df9102325556"
   license "LGPL-3.0-only"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "af70b6bf74488aa57f19f1774c3b0ddd6f576e8c9f3c8a328482d88ef1d9c199"
-    sha256 cellar: :any,                 arm64_monterey: "4f6d1be9ead93c33743bc1b1b8430c8feaf44ff6af6a79115321f343cf9055a2"
-    sha256 cellar: :any,                 arm64_big_sur:  "4b8987c4c8d203ae3e715a58622188eaeb291b7d8a4ffa56db339c81a4acdd3c"
-    sha256 cellar: :any,                 ventura:        "38578cb6f08eb56f887d9ec72fb1a3acdc519b1b8495225bba274bf8e5af5ced"
-    sha256 cellar: :any,                 monterey:       "8aee905ee0896d3f2abdcef30319d3f60ce3df84e967f25145bcbabbc07fd17a"
-    sha256 cellar: :any,                 big_sur:        "59a2a2cd71247e235d9ae8c9f2e40980586aafcf51762978228a5ac76c7daeba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82b90374e032ae9eeced09ed0f37c02b077f2c35f729a344c260f885a00cfca1"
+    sha256 cellar: :any,                 arm64_ventura:  "649a164eb04ae67c7ee680f2db12056e0e0c79d9510e5940b346c54e9eeb88e9"
+    sha256 cellar: :any,                 arm64_monterey: "ff51b4c0e99a60307cb26ffa05c24b1e3ef67829969a19dc85f95e881dc099a8"
+    sha256 cellar: :any,                 arm64_big_sur:  "305cd39610e2a05c760448ef722afac2b9bc230f3248012296a279c6dbb93aa2"
+    sha256 cellar: :any,                 ventura:        "5afe174adae78f29caf8bfd4427fbb41e3fbf82af8ff44098dc3a9371aa8c37a"
+    sha256 cellar: :any,                 monterey:       "cc76c8be3470e8253c85cfe1204f94391e2599f0ff9c302d3aded4bc83c42da1"
+    sha256 cellar: :any,                 big_sur:        "fbdfe6c282585a3f8f14575130ad24baa9220ebfe4464a116201fb0c5b3baa9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87421411f1ee23d5a017c4fb201263df8baaa488de71395c40e91db4c4214767"
   end
 
   depends_on "pkg-config" => :build

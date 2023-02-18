@@ -2,11 +2,12 @@ class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.se"
   url "https://curl.se/download/curl-7.88.0.tar.bz2"
-  mirror "https://github.com/curl/curl/releases/download/curl-7_84_0/curl-7.88.0.tar.bz2"
+  mirror "https://github.com/curl/curl/releases/download/curl-7_88_0/curl-7.88.0.tar.bz2"
   mirror "http://fresh-center.net/linux/www/curl-7.88.0.tar.bz2"
   mirror "http://fresh-center.net/linux/www/legacy/curl-7.88.0.tar.bz2"
   sha256 "c81f439ed02442f6a9b95836dfb3a98e0c477610ca7b2f4d5aa1fc329543d33f"
   license "curl"
+  revision 1
 
   livecheck do
     url "https://curl.se/download/"
@@ -14,13 +15,13 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b7b94684fe4ea7770ba19c4315c432040411b80089a2161bea33be2c59b4f914"
-    sha256 cellar: :any,                 arm64_monterey: "2332c8172a2633d0069b159737d0d2ee4776b2d401c3ec3db5e904305607bf96"
-    sha256 cellar: :any,                 arm64_big_sur:  "e4af774fd65c58b3abfd611fc8769843ee915e51da25669e1f8c6248aa5d41ce"
-    sha256 cellar: :any,                 ventura:        "a9354d2e35f2f9d9c74f55545abb3dbbc7f0ece734b648c2fa8eaaeb2c5450b0"
-    sha256 cellar: :any,                 monterey:       "ec501fe145fc23c1fd814b5d696c5c52cc6c8401ee07b2750f4868478ad5b9a1"
-    sha256 cellar: :any,                 big_sur:        "d5b62541fe469948b659a08d01f5de6c8b2e67bc6b5084034c7ef2778bb2b697"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fb1e7e69498fc6e579480b427b00a9632987837dc3a2312eeb7b77b4721ec32"
+    sha256 cellar: :any,                 arm64_ventura:  "ed6ed15415c8218434557fc7961c4c084c4ce7eb3001f24536e37a49623e2658"
+    sha256 cellar: :any,                 arm64_monterey: "82c015b698092a3cfcae1561d5e29c44a430d863e0e36b6a9d85fa60a61a2a08"
+    sha256 cellar: :any,                 arm64_big_sur:  "d38d1f46e90161a224364492a52db70973c8fb3cbff831b3ae39515efebf70f7"
+    sha256 cellar: :any,                 ventura:        "2337afd14fdd093dcd7a16f976eb4a630579c6185ab34152c6b683244d868f1f"
+    sha256 cellar: :any,                 monterey:       "11919d972dc7d875b13e5e8e85388ac4e9f8d85d8e2e1a3d7ed57f51d197f1dd"
+    sha256 cellar: :any,                 big_sur:        "550eddbe6f6bcf4dd7410ad4d950dcdf060271cedd4a866658f9a8c463565a40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6b87c6473f72c9f5c4cb9b9459d164328461452b7253dac330628aa8e34b1a6"
   end
 
   head do
@@ -45,6 +46,17 @@ class Curl < Formula
 
   uses_from_macos "krb5"
   uses_from_macos "zlib"
+
+  # Fix HTTP/2 corruption issues.
+  # Remove with 7.88.1.
+  patch do
+    url "https://github.com/curl/curl/commit/3103de2053ca8cacf9cdbe78764ba6814481709f.patch?full_index=1"
+    sha256 "f4abbeb8174ab51b393da02c2761ba56bc40c577b5802aa41e74a3adc7d5a0be"
+  end
+  patch do
+    url "https://github.com/curl/curl/commit/87ed650d04dc1a6f7944a5d952f7d5b0934a19ac.patch?full_index=1"
+    sha256 "39f74a9c88dced544a8ea0a1c1e8c9f30eae19c41223350991ebf03e5dec764d"
+  end
 
   def install
     system "./buildconf" if build.head?
