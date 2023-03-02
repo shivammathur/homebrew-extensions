@@ -15,11 +15,11 @@ class CouchbaseAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_monterey: "45489d23ec52e66d5aecb12015c56c5998feb16cd86f92fc34dbf02bccfead84"
-    sha256 cellar: :any,                 arm64_big_sur:  "9a607f9df61bafdfaddf7c227b01e02d3855eb021a93138eb344b5dd4915e128"
-    sha256 cellar: :any,                 monterey:       "4e69455ee385fa1dcac81b483b6f3977deeae71b92b8079d7783383f8bcd67cd"
-    sha256 cellar: :any,                 big_sur:        "7debbcff1fe96d138a73bc4e7deb6b4d35a4b39ddb3f99d3f3c6dd0d88b4dfc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb8d2011b3d1ebc597826739b40c5071abb5dd203860861952fa03321ce4f9c7"
+    sha256 cellar: :any,                 arm64_monterey: "7245ae814fc3a6d9ce9c30b2c465ba99745910b716be904c0bb0121a0daca73e"
+    sha256 cellar: :any,                 arm64_big_sur:  "49c7a683f5dde0a77d84610070a02af3ac0af42877c49379832d90772b20b07a"
+    sha256 cellar: :any,                 monterey:       "8a65b4b94e1030b3a52263c759518bfe108b5a13702055727381bc47e79e7779"
+    sha256 cellar: :any,                 big_sur:        "3ce0a8d4b397492915c51bee73739156644cc55b173c125dbcdfea2b1ada91c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf5c3c3d94ad1bf83a8eb41d46ab96481b64fc72a465a8bdc2151261a97cbef4"
   end
 
   depends_on "cmake" => :build
