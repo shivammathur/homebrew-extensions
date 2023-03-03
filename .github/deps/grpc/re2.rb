@@ -1,9 +1,9 @@
 class Re2 < Formula
   desc "Alternative to backtracking PCRE-style regular expression engines"
   homepage "https://github.com/google/re2"
-  url "https://github.com/google/re2/archive/refs/tags/2023-02-01.tar.gz"
-  version "20230201"
-  sha256 "cbce8b7803e856827201a132862e41af386e7afd9cc6d9a9bc7a4fa4d8ddbdde"
+  url "https://github.com/google/re2/archive/refs/tags/2023-03-01.tar.gz"
+  version "20230301"
+  sha256 "7a9a4824958586980926a300b4717202485c4b4115ac031822e29aa4ef207e48"
   license "BSD-3-Clause"
   head "https://github.com/google/re2.git", branch: "main"
 
@@ -19,13 +19,13 @@ class Re2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "dadfebef4f583b9edc77df63d5f909cba4d6ba9d4aeba66565f714eac942078f"
-    sha256 cellar: :any,                 arm64_monterey: "c94fc6d3d33c278f1c4deda12b759409399f4c02843f215993847306f866f035"
-    sha256 cellar: :any,                 arm64_big_sur:  "07adfba972c07e932db1d00def16507c82591e559db660a2dcab9d43e6a8861b"
-    sha256 cellar: :any,                 ventura:        "0d103217e918e5f8ec5e7a049d9b888b317f3be0a5b1bd2fa6e4b11febe1af2c"
-    sha256 cellar: :any,                 monterey:       "19b6cf391ae077d6650b8eb0f6dde9961197a88e180bce476aacdcc4b07b09c6"
-    sha256 cellar: :any,                 big_sur:        "61fcb9e82f3857e4755b8df8bf84b1b57cadbebc1b116c24b19bdabc0b58d08c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15ac3544ee880c8417c642ef1eba42fb82ce63c83bc6bae80e93385fbcda79c1"
+    sha256 cellar: :any,                 arm64_ventura:  "1859e5dda089deee38d6800aa0fe06369011c8f6813767d1ce0794f56f9c59c7"
+    sha256 cellar: :any,                 arm64_monterey: "b9ba6456398e73df6d5fdc6621c6c8817669bc920c98396f3d330962b3ffe34e"
+    sha256 cellar: :any,                 arm64_big_sur:  "7335f87d5d389c982c250978c47810b0e33209c64bbdd47069e2d955fa4903eb"
+    sha256 cellar: :any,                 ventura:        "7f161ab81e64a5a1d018ebc8002a8a428056803bb791dd6158a8c3abe7bc7c11"
+    sha256 cellar: :any,                 monterey:       "b5b2b4c595694947e56db2a4a22f8dfa9e04301f246516a7d48b37cacdb06206"
+    sha256 cellar: :any,                 big_sur:        "5b115fd3a925aabbf9ba972827921e1a75f7fb632a30e3beaa2060be3f457820"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7da984b742fc8d3c88120b14834d59426ec4828aca02628f25819d9ebc5c958b"
   end
 
   depends_on "cmake" => :build
