@@ -15,12 +15,12 @@ class ImagickAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_monterey: "edd44d6e7b91e005821c5ffdb8a680470bf37e89e178d5c29dabe6054e5ef2fe"
-    sha256 cellar: :any,                 arm64_big_sur:  "db77c4b474f5332d4836d3f7b0d82424a6f0aa04c959ef5997449f9f0a62b2d3"
-    sha256 cellar: :any,                 monterey:       "3068135cf1a1ef4bb128daed59c8960a7b0f1e80b1d5cba1629013fd96d8cd2b"
-    sha256 cellar: :any,                 big_sur:        "19ba6c1582a60d9e94ec62af2ebedadabda2b99a298fedc94c07c9d8226849d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "527111639124e7a7eb50429973dd620b6f4d7f779deb68b4dfdcefcc732bad16"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_monterey: "229cb63097295a5bbadbe63114a2dc8d8e885246d8c3789a68cc1641e5fb6a29"
+    sha256 cellar: :any,                 arm64_big_sur:  "8c8995822ee0344bbc602bfe284d4b1be0442e4576bc54befa833ed81ae0dbce"
+    sha256 cellar: :any,                 monterey:       "cfdc06e236e7c91f4cff4f3d9cdfd67d8d4c18b8d0c41e0c2947f9e8c9e606fd"
+    sha256 cellar: :any,                 big_sur:        "ee6f55c23ea7995ae06dbbfa60e919c980b4065f4e060c6e0a1987223da81c97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3327078005dd172cef75aad595d2510a67be625dde714ff7fd1e926d35468b1b"
   end
 
   depends_on "imagemagick"
