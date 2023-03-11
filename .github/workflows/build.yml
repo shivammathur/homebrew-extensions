@@ -20,7 +20,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'skip-build')"
     runs-on: ubuntu-22.04
     container:
-      image: ghcr.io/homebrew/ubuntu16.04:master
+      image: ghcr.io/homebrew/ubuntu22.04:master
     env:
       HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
     outputs:
