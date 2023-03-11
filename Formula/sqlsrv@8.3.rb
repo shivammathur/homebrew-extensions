@@ -15,13 +15,11 @@ class SqlsrvAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_monterey: "adecb44c58c2c556fc3066b716f1c19545e8b487422986beb2e1b1a0a55664ab"
-    sha256 cellar: :any,                 arm64_big_sur:  "9e5bc9a5042affc758784e797f68f73508fc944828289af87e575141a0dc6b4a"
-    sha256 cellar: :any,                 monterey:       "963c00a4eee4c285d765299b06e268729594138fdd9345007c4c4b5639496dc3"
-    sha256 cellar: :any,                 big_sur:        "9148198b64bac2077876c990458e65c676883a06df12904544a00ce7c500ed3a"
-    sha256 cellar: :any,                 catalina:       "eba0b327d2e8623b32a1abf797d898a6507816e4bae473085b79bb50924e9a76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf5b0a5d998ddb7a284fe0479b15f4de34bb0018097ff1e1a40bfc42d5d20cd2"
+    sha256 cellar: :any,                 arm64_monterey: "d771dd2172f645d8a25174ae08ff9569e970831e0450f9c31041ec7b9ddd9862"
+    sha256 cellar: :any,                 arm64_big_sur:  "161ffc304d49b48b0d2cb6d58c0fd94ad939b795360425fd6d4e1e6c2ecf8ce6"
+    sha256 cellar: :any,                 monterey:       "89dab0d46a1bab4fd79c31b0343117170753d969155767a91050eff7d0e30790"
+    sha256 cellar: :any,                 big_sur:        "dd975fd4b139cd9fa651679bd26af28d561fb12f8bfc383e9677d6a6fe2cc0ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f28be21f13e623f88726cc4765f002bf9d0fde164c5006ca66a3807a65c0819"
   end
 
   depends_on "unixodbc"
