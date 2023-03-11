@@ -15,10 +15,11 @@ class YamlAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_big_sur: "f2db1a6fa92296ded5835dcf4c17aaf7abf07f3e6fb20e3ac31747d352eafd66"
-    sha256 cellar: :any,                 big_sur:       "fbc69185219e7f0ebbf6aad5b2ce4b9ffd3fe0a3857e5ca18cf34260609bbcf3"
-    sha256 cellar: :any,                 catalina:      "a8f314545b03034c3253dcf58d581b1669af17e74c30fb2fcd781730845c14bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0776e8ac0955f7303ff0a907931c6c7e1016bf72b48b506e8d1017ceddae1458"
+    sha256 cellar: :any,                 arm64_monterey: "517a830a8b503888833a37f1148cdbf9170e67bceb0cd886f9e15f7c574cd6a0"
+    sha256 cellar: :any,                 arm64_big_sur:  "d48696e6267fe21a05cfc33fdd786b4a6a63d8c318df177b63c37809c2349219"
+    sha256 cellar: :any,                 monterey:       "7e6f6f869407bfc36b3bd472d7278291589e6336245f91d089be5483a2dfb01a"
+    sha256 cellar: :any,                 big_sur:        "28cf61fa926fc6c3f74f9b055570fb56e95a9bae4457ed56c0e7d470a34f8dd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abf74ba02a9c95107c8f145d7432138d1b72d5457bcdc8d59b355cf905db2b26"
   end
 
   depends_on "libyaml"
