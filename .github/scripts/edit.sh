@@ -31,7 +31,7 @@ check_changes() {
     sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
   elif [[ "$GITHUB_MESSAGE" =~ .*--rebuild.* ]]; then
     sed -Ei '/  revision.*/d' ./Formula/"$VERSION".rb || true
-  elif [[ -z "$new_url"]] || [[ "$new_url" = "$old_url" && "$new_checksum" = "$old_checksum" ]]; then
+  elif [[ -z "$new_url" ]] || [[ "$new_url" = "$old_url" && "$new_checksum" = "$old_checksum" ]]; then
     sudo cp /tmp/"$VERSION".rb Formula/"$VERSION".rb
   fi
 }
