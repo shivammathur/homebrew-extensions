@@ -1,4 +1,5 @@
 fetch() {
+  REPO="$(grep '^  homepage' < ./Formula/swoole@8.1.rb | cut -d\" -f 2)"
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   if [[ "$EXTENSION" =~ amqp|event|expect|gnupg|imagick|imap|mcrypt|pcov|snmp ]] ||
      [[ "$VERSION" =~ (couchbase)@(7.4|8.[0-3]) ]] ||
@@ -10,7 +11,7 @@ fetch() {
      [[ "$VERSION" =~ (ast|mcrypt|mongodb)@(7.[2-4]|8.[0-3]) ]] ||
      [[ "$VERSION" =~ (ds|mailparse|pdo_sqlsrv|psr|sqlsrv)@(7.[3-4]|8.[0-3]) ]] ||
      [[ "$VERSION" =~ (memcache|swoole|xdebug)@8.[0-3] ]]; then
-    sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION"
+    sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION" "$REPO"
     url=$(grep '^  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
     checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
     sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb

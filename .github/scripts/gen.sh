@@ -1,6 +1,5 @@
 # Script to generate formula files for new extension.
 # Edit update.sh for the new formula and run this script.
-# Limitations: cannot find extension version for old PHP, so fix that manually.
 
 extension=$1
 repo=$2
@@ -34,7 +33,7 @@ for version in "${versions[@]}"; do
   else
     sed -i '/CHDIR/d' "$file"
   fi
-  bash .github/scripts/update.sh "$extension" "$extension@$version"
+  bash .github/scripts/update.sh "$extension" "$extension@$version" "https://github.com/$repo"
   url=$(grep '  url' < "$file" | cut -d\" -f 2)
   checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
   sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" "$file"

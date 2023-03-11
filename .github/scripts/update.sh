@@ -1,56 +1,78 @@
+get_latest_remote_git_tag() {
+  local repo=$1
+  local major_version=$2
+  [[ -n "$major_version" ]] && regex="$major_version\." || regex="[0-9]\."
+  git ls-remote --tags --sort="v:refname" "$repo" | sed 's/.*\///' | grep -Eo "^v?$regex[0-9]+\.[0-9]+" | tail -n1
+}
+
+get_latest_pecl_tag() {
+  local extension=$1
+  local major_version=$2
+  [[ -n "$major_version" ]] && regex="$major_version." || regex=""
+  curl -sSL "https://pecl.php.net/rest/r/$extension/allreleases.xml" | grep -Eo "($regex[0-9]+.[0-9]+(.[0-9]+)?(.[0-9]+)?)(<)" | cut -d '<' -f 1 | sort -V | tail -n1
+}
+
+get_php_url() {
+  php_version=$(echo "$version" | cut -d'@' -f2)
+  brew tap -q shivammathur/php
+  brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2
+}
+
+patch_pecl_tag() {
+  local tag=$1
+  local extension=$2
+  sed -i "s/^  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
+}
+
+patch_github_tag() {
+  local tag=$1
+  local repo=$2
+  sed -i "s|^  url .*|  url \"$repo/archive/$tag.tar.gz\"/g" ./Formula/"$version".rb
+}
+
+patch_php_url() {
+  local php_url=$1
+  sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$version".rb
+}
+
 extension=$1
 version=$2
+repo=$3
 case $extension in
   amqp|apcu|ast|couchbase|ds|expect|event|gearman|gnupg|grpc|imagick|lua|msgpack|protobuf|propro|psr|raphf|rdkafka|redis|mailparse|memcached|mongodb|ssh2|sqlsrv|pdo_sqlsrv|uuid|vips|xlswriter|yaml)
-  tag=$(curl -sSL "https://pecl.php.net/rest/r/$extension/allreleases.xml" | grep -m 1 -Eo "([0-9]+.[0-9]+(.[0-9]+)?(.[0-9]+)?)(<)" | cut -d '<' -f 1)
-  sed -i "s/  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
-  ;;
-  "pcov")
-  tag=$(gh api /repos/krakjoe/pcov/git/refs/tags | jq -r .[].ref | cut -d '/' -f 3 | sed '/-/!{s/$/_/}' | sort -V | sed 's/_$//' | tail -1)
-  sed -i "s/^  url .*/  url \"https\:\/\/github.com\/krakjoe\/pcov\/archive\/$tag.tar.gz\"/g" ./Formula/"$version".rb
+    tag=$(get_latest_pecl_tag "$extension")
+    patch_pecl_tag "$tag" "$extension"
+    ;;
+  igbinary|pcov|swoole)
+    tag="$(get_latest_remote_git_tag "$repo")"
+    patch_github_tag "$tag" "$repo"
+    ;;
+  imap|snmp)
+    php_url=$(get_php_url)
+    patch_php_url "$php_url"
   ;;
   "phalcon5")
-  tag=$(curl -sSL "https://pecl.php.net/rest/r/phalcon/allreleases.xml" | grep -m 1 -Eo "([0-9]+.[0-9]+(.[0-9]+)?(.[0-9]+)?)(<)" | cut -d '<' -f 1)
-  sed -i "s/  url .*/  url \"https\:\/\/pecl.php.net\/get\/phalcon-$tag.tgz\"/g" ./Formula/"$version".rb
-  ;;
-  "swoole")
-  tag=$(curl -SsL https://github.com/swoole/swoole-src/releases/latest | grep 'swoole-src/tree' | grep -Po "v[0-9]+\.[0-9]+\.[0-9]+" | head -1)
-  sed -i "s/^  url .*/  url \"https\:\/\/github.com\/swoole\/swoole-src\/archive\/$tag.tar.gz\"/g" ./Formula/"$version".rb
-  ;;
-  xdebug|igbinary)
-  pip3 install packaging
-  [[ "$version" =~ xdebug@(8.[0-2]) ]] && regex='[0-9]+\.[0-9]+\.[0-9]+$' || regex='(^[0-9]\.).*'
-  tags=$(gh api /repos/"$extension"/"$extension"/git/refs/tags | jq -r .[].ref | cut -d '/' -f 3 | grep -E "$regex" | sed -z 's/\n/","/g;s/,$/\n/' | sed -E 's|","$||g')
-  tag=$(python3 -c "from packaging import version; print(sorted([\"$tags\"], key=lambda x: version.Version(x))[-1])")
-  sed -i "s/^  url .*/  url \"https\:\/\/github.com\/$extension\/$extension\/archive\/$tag.tar.gz\"/g" ./Formula/"$version".rb
-  ;;
+    tag=$(get_latest_pecl_tag "phalcon")
+    patch_pecl_tag "$tag" "phalcon"
+    ;;
+  "xdebug")
+    [[ "$version" =~ xdebug@(8.[0-2]) ]] && major_version=3 || major_version=2
+    tag="$(get_latest_remote_git_tag "$repo" "$major_version")"
+    patch_github_tag "$tag" "$repo"
+    ;;
   "pecl_http")
-  case $version in
-    pecl_http@7.*)
-    tag=$(curl -sSL "https://pecl.php.net/rest/r/$extension/allreleases.xml" | grep -m 1 -Eo "(3.[0-9]+.[0-9]+(.[0-9]+)?)(<)" | cut -d '<' -f 1)
-    sed -i "s/^  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
+    [[ "$version" =~ pecl_http@7.* ]] && major_version=3 || major_version=4
+    tag=$(get_latest_pecl_tag "$extension" "$major_version")
+    patch_pecl_tag "$tag" "$extension"
     ;;
-    pecl_http@8.*)
-    tag=$(curl -sSL "https://pecl.php.net/rest/r/$extension/allreleases.xml" | grep -m 1 -Eo "(4.[0-9]+.[0-9]+(.[0-9]+)?)(<)" | cut -d '<' -f 1)
-    sed -i "s/^  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
-  esac
-  ;;
-  imap|snmp)
-    php_version=$(echo "$version" | cut -d'@' -f2)
-    brew tap shivammathur/php
-    php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
-    sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$version".rb
-  ;;
   "mcrypt")
-  case $version in
-    mcrypt@5.6|mcrypt@7.0|mcrypt@7.1)
-    php_version=$(echo "$version" | cut -d'@' -f2)
-    brew tap shivammathur/php
-    php_url=$(brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2)
-    sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$version".rb
-    ;;
-    *)
-    tag=$(curl -sSL "https://pecl.php.net/rest/r/$extension/allreleases.xml" | grep -m 1 -Eo "([0-9]+.[0-9]+(.[0-9]+)?(.[0-9]+)?)(<)" | cut -d '<' -f 1)
-    sed -i "s/  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
-  esac
+    case $version in
+      mcrypt@5.6|mcrypt@7.0|mcrypt@7.1)
+        php_url=$(get_php_url)
+        patch_php_url "$php_url"
+      ;;
+      *)
+        tag=$(get_latest_pecl_tag "$extension")
+        patch_pecl_tag "$tag" "$extension"
+    esac
 esac
