@@ -16,6 +16,8 @@ env:
 jobs:
   upload:
     runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
     steps:
       - name: Post comment once started
         uses: Homebrew/actions/post-comment@master
@@ -44,13 +46,18 @@ jobs:
           key: ${{runner.os}}-rubygems-v2-${{steps.set-up-homebrew.outputs.gems-hash}}
           restore-keys: ${{runner.os}}-rubygems-v2-
 
+      - name: Install gh, skopeo, and unzip
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y gh skopeo unzip
+
       - name: Install gems
         run: brew install-bundler-gems
 
       - name: Setup git
         run: |
-          git config --local user.email 1589480+BrewTestBot@users.noreply.github.com
-          git config --local user.name BrewTestBot
+          git config --global user.email 1589480+BrewTestBot@users.noreply.github.com
+          git config --global user.name BrewTestBot
 
       - name: Pull bottles
         env:
@@ -64,11 +71,14 @@ jobs:
       - name: Merge PR branch
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: bash .github/scripts/retry.sh 5 5 gh pr merge ${{github.event.inputs.pull_request}} --delete-branch --rebase
+        run: |
+          cd ${{steps.set-up-homebrew.outputs.repository-path}} || exit 1
+          bash .github/scripts/retry.sh 5 5 gh pr merge ${{github.event.inputs.pull_request}} --delete-branch --rebase
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
         with:
+          directory: ${{steps.set-up-homebrew.outputs.repository-path}}
           token: ${{secrets.GITHUB_TOKEN}}
 
       - name: Post comment on failure
