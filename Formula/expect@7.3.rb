@@ -15,11 +15,12 @@ class ExpectAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_big_sur: "cb71459bcd56e049bb6094701b9b939be3036aa556ca51a81a68f0b1521f9434"
-    sha256 cellar: :any,                 big_sur:       "590165f87337ac5abf9836c6a5b5ffcfa55dd93e670a3053da74064e3aa570cf"
-    sha256 cellar: :any,                 catalina:      "24925b8c46b62c6c6bcd6c647c976740624899bfec61708ca828a109a018f834"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "518e667c32f0bffa052fc5a68f5e35f542397aa73eba590b6468a8c7642898dd"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_monterey: "8f6381faf2185bc578d556cda8d6f845040576fc4cfeb6578471edaa21cb7d0d"
+    sha256 cellar: :any,                 arm64_big_sur:  "e9a4d74bbe613c021cbd2300a67f45144c333d7ff2e51ee7f1d42d643caa21e6"
+    sha256 cellar: :any,                 monterey:       "6a34380fe7148f5ce31fd6b6f9654d21a5d40cf996d954f1a1ba187de16a37ee"
+    sha256 cellar: :any,                 big_sur:        "2706ab764efb77ca7476e7f0340618dc560df031a829c583294625019efc9140"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9f80a71f199e8cc0dac4b71bafeecef5310046fd6b05017e9d2dfd5e6383b62"
   end
 
   depends_on "expect"
