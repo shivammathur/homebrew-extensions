@@ -25,12 +25,24 @@ class ExpectAT74 < AbstractPhpExtension
   depends_on "expect"
   depends_on "tcl-tk"
 
+  def add_expect_lib
+    expect_lib = Dir["#{Formula["homebrew/core/expect"].opt_lib}/expect*/libexpect*"].first
+    lib.install_symlink expect_lib => "libexpect#{File.extname(expect_lib)}" if expect_lib
+    ENV.append "LDFLAGS", "-L#{lib}"
+  end
+
+  def add_expect_headers
+    headers = Dir["#{Formula["tcl-tk"].opt_include}/**/*.h"]
+    (buildpath/"expect-#{version}/include").install_symlink headers unless headers.empty?
+  end
+
   def install
     args = %W[
       --with-expect=shared,#{Formula["expect"].opt_prefix}
       --with-tcldir=#{Formula["tcl-tk"].opt_prefix}/lib
     ]
     add_expect_lib
+    add_expect_headers
     Dir.chdir "expect-#{version}"
     inreplace "expect.c", "ulong", "zend_ulong"
     safe_phpize

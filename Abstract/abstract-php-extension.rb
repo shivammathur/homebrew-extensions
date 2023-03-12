@@ -94,12 +94,6 @@ class AbstractPhpExtension < Formula
     end
   end
 
-  def add_expect_lib
-    expect_lib = Dir["#{Formula["homebrew/core/expect"].opt_lib}/expect*/libexpect*"].first
-    lib.install_symlink expect_lib => "libexpect#{File.extname(expect_lib)}" if expect_lib
-    ENV.append "LDFLAGS", "-L#{lib}"
-  end
-
   class << self
     attr_reader :php_version, :extension
 
