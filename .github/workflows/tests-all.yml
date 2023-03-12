@@ -60,7 +60,7 @@ jobs:
           php -r "if(phpversion()>=7.0 && ! extension_loaded('ast')) {throw new Exception('ast not found');}"
           php -r "if(phpversion()>=7.1 && ! extension_loaded('pcov')) {throw new Exception('pcov not found');}"
           php -r "if(phpversion()>=7.0 && ! extension_loaded('vips')) {throw new Exception('vips not found');}"
-          php -r "if(phpversion()!=8.3 && ! extension_loaded('mailparse')) {throw new Exception('mailparse not found');}"
+          php -r "if(phpversion()>=8.3 && ! extension_loaded('mailparse')) {throw new Exception('mailparse not found');}"
           php -r "if(! extension_loaded('amqp')) {throw new Exception('amqp not found');}"
           php -r "if(! extension_loaded('apcu')) {throw new Exception('apcu not found');}"
           php -r "if(! extension_loaded('couchbase')) {throw new Exception('couchbase not found');}"
