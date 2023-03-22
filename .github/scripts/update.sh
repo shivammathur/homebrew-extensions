@@ -27,7 +27,7 @@ patch_pecl_tag() {
 patch_github_tag() {
   local tag=$1
   local repo=$2
-  sed -i "s|^  url .*|  url \"$repo/archive/$tag.tar.gz\"/g" ./Formula/"$version".rb
+  sed -i "s|^  url .*|  url \"$repo/archive/$tag.tar.gz\"|g" ./Formula/"$version".rb
 }
 
 patch_php_url() {
