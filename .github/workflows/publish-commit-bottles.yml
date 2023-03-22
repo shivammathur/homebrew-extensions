@@ -67,10 +67,10 @@ jobs:
           brew pr-pull --debug --workflows=build.yml --verbose --tap=${{ github.repository_owner }}/extensions --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions" ${{github.event.inputs.args}} ${{github.event.inputs.pull_request}}
 
       - name: Merge PR branch
-        env:
-          working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
         run: bash .github/scripts/retry.sh 5 5 gh pr merge ${{github.event.inputs.pull_request}} --auto --delete-branch --rebase
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
