@@ -56,7 +56,7 @@ case $extension in
     patch_pecl_tag "$tag" "phalcon"
     ;;
   "xdebug")
-    [[ "$version" =~ xdebug@(8.[0-2]) ]] && major_version=3 || major_version=2
+    [[ "$version" =~ xdebug@(8.[0-3]) ]] && major_version=3 || major_version=2
     tag="$(get_latest_remote_git_tag "$repo" "$major_version")"
     patch_github_tag "$tag" "$repo"
     ;;
