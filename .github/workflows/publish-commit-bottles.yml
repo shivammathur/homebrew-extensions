@@ -5,9 +5,23 @@ on:
       pull_request:
         description: Pull request number
         required: true
-      args:
-        description: 'Extra arguments to `brew pr-pull`'
-        default: ''
+      large_runner:
+        description: "Run the upload job on a large runner? (default: false)"
+        type: boolean
+        required: false
+        default: false
+      autosquash:
+        description: "Squash pull request commits according to Homebrew style? (default: false)"
+        type: boolean
+        required: false
+        default: false
+      warn_on_upload_failure:
+        description: "Pass `--warn-on-upload-failure` to `brew pr-pull`? (default: false)"
+        type: boolean
+        required: false
+        default: false
+      message:
+        description: "Message to include when autosquashing revision bumps, deletions, and rebuilds (requires autosquash)"
         required: false
 env:
   HOMEBREW_DEVELOPER: 1
@@ -38,19 +52,9 @@ jobs:
         with:
           test-bot: false
 
-      - name: Cache gems
-        uses: actions/cache@v3
-        with:
-          path: ${{steps.set-up-homebrew.outputs.gems-path}}
-          key: ${{runner.os}}-rubygems-v2-${{steps.set-up-homebrew.outputs.gems-hash}}
-          restore-keys: ${{runner.os}}-rubygems-v2-
-
       - name: Install gh, skopeo, and unzip
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
         run: bash .github/scripts/release-tools.sh
-
-      - name: Install gems
-        run: brew install-bundler-gems
 
       - name: Setup git
         run: |
@@ -64,7 +68,16 @@ jobs:
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           sudo sed -i 's/Closes ##{pr}/[skip ci]/g' "$(brew --repository)"/Library/Homebrew/dev-cmd/pr-pull.rb
-          brew pr-pull --debug --workflows=build.yml --verbose --tap=${{ github.repository_owner }}/extensions --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions" ${{github.event.inputs.args}} ${{github.event.inputs.pull_request}}
+          # Don't quote arguments that might be empty; this causes errors.
+          brew pr-pull \
+            --debug \
+            --workflows=build.yml \
+            --tap=${{ github.repository_owner }}/extensions \
+            --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions" \
+            '${{inputs.autosquash && '--autosquash' || '--clean'}}' \
+            ${{inputs.warn_on_upload_failure && '--warn-on-upload-failure' || ''}} \
+            ${{inputs.message && format('--message="{0}"', inputs.message) || ''}} \
+            '${{github.event.inputs.pull_request}}'
 
       - name: Merge PR branch
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
