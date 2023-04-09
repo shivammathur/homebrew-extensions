@@ -7,14 +7,14 @@ class Webp < Formula
   head "https://chromium.googlesource.com/webm/libwebp.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "28dcf9ddd7324057a556052ebcab2f464f5e9d08cee9d3aa420bf2bf4c7f1f1b"
-    sha256 cellar: :any,                 arm64_monterey: "75ebcbe19f4cd5057cd02e171589c9d305999e38c180a8300a6647bbf1132788"
-    sha256 cellar: :any,                 arm64_big_sur:  "0f44d3ad129eb35d06017d3049b6253baab054315f8f5aad6e634554fc4d6a78"
-    sha256 cellar: :any,                 ventura:        "ee7abe4b2abdadf7e4e326b6944956946897cb063b26e62ab025980c19ab28d7"
-    sha256 cellar: :any,                 monterey:       "b4085af67d946e79e4c6a0e27334c8eecf65a00485f9327da64475e9167faae2"
-    sha256 cellar: :any,                 big_sur:        "1e6d47fbd075f9ed5934f8edb69a56582788c151c9396aefe63aa18101cc867b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13845dd9434be5f6641b53a8dae60f8bfa9e494f69234260829dd17387d6f92f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "bb5fb8f745151f8a79d54b7217d9e4fcf50d035bbec852e4f4bcef3987e52bdb"
+    sha256 cellar: :any,                 arm64_monterey: "9318abd9810e6f1e74739da95508fc72d752c4faf2ff8721582f27d819380c48"
+    sha256 cellar: :any,                 arm64_big_sur:  "4e4fdc09b03666abe0aa11b796bb7f69745118573f649d186bb460f9dbe1028c"
+    sha256 cellar: :any,                 ventura:        "de25d6fbb1d52c3f070e27c2f06c9a4a4bcedc1117081225d1741f489037d3d7"
+    sha256 cellar: :any,                 monterey:       "c46189d9662044e2a7614ffc0d6a47b69708da24be499e26a65b7c83faae5b56"
+    sha256 cellar: :any,                 big_sur:        "dc0ff932a09933b65121932bc6e14f4ff97e4c6a29a0148fd161ba81244a5a6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "370e9fd6f9649f93f0f29d284ae492a4770e8bd7be811ff7a596e32ce982ee4e"
   end
 
   depends_on "cmake" => :build
@@ -25,12 +25,14 @@ class Webp < Formula
 
   def install
     args = %W[
-      -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_SHARED_LIBS=ON", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+    system "cmake", "-S", ".", "-B", "static", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF", *args
+    system "cmake", "--build", "static"
+    lib.install buildpath.glob("static/*.a")
   end
 
   test do
