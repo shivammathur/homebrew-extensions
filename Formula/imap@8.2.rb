@@ -28,9 +28,9 @@ class ImapAT82 < AbstractPhpExtension
   def install
     Dir.chdir "ext/#{extension}"
     safe_phpize
-    system "./configure", \
+    system "./configure",
            "--prefix=#{prefix}", \
-           phpconfig, \
+           phpconfig,
            "--with-imap=shared, #{Formula["imap-uw"].opt_prefix}", \
            "--with-imap-ssl=#{Formula["openssl@1.1"].opt_prefix}", \
            "--with-kerberos"

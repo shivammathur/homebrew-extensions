@@ -30,9 +30,9 @@ class CouchbaseAT73 < AbstractPhpExtension
   def install
     Dir.chdir "couchbase-#{version}"
     safe_phpize
-    system "./configure", \
+    system "./configure",
            "--prefix=#{prefix}", \
-           phpconfig, \
+           phpconfig,
            "--with-couchbase=#{Formula["libcouchbase"].opt_prefix}"
     system "make"
     prefix.install "modules/#{extension}.so"

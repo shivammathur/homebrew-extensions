@@ -51,9 +51,9 @@ class McryptAT56 < AbstractPhpExtension
 
     Dir.chdir "ext/#{extension}"
     safe_phpize
-    system "./configure", \
+    system "./configure",
            "--prefix=#{prefix}", \
-           phpconfig, \
+           phpconfig,
            "--with-mcrypt=#{prefix}"
     system "make"
     prefix.install "modules/#{extension}.so"
