@@ -15,11 +15,11 @@ class SnmpAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_monterey: "4530383e79fbb1b89d61699a1ba7e8334bfdde8e6f611a82627be4666bcccb2e"
-    sha256 cellar: :any,                 arm64_big_sur:  "dd417f1cbc31ae91e1b5bf1b9073122e64efe82a8584c10252c9df87017edacc"
-    sha256 cellar: :any,                 monterey:       "0d20a0b779d43c595637bf6e7198bbab605c85d06ecc8777f8eaacc288154460"
-    sha256 cellar: :any,                 big_sur:        "6454e52cb9eecc9f7e1fdda2d02f963d020106ca8b18a0c28eb2ffa5cf5b73d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cd5f56e1a2f19f53bb4090e3a033b695260a9aa8dcf0ab750df66a52bfadaba"
+    sha256 cellar: :any,                 arm64_monterey: "7055c5195945d1b7d917ab5ebb6b3f35e5703f2123983eedbc78ad0756f95d79"
+    sha256 cellar: :any,                 arm64_big_sur:  "aabc055a19f3be834ed9c0a874cfa23d58ecea3bdc495024bb12e15b485d718b"
+    sha256 cellar: :any,                 monterey:       "a6c9de911ac5fb877259a74faa88e2c221321ed609aacb997106566c2d5bbec6"
+    sha256 cellar: :any,                 big_sur:        "1ec5881bb7a435543a14532b79456b23d37f771b2a591b1549d1c636f7a1c252"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f8a88782e5e3e42b6e1a4a1b8fe0834843ca9615e6f8aea4e84a190d25c884d"
   end
 
   depends_on "net-snmp"
