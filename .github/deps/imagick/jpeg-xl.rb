@@ -43,6 +43,14 @@ class JpegXl < Formula
 
   fails_with gcc: "5"
   fails_with gcc: "6"
+  fails_with :clang do
+    build 1000
+    cause <<-EOS
+      lib/jxl/enc_fast_lossless.cc:369:7: error: invalid cpu feature string for builtin
+        if (__builtin_cpu_supports("avx512vbmi2")) {
+            ^                      ~~~~~~~~~~~~~
+    EOS
+  end
 
   # These resources are versioned according to the script supplied with jpeg-xl to download the dependencies:
   # https://github.com/libjxl/libjxl/tree/v#{version}/third_party
