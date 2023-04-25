@@ -17,6 +17,7 @@ class CouchbaseAT74 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256                               arm64_monterey: "4608e2e6668919d5b8f2bd48175576ec0d63fca5594db39fab2f848cbe5777de"
     sha256                               arm64_big_sur:  "fcdc66a33277c18626b8b31fec23a77573d9712658dcdc533d467b28ed77ca00"
+    sha256                               ventura:        "8cb8216f6c57b42a323c76ff48fa900c47e86803587726437c299ae91030c406"
     sha256                               monterey:       "a772c89e61bb398edada807b64670bde58767c3ddc8ffc6cc023f4905825bb71"
     sha256                               big_sur:        "7a3eda9a63a2984f4450a18749b3a049a01aed84c6715288d5fde51c2b65d31c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ff4b220382bd1cb07b86c46a4466a6db46a84432755ddf4e2ac363f0cb5a4dd"
