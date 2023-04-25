@@ -8,8 +8,8 @@ class Ssh2AT70 < AbstractPhpExtension
   init
   desc "Ssh2 PHP extension"
   homepage "https://github.com/php/pecl-networking-ssh2"
-  url "https://pecl.php.net/get/ssh2-1.3.1.tgz"
-  sha256 "9093a1f8d24dc65836027b0e239c50de8d5eaebf8396bc3331fdd38c5d69afd9"
+  url "https://pecl.php.net/get/ssh2-1.4.tgz"
+  sha256 "988b52e0315bb5ed725050cb02de89b541034b7be6b94623dcb2baa33f811d87"
   head "https://github.com/php/pecl-networking-ssh2.git"
   license "PHP-3.01"
 
