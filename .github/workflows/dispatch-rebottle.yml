@@ -179,10 +179,14 @@ jobs:
           name: bottles
           path: ~/bottles/
 
+      - name: Install gh, skopeo, and unzip
+        working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
+        run: bash .github/scripts/release-tools.sh
+
       - name: Setup git
         run: |
-          git config --local user.email 1589480+BrewTestBot@users.noreply.github.com
-          git config --local user.name BrewTestBot
+          git config --global user.email 1589480+BrewTestBot@users.noreply.github.com
+          git config --global user.name BrewTestBot
 
       - name: Upload bottles to GitHub Packages
         env:
