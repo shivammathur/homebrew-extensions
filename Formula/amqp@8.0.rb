@@ -17,6 +17,7 @@ class AmqpAT80 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
     sha256 cellar: :any,                 arm64_big_sur: "07a0c6b027cf380ac39ecdb14838227bbbe7953a086bd8c7394b2f2c337bca4f"
+    sha256 cellar: :any,                 ventura:       "6e095f38076c26fb2bcf0bbe5baf89a94a785e66ca32e5f3700b1e7a6898470a"
     sha256 cellar: :any,                 big_sur:       "e916f1402b9d928bdfc56aeb8348ee5bfa4b82f4c1347b2b6c3e44ac1b3f38b0"
     sha256 cellar: :any,                 catalina:      "bce370ae19e11439e4fecce007dc3ac3e364302adc0af2df9c16afc5734c64bf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d6d1d83aa07d563c25b3cf5273a9cf436070ce130484613cbf2237f71181e8b"
