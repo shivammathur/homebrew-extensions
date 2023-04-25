@@ -18,6 +18,7 @@ class AstAT81 < AbstractPhpExtension
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8400357dd7e021746ef3b8edfeeb0a487945494902a10325864d75b6128d1a9e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4d92b193208aac9ff640f318394350713ceeffce315f276f73771a87f5cdac48"
+    sha256 cellar: :any_skip_relocation, ventura:        "e1c045f1100c0d6f9e603adc6b36091a88189da5b6ba16beef8d56f23908957c"
     sha256 cellar: :any_skip_relocation, monterey:       "40cb2ab35fd97ae45b11284f32a00ebff6a3893d550273371556573c06bc277c"
     sha256 cellar: :any_skip_relocation, big_sur:        "52adf7a2a5585193ba74e3ea3a55a9a76f9baff94c5d582e15cec62152a5020f"
     sha256 cellar: :any_skip_relocation, catalina:       "55747292c57c1ed5ae2dd43daf049bd22fdeea12b5bdffa90858c0b85d7a2e80"
