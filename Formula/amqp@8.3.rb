@@ -18,6 +18,7 @@ class AmqpAT83 < AbstractPhpExtension
     rebuild 1
     sha256 cellar: :any,                 arm64_monterey: "be47f383a8bb562f08107aa020c08bdfa37612e04e7a135c74ceda60f89b788f"
     sha256 cellar: :any,                 arm64_big_sur:  "365f244f2004fd1614f6e96363358b245474950068cb91ccc15bccfe9ab8243f"
+    sha256 cellar: :any,                 ventura:        "9693f4ff84c409df5fff2f654f870fb94d35381865c55c0d95558561a068118f"
     sha256 cellar: :any,                 monterey:       "7c7e903c7ef790a8dbe7e356587bca5a005b081e24e6853909cafb32ec45694a"
     sha256 cellar: :any,                 big_sur:        "52ba0cef1815c450151890f72b5d65ff6af9dad93423323edbaab038865ae847"
     sha256 cellar: :any,                 catalina:       "9b45ad279027ab15c1ad0d927b1122a3fd84d5063bfce1591c8f47345751e564"
