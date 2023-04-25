@@ -9,7 +9,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [macos-latest-xl]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Homebrew
