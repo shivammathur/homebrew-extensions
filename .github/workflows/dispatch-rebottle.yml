@@ -1,4 +1,5 @@
 name: Dispatch rebottle
+run-name: Rebuild bottles of ${{ inputs.formula }}
 on:
   workflow_dispatch:
     inputs:
@@ -8,16 +9,19 @@ on:
       timeout:
         description: "Build timeout (in minutes, default: 180 minutes)"
         default: "180"
-        required: true
+        required: false
       issue:
         description: Issue number, where comment on failure would be posted
         required: false
       upload:
-        description: "Whether to upload built bottles or not (default: false)"
+        description: "Upload built bottles? (default: false)"
+        type: boolean
+        default: false
         required: false
       fail-fast:
-        description: "Whether to fail immediately on a single OS version failure (default: true)"
-        default: "true"
+        description: "Fail immediately on a single OS version failure? (default: true)"
+        type: boolean
+        default: true
         required: false
 env:
   HOMEBREW_DEVELOPER: 1
@@ -156,21 +160,15 @@ jobs:
   upload:
     runs-on: ubuntu-22.04
     needs: bottle
-    if: github.event.inputs.upload
+    if: inputs.upload
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+    defaults:
+      run:
+        shell: bash
     env:
-      HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
+      HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
     steps:
-      - name: ${{github.event.inputs.formula}}
-        id: print_details
-        run: |
-          echo sender=${{github.event.sender.login}}
-          echo formula=${{github.event.inputs.formula}}
-          echo issue=${{github.event.inputs.issue}}
-          echo upload=${{github.event.inputs.upload}}
-
-      - name: Add brew to PATH
-        run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
-
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master

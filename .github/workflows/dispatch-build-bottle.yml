@@ -197,13 +197,15 @@ jobs:
   upload:
     runs-on: ubuntu-22.04
     needs: bottle
-    if: github.event.inputs.upload
+    if: inputs.upload
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+    defaults:
+      run:
+        shell: bash
     env:
-      HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
+      HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
     steps:
-      - name: Add brew to PATH
-        run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
-
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
