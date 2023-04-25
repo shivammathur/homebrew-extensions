@@ -17,6 +17,7 @@ class ApcuAT74 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c0b77dbc84b3396596ca51310eb49bd614f462e9fb773e9893b423082ad629e1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "00c38ea60a39f9e80fc45b57bccd734b7fad59a8fcca38ae9b97eb8130f40520"
+    sha256 cellar: :any_skip_relocation, ventura:        "97245242dd0303328a05866688f3ac8a994d8d7ad9ef62fc1a8ef1d437cbe1dc"
     sha256 cellar: :any_skip_relocation, monterey:       "e746b73d27988136c9a68cfdfd150b8363d3fbd2943434c4ed332f464794ae45"
     sha256 cellar: :any_skip_relocation, big_sur:        "bb4ebe2ebe53852f859030350aa9f80362f8b0c4c338e781f44b52d12c314ecb"
     sha256 cellar: :any_skip_relocation, catalina:       "dff6bf3da82365947f7cfa508af107c6d30a054ad46519ac20c2d3c0d8d916c5"
