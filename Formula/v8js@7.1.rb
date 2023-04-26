@@ -19,6 +19,7 @@ class V8jsAT71 < AbstractPhpExtension
     rebuild 2
     sha256 arm64_monterey: "4da9e78f01b2df2579b1fd96c7b8d67bc529c6d3424aa9701fd180f838085eb1"
     sha256 arm64_big_sur:  "308d06c703cfda65b683529bb6733dae1d7b46be05c922f5f26d33bc6ae79c0f"
+    sha256 ventura:        "29c17be4caa25b8c7c4fecf633be85fa9ae3fe0c17a2f83544117a1448ca86df"
     sha256 monterey:       "667629c71802fc6f134e8e5f94016cb07700b7e043665945c80712ee7820d6d0"
     sha256 big_sur:        "2e6338d70c848053d404a63f0b8e8d8cea8b5be03725dab27e63185972ac1adb"
     sha256 x86_64_linux:   "154be95c444c6fe5e4d299aca85f46393dd159ac12edad8a83f15120d8bc2e5d"
