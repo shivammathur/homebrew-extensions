@@ -17,6 +17,7 @@ class PdoSqlsrvAT74 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_monterey: "71c43543cdb559da211f357b71cc1e9750b344cd5dfec019bddcef8e51487b2b"
     sha256 cellar: :any,                 arm64_big_sur:  "46fa783462e6a240495e75d632ccec0b00926776ac9c5ead38d2d5c86b110397"
+    sha256 cellar: :any,                 ventura:        "ff57937ef68fc1c33413eaf22bf4061bff315d210ec1ebbf75ca4fadad0573b0"
     sha256 cellar: :any,                 monterey:       "37629eebe8867b536779e603057e462bea58b75c11b1b77613ac291a74863c58"
     sha256 cellar: :any,                 big_sur:        "8c2c4d730c440170150092f4add431ff352c1c496f10b2a444d57c99a7eb9bcc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3851f2c3769e3f36708a6721a5d5a4bf682699ca12929371a0f75e99a3cd5eaa"
