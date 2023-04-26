@@ -18,6 +18,7 @@ class ExpectAT81 < AbstractPhpExtension
     rebuild 2
     sha256 cellar: :any,                 arm64_monterey: "89a4ece135dd182b85d8caf33d5462077dca9de56ea6cae1469bf7fcc124cd8f"
     sha256 cellar: :any,                 arm64_big_sur:  "bf3761463a99271b8f38e49e1e82598938d1d5ec52c4d9b56c863cea6eb856bb"
+    sha256 cellar: :any,                 ventura:        "e0d1d2e422503acbc42589aeac7ce7e4a18dc491f298ed282ae0aec0a56fa243"
     sha256 cellar: :any,                 monterey:       "41abcd40e3cef6a9645ba9d4cf82375f68c20b4b1c93dcf7855d7d2a8962107e"
     sha256 cellar: :any,                 big_sur:        "3c59aeb6ee773e5a09a9ebaa62fbfe12db0c429d195506fe895c4ed05f2b00fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b95d7064cd6b3420666c8bec5ce161bf23beb18458b05558453ab464ae9cac41"
