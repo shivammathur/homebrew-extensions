@@ -17,6 +17,7 @@ class GrpcAT81 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b058b7cb3a818a2ec569fcab63a31100f8edcb2ca59ace90f418a62bc971eea1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1435db2cdbc922d9d85ebdd44d195c68c1608b8cca5a22a40d2c7f3efc3ac720"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb2acec1f2ff071edb6e7f4892508240c3f941ca26ef4b4beb1459a4f2d5d50d"
     sha256 cellar: :any_skip_relocation, monterey:       "fc5eb63b14c9e0ddee0050be258ee655e8cd0375d428ce12cff006e2e629ed84"
     sha256 cellar: :any_skip_relocation, big_sur:        "c48056e12738c125b3f67f3c7e59be13a0a5cca9b7e14d87950a2772589e4d12"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "49dcc6cd3495bc70e428ab9622a80848e36b2f5ff7c21eb396e5b1f75dbfb238"
