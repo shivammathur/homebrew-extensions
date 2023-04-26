@@ -18,6 +18,7 @@ class RdkafkaAT81 < AbstractPhpExtension
     rebuild 1
     sha256 cellar: :any,                 arm64_monterey: "3a5bf34a49f049c037e84119ac52189c413d6c17444b779ed5bcc9817fa0157b"
     sha256 cellar: :any,                 arm64_big_sur:  "69f785d58e2b47c9196ae788361cfb6da2d9db29b4c01eaf0842c961a71cf125"
+    sha256 cellar: :any,                 ventura:        "4561167470e80d490d23cfa6380c918c14a581c55c980dcc4b45270191d943c0"
     sha256 cellar: :any,                 monterey:       "93f9c6b495ca47dbe8f17f5d726408f33b24d3bc26756da3a9890cdfc0cfba7a"
     sha256 cellar: :any,                 big_sur:        "2f418182d6ef700e24241d92a75af246d1ec0d67a439e262addbfe4ca94344b1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "49e535d3fa8c2f99b2c317cb6d96bcb5639bbfb369cb64c301da2d8859e18aea"
