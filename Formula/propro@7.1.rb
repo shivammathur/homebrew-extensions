@@ -19,6 +19,7 @@ class ProproAT71 < AbstractPhpExtension
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8ff982fd0ab94a9b95b45a65ea80622e28861209608826aa125a6cad94a8032e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a0ff5d394daef1d1ef8f23fd28b6516d727df7315870ff4c70728eadb4843e2d"
+    sha256 cellar: :any_skip_relocation, ventura:        "41018aa75dba4df412d7d4d4b3882bb01e8704b3f602db5162bc91bd69c00d1a"
     sha256 cellar: :any_skip_relocation, monterey:       "4f89ce6b63f814f58d1ea2857586c269cc066d4c53a0d97ecbbf242e67febc57"
     sha256 cellar: :any_skip_relocation, big_sur:        "dce45e1df710d4ddd7fef47e99493ee93d32307e4cc3401dcb99d07d7d90dc28"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "23729e6f95aeb578d0adea2524e33e5c31165ca7a907e2569a76d0ec96a77413"
