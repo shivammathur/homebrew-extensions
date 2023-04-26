@@ -17,6 +17,7 @@ class UuidAT80 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_monterey: "b335169ce521fd8fbf712fd3fd520bb00e96ea22374ad5c3465f61757ba5930c"
     sha256 cellar: :any,                 arm64_big_sur:  "8e0172f3fdad71436262082bce0e6d90002d5379d8df184a05bf8bcdd692a102"
+    sha256 cellar: :any,                 ventura:        "1ca91dedebe6730037746ccc10d1cbe3c80048dde91ea3792be676bc2b27fe70"
     sha256 cellar: :any,                 monterey:       "0b6de361754d77a0e224bfe76b8c2638ee27cb4ac6b601f71d2a7b9869edf050"
     sha256 cellar: :any,                 big_sur:        "f6d3a04caec628191dfebd4df1e6415babb575a58ba3038bb8746ad7d15534ff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f443b3c32ef7fa7f33ea7225da7edfe1abb4ac7384d291bfed903ecf081e31e5"
