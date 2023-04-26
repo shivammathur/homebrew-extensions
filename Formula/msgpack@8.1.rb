@@ -18,6 +18,7 @@ class MsgpackAT81 < AbstractPhpExtension
     rebuild 15
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6560b8b35dc5ed6a93dd029c7b13b9c1741d6ceabdc5e337fc90e947b7b8aa37"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a2635d8058e8ab13c5e9c3b64d8e7b30a5a1b10e688eb4d14bb90f526c7847dc"
+    sha256 cellar: :any_skip_relocation, ventura:        "89ccc8c2e22ebe2d7ffd6ebc60ab2cc02ae11e18ccf2c4752277ee39b399ea11"
     sha256 cellar: :any_skip_relocation, monterey:       "89e5b15d52f241a297d0a0e824aa5fd401c285b4e9134863cc21a9637bb6de9a"
     sha256 cellar: :any_skip_relocation, big_sur:        "74034b16ed75190567ee0e9e8fada39faf0d6f21a0e76d49eda741c6abb6b14b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ee6a880495ebedc1b7b663b6048417fb5ac67eb96282ed540b47358ed68d8e7"
