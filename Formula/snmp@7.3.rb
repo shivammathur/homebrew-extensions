@@ -19,6 +19,7 @@ class SnmpAT73 < AbstractPhpExtension
     rebuild 1
     sha256 cellar: :any,                 arm64_monterey: "5701de8096553eaf1caa97d2742e6f48398879210105cba49dadd3b9ed6df197"
     sha256 cellar: :any,                 arm64_big_sur:  "93c4cccd7954f39b5e6e02165a1214cf0ca31f55a169501945a4582b63e7bf3f"
+    sha256 cellar: :any,                 ventura:        "39d0cda8c6cc1bb1da1b9f0872cc0e28e7128f970d4360b2894a745bb9e71bf0"
     sha256 cellar: :any,                 monterey:       "1248dcc83a17ad5929a7d5079a71317a75d99c851a82854ea767558b63328339"
     sha256 cellar: :any,                 big_sur:        "358e13f0fb036f0df54f7407f6fd0de72907aa0894614e8ef1d578ac1946e958"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "77f4a263c468b933244b9a00853941f138dad4abdcfb3519b162b117c0f08bff"
