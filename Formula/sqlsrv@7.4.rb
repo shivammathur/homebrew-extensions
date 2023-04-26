@@ -17,6 +17,7 @@ class SqlsrvAT74 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_monterey: "0cefa16ccd995ad5b8353ac8450132fe7c8fd7694e9247350db7904288faaeec"
     sha256 cellar: :any,                 arm64_big_sur:  "cadd74cd7a25fd94394336c51fb69ed5efc20b806dab2c470dec605caf3e26d4"
+    sha256 cellar: :any,                 ventura:        "6091732309bf8fa57c5509b3d7d0647b433b393d77baf08cbc9d47b4deea116b"
     sha256 cellar: :any,                 monterey:       "6b3f61ab89ff36f28a05b67e74c4b4b6f42a65e55f1f2674f5f442784f5fe5ca"
     sha256 cellar: :any,                 big_sur:        "3fbf478bc5d9814d680acb8b76d03ed96eb80fece260d9bf24cda8912491d545"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4295412f278617a6c2a4617cf155adceed62f5d581a3a56e5b867cd3a340ff98"
