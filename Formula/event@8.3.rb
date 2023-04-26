@@ -18,6 +18,7 @@ class EventAT83 < AbstractPhpExtension
     rebuild 1
     sha256 cellar: :any,                 arm64_monterey: "ed739502595acfead96ae44148e51c98cbcaa9c7dafc9d641e7d7599d29f972a"
     sha256 cellar: :any,                 arm64_big_sur:  "b7955aef43889db480a9647887cd75ccd3aee1ece9647843589a3e9b3b735abf"
+    sha256 cellar: :any,                 ventura:        "df2b18b11064d4bb16a2da9695c4dd3818520b4525869907918c3e7ba28190f8"
     sha256 cellar: :any,                 monterey:       "5666f9312a0c8a54920a4f6e973bc9ed8df51618e017f8674ea880cedb9a27df"
     sha256 cellar: :any,                 big_sur:        "59c7d58d49978df269fc4d96db2fd7a04e1ba5f72b29491a47fe6b5bbc72e161"
     sha256 cellar: :any,                 catalina:       "7c73392a9e31f22baf5508c40be727d772e0c7751d13b2229b3f6a047af5ee3b"
