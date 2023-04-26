@@ -17,6 +17,7 @@ class McryptAT73 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_monterey: "d48b78011917eb8b2513fae1fd8e3c76ac779252d890d2a5973ec3f8cf060ba7"
     sha256 cellar: :any,                 arm64_big_sur:  "d913742eb4b669c59d730a59cd1a41290c5298c346a6a39157b64c6507dc2a9e"
+    sha256 cellar: :any,                 ventura:        "d49299b668c328aad688002c3bd9e572beeb2b72810d25843e805b39aba74f70"
     sha256 cellar: :any,                 monterey:       "138333cd73a892e858c4327f39436aaa6d53f70303aaa951bc3d5f75659117db"
     sha256 cellar: :any,                 big_sur:        "c8043b105c0956d435e5d8b3403fa7b408960e6b10395d159f3aa1286673b1e0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d09282c887ea3aa6eddc822fb10e7509995b205e4f4cded4379a9e300a1ad094"
