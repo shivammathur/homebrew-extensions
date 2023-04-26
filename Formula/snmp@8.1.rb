@@ -17,6 +17,7 @@ class SnmpAT81 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_monterey: "368a7c260c85031cb8f786ac3a99eeae85c061cac4f177a298ce1d100cf3ee55"
     sha256 cellar: :any,                 arm64_big_sur:  "8e6c788520028d357f7ff2db8229379af44828899528d655786b78235ca75891"
+    sha256 cellar: :any,                 ventura:        "835d2fbbab21eca1b8424e0d40b7ad06ad533dda20ed36a2d8cdde4924f4ec5d"
     sha256 cellar: :any,                 monterey:       "0e8e1782ada4c9f4bb4b2406d09f947478803f41c11f8d03a27f5797de00c445"
     sha256 cellar: :any,                 big_sur:        "c192b0d657987f190eb91bff1a2c02922000132087aa4fbd36932607a6e32561"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "db50fa1b51f10968888af6aa092d95c3d660e2c3fb3ebe9ecd3dbe0b71215f30"
