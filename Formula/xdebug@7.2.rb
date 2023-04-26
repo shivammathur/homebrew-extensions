@@ -17,6 +17,7 @@ class XdebugAT72 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_monterey: "5d7066a60dcd0021109cc2ff23ab298c1c84848b9ddb74cffc6d28509f28e077"
     sha256 arm64_big_sur:  "20bda8ad690866b3bef1101607dbf4427e1f27fbd9ec13e02bb11273b7ff6dab"
+    sha256 ventura:        "e4c6d0756daa9e9fd061c1b6790fa0f6e2950a9707618bc09bf18e4ed773c0a5"
     sha256 monterey:       "8b5971cb3363d1ec32ed93b68b5eed3ec8f7e0f0382eed1be5e60e731abd0fc1"
     sha256 big_sur:        "26f5d3b930fb64355ddbe237dc78435c3573735f889227dc3bdf1f3db3a94a62"
     sha256 catalina:       "af52dfca0ec4c3a78c4336a3b39693cc7e70b5272b8f859585b529473ca00a8f"
