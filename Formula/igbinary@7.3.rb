@@ -17,6 +17,7 @@ class IgbinaryAT73 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e1e9397170f4e8ecf703b7bb070b46195b5b83fc71955231e964b25a09c79ec1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df43c9873a49c5324c8115153d2552170c2d5003b8dd0fc494997012fcf885df"
+    sha256 cellar: :any_skip_relocation, ventura:        "83f213f0fefa59e619bcbbd31f5e84e85336b061316897bff6c010eae4291488"
     sha256 cellar: :any_skip_relocation, monterey:       "401902199856639e09e436ff2ed1652bb6d14480c4c578b6af9ee2a08c18eb85"
     sha256 cellar: :any_skip_relocation, big_sur:        "3dcb57d49fded93888fabd03b916a54f8928f740f34745f68585434932cb8c4c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e1657e37f4258e1a78628b32c443f00ff8c4e206fcbdd6f004bfb0eef804af8"
