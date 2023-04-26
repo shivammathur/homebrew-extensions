@@ -17,6 +17,7 @@ class YamlAT73 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_monterey: "a83cfca39341649f101aeba9a126acc96732964821197e382f0e3669f34d8b68"
     sha256 cellar: :any,                 arm64_big_sur:  "7abc6f5012433aeb21f899ae0b245d3716af845c43b3b434d9e5f6a8506678aa"
+    sha256 cellar: :any,                 ventura:        "7698341c1b3a7fc4f82ad2d9bc601a9ead3080f5324a6f88ce1eb8d3527180ce"
     sha256 cellar: :any,                 monterey:       "bd612b3e30d967d7c3065fe66c107bd961407062cb482dd232af4c91dc465f0b"
     sha256 cellar: :any,                 big_sur:        "a3296aec63a781516e640c266bbfddabb7d7e5aafa12dd9d514bbf31bc395e61"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7eaf3a85b21f6090de1e76db975853604d2cd4ad8539b84acaa6a5be4da8a265"
