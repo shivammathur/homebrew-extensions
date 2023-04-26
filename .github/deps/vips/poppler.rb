@@ -4,6 +4,7 @@ class Poppler < Formula
   url "https://poppler.freedesktop.org/poppler-23.04.0.tar.xz"
   sha256 "b6d893dc7dcd4138b9e9df59a13c59695e50e80dc5c2cacee0674670693951a1"
   license "GPL-2.0-only"
+  revision 1
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Poppler < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6349e9bf9a108536725d07e3ebedfaf700c5c8548a87b5384e55aea0637b3173"
-    sha256 arm64_monterey: "d4d0ffae00dc8b340f31a58d6fed64527dd64badacc3e3e57f782c0af448a743"
-    sha256 arm64_big_sur:  "ea55c22f4486648d4c5eb0979235bfe89ae1278325ea0abb3ff4961f3ec95b88"
-    sha256 ventura:        "0f5a19d563890343be0084c2ec38774a75389a1b36475337ae62c54021d90a4e"
-    sha256 monterey:       "a7b0399f6256e82176c0ba200409e2bd7112fb107fe884f2df2f83e562b96c4e"
-    sha256 big_sur:        "32957bc148a85ebd8e6fe3042a3384a5c95d34f250aa6c796c32e59d31dc80d1"
-    sha256 x86_64_linux:   "4893af913e93e73232fd4e08256de774e928658dd20e769a7c190456409dece5"
+    sha256 arm64_ventura:  "e9a90cfb6912ac5f30de39be570205344b5074627ca002e07f88e4c43426fb25"
+    sha256 arm64_monterey: "12b88636857d85d2e32cf73b161ce3baa538fd91df939eeacc630fdb8e3b075d"
+    sha256 arm64_big_sur:  "2a56eed671e5c747e6c7f666297583be3854d72badc28e1bf2e29048a7b14fef"
+    sha256 ventura:        "0803c5b61f5dc639ab62a4b5926c09e9e57c23fadc8db9448d60694af63df7d9"
+    sha256 monterey:       "112f404cb7e9d9f74c50be9dfb0a86cc8eaa7c169ded430ccd9657b4c74cc8d5"
+    sha256 big_sur:        "33f9da8b888ff0514b7a1666226a6a43fdbd0de32dc99a7967ad3c6e285d632f"
+    sha256 x86_64_linux:   "bef29bc82b06c8405bccd0f4a488f22b6c09c2888f13020f0e22201c916a5a7d"
   end
 
   depends_on "cmake" => :build

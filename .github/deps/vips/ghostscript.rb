@@ -2,6 +2,7 @@ class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
   license "AGPL-3.0-or-later"
+  revision 1
 
   stable do
     url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10011/ghostpdl-10.01.1.tar.xz"
@@ -27,13 +28,13 @@ class Ghostscript < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "2d9684b51e348763e405edf791bf70c097403488776c2a1a079373eeb077edb5"
-    sha256 arm64_monterey: "e64fcb8d56b25cc386ff2cbb0b92ebfb1661038a361b7b82f0eb1bd4b5edb970"
-    sha256 arm64_big_sur:  "20247a3d26276f0c05196e097cbe95eb48409a5c53f1b16f78185b74aeb47463"
-    sha256 ventura:        "efff7911d701690da5712e1ec38029ed3e687158f2acd800018b4643896ed6d5"
-    sha256 monterey:       "7411520f73b5f82a63ac6f3593e290a27d9702c6cb09802335eb987229377589"
-    sha256 big_sur:        "c81130ce3d197fc63ae70db3b6730aa4b1a7bffb45387b4887d260280e7aed7e"
-    sha256 x86_64_linux:   "0169f78042cd4088bd4c2f5a0e12b368f3cce8dcb44f733bf79eabc2bdadae2f"
+    sha256 arm64_ventura:  "1bd4fd5100425061e0425d356c8d26da61d7212377224a0309dc0c7863cb0826"
+    sha256 arm64_monterey: "ac5146c0e4c626dacdb9bd086dbcc25f6a4f4b586c44594e72316b1911485f32"
+    sha256 arm64_big_sur:  "96c74a74f35fd3ef0d700fb8985bd70631e8c24b9486b915d715817523db745d"
+    sha256 ventura:        "956311e2e8356fe1b5ab433b49ee46573f02ab32e8572167bcefd4230866b755"
+    sha256 monterey:       "35cbca9d51e8f4fe41f8c714c7cbb97dd7290283f3fca27905de132bcb07edce"
+    sha256 big_sur:        "198942d83eb2f76c1066396b53ea7b9e0a215b2b68e3b2622c4c156bc9e26832"
+    sha256 x86_64_linux:   "b95a7d4fe0b0fe77d5c1d41e006d4efab4f757d24f5c6118c28fb38efb3ebea8"
   end
 
   head do

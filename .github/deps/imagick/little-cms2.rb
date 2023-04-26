@@ -6,6 +6,7 @@ class LittleCms2 < Formula
   url "https://downloads.sourceforge.net/project/lcms/lcms/2.14/lcms2-2.14.tar.gz"
   sha256 "28474ea6f6591c4d4cee972123587001a4e6e353412a41b3e9e82219818d5740"
   license "MIT"
+  revision 1
   version_scheme 1
 
   # The Little CMS website has been redesigned and there's no longer a
@@ -18,14 +19,13 @@ class LittleCms2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f65e0095a8a82a803ac26c5bbd5197032b8e744cc6f6361d992ee40d68174f1e"
-    sha256 cellar: :any,                 arm64_monterey: "ae03cf730b8472ba74ccf339e64c2275b3b1558bee4d43f87d13bb8ddf15bcfc"
-    sha256 cellar: :any,                 arm64_big_sur:  "84b9a2b8c35fed041f23b907506aae85e501472ef55f7ef114756eb1d06524f9"
-    sha256 cellar: :any,                 ventura:        "1a90d971326c5f82f14d2b758d6bd7d8c28ebe513eac39b12a96e5df57ce12e0"
-    sha256 cellar: :any,                 monterey:       "57a938e19b097c8b0b7da9e8969678ec5f76c6332ad0f5122dce4a5558a93817"
-    sha256 cellar: :any,                 big_sur:        "53fb3147f52eca75b7954795c521e3ca40aaccd542cfaae7befc3a1d143b3cc8"
-    sha256 cellar: :any,                 catalina:       "2c3da48dad601fc033cd0d2ac8235ea6b958643ffc9bc95260bf2b356c9af668"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50d9004057cd982330e2817ba715615660c07ef4bedb0282d82b96eb633b0ab4"
+    sha256 cellar: :any,                 arm64_ventura:  "6ed3ea3deebe26c480a8645f2c38fbc0f9f1a4fd47de411931eab04c950ac450"
+    sha256 cellar: :any,                 arm64_monterey: "3c4cc7b5b25f90f9f35f24440f6ba65dc2eca4efc1e556dc6333b20b26baf74f"
+    sha256 cellar: :any,                 arm64_big_sur:  "fa940e0ad62a9e01c72843bad7190873e7b6eb0415689b0cdf5c440c07ea77d4"
+    sha256 cellar: :any,                 ventura:        "bd740aa54f78a727dbc760b83f43238a5b177d05254885859398f31023a23cba"
+    sha256 cellar: :any,                 monterey:       "668a20c35919f9fc1837ecbae0f14213ed57de96a2659e2fe0b3c3199d0a7aa8"
+    sha256 cellar: :any,                 big_sur:        "d28397d577f74221703190c242ee5811c2af0275c82bf5c31682766bd7ee12f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ab9a233cfa9e76f303dde3cf787b6d1f9c1b53bd85262088ea2012c18bbb8ce"
   end
 
   depends_on "jpeg-turbo"

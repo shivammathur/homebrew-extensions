@@ -4,17 +4,16 @@ class Openslide < Formula
   url "https://github.com/openslide/openslide/releases/download/v3.4.1/openslide-3.4.1.tar.xz"
   sha256 "9938034dba7f48fadc90a2cdf8cfe94c5613b04098d1348a5ff19da95b990564"
   license "LGPL-2.1-only"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4b835b95d956e232aaaeab9a3602fb3d0c34c1eba0a86051f3b33d09466f185e"
-    sha256 cellar: :any,                 arm64_monterey: "1af4fb9e89cbb182c0b5e000afdbc2f2554f0021f39577137fc63d95128ba5e2"
-    sha256 cellar: :any,                 arm64_big_sur:  "4f64b4f61ae37827b11b457f83ee4bc5d9a0fc97be6bbb48abd065b95cb90caf"
-    sha256 cellar: :any,                 ventura:        "cf544a62e926e1a1db81937e6a29ca993c5f453ec7cb9923d31d71beb033d111"
-    sha256 cellar: :any,                 monterey:       "78e02a8c690a050325e431d228f160fc9a1f811e7053aa8a0dfa914393ecbe6c"
-    sha256 cellar: :any,                 big_sur:        "da721497db16566e8d473c538b229124a44410e2a6f2ca9844a818d12bf40832"
-    sha256 cellar: :any,                 catalina:       "79b0955210000433597e1687e0658d3dc11905a2a1b0d87a70b3d843d7d534e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa324892691800b8a6a35e4e657631b728af9c2f5a63a6fed167e7f796ea0068"
+    sha256 cellar: :any,                 arm64_ventura:  "e583738663abd681d8251f1dc228f025c1c6938a928a96b728bce74fa34353c0"
+    sha256 cellar: :any,                 arm64_monterey: "d37da9b5759f55d1d70a911a237c9be6275b3dc645c393cbd0467799fa17e989"
+    sha256 cellar: :any,                 arm64_big_sur:  "b2368526acf0b7b6ea124c2c9b5faa93aff6f6e933ff7f53c8db6499094d2782"
+    sha256 cellar: :any,                 ventura:        "196c77d171091b1ebdd7c8697c3241fa8102b0965fb2bee4f03118ed139061eb"
+    sha256 cellar: :any,                 monterey:       "33e28390bea7296e1eac8f5e70c4099d53c90191138690382933350615ece546"
+    sha256 cellar: :any,                 big_sur:        "f62cbddfc327ae795bdceed9c3c66dc22e955a28cd14190ae6844f990c346301"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34556c96b3b25692de68c4a7896f59ff5ce4a2d8940844e64b6ab6674fb6e40d"
   end
 
   depends_on "pkg-config" => :build

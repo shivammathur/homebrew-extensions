@@ -1,11 +1,10 @@
 class Libtiff < Formula
   desc "TIFF library and utilities"
   homepage "https://libtiff.gitlab.io/libtiff/"
-  url "https://download.osgeo.org/libtiff/tiff-4.4.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/tiff-4.4.0.tar.gz"
-  sha256 "917223b37538959aca3b790d2d73aa6e626b688e02dcda272aec24c2f498abed"
+  url "https://download.osgeo.org/libtiff/tiff-4.5.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/tiff-4.5.0.tar.gz"
+  sha256 "c7a1d9296649233979fa3eacffef3fa024d73d05d589cb622727b5b08c423464"
   license "libtiff"
-  revision 1
 
   livecheck do
     url "https://download.osgeo.org/libtiff/"
@@ -13,15 +12,13 @@ class Libtiff < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "4f8764b4cf388d7fdf727b2c61d1b48efb43ba4d337949bf34a932c08361681a"
-    sha256 cellar: :any,                 arm64_monterey: "b48b8b5166bc548be184e03892adf5259dad564bee1cb62ddb84c1bdf21caaeb"
-    sha256 cellar: :any,                 arm64_big_sur:  "b887dbf7a606f138ef8ec2c328110ead07dea77452e71a1e89a50e25326215dd"
-    sha256 cellar: :any,                 ventura:        "d93fb1487305afa278c639a94b4fde2090d02f45239a0fe4b2ca574bf9fbc684"
-    sha256 cellar: :any,                 monterey:       "f110c775f85a880a30ff43f738df534ee76f5dc55cc62b902870515adf03f15e"
-    sha256 cellar: :any,                 big_sur:        "ac18fea512fc702586831b2907910abd31573bc210231fd124945c05d7312921"
-    sha256 cellar: :any,                 catalina:       "c9a4d1faa66a576710c10ef26cd970175a8ab20f8c80cd0e9265eb0dd1a2adec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c18c93cb64098dd7415e87fc3acd9a8db9a475c15202244cc9947b24ae66dd80"
+    sha256 cellar: :any,                 arm64_ventura:  "cc6d07767e6e0536eec3ac5243194362d3b0a858221a3c3cb3639e4f7b0be34a"
+    sha256 cellar: :any,                 arm64_monterey: "74f7135659b8204c8e672bf175a976b68da51cdf96d7efa3f5871c22db78c1c4"
+    sha256 cellar: :any,                 arm64_big_sur:  "66d1c7e7453aba5775da8d024cda9427774bbb4acc2a0c09fe29575990467343"
+    sha256 cellar: :any,                 ventura:        "05d54a1996c40e4454755e6c556f07cc88f80c31cca1eb603b644fe9ed35c80e"
+    sha256 cellar: :any,                 monterey:       "0f326fe10765b62306181dfc1f3f947b6027ab571addd4eb0abffbf44c9e60f2"
+    sha256 cellar: :any,                 big_sur:        "eee74ff95a0ce4df7891ff93b75a234724191a56368b2dcf650fbd3d91e31ccc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "279580bf022a892c617fa7682224b60b164b23b3112226ff169f3f809e1a4225"
   end
 
   depends_on "jpeg-turbo"

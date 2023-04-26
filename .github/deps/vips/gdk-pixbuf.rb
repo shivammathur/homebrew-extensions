@@ -4,16 +4,16 @@ class GdkPixbuf < Formula
   url "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.10.tar.xz"
   sha256 "ee9b6c75d13ba096907a2e3c6b27b61bcd17f5c7ebeab5a5b439d2f2e39fe44b"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "e399064e72c6d5a754054ab177507d166d61fcf8a774880ef18f0c5c25d7c8b4"
-    sha256 arm64_monterey: "f944e2943561a8a5b1c1c4e634b91a33ab1bda82c65c695b70c4b87fc48f9ca0"
-    sha256 arm64_big_sur:  "c0fc7bfadb4517e194091ace0929823af4bb2e663b17e6d19b326e7181ec9c7c"
-    sha256 ventura:        "beabd0e8b0b94cb186a5856d807312c57a008259822a06548b7c170c46ed914c"
-    sha256 monterey:       "555cb431231ed77067e66782bfb00623fdbd1cb17350800f2e0cf8aa8ae6fb33"
-    sha256 big_sur:        "3861e9ecafbbddede7af2fc0c4da7a80c97e4384705551e4527d3247444cdbcf"
-    sha256 x86_64_linux:   "f49f3d34c8671c9dff090f7f943fd55223a3a0d0f3fe6411be6f73c34daa6501"
+    sha256 arm64_ventura:  "fe74fd0d46b3042bf5bdc0a281f4d2f4fc873456ca2be043eeb7f9430723f26c"
+    sha256 arm64_monterey: "5c995956e552bb56edf6a65394a7638b9c6851e778db47e7038afc671ea05412"
+    sha256 arm64_big_sur:  "f875e17f1233c385be75b0d7e1b3a7887c4de1613186cc902de41fa7d4857ad6"
+    sha256 ventura:        "df616ba6672581575db43297f7af9cf7b9220b0dec24d1dc108f2e1ca2c1a1c8"
+    sha256 monterey:       "e1fb42aac96f8e1b10dbdf8cbb74957678bfc405885653391f2436facd07e026"
+    sha256 big_sur:        "40c99bdc4ae06e902bcefcdd20525f9a3aaef0509d61a18489ab1639572b708a"
+    sha256 x86_64_linux:   "a10537012075ba29b2eef89b0f5958bff034f82695fb4ea334c5c50fc9c54e1c"
   end
 
   depends_on "docutils" => :build # for rst2man
