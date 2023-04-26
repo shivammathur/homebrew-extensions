@@ -18,6 +18,7 @@ class VipsAT71 < AbstractPhpExtension
     rebuild 5
     sha256 cellar: :any,                 arm64_monterey: "28a2a6d3d81203916fcf96306e7dab548e53db1a34e1b5eb3873ee870f313680"
     sha256 cellar: :any,                 arm64_big_sur:  "acc576f15f86f703d66d17391bad77fc202927bc65a66b57303a5c682a385cd7"
+    sha256 cellar: :any,                 ventura:        "8a8015142294d6b344a45a13780ceb75e3517b633dcc28a41728f0bcdfdd85d2"
     sha256 cellar: :any,                 monterey:       "7519ba8862154ff005c4b3997de564f46c1668487c7b39886445889640ab17a6"
     sha256 cellar: :any,                 big_sur:        "c6bb22994f495f4c3174bed1bdbf0e48a0dee23ccbb049f0a87f3ee4a402ad3b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1d69b37afb660e5691f9f29acf7fbba572060ce54fb7b535c1492fb8bb314b"
