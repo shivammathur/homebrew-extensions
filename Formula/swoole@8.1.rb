@@ -17,6 +17,7 @@ class SwooleAT81 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_monterey: "cbfce27ccb981de174dc30aaa5c885654ed54c61990dcca6312e3d848e08f496"
     sha256 cellar: :any,                 arm64_big_sur:  "b5ac86371149f0ee72c337a100732ca94727ce069a17c0d0372cec5713454d8b"
+    sha256 cellar: :any,                 ventura:        "cd3f7b58636165fd8ee4af67399009b2e906c8462937b4f5343123c9f8894aa8"
     sha256 cellar: :any,                 monterey:       "9874037869a974db074436411db488babbbd831d159804822732293c516570ee"
     sha256 cellar: :any,                 big_sur:        "5044cb99c5027f41ac536b9c93fccfa72e94e107f38602480b5fcc144160bc0c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ab1d3f83be3b0ad17a8fa6e1302ca384465740c3df7cf957278f572351729bc"
