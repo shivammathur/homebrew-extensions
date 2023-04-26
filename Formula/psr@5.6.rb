@@ -13,6 +13,7 @@ class PsrAT56 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2aa228bc744b0e5c402c5409f4505236092063c91a5231cd6c4f0ac129a98c56"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "00acfce6e643073d6cc012f253e7802c12b3dbd2cf05017940d5d0e3cb98bf4a"
+    sha256 cellar: :any_skip_relocation, ventura:        "6dd0b4104fb26d7e22c606df684dedfa4ef9af8615900ba709bd766fff7909f3"
     sha256 cellar: :any_skip_relocation, monterey:       "660f7c481d6867cf7b1453d530fbd20a49f2cfdae7ab5dd726eecff62726ab2f"
     sha256 cellar: :any_skip_relocation, big_sur:        "1fc0953647001eb2b10a2aa85a9c5c27519cab5679ddc5282ebed1908a4ce74e"
     sha256 cellar: :any_skip_relocation, catalina:       "f2529a4c8824202623afbaaa206dee0bb3bcd9540ac128e7bd7396f53df649e8"
