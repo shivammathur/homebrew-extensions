@@ -18,6 +18,7 @@ class GnupgAT83 < AbstractPhpExtension
     rebuild 1
     sha256 cellar: :any,                 arm64_monterey: "7995f81dde6308236dd49fada7fbd6a3b31456c5922a2d116309bfef70d00cca"
     sha256 cellar: :any,                 arm64_big_sur:  "ce0cf5e80a3bf09ee899460d2e83fe952c933fa92c117aa9b14962888b72aa88"
+    sha256 cellar: :any,                 ventura:        "9122750f28d9f9b833c6819507a713bf04b38541174f13a86f9f75f5f9ab29fc"
     sha256 cellar: :any,                 monterey:       "34aba2a96bcd90514f75ae65ae4c9d572e2ba22fd83c4f7ab8a3acc2f938d11f"
     sha256 cellar: :any,                 big_sur:        "38734d25bba972d42d9581ae0fb2470829faeeab27e485dda641855d8c2d4956"
     sha256 cellar: :any,                 catalina:       "bc9ca005d1417015c2956ca51eadd5641924bb28ed55a62089194297d8f753db"
