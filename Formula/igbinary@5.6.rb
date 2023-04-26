@@ -18,6 +18,7 @@ class IgbinaryAT56 < AbstractPhpExtension
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_monterey: "cbfebbb94d5c640321ad00dd67e5a5889b594129b7508c3611a297da4de267f0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f58af98b9aa9978de51abe76440e2ee6bb41593b912ada388c81184f710953b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "85e222ddc9d0d7cf36c4ea914557a5745868a49f1adad614a1cc3435ff282097"
     sha256 cellar: :any_skip_relocation, monterey:       "c8a1ad6280ee62f00ed40edab7a7c3af5bed843a901866333b65d7d61e773a07"
     sha256 cellar: :any_skip_relocation, big_sur:        "436b4bfb446b0a54f0cff55ff5af4370807a780252edd42f9c0bc2b2c5ac18cf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba096605e18c5ea810cbce9b0d17a51670911abdb7c518a91ee68f4f8387a5d8"
