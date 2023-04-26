@@ -18,6 +18,7 @@ class LuaAT70 < AbstractPhpExtension
     rebuild 1
     sha256 cellar: :any,                 arm64_monterey: "896a97116def86575598f11f011cf0d5fe433f35c0652bcaf420ed3cfc6cf1ab"
     sha256 cellar: :any,                 arm64_big_sur:  "a55a4f60a65039eae979b0d1b757801f7b96f39a490a4538972c91fc9b155237"
+    sha256 cellar: :any,                 ventura:        "571fe7e80cbab4a62c2feba0eef085c685f951f829e35e7ddd65a968939f8627"
     sha256 cellar: :any,                 monterey:       "a611e4ba0838f6e08acf050d828b5247dddcc9238edfc7207802d5665c40d981"
     sha256 cellar: :any,                 big_sur:        "a4c87835ddb7888e72a3df901af87c448716f048a0b439eb6981b49c0ead1152"
     sha256 cellar: :any,                 catalina:       "fc7c4fcf04ab9e1e6078dd3fdaca553edbd9010eb1f2d717e171ff491cd8c2b2"
