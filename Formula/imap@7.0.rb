@@ -18,6 +18,7 @@ class ImapAT70 < AbstractPhpExtension
     rebuild 12
     sha256 cellar: :any,                 arm64_monterey: "e31c4dbc47ea2b49b8102e98c62e90cb2baeadc4a7ea5226e5130dad88668109"
     sha256 cellar: :any,                 arm64_big_sur:  "65307fe021dc8b9e9ca60b1bd21f6eff0d149a1c2d3beaa3903e30304b6d9bb2"
+    sha256 cellar: :any,                 ventura:        "8866f91fccecd44498eb08be597654a7f097402ed37982364cc58df558d1d6e9"
     sha256 cellar: :any,                 monterey:       "c389886a55862f1e4b30a257eacff485c10d22aa057de75f217642f2ddb2f4c0"
     sha256 cellar: :any,                 big_sur:        "419bd53dacad4fc6fd4bec1a0e72f92b083aed918fa8906ea3cbc5719e2c8c61"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed6107d06b3ddcf59a1136bf3e5db5c9e08768d1a81fe7b568b3af0c1a3302b6"
