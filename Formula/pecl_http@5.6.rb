@@ -19,6 +19,7 @@ class PeclHttpAT56 < AbstractPhpExtension
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7d9da040e308f7e605edf9cdf4676b32c71ce1490bc3a9f41a2c69a1c520b828"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6c7982aabc981a64a6db568f5138632e902121b529b469084a204741ea2965c8"
+    sha256 cellar: :any,                 ventura:        "6a091629ca567e3a272a6042d9a69807d0aca0b0fdaaef010ea9967ac86e2f5e"
     sha256 cellar: :any,                 monterey:       "e6c28dc1f033cf562349183361098ae487786197ca43e63deab2d7eaf3e50aa7"
     sha256 cellar: :any,                 big_sur:        "1f55a5dec4494ab375399bde7b216caa95e92c802a10c48cbe30cacba9be6fd7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "70fe798dcae208aca28f3d5c625642a865331004b5928d734d69df6200564b1e"
