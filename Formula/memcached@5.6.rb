@@ -18,6 +18,7 @@ class MemcachedAT56 < AbstractPhpExtension
     rebuild 2
     sha256 cellar: :any,                 arm64_monterey: "2f73063d145205366522c3a3cb0aaa13bfc7660d11e004040a4d9d99af912014"
     sha256 cellar: :any,                 arm64_big_sur:  "7b24c7b2f8c598a175699a110d7e0e59b4d101454e1697e3df84e5b104ba38c4"
+    sha256 cellar: :any,                 ventura:        "0410bc9e0123d1ab8c65e041292f2c8eac0506535a952f45d3bca41318ed98d8"
     sha256 cellar: :any,                 monterey:       "f8a39e14fd96a6a6606f236b192411ba31d8f2487d3e65d72986879a130fe5e7"
     sha256 cellar: :any,                 big_sur:        "c4903ca3df34051904e2b1100012cb082220daa4db7697367a557674d930c665"
     sha256 cellar: :any,                 catalina:       "c29a461b838dc550d4d5c46eb54055b31f409c2c10168f3cb3fd2d19fb1fd20a"
