@@ -13,6 +13,7 @@ class Phalcon4AT74 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5b81f3abdbe3e30ddb565514d8c659832b32214a9ac70512dc4dc114a7305a2d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f5de667113b80e0a1f0eb014e8fe1448a4149c9fbaa70300250385a3cd30488"
+    sha256 cellar: :any_skip_relocation, ventura:        "b5c3ba977c19d47399a893256cdf222bdfc337abf2aaca4219337875eca156ba"
     sha256 cellar: :any_skip_relocation, monterey:       "2e1d57375f40e8fe5fef8685695c07f37656e5fa8a1d0404c08901f104b62fcf"
     sha256 cellar: :any_skip_relocation, big_sur:        "574893c6b06334de52ba0f8ac97174f4bc35d73a983fc2e912a3b76034c131c3"
     sha256 cellar: :any_skip_relocation, catalina:       "0c25404da5e824384ad8f2103af372ea9a5edecd68b33c8fd06ad84bdc9baf80"
