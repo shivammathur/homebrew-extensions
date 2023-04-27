@@ -18,6 +18,7 @@ class RedisAT80 < AbstractPhpExtension
     rebuild 1
     sha256 cellar: :any,                 arm64_monterey: "ad7c05e260bf3a12ca3262e8734c00f8a204e0db4500990b31f21e3249bfb144"
     sha256 cellar: :any,                 arm64_big_sur:  "12cfd43ab7d9bd978a04ffe6a679f8abf4dd43637a8a7c4e48e8a3e648f6d557"
+    sha256 cellar: :any,                 ventura:        "8c631b48ca5d714a0cd4feac71f304c8e01ec5fa082ed6e5b4ffb2fb8aecaa75"
     sha256 cellar: :any,                 monterey:       "aaeb419e8fe44925aea6cff54181158a88e5f83db31ae5a500c54f9ce21636bf"
     sha256 cellar: :any,                 big_sur:        "d4d4f82bcfb4b338a5ee0d21b2c0f49649ba9c1992a401e4d34fca260e6175f9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc02eb8f49f421732f45f553fbf76495a3df4bcbdb84d0d5d8abf0546e6eee82"
