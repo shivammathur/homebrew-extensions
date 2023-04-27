@@ -16,6 +16,7 @@ class ImapAT82 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_monterey: "7daf72ba54927db69ed4ef2e3e0022ef5d94f0f876fe49940a707c87e885bcbe"
     sha256 cellar: :any,                 arm64_big_sur:  "8ca8bb621201d0ade8d8af025cfe2509e236dd9852d01bb0584aa1f792e45f8c"
+    sha256 cellar: :any,                 ventura:        "5d8fd6e7cb556adf97c2db62f362ba237becb0b64fbe7584d5241256ee28d6dc"
     sha256 cellar: :any,                 monterey:       "cfa0a700163f952c0333a8b4a0afde6e233781350cc3125440df803011d0887a"
     sha256 cellar: :any,                 big_sur:        "ad807e48b11d3b47bd01cd1bcbb468e53fff734b612cb024f0f1edbd820f9021"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fc5b293710429477e72a374afd42decc981237dd5abfcfa0b78c1725dd2c833"
