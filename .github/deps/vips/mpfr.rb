@@ -36,7 +36,7 @@ class Mpfr < Formula
                   &.to_s
       next version if patch.blank?
 
-      "#{version}-p#{patch}"
+      "#{version}-p#{patch.to_i}"
     end
   end
 
