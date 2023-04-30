@@ -1,10 +1,9 @@
 class Lua < Formula
   desc "Powerful, lightweight programming language"
   homepage "https://www.lua.org/"
-  url "https://www.lua.org/ftp/lua-5.4.4.tar.gz"
-  sha256 "164c7849653b80ae67bec4b7473b884bf5cc8d2dca05653475ec2ed27b9ebf61"
+  url "https://www.lua.org/ftp/lua-5.4.5.tar.gz"
+  sha256 "59df426a3d50ea535a460a452315c4c0d4e1121ba72ff0bdde58c2ef31d6f444"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://www.lua.org/ftp/"
@@ -12,14 +11,13 @@ class Lua < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c26caf8003f23124219d6f35ce9b49f39471d40d31527dd393ac2ffe5fd376c5"
-    sha256 cellar: :any,                 arm64_monterey: "a68739b34434711be8213dd5f0b005675534967195b04b9c6ed2f60e05a362fe"
-    sha256 cellar: :any,                 arm64_big_sur:  "87f8fc36f2f97b92016304ae6d25bd197ed4f5275966c6cf1b28a1181cc20b64"
-    sha256 cellar: :any,                 ventura:        "79410ebb95a2027d0785a52b9c02ef0bde46a0033c1be5fb4c97339e09e906a0"
-    sha256 cellar: :any,                 monterey:       "ef899efde91007b9c02f61a8fd4519893e271edb89c03f0c4a7f201f288dae1b"
-    sha256 cellar: :any,                 big_sur:        "55abe1007284d39071736eff023495e1a483675586414ed8504cd9507ae0d67f"
-    sha256 cellar: :any,                 catalina:       "c8cab606ce17da91d120b87f8efaddf80041e22ec601e10242fb543c805d4fbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a94fd6e24f1b0ba6bb6a0c849c2fbfa6acedde81ef3e2c12fb80dcda791f01e2"
+    sha256 cellar: :any,                 arm64_ventura:  "81180b3325eb25294d150f9e33bea3f3444379e6e0204e3fc9868e597a78c060"
+    sha256 cellar: :any,                 arm64_monterey: "a693e15a5bcaf24cb23e64d20067cbee96ca052e3a96a1ca3ce83b1ad7f17342"
+    sha256 cellar: :any,                 arm64_big_sur:  "5c95f315bb1edd8af8016f58a888a412ae3a52424f33e2c64c1c8d04c6111afd"
+    sha256 cellar: :any,                 ventura:        "522c86e81aa564556ddb8fdc2de97e37dec4616e0a88a64ae19392486d8ee4d0"
+    sha256 cellar: :any,                 monterey:       "ef83159767a52b7ef9ad33d795a73928ddb3cb9891f4105be296ea32564065b7"
+    sha256 cellar: :any,                 big_sur:        "4eb60e1fb59cb5d570401f24ea07e50590c16be3eb45be5e47462aa5064d71c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1537dcb481fe8ca9eb87da74862f9cff06c13a1e2c035e7e9c3b5c9235da6fc"
   end
 
   uses_from_macos "unzip" => :build
@@ -43,10 +41,6 @@ class Lua < Formula
       sha256 "522dc63a0c1d87bf127c992dfdf73a9267890fd01a5a17e2bcf06f7eb2782942"
     end
   end
-
-  # Fix crash issue in luac when invoked with multiple files.
-  # http://lua-users.org/lists/lua-l/2022-02/msg00113.html
-  patch :DATA
 
   def install
     if OS.linux?
@@ -126,17 +120,3 @@ class Lua < Formula
     assert_match "Homebrew is awesome!", shell_output("#{bin}/lua -e \"print ('Homebrew is awesome!')\"")
   end
 end
-
-__END__
-diff --git a/src/luac.c b/src/luac.c
-index f6db9cf..ba0a81e 100644
---- a/src/luac.c
-+++ b/src/luac.c
-@@ -156,6 +156,7 @@ static const Proto* combine(lua_State* L, int n)
-    if (f->p[i]->sizeupvalues>0) f->p[i]->upvalues[0].instack=0;
-   }
-   luaM_freearray(L,f->lineinfo,f->sizelineinfo);
-+  f->lineinfo = NULL;
-   f->sizelineinfo=0;
-   return f;
-  }
