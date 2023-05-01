@@ -8,8 +8,8 @@ class MemcacheAT82 < AbstractPhpExtension
   init
   desc "Memcache PHP extension"
   homepage "https://github.com/websupport-sk/pecl-memcache"
-  url "https://pecl.php.net/get/memcache-8.0.tgz"
-  sha256 "defe33e6f7831d82b7283b95e14a531070531acbf21278f3f0d7050505cf3395"
+  url "https://pecl.php.net/get/memcache-8.2.tgz"
+  sha256 "b3f0640eacdeb9046c6c86a1546d7fb8a4e9f219e5d9a36a287e59b2dd8208e5"
   head "https://github.com/websupport-sk/pecl-memcache.git"
   license "PHP-3.0"
 
