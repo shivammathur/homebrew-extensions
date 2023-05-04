@@ -4,16 +4,16 @@ class Libmatio < Formula
   url "https://downloads.sourceforge.net/project/matio/matio/1.5.23/matio-1.5.23.tar.gz"
   sha256 "9f91eae661df46ea53c311a1b2dcff72051095b023c612d7cbfc09406c9f4d6e"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f054bccc0f7b6bb47c001f89bd71c3a506ea2826b4b175ecc4eca800013cc662"
-    sha256 cellar: :any,                 arm64_monterey: "2ebdabd8423bbaeaa00d7083a52b83ff3fe2f0bcd451c2ed6594a75e5344eaa0"
-    sha256 cellar: :any,                 arm64_big_sur:  "121e79cf19f53276b35be99b8f5ddf1922eac000a60005876d74039e63acf3c6"
-    sha256 cellar: :any,                 ventura:        "ead0d4c1020d6a8650bc87e57c0782f99fe2e46625b9506e2035f5918303ff02"
-    sha256 cellar: :any,                 monterey:       "065fdfe8c7d13dd17f2082ec55c02d4aa445c391ce3eaff3b5ff987f5a1f3f68"
-    sha256 cellar: :any,                 big_sur:        "056c699084c0a29cf51cbc3a58cc5ae469501a27ccc7785773b260d0c2cbe09b"
-    sha256 cellar: :any,                 catalina:       "4a5fb729796b011d5ee47e924d6b9c10084803d436c6234011f499c07b5d664f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90857721a7996319c0b57ed2c87bb7331f9c237a3b0a72a21d404493a83eca4a"
+    sha256 cellar: :any,                 arm64_ventura:  "d4a44ba92a017b7f44ae69bd42cfafe09a04d20f47934a7ec201af2fa65d20e5"
+    sha256 cellar: :any,                 arm64_monterey: "c6eb8fbcd5aee94c1ffb93fb393d4b27d6bce72f80876a6660b86c02c94c3049"
+    sha256 cellar: :any,                 arm64_big_sur:  "5034eb49bfcc7c0a480e0f37d16877a9af2ead576f92c21e56b4ba5dbf2dc952"
+    sha256 cellar: :any,                 ventura:        "18ad56b84938aaed596846c02f281ff107f8bf807effb0c8fa6075c43b1af9be"
+    sha256 cellar: :any,                 monterey:       "3763f2836ab720551802912fcb5f54d9afbe50d8578883faa3c3484c142e39af"
+    sha256 cellar: :any,                 big_sur:        "9e37c57537177229ecea33a3392b7c1c3799e3917ca2b5327fdbba3bb2818e00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97948be20c34c6b824647b45d7a301576a04b301b605164221e951e11a6f75f6"
   end
 
   depends_on "hdf5"

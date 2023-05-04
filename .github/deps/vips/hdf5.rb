@@ -1,10 +1,9 @@
 class Hdf5 < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/HDF5"
-  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.2/src/hdf5-1.12.2.tar.bz2"
-  sha256 "1a88bbe36213a2cea0c8397201a459643e7155c9dc91e062675b3fb07ee38afe"
+  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.0/src/hdf5-1.14.0.tar.bz2"
+  sha256 "e4e79433450edae2865a4c6328188bb45391b29d74f8c538ee699f0b116c2ba0"
   license "BSD-3-Clause"
-  revision 2
   version_scheme 1
 
   # This regex isn't matching filenames within href attributes (as we normally
@@ -16,15 +15,13 @@ class Hdf5 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "eeb6d86fe48f393589e1e8fbedd26f17c41fea525be02a539cbd4d2e46ee3d89"
-    sha256 cellar: :any,                 arm64_monterey: "0988092d7820628de58e2b7317e54187fb15501a5acc6fd9f81fc7123d18a1d3"
-    sha256 cellar: :any,                 arm64_big_sur:  "64c557b69dad39bc1bbb6a19694ddb5e0651dca961d98fba71a7e7c25d35129b"
-    sha256 cellar: :any,                 ventura:        "f5c508938bb6a0801afe86a3ba7f2bb0095ad91f907dc422c4fd94d0aa93f160"
-    sha256 cellar: :any,                 monterey:       "e89540a3626665e98679fdd64f9b2d007bd12d489e1a67b4f5a48b09021a686c"
-    sha256 cellar: :any,                 big_sur:        "61cb53a7c7915fcc8e0a8f623a382c4e73d7047c6723ede57c070918678743f8"
-    sha256 cellar: :any,                 catalina:       "b3be3911f2100587685f7c4d089001becb7a3405f3fd2e7dfbcacceb672894b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "507a340a5132018ee60fab34e90effc08fa06c6401bbf3e920b012a90a0525a9"
+    sha256 cellar: :any,                 arm64_ventura:  "2b724d9683b91b525cc7a964b8794dc58fd4cca77145c2ecca97a28a2df214ae"
+    sha256 cellar: :any,                 arm64_monterey: "3db7396cb7c1eb060308b67fe5dfe5468054cfbb2e93c07084479197d36f1183"
+    sha256 cellar: :any,                 arm64_big_sur:  "1ce80fc076f265c4693869d580bfd57ea445aaad3d3dff3d590964f153e3e35d"
+    sha256 cellar: :any,                 ventura:        "c14b662746e206b7691248256b91a759c6878ec271da7a5ae740da146addbd3f"
+    sha256 cellar: :any,                 monterey:       "c4fd6bc74aef6489c545fed8e271df900e19f4ea430cea5a86b58b8f5d27ce77"
+    sha256 cellar: :any,                 big_sur:        "6a63399687425fc49793edc211e276c43aa8c97db01793eb5d76dc61c0a46d37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f76358615d3138e3fef97717303bb02ba1694230639776df175dbda0d4b51bd3"
   end
 
   depends_on "autoconf" => :build
@@ -36,6 +33,10 @@ class Hdf5 < Formula
   uses_from_macos "zlib"
 
   conflicts_with "hdf5-mpi", because: "hdf5-mpi is a variant of hdf5, one can only use one or the other"
+
+  # Fixes buildpath references in install, remove in next release
+  # https://github.com/HDFGroup/hdf5/commit/02c68739745887cd17b840a7e91d2ec9c9008bb1
+  patch :DATA
 
   def install
     inreplace %w[c++/src/h5c++.in fortran/src/h5fc.in bin/h5cc.in],
@@ -112,3 +113,28 @@ class Hdf5 < Formula
     assert_equal version.to_s, shell_output("./a.out").chomp
   end
 end
+__END__
+diff --git a/configure.ac b/configure.ac
+index 8e406f71af..7b1d10c014 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -3012,8 +3012,7 @@ SUBFILING_VFD=no
+ HAVE_MERCURY="no"
+ 
+ ## Always include subfiling directory so public header files are available
+-CPPFLAGS="$CPPFLAGS -I$ac_abs_confdir/src/H5FDsubfiling"
+-AM_CPPFLAGS="$AM_CPPFLAGS -I$ac_abs_confdir/src/H5FDsubfiling"
++H5_CPPFLAGS="$H5_CPPFLAGS -I$ac_abs_confdir/src/H5FDsubfiling"
+ 
+ AC_MSG_CHECKING([if the subfiling I/O virtual file driver (VFD) is enabled])
+ 
+@@ -3061,8 +3060,7 @@ if test "X$SUBFILING_VFD" = "Xyes"; then
+     mercury_dir="$ac_abs_confdir/src/H5FDsubfiling/mercury"
+     mercury_inc="$mercury_dir/src/util"
+ 
+-    CPPFLAGS="$CPPFLAGS -I$mercury_inc"
+-    AM_CPPFLAGS="$AM_CPPFLAGS -I$mercury_inc"
++    H5_CPPFLAGS="$H5_CPPFLAGS -I$mercury_inc"
+ 
+     HAVE_STDATOMIC_H="yes"
+     AC_CHECK_HEADERS([stdatomic.h],,[HAVE_STDATOMIC_H="no"])
