@@ -11,13 +11,14 @@ class OpenMpi < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "89a564cff8b043b4fe5e3d34c2f096ea6bc89cf72e4165fa1b551d29d5a55b88"
-    sha256 arm64_monterey: "c5b0561326489ee9e8ba2d6a6281fde4db0355847fd2f940f2163b89e001081b"
-    sha256 arm64_big_sur:  "7e246c8147f40a8455fa8cc4b54832f79acd2661173199a4c1e8407ff9d2176d"
-    sha256 ventura:        "c96d7b4d63ad9355fbc53f649382b98049bee122b73abf0917cdda475c5dae0f"
-    sha256 monterey:       "596abf565b48277a76d71cac98bd9419ea8cefc8135ca22c188f43f2cc0de4eb"
-    sha256 big_sur:        "88ca0ebd264ece1fc595c3842226f675ce5a93d4e208c1b2fc5ab4bb79757e17"
-    sha256 x86_64_linux:   "5ade70516d7f3b71c9917a0ef8749ede07a50a4b88b388f25954857c650f843a"
+    rebuild 1
+    sha256 arm64_ventura:  "ba0d2a31bdcf30e06dc2b8793c088e3ebb4921175e0557aa3a537d2bab595431"
+    sha256 arm64_monterey: "9d7da2a349c2adc8c134cd031e54c6a87ebbd7c8e97212f675bbfa57f747dc75"
+    sha256 arm64_big_sur:  "edb6c5b489554507387f3682b14c6a7f14df19d45b12cb784c58ae791906fbcd"
+    sha256 ventura:        "2e009961c61e90e5fb94ed58a1ce6a5a60f73e69ae977d99a740ce8dc544a1ac"
+    sha256 monterey:       "fee37523af6d3fe9f32cf524d84be442d6e1e0fb18ff976f21e42780624a7e23"
+    sha256 big_sur:        "d71af07cbd0a8c8312ca8962d08eacf008ddac97f6ebf2c4c21989d2a118ad96"
+    sha256 x86_64_linux:   "64f71891f0c72bfa80399ccbae0960ed45698d3f5d82a2e870da17e86db425ca"
   end
 
   head do
@@ -34,8 +35,10 @@ class OpenMpi < Formula
   conflicts_with "mpich", because: "both install MPI compiler wrappers"
 
   def install
-    # Otherwise libmpi_usempi_ignore_tkr gets built as a static library
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+    if OS.mac?
+      # Otherwise libmpi_usempi_ignore_tkr gets built as a static library
+      ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+    end
 
     # Avoid references to the Homebrew shims directory
     inreplace_files = %w[
@@ -74,6 +77,9 @@ class OpenMpi < Formula
     # Fortran bindings install stray `.mod` files (Fortran modules) in `lib`
     # that need to be moved to `include`.
     include.install lib.glob("*.mod")
+
+    # Avoid references to cellar paths.
+    inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix, false
   end
 
   test do

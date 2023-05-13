@@ -1,10 +1,10 @@
 class Libnghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://github.com/nghttp2/nghttp2/releases/download/v1.52.0/nghttp2-1.52.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/nghttp2-1.52.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/legacy/nghttp2-1.52.0.tar.gz"
-  sha256 "9877caa62bd72dde1331da38ce039dadb049817a01c3bdee809da15b754771b8"
+  url "https://github.com/nghttp2/nghttp2/releases/download/v1.53.0/nghttp2-1.53.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/nghttp2-1.53.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/legacy/nghttp2-1.53.0.tar.gz"
+  sha256 "f5f3f18b377d1e7658e4655a32d9a7ce6fef39fa13f600fe920f5f77c60fc34b"
   license "MIT"
 
   livecheck do
@@ -12,13 +12,13 @@ class Libnghttp2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d1f911e1de9f2eeaf580182a1d22c7ac7883207bdf99c00e4f6690244ac27630"
-    sha256 cellar: :any,                 arm64_monterey: "947d901f0c86bfef592365b1270ab4fe06031a6c0a3ae9ca61b9805ae25be661"
-    sha256 cellar: :any,                 arm64_big_sur:  "7cee8fc7bbd06b0dcc8ca372cfbd21749119e07f0efd48fdc15a75d5d2aab2fd"
-    sha256 cellar: :any,                 ventura:        "18ae97564b83aff33f5432e6b0130a7b0efda33d1b67c2eea265f707858ce448"
-    sha256 cellar: :any,                 monterey:       "804c94df96614dcbf1b5ed6a701c852f7baa62e5bda029fa15dd13004d453676"
-    sha256 cellar: :any,                 big_sur:        "cf3cd5576a29941d90a37f2f74a941215de6d921264be1e113e6dc1d3c8216e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "397be78f5d349e426826ca49595234b1a018aa210ac8653fee46c651eb9d1193"
+    sha256 cellar: :any,                 arm64_ventura:  "e659bf1d766988ddd50684dfd9df144d5701b5b42b02b8b34ed8873add8b891c"
+    sha256 cellar: :any,                 arm64_monterey: "ce807466c0310e903e9c70d2f84cf0f73e82c04934132f79ff13cf868d524305"
+    sha256 cellar: :any,                 arm64_big_sur:  "b807ca1f215940ba8a79e9ddac242ce035259257aa10c72e6be0c815206c25aa"
+    sha256 cellar: :any,                 ventura:        "9912b1b182a85ccd179dc41e6083ff67b607cd11b0f37de5c811223fe780a8d3"
+    sha256 cellar: :any,                 monterey:       "143deac9159a3c6ed407a27d0fd07e1f84a8671a48a9f6a3a237253074599156"
+    sha256 cellar: :any,                 big_sur:        "3faee6450d6445d7fed1413ac1b8039e94fce368ff8b3e0c03b3f35ff92cef25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cd5ce47a47ca1b9fcb4181d59da2ddcbddb3af351e4397d187b7de5a21b7afe"
   end
 
   head do
