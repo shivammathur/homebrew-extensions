@@ -1,8 +1,8 @@
 class Lua < Formula
   desc "Powerful, lightweight programming language"
   homepage "https://www.lua.org/"
-  url "https://www.lua.org/ftp/lua-5.4.5.tar.gz"
-  sha256 "59df426a3d50ea535a460a452315c4c0d4e1121ba72ff0bdde58c2ef31d6f444"
+  url "https://www.lua.org/ftp/lua-5.4.6.tar.gz"
+  sha256 "7d5ea1b9cb6aa0b59ca3dde1c6adcb57ef83a1ba8e5432c0ecd06bf439b3ad88"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Lua < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "81180b3325eb25294d150f9e33bea3f3444379e6e0204e3fc9868e597a78c060"
-    sha256 cellar: :any,                 arm64_monterey: "a693e15a5bcaf24cb23e64d20067cbee96ca052e3a96a1ca3ce83b1ad7f17342"
-    sha256 cellar: :any,                 arm64_big_sur:  "5c95f315bb1edd8af8016f58a888a412ae3a52424f33e2c64c1c8d04c6111afd"
-    sha256 cellar: :any,                 ventura:        "522c86e81aa564556ddb8fdc2de97e37dec4616e0a88a64ae19392486d8ee4d0"
-    sha256 cellar: :any,                 monterey:       "ef83159767a52b7ef9ad33d795a73928ddb3cb9891f4105be296ea32564065b7"
-    sha256 cellar: :any,                 big_sur:        "4eb60e1fb59cb5d570401f24ea07e50590c16be3eb45be5e47462aa5064d71c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1537dcb481fe8ca9eb87da74862f9cff06c13a1e2c035e7e9c3b5c9235da6fc"
+    sha256 cellar: :any,                 arm64_ventura:  "8d0982a83cf18477e039858ae1d8b2393758f2d78a6bb3aaf14379af8973a5d9"
+    sha256 cellar: :any,                 arm64_monterey: "f2f26a580bc00fdb0babd48810eaa4eb8cdc9fb28706ff49e8c4178afac6ebf1"
+    sha256 cellar: :any,                 arm64_big_sur:  "42984d1fbac9444e75a4713d62e28fef139dc539fdbc9ab260738c8bc153547c"
+    sha256 cellar: :any,                 ventura:        "9b7170b3d84e70b9e89f356355744a277718ffcbee6a1b385ec6431d7ada2da2"
+    sha256 cellar: :any,                 monterey:       "d3f55cd3b4122bfa85992aab125205041379f99879d90740d62f054498cba97d"
+    sha256 cellar: :any,                 big_sur:        "e16b7d9390a3906a71d419b840ff81486607dcf557d1c35a03aee2f4b20b538b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "035de73c3dd1a67be2767da79c1fea114132ccc8965c3536113e7477d3b70d42"
   end
 
   uses_from_macos "unzip" => :build
