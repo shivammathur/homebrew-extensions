@@ -13,13 +13,14 @@ class Openldap < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6a5fb0e344d7955370211b0fbb5755b6151d60fe15997c7a72d672dbc2719eeb"
-    sha256 arm64_monterey: "a90061f1562e0eb87225b3cc22622d9914fa6e5e8d9f2b663c2c0230c81a95e8"
-    sha256 arm64_big_sur:  "bc896f598b9e18536f920d277f2d437cd90ed60862f8953050f954a5448d788c"
-    sha256 ventura:        "773a9cb06b5669cb6c459c17730bcf8868026faa87cd24be9f1a599db0b36de5"
-    sha256 monterey:       "7f84cf3b8e7c62fde66b2f7ddc119aa3a6ba954a1d860af6f302d24014d4e1fa"
-    sha256 big_sur:        "86123391f0ceb8bf10c2a18cb01a449b7a920db356fdcf7de676a9081a97f3ec"
-    sha256 x86_64_linux:   "67954b08e3cc04b58c58c2169789a73517ae634da2820130cf547d96cd37a7b3"
+    rebuild 1
+    sha256 arm64_ventura:  "f503cb37d9419959e0739bfe7b960c91d50f644b29d76b153902a015cd751f14"
+    sha256 arm64_monterey: "ede5c0fe3c1c9f534a50c07ad3063c2b213761f33a34b8c118cc6d38201b46d4"
+    sha256 arm64_big_sur:  "02e3369d6fc602fe71a253c331b8e22c3c0b0c2fbcb369cddb24c75fef8f4167"
+    sha256 ventura:        "b4a9a392b4fd8ca05a07f9558191959117c4b4f0016bb5b80d0d7b045cb062f6"
+    sha256 monterey:       "aac550094125b342a299887415d17f9009a9c4219a2fd9f0e4a059ad8e920003"
+    sha256 big_sur:        "032b7cd95fc2e055df75a235c987b24d7ce3b104eef8938a56c620d8fc677634"
+    sha256 x86_64_linux:   "0b678bbcef3879aa05a4f84c3997a18fccc3a083a9ccb036fbc69fe3ecc3e8cd"
   end
 
   keg_only :provided_by_macos
@@ -77,8 +78,11 @@ class Openldap < Formula
     (var/"run").mkpath
 
     # https://github.com/Homebrew/homebrew-dupes/pull/452
-    chmod 0755, Dir[etc/"openldap/*"]
-    chmod 0755, Dir[etc/"openldap/schema/*"]
+    chmod 0755, etc.glob("openldap/*")
+    chmod 0755, etc.glob("openldap/schema/*")
+
+    # Don't embed prefix references in files installed in `etc`.
+    inreplace etc.glob("openldap/slapd.{conf,ldif}"), prefix, opt_prefix
   end
 
   test do
