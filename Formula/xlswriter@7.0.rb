@@ -15,12 +15,12 @@ class XlswriterAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3980725377cb35fbdf67a102bb5b3c5429b19fc7140d2f80238fcf424be85033"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7531c9eca78766949798775fd1e05f545cc9553a12e7d83f2dd51721a0ef4201"
-    sha256 cellar: :any_skip_relocation, ventura:        "00191648a87573287aeedca3559f71013cfef8c1a6c981b7e08331ea95577452"
-    sha256 cellar: :any_skip_relocation, monterey:       "738633f7d97f3f836488dc62fdfe8d24bdd70cd31648d313cd89c928a69a535a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5e342b28baa4b31a0febb3d6dfe39334f9d7faede3b33b561a5113047664ed22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8f0ff698a0aa2b32869eebbcb450661289df4cd7892dbb140060829663a9914"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "81796afd074595977b69b4c9282289847a1fbb38a7a64e0e5c5318cd6bd96b6b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f3951f370d393ee478629ca757417dc1f42ca746947e9f170e0bdb9bef239a58"
+    sha256 cellar: :any_skip_relocation, ventura:        "8dca37ca1d31a7813560cb3311f78e454fe3ac6983d93d5861330d334c7cc1ec"
+    sha256 cellar: :any_skip_relocation, monterey:       "7bf3b266220a5bb095cf48405d869c0f4cd0950312948a2c253d347c8668c6ef"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0f051217cc95a361a6c5f7e04c8a6ee42a0c8047ad1fc30d08d9dca6616911b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bab8362706f974190e1883eb749a8e2dafc5322098a7b6ccba6743341a7effcf"
   end
 
   def install
