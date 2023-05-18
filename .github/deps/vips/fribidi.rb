@@ -1,19 +1,18 @@
 class Fribidi < Formula
   desc "Implementation of the Unicode BiDi algorithm"
   homepage "https://github.com/fribidi/fribidi"
-  url "https://github.com/fribidi/fribidi/releases/download/v1.0.12/fribidi-1.0.12.tar.xz"
-  sha256 "0cd233f97fc8c67bb3ac27ce8440def5d3ffacf516765b91c2cc654498293495"
+  url "https://github.com/fribidi/fribidi/releases/download/v1.0.13/fribidi-1.0.13.tar.xz"
+  sha256 "7fa16c80c81bd622f7b198d31356da139cc318a63fc7761217af4130903f54a2"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "98d26d50c4443a28950bdedc0fac9a708feb6e79e5f42e9c0622e133381c0056"
-    sha256 cellar: :any,                 arm64_monterey: "e213623dac0255cbc254102a53349fde828d9d2a624ad63eb80c8a25da1bf33b"
-    sha256 cellar: :any,                 arm64_big_sur:  "70fd8d0bf3cae1b973c8f580159fa8079dc93a050d19d8032ad0f0288c3f4ee2"
-    sha256 cellar: :any,                 ventura:        "2517986679f1b2fe4adf24cf187de27f7f26933a6722b97912857ee32520b682"
-    sha256 cellar: :any,                 monterey:       "9bf3206533100a9a3a1628d62c29845698e346fd582a44778cb90f9c784c0ea4"
-    sha256 cellar: :any,                 big_sur:        "4a9e4b177eca57063df291316e257b8cf5a7d93b52fd52e0e24387487a4cbc1b"
-    sha256 cellar: :any,                 catalina:       "65bb28b6d230b5928e6b1a291f53b1c304e28f28b86bcb8c8eb1207e65c30b3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89141837e7e5289c0553c17908f7ae7c04140eb5bba8436648f9f8e9b6d842f1"
+    sha256 cellar: :any,                 arm64_ventura:  "0272f179bac6809467c56eb0b1fac7f1de88b4c012fd36e77411aec39e5f9b4f"
+    sha256 cellar: :any,                 arm64_monterey: "ad4a3ff427cd169933fcb3266e0b85c841d25cfa3d7883759bcf84f9655c59eb"
+    sha256 cellar: :any,                 arm64_big_sur:  "d7c97dc2da426a3586d0c428f57d63300951ae23784769ebfdf3a4af0ab225f0"
+    sha256 cellar: :any,                 ventura:        "df4ec1000cdaac83d1b712c838e2eb32a93c8ec7c7d7d47e2d199fe96501a435"
+    sha256 cellar: :any,                 monterey:       "d2642675b0e7340ef0cc954a694b0d80e80f2b0b8b4e04f2f7ffe7b82aed1cd2"
+    sha256 cellar: :any,                 big_sur:        "8ee3767e307b336a952f55d2c3c1a043bd2a8a88fc10889a7888e3c69207b105"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4771f18b9338c897f39328998452a0aa4d03b7a13021e5303a12376170f3fb7d"
   end
 
   def install
