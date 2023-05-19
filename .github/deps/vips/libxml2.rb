@@ -1,8 +1,8 @@
 class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
-  url "https://download.gnome.org/sources/libxml2/2.11/libxml2-2.11.3.tar.xz"
-  sha256 "f1acae1664bda006cd81bfc238238217043d586d06659d5c0e3d1bcebe040870"
+  url "https://download.gnome.org/sources/libxml2/2.11/libxml2-2.11.4.tar.xz"
+  sha256 "737e1d7f8ab3f139729ca13a2494fd17bf30ddb4b7a427cf336252cab57f57f7"
   license "MIT"
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
@@ -13,13 +13,13 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6c0efb5d6ae778818b4d6f854c77223f3cfd1bbc2c1612a8b46788473fe37f28"
-    sha256 cellar: :any,                 arm64_monterey: "1667e64e783617e6547b81646373dc73d40fdc5bccd8e280aab8af867d2d0053"
-    sha256 cellar: :any,                 arm64_big_sur:  "912797049c1432380d4a404c955e0279085d36a903111d94e95283daf11ed4e0"
-    sha256 cellar: :any,                 ventura:        "b87db325940e4116e1f74e88698b1b09115a0d65016e5dca4723a7c4316c844d"
-    sha256 cellar: :any,                 monterey:       "df2f13c321754b4648d8c76747df838fee338057403790eb229eb00e5c373c03"
-    sha256 cellar: :any,                 big_sur:        "920721a8b825d49be9d29a51dd56d51e592f5d7eb817ddfb1f7572d82ae7d706"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7152f147ee801b49bea2b241981705b7789e22964ad7f8a7301e8f1d214c9ae9"
+    sha256 cellar: :any,                 arm64_ventura:  "bcb0b872c492c5c745e6655ebaf861dab5eccf7ac2e1f581294ed10859f4e0a6"
+    sha256 cellar: :any,                 arm64_monterey: "95dbf98ad2213b8ea3978875080883c91794c1a6953e5e80cae60c1330b339b4"
+    sha256 cellar: :any,                 arm64_big_sur:  "087017c8f23046bce7d98aef429a5017aafd64bcbbd207db557a61f7154e309f"
+    sha256 cellar: :any,                 ventura:        "3a1a650804777e9b8b2ab669e266fac5be4b05adb0ba6bd9a670ce087f709025"
+    sha256 cellar: :any,                 monterey:       "02865cecef5df1fc67def362713a7c5e7b7d49a3c5f6efbadd217a53a37cdb0d"
+    sha256 cellar: :any,                 big_sur:        "bff5e78cfb1f948fd93c166616346c4234170b7f80feb2a4a9584cbf29df85c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cefe61708d5a888ac66f3c3669cab86673bcd731b82dcba069fe3acd76db28e"
   end
 
   head do
