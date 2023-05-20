@@ -7,7 +7,7 @@ class Mpfr < Formula
     url "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.0.tar.xz"
     mirror "https://ftpmirror.gnu.org/mpfr/mpfr-4.2.0.tar.xz"
     sha256 "06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993"
-    version "4.2.0-p7"
+    version "4.2.0-p9"
 
     # Upstream patches, list at https://www.mpfr.org/mpfr-current/#fixed
     %w[
@@ -18,6 +18,8 @@ class Mpfr < Formula
       05 c4144564097a1be89c9cc2e7ee255c9fe59eb1b94a17c9d4a08169223e705ac1
       06 70456748a8072265ba103d93ba94e9f93ae64565e6a5742194c56030086540fa
       07 472386aa5f8c51fbdf60154c19268ce2212be03e1c2f9004c1673b6c270508f6
+      08 6ecd3bd2edf178f4ede4be612964d1b2d0a0bb10ad6f8c51d1a8011fff87d5ea
+      09 3e9aed5bcea95d34d0bd179a61cd7acb712c89c9a745535f18f0ef619833ba3b
     ].each_slice(2) do |p, checksum|
       patch do
         url "https://www.mpfr.org/mpfr-4.2.0/patch#{p}"
@@ -44,13 +46,13 @@ class Mpfr < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "63762d71ecdec7fe3f4db9beebc04e563b40b91eb9e14e07fb0f6dbcb8eb5e48"
-    sha256 cellar: :any,                 arm64_monterey: "60b5b68a7aa69c508454050639fb640a3f2ce62704759f4bace7d52b7d55a3a5"
-    sha256 cellar: :any,                 arm64_big_sur:  "d6f6b0e591c6091b7435e7b1f087bcef82b06971ac9a337f0b18daea131a46b0"
-    sha256 cellar: :any,                 ventura:        "f37579357fad255a58c62418e5b165becf0e1ca255f65c6c79f0b058d1fb5175"
-    sha256 cellar: :any,                 monterey:       "3dd0b05929aee20878832058873b16e70d385619ba9283f2884ba4bc1d9f26a9"
-    sha256 cellar: :any,                 big_sur:        "dc9bc34355212367f094c766a6e9597cef12cd17df110c49b62296e2df19512f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1507a93b7779f08c5a69f2f46b99e8d2490fa599fb7fd72f64a4b9effd5505bd"
+    sha256 cellar: :any,                 arm64_ventura:  "176114984411aeb1187a50fd9ffc39d7dfe0bf5dc29ab13b0ecc95307d619ff9"
+    sha256 cellar: :any,                 arm64_monterey: "77a979ab547618549fc85a12212abd57b085b1712c53299847966d76a4e261f9"
+    sha256 cellar: :any,                 arm64_big_sur:  "f5776604dbb68288c8dfe371e46398a671b6c34329ad473ada5d4e1fa7562086"
+    sha256 cellar: :any,                 ventura:        "781d9c4887b8b18ccb96653ce59bb9aa5ee49dd1fb6c7d804750f58ce8726a2f"
+    sha256 cellar: :any,                 monterey:       "a8eb9e75c01527d80843daba945a7581942362e689e3f3b7c6c891daa2655e9e"
+    sha256 cellar: :any,                 big_sur:        "22360e6d89681f3d3d326a5654ab0cfb22d5ac42241c40e9f8f91eb06bb1b77c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0cafd93a5957220615ae6478033031b750ba5eb6a830cf86d4cbde5bffec8d5"
   end
 
   head do
