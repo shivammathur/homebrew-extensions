@@ -12,7 +12,7 @@ class Hdf5 < Formula
   # buttons and the HTML doesn't contain the related URLs.
   livecheck do
     url "https://www.hdfgroup.org/downloads/hdf5/source-code/"
-    regex(/>\s*hdf5[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/>\s*hdf5[._-]v?(\d+(?:\.\d+)+)(?:-\d+)?\.t/i)
   end
 
   bottle do
