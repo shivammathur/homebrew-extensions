@@ -3,10 +3,9 @@ class LittleCms2 < Formula
   homepage "https://www.littlecms.com/"
   # Ensure release is announced at https://www.littlecms.com/categories/releases/
   # (or https://www.littlecms.com/blog/)
-  url "https://downloads.sourceforge.net/project/lcms/lcms/2.14/lcms2-2.14.tar.gz"
-  sha256 "28474ea6f6591c4d4cee972123587001a4e6e353412a41b3e9e82219818d5740"
+  url "https://downloads.sourceforge.net/project/lcms/lcms/2.15/lcms2-2.15.tar.gz"
+  sha256 "b20cbcbd0f503433be2a4e81462106fa61050a35074dc24a4e356792d971ab39"
   license "MIT"
-  revision 1
   version_scheme 1
 
   # The Little CMS website has been redesigned and there's no longer a
@@ -19,13 +18,13 @@ class LittleCms2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6ed3ea3deebe26c480a8645f2c38fbc0f9f1a4fd47de411931eab04c950ac450"
-    sha256 cellar: :any,                 arm64_monterey: "3c4cc7b5b25f90f9f35f24440f6ba65dc2eca4efc1e556dc6333b20b26baf74f"
-    sha256 cellar: :any,                 arm64_big_sur:  "fa940e0ad62a9e01c72843bad7190873e7b6eb0415689b0cdf5c440c07ea77d4"
-    sha256 cellar: :any,                 ventura:        "bd740aa54f78a727dbc760b83f43238a5b177d05254885859398f31023a23cba"
-    sha256 cellar: :any,                 monterey:       "668a20c35919f9fc1837ecbae0f14213ed57de96a2659e2fe0b3c3199d0a7aa8"
-    sha256 cellar: :any,                 big_sur:        "d28397d577f74221703190c242ee5811c2af0275c82bf5c31682766bd7ee12f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ab9a233cfa9e76f303dde3cf787b6d1f9c1b53bd85262088ea2012c18bbb8ce"
+    sha256 cellar: :any,                 arm64_ventura:  "ec43c4b1d15b75200740331b92656b624be01bd40cb993f862f41aca60ae670a"
+    sha256 cellar: :any,                 arm64_monterey: "de857ee35cde49fb0c675a9620796d9ee8f3d71a995351c8ff7a86ed23bda8e1"
+    sha256 cellar: :any,                 arm64_big_sur:  "64597b6b3dc07b07e06aab5280eea44493166bfcf21800cc8d16b3353ce7a37d"
+    sha256 cellar: :any,                 ventura:        "c0bcd5e7befef41984d5d55ee139c807e47cb43837d39a9bf4598b251e552371"
+    sha256 cellar: :any,                 monterey:       "4476622668a4a2290fe41470f656ff8d2c4f5b55122419020d99e0b54d847103"
+    sha256 cellar: :any,                 big_sur:        "c7cb39e28b14011c8ccf73c5de99c77328b6e41626bdfa400265e83911dd2070"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1b4f53e85030cd1f5e52c997cbea72e77f68472f8bff18a8c18f0d08f751b1d"
   end
 
   depends_on "jpeg-turbo"
