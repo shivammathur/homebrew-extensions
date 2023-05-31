@@ -47,5 +47,15 @@ class Xz < Formula
     # decompress: data.txt.xz -> data.txt
     system bin/"xz", "-d", "#{path}.xz"
     assert_equal original_contents, path.read
+
+    # Check that http mirror works
+    xz_tar = testpath/"xz.tar.gz"
+    stable.mirrors.each do |mirror|
+      next if mirror.start_with?("https")
+
+      xz_tar.unlink if xz_tar.exist?
+      system "curl", "--location", mirror, "--output", xz_tar
+      assert_equal stable.checksum.hexdigest, xz_tar.sha256
+    end
   end
 end
