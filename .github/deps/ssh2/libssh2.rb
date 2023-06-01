@@ -1,10 +1,10 @@
 class Libssh2 < Formula
   desc "C library implementing the SSH2 protocol"
   homepage "https://www.libssh2.org/"
-  url "https://www.libssh2.org/download/libssh2-1.10.0.tar.gz"
-  mirror "https://github.com/libssh2/libssh2/releases/download/libssh2-1.10.0/libssh2-1.10.0.tar.gz"
-  mirror "http://download.openpkg.org/components/cache/libssh2/libssh2-1.10.0.tar.gz"
-  sha256 "2d64e90f3ded394b91d3a2e774ca203a4179f69aebee03003e5a6fa621e41d51"
+  url "https://www.libssh2.org/download/libssh2-1.11.0.tar.gz"
+  mirror "https://github.com/libssh2/libssh2/releases/download/libssh2-1.11.0/libssh2-1.11.0.tar.gz"
+  mirror "http://download.openpkg.org/components/cache/libssh2/libssh2-1.11.0.tar.gz"
+  sha256 "3736161e41e2693324deb38c26cfdc3efe6209d634ba4258db1cecff6a5ad461"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,15 +13,13 @@ class Libssh2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "51e82201238ae925a2ff44b33768f7865883575d20f5ad5c7c32ab88c4523af2"
-    sha256 cellar: :any,                 arm64_monterey: "f9dab718cfa591fa90dc716a337e4c2c1da2db651b669565c3cc08e6a6074f28"
-    sha256 cellar: :any,                 arm64_big_sur:  "db07a7c502116b5a80ae01e82e7f5c54633a8ac7343d369af25af6cc2c7e5bbb"
-    sha256 cellar: :any,                 ventura:        "7a7ade31dd7df4a6d925d26aabcd9f2de9833a2ccf121cf088c2cb110e60af46"
-    sha256 cellar: :any,                 monterey:       "97126a03685c5538a9ddc95f1cae7f5b4ff9e7e7aba7fd8ebda0e2b48e76575a"
-    sha256 cellar: :any,                 big_sur:        "56dd017876fd446d7283c7db7a6a0729eeebd34016094fdbf9f46b6711c0e26d"
-    sha256 cellar: :any,                 catalina:       "5b30fe11d2ced21be876b56787e5d6900cb991fdd7e6ad3a6058401aa59ee9d7"
-    sha256 cellar: :any,                 mojave:         "70c0928f2cb9034ad07c6242517ebc0e4cfb92b1ab74518f7b510a2ac36e81fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ff0fe65fb281d51dab44a53b15ef40ebeebf09a7f4d28e86dfc0cc18e49bbc1"
+    sha256 cellar: :any,                 arm64_ventura:  "cf0e735085285723dc4a43160c97e73c65c2758127ad18cb1c6f57689a3f567f"
+    sha256 cellar: :any,                 arm64_monterey: "86675a61931e93ee3b0451ec80d61b0675981cefa6a25c74485cb0e193a08b6e"
+    sha256 cellar: :any,                 arm64_big_sur:  "1e846fb3154b08e1796258e1ef63c861a6fa054f6d93b1fdceb775588dc7c7c6"
+    sha256 cellar: :any,                 ventura:        "037e14a2a1c76d5019ab96264574e72e652864da0e01f373e4183c893108f064"
+    sha256 cellar: :any,                 monterey:       "9cc91506152ea4a400ff971923e7fab6ad3149c1162cf3baf721d059188fb040"
+    sha256 cellar: :any,                 big_sur:        "7ea74deaf8385acc677419003a9a19342b41b278cd44be65a6dc1ae0c81458e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95cbc23269e7b6d5ceb5663731d1f5b09a3fdea56464e6941c3fee6e6fc63e86"
   end
 
   head do
