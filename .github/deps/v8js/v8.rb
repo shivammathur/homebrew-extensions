@@ -7,8 +7,19 @@ class V8 < Formula
   license "BSD-3-Clause"
 
   livecheck do
-    url "https://omahaproxy.appspot.com/all.json?os=mac&channel=stable"
-    regex(/"v8_version": "v?(\d+(?:\.\d+)+)"/i)
+    url "https://chromiumdash.appspot.com/fetch_releases?channel=Stable&platform=Mac"
+    regex(/(\d+\.\d+\.\d+\.\d+)/i)
+    strategy :json do |json, regex|
+      # Find the v8 commit hash for the newest Chromium release version
+      v8_hash = json.max_by { |item| Version.new(item["version"]) }.dig("hashes", "v8")
+      next if v8_hash.blank?
+
+      # Check the v8 commit page for version text
+      v8_page = Homebrew::Livecheck::Strategy.page_content(
+        "https://chromium.googlesource.com/v8/v8.git/+/#{v8_hash}",
+      )
+      v8_page[:content]&.scan(regex)&.map { |match| match[0] }
+    end
   end
 
   bottle do
