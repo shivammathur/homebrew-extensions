@@ -11,23 +11,27 @@ class Pixman < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f98b74948d7fa6edc00158c63c02de8f9c58276efb076ab1d6e740ef061f8dee"
-    sha256 cellar: :any,                 arm64_monterey: "1e4026e8980666338f1a49cc61a3b6e968a744d92a67aeacfe918f8e8266d8ce"
-    sha256 cellar: :any,                 arm64_big_sur:  "0a8a93bd44aca5367c4b4dc81241899adadd9429b6bab11e672bd33ff4dbed3f"
-    sha256 cellar: :any,                 ventura:        "701df7463b3e0cf00f27fb766a5f73d80380d06c7c5c9a7d2a6b0b4dbc137c17"
-    sha256 cellar: :any,                 monterey:       "f7c0d1f71dd2dae2ab48c6d50ca713f3b7a41d74289b41bc4935909e7e533c2c"
-    sha256 cellar: :any,                 big_sur:        "14c70823204f964a81befaf5432b3815be7f5768b54cb93a0382b94d44e033b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "032c9f7eccbac1359a97f55f732a98eaac784d3413ab0b0dc90606012ef3f657"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "e27867c503bd9cf858159261e053184d19ae00357dc89426810f80734aaaefd0"
+    sha256 cellar: :any,                 arm64_monterey: "5270c55dc707a887b832b47324b82a6e69657ebb7ecd72843080f1e54a5bfc8b"
+    sha256 cellar: :any,                 arm64_big_sur:  "999830935fa581f1598d56834060bbfd8dbe818513ab39a1a15b1b5e0ef2afd9"
+    sha256 cellar: :any,                 ventura:        "84c3bfc0a0e43b714fd064954885314b4ec2928571ba43c49760cacca50bd32c"
+    sha256 cellar: :any,                 monterey:       "2a61150890d26395ae8d8c0afd7423bdea2cfe3cbc7feea24a4450cdd0804fc5"
+    sha256 cellar: :any,                 big_sur:        "9c50d2fadad622cf5b80f24dffb5e5b2edfd0ff91927a2143ca27bbcd392a4c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cf9d788868c9609f6e3ea3798d93076c7b2b1b8ac7f63527f7e0bed89dc1957"
   end
 
   depends_on "pkg-config" => :build
 
+  # Fix NEON intrinsic support build issue
+  # upstream PR ref, https://gitlab.freedesktop.org/pixman/pixman/-/merge_requests/71
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/46c7779/pixman/pixman-0.42.2.patch"
+    sha256 "391b56552ead4b3c6e75c0a482a6ab6a634ca250c00fb67b11899d16575f0686"
+  end
+
   def install
     args = ["--disable-gtk", "--disable-silent-rules"]
-    # Disable NEON intrinsic support on macOS
-    # Issue ref: https://gitlab.freedesktop.org/pixman/pixman/-/issues/59
-    # Issue ref: https://gitlab.freedesktop.org/pixman/pixman/-/issues/69
-    args << "--disable-arm-a64-neon" if OS.mac?
 
     system "./configure", *std_configure_args, *args
     system "make", "install"
