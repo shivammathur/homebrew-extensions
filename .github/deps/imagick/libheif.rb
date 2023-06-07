@@ -6,13 +6,14 @@ class Libheif < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "bcb41390eb3a6e13e065ef2aa72671c9ead8202ffc36f685d5a7b96bdb74ce27"
-    sha256 cellar: :any,                 arm64_monterey: "80fa87e104d308c55d06e0cfe6b00dbbe58b3248139510510ae7333662fa0dc7"
-    sha256 cellar: :any,                 arm64_big_sur:  "c70ad78f4be96af3447671a49257e8f04516a397a7ec486fee6887dad3570f83"
-    sha256 cellar: :any,                 ventura:        "27d4e1a31e9b8f4e7c311d947f1d4aa07e9cf539967463dbfac2cc8cffaabe94"
-    sha256 cellar: :any,                 monterey:       "23fbc42566ee60c06f81f49c6a88b35c9051765b5da47d78ea37d92b3597ee2d"
-    sha256 cellar: :any,                 big_sur:        "7797395464c4df87c20fc294dfe9aee29b7e0d9fa2fa7caa8e4cb30c88bc6c77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d0044ad8a8202842b5a9b7ec2527cfc69a289d98084fe1fd2fa4b3a61adfa6d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "d6a9f8735ff0ae320c38d8882700cc31c68fbda4a9d54f769e0ae8bff0600f7e"
+    sha256 cellar: :any,                 arm64_monterey: "8a77980947f74d9abdbe2f78a41d078e6a46009646c820c7cf74472fcaed0d27"
+    sha256 cellar: :any,                 arm64_big_sur:  "1206b2a41a5fce3f9f2732f459dace3dc0d36fd4a637b3a83652944ba1c16d4e"
+    sha256 cellar: :any,                 ventura:        "faa82db305858a35f05f8a49b13d57139fe816712639d3934f0ebee63552ae11"
+    sha256 cellar: :any,                 monterey:       "35e069651a989c37686dd7bc3f907d2bfb580e68407b0736068e577fd91dabf1"
+    sha256 cellar: :any,                 big_sur:        "29c122901654eb74af43a8e349a0b544c35ab0b1a4b732666fbe3c51bd5627a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a778a51a1112c3c8d82622f7d4079a500308b2df3119d81e4a4b60f13d2105e1"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +26,13 @@ class Libheif < Formula
   depends_on "x265"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    args = %W[
+      -DWITH_RAV1E=OFF
+      -DWITH_DAV1D=OFF
+      -DWITH_SvtEnc=OFF
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "examples/example.heic"
