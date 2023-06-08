@@ -4,15 +4,16 @@ class Openexr < Formula
   url "https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.8.tar.gz"
   sha256 "3ff47111ef7e5da6f69330e66e1e90ae620b79df1cedf2512bb9bffe86c2c617"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cf3c67469dc5e115d6eee92ac03ab714682c2c92bc4c9e4e651646e26d8ab01d"
-    sha256 cellar: :any,                 arm64_monterey: "8127a2654786828c421a71d09f0c8d466448470f37c4cba509e5f8f0a0584680"
-    sha256 cellar: :any,                 arm64_big_sur:  "60c7ec52379a19267ecb4759fa79187d2a87c2f1a9dba992875608ae07cc5461"
-    sha256 cellar: :any,                 ventura:        "5e764ee26219abb137867b73b583fc3fb6d26e1edc147e6b175259710918141e"
-    sha256 cellar: :any,                 monterey:       "ad8ba45a13187cd9a7d736c91fc39de941dd4a61f9e2e5c78e08e2fc2f0d0fd2"
-    sha256 cellar: :any,                 big_sur:        "a58d9b7548104519a268131d54d405e2d9434672cbaaef0f9282d2db0139d49f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdba05e38f5282abcbdd41f2cb772f342e84bfab363de4a56d3d197c74b44b94"
+    sha256 cellar: :any,                 arm64_ventura:  "c0cb66b561820c914fa114ed3f913e0b9ae9484b1224fc21b0b2abe0e8652a47"
+    sha256 cellar: :any,                 arm64_monterey: "8bdf7329edc1dab722f4e0aac3b1b47dbaef1a34309f898714c52246d33b9f5c"
+    sha256 cellar: :any,                 arm64_big_sur:  "b132db1b52076d3e0a18d499b89c1536e01bab30f5eee31b6156cc7d1c9c14b6"
+    sha256 cellar: :any,                 ventura:        "004988d58d6a35b4ae890733d5397c6d46eeb589b843d3389b9ad06593102798"
+    sha256 cellar: :any,                 monterey:       "f6bb8af74eec8baedd1f84247e7dde412e2b46ae544e3a1e794941f8dec1a88d"
+    sha256 cellar: :any,                 big_sur:        "b862e857e6709f8322b5480236070986ebe7da4ace0b973fe395808465208259"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2287d00b0983b8c48362cdcf958b7a278a3041ce181df2b514de86d02ae8d8e6"
   end
 
   depends_on "cmake" => :build

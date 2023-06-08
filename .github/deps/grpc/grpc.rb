@@ -17,13 +17,14 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "50baa508cecf4cf3d6b53c5c79c19556efdc27cfb6237e0143a0b04b7f6d6212"
-    sha256 cellar: :any,                 arm64_monterey: "15369458871a962658c7c5bafe808b2e1c14d31d71c37db92b270707a83c0d38"
-    sha256 cellar: :any,                 arm64_big_sur:  "b26fce392b65f68cf57a4b51e9bf5cd591c42b7be055f62cc0984e2f0b7e84df"
-    sha256 cellar: :any,                 ventura:        "f14a340b042b8fa86b313805931ceffc20ef9077fba563fcd096e4b0490e79d8"
-    sha256 cellar: :any,                 monterey:       "90f49af0fe0644fcc2fcb882e909d20dfe83757ec9e996b776c660f209f39ec1"
-    sha256 cellar: :any,                 big_sur:        "b9894f0f7ef5c0905cb2b0f15ca50757d1007306d535725a1dcac30f4bfadb2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f74ca2fb0723573b8d8e42fc089a63ad74e96456f491a6a914e277f49ab7c15c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "c9cbf699ef9422af574b4a3eaff6e43958b936e620d33c2118d1099124bf881a"
+    sha256 cellar: :any,                 arm64_monterey: "2550d3ac489444f679868d122be5951bbfa603160fa3cc51a4dd55e1e4864d43"
+    sha256 cellar: :any,                 arm64_big_sur:  "a281ec107dd99fd7e488e8f720fe99cee975948a3d7ec60b29e7146d02e5ce43"
+    sha256 cellar: :any,                 ventura:        "924651fcf82225f52ea8f55bd5f23a1760e2417c3840524eff41a8d7637aa4ed"
+    sha256 cellar: :any,                 monterey:       "eb73167dfe5d7c12892806a61f28ee03416685932c54bd709d711559fb45201c"
+    sha256 cellar: :any,                 big_sur:        "6eb5b14e669b77191f8efa41f9bb67ef040e1b7d838a75bcb4363a987065067f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "821e4e7fa581bb34be7575d2b3a51491f95f6db92b9bbc697ace00086a151689"
   end
 
   depends_on "autoconf" => :build
@@ -49,6 +50,13 @@ class Grpc < Formula
   end
 
   fails_with gcc: "5" # C++17
+
+  # Fix `find_dependency` call in gRPCConfig.cmake
+  # https://github.com/grpc/grpc/pull/33361
+  patch do
+    url "https://github.com/grpc/grpc/commit/117dc80eb43021dd5619023ef6d02d0d6ec7ae7a.patch?full_index=1"
+    sha256 "826896efc97e6c3bd3c38fc5e09642db4c6c4ec54597624ee8905da89e1ba7b6"
+  end
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
