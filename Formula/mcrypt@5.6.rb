@@ -15,13 +15,13 @@ class McryptAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 6
-    sha256 cellar: :any,                 arm64_monterey: "aed698768a2990edbc5d3b8c7939e4c3edca7cec5bb44414da397c36cff90f2a"
-    sha256 cellar: :any,                 arm64_big_sur:  "00d120da6fdd31449d4b93ea61c8d683cd8383b51c54536033db2e9cb79bf611"
-    sha256 cellar: :any,                 ventura:        "eeb218aec02f9798a1179d7a0daeaf30442e0e61db1fd14904654e0c0e7cc619"
-    sha256 cellar: :any,                 monterey:       "64e9fa1fd5d6a90ca3f1e9195c244789c76f0f125572a816febe2f0638bb48e9"
-    sha256 cellar: :any,                 big_sur:        "46f89e4c9d7c66b9c4c0b87f26c1c855e647b37592f143dc4f0b62024c63d950"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "375e671e34fe533f707ccacbfd061f57cddc730e66024d3d4f60aadfdbea1acf"
+    rebuild 7
+    sha256 cellar: :any,                 arm64_monterey: "1f6e5cb90b5f417f35a0d4a1dd085ab5d74e4e7344114b40af8ed1787f93b7ec"
+    sha256 cellar: :any,                 arm64_big_sur:  "adc458b9dd6db667d7b4dbb7eaa99bafff2ccb734069f1df013dcf4c3219810c"
+    sha256 cellar: :any,                 ventura:        "cda2339b8fa77f6f51f9d0a27c804fbae3bb0990b8bc987ae9457a3c4aa0da73"
+    sha256 cellar: :any,                 monterey:       "157195edaef9a27ac63d89f9ac917d14198f14e25de6734c145dec2779041e1c"
+    sha256 cellar: :any,                 big_sur:        "c161ab529b6e06b4c80c398606eced9d51d4309f66e1594505985f17a70d643d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b09426ab5ef2b9a554c9dfc9dcd7a40ecd294b919085cbe96682bc80baaa4ef"
   end
 
   depends_on "automake" => :build
