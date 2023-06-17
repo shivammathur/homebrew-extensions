@@ -4,6 +4,7 @@ class Boost < Formula
   url "https://github.com/boostorg/boost/releases/download/boost-1.82.0/boost-1.82.0.tar.xz"
   sha256 "fd60da30be908eff945735ac7d4d9addc7f7725b1ff6fcdcaede5262d511d21e"
   license "BSL-1.0"
+  revision 1
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -15,13 +16,13 @@ class Boost < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cd9e443636171fff7a8b8e382cfd60980ffc4f3db2ad856cdeca6faf19591407"
-    sha256 cellar: :any,                 arm64_monterey: "636636bcac40015dc04efa50eb6f5abe13bd72b4f1d2483b2504334d69ad2120"
-    sha256 cellar: :any,                 arm64_big_sur:  "4c565c879f06e02658bb0b0e72f7568d26994fdd722c4981490a71a295d43188"
-    sha256 cellar: :any,                 ventura:        "e4c1a674e4de67e42509b706ea9ac470a23b8e628e01f37922e5c084faa36f41"
-    sha256 cellar: :any,                 monterey:       "8c4510a69e1531207b319ecf348997eeaaf4f287d68261819cef97b0f2da94fd"
-    sha256 cellar: :any,                 big_sur:        "b9d00efb5ca58d1c67b788a420a059a4702d02d59c0f0939f2667f7e171a1b81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46d98aec29a17fa19c9a7f1de855ab2754d2beacd62e64f39ead42659803db25"
+    sha256 cellar: :any,                 arm64_ventura:  "acb65f0a6f8a12472eaa2aa223353ceac4134617bc9f99e936df65cfd5240507"
+    sha256 cellar: :any,                 arm64_monterey: "5657bdadfac084745828ccc82589de8b510ffdeca71caf42421a5c4c6b0ece27"
+    sha256 cellar: :any,                 arm64_big_sur:  "a5fa15020b6283ed965017f0abe3ee4df8f3c32c0ed38773b9eecd6411054ec7"
+    sha256 cellar: :any,                 ventura:        "8ab0045fe83cf0542ea94d81869483ef5d131f5503ef5f9483921316279c1b77"
+    sha256 cellar: :any,                 monterey:       "ba45e6493a71c16e673a2d0ed68596c6538ddbdd218a0bbd5090f4ebe95d00e4"
+    sha256 cellar: :any,                 big_sur:        "268562e726a442438012396aee7a56f558036fceed672c4f703d32f58388e186"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35b4d88117e6f549d87e237494f6b3c0a725fb7a1a073387bcc100cc8e53cd81"
   end
 
   depends_on "icu4c"

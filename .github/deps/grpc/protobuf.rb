@@ -1,28 +1,9 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
+  url "https://github.com/protocolbuffers/protobuf/releases/download/v23.3/protobuf-23.3.tar.gz"
+  sha256 "3a5f47ad3aa10192c5577ff086b24b9739a36937c34ceab6db912a16a3ef7f8e"
   license "BSD-3-Clause"
-  revision 1
-
-  # TODO: Remove `stable` block when patches are no longer needed.
-  stable do
-    url "https://github.com/protocolbuffers/protobuf/releases/download/v23.2/protobuf-23.2.tar.gz"
-    sha256 "ddf8c9c1ffccb7e80afd183b3bd32b3b62f7cc54b106be190bf49f2bc09daab5"
-
-    # Fix missing unexported symbols.
-    # https://github.com/protocolbuffers/protobuf/issues/12932
-    patch do
-      url "https://github.com/protocolbuffers/protobuf/commit/fc1c5512e524e0c00a276aa9a38b2cdb8fdf45c7.patch?full_index=1"
-      sha256 "2ef672ecc95e0b35e2ef455ebbbaaaf0d5a89a341b5bbbe541c6285dfca48508"
-    end
-
-    # Use the same ABI for static and shared objects.
-    # https://github.com/protocolbuffers/protobuf/pull/12983
-    patch do
-      url "https://github.com/protocolbuffers/protobuf/commit/4329fde9cf3fab7d1b3a9abe0fbeee1ad8a8b111.patch?full_index=1"
-      sha256 "03c52f9207618fcb91cdb8b21dea4b447edcc6ea041f1837b5ff873e6c283b80"
-    end
-  end
 
   livecheck do
     url :stable
@@ -30,13 +11,13 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4cdb7f8584aade05baa4e6e1d1d15d792502fc736d45541f74895581e52922d6"
-    sha256 cellar: :any,                 arm64_monterey: "41c3598986ddca8f0457ea015592d1aadefd7796a6cbd42ba9e43e352250dd7c"
-    sha256 cellar: :any,                 arm64_big_sur:  "198747882058a496a44d64e95672dc9c046065d0b4bc45152b231dbcda4ee62c"
-    sha256 cellar: :any,                 ventura:        "b41b9bd0401464695568845d74e3a2be2fa87c66c020f34b5a87e85eb8953acc"
-    sha256 cellar: :any,                 monterey:       "baf239188e320c2d2df2dad81099d2b1a69f1db13495a77e0f98ee171e53d3fe"
-    sha256 cellar: :any,                 big_sur:        "8630a20e557bcecd345a447b7723d2b56cb51dd6ad41d55f12572ad4d3619c92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "497acba36ca297118e84acc8561f4dcc8722c4a0ebfc675932ca15eecc042c26"
+    sha256 cellar: :any,                 arm64_ventura:  "34a7292702d7d7881a51e91a643751f886caf16f55298a1d9bf712aab23ddbbb"
+    sha256 cellar: :any,                 arm64_monterey: "e2080ffdc52c3ceda783bd1add6dc24ee68b955dc814d0d05411c768a42535a3"
+    sha256 cellar: :any,                 arm64_big_sur:  "721ee01a0f5d281ef504339b5fa6a27d1fdcc145ccff8cf6ef1f185c2d3aab1f"
+    sha256 cellar: :any,                 ventura:        "3e9f9b8e5317114d8dccda4e61b2aa00f91ca621663bc10c18886acc55ad4951"
+    sha256 cellar: :any,                 monterey:       "d529c07b5c32da9f6ce554b254deb080efb3d52afde57ecea86fc0ad38b6aaf2"
+    sha256 cellar: :any,                 big_sur:        "8ea4aec0224f535dbdb15cefb05cfba426ccc5bc79c4fe2a659a8a20cbcb83b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cc5053fb61bc58d4c3bb32724b3c51977e0097872ba60fbeb1d46a292b222ea"
   end
 
   head do
