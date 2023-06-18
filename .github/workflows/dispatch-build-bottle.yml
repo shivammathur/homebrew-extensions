@@ -159,7 +159,6 @@ jobs:
         uses: Homebrew/actions/git-user-config@master
         with:
           username: BrewTestBot
-          email: 1589480+BrewTestBot@users.noreply.github.com
 
       - name: Checkout branch for bottle commit
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
@@ -168,7 +167,7 @@ jobs:
       - name: Upload bottles to GitHub Packages
         env:
           HOMEBREW_GITHUB_PACKAGES_USER: brewtestbot
-          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.HOMEBREW_CORE_GITHUB_PACKAGES_TOKEN}}
+          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
         run: |
           cd ~/bottles
           brew pr-upload --verbose --keep-old --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions"
