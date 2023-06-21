@@ -11,13 +11,14 @@ class Libksba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "11cc7eef7505b34197d25b269ed3667c3f4f1a48c67a0768b948d00c5b5b4538"
-    sha256 cellar: :any,                 arm64_monterey: "8cbf05f9897a582dc8daf0ddc08a4e319733c82807c055be0ebf7f01b2aad032"
-    sha256 cellar: :any,                 arm64_big_sur:  "76f3aae65a1bbacf9db92d95f542fdf28ca7076e131bfa2888657500978364e6"
-    sha256 cellar: :any,                 ventura:        "13c075296da27e756b10ae1819cf56cac003ed22a986a2daa535d78cf7951d71"
-    sha256 cellar: :any,                 monterey:       "176cd879bcefc75067d53a240a3f4689121ee6dfd0b0d645f6d95422db668a9e"
-    sha256 cellar: :any,                 big_sur:        "a61c04ac7299c87513f8b773de5e79e04f4cc9d7d1ba9d156ed38bd5f11b7afd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f544c8f18b174da592f4d40040cadd68d39d438fb53dc39c9d7c4f5a0dbd1567"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "f83e2fdcb19bbb649615de9a13082c20811602a4d89f4bea8adf604ab235718e"
+    sha256 cellar: :any,                 arm64_monterey: "d216e2f0a59b37e1e32d3434d277ba48416651628fd44c9c2e97ed6633e9d4ea"
+    sha256 cellar: :any,                 arm64_big_sur:  "7a5e34d7d70656bc1ccd283608df4ccdb6229d68b7b67cb0f52bfeda3e962e37"
+    sha256 cellar: :any,                 ventura:        "dc6d96b61291f653a7639b3febeb732cd98c0ed0f7e38c24445d466be79ed451"
+    sha256 cellar: :any,                 monterey:       "7d9bdc88d94a25558e7c4c577090156cc339e644ca074f587a82a89187b579a5"
+    sha256 cellar: :any,                 big_sur:        "b2c80c0ee6dab8eb5562a92e10efa2b538debd5398cd473cbb3e7234b8a4ce57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74942c849eae904fee71dc704a301fd3bd9450b3222299e81c166a9aafd716f1"
   end
 
   depends_on "libgpg-error"
@@ -26,13 +27,27 @@ class Libksba < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
+    system "make", "check"
     system "make", "install"
 
     # avoid triggering mandatory rebuilds of software that hard-codes this path
-    inreplace bin/"ksba-config", prefix, opt_prefix
+    inreplace [bin/"ksba-config", lib/"pkgconfig/ksba.pc"], prefix, opt_prefix
   end
 
   test do
-    system "#{bin}/ksba-config", "--libs"
+    (testpath/"ksba-test.c").write <<~C
+      #include "ksba.h"
+      #include <stdio.h>
+      int main() {
+        printf("%s", ksba_check_version(NULL));
+        return 0;
+      }
+    C
+
+    ENV.append_to_cflags shell_output("#{bin}/ksba-config --cflags").strip
+    ENV.append "LDLIBS", shell_output("#{bin}/ksba-config --libs").strip
+
+    system "make", "ksba-test"
+    assert_equal version.to_s, shell_output("./ksba-test")
   end
 end
