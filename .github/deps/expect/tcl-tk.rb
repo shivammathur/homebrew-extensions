@@ -5,7 +5,7 @@ class TclTk < Formula
   mirror "https://fossies.org/linux/misc/tcl8.6.13-src.tar.gz"
   sha256 "43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066"
   license "TCL"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -13,17 +13,16 @@ class TclTk < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "f40d605c127e7a7895cd2b1506ef1ac0e59e6f8ad671a7f4e802c4726ef21595"
-    sha256 arm64_monterey: "11aec0c476a122789baf08f760224055b39478392d8f6d0ca6e38f4710ef48fa"
-    sha256 arm64_big_sur:  "2797baea8eabe4fa73fca4992f7506fc48882842d250b24622f1fe8eb6049613"
-    sha256 ventura:        "15cade8287fb43f440cbd2de43b49942034bb75104180add1768baa155e3f6b1"
-    sha256 monterey:       "24d780810fc9c75c78993418cf864c5d2591ea40512be0975f7f4ade8a3c4dc6"
-    sha256 big_sur:        "cdd86c3d4ba95617c09d39791dc48cf2c33885f4e6a36b6936298bc362b3f78d"
-    sha256 x86_64_linux:   "2dc6ae424056b9bcc423c8be83c0115df96cd0aa85d3bc45b82196136e1a57f4"
+    sha256 arm64_ventura:  "08b0adf64e7ed72c3665cd7ccf6551456c2d2682b88449f7dce9beb3e1856d71"
+    sha256 arm64_monterey: "be50577af5dd5c8f77bfcbd81869674e2ce667cf3e0d5968ef3c915cca5133cc"
+    sha256 arm64_big_sur:  "57112c61bc5c52d3652d30c7126b298f79f58a44095330c027f9d29542ff9516"
+    sha256 ventura:        "738d5d6f51520dedb90df80b618d15b46d2deee4bcd6ba71b4159d685d9362f1"
+    sha256 monterey:       "1be828e596499e7b91372b48d5b7b9e50e12bf059fc166064a282dd7586513b0"
+    sha256 big_sur:        "d16ee53ec43dfeba443cd720d5131deb0591b8e568e20db4a7b4ac876296f14a"
+    sha256 x86_64_linux:   "b8ab6476e3ab5577f3b426ff7ce3906478b5147c1bbf3684ad65d58f7282fb24"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
@@ -115,7 +114,7 @@ class TclTk < Formula
 
     resource("tcltls").stage do
       system "./configure", "--with-ssl=openssl",
-                            "--with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}",
+                            "--with-openssl-dir=#{Formula["openssl@3"].opt_prefix}",
                             "--prefix=#{prefix}",
                             "--mandir=#{man}"
       system "make", "install"
