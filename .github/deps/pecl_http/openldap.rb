@@ -81,8 +81,11 @@ class Openldap < Formula
     chmod 0755, etc.glob("openldap/*")
     chmod 0755, etc.glob("openldap/schema/*")
 
-    # Don't embed prefix references in files installed in `etc`.
-    inreplace etc.glob("openldap/slapd.{conf,ldif}"), prefix, opt_prefix
+    # Don't embed Cellar references in files installed in `etc`.
+    # Passing `build.bottle?` ensures that inreplace failures result in build failures
+    # only when building a bottle. This helps avoid problems for users who build from source
+    # and may have an old version of these files in `etc`.
+    inreplace etc.glob("openldap/slapd.{conf,ldif}"), prefix, opt_prefix, build.bottle?
   end
 
   test do
