@@ -1,8 +1,8 @@
 class Gnupg < Formula
   desc "GNU Pretty Good Privacy (PGP) package"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.2.tar.bz2"
-  sha256 "97eb47df8ae5a3ff744f868005a090da5ab45cb48ee9836dbf5ee739a4e5cf49"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.3.tar.bz2"
+  sha256 "a271ae6d732f6f4d80c258ad9ee88dd9c94c8fdc33c3e45328c4d7c126bd219d"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Gnupg < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "0444e36ecde4cdd39f8f357676cc070fd5eabfa62e154094db31186165729854"
-    sha256 arm64_monterey: "ea2c0672322cb660f8a13f3712f60c0a4b66990b2c712b27314d312d3fcca6cc"
-    sha256 arm64_big_sur:  "28d15ef470a53803877eb5afdeb5e1944c7e5aabb9416e4ff301ebaf8735faf3"
-    sha256 ventura:        "636f410b0c3a6fa2ec2842e174f3e450b631be7e169f3a961edbe91008adff23"
-    sha256 monterey:       "e49ae9b65978830d618300f96f44c36713cd01171296eda01e6ad8d85aa3f7b1"
-    sha256 big_sur:        "6be1634a2f8662b24f6dbbbffede9920265dee4bc703071fed15697728a6dd97"
-    sha256 x86_64_linux:   "9f7cc1360d927edad31063e694c013d17c395051833fdfdf2ee50819e9bfdfba"
+    sha256 arm64_ventura:  "5476d2eb89c8e8ac94c4b2bb9580fd4cafdad679acc4cdb98eea3bd19f63c6f9"
+    sha256 arm64_monterey: "f470a33d376cc0604664ca66fa0dc3f02876e352dd2078bf9f6e42d9b61f90bd"
+    sha256 arm64_big_sur:  "d9add1a61c6ea39c6fb9a93896ff294ecb7847b3a8951a45c2bf603e30434c85"
+    sha256 ventura:        "e8e6200a68d30f6f82504cdb1dfa9e4e7df434a72cd8c8f3e10f7658936b0ef7"
+    sha256 monterey:       "5c0a3ece0457155bd12a5f74ea4a8851a30ea7531e56910efa224f02adaaeadc"
+    sha256 big_sur:        "ce39f26cd950ea12436a369936baf5833d770fd0d38caf731e619d578a8eeb03"
+    sha256 x86_64_linux:   "a463bb762bdc256fd715725ec287083a9b3c834f9e46ccf47fd0937b0e042e1c"
   end
 
   depends_on "pkg-config" => :build
@@ -32,6 +32,7 @@ class Gnupg < Formula
   depends_on "readline"
 
   uses_from_macos "bzip2"
+  uses_from_macos "openldap"
   uses_from_macos "sqlite", since: :catalina
   uses_from_macos "zlib"
 
@@ -46,7 +47,6 @@ class Gnupg < Formula
     mkdir "build" do
       system "../configure", *std_configure_args,
                              "--disable-silent-rules",
-                             "--sbindir=#{bin}",
                              "--sysconfdir=#{etc}",
                              "--enable-all-tests",
                              "--with-pinentry-pgm=#{Formula["pinentry"].opt_bin}/pinentry"
