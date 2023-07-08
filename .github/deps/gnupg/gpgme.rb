@@ -1,8 +1,8 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.20.0.tar.bz2"
-  sha256 "25a5785a5da356689001440926b94e967d02e13c49eb7743e35ef0cf22e42750"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.21.0.tar.bz2"
+  sha256 "416e174e165734d84806253f8c96bda2993fd07f258c3aad5f053a6efd463e88"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1d9d41fb09043965efda2748025243994a0457ec2da37afce988d9fe9733aae4"
-    sha256 cellar: :any,                 arm64_monterey: "f60a8b787ff8754d7da6a547456c78792df6c8235d0bf57e7466b15c3c387fcd"
-    sha256 cellar: :any,                 arm64_big_sur:  "f6eebdfc1790e0179b2be7d90f53fcc2235f39a093ab41ab4928b9bf545cc56b"
-    sha256 cellar: :any,                 ventura:        "c1c3454c7d75beb3d28865d2c56684ce5f847dba45d9a6cc934ceb92c81fd126"
-    sha256 cellar: :any,                 monterey:       "99ab338b41d3e48743a87b1e8de6ead43d93439e745e7a4a6e428b5fe144e790"
-    sha256 cellar: :any,                 big_sur:        "ce65ea6d51cf28a53345a291bb0a765b1b3e3fa96800df3b5cb4462961568d6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e2ce80404f5a3e01de4000babe8d8edb0a217adef098b79917619ca150fbf7f"
+    sha256 cellar: :any,                 arm64_ventura:  "7932c628062f36ea88ec3587edbcfae7f6cd01adf7a0ea5ba2dbb502d48fb042"
+    sha256 cellar: :any,                 arm64_monterey: "c794d10dc455bf42e37efdec1fd60ffb060d3286ac9aac29a264c903ec3e7ffb"
+    sha256 cellar: :any,                 arm64_big_sur:  "f94664f483167421ebddf2720bc4f0ba8d39446bb9923ff00e9a8f0eefe593e1"
+    sha256 cellar: :any,                 ventura:        "9f93a6b94588f910828fb835c030281f6fcec876884d7b610d530d29aa506730"
+    sha256 cellar: :any,                 monterey:       "56e05f923984a175ac612183343fc62975c280b5c340bb2ab9940166d264ef5b"
+    sha256 cellar: :any,                 big_sur:        "97fff6e1779100a00f28eba4113ba402eba111d5a99684380201edbd458c3a82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cce228e88243a8a271a62d06998e66d69cda8a00dbc29cb3b45095758cdf463"
   end
 
   depends_on "python@3.11" => [:build, :test]
