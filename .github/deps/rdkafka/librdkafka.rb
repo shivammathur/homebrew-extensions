@@ -1,10 +1,9 @@
 class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/edenhill/librdkafka"
-  url "https://github.com/edenhill/librdkafka/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "7be1fc37ab10ebdc037d5c5a9b35b48931edafffae054b488faaff99e60e0108"
+  url "https://github.com/edenhill/librdkafka/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "af9a820cbecbc64115629471df7c7cecd40403b6c34bfdbb9223152677a47226"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/edenhill/librdkafka.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Librdkafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b48272331da76364ef0750f1e559f91b56bb1f02a5aece39bb515b02f5d53ad0"
-    sha256 cellar: :any,                 arm64_monterey: "c26f87eaf145ca4e6a85b6b108206c9fd43b7f63c0be49c49bce437609c3a85b"
-    sha256 cellar: :any,                 arm64_big_sur:  "ee2d2edecbfa469ba05b8d5d5a4f6a13c3632ff40676894103f667be9fcbc4d0"
-    sha256 cellar: :any,                 ventura:        "c4b93874d54c4e53d59c390c09c7d6317eec3144d867d81d391cd4c1aa3ee0f3"
-    sha256 cellar: :any,                 monterey:       "73c36ce12533b3c8c9bc6bd5a45f632297ad5aa0cb310e9ce37ad33a81b759ce"
-    sha256 cellar: :any,                 big_sur:        "ac624907fb7034e07970eee9e4dae2e30ce64335f40dd3fce5cd9382ad66a249"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e54608fdf9aa72d0841d35b3aa5b37684cc139013fb46a0f37dbcf53986ad544"
+    sha256 cellar: :any,                 arm64_ventura:  "91e98b17ca4c6bbee37a634e9cf3fd19f72ff5edaea5934c8fe8ee7c27c64654"
+    sha256 cellar: :any,                 arm64_monterey: "2b27eb2e36a1eff3967c3fec07e0dbed6299411d998ad9b715494d1a8ae50654"
+    sha256 cellar: :any,                 arm64_big_sur:  "35fb9a91ce202711c608a218cd6509794d5c1b4f2751eb800c0853d8efdcc00e"
+    sha256 cellar: :any,                 ventura:        "52f58b12803a20cff5a54b1e03a2ce67b5d78b7cd5f251ac92ae09328665e910"
+    sha256 cellar: :any,                 monterey:       "5cefdf9907f2aa15ae227093ccf8ac92c857b1f090a47c49aaee8d8cbc2ba49d"
+    sha256 cellar: :any,                 big_sur:        "eaef451b34672e75ec41814c889a7ca34fe1f90c6764a634e56a81ee9c58abc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "180f58f10a8378242848a3fda47e672421f7cb4c309eb4d6ee73c582519357dc"
   end
 
   depends_on "pkg-config" => :build
