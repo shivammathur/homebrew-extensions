@@ -32,6 +32,7 @@ class V8jsAT70 < AbstractPhpExtension
       --with-v8js=#{Formula["v8"].opt_prefix}
     ]
     ENV.append "CPPFLAGS", "-DV8_COMPRESS_POINTERS"
+    ENV.append "CPPFLAGS", "-DV8_ENABLE_SANDBOX"
     ENV.append "CXXFLAGS", "-Wno-c++11-narrowing -Wno-deprecated-register -Wno-register"
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
