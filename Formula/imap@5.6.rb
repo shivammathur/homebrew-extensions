@@ -8,9 +8,9 @@ class ImapAT56 < AbstractPhpExtension
   init
   desc "Imap PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/e335ce1458e12062082ad9f736427b718e5efcc2.tar.gz"
+  url "https://github.com/shivammathur/php-src-backports/archive/7b23b9111203a96db10f8da71dccb2285d872d8c.tar.gz"
   version "5.6.40"
-  sha256 "0af841c702c2390d1027b619b616a0ab68b906c7314fbbe07c6cae24925faa69"
+  sha256 "f63340f5ed259c1ed1efcc2c935dee875c77f2ffb778bc11ca2572e099108451"
   license "PHP-3.01"
 
   bottle do
@@ -25,7 +25,7 @@ class ImapAT56 < AbstractPhpExtension
   end
 
   depends_on "krb5"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "shivammathur/extensions/imap-uw"
 
   def install
@@ -35,7 +35,7 @@ class ImapAT56 < AbstractPhpExtension
            "--prefix=#{prefix}", \
            phpconfig,
            "--with-imap=shared, #{Formula["imap-uw"].opt_prefix}", \
-           "--with-imap-ssl=#{Formula["openssl@1.1"].opt_prefix}", \
+           "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}", \
            "--with-kerberos"
     system "make"
     prefix.install "modules/#{extension}.so"
