@@ -6,6 +6,7 @@ class ImapUw < Formula
   mirror "https://fossies.org/linux/misc/old/imap-2007f.tar.gz"
   sha256 "53e15a2b5c1bc80161d42e9f69792a3fa18332b7b771910131004eb520004a28"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     skip "Not maintained"
@@ -23,7 +24,7 @@ class ImapUw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa09ba7319179b97aa440bbe76aab35ad5ff72f651174a052f570d51321f17a4"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "krb5"
 
@@ -83,9 +84,9 @@ class ImapUw < Formula
     ENV.deparallelize
     inreplace "Makefile" do |s|
       s.gsub! "SSLINCLUDE=/usr/include/openssl",
-              "SSLINCLUDE=#{Formula["openssl@1.1"].opt_include}/openssl"
+              "SSLINCLUDE=#{Formula["openssl@3"].opt_include}/openssl"
       s.gsub! "SSLLIB=/usr/lib",
-              "SSLLIB=#{Formula["openssl@1.1"].opt_lib}"
+              "SSLLIB=#{Formula["openssl@3"].opt_lib}"
       s.gsub! "-DMAC_OSX_KLUDGE=1", ""
     end
     inreplace "src/osdep/unix/Makefile", ".$(VERSION)", "" if OS.linux?
