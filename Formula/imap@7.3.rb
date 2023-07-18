@@ -8,10 +8,11 @@ class ImapAT73 < AbstractPhpExtension
   init
   desc "Imap PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/20a8b119f45d569e6bfee5d58b88e03579f8cb8c.tar.gz"
+  url "https://github.com/shivammathur/php-src-backports/archive/7ff6ba7443d4691f7c7a2ca3b8f58f3cea632765.tar.gz"
   version "7.3.33"
-  sha256 "291acfe57a3859077f03f3fcb6d9f5d0cbc050490f9301d584db22ee5b9e5dd4"
+  sha256 "6610f090bb89e34257bd22c5bf4081c485fbf53362bb1231d09141017198729e"
   license "PHP-3.01"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
@@ -25,7 +26,7 @@ class ImapAT73 < AbstractPhpExtension
   end
 
   depends_on "krb5"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "shivammathur/extensions/imap-uw"
 
   def install
@@ -35,7 +36,7 @@ class ImapAT73 < AbstractPhpExtension
            "--prefix=#{prefix}", \
            phpconfig,
            "--with-imap=shared, #{Formula["imap-uw"].opt_prefix}", \
-           "--with-imap-ssl=#{Formula["openssl@1.1"].opt_prefix}", \
+           "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}", \
            "--with-kerberos"
     system "make"
     prefix.install "modules/#{extension}.so"
