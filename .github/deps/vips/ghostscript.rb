@@ -58,6 +58,8 @@ class Ghostscript < Formula
   uses_from_macos "expat"
   uses_from_macos "zlib"
 
+  conflicts_with "gambit-scheme", because: "both install `gsc` binary"
+
   fails_with gcc: "5"
 
   # https://sourceforge.net/projects/gs-fonts/
