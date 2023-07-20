@@ -8,9 +8,9 @@ class McryptAT56 < AbstractPhpExtension
   init
   desc "Mcrypt PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/e335ce1458e12062082ad9f736427b718e5efcc2.tar.gz"
+  url "https://github.com/shivammathur/php-src-backports/archive/7b23b9111203a96db10f8da71dccb2285d872d8c.tar.gz"
   version "5.6.40"
-  sha256 "0af841c702c2390d1027b619b616a0ab68b906c7314fbbe07c6cae24925faa69"
+  sha256 "f63340f5ed259c1ed1efcc2c935dee875c77f2ffb778bc11ca2572e099108451"
   license "PHP-3.01"
 
   bottle do
