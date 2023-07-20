@@ -8,9 +8,9 @@ class McryptAT70 < AbstractPhpExtension
   init
   desc "Mcrypt PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/0513eaaeb6c03e282cf8c13352ca590428bfe127.tar.gz"
+  url "https://github.com/shivammathur/php-src-backports/archive/01620e1ea421be6f10360fefc1127e96a9c80467.tar.gz"
   version "7.0.33"
-  sha256 "2289f0d30a7be5e556f9ad7804f9f4102abdc40df1d454ecce2fa2cfd0924b71"
+  sha256 "6f801b4bea2dc7025bb09144eb2c63493ab3013c7010d069d8464e88528d29a3"
   license "PHP-3.01"
 
   bottle do
