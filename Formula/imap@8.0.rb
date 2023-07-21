@@ -11,6 +11,7 @@ class ImapAT80 < AbstractPhpExtension
   url "https://www.php.net/distributions/php-8.0.29.tar.xz"
   sha256 "14db2fbf26c07d0eb2c9fab25dbde7e27726a3e88452cca671f0896bbb683ca9"
   license "PHP-3.01"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
@@ -23,7 +24,7 @@ class ImapAT80 < AbstractPhpExtension
   end
 
   depends_on "krb5"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "shivammathur/extensions/imap-uw"
 
   def install
@@ -33,7 +34,7 @@ class ImapAT80 < AbstractPhpExtension
            "--prefix=#{prefix}", \
            phpconfig,
            "--with-imap=shared, #{Formula["imap-uw"].opt_prefix}", \
-           "--with-imap-ssl=#{Formula["openssl@1.1"].opt_prefix}", \
+           "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}", \
            "--with-kerberos"
     system "make"
     prefix.install "modules/#{extension}.so"
