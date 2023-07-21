@@ -8,10 +8,11 @@ class ImapAT83 < AbstractPhpExtension
   init
   desc "Imap PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/php/php-src/archive/7c5a57077ab6cd48eb274ca54f130e2eab3e028d.tar.gz?commit=7c5a57077ab6cd48eb274ca54f130e2eab3e028d"
+  url "https://github.com/php/php-src/archive/b132b7ab7efb40628dedf2eae1cf7d6949684bcb.tar.gz?commit=b132b7ab7efb40628dedf2eae1cf7d6949684bcb"
   version "8.3.0"
-  sha256 "4ab7442af6e8a9d0d9b38087c0ac66fc627f86e890b0659e3ef1d4e7aabdcc65"
+  sha256 "6543ba2ba14df85657e0821edc232f000dc73d1330e8b7c2802d23d21c22f4af"
   license "PHP-3.01"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
@@ -25,7 +26,7 @@ class ImapAT83 < AbstractPhpExtension
   end
 
   depends_on "krb5"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "shivammathur/extensions/imap-uw"
 
   def install
@@ -35,7 +36,7 @@ class ImapAT83 < AbstractPhpExtension
            "--prefix=#{prefix}", \
            phpconfig,
            "--with-imap=shared, #{Formula["imap-uw"].opt_prefix}", \
-           "--with-imap-ssl=#{Formula["openssl@1.1"].opt_prefix}", \
+           "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}", \
            "--with-kerberos"
     system "make"
     prefix.install "modules/#{extension}.so"
