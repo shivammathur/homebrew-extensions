@@ -8,9 +8,10 @@ class SnmpAT83 < AbstractPhpExtension
   init
   desc "Snmp PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/php/php-src/archive/7c5a57077ab6cd48eb274ca54f130e2eab3e028d.tar.gz?commit=7c5a57077ab6cd48eb274ca54f130e2eab3e028d"
+  url "https://github.com/php/php-src/archive/b132b7ab7efb40628dedf2eae1cf7d6949684bcb.tar.gz?commit=b132b7ab7efb40628dedf2eae1cf7d6949684bcb"
   version "8.3.0"
-  sha256 "4ab7442af6e8a9d0d9b38087c0ac66fc627f86e890b0659e3ef1d4e7aabdcc65"
+  sha256 "6543ba2ba14df85657e0821edc232f000dc73d1330e8b7c2802d23d21c22f4af"
+  revision 1
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
@@ -26,12 +27,12 @@ class SnmpAT83 < AbstractPhpExtension
   end
 
   depends_on "net-snmp"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     args = %W[
       --with-snmp=#{Formula["net-snmp"].opt_prefix}
-      --with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
     ]
     Dir.chdir "ext/#{extension}"
     safe_phpize
