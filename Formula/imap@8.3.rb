@@ -8,9 +8,9 @@ class ImapAT83 < AbstractPhpExtension
   init
   desc "Imap PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/php/php-src/archive/b132b7ab7efb40628dedf2eae1cf7d6949684bcb.tar.gz?commit=b132b7ab7efb40628dedf2eae1cf7d6949684bcb"
+  url "https://github.com/php/php-src/archive/4077dad871377fba8fd66d1dddb6741adaa6212e.tar.gz?commit=4077dad871377fba8fd66d1dddb6741adaa6212e"
   version "8.3.0"
-  sha256 "6543ba2ba14df85657e0821edc232f000dc73d1330e8b7c2802d23d21c22f4af"
+  sha256 "43693c7dcc9f78a4a05939ea516061d0a326c531310dca2f902b504373fc6313"
   license "PHP-3.01"
   revision 1
 
