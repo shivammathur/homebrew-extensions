@@ -8,8 +8,8 @@ class Phalcon5AT80 < AbstractPhpExtension
   init
   desc "Phalcon5 PHP extension"
   homepage "https://github.com/phalcon/cphalcon"
-  url "https://pecl.php.net/get/phalcon-5.2.2.tgz"
-  sha256 "787acbddd81b7f8da4771928a6359d59fe9010c980e9de25a59d3efb2d50437e"
+  url "https://pecl.php.net/get/phalcon-5.2.3.tgz"
+  sha256 "f624b4557920aae70f2146eec520b441cf28497269ec81e512712fb3ef05364e"
   head "https://github.com/phalcon/cphalcon.git"
   license "BSD-3-Clause"
 
