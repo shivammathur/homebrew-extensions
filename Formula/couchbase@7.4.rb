@@ -10,6 +10,7 @@ class CouchbaseAT74 < AbstractPhpExtension
   homepage "https://github.com/couchbase/couchbase-php-client"
   url "https://pecl.php.net/get/couchbase-4.1.4.tgz"
   sha256 "80ba7dbabb7f7a275907507186ecb27b559e64082a22ba1ad39cdd129d383ce5"
+  revision 1
   head "https://github.com/couchbase/couchbase-php-client.git"
   license "Apache-2.0"
 
@@ -24,7 +25,7 @@ class CouchbaseAT74 < AbstractPhpExtension
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "zlib"
 
   on_linux do
@@ -34,7 +35,7 @@ class CouchbaseAT74 < AbstractPhpExtension
   fails_with gcc: "7"
 
   def install
-    ENV["OPENSSL_ROOT_DIR"] = "#{Formula["openssl@1.1"]}.opt_prefix"
+    ENV["OPENSSL_ROOT_DIR"] = "#{Formula["openssl@3"]}.opt_prefix"
     Dir.chdir "couchbase-#{version}"
     safe_phpize
     inreplace "configure",
