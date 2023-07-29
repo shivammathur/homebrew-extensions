@@ -10,7 +10,7 @@ class MongodbAT70 < AbstractPhpExtension
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://pecl.php.net/get/mongodb-1.9.2.tgz"
   sha256 "95e832c5d48ae6e947bdc79f35a9f8f0bbd518f4aa00f1cef6c9eafbae02187d"
-  revision 1
+  revision 2
   head "https://github.com/mongodb/mongo-php-driver.git"
   license "Apache-2.0"
 
@@ -26,7 +26,7 @@ class MongodbAT70 < AbstractPhpExtension
   end
 
   depends_on "icu4c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "snappy"
   depends_on "zstd"
 
