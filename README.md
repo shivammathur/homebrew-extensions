@@ -8,7 +8,7 @@
 
 <p align="center">
     <a href="https://github.com/shivammathur/homebrew-extensions" title="Homebrew tap for PHP extensions">
-      <img alt="Build status" src="https://github.com/shivammathur/homebrew-extensions/workflows/Build%20Formulae/badge.svg">
+      <img alt="Build status" src="https://github.com/shivammathur/homebrew-extensions/workflows/Update%20and%20Build%20Formulae/badge.svg">
     </a>
     <a href="https://github.com/shivammathur/homebrew-extensions" title="Homebrew tap for PHP extensions">
       <img alt="Build status" src="https://github.com/shivammathur/homebrew-extensions/workflows/Test%20Formulae/badge.svg">
@@ -106,12 +106,12 @@ brew update
 ```zsh
 php -v
 ```
-- If not, install the required PHP version, For example to install `PHP 8.1`:
+- If not, install the required PHP version, For example to install `PHP 8.2`:
 
 ```zsh
 brew tap shivammathur/php
-brew install shivammathur/php/php@8.1
-brew link --force --overwrite shivammathur/php/php@8.1
+brew install shivammathur/php/php@8.2
+brew link --force --overwrite shivammathur/php/php@8.2
 ```
 
 Refer to [shivammathur/php](https://github.com/shivammathur/homebrew-php) tap for more information about installing PHP.
@@ -126,18 +126,18 @@ brew tap shivammathur/extensions
 
 - Then install the required extension. See [Formula](Formula) directory for available formulae.
 
-- For example, to install `Xdebug` on `PHP 8.1`:
+- For example, to install `Xdebug` on `PHP 8.2`:
 
 ```zsh
-brew install shivammathur/extensions/xdebug@8.1
+brew install shivammathur/extensions/xdebug@8.2
 ```
 
 ### Upgrade extensions
 
-- For example, to upgrade `Xdebug` on `PHP 8.1`.
+- For example, to upgrade `Xdebug` on `PHP 8.2`.
 
 ```zsh
-brew upgrade shivammathur/extensions/xdebug@8.1
+brew upgrade shivammathur/extensions/xdebug@8.2
 ```
 
 ### Restart your webserver
@@ -280,7 +280,7 @@ This project is also generously supported by many other users and organisations 
 - [libyaml](https://formulae.brew.sh/formula/libyaml "libyaml")
 - [lz4](https://formulae.brew.sh/formula/lz4 "lz4")
 - [net-snmp](https://formulae.brew.sh/formula/net-snmp "net-snmp")
-- [openssl](https://formulae.brew.sh/formula/openssl@1.1 "openssl")
+- [openssl](https://formulae.brew.sh/formula/openssl@3 "openssl")
 - [ossp-uuid](https://formulae.brew.sh/formula/ossp-uuid "ossp-uuid")
 - [pcre](https://formulae.brew.sh/formula/pcre "pcre")
 - [rabbitmq-c](https://formulae.brew.sh/formula/rabbitmq-c "rabbitmq")
