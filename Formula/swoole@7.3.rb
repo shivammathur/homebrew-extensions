@@ -10,6 +10,7 @@ class SwooleAT73 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src/archive/v4.8.11.tar.gz"
   sha256 "b81c682e4b865d6e3839b8b83640242f54127f669550111f5e99fae80ef1e142"
+  revision 1
   head "https://github.com/swoole/swoole-src.git"
   license "Apache-2.0"
 
@@ -25,7 +26,7 @@ class SwooleAT73 < AbstractPhpExtension
   end
 
   depends_on "brotli"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
@@ -34,7 +35,7 @@ class SwooleAT73 < AbstractPhpExtension
       --enable-brotli
       --enable-openssl
       --enable-swoole
-      --with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
       --with-brotli-dir=#{Formula["brotli"].opt_prefix}
     ]
     inreplace "config.m4", "PHP_ADD_LIBRARY(atomic", ": #"
