@@ -92,3 +92,12 @@ jobs:
       - name: Testing Xdebug2
         if: matrix.extensions == 'xdebug2'
         run: php -r "if(phpversion('xdebug')!='2.9.8') {throw new Exception('xdebug2 not found');}"
+      - name: Testing Linkage
+        run: |
+          IFS=',' read -ra extensions <<< "${{ matrix.extensions }}"
+          for extension in "${extensions[@]}"; do
+            echo "::group::$extension"
+            brew linkage shivammathur/extensions/$extension@${{ matrix.php }}
+            echo "::endgroup::"
+          done
+          
