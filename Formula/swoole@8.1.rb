@@ -10,6 +10,7 @@ class SwooleAT81 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src/archive/v5.0.3.tar.gz"
   sha256 "c8d82949076aa42834681c738467d7448759ed8174d43a4ba40d8170d6f8da89"
+  revision 1
   head "https://github.com/swoole/swoole-src.git"
   license "Apache-2.0"
 
@@ -24,7 +25,7 @@ class SwooleAT81 < AbstractPhpExtension
   end
 
   depends_on "brotli"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
@@ -33,7 +34,7 @@ class SwooleAT81 < AbstractPhpExtension
       --enable-brotli
       --enable-openssl
       --enable-swoole
-      --with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
       --with-brotli-dir=#{Formula["brotli"].opt_prefix}
     ]
     safe_phpize
