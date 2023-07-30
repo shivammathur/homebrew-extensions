@@ -10,6 +10,7 @@ class EventAT70 < AbstractPhpExtension
   homepage "https://bitbucket.org/osmanov/pecl-event"
   url "https://pecl.php.net/get/event-3.0.8.tgz"
   sha256 "e3e91edd3dc15e0969b9254cc3626ae07825e39bf26d61b49935f66f603d7b6b"
+  revision 1
   head "https://bitbucket.org/osmanov/pecl-event.git"
   license "PHP-3.01"
 
@@ -26,7 +27,7 @@ class EventAT70 < AbstractPhpExtension
   end
 
   depends_on "libevent"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     args = %W[
@@ -34,7 +35,7 @@ class EventAT70 < AbstractPhpExtension
       --with-event-extra
       --with-event-openssl
       --enable-event-sockets
-      --with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
       --with-event-libevent-dir=#{Formula["libevent"].opt_prefix}
     ]
     Dir.chdir "event-#{version}"
