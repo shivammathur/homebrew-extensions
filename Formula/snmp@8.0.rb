@@ -10,6 +10,7 @@ class SnmpAT80 < AbstractPhpExtension
   homepage "https://github.com/php/php-src"
   url "https://www.php.net/distributions/php-8.0.29.tar.xz"
   sha256 "14db2fbf26c07d0eb2c9fab25dbde7e27726a3e88452cca671f0896bbb683ca9"
+  revision 1
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
@@ -24,12 +25,12 @@ class SnmpAT80 < AbstractPhpExtension
   end
 
   depends_on "net-snmp"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     args = %W[
       --with-snmp=#{Formula["net-snmp"].opt_prefix}
-      --with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
     ]
     Dir.chdir "ext/#{extension}"
     safe_phpize
