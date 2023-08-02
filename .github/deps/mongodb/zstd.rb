@@ -14,13 +14,14 @@ class Zstd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b709835f4cd5d339b97103f0dfa343489a02d2073f8e80ba7b04d682f1d29bd4"
-    sha256 cellar: :any,                 arm64_monterey: "e3cb579108afe4794143b33f24b6020648ca166f0104eb3d13cee56da62c949f"
-    sha256 cellar: :any,                 arm64_big_sur:  "faf929cf92dad72eca2b16fb5aedb695f5d291aac18b496061b8b14003b2e224"
-    sha256 cellar: :any,                 ventura:        "e4eb8cc0473c699ec424bfecc67fcfd30631f7fe5eacf26c727bfed73dcf7c12"
-    sha256 cellar: :any,                 monterey:       "9c1cfe9158a48f6bd3eeb92608ed2799a048d1d27e70e7acef82d5eb4a7a1cea"
-    sha256 cellar: :any,                 big_sur:        "73d78b5fef5ba31d3c37b8201310fe042f30c6000a97b8ba0d91208e1e1de231"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68c8655224f058316c16462507b6cdd061bd546e161bf8419c68ca526d3a9a48"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "cd3a7447c6a18cae189c2366820113f7b23425643482f8af45d03c6e91417ff8"
+    sha256 cellar: :any,                 arm64_monterey: "f41cab61bfe2815d4ca18fa072c507ab9f9c10a8a532c8a660b1ab0f94e9bc8f"
+    sha256 cellar: :any,                 arm64_big_sur:  "4189e80e2dc006e79f08b8e7588773cbd93defbe908c9adf85aa666ee2911f98"
+    sha256 cellar: :any,                 ventura:        "f74c7a0b93a218a15987716188f71c264cd9a0a54563636f8619ff803310a8ce"
+    sha256 cellar: :any,                 monterey:       "0d57c7e4a47355acffa02ed92ee98e5df7dd3dca0147b9697661330293e362af"
+    sha256 cellar: :any,                 big_sur:        "23c726bf4b71f74ac69bd4a6b67541b08c245f5b3ed6630c7ab914082655457c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96afcbd191c9961446161a6fabf09cbbb4c6b3df371cee25b71c2c5d611719a2"
   end
 
   depends_on "cmake" => :build
@@ -44,6 +45,10 @@ class Zstd < Formula
                     *std_cmake_args
     system "cmake", "--build", "builddir"
     system "cmake", "--install", "builddir"
+
+    # Prevent dependents from relying on fragile Cellar paths.
+    # https://github.com/ocaml/ocaml/issues/12431
+    inreplace lib/"pkgconfig/libzstd.pc", prefix, opt_prefix
   end
 
   test do
