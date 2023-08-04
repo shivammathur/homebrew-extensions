@@ -1,19 +1,19 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://github.com/harfbuzz/harfbuzz/archive/8.1.0.tar.gz"
-  sha256 "8d544f1b74797b7b4d88f586e3b9202528b3e8c17968d28b7cdde02041bff5a0"
+  url "https://github.com/harfbuzz/harfbuzz/archive/8.1.1.tar.gz"
+  sha256 "b16e6bc0fc7e6a218583f40c7d201771f2e3072f85ef6e9217b36c1dc6b2aa25"
   license "MIT"
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "7ba6289f4a8207642d10b7144a840f395c05996e1b9f972eddfcdd020b038da4"
-    sha256 cellar: :any, arm64_monterey: "af6fd58c9c436b9c8735b1bc4974c21e54bbdccf0729eed6b0cf6a88ea2592cf"
-    sha256 cellar: :any, arm64_big_sur:  "3de3a20152c20a2def6cd9f08fa3fbe29641ff7aba37494b8f92c53d0181ef9a"
-    sha256 cellar: :any, ventura:        "b2a101ed3f88321648125f2bda083f8a01c11e8a737999ac3c8041244bed8fde"
-    sha256 cellar: :any, monterey:       "2ecea6d541a105c71b0e21b2d83c71ae3f3137dc3a24346f5ce45bed0da160b1"
-    sha256 cellar: :any, big_sur:        "12cf97861f63a80c23c888d6be1226668c6dfcf4b0fcf1f8e007ed53660313a0"
-    sha256               x86_64_linux:   "f506dba507761a037752a2ed4640b7359674559863d643814dabb7d0ef273248"
+    sha256 cellar: :any, arm64_ventura:  "8849b51933258f8135ca000b7125beffb8dd5d95673be2711648167459bacdf5"
+    sha256 cellar: :any, arm64_monterey: "b824a4b0c867eb4bebc0d04a2459811d375cac4c9e7fe6094250e06e53a67e73"
+    sha256 cellar: :any, arm64_big_sur:  "66684ae1c427829fa18233e9eb369fdf6692cb2b60bf068175d795d8b776a634"
+    sha256 cellar: :any, ventura:        "4567b4adb3d3fd962fd90333bfeaa5ed25fd2e6fb8945ff415b4e458056663e8"
+    sha256 cellar: :any, monterey:       "39d2810ab74ba2e7698e3a60362eb52d9475c65de5f96a4ae528f2db8578f063"
+    sha256 cellar: :any, big_sur:        "e360a22417104fbc0a2ea60cd9ec35b766cc38f3b3eab822bad372beb8e9647a"
+    sha256               x86_64_linux:   "6e559f1a884be190a99b8d9942156e15f459d330d269219d3979b9930e5db290"
   end
 
   depends_on "gobject-introspection" => :build

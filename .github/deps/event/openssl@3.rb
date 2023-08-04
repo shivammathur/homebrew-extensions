@@ -16,13 +16,14 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "1e0aef0aefa768e29c8eb8ab31f84edfb9111020e389ebd13d3a87b89441ad1e"
-    sha256 arm64_monterey: "57bf9a18a7f5d8d2e9fb4b50eac1d5a8be27b9bb9fff156ee024e8e12f5d2fbd"
-    sha256 arm64_big_sur:  "5d39cfbada1b9ef15f468021ca02fd5e6b6ec22f011945847de6403e9d8a723c"
-    sha256 ventura:        "aa220ccb73320a045bbd64b03c980d3c643407789cae96cd527c3b3c7b59f905"
-    sha256 monterey:       "7f1809a78c80813a5f7a12c41320c52ad601ee45b53d5de1cc972c46f4302b21"
-    sha256 big_sur:        "e1e4fabca37bd90d6b4e89a65225c935fec8d8d4adf02bd93ad3951d53e05985"
-    sha256 x86_64_linux:   "f2913e52e4c2243ff8f77d96b14e315f7449a4f7f647145e514b4e10434fd9bb"
+    rebuild 1
+    sha256 arm64_ventura:  "904a07d94bd731815d2db4c92abec9b90132cb9b0fb1c83a2906c364f9665b04"
+    sha256 arm64_monterey: "6333d8c662b8aa2854e99d7f1a8d0c243a44731bd61134ae3cbe4201a882bbec"
+    sha256 arm64_big_sur:  "6a0a17074695a4da0066543cdd23e8e4904ae718108b6415a9daa23af97ad0df"
+    sha256 ventura:        "2bea791e9eacc59e0a9099065f3229afaf2b68a9b7b3136ec508103985b1176c"
+    sha256 monterey:       "0acd29c85897b753de593d47bebc262fa5912cee2de65a041852ce5adb62a04f"
+    sha256 big_sur:        "23b87e2e71c62a0128d1731af6e9a2d2eb4b741319b257e52aacb6994b7b6414"
+    sha256 x86_64_linux:   "8e331173f849ca5d02237f086b80568aff17dba7741a995021e3787da6b0434f"
   end
 
   depends_on "ca-certificates"
@@ -75,11 +76,12 @@ class OpensslAT3 < Formula
 
   def install
     if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+      ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
+      ENV.prepend_path "PATH", buildpath/"bin"
 
       %w[ExtUtils::MakeMaker Test::Harness Test::More].each do |r|
         resource(r).stage do
-          system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+          system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}"
           system "make", "PERL5LIB=#{ENV["PERL5LIB"]}", "CC=#{ENV.cc}"
           system "make", "install"
         end
