@@ -6,14 +6,14 @@ class Libheif < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "d6a9f8735ff0ae320c38d8882700cc31c68fbda4a9d54f769e0ae8bff0600f7e"
-    sha256 cellar: :any,                 arm64_monterey: "8a77980947f74d9abdbe2f78a41d078e6a46009646c820c7cf74472fcaed0d27"
-    sha256 cellar: :any,                 arm64_big_sur:  "1206b2a41a5fce3f9f2732f459dace3dc0d36fd4a637b3a83652944ba1c16d4e"
-    sha256 cellar: :any,                 ventura:        "faa82db305858a35f05f8a49b13d57139fe816712639d3934f0ebee63552ae11"
-    sha256 cellar: :any,                 monterey:       "35e069651a989c37686dd7bc3f907d2bfb580e68407b0736068e577fd91dabf1"
-    sha256 cellar: :any,                 big_sur:        "29c122901654eb74af43a8e349a0b544c35ab0b1a4b732666fbe3c51bd5627a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a778a51a1112c3c8d82622f7d4079a500308b2df3119d81e4a4b60f13d2105e1"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "82f6e15c2c6bbd6aabc793a219b24ce16695113c7df6d5a8cf1b4ac82a42034f"
+    sha256 cellar: :any,                 arm64_monterey: "ee412a79e8f261e90bbc5fae5f2d6dd2f1e3ea615b5af2642146ac28121ac4df"
+    sha256 cellar: :any,                 arm64_big_sur:  "ebc16ed45c1641dd955a5abe4065239d813e75d7cc75c119e94766077c469e77"
+    sha256 cellar: :any,                 ventura:        "a8d94c2ee75e69789bf32a7c14f05812b08caa220d71640e0dab464be419387a"
+    sha256 cellar: :any,                 monterey:       "eefc53996197989013739ad8c2d7fd77de54abaf3817ff8da4c5b1fcadaf37fe"
+    sha256 cellar: :any,                 big_sur:        "ad7f86d5a3424f3b52985b36f7e1eb3fcc843bb4c9ebf97b2dc2107ba0880046"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0afc0a90a360bd89f0cc382767c5efe724f7e8487b0212f60ab309f4ed42c1fc"
   end
 
   depends_on "cmake" => :build
@@ -37,6 +37,9 @@ class Libheif < Formula
     system "cmake", "--install", "build"
     pkgshare.install "examples/example.heic"
     pkgshare.install "examples/example.avif"
+    system "cmake", "-S", ".", "-B", "static", *args, *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
+    system "cmake", "--build", "static"
+    lib.install "static/libheif/libheif.a"
   end
 
   def post_install
