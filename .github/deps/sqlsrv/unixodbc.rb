@@ -1,9 +1,9 @@
 class Unixodbc < Formula
   desc "ODBC 3 connectivity for UNIX"
   homepage "https://www.unixodbc.org/"
-  url "https://www.unixodbc.org/unixODBC-2.3.11.tar.gz"
-  mirror "https://fossies.org/linux/privat/unixODBC-2.3.11.tar.gz"
-  sha256 "d9e55c8e7118347e3c66c87338856dad1516b490fb7c756c1562a2c267c73b5c"
+  url "https://www.unixodbc.org/unixODBC-2.3.12.tar.gz"
+  mirror "https://fossies.org/linux/privat/unixODBC-2.3.12.tar.gz"
+  sha256 "f210501445ce21bf607ba51ef8c125e10e22dffdffec377646462df5f01915ec"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,14 +12,13 @@ class Unixodbc < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4c0380e01085731950092d3fdbcb24865abcb7745cbb318759e21d77e14c2fa1"
-    sha256 arm64_monterey: "41252118b5c049b7fb24be4d68aa0efd821d1b263db205b6b8395d538acdebbc"
-    sha256 arm64_big_sur:  "d7c4effd78343a0e35e1ed173321299393132c84d383b34dacaa82abb09bfbcc"
-    sha256 ventura:        "49e5a8977f4354a46597f38c61ce6f4c135b78c5d64b1909f90092ea379a0d8c"
-    sha256 monterey:       "a4d5de6d53870f610840a88bd31c0d0442bc3580068f9330207ab8e0488fa523"
-    sha256 big_sur:        "7c2e9b5e3e8b9e082afa7d669d0b073897fd30ebcc3ec566a2fa38fd63369087"
-    sha256 catalina:       "c398fc445679a3619a8e602444963a4e46e9302a1813c192ac42d9b6cc2d7e63"
-    sha256 x86_64_linux:   "e8d1c01d05e821f0e4aa4aa65f104266ed16331a3e39ae72071bbe0eaec03ea0"
+    sha256 arm64_ventura:  "b2d0036483c00d1f3e12b90e288d18b1714ee1b6e95de4d443c0b1101657bfba"
+    sha256 arm64_monterey: "42752ba1f8be08b3aad93ab465731441911b0b2b6e3af687bd7cc5de0996de49"
+    sha256 arm64_big_sur:  "82de868a1e06efd888aaef1a4b4867aa09f1e8ebb59de5ffe926f70c46f30399"
+    sha256 ventura:        "362a801fa9dec4ee99daab0d9d6926fee4ca2ad7191677dbee1b564852964ddd"
+    sha256 monterey:       "947aa88dde2ed452e05e9ef37aca672aea40165cd6d748cc8839609f9d7d4141"
+    sha256 big_sur:        "704e008bba860d3baecd0ad178c82b8c59e0eb9b05161d908154723eabbd420d"
+    sha256 x86_64_linux:   "7f8a5881a0827b6381d3619d681849d72471bd8f9ad9e836793d3216bee77fe4"
   end
 
   depends_on "libtool"
