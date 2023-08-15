@@ -7,13 +7,15 @@ class Grpc < Formula
   license "Apache-2.0"
   head "https://github.com/grpc/grpc.git", branch: "master"
 
-  # The "latest" release on GitHub is sometimes for an older major/minor and
-  # there's sometimes a notable gap between when a version is tagged and
-  # released, so we have to check the releases page instead.
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check releases instead of the Git
+  # tags. Upstream maintains multiple major/minor versions and the "latest"
+  # release may be for an older version, so we have to check multiple releases
+  # to identify the highest version.
   livecheck do
-    url "https://github.com/grpc/grpc/releases?q=prerelease%3Afalse"
-    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
-    strategy :page_match
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do
