@@ -22,8 +22,8 @@ for extension in "${extensions[@]}"; do
     for formula in "${deps[@]//shivammathur*}"; do
       [ "$formula" = "python" ] && continue;
       if [ "x$formula" != "x" ]; then
-        sudo curl -o "./.github/deps/$extension/$formula.rb" -sL "$trunk"/"$formula".rb
-        grep -q "Formula" "./.github/deps/$extension/$formula.rb" || sudo curl -o "./.github/deps/$extension/$formula.rb" -sL "$trunk"/"${formula:0:1}"/"$formula".rb
+        [[ ${formula:0:3} == "lib" ]] && prefix=lib || prefix="${formula:0:1}"
+        sudo curl -o "./.github/deps/$extension/$formula.rb" -sL "$trunk"/"$prefix"/"$formula".rb
         grep -q "Formula" "./.github/deps/$extension/$formula.rb" || exit 1
       fi
     done
