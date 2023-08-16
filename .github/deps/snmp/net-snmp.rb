@@ -1,10 +1,9 @@
 class NetSnmp < Formula
   desc "Implements SNMP v1, v2c, and v3, using IPv4 and IPv6"
   homepage "http://www.net-snmp.org/"
-  url "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.3/net-snmp-5.9.3.tar.gz"
-  sha256 "2097f29b7e1bf3f1300b4bae52fa2308d0bb8d5d3998dbe02f9462a413a2ef0a"
+  url "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.4/net-snmp-5.9.4.tar.gz"
+  sha256 "8b4de01391e74e3c7014beb43961a2d6d6fa03acc34280b9585f4930745b0544"
   license "Net-SNMP"
-  revision 1
   head "https://github.com/net-snmp/net-snmp.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class NetSnmp < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "973c5a70d31b4893335403e3700d99ec20cbb9fa0a1c6f5c63272d992f4a28c3"
-    sha256 arm64_monterey: "eccc19bb8d4e9c47be0ed1e9f522c0f41447ee539b31da65d1044fe434f6f688"
-    sha256 arm64_big_sur:  "7aad43ff95d69fef55d44ffe774847f5f3d9af3056af9db701e818db55e2df49"
-    sha256 ventura:        "53d3a7d7b5dc726ebb3c5ba03f2194ebe82f0591921eb76691f6879b2fca86ad"
-    sha256 monterey:       "d2d9f97a49fd0fd01d31b7506b4161e2a42ceffd4da1bea6bf4f7da385c6d3f0"
-    sha256 big_sur:        "13c40ba686fe06c20eb5440e2e228b9048d079c1757e06dca0a3dde3641e845b"
-    sha256 x86_64_linux:   "97480084603146cf9618a75fd5f13dc4a3a9194880ece8b7acc80d0a9fcfa91c"
+    sha256 arm64_ventura:  "8d1f5f1b9c27087c08b7fb17c97445d925c7c0afa77e4939979778ca9fc39fa4"
+    sha256 arm64_monterey: "0ee61805fb803dc4126a163c1f41438fbae869158cab3c5f9fb4db626ace6059"
+    sha256 arm64_big_sur:  "08d71e1fd013508a956360a8c1ee0806974b21334e06daa519c91fc58e5b1cf4"
+    sha256 ventura:        "72c6a3af4f5dc6649fdf8ace41e27c917d88bfb4f25b6a468cc072944ae42cc1"
+    sha256 monterey:       "25f84e57f018ce8d5c4f60ecdb28bf93a53f53fb7c3fe2d2ade1053013ba8993"
+    sha256 big_sur:        "6eb8407f90572a45ff98d040761b9857998638d9a739bd21c06e1420412009ee"
+    sha256 x86_64_linux:   "909269505e442c956639f60e3b0cd1dbdc1e7723eb96b291e9fdba7781d533f4"
   end
 
   keg_only :provided_by_macos
