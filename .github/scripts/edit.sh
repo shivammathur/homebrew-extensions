@@ -3,7 +3,7 @@ fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   if [[ "$EXTENSION" =~ amqp|event|expect|gnupg|imagick|imap|mcrypt|pcov|snmp ]] ||
      [[ "$VERSION" =~ (couchbase)@(7.4|8.[0-3]) ]] ||
-     [[ "$VERSION" =~ (phalcon5)@(7.4|8.[0-1]) ]] ||
+     [[ "$VERSION" =~ (phalcon5)@(7.4|8.[0-2]) ]] ||
      [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
      [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||
      [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|memcached|pecl_http|protobuf|raphf|rdkafka|redis|ssh2|uuid|vips|xlswriter)@(7.[0-4]|8.[0-3]) ]] ||
