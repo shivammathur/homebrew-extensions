@@ -1,18 +1,18 @@
 class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
-  url "https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.10.tar.gz"
-  sha256 "6e0fd3f0eb1cb907bd3593830ea2b3431b85f22a6f18f99f8cfa099fec70067d"
+  url "https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.11.tar.gz"
+  sha256 "06b4a20d0791b5ec0f804c855d320a0615ce8445124f293616a086e093f1f1e1"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7c713dfcd55b24ed89cbb6371b6e83a00ae491a20e1cec1900306c0a09670529"
-    sha256 cellar: :any,                 arm64_monterey: "7bc040f5aaf3513aa62f5be501cd0dff688dd0f0d7e7f9a6038dc2047820f8a0"
-    sha256 cellar: :any,                 arm64_big_sur:  "c8ceecc8a5a74ac5a1affbd1151fce2443d46ad8e69aa4ec42537e3e311bdad1"
-    sha256 cellar: :any,                 ventura:        "30f83b565e5a6be0f27601e0a1987fdd637c86321f8441739ea4dfa5508c11a2"
-    sha256 cellar: :any,                 monterey:       "b4297d49f61c107ffa7b74c2ff01a224137d9c35db4f144f2ae9e36df7cd0230"
-    sha256 cellar: :any,                 big_sur:        "3bf316a792023f9f5d6abd5de03b2c6227acc3e8e475995c133b9b7d27d938b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1db4e91c7beaff0f78f30332a0671d815b930cc57c8752e577ab5c33913bead"
+    sha256 cellar: :any,                 arm64_ventura:  "70521fc5a3751da3ada8d80bfba75dced5201e659aeb09b05cc37fac7fc4da56"
+    sha256 cellar: :any,                 arm64_monterey: "932626ddcd8e4ae704d3019f396d669261c07a51f3f8403d7e21e0ce5c5256fa"
+    sha256 cellar: :any,                 arm64_big_sur:  "bf9a8ead5761f72046a61ed57202f1f15129d6bedbdfedc36394dcbaf3b22d99"
+    sha256 cellar: :any,                 ventura:        "f3a6d2517f8bc62dbd2ebb46583986727fd86d6cbe4bcef7ea928d2a11c18d32"
+    sha256 cellar: :any,                 monterey:       "3926469f66d680cffd798d48b216d3d7b6ff8b525a99b76094b7d644c955f0b0"
+    sha256 cellar: :any,                 big_sur:        "a21a65950dafb1634796b505da7e008e8ceeb9d8b9949e1b59a753bd860932f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a8e3e188d2a47ecfc0d7f1de24a3a142fc82bdc2bfda5c76174e51bef0f9deb"
   end
 
   depends_on "cmake" => :build
