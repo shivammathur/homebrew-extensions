@@ -24,6 +24,8 @@ class DsAT83 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "df570649944c5d3b63879ecd9395d87d95f962b3a530711d3b23a24cf2c87950"
   end
 
+  priority "30"
+
   def install
     Dir.chdir "ds-#{version}"
     safe_phpize
