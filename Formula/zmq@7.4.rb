@@ -38,9 +38,9 @@ class ZmqAT74 < AbstractPhpExtension
     on_macos do
       args << "--with-czmq=#{Formula["czmq"].opt_prefix}"
     end
-    inreplace "package.xml", "@PACKAGE_VERSION@", version
-    inreplace "php-zmq.spec", "@PACKAGE_VERSION@", version
-    inreplace "php_zmq.h", "@PACKAGE_VERSION@", version
+    inreplace "package.xml", "@PACKAGE_VERSION@", version.to_s
+    inreplace "php-zmq.spec", "@PACKAGE_VERSION@", version.to_s
+    inreplace "php_zmq.h", "@PACKAGE_VERSION@", version.to_s
     safe_phpize
     system "./configure", phpconfig, *args
     system "make"
