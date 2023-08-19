@@ -28,6 +28,7 @@ class DsAT83 < AbstractPhpExtension
 
   def install
     Dir.chdir "ds-#{version}"
+    inreplace "src/common.h", "fast_add_function", "add_function"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-ds"
     system "make"
