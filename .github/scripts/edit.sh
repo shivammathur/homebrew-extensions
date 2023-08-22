@@ -2,7 +2,7 @@ fetch() {
   REPO="$(grep '^  homepage' < ./Formula/"$VERSION".rb | cut -d\" -f 2)"
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   if [[ "$EXTENSION" =~ event|expect|gnupg|imagick|imap|mcrypt|pcov|snmp ]] ||
-     [[ "$VERSION" =~ (amqp|couchbase)@(7.4|8.[0-3]) ]] ||
+     [[ "$VERSION" =~ (amqp)@(7.4|8.[0-3]) ]] ||
      [[ "$VERSION" =~ (phalcon5)@(7.4|8.[0-2]) ]] ||
      [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
      [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||
@@ -10,7 +10,7 @@ fetch() {
      [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-3]) ]] ||
      [[ "$VERSION" =~ (ast|mcrypt|mongodb)@(7.[2-4]|8.[0-3]) ]] ||
      [[ "$VERSION" =~ (ds|mailparse|pdo_sqlsrv|psr|sqlsrv)@(7.[3-4]|8.[0-3]) ]] ||
-     [[ "$VERSION" =~ (memcache|swoole|xdebug)@8.[0-3] ]]; then
+     [[ "$VERSION" =~ (couchbase|memcache|swoole|xdebug)@8.[0-3] ]]; then
     sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION" "$REPO"
     url=$(grep '^  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
     checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
