@@ -15,14 +15,12 @@ class AmqpAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 7
-    sha256 cellar: :any,                 arm64_monterey: "2b3fb2283ef33752738713265e9b3abbb5b834ea858ecee2399137bb5ab1c8ac"
-    sha256 cellar: :any,                 arm64_big_sur:  "c800d42314f8f4ea500c9e788eb9ac4079e904e3fb5c446fdebe7c89546333b7"
-    sha256 cellar: :any,                 ventura:        "8042d6ee4e7fe5f0917125c67ef040aaecc9e8a9a79f390f50ae3bc81ace5f06"
-    sha256 cellar: :any,                 monterey:       "af3ce5c8ae9a91031d4d986c7cadce4062e49bbe5c31f1bfa8ebca1f210c996c"
-    sha256 cellar: :any,                 big_sur:        "9f731ac3df0f9e23f715c0e5ff9ed00392d51a8d8af315a089487cfe6ba637a0"
-    sha256 cellar: :any,                 catalina:       "0e76f55ab9113f9ced2f14cad759c13261cae032de574f8c3f7ed5626c542a48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8175add7bcc1b1581bed2c866260874bc87e6bc6eff482d40feb7ea406090667"
+    sha256 cellar: :any,                 arm64_monterey: "39b78b7cec9bfe2a66da8ff4bfeaa2db08200cfee40e7a83bfc4d5dd2c0d3834"
+    sha256 cellar: :any,                 arm64_big_sur:  "0a13c670bf53d719316811babb7924fae3d594c4eea104c9d752086b4270f35e"
+    sha256 cellar: :any,                 ventura:        "2915f41b48f9c8b2bbb58a7d0eb2408c7fd923b77c6115042ed34b467d3f4943"
+    sha256 cellar: :any,                 monterey:       "9a2ccd36966745853d82387e0dd16ff1ec586d837c9003b6f423b04f9ab3a7df"
+    sha256 cellar: :any,                 big_sur:        "993ff2e463dd4a1086793f4a4e35c1c51710dc153c841b5187502a8d7e2abfca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "603d7616d661e5add81ff43ce1f5633e32337258e689749feaf4ba7e4d224264"
   end
 
   depends_on "rabbitmq-c"
