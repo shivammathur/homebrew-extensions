@@ -16,6 +16,12 @@ class SnmpAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_monterey: "b9c0491eaafa3ae11edca5a5201067687e6f45f69e63082ae69a5c20464380c2"
+    sha256 cellar: :any,                 arm64_big_sur:  "8dbe1bd9971eceae94e734f0ba6953fb88633f49da9dec719837716e2d176788"
+    sha256 cellar: :any,                 ventura:        "25ff9f74aea06923697aa5fd44f647708f2c369000acb77c4ef39ed8b22bd26c"
+    sha256 cellar: :any,                 monterey:       "39730bde48455dfc8f97ae53bf6331005b9258533278124232783fe4ec96ad15"
+    sha256 cellar: :any,                 big_sur:        "1956a0100525ecc3d88f39ff89be7b27219b61bc449bad9819f60a303d50aa85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a627e8d666eeda837632e7383b1efc537e115e5cc0314166e748fdae1b7deb63"
   end
 
   depends_on "net-snmp"
