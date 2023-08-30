@@ -16,6 +16,12 @@ class ZmqAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_monterey: "8d79560a6db34fcc234b9271a9f1d1bfc33bdc0d253a0071090ad456b5d15b1f"
+    sha256 cellar: :any,                 arm64_big_sur:  "a78ffb9e5450f49b9f3e6537e632fe02aee5084aa7d48255038d41163c7e129c"
+    sha256 cellar: :any,                 ventura:        "07bb554b02d7969ab9aba01fe66403f94488cfdb89a0a210e3d2ba56a4318375"
+    sha256 cellar: :any,                 monterey:       "a5aa7cb19c6108d08bcb0e9a7772975a1f2d031e84d8a235cea0f163a5ff736d"
+    sha256 cellar: :any,                 big_sur:        "6d0701cfe3ad1127126760af072a2324d85b8ae29d924c8e2f72359845128ebf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2052d4cf50c5d123487470e45138e70c46745257339cc2d8a29967203e376ba"
   end
 
   depends_on "zeromq"
