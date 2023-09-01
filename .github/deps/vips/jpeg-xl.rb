@@ -4,6 +4,7 @@ class JpegXl < Formula
   url "https://github.com/libjxl/libjxl/archive/v0.8.2.tar.gz"
   sha256 "c70916fb3ed43784eb840f82f05d390053a558e2da106e40863919238fa7b420"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class JpegXl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6186d463dd4c1258cb327cee90d39a0884937fc6ce98599c2ef5f1058b404972"
-    sha256 cellar: :any,                 arm64_monterey: "bfd594f0d4fcd5de4dd1209c98b899db5a76819ecfe48cf57f309d770c231924"
-    sha256 cellar: :any,                 arm64_big_sur:  "fb0e98c304281d7867dca160bba5da3cff752d1f76e72ddbd1b68b3844f01999"
-    sha256 cellar: :any,                 ventura:        "0c71a9132f1b13e868823b6c11f12fb8d13d81a8c3e5d8d7ce0e70d166669f0a"
-    sha256 cellar: :any,                 monterey:       "f539acb334ca29d693b9885f9359d25b2dd50bda142af25b163b2c2f6da588ce"
-    sha256 cellar: :any,                 big_sur:        "d049131b513c305652f382ecb91ec073ffb4cd8366b6427dc7dcd0f4f491ce63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30b0fe8238e9d8b5d99fc371b3a1c3ed9c51b9760a3381611cff9fde23900033"
+    sha256 cellar: :any,                 arm64_ventura:  "e0b759a99a12b7fd04538158c1f83f4d18d0af3782fccdec2bbd73724a78c5eb"
+    sha256 cellar: :any,                 arm64_monterey: "4cce273a4283a09ae10a70a14f66139232f6d5c72bf3cd1b63771e1bf0af501e"
+    sha256 cellar: :any,                 arm64_big_sur:  "d9d42597f38b251a50867f97482a7b79bb94cdf5e4fe9dcd2af2068e9eaf573c"
+    sha256 cellar: :any,                 ventura:        "8cb02e44b97facbddc9b8baead03ca5051dbcf9af4c072e9fbffa3cc5fce1204"
+    sha256 cellar: :any,                 monterey:       "6e93ba9936013eb02ff1b1559012a86c60592fdb9b3e34ab35b3440296db9e51"
+    sha256 cellar: :any,                 big_sur:        "29644de041447526f4d9598a3ebc89394c47f5b09403affd8b2440d133679e37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad6794fb24866d0bfbcd30a818cf9d0b0674e58d0c49d2b51941c5896cbc98ca"
   end
 
   depends_on "asciidoc" => :build
