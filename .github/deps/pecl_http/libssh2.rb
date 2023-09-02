@@ -1,7 +1,7 @@
 class Libssh2 < Formula
   desc "C library implementing the SSH2 protocol"
-  homepage "https://www.libssh2.org/"
-  url "https://www.libssh2.org/download/libssh2-1.11.0.tar.gz"
+  homepage "https://libssh2.org/"
+  url "https://libssh2.org/download/libssh2-1.11.0.tar.gz"
   mirror "https://github.com/libssh2/libssh2/releases/download/libssh2-1.11.0/libssh2-1.11.0.tar.gz"
   mirror "http://download.openpkg.org/components/cache/libssh2/libssh2-1.11.0.tar.gz"
   sha256 "3736161e41e2693324deb38c26cfdc3efe6209d634ba4258db1cecff6a5ad461"
@@ -9,7 +9,7 @@ class Libssh2 < Formula
   revision 1
 
   livecheck do
-    url "https://www.libssh2.org/download/"
+    url "https://libssh2.org/download/"
     regex(/href=.*?libssh2[._-]v?(\d+(?:\.\d+)+)\./i)
   end
 
