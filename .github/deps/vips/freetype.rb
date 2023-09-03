@@ -12,12 +12,13 @@ class Freetype < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9770e7c6ca2660f431b95fc0de734cffa9e46c8598e90c735e4f9829180399b6"
-    sha256 cellar: :any,                 arm64_monterey: "4ef26c08887bd123350d06201b9f5bda82fb3269a83bbe29dc5fec9820371a3e"
-    sha256 cellar: :any,                 arm64_big_sur:  "5dff752be14442f4377ffeeb9103af5262acbb32884527a0de7926d265dba589"
-    sha256 cellar: :any,                 ventura:        "08a4f88981b854d4b6b27947239af74840963a99950b458afa1263240e9f620b"
-    sha256 cellar: :any,                 monterey:       "3364e85d2b4be0501767cb78da69a6d0c56009228b16844eb93b8348e099c44c"
-    sha256 cellar: :any,                 big_sur:        "15dcad6c8d29e28da771eaf479967d255f5f3c152efc35a4d5283d785dfd49b4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "cfafda736bbfdd0b89b0e278d31253139f5b33762fdee1f6aae7da27edb22c65"
+    sha256 cellar: :any,                 arm64_monterey: "44789663febc92d337e87ad94ca1ba7ae643748ceeea25f6beb3c11c9d80fa9f"
+    sha256 cellar: :any,                 arm64_big_sur:  "22f5d7b4377c712581793d54bcec7b85c9f6edafdc4a7a50241318f3ddcc6a24"
+    sha256 cellar: :any,                 ventura:        "352a82fcc4a51411403697f53703a4f46c92219963344ed66f499688fc036a2c"
+    sha256 cellar: :any,                 monterey:       "ecd47039beaf32c82cb68cc38a7ea07951dd5ff3ac2c5fd22a33bf987462047c"
+    sha256 cellar: :any,                 big_sur:        "1a049a8b0ce1d6cca6429bd4274895d053990c916e8ce937aa212821d5802d6c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f4f7449ac197844846126b6e002f7faf10b5da5b333f203e3a0a8573b970835"
   end
 
