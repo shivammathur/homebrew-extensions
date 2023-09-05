@@ -9,13 +9,14 @@ class Brotli < Formula
   head "https://github.com/google/brotli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "752bc1b5b8fe4c369afd1a7d37c5073e629f565a8ee9d8b3229e3d9e167ec734"
-    sha256 cellar: :any,                 arm64_monterey: "8dbfb8fc5fecb3cf7db0b78892b0a86f72923c4192f8c2fe53031911d6ec59b6"
-    sha256 cellar: :any,                 arm64_big_sur:  "a7af609813ab31e0816e7fde2510ee8b23045c1720c799bc94dfae7b8d6cc1bf"
-    sha256 cellar: :any,                 ventura:        "e2ab96bd3ac33f28df4abff410639ab490f61e73f4d617c0c697d84eb65b9adb"
-    sha256 cellar: :any,                 monterey:       "cf6f8a635958840ef85cae1464250454cb37fc15a84e74d3d8e3d16e578c146f"
-    sha256 cellar: :any,                 big_sur:        "098ec6e1ed317b89ad799a56b9c4c4f02991b37df9ddad568720ee3c16d1d7d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73231d2d7656d1ff7f036ca2370b72c2203ef335f6382a0bfa5e54cfc7e11944"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "8065a97a2022d24617de5ae2a0e3588187878999b0ece3aad79e3bb7c8735772"
+    sha256 cellar: :any,                 arm64_monterey: "b692b610d85f31b272548c0f0e26d1af9f7e98cd9223d6e14e64b8585ef6dcda"
+    sha256 cellar: :any,                 arm64_big_sur:  "a9356d6162ffd085ed43eee73a5176d330e21c087409ec44cd562e2225f6eda9"
+    sha256 cellar: :any,                 ventura:        "8102401653fe365896171eac88f20eefa5295ec699555af7275efe144f5e877d"
+    sha256 cellar: :any,                 monterey:       "befb6d59eb07e6efac5d321e3fd70e9763baa1e89028a56b504685974c5c9d8e"
+    sha256 cellar: :any,                 big_sur:        "b848f83229a3242e0d629a243d275d0c6a03f1b6816a28d83d96990bfdc4604c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a2e1cc12312a092b38e79952fd2232f564f2c64cda0f69e97a55c65df9b29ab"
   end
 
   depends_on "cmake" => :build
