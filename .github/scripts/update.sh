@@ -2,7 +2,7 @@ get_latest_remote_git_tag() {
   local repo=$1
   local major_version=$2
   [[ -n "$major_version" ]] && regex="$major_version\." || regex="[0-9]\."
-  git ls-remote --tags --sort="v:refname" "$repo" | sed 's/.*\///' | grep -Eo "^v?$regex[0-9]+\.[0-9]+" | tail -n1
+  git ls-remote --tags --sort="v:refname" "$repo" | sed 's/.*\///' | grep -Eo "^v?$regex[0-9]+\.[0-9]+$" | tail -n1
 }
 
 get_latest_pecl_tag() {
