@@ -15,12 +15,13 @@ class MemcachedAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_monterey: "4f14eb960a1b616fda1c8c592983dfe5c71453af4b330bf080a1174d0c5ffa8e"
-    sha256 cellar: :any,                 arm64_big_sur:  "6e9d755aa7f99efd4819684086fb29f3e06b2b09ecf76bb28c1844c64bed299e"
-    sha256 cellar: :any,                 ventura:        "bdf859695dbe0baf8316c3c8d26006588c03e3f29a556e9a81dee593db68b96e"
-    sha256 cellar: :any,                 monterey:       "b4b0bd71117551388532629382bc6439c894c58fe2be6f366f21df00abdcd414"
-    sha256 cellar: :any,                 big_sur:        "c8d210c4c5c70a117bf9ce13b8219bef667fb7b3964d198eb5e54847f33b8480"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad63ccbdcec17fa1609af1287b87d955c750a958f5565b8969dede38e0b6ee88"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "a7903288844d762518e0f3ed1470ce19d333620ebc3252508679564bc49a4991"
+    sha256 cellar: :any,                 arm64_big_sur:  "0b0ad0af85cec5ca665b5687d7523c408a425dfd613dcf7e5d53697416f4c3a7"
+    sha256 cellar: :any,                 ventura:        "c624f395eb19e0179525daff4f1f11939ef8b024e8cdd36f4170d597051192ca"
+    sha256 cellar: :any,                 monterey:       "0edfe2a4b44106e6d9e842eaf545e44276fcd127fc7f91a6c708db8a73f52199"
+    sha256 cellar: :any,                 big_sur:        "e3325922307f1992fd5b545835d46430923018584e4cf841500297640d7a2c45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2029a1e323b79e3204a081db4d10476929c6912dc4cc1b6370a4c01769030fd7"
   end
 
   depends_on "libevent"
