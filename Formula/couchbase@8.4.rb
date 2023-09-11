@@ -15,12 +15,13 @@ class CouchbaseAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 arm64_monterey: "85661d12847ff0b2a6b15bff57e7fdeaf54b1fac1b10f334a5e00696065f3b3f"
-    sha256 arm64_big_sur:  "b0d6a7f72ab6ffd427a4ef26bd00e7e146495f25ad338b5a3d40aef807cb4453"
-    sha256 ventura:        "1194f2eb616ec67e272b57a9e117adda3695efb55d6ef0420b75abb040e03d19"
-    sha256 monterey:       "1826cfe78fb8a2a0c6c96e787f7c7b3a9885a91184bd7eef7a9c28739b6a984b"
-    sha256 big_sur:        "056a399dd44aaad29b51a56a978bf50eb5aea1699d5bdc7692afe93873f3bd09"
-    sha256 x86_64_linux:   "c6436e588d2b1dfb80a3ec3882db6ed9a91ca683a8a84707d7bd937e6ac6dec2"
+    rebuild 1
+    sha256 arm64_monterey: "8344e887280a975f36fc84e24523420d64bb38d664726fa459700f4320645148"
+    sha256 arm64_big_sur:  "140a84ea359454521a1f2571a2345e2858d6f066ea8e4c4e2a7fa8334eb35927"
+    sha256 ventura:        "03072eaf3ef5081b3735a353ad9f4530681bd7434d210723cf8c111ab072f138"
+    sha256 monterey:       "a42932dd2cb51bef9479d46149af6b335160cb4098a987b9fb379fc2476cc405"
+    sha256 big_sur:        "6c60079258ce330aaaff4750e2d6d2d11037136dafab3e081003c044a8b69f56"
+    sha256 x86_64_linux:   "3617e4559666de086f81b4d58d895229f492c74571ddfc6ae63b95911592a34e"
   end
 
   depends_on "cmake" => :build
