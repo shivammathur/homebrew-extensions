@@ -15,13 +15,12 @@ class RedisAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 4
-    sha256 cellar: :any,                 arm64_monterey: "9e39c4c645be458d954f2ebd8c6cf0bfbe4e4d6ef62bb782ca1680279ac67277"
-    sha256 cellar: :any,                 arm64_big_sur:  "21c49dab57e7d273204b258e74710b22ae151c8012d03ccd0202bab3e0c079a8"
-    sha256 cellar: :any,                 ventura:        "998962a12fafec5574d1680f34230698658f927ee27651e6c87b7ee5a6fa65e4"
-    sha256 cellar: :any,                 monterey:       "cc2b53fdb5d5cf1d8c85bb1a82922096c4c979199a7d49ef9a4842af3c655071"
-    sha256 cellar: :any,                 big_sur:        "b7f8ddcd9bbb8c4ad1a3329692f2ed076efc57688b2b353507d8791d13c8c764"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1fcf21940d03ef3b9ffa5661d1b495c2300651bb87f67cda612b317ae14f171"
+    sha256 cellar: :any,                 arm64_monterey: "d294c3f234e67475a51702b5f7737ae518cc46ab708e9efff8160b19d4ca0f88"
+    sha256 cellar: :any,                 arm64_big_sur:  "f531d02eacb6cadc029ca304ec895eacde6ae7ba08abbc0bc322c4b88493ce3d"
+    sha256 cellar: :any,                 ventura:        "c3504c559698b092096d995bb06d77688507d257ff1790e2e38c51a5831e9efa"
+    sha256 cellar: :any,                 monterey:       "aec9a2a37a253c7fea6917144949a860b6c8956c6aed380556d41c3d37f07e82"
+    sha256 cellar: :any,                 big_sur:        "422d8d50a31b99fe5b461f4adebbf3da1a7acac973da19d30d6c9751dec9a0dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e9f261afbed242a4c0a80b5b5bd3755d5019d16cb2de0d72c05efc3b844dd46"
   end
 
   depends_on "liblzf"
