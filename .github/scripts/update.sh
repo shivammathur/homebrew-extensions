@@ -18,6 +18,17 @@ get_php_url() {
   brew cat shivammathur/php/php@"$php_version" | grep -e "^  url.*" | cut -d\" -f 2
 }
 
+get_formula_branch() {
+  local formula=$1
+  grep -oE 'branch: "[^"]+"' ./Formula/"$formula".rb | sed 's/branch: "//;s/"//'
+}
+
+get_head_commit() {
+  local branch=$1
+  local repo=$2
+  curl -H "Authorization: Brearer $GITHUB_TOKEN" -sL "https://api.github.com/repos/${repo#https://github.com/}/commits/$branch" | sed -n 's|^  "sha":.*"\([a-f0-9]*\)",|\1|p'
+}
+
 patch_pecl_tag() {
   local tag=$1
   local extension=$2
@@ -56,8 +67,13 @@ case $extension in
     patch_pecl_tag "$tag" "phalcon"
     ;;
   "xdebug")
-    [[ "$version" =~ xdebug@(8.[0-3]) ]] && major_version=3 || major_version=2
-    tag="$(get_latest_remote_git_tag "$repo" "$major_version")"
+    if [ "$version" = "8.4" ]; then
+      branch="$(get_formula_branch "$version")"
+      tag="$(get_head_commit "$branch" "$repo")"
+    else
+      [[ "$version" =~ xdebug@(8.[0-3]) ]] && major_version=3 || major_version=2
+      tag="$(get_latest_remote_git_tag "$repo" "$major_version")"
+    fi
     patch_github_tag "$tag" "$repo"
     ;;
   "pecl_http")
