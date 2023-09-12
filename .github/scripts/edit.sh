@@ -6,9 +6,9 @@ fetch() {
      [[ "$VERSION" =~ (phalcon5)@(7.4|8.[0-2]) ]] ||
      [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
      [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||
-     [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|memcached|pecl_http|protobuf|raphf|rdkafka|redis|ssh2|uuid|vips|xlswriter)@(7.[0-4]|8.[0-4]) ]] ||
+     [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|memcached|pecl_http|protobuf|raphf|rdkafka|ssh2|uuid|vips|xlswriter)@(7.[0-4]|8.[0-4]) ]] ||
      [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-4]) ]] ||
-     [[ "$VERSION" =~ (ast|mcrypt|mongodb)@(7.[2-4]|8.[0-4]) ]] ||
+     [[ "$VERSION" =~ (ast|mcrypt|mongodb|redis)@(7.[2-4]|8.[0-4]) ]] ||
      [[ "$VERSION" =~ (ds|mailparse|psr)@(7.[3-4]|8.[0-4]) ]] ||
      [[ "$VERSION" =~ (couchbase|memcache|swoole|sqlsrv|pdo_sqlsrv|xdebug)@(8.[0-4]) ]]; then
     sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION" "$REPO"
