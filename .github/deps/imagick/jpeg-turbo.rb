@@ -23,6 +23,7 @@ class JpegTurbo < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "af4d480aafde3db4a5029a8a991e91a9f615b1707f3f5e1797475c66beb982d7"
     sha256 cellar: :any,                 arm64_ventura:  "1971c1fa66c2580fa0bfafe5350c6170bfe7395a4e503e7bfe0c69ec2e353010"
     sha256 cellar: :any,                 arm64_monterey: "89da2a33e1e0e66c1fa10acb40e7c632716a79aa1f82c9175f4cd270cd88bc77"
     sha256 cellar: :any,                 arm64_big_sur:  "8365422894438d22ff64db9387c6445ca5c9cbdecda15da0ef018c7fe355eda1"
