@@ -8,6 +8,7 @@ class Webp < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "56a9a169682886da302686ecd87e7d818610178b586518ccc16a5a36dad22450"
     sha256 cellar: :any,                 arm64_ventura:  "e0c538599934578a095d50ac8cff270b99ab970a1c2ceaf53fd2eba455d30f4b"
     sha256 cellar: :any,                 arm64_monterey: "7a5300bd253231e26cf1a812e632f640fe70c70968de3983ef52dfa173d21fd8"
     sha256 cellar: :any,                 arm64_big_sur:  "aa41b5ef22068f33e787fccad19f53d5c1e612868f51f91c07503dd425ff67dd"
