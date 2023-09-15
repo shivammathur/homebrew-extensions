@@ -27,9 +27,11 @@ class Ghostscript < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "ab38a253c209e0919900fdee05ef9b40f1e31b36f998242678f93baede48bb14"
     sha256 arm64_ventura:  "290522bb038d5db01e9cd834274e196400c37bdfb2c1ba8ed8a82816650c70b1"
     sha256 arm64_monterey: "f9ead5cafe7569cc3b34c4d8c228700edb0cf3d3f58506e25c1299fe0eb47612"
     sha256 arm64_big_sur:  "1dc38aea6fd4bc9c9e5b6d6465459384d8b1a2025a0d1a1997c01b920b8f1667"
+    sha256 sonoma:         "40986b231ffc979579a274364491892911acc40f1fce1d955ef27e442101bc95"
     sha256 ventura:        "2ebfb45d30096d1c6ddf5842f7217a80f0f7cd1709fabbc0658a012a3120a71f"
     sha256 monterey:       "6df60d383c7b1560ccd1e55e9ec2800c9bc565e704ed112feba29efc908d21ac"
     sha256 big_sur:        "a52592ba7398d8ddd6d9e174c5547b282294bcf5fe15d6685e97428be13d46d1"
