@@ -13,9 +13,11 @@ class Expect < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_sonoma:   "25b5d92689067d186416b78ffa0524d5a02a3e1c7068db8998dffaed2dd02e0c"
     sha256 arm64_ventura:  "848515e0ab82921d9292b7a616d33dc02e9dfcaab91793ec4d5ef241c3e08f29"
     sha256 arm64_monterey: "753d526bf20551dde2c60c1580989292e8c8f5f436da14b6901ec92a8bc30f6a"
     sha256 arm64_big_sur:  "664f8a8ff901cacbe76465d4f13dc0ca775ccb0b48b34fa0aeb02b1e2e4dfe82"
+    sha256 sonoma:         "60f75545be4c3bc3f91dc895770d20654ee7112da5e92950ab49b3ef6e577538"
     sha256 ventura:        "25d93f37370c458e865d809dd3489c1843acdc21dd74cabf2413e49f15d7994b"
     sha256 monterey:       "37b95bd265607a74986db6259597e98963a0ff2d845533918105e9396b8f8d24"
     sha256 big_sur:        "8462f3377db850b33a44bea729acd7b8c516aca8ed24d70b155c6b965f6997b1"
