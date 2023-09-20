@@ -15,6 +15,7 @@ class AmqpAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_ventura:  "37f746f6aa8d0a5699e29648879705085eacf5efd200bcd2d0e71962d1547426"
     sha256 cellar: :any,                 arm64_monterey: "df28979060666f4f0b9d39a47b0bb6ca10688d69cbbec20720fcfab44e105930"
     sha256 cellar: :any,                 arm64_big_sur:  "da5f88c0b1c6962183274a55c4076211ac58d92c13d947bddfe2e88e01b42338"
     sha256 cellar: :any,                 ventura:        "a109d04e420cb5291004f17f4ceb895a0c81ae9117beeac2267c4c4af2fc2f99"
