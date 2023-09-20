@@ -17,6 +17,7 @@ class V8jsAT74 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 3
+    sha256 arm64_ventura:  "06594011aa9186b40694522134232a1960b50d8630f91ecd9e35b0e9eefba3d9"
     sha256 arm64_monterey: "000de54fe2cc71c57752300decef2e2dbd67e29ded966f68cb72a23750302d14"
     sha256 arm64_big_sur:  "14a756a183e3cb45a3e829712d9ce27218700a86b7e5f12e31dc73e87924337b"
     sha256 ventura:        "b475c96093d90d31fa3c37c912bd283b6fc8d97ca71ff2e4c1506da94c69be9a"
