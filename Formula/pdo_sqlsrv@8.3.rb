@@ -15,6 +15,7 @@ class PdoSqlsrvAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_ventura:  "ad4e6458f5be1bda7cc39b375125ef27728c3ba91285a7e03203fe1f92898a3e"
     sha256 cellar: :any,                 arm64_monterey: "4acd5c5c51f80c36471412dfa10e74bf8a946b5c79670ea3315ccd23ade91b3b"
     sha256 cellar: :any,                 arm64_big_sur:  "8a8934974495fb2519319e7411533b6e987aec1e394d163aea1209f79cddf3df"
     sha256 cellar: :any,                 ventura:        "fdba6ea0e3f407b6f99f595a31b76455d4dbfa1f244e3fd502a9a6e21485e98a"
