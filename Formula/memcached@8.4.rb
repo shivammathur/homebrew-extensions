@@ -16,6 +16,7 @@ class MemcachedAT84 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "6bc54d5a379cdbdccb429900e1cbb52db5c48109b1e6528f7045875f6bd842bd"
     sha256 cellar: :any,                 arm64_monterey: "a7903288844d762518e0f3ed1470ce19d333620ebc3252508679564bc49a4991"
     sha256 cellar: :any,                 arm64_big_sur:  "0b0ad0af85cec5ca665b5687d7523c408a425dfd613dcf7e5d53697416f4c3a7"
     sha256 cellar: :any,                 ventura:        "c624f395eb19e0179525daff4f1f11939ef8b024e8cdd36f4170d597051192ca"
