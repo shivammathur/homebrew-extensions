@@ -28,9 +28,11 @@ class Gcc < Formula
 
   bottle do
     rebuild 1
+    sha256                               arm64_sonoma:   "b252fb49b4ea41bff4730364335750bce323f597a8db568b1f0e13ec6017c238"
     sha256                               arm64_ventura:  "4d567b8a5bbdc26f07441273352cf5866eaf9bb0f87543d7411ef0757474b832"
     sha256                               arm64_monterey: "113dd4b429bada5a1af194587607a6560bde88be53426320d65485ef630e7b96"
     sha256                               arm64_big_sur:  "5f7b0d8f4a122bc15355f1de5f8c4a4c85e64fb50ff3423d965fb8745f85af81"
+    sha256                               sonoma:         "e270347f863c587a2c03d7725921bdf1badca40455ba9c85765532fa84c90232"
     sha256                               ventura:        "013593835e5f56f70fd6c89c76a649ecf51147733e5edb33cbce07db827eadfc"
     sha256                               monterey:       "2c0515fc40a140f462c564c5a9dff0ae98b98c2b94222a49fcdd17210b1a1a99"
     sha256                               big_sur:        "c2c28ba56818e95e61f2917d2362b0b355abd849e032ad83f8b5e9f0571bbcf0"
