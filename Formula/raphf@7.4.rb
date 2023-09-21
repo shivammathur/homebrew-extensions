@@ -17,6 +17,7 @@ class RaphfAT74 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a282dac970a1477b3323bca1f311a480f1ecbdf5cdbdd47953a676e8b3f0607b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d913e420dceac83a05a845a79f47086a6d9a844dce26a4c4c61c3d1c4d662766"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b6a9b417407b30f4ca9c535995453189ae0012fbf646e13f99369f255a5c0f9e"
     sha256 cellar: :any_skip_relocation, ventura:        "aa3b721261fdba422dd81e1e8a3d881f354ef0b98a262b20561c6d15764d1824"
