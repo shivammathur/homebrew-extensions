@@ -16,6 +16,7 @@ class EventAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_ventura:  "814ebedd123183c1669cfed5b0f37c3bb2c25182fb6e6b9aa26259375fb27d48"
     sha256 cellar: :any,                 arm64_monterey: "ba790d6b8104a8662073cca548a56f0f5461e9e9ccfd44555e6e54bb4853b93a"
     sha256 cellar: :any,                 arm64_big_sur:  "d28017548e7cbb38880432e38cb241dda47f5a37d027af278318e727b96b7801"
     sha256 cellar: :any,                 ventura:        "8600908261cc9ca9d6c71e6df7982a3d68caac794370fe7c8bba17a6637a69d2"
