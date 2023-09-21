@@ -11,6 +11,7 @@ class PsrAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce9522a23364cb1aebfb5350753335a07f28d43291bb8b5174e963dcbba3d948"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2aa228bc744b0e5c402c5409f4505236092063c91a5231cd6c4f0ac129a98c56"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "00acfce6e643073d6cc012f253e7802c12b3dbd2cf05017940d5d0e3cb98bf4a"
     sha256 cellar: :any_skip_relocation, ventura:        "6dd0b4104fb26d7e22c606df684dedfa4ef9af8615900ba709bd766fff7909f3"
