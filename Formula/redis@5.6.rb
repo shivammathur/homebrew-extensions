@@ -16,6 +16,7 @@ class RedisAT56 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "41ab025b10b8ec462608be5c04ee440aa4e6d3aefe4c08f9bab9ee0c427ce66b"
     sha256 cellar: :any,                 arm64_monterey: "0c10c066273674164449476bc32e5975076429781a234059a7204daf03948c4e"
     sha256 cellar: :any,                 arm64_big_sur:  "5df9f678ce0674af118a52c66531ccfce54b6c45d14e0ad56b7925e7894565a6"
     sha256 cellar: :any,                 ventura:        "3b45366cb34310c519a0d6ed6da8cf3a2b8555baf5750bb6c04f299f80f1341e"
