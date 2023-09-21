@@ -16,6 +16,7 @@ class CouchbaseAT70 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "84824f7b5cba52d924434ecc78193eb0981057a7c5042a2ab77ca96914a773c3"
     sha256 cellar: :any,                 arm64_monterey: "a4a57c77eb8bae0cb02583fae30b89e70a6b9706232ce7563cdbd888f6f1d5b4"
     sha256 cellar: :any,                 arm64_big_sur:  "a36dad803115a22acf11a978c877d0e0d88437d43857e9e023a690776ccb2f5f"
     sha256 cellar: :any,                 ventura:        "843a5abea95f95dcca038fde5446786c4d7cb3f0ecde93719a38c5f84b141884"
