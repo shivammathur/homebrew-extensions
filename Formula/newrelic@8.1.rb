@@ -16,6 +16,7 @@ class NewrelicAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_ventura:  "4e855dd29873399e69975c65589da82bf1c736a0cd1a255a3cd857d45861c3e3"
     sha256 cellar: :any,                 arm64_monterey: "6fbe83f17a3ea549317de4c8c75bc0a898637604ac41fb7bb1697b3e3895c9dd"
     sha256 cellar: :any,                 arm64_big_sur:  "6f73b6b7aca8a79bd584b2f9fdfe5e91e844b6eb79e222b61625f90f19bb8261"
     sha256 cellar: :any,                 ventura:        "7746347adc42171755a9f28a66a27036ae6e4d8a313b2ff0b3863b4ee757951b"
