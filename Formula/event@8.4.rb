@@ -17,6 +17,7 @@ class EventAT84 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "26bba868fe21e440aa4091d07c02aedcca33d4cbbc5099e6437fe02f47af4458"
     sha256 cellar: :any,                 arm64_monterey: "f0f10fa1dedc9e3f0c0fa0402bbdbfb45b183e9f10a36a38cfd58ab572d7a03c"
     sha256 cellar: :any,                 arm64_big_sur:  "d3fc6dd26a920f7e04d2646954c6cb254184d86fa1bccaf56a6887f0ae6da720"
     sha256 cellar: :any,                 ventura:        "e1fc54ec6c9e2e594d970b0c411f0a633de95eb3ca056cc9c3245d6c905656f2"
