@@ -16,6 +16,7 @@ class XdebugAT83 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
+    sha256 arm64_ventura:  "3ded4006a626dec9d835449da1ced50a85bf960d9507c14da98de4a3ff6f6971"
     sha256 arm64_monterey: "4996817fd945b2330310d9c130bc9ecfea00c9f9ace2c34c052b597dec9920b0"
     sha256 arm64_big_sur:  "ba2bea563c1f039692efba5abd0c3b3b883ae3455ba75adb83be5f93809d1c15"
     sha256 ventura:        "56844df65d3106471f4587d480a59a2cffebf4180427050a1c6117aa957a5b05"
