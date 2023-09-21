@@ -15,6 +15,7 @@ class GrpcAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "12b2f5286ef30ad622cea2ec7d73b572a90af3d1791ff54135c2794235221ae9"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "308cd8002c7140a2580511261a6d72fd498eb0a8380be4690e1155dfdfd31ab9"
     sha256 cellar: :any_skip_relocation, ventura:       "5d6fcc7641e12281b9e3249e928fe5c9e5dbf4e6a95d4aa962cb04c314d63e04"
     sha256 cellar: :any_skip_relocation, big_sur:       "f622cc6a4a7765f6801cea51606bb654c85b856ff3c967c0bce38221690123ee"
