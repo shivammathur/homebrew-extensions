@@ -81,6 +81,9 @@ class ImapUw < Formula
 
   def install
     ENV.deparallelize
+    # Work around configure issues with Xcode 15
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     inreplace "Makefile" do |s|
       s.gsub! "SSLINCLUDE=/usr/include/openssl",
               "SSLINCLUDE=#{Formula["openssl@3"].opt_include}/openssl"
