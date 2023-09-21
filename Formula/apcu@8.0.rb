@@ -15,6 +15,7 @@ class ApcuAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b9a4473448a799c978ccf2a2251a994d5b1023dafe05d89ab9b0b1e32fd0005"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "61bff35a4d3ee8d9f9e83fd0030d078169871bd82cc7fe7942c93b475e725571"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "62d2c64398f1e45db0c04107a17e8150dea215fc5cd6fda3919297b0319dd670"
     sha256 cellar: :any_skip_relocation, ventura:        "77fffc18ea4cc5d95454563034c7a58e3f55a5b28a103c15e0c515f818c13391"
