@@ -16,6 +16,7 @@ class VipsAT80 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 6
+    sha256 cellar: :any,                 arm64_ventura:  "a422c488121fbbc95a1f03f8c9534b0d452811461c6234c67b92eb0679e77768"
     sha256 cellar: :any,                 arm64_monterey: "ea6b76b83a8402eb0988f2847f5f7f3cd5c9a33e194afb543eb70e44e691ee0f"
     sha256 cellar: :any,                 arm64_big_sur:  "08fab4a17021b3b68f6e41c7a26e7a3e99c4e721147f300102ab2cd806cc2975"
     sha256 cellar: :any,                 ventura:        "317e39aa51060868d3a49c864a74fa994ac0f863d2abf04c734de9cd8c3c2d72"
