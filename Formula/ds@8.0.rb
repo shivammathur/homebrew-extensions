@@ -16,6 +16,7 @@ class DsAT80 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2fe70139a34fa26fd117001e6bc1b549f4136ab146f36046ba05560b68b9c823"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "de234faf47e0c5ed06358954cb77e2c5706f7339b5f2f43771fccd258a4fb405"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "db68f551afe0691af5a9bafb4624c427085b7a8b45ee378d933bafc01ef36e8c"
     sha256 cellar: :any_skip_relocation, ventura:        "f62f7b065777cc7867d2663385666c1e14beb7a5bbbf49e3c53c0cdcd63d285b"
