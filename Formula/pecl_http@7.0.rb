@@ -17,6 +17,7 @@ class PeclHttpAT70 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "0c96bbc27b85d4b81bfb79f94c4171f949f1378eab7826aef2393cbd415fe67e"
     sha256 cellar: :any,                 arm64_monterey: "6d2e46636127c829977075c99f965c38b504179461e358422123223be10dc29d"
     sha256 cellar: :any,                 arm64_big_sur:  "837d3edd8923457a2d832dc1e0b987fd8f56cfb80753a1ae5af4ea8fd9cc0aab"
     sha256 cellar: :any,                 ventura:        "3d64c13f528db4118bc3a4913371efee2383e93dcf0d792b31ae4fa63e991ba3"
