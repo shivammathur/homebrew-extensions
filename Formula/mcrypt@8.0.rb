@@ -15,6 +15,7 @@ class McryptAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_ventura:  "ce5f60d44dab2996d91ec504c1f435fd80c2c1175c5a12a58793f2d5dbeaeb7d"
     sha256 cellar: :any,                 arm64_monterey: "3374ae0461253a80f755af889595ec9c408afb4813d6c5c9a6e4d2548b894613"
     sha256 cellar: :any,                 arm64_big_sur:  "d9dd9e13a49e6905827f75b026a6791046f3f84d5cc3137862817471e159ef5c"
     sha256 cellar: :any,                 ventura:        "1f65fc6c09814e89d3ab138ff8f5cfba6c0f651569c010d63b42c6b927a914ef"
