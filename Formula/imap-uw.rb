@@ -15,6 +15,7 @@ class ImapUw < Formula
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 5
+    sha256 cellar: :any,                 arm64_ventura:  "2704713b4f0138abaf9b15216bed2b70fad8218283e5d0c1dcdb0bbc05673692"
     sha256 cellar: :any,                 arm64_monterey: "2148c153539b8e2cff2bc9ff6a65d2886cbfa962d8a5d8fa594f56fcde3891fd"
     sha256 cellar: :any,                 arm64_big_sur:  "0c87db9c566d013541c61a349abb7ff89bceb0b9e93c6a9f57b56362c38adbb7"
     sha256 cellar: :any,                 ventura:        "7011a091554e947169135967cb6de5c14ccb493fae616c0e8011f9635665b315"
