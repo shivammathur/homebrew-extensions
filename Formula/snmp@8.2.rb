@@ -15,6 +15,7 @@ class SnmpAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_ventura:  "fb84556729231d877fd2508bf7eb28fc0068166c116faa1df5a3c261d3157956"
     sha256 cellar: :any,                 arm64_monterey: "166d51322ee164beddd779b42881ca12aa88a57e1c0ea886f2863d74160071a8"
     sha256 cellar: :any,                 arm64_big_sur:  "262e544f140dd827c1c2b1ac32a7023ca85b99af122d70b3e2960b8bccd0bd33"
     sha256 cellar: :any,                 ventura:        "3fd784affd83a3070200fecaad7e1be3b91c2afbdad7f47567a9d24540e3bcaa"
