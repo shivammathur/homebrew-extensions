@@ -15,6 +15,7 @@ class MongodbAT72 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_ventura:  "2c2efe12ebbd48686eb9ff8af3e937d53f22c6fb6fb3be5656d4a56e48e3a328"
     sha256 cellar: :any,                 arm64_monterey: "5b5756ffdffa45fe48c44ca0cac06502ea4ffd44a1f0a50e542f29ac8b713d9b"
     sha256 cellar: :any,                 arm64_big_sur:  "0a109fdbfc8c7c9ba368a8001112f0c725f2d7b437c1a32f7c065c0294e607c7"
     sha256 cellar: :any,                 ventura:        "ccf226c600d26228b3d1887bf8cbfd5aad66dd44052a4e090d3f57b0b0ba81dc"
