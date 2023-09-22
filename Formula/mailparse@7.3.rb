@@ -15,6 +15,7 @@ class MailparseAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b8496e0bfe7da4deb7b21f32e930bacb48f358e2a6a9cd8b62b6970beac2d9f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "079459e95d005b789b96f42b6023db8904ad19a57064e083d8bf1fb176ed7349"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1609cfe6a0a1834e55375d0c65d65c3d666dfe625e4a65424d9fb67308154eea"
     sha256 cellar: :any_skip_relocation, ventura:        "d37a903822b3a0dc5ec869687fde5f49237c991c794e9fbe0bb4228627c6d161"
