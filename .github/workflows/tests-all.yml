@@ -7,12 +7,10 @@ on:
         required: true
   schedule:
     - cron: '30 5 * * *'
-env:
-  runner: macos-latest
 jobs:
   tests:
     if: "!contains(github.event.head_commit.message, 'skip-test')"
-    runs-on: ${{inputs.runner || env.runner}}
+    runs-on: ${{inputs.runner || "macos-latest"}}
     strategy:
       fail-fast: false
       matrix:
