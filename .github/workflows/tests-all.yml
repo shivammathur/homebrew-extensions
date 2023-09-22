@@ -1,13 +1,18 @@
 name: 'Test Formulae'
 on:
   workflow_dispatch:
-  repository_dispatch:
+    inputs:
+      runner:
+        description: Build runner(s) (macOS version or Linux)
+        required: true
   schedule:
     - cron: '30 5 * * *'
+env:
+  runner: macos-latest
 jobs:
   tests:
     if: "!contains(github.event.head_commit.message, 'skip-test')"
-    runs-on: macos-latest
+    runs-on: ${{inputs.runner || env.runner}}
     strategy:
       fail-fast: false
       matrix:
