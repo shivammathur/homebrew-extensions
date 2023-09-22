@@ -10,7 +10,7 @@ on:
 jobs:
   tests:
     if: "!contains(github.event.head_commit.message, 'skip-test')"
-    runs-on: ${{inputs.runner || "macos-latest"}}
+    runs-on: ${{ github.event.inputs.runner || 'macos-latest' }}
     strategy:
       fail-fast: false
       matrix:
@@ -94,7 +94,7 @@ jobs:
           php -r "if(! extension_loaded('yaml')) {throw new Exception('yaml not found');}"
           php -r "if(! extension_loaded('zmq')) {throw new Exception('zmq not found');}"
           # Check if inputs.runner doesn't have arm64 in it or if matrix.php is not 7.0 and 7.1
-          if ! [[ "${{inputs.runner}}" = *"arm64"* && "${{ matrix.php }}" =~ ^(7.0|7.1)$ ]]; then
+          if ! [[ "${{github.event.inputs.runner}}" = *"arm64"* && "${{ matrix.php }}" =~ ^(7.0|7.1)$ ]]; then
             php -r "if(! extension_loaded('swoole')) {throw new Exception('swoole not found');}"
           fi
 
