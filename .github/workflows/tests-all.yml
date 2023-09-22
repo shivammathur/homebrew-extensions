@@ -92,10 +92,14 @@ jobs:
           php -r "if(! extension_loaded('psr')) {throw new Exception('psr not found');}"
           php -r "if(! extension_loaded('snmp')) {throw new Exception('snmp not found');}"
           php -r "if(! extension_loaded('ssh2')) {throw new Exception('ssh2 not found');}"
-          php -r "if(! extension_loaded('swoole')) {throw new Exception('swoole not found');}"
-          php -r "if(! extension_loaded('uuid')) {throw new Exception('uuid not found');}"          
+          php -r "if(! extension_loaded('uuid')) {throw new Exception('uuid not found');}"
           php -r "if(! extension_loaded('yaml')) {throw new Exception('yaml not found');}"
           php -r "if(! extension_loaded('zmq')) {throw new Exception('zmq not found');}"
+          # Check if inputs.runner doesn't have arm64 in it or if matrix.php is not 7.0 and 7.1
+          if ! [[ "${{inputs.runner}}" = *"arm64"* && "${{ matrix.php }}" =~ ^(7.0|7.1)$ ]]; then
+            php -r "if(! extension_loaded('swoole')) {throw new Exception('swoole not found');}"
+          fi
+
       - name: Testing Xdebug2
         if: matrix.extensions == 'xdebug2'
         run: php -r "if(phpversion('xdebug')!='2.9.8') {throw new Exception('xdebug2 not found');}"
