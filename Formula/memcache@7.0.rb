@@ -15,12 +15,13 @@ class MemcacheAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "601a297d88d76c730479cc86644c43b9683bcf4ffb1e4ed6d34b511b7e960668"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "83fa3d467bf1da7661c38acb307872c33a5224bb8ffb4865341a7f485b406512"
-    sha256 cellar: :any_skip_relocation, ventura:       "257ca93a5a940b7ec6fbd528462076acfd8c7995fa9b3f7b1983af6dcdabc832"
-    sha256 cellar: :any_skip_relocation, big_sur:       "9d532ac5a58e4b5841ce66c2c241b5aa7d6efcf1668f96a694e084751ce07bfb"
-    sha256 cellar: :any_skip_relocation, catalina:      "be807879f7b332829e6e4a7c1c995f30b9e6867b2853638cd0e7818a140eefe4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cde95ce57b5b4063af5c6a0a13710d84a07a2c4f387c87f91d3852d96eb7c355"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "601a297d88d76c730479cc86644c43b9683bcf4ffb1e4ed6d34b511b7e960668"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a595a0c49003e5e8f8e0df9b99f49df046e7ff1a06604f90cb26365c9523ff83"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "83fa3d467bf1da7661c38acb307872c33a5224bb8ffb4865341a7f485b406512"
+    sha256 cellar: :any_skip_relocation, ventura:        "257ca93a5a940b7ec6fbd528462076acfd8c7995fa9b3f7b1983af6dcdabc832"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9d532ac5a58e4b5841ce66c2c241b5aa7d6efcf1668f96a694e084751ce07bfb"
+    sha256 cellar: :any_skip_relocation, catalina:       "be807879f7b332829e6e4a7c1c995f30b9e6867b2853638cd0e7818a140eefe4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cde95ce57b5b4063af5c6a0a13710d84a07a2c4f387c87f91d3852d96eb7c355"
   end
 
   def install
