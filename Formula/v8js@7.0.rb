@@ -16,14 +16,14 @@ class V8jsAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 4
-    sha256 arm64_ventura:  "cc5b5808b2825c031c0e8155e29f3d15f2ee8844fd8601d77e7c218f482fcddd"
-    sha256 arm64_monterey: "501acc48066a5ba87be8eab23e1f2d47ba62ca1272b97af9428b2dcc2bdb400d"
-    sha256 arm64_big_sur:  "483a684a6ec52f5884f3b3d2a673a394d59f904f6c6d1ce6fd92817e5631b673"
-    sha256 ventura:        "b1ce204de65539feb2ff26657f0b20df2d14b6fb0a754e5ded7b13b392a352f3"
-    sha256 monterey:       "4173ced8bfb57d87b87931530ff3a595fdb86afa3acd440f4ef2d2c72777f7e3"
-    sha256 big_sur:        "ab0bbf1acd684dc949a41904c43569c1dbb37d3e9e85d5a1d30d902abcd479c9"
-    sha256 x86_64_linux:   "50da7c034f56727ab161fe616e6261450f5c0d84b27032a7bd27d1cd2cfbb022"
+    rebuild 5
+    sha256 arm64_ventura:  "dd7acc87f36ecfce26d2e33fd76794ee4ece5f144f19a0317a3c2ed5184a182e"
+    sha256 arm64_monterey: "798f89c13a831c6b1f592a2b582a40c28b251870b831eecdeac6bee7e1680f7c"
+    sha256 arm64_big_sur:  "33aa71c3248c5168ece1365596111e528fcae4d2a4da8745e442690b30e7cbd9"
+    sha256 ventura:        "d6f912b14f1c8c9aeaa79c553c2874d0569de0439a2f21cd39c144726c6a1ff7"
+    sha256 monterey:       "bbd822f85d77189c4738a00bb82ae1ff08d7f6de7419ec30963f9bfae0eeee7a"
+    sha256 big_sur:        "d2c2fae0fd8b8a2b92ae370e76c3028058d7a783d1501654d44a0ba55de4bd5b"
+    sha256 x86_64_linux:   "6e8d5350b7b38eb5fe3715aba1be4935cf24b055ea0514cb863bb9e5a66cbd68"
   end
 
   depends_on "v8"
