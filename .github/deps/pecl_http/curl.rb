@@ -15,9 +15,11 @@ class Curl < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "e7297f57780ed14527f5b44a760350038c72f8f1721100ea4c0c94e8d691fd07"
     sha256 cellar: :any,                 arm64_ventura:  "f4c4ea2e973a69e155da1683d25501579e00ccb9820351f3c15f02433c81c599"
     sha256 cellar: :any,                 arm64_monterey: "15c13521434d2016eed9809ace5f1ca2f128efb335e761ae64e97ba4d57ca4af"
     sha256 cellar: :any,                 arm64_big_sur:  "86d7ae1fbf0107d881ee72874f0e5f172ec220f36f7f3e337c3805a17fcd35c6"
+    sha256 cellar: :any,                 sonoma:         "66b0434033fedd9c5c2a85a50a0dcdf2f53a81d9a2ad42b4c96fad7031736683"
     sha256 cellar: :any,                 ventura:        "13675dbbf6572b82991346a96a592dfb214980934aadbd1b104a5b6d8c483745"
     sha256 cellar: :any,                 monterey:       "3763039f868f0f99ac3559db3f4b7c7b2ad79b5ebe6f0f991280587b60d21dab"
     sha256 cellar: :any,                 big_sur:        "083eaa48224fd208caf336582e439756d45be2f059a5c281e74086198e269f37"
