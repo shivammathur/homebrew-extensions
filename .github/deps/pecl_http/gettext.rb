@@ -49,11 +49,6 @@ class Gettext < Formula
       "--with-libxml2-prefix=#{Formula["libxml2"].opt_prefix}"
     end
 
-    # Sonoma iconv() has a regression w.r.t. transliteration, which happens to
-    # break gettext's configure check. Force it.
-    # Reported to Apple as FB13163914
-    args << "am_cv_func_iconv_works=y" if OS.mac? && MacOS.version == :sonoma
-
     system "./configure", *std_configure_args, *args
     system "make"
     ENV.deparallelize # install doesn't support multiple make jobs
