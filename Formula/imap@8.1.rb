@@ -14,13 +14,12 @@ class ImapAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_ventura:  "4f5f0fdbfa117fcf98338da1c5cf96ca7adefa55916e1605cf659393a9ba3aae"
-    sha256 cellar: :any,                 arm64_monterey: "f4b389e39947226fb4018480896eaba5d8415acda284ed5f91f479156bb98cc5"
-    sha256 cellar: :any,                 arm64_big_sur:  "4ae7995e17f5f63eaf0d92f74ae578de8fd64c02d157886d4235cd0d53bfbec4"
-    sha256 cellar: :any,                 ventura:        "9acbc9222280e785d92bb412c1281836b604700fba1269945ae8a46caff258e6"
-    sha256 cellar: :any,                 monterey:       "426132e1591aa528d9879a0747e07d455b9eda8c2a9c9b945549e250cdc7b456"
-    sha256 cellar: :any,                 big_sur:        "153bcecd940f4ba76d063afc54d0e0ed1a2553c6b53f91393ecfd4151ac5df0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b4198ced78d1abc54758697e9792696ff05997684f099619c37ec64a74d6d06"
+    sha256 cellar: :any,                 arm64_sonoma:   "86d3e2b9fe2d122bd500960eedd9e40e75dcc15d8bd6bf7b9a790b2ebc07eaa2"
+    sha256 cellar: :any,                 arm64_ventura:  "25093d1d566dd46a38324dac972b68e20fe666bdff40cfa10dde7f631240d0e5"
+    sha256 cellar: :any,                 arm64_monterey: "7d1341acaa620d052ec74bd67bc34f4903561cd466c0e265312f2a7b4154693b"
+    sha256 cellar: :any,                 ventura:        "a888591a39f52bb8d4eb962ff52c550625d8fd875f4276d1af0887a54f7a2c0e"
+    sha256 cellar: :any,                 monterey:       "39c14f42657da6bb2687cae5bc6c024fa65fd7fc16a6f8896fc09beff0262796"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6e115e0abc817f6b537a65cf61a0d80f3e46e02f8567915dbf57c489aad7af7"
   end
 
   depends_on "krb5"
