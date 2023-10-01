@@ -2,8 +2,8 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.58.1",
-      revision: "0f8cb206ef897f9cff2206e06a1a5303dbd4aeef"
+      tag:      "v1.59.0",
+      revision: "08cc1787de022069135004adfdd17938b5062319"
   license "Apache-2.0"
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -19,15 +19,13 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "87d5310847d31f59c6219620b5af420c74665c10d5af6ce3d35d7ffbfba93026"
-    sha256 cellar: :any,                 arm64_ventura:  "11528e09facf1657db7bae06e86b50a81948348524da90256a6c7062321fac19"
-    sha256 cellar: :any,                 arm64_monterey: "5b9a019375a28087db517d35fd76d49c25c8f5427722f862f97001be32f3d81e"
-    sha256 cellar: :any,                 arm64_big_sur:  "81750aa9bc2abd9356483e3735bfdeb3fd4e53a9a52b6281a65f524a2f56e65e"
-    sha256 cellar: :any,                 sonoma:         "91d75ccac1bbb9501e0c16d1f432a8170e669a581916e11d98f3d3c27e1e803a"
-    sha256 cellar: :any,                 ventura:        "e7cdd90085c071486ca409dfb9a3359f91e44cd6176d586ddcb59a0ddc674e86"
-    sha256 cellar: :any,                 monterey:       "26360ef3a63e41ac32e01d9732f6ae28ff4048b10eec65943e23987895c4b519"
-    sha256 cellar: :any,                 big_sur:        "cee4aafd811a3a1a8f63a8defa89e892af3b53622b616afff0941366902f6239"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41806942bdcb3c80ce18c08d88be648197f1e977ef1e3b7744e497800fe57c72"
+    sha256 cellar: :any,                 arm64_sonoma:   "7b76c88915c986b299fc69772fe527f82e8eb36c6d40257af59254664b770c13"
+    sha256 cellar: :any,                 arm64_ventura:  "c52b0358b54575404e452bc252a998674f14407cb7c379fab89fe9e377b56b91"
+    sha256 cellar: :any,                 arm64_monterey: "5e1660129e4cfec0f777a7ed215590048d243cf190eaa3429979c9728de1e2e6"
+    sha256 cellar: :any,                 sonoma:         "dbc8f3d84e486f17408784cf233ab7c4caed37a7a3105821dc3356e4a0966b24"
+    sha256 cellar: :any,                 ventura:        "530b8e03f9c598f14a4a3290508db34dccbaa3f92d88a39b64d7e68643b9a5e4"
+    sha256 cellar: :any,                 monterey:       "44197aa3b8b191af2e289ed7fc649cf2c3af93362d652fbabc6e8fd3d6d74e2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59215afe1383c60f74cbec23cfb1690ce624d5b4a542640f6928cf46677fee53"
   end
 
   depends_on "autoconf" => :build
@@ -53,13 +51,6 @@ class Grpc < Formula
   end
 
   fails_with gcc: "5" # C++17
-
-  # Fix `find_dependency` call in gRPCConfig.cmake
-  # https://github.com/grpc/grpc/pull/33361
-  patch do
-    url "https://github.com/grpc/grpc/commit/117dc80eb43021dd5619023ef6d02d0d6ec7ae7a.patch?full_index=1"
-    sha256 "826896efc97e6c3bd3c38fc5e09642db4c6c4ec54597624ee8905da89e1ba7b6"
-  end
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
