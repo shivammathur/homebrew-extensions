@@ -1,11 +1,11 @@
 class CAres < Formula
   desc "Asynchronous DNS library"
   homepage "https://c-ares.org/"
-  url "https://c-ares.org/download/c-ares-1.19.1.tar.gz"
-  mirror "https://github.com/c-ares/c-ares/releases/download/cares-1_17_2/c-ares-1.19.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/dns/c-ares-1.19.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/dns/legacy/c-ares-1.19.1.tar.gz"
-  sha256 "321700399b72ed0e037d0074c629e7741f6b2ec2dda92956abe3e9671d3e268e"
+  url "https://c-ares.org/download/c-ares-1.20.0.tar.gz"
+  mirror "https://github.com/c-ares/c-ares/releases/download/cares-1_17_2/c-ares-1.20.0.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/dns/c-ares-1.20.0.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/dns/legacy/c-ares-1.20.0.tar.gz"
+  sha256 "cde8433e9bf6c6a0d9e7e69947745ee649256d76009d6c23b9555f84c5c13988"
   license "MIT"
   head "https://github.com/c-ares/c-ares.git", branch: "main"
 
@@ -15,15 +15,13 @@ class CAres < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c8cbe49f75ae85d59b427b7fc4e77374a42b058d724564b5cb1752c13f2dc40f"
-    sha256 cellar: :any,                 arm64_ventura:  "ba35cc0962beaea7ae345ee1818297c40d5653649e563dc9493b93924b87ae41"
-    sha256 cellar: :any,                 arm64_monterey: "de7817bc21be96a6ddc10a8f5c0dbefc7930b9d9a8bdca24ecd88c23d5e592ef"
-    sha256 cellar: :any,                 arm64_big_sur:  "f8671b1156701b219b38544e7edab45a97afea17f06e5e2db4113d43036d1c2f"
-    sha256 cellar: :any,                 sonoma:         "b518b634ec0bba43f2c6e4b76e6f6c900fa348d24af3114053214ab0f3871fbf"
-    sha256 cellar: :any,                 ventura:        "504f6347444d599983e075211dee95529f7329324f3f7470914adebf06f46419"
-    sha256 cellar: :any,                 monterey:       "c954838d76e0f11529f20455fa4173e5390a97479d141f3b6d2d136054a2453e"
-    sha256 cellar: :any,                 big_sur:        "8e2a1fa105cdc6be5e40a16a32a21fee6fb64fbccc9826906e4097573c22b357"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a3705f6172017f6a8201a902a083898923ba3dc369889bc5572fd93564c3f6b"
+    sha256 cellar: :any,                 arm64_sonoma:   "8db865fe42a6bc380bf09a53dc13f038ca335d0ef4add06c8c6e723df2b1d922"
+    sha256 cellar: :any,                 arm64_ventura:  "9c0c6e486400209df354cd828b5f2b19ca17e2e7a60bd42ff20eea633b313d70"
+    sha256 cellar: :any,                 arm64_monterey: "c244529d6f9f67c1cfe3d95e0eb8bd5d7f1a9ee8d7fb5ff2e3248a125436bf73"
+    sha256 cellar: :any,                 sonoma:         "975494e231e47510129093f4db724b46260c7796a3de454a86a3563767711e29"
+    sha256 cellar: :any,                 ventura:        "3707fcbe9a18c34d9dc80da6d2fee7f280acc56faa406191d798f53ecde3f775"
+    sha256 cellar: :any,                 monterey:       "15465c1cec8ba85a6682c11317a779ff402f09ead3d2ce2064261debfc3f3199"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8bdaaaf273b5398a1ab62913914ad445f7ed1fad3a99af5f25c4c9e2d6916a6"
   end
 
   depends_on "cmake" => :build
