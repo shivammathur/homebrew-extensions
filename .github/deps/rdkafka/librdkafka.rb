@@ -24,12 +24,12 @@ class Librdkafka < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "lz4"
   depends_on "lzlib"
   depends_on "openssl@3"
   depends_on "zstd"
 
+  uses_from_macos "python" => :build
   uses_from_macos "curl"
   uses_from_macos "cyrus-sasl"
   uses_from_macos "zlib"
