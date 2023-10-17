@@ -11,18 +11,21 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "1a174c4fbc4dec179eb305aabec193a7e0d0dc432b9a63b821e00fb243573964"
-    sha256                               arm64_ventura:  "025f529c3c15cae347c51ce74a40a0ae778ebbbdb38cdb62321521ee7f21bea4"
-    sha256                               arm64_monterey: "c858c4f8712e77f6f5bb8349477b5f7a8d0f3de0685bc9c8411bf8bec22f82e7"
-    sha256                               sonoma:         "dbc8164191525eb746f1c6e9064687576e71aba61efd6f92ab30a68eeb261a0b"
-    sha256                               ventura:        "4130f1fde3201eeeead281720c9beef592f7f6c3273e0ecde577ef79a6893c3f"
-    sha256                               monterey:       "4571ba29518c567a83b76ff4137ed217742bb87707f1499285b3c131ae00da92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0906002f26ebf25a9b5ed6ba27d4d27106c3f03da4428172fcada37737988c0"
+    rebuild 1
+    sha256                               arm64_sonoma:   "16b8d32784c598f922a6209b18b85a7ef0cbc9c7a1de59313c3dee44c3cf9296"
+    sha256                               arm64_ventura:  "fd14e1a0cd0efebaf1c51798f53ad13658c9686f21ad4063118eedb25dccc27e"
+    sha256                               arm64_monterey: "bc0e81685716d6a0897316071b320d96a060269aff4e2d7df68d560c1e58de89"
+    sha256                               sonoma:         "f6f85b06d6afb0a99a983215fe2042544629005afd36b985497f492bf5e27ba9"
+    sha256                               ventura:        "09eb16773501be65bf3794986a56b8209b529d74e42bdfa66fcae52dd9d7478b"
+    sha256                               monterey:       "164df1eb986c3ce2d1f0e87166e50980af17229cf9b0e96957dc4e53f385c06c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7d88ba606a87610275907bae0076aa85370532605dfe8ea057094f913514e8e"
   end
 
   depends_on "cmake" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "abseil"
   depends_on "jsoncpp"
 
