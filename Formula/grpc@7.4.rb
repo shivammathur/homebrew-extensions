@@ -15,13 +15,12 @@ class GrpcAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef00a0f91aea0b019f1d264a9575ec751c9f7998d4cf36da38a2eed4a0d547df"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c51c31602fe1ebc85e05f7c276883161a6a2366d191058e5237f7ddd9bbb815"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f3c1beb0ca5e1955451fbf9f1a0a67909679328e9a59fca577a10a1b2c2e7a1e"
-    sha256 cellar: :any_skip_relocation, ventura:        "bbf2fca38bf68480deacdd95f147fa39e92aa0ad17841d7af28e14d453d645fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "c406658d5349b446a951451634bb0f1a98c0234338d9da67cdcf329d41383058"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b362e6f30261e5fed21e312746b5cbebf747091fa843a9683a0244f206cd0e1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91bb5c780cb6152fa4f946ea3c70857c44f35c48e144c3a363b7bf9ddffad304"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e26f41f163755dce3eecdfde93216153b706e677f23c8664c698aa8378f62826"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9494726010ea0a795353f38fa870497c195ae3f7f73a8ad3ae761500347dc903"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9ac16bc1b273db280731c7d0a3869e5bef073bcd8b8d3d7527e826a41973a7a"
+    sha256 cellar: :any_skip_relocation, ventura:        "bcaef98cfd3669a147c640b5e6791e2a318714effaac29b0f717d1d8a551d12a"
+    sha256 cellar: :any_skip_relocation, monterey:       "3501802a34a54ee840c8255eacd82fa773f0c0c1fee8e4a1cd10aa3fbf8587c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d6953a7f420127a65da1498d9bbac26676c801f584e22b3096177104d78a263"
   end
 
   depends_on "grpc"
