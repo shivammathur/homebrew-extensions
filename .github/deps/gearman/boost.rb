@@ -1,10 +1,9 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://github.com/boostorg/boost/releases/download/boost-1.82.0/boost-1.82.0.tar.xz"
-  sha256 "fd60da30be908eff945735ac7d4d9addc7f7725b1ff6fcdcaede5262d511d21e"
+  url "https://github.com/boostorg/boost/releases/download/boost-1.83.0/boost-1.83.0.tar.xz"
+  sha256 "c5a0688e1f0c05f354bbd0b32244d36085d9ffc9f932e8a18983a9908096f614"
   license "BSL-1.0"
-  revision 1
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -16,15 +15,13 @@ class Boost < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "42422b7765221f757c71294b9a083edb13d9d9af092ea5d566f34245898ec2b3"
-    sha256 cellar: :any,                 arm64_ventura:  "acb65f0a6f8a12472eaa2aa223353ceac4134617bc9f99e936df65cfd5240507"
-    sha256 cellar: :any,                 arm64_monterey: "5657bdadfac084745828ccc82589de8b510ffdeca71caf42421a5c4c6b0ece27"
-    sha256 cellar: :any,                 arm64_big_sur:  "a5fa15020b6283ed965017f0abe3ee4df8f3c32c0ed38773b9eecd6411054ec7"
-    sha256 cellar: :any,                 sonoma:         "a51e2e43e98ba290cc33f856e52c04571229e491612f603eedb497986dca48ca"
-    sha256 cellar: :any,                 ventura:        "8ab0045fe83cf0542ea94d81869483ef5d131f5503ef5f9483921316279c1b77"
-    sha256 cellar: :any,                 monterey:       "ba45e6493a71c16e673a2d0ed68596c6538ddbdd218a0bbd5090f4ebe95d00e4"
-    sha256 cellar: :any,                 big_sur:        "268562e726a442438012396aee7a56f558036fceed672c4f703d32f58388e186"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35b4d88117e6f549d87e237494f6b3c0a725fb7a1a073387bcc100cc8e53cd81"
+    sha256 cellar: :any,                 arm64_sonoma:   "2f4988af1c0b9b403a588b73947c3972b634622c769cb9ce2cd9aa74c3314663"
+    sha256 cellar: :any,                 arm64_ventura:  "c1a666049c108789b83cfd88671dda952a0ca961532995fb2b9038da909cb321"
+    sha256 cellar: :any,                 arm64_monterey: "a30992fb00e3f8fb135e611ee26f6154d825ccae5c3b3b6c2ead8fb201addffd"
+    sha256 cellar: :any,                 sonoma:         "08779720312a70ddfb8379830e87b7ed0c95655bc543b4c2fd611fa57cbec9cd"
+    sha256 cellar: :any,                 ventura:        "4554c6f94d88f05962205ba05eff505d00d7a7571ffdd876fe28e8df10f50d6c"
+    sha256 cellar: :any,                 monterey:       "39786b9f4f6a44ec3995a7f55a8f314b39b456c93dcc4f00b89bf929268726c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08090f9ce1aa59bab07a9356bb8273aa755607bf8819ff016a95918d672f1d21"
   end
 
   depends_on "icu4c"

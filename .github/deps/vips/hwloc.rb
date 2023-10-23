@@ -1,25 +1,23 @@
 class Hwloc < Formula
   desc "Portable abstraction of the hierarchical topology of modern architectures"
   homepage "https://www.open-mpi.org/projects/hwloc/"
-  url "https://download.open-mpi.org/release/hwloc/v2.9/hwloc-2.9.2.tar.bz2"
-  sha256 "0a87fdf677f8b00b567d229b6320bf6b25c693edaa43e0b85268d999d6b060cf"
+  url "https://download.open-mpi.org/release/hwloc/v2.9/hwloc-2.9.3.tar.bz2"
+  sha256 "5c4062ce556f6d3451fc177ffb8673a2120f81df6835dea6a21a90fbdfff0dec"
   license "BSD-3-Clause"
 
   livecheck do
-    url "https://www.mail-archive.com/hwloc-announce@lists.open-mpi.org/"
-    regex(/[\s,>]v?(\d+(?:\.\d+)+)(?:\s*?,|\s*?released)/i)
+    url "https://www.open-mpi.org/software/hwloc/current/downloads/latest_release.txt"
+    regex(/(\d+\.\d+\.\d+)/i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dc7e558a75803dd89d85c54f60bc41af587e7375e76df788fee62586dc05ef35"
-    sha256 cellar: :any,                 arm64_ventura:  "0c98fc19c69ec0df1e2271aad05ac922fcaead091349745094db941aab134f2c"
-    sha256 cellar: :any,                 arm64_monterey: "a369daeeb4fdfadc77a4522c2e7a23b88918ace52cae98ff323beb1639f3eac9"
-    sha256 cellar: :any,                 arm64_big_sur:  "7a2d09c1a4d11296f42d5f758957ed973ca7961e0edd9a16c1573ccdfa36b84f"
-    sha256 cellar: :any,                 sonoma:         "44b0787f40c65d8a32a5a080cd92093e78dc5266012ff21140cdd4bac663f424"
-    sha256 cellar: :any,                 ventura:        "865974e303ac705663c46b300190e3d6c9a113e89e7aeb5f8f944418e6ff149d"
-    sha256 cellar: :any,                 monterey:       "2b3088fc7ba96787b64c7d40c3ba030c510281b3c5cc7c18f6ae3992e5fb2ef7"
-    sha256 cellar: :any,                 big_sur:        "2e72696343db02e16dd6af2e68c85bd6aa5c5a64219b85ae912c72cae576f2ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ac1f1e73b3380275b31e2f12f25f297fe6689f9cefe6a0bceeb535ebc576648"
+    sha256 cellar: :any,                 arm64_sonoma:   "3abcf3913a81ebf755bbda7a2e5f59c3e53078fb6cf35264d83e9d9da3ceebb1"
+    sha256 cellar: :any,                 arm64_ventura:  "eff0a2f159a749587cfb4e6d3da8f3cd057591310325821d07f651ea0ecca25a"
+    sha256 cellar: :any,                 arm64_monterey: "7991e59cba29f3e69ee87147400f2d283245f89efb65511f3b7fbae72bf1568b"
+    sha256 cellar: :any,                 sonoma:         "64fabf356c3b9871a9701851c9dffc30a4f3ca3bc5819111f4f2258957fecdfd"
+    sha256 cellar: :any,                 ventura:        "16a715cd3cdde0d6750cc935e6a5c5d2185b24c6ec0315c6acf5326daa87f3ef"
+    sha256 cellar: :any,                 monterey:       "8cfe9f6649200e089460520a32d6a947418a0dc6376eb9f4597c95bda0a73723"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad2937bea62c3e0371cf3a120c95d04f54edaac40869befae34841077c16fb58"
   end
 
   head do
