@@ -1,7 +1,7 @@
 class Libuv < Formula
   desc "Multi-platform support library with a focus on asynchronous I/O"
   homepage "https://libuv.org"
-  url "https://github.com/libuv/libuv/archive/v1.46.0.tar.gz"
+  url "https://github.com/libuv/libuv/archive/refs/tags/v1.46.0.tar.gz"
   sha256 "7aa66be3413ae10605e1f5c9ae934504ffe317ef68ea16fdaa83e23905c681bd"
   license "MIT"
   head "https://github.com/libuv/libuv.git", branch: "v1.x"
