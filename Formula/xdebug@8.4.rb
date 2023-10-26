@@ -16,13 +16,13 @@ class XdebugAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 4
-    sha256 arm64_sonoma:   "7d1aae35385d8e232ed012007461d0bab50ac8b9bf58ce2324d31895f0916f4d"
-    sha256 arm64_ventura:  "a587376f07f60d3331e92efabb6c6f5a02d4f2aa32ba5b8580fe9f45d235fe8b"
-    sha256 arm64_monterey: "eeaa5560b98ba24913dbe59154333e60626b45b4c90bea4d616ab5d5a21613c3"
-    sha256 ventura:        "c25f33762c3b752d0393614f40691975acdbeaaf20b274608e6c16e941a15516"
-    sha256 monterey:       "4ae1a67df2f56501f5e1d0c50281f80818f17a7a40fd56047aa8fedbd4b8dee0"
-    sha256 x86_64_linux:   "a17d722fd2d944289e79b9dee58dfaf11cf7ffc8cc5f4fb0fe2c1e578105dc4f"
+    rebuild 5
+    sha256 arm64_sonoma:   "19ee325e6ab7c0b1517146494d4a7d370fbcdfcf32827d226c5af5f901c1655f"
+    sha256 arm64_ventura:  "9b866bd92dce55b6005b585381d73245a48cab8fcf4f734ab917c2685fa136eb"
+    sha256 arm64_monterey: "f90c9c472286d4cdbfbbe5e076eacc3b4f534e0cc8d736245abc2fee1c86926a"
+    sha256 ventura:        "9f241d6711a82403b0c6d38bb49d380348f17569702c4c91b74df2581725d98d"
+    sha256 monterey:       "67cb6d0e82b6a72642f37696c4f39249d913681cd45ee728410c4f63be74fcff"
+    sha256 x86_64_linux:   "d38f57357be04dafb88308558105a3fbbb53f8d6895e837cec24c5a1091c3e45"
   end
 
   uses_from_macos "zlib"
