@@ -1,23 +1,19 @@
 class Libaec < Formula
   desc "Adaptive Entropy Coding implementing Golomb-Rice algorithm"
   homepage "https://gitlab.dkrz.de/k202009/libaec"
-  url "https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.0.6/libaec-v1.0.6.tar.bz2"
-  sha256 "31fb65b31e835e1a0f3b682d64920957b6e4407ee5bbf42ca49549438795a288"
+  url "https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.1.2/libaec-v1.1.2.tar.bz2"
+  sha256 "bdad8c7923537c3695327aa85afdcd714fb3d30a5f956a27ba2971ef98c043ac"
   license "BSD-2-Clause"
   head "https://gitlab.dkrz.de/k202009/libaec.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "777546c3f6c1c2fb3b58cd50368018a4038e80460fa9437d53e0b22b673e8b09"
-    sha256 cellar: :any,                 arm64_ventura:  "b58812ebbb0526ab0032b72526176c3d973c2b038b039aa51bbf5bb66aa11a67"
-    sha256 cellar: :any,                 arm64_monterey: "efb772c032399b490e5ba1f197e5cbf07efa3f9a83994ca770790f748a659587"
-    sha256 cellar: :any,                 arm64_big_sur:  "435271c305d6e1dcc07de9875dc3dfc8a0c6527a22c942e4961cabe49d8e75c3"
-    sha256 cellar: :any,                 sonoma:         "82d16f9bd17b1300e2ec46293309294b509f1e0640653be6f064a4821f27d63e"
-    sha256 cellar: :any,                 ventura:        "abafd4d7dcf103cadd9127283fe12f368d425d56de10a97ab97ea28312ce918a"
-    sha256 cellar: :any,                 monterey:       "2d40180340fb2ac382a9324d049dde7ab47f13d9ec812c9df6656dbd0ea91ffd"
-    sha256 cellar: :any,                 big_sur:        "1dbb32dfbf75c7abc923f53a8ebfcbfca74426c2386521b424ce84232e3ce0ac"
-    sha256 cellar: :any,                 catalina:       "8fb8196910a91e85aaa1343f904ffbc3e3e0565774aab6d4ab6455cd1795dda8"
-    sha256 cellar: :any,                 mojave:         "540f342390a38bb62dad9ccaca77890be88d903bd3092c17054b692eee8b7120"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f7b059adad11a2a31efa3331663189c7800af8666843b22c9cc7ccf4add762a"
+    sha256 cellar: :any,                 arm64_sonoma:   "cdf50fb48fbe330bb9b925c8c77db35184d72153fcfa5b35e44f8af7fd043167"
+    sha256 cellar: :any,                 arm64_ventura:  "039a503bf9b043b1bfa509291887e083a11656169d27570b3fd5aa5c6dce203d"
+    sha256 cellar: :any,                 arm64_monterey: "e01189e1d9f536cb14b7bb52b3714161c270a4e3decd180d9b7fc00109b98a4e"
+    sha256 cellar: :any,                 sonoma:         "ecc061efd6237f7e8f2b075cb3c878798bf344a9e882d9b331787bbabb8a9616"
+    sha256 cellar: :any,                 ventura:        "5f42304a1ff88ca94ec7ff8f8e2f7ccdc9910312823a61f4ced2b60f61f4115a"
+    sha256 cellar: :any,                 monterey:       "9624bac0ca98f63c38fea833d383559f0e43110b50a24cab4e3e99861495de59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2aabeaeb8f71d4810ed9ad0ad375785878f1efd7515556f11fec3045c3be02c8"
   end
 
   depends_on "cmake" => :build
@@ -40,7 +36,6 @@ class Libaec < Formula
   end
 
   test do
-    system bin/"aec", "-v"
     (testpath/"test.cpp").write <<~EOS
       #include <cassert>
       #include <cstddef>
