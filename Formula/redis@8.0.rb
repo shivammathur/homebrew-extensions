@@ -8,8 +8,8 @@ class RedisAT80 < AbstractPhpExtension
   init
   desc "Redis PHP extension"
   homepage "https://github.com/phpredis/phpredis"
-  url "https://pecl.php.net/get/redis-6.0.1.tgz"
-  sha256 "d39136e0ef9495f8e775ef7349a97658fb41c526d12d8e517f56274f149e1e4e"
+  url "https://pecl.php.net/get/redis-6.0.2.tgz"
+  sha256 "01aeccb0e14f897fe56f0509be6e6991ff0ad459f9d34e95e4556d02699b9a03"
   head "https://github.com/phpredis/phpredis.git"
   license "PHP-3.01"
 
