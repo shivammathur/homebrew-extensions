@@ -11,15 +11,14 @@ class Cfitsio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "66bbe65d87983f36e5c6ca2d99298648d40cd8c230f34cd0ef7a77752eae895d"
-    sha256 cellar: :any,                 arm64_ventura:  "2277a6e4c476abc34b523cf109c953b3806e64c2d1cb9b84da1ab7b9ceeeef5f"
-    sha256 cellar: :any,                 arm64_monterey: "add3210ab372315981d5d605e4ffff89fa86b084de194d0e23f74a3cd4d0ddc6"
-    sha256 cellar: :any,                 arm64_big_sur:  "5dbf782fda9673167313fc383297801f5fcacf28c5b77d7890d1e14c31de1971"
-    sha256 cellar: :any,                 sonoma:         "1ba1c40e953cdd9259d42bf17e8590b20d929c2d8df4d0446f6130ce7a9551ed"
-    sha256 cellar: :any,                 ventura:        "bc600b6381d62b0dd5eb710be4e355655f4e70484e9a35e1e649a1b0a01e191e"
-    sha256 cellar: :any,                 monterey:       "e003577a5564d577f30d283aba0aacd7ee5a3bd61381de6f511ec48d7c7349f5"
-    sha256 cellar: :any,                 big_sur:        "0eb99bd2ea626eef4ad8ea6966b4591ae6f13e4a41be6586d1397838fdcc73f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17a2da00592ef8a3f786b2ad112f89d35c3b85d09ba5cfc2491066fd286812ef"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "512da2f12edecd29892ac66e2207f5536f1798ab1c9e808298098e38b1bc003e"
+    sha256 cellar: :any,                 arm64_ventura:  "58e178434c58d120cbed1fed0edfd3596c469c9128a37c3bd13e577539560227"
+    sha256 cellar: :any,                 arm64_monterey: "d0f78706ba8f9b1def5514aa9147d6e50f1259a1e25ce8fc926e36cb86f276d1"
+    sha256 cellar: :any,                 sonoma:         "4cbcbb7e0aa8ff812e637cce6e63b1f72bbf159559daaedf2d4bfef37ebb56d7"
+    sha256 cellar: :any,                 ventura:        "34daf8cbc11f092ac0257788ea20d1687b8ab23b7753791d8715915763924d3c"
+    sha256 cellar: :any,                 monterey:       "e1e2d890fd310cc13bcb0d9c84dae055f1ab318e939c5eeae4c2b2cc9c63d91a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbc06552483533da9056a7937ffdf24109e149da043cd69d0a519614e00657f4"
   end
 
   uses_from_macos "zlib"
@@ -27,6 +26,8 @@ class Cfitsio < Formula
   def install
     system "./configure", "--prefix=#{prefix}", "--enable-reentrant"
     system "make", "shared"
+    system "make", "fpack"
+    system "make", "funpack"
     system "make", "install"
     (pkgshare/"testprog").install Dir["testprog*"]
   end

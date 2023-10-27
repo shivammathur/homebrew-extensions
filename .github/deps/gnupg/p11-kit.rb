@@ -6,15 +6,14 @@ class P11Kit < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 arm64_sonoma:   "d63c764955181159765918338c7c565ef0cf186db277666e3e09cb5c263ce214"
-    sha256 arm64_ventura:  "4dad6178e4d9f6ac8d9e20036b8ec1163d2d46dff494d1911e6ffcd7b19a4f93"
-    sha256 arm64_monterey: "d0263026b6e5f106d3edbfba4eb64ee0c8cf79a9230a016fb491191f2c7aeafc"
-    sha256 arm64_big_sur:  "33bbe0d8e1741d7647ec4e192daeb3dbb7da9c0107b98114ea94bdefd2b32ba9"
-    sha256 sonoma:         "1148b39149f4bf75fa0e3cd377549569c1f518c8ed2d6f001ea496636f1a957a"
-    sha256 ventura:        "6fff2dfee52269c5ec53206c849cf25e06db85ccdd4790aae13032cb2e649b27"
-    sha256 monterey:       "50c59d8c059b7d5cdc89dfe5d58f29ec5b0cba8a7cbe66be4686555666797a13"
-    sha256 big_sur:        "20b049e0ef2eca9979dd94a210b46093ff6305c91535e89f74c42c6c1015cd06"
-    sha256 x86_64_linux:   "7000de1b4a96605749dbc110b12f52b24227bd5900c3f32c1878eab75b0107d1"
+    rebuild 1
+    sha256 arm64_sonoma:   "c27ac6b9fca3688c75f9759d55fc71a1a0dccb89c5eb1af9af8dd3224bca1783"
+    sha256 arm64_ventura:  "c4e8e806b4f9eaff41f046417127e60abbc1e6e67d5eb7167aa0eca447cc4b24"
+    sha256 arm64_monterey: "12443dfeed7e36cc3f6eca9ca6def58df243e0340c66933db4cef5c7e2591ea8"
+    sha256 sonoma:         "de15bdc8560b69a8c797d6988a197e56017365158290367c8f3bffacd6f41c32"
+    sha256 ventura:        "210173ada4b3f872c3dcf497c22758c88ee0182d2505ac167216ca23dc04314d"
+    sha256 monterey:       "21d012fa4b20186b9cf2026369f9d221c970ad3326cf58ef994ced1ac3c8f859"
+    sha256 x86_64_linux:   "11dffa7e7c055ae5f36b90621aba79d137601735dc3f1d1d96dfeddf4d846e5b"
   end
 
   head do
@@ -26,6 +25,8 @@ class P11Kit < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "ca-certificates"
   depends_on "libtasn1"
@@ -41,17 +42,18 @@ class P11Kit < Formula
       system "./autogen.sh"
     end
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}",
-                          "--with-module-config=#{etc}/pkcs11/modules",
-                          "--with-trust-paths=#{etc}/ca-certificates/cert.pem",
-                          "--without-systemd"
-    system "make"
+    args = %W[
+      -Dsystem_config=#{etc}
+      -Dmodule_config=#{etc}/pkcs11/modules
+      -Dtrust_paths=#{etc}/ca-certificates/cert.pem"
+      -Dsystemd=disabled
+    ]
+
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     # This formula is used with crypto libraries, so let's run the test suite.
-    system "make", "check"
-    system "make", "install"
+    system "meson", "test", "-C", "build"
+    system "meson", "install", "-C", "build"
   end
 
   test do

@@ -3,30 +3,29 @@ class Glib < Formula
 
   desc "Core application library for C"
   homepage "https://developer.gnome.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.78/glib-2.78.0.tar.xz"
-  sha256 "44eaab8b720877ce303c5540b657b126f12dc94972d9880b52959f43fb537b30"
+  url "https://download.gnome.org/sources/glib/2.78/glib-2.78.1.tar.xz"
+  sha256 "915bc3d0f8507d650ead3832e2f8fb670fce59aac4d7754a7dab6f1e6fed78b2"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "cbf4a02a27e1e03dc1fa234fc02e9316237ce473ac14e0f6d2d70af9ca548599"
-    sha256 arm64_ventura:  "953342f8d2dabeafad3a7c8be30a199d1ad4e9252ebaaa1ed45a901688157e72"
-    sha256 arm64_monterey: "018056b590e4e22635ca30a622b732e1ef41c4cc7c3737d99798569da52138d1"
-    sha256 arm64_big_sur:  "f676476504607d460be7a2a9c43dadc10e2dceaf4a8472fd6f8508c512d4b0b1"
-    sha256 sonoma:         "0c5a1c8d7e7b5e62e5a4c8e89b87c93582a3fb2deef12cd813af5ff67a54fe41"
-    sha256 ventura:        "c96f636ed32640f4d5cba4e6b47bb58685c5b26ea9574e308de696ef17bc7ba7"
-    sha256 monterey:       "547d095784ea8e9b4b71194a715967fde7f1ed273e5b18717ebe29d35c714d44"
-    sha256 big_sur:        "835d1ccaddaf94652769fab6ba9e80c36265f9908228c594a89c2591171d5d93"
-    sha256 x86_64_linux:   "fecc30ccad3eab9aea96af461f5625a725b88d4b259ec9a2b1d9f410d606a73a"
+    sha256 arm64_sonoma:   "31892ca476c651225cc7498c82dad601c8bd962a3973f3552b7e974ca9d4265a"
+    sha256 arm64_ventura:  "445f6364c0f4a41a008fb28119e83dfd91d2988e1a41213ce846a7b19ef55265"
+    sha256 arm64_monterey: "a0f3e8cd6a31dad1d086483ad8004b75c53c11b26a69c8f264617b7ebeed6ec8"
+    sha256 sonoma:         "2c612f4d692e813fb09926774ae4ffa83e0b165e1323882c73be25dfb46aeaa0"
+    sha256 ventura:        "628633af1831e1cc47fe5e41aa9d38565451ca40018a19390e7431439a518b88"
+    sha256 monterey:       "8c52712292a4e2b511f732cf9334eb06a0afea35bf9a18295c2848e4fc46fd5e"
+    sha256 x86_64_linux:   "33b147c89b021315c70412b5d523432e1ad6174bc0f4649763752d92a05f430e"
   end
 
   depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => :build
   depends_on "pcre2"
 
   uses_from_macos "libffi", since: :catalina
-  uses_from_macos "python", since: :catalina
 
   on_macos do
     depends_on "gettext"
