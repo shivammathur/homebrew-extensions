@@ -1,32 +1,26 @@
 class Libmatio < Formula
   desc "C library for reading and writing MATLAB MAT files"
   homepage "https://matio.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/matio/matio/1.5.23/matio-1.5.23.tar.gz"
-  sha256 "9f91eae661df46ea53c311a1b2dcff72051095b023c612d7cbfc09406c9f4d6e"
+  url "https://downloads.sourceforge.net/project/matio/matio/1.5.24/matio-1.5.24.tar.gz"
+  sha256 "5106ebed5b40d02a2bb968b57bef8876701c566e039e6ebe134bab779c436f7c"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "39b8a7711879ca11007f93119fc4ab97c8c2a4094d65f8d1c63316401153e49e"
-    sha256 cellar: :any,                 arm64_ventura:  "692ff91102a1882368444eaffb2b4134f25550f2792698d1fd36337f318e8465"
-    sha256 cellar: :any,                 arm64_monterey: "779a488063e24d4d9ab188be23f94f53155d5014a478d55500ef27c26fb2911b"
-    sha256 cellar: :any,                 arm64_big_sur:  "0a0c9260534dfe974fa4bd9ca28c26e321db5b2e36c53494c1e56a6f79c00ee4"
-    sha256 cellar: :any,                 sonoma:         "62dac193625e11c72e9911c251a2afb5ab3897e3aa194408c14ccf6c770243bc"
-    sha256 cellar: :any,                 ventura:        "7b6ded7eaa0c7e18c0e4a3835a0bcfde53878416ac82d816adba21a622911d61"
-    sha256 cellar: :any,                 monterey:       "e93c4b9479da91da21e25673bd9ca8f6d752cafd65c302fa37477e1ed6743465"
-    sha256 cellar: :any,                 big_sur:        "b0d10fef3792de609e10b14720f5c632e4c179273de51de3da07a13d2ae7ae3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93c7c6f5e6fff8637b9e7fd5467057e1662546e7e44a00db08743f12eab6b838"
+    sha256 cellar: :any,                 arm64_sonoma:   "7fdb99553e59b14364731f606f57595b734a4bd11dabea1872476b653c98ad05"
+    sha256 cellar: :any,                 arm64_ventura:  "df25e53ed7fda850be9e40b3886f79cbcc51651cde5cf39fcaa7d7fb5aad9d3b"
+    sha256 cellar: :any,                 arm64_monterey: "b9fda938a259d3093b7324aea04349f13b4cccb34498d2e107f6d9ace65e1e04"
+    sha256 cellar: :any,                 sonoma:         "8d2dcb2f6c5295905c2f5286ef264c43589458bff6eb0770219b8df35e16f16a"
+    sha256 cellar: :any,                 ventura:        "bfd29b1c7e452278e1ae40198b814b070572eda34537e49243a2a285dd74c124"
+    sha256 cellar: :any,                 monterey:       "364a377c67718fdb897e66abde7e13e2a00234316a341732432fbfc2497ca8be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ff7c57c0051dd3c46ada137dac56bfc30f1d2809f7f579b4b44b347cb9dd5f0"
   end
 
   depends_on "pkg-config" => :test
   depends_on "hdf5"
   uses_from_macos "zlib"
 
-  resource "homebrew-test_mat_file" do
-    url "https://web.uvic.ca/~monahana/eos225/poc_data.mat.sfx"
-    sha256 "a29df222605476dcfa660597a7805176d7cb6e6c60413a3e487b62b6dbf8e6fe"
-  end
+  # fix pkg-config linkage for hdf5 and zlib
+  patch :DATA
 
   def install
     args = %W[
@@ -41,6 +35,11 @@ class Libmatio < Formula
   end
 
   test do
+    resource "homebrew-test_mat_file" do
+      url "https://web.uvic.ca/~monahana/eos225/poc_data.mat.sfx"
+      sha256 "a29df222605476dcfa660597a7805176d7cb6e6c60413a3e487b62b6dbf8e6fe"
+    end
+
     testpath.install resource("homebrew-test_mat_file")
     (testpath/"mat.c").write <<~EOS
       #include <stdlib.h>
@@ -76,3 +75,18 @@ class Libmatio < Formula
     refute_includes shell_output("pkg-config --cflags matio"), "-I/usr/include"
   end
 end
+
+__END__
+diff --git a/matio.pc.in b/matio.pc.in
+index 96d9402..139f11e 100644
+--- a/matio.pc.in
++++ b/matio.pc.in
+@@ -6,6 +6,5 @@ includedir=@includedir@
+ Name: MATIO
+ Description: MATIO Library
+ Version: @VERSION@
+-Libs: -L${libdir} -lmatio
+-Cflags: -I${includedir}
+-Requires.private: @HDF5_REQUIRES_PRIVATE@ @ZLIB_REQUIRES_PRIVATE@
++Libs: -L${libdir} -lmatio @HDF5_LIBS@ @ZLIB_LIBS@
++Cflags: -I${includedir} @HDF5_CFLAGS@ @ZLIB_CFLAGS@
