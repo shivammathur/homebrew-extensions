@@ -4,6 +4,7 @@ class Gpgme < Formula
   url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.23.1.tar.bz2"
   sha256 "a0c316f7ab7d3bfb01a8753c3370dc906e5b61436021f3b54ff1483b513769bd"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpgme/"
@@ -11,23 +12,24 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "aba1f7b9457f4c31e8bf938753dc459e515ffacd2f81e438367d1eaf384fea6b"
-    sha256 cellar: :any,                 arm64_ventura:  "2b948813ec600e32a77d1d6ab8458c98bfc1f68528f4d37ccc472421d2a66baa"
-    sha256 cellar: :any,                 arm64_monterey: "4fd1e92f06f16f2587c7436a59af63677656a1f1ce686e7aab165b07c6447bd8"
-    sha256 cellar: :any,                 sonoma:         "9b98727cdee464a769d48b7c809ccca4cab24010aed155015289a8b3a6e01926"
-    sha256 cellar: :any,                 ventura:        "af45aac4fcc440a376968607f45885108519a4f49758bfefd21221b2bf65872d"
-    sha256 cellar: :any,                 monterey:       "eef1d7f33ab7f5d27163ea78fd2b65d3f1c7755795427d7e81f8134093e97257"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fcee13a18d690b7d8b6e7a0d49e6bbcfeb52c0571ef10abcaca06ab6a874182"
+    sha256 cellar: :any,                 arm64_sonoma:   "e3568623e7bfa4d7dee6903eff925f8f255602d26255900399e23c720728192d"
+    sha256 cellar: :any,                 arm64_ventura:  "989ee41879e1db38b52906f6551b3f620f57acd518337bbf88953f1dc73fc855"
+    sha256 cellar: :any,                 arm64_monterey: "44b894bdb8a84b6d3c47804bcbfbdec9dbb336b9e121042d47da47d4aa6d1007"
+    sha256 cellar: :any,                 sonoma:         "2ef15d47117a53dbbe68b96c8fe1500aa0d454985c5595e4d065661bbf07fb70"
+    sha256 cellar: :any,                 ventura:        "a763f60e7824ba95264ff0e25e46616cbfd26944522fe0dc6169e85545dd53d2"
+    sha256 cellar: :any,                 monterey:       "c11ee9d3913848f62a7f9699e358aa3a9e177be948dbe55414fd22bb7ed63e47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec16603d2d8f7f10f1e9c4790717091f374557df0e145cd54edfd86e98f7fe45"
   end
 
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "swig" => :build
   depends_on "gnupg"
   depends_on "libassuan"
   depends_on "libgpg-error"
+  depends_on "python-setuptools"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
