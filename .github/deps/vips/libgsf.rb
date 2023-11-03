@@ -1,21 +1,18 @@
 class Libgsf < Formula
   desc "I/O abstraction library for dealing with structured file formats"
   homepage "https://gitlab.gnome.org/GNOME/libgsf"
-  url "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.50.tar.xz"
-  sha256 "6e6c20d0778339069d583c0d63759d297e817ea10d0d897ebbe965f16e2e8e52"
+  url "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.51.tar.xz"
+  sha256 "f0b83251f98b0fd5592b11895910cc0e19f798110b389aba7da1cb7c474017f5"
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 arm64_sonoma:   "e8c2c9e88b3435b12164f9ddd34007b4fdb9459da7dadd837dce68e8d796b2f9"
-    sha256 arm64_ventura:  "a9499ac50e2f6e22c1c41839e30c9ee35b8d26283a3d6bea9245d07733d36218"
-    sha256 arm64_monterey: "5c2386595e059d1cead2c6faf9b57544ff41d9b306e2ad60f2be57157256b966"
-    sha256 arm64_big_sur:  "6ed258aa2e65be0a98bd5778d88883533f4814d74a4d8311b1875184ff3c5ed1"
-    sha256 sonoma:         "c117431774adb56c0abff2ef4b91b22b2cb44a4dac935f4251bf5dd135b8ffda"
-    sha256 ventura:        "0bb1ba7f9cac855d5a01d1074acb15d84ef46ce94f6ae69789209a04cae6caf4"
-    sha256 monterey:       "d405f26c28d748604664dbed110bbbe520a9fb10c109a06b3fbaf8409b7ef6a0"
-    sha256 big_sur:        "3f7214b79d4035c79a3b505d78e65e15fd55a14a5eecce4efb5e078af3afc2a1"
-    sha256 catalina:       "79404074c9a4ac0af485e76375b60cfc8fd5c03f10fc42bc7c517be717a5b33c"
-    sha256 x86_64_linux:   "f601eba91c5184233aa5ad6b43776453f6b183484ded55280cfafd9350cb214e"
+    sha256 arm64_sonoma:   "5876775a2c3d1c2bfc0b6c0ccbfb450b1fb7c6bc1574fbf4319ac0345cf52101"
+    sha256 arm64_ventura:  "7497ba9538d387da4c62d7197f9e65c03d4bc53e54740263162294967e9c82b2"
+    sha256 arm64_monterey: "7921d046e4345784dc643a6d71f94b106533bbcc0784e7691e9fd57b0750a419"
+    sha256 sonoma:         "9188b16c82c96a57f13850e836e5d40a52605a3ad44651407e5ac2ce598785e6"
+    sha256 ventura:        "14648d1ed933c2f8ad25977b03c7f6e975cf89b415a7b0dd02d763902fda84ff"
+    sha256 monterey:       "36124acaaedb3101f0b4a8c8e66516891d78ba2e8da3680c30a927ad9d260418"
+    sha256 x86_64_linux:   "aa67ee36afbfe57f9760e70cbe6c8ecab479b26e4f992cd704a1aeac52377c3a"
   end
 
   head do
