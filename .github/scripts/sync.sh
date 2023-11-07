@@ -23,7 +23,7 @@ for extension in "${extensions[@]}"; do
       [ "$formula" = "python" ] && continue;
       if [ "x$formula" != "x" ]; then
         [[ ${formula:0:3} == "lib" ]] && prefix=lib || prefix="${formula:0:1}"
-        mkdir -p "./.github/deps/$extension/$prefix"
+        sudo mkdir -p "./.github/deps/$extension/$prefix"
         sudo curl -o "./.github/deps/$extension/$prefix/$formula.rb" -sL "$trunk"/"$prefix"/"$formula".rb
         grep -q "Formula" "./.github/deps/$extension/$prefix/$formula.rb" || exit 1
       fi
