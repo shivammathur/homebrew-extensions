@@ -4,6 +4,7 @@ class Zeromq < Formula
   url "https://github.com/zeromq/libzmq/releases/download/v4.3.5/zeromq-4.3.5.tar.gz"
   sha256 "6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43"
   license "MPL-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class Zeromq < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9a9cbfb80e43d28c3a8871b7d5ffd7d9b4063e3ae331e7ef386d16f1a6189936"
-    sha256 cellar: :any,                 arm64_ventura:  "4bf90a33c91ed8cb4ffadbb6659688da9900df3568d6e2ef39f80cc2a74f7b35"
-    sha256 cellar: :any,                 arm64_monterey: "7bf8e1dc5c4412df84c158090ecbf6663e00a6dc5da6b7e71f5f9c991484c47b"
-    sha256 cellar: :any,                 sonoma:         "9b85bd11720da06156daf3671a419c1fcb37e63086417f5b4de86b7830baf653"
-    sha256 cellar: :any,                 ventura:        "aea0c66541f97bd22a81c8908efc97d5b555653e4bbbdd177a186c570cf221ac"
-    sha256 cellar: :any,                 monterey:       "04e39c5b511bfdef7c383638076ff1009acd5a9cfc7cded4bb76cc5045928a80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23ae381d326c253fa3e2aa672002577dc744cace025545841c829718012ab6d5"
+    sha256 cellar: :any,                 arm64_sonoma:   "3bf8942ece99f0457125006cf729f24823e09a3f6bd2257e8be9873e5783a0a1"
+    sha256 cellar: :any,                 arm64_ventura:  "0f670cd22b752c640a01f1f3353f8cdf7a6bf31beefad511c17baf315ad848f4"
+    sha256 cellar: :any,                 arm64_monterey: "3a8bc264cb466f765f65f73b0db3c202899656efa11b2df37bd961a224589e20"
+    sha256 cellar: :any,                 sonoma:         "986910eab9519ca92f167b545cde5992124a963b56d1346f2f917368e9a7eb43"
+    sha256 cellar: :any,                 ventura:        "25344444cf8c0583f65b1f36fdf11edc40ce2fe637fa04e34fe28c730573dadc"
+    sha256 cellar: :any,                 monterey:       "c8c1cafdffdc020cf504bc59888d61a016df6cdfc12650d89a43a846edb77ef2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "904b3146ea9aab3b4fdb584c74be1fa762145d3435eef653becc38ce0600c1bc"
   end
 
   head do
