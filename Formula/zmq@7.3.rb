@@ -16,13 +16,13 @@ class ZmqAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_ventura:  "f7cc2511556d25d5a65ea7d5bc734313297e38e6ea3ff77bde23af5e352a15bc"
-    sha256 cellar: :any,                 arm64_monterey: "96475a12db69ad9a550f1f6c81634419a1efdc6736817649bd7f4dac7b6580d3"
-    sha256                               arm64_big_sur:  "cfb413e94ee3625e48d2134e0d84e2317294a354610f1f72cdcd7fd779604be2"
-    sha256 cellar: :any,                 ventura:        "bf17a3c1cebad4e068ec08fd45fd355ed2c220a6bc34423c4595028fd9fb905e"
-    sha256                               big_sur:        "13eba1ba47468cec0e66cc060668912fbaa8e4260d82ddffa40e2edc06aec9fd"
-    sha256                               catalina:       "2889c4cd792a3f60c55a601abc71fa2c77ebc676a36977e402e88763970385d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9be48497ba440d637fbe6b4065fbc1d8ebb006759a81bca5fa6c8b830b53134a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "a009aa6675d605e428f4b1d2606c7826cca9e7c5db3e3fb48e9148943d8d2ed3"
+    sha256 cellar: :any,                 arm64_ventura:  "cb298c0f654fb1df087911c9eac07e9061de525fba6d3149185c9910010012c7"
+    sha256 cellar: :any,                 arm64_monterey: "98070336d67e7f400c120a13c6e5b483c3733794dec3a12ab00768e09c7cfdbc"
+    sha256 cellar: :any,                 ventura:        "e6ec6c1835773d0db2fbafcefcea4bc1fdcd1e95a77058f895127932fbbce7ca"
+    sha256 cellar: :any,                 monterey:       "aaa85a854afcc2b3d8b86f713300fb14a01ec355777c56075843168adfe6abf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "484a2a3d260a0b60a969a835ae927288080cc507908bbf4e362d9183f840a3db"
   end
 
   depends_on "zeromq"
