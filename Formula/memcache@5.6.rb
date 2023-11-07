@@ -24,12 +24,30 @@ class MemcacheAT56 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "44e8d77a591b71576970caa76319d86eb52606e68b6ceebd621db3523a9a3b61"
   end
 
+  resource "inline_patch" do
+    url "https://raw.githubusercontent.com/macports/macports-ports/d447a0707b5a4a6326e74968a2ae996c4d081989/php/php-memcache/files/inline.patch"
+    sha256 "6157b7b75e5ceb86e2fbe7630173db90c8865fc20e908b2302208c6247b0bbd1"
+  end
+
+  resource "IS_CALLABLE_patch" do
+    url "https://raw.githubusercontent.com/macports/macports-ports/d447a0707b5a4a6326e74968a2ae996c4d081989/php/php-memcache/files/IS_CALLABLE.patch"
+    sha256 "96475c1bbdb0ed902f28e81697fcffa299df3671e663de3698afccdf8f886122"
+  end
+
+  resource "ntohll_patch" do
+    url "https://raw.githubusercontent.com/macports/macports-ports/d447a0707b5a4a6326e74968a2ae996c4d081989/php/php-memcache/files/ntohll.patch"
+    sha256 "576cbbd01cda50cf6ed10ee7c3ca8f8c2ee10d3394e8a1f40ea012c2a0b92346"
+  end
+
   def install
     args = %W[
       --enable-memcache
       --with-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
     ]
     Dir.chdir "memcache-#{version}"
+    resources.each do |r|
+      system "patch", "-p0", "-i", r.cached_download
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
