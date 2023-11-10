@@ -1,35 +1,10 @@
 class Mpfr < Formula
   desc "C library for multiple-precision floating-point computations"
   homepage "https://www.mpfr.org/"
+  url "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/mpfr/mpfr-4.2.1.tar.xz"
+  sha256 "277807353a6726978996945af13e52829e3abd7a9a5b7fb2793894e18f1fcbb2"
   license "LGPL-3.0-or-later"
-
-  stable do
-    url "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/mpfr/mpfr-4.2.0.tar.xz"
-    sha256 "06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993"
-    version "4.2.0-p12"
-
-    # Upstream patches, list at https://www.mpfr.org/mpfr-current/#fixed
-    %w[
-      01 2e465c31689e780a93b24bf2959917443fb882da85b7f1ef23ae53d3de614aa4
-      02 e1ef3d4dab999f4e0ad5ee046c3a2823d3a9395fb8092c3dcb85d3fe29994b52
-      03 a906f9ed8e4a7230980322a0154702664164690614e5ff55ae7049c3fae55584
-      04 ece14ee57596dc2e4f67d2e857c5c6b23d76b20183a50a8b6759b640df001b78
-      05 c4144564097a1be89c9cc2e7ee255c9fe59eb1b94a17c9d4a08169223e705ac1
-      06 70456748a8072265ba103d93ba94e9f93ae64565e6a5742194c56030086540fa
-      07 472386aa5f8c51fbdf60154c19268ce2212be03e1c2f9004c1673b6c270508f6
-      08 6ecd3bd2edf178f4ede4be612964d1b2d0a0bb10ad6f8c51d1a8011fff87d5ea
-      09 3e9aed5bcea95d34d0bd179a61cd7acb712c89c9a745535f18f0ef619833ba3b
-      10 1c546e78d754f6961e1c7130d5487a1372a765c0f58dcdefc3d001fe9dba7d07
-      11 3de9dbe1091f16d782cbce6253475b3fcdfee6a1cf82a211598d10b4f274811e
-      12 a8fe9449ba89262be8f7feecb4aba61d7526cec7f3b6acda5bf90950ac4d726c
-    ].each_slice(2) do |p, checksum|
-      patch do
-        url "https://www.mpfr.org/mpfr-4.2.0/patch#{p}"
-        sha256 checksum
-      end
-    end
-  end
 
   livecheck do
     url "https://www.mpfr.org/mpfr-current/"
@@ -49,15 +24,13 @@ class Mpfr < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "63730a94b38dc3e6abe0a3cffa3eff707b7f0b5ecc8eb3b039af9aa8d1e2dec3"
-    sha256 cellar: :any,                 arm64_ventura:  "43db595106704b53119e8d45c2a28a157b78c488bd31144490338cacf5180232"
-    sha256 cellar: :any,                 arm64_monterey: "a914ea0e50fac5f8120a2dfba9bc49d23ad81c9270f7332de3cbadb81c86ae70"
-    sha256 cellar: :any,                 arm64_big_sur:  "7b3a7b20653a16f26c7bf810b7fb72985dc098695657f1634fe87784dc0bedd5"
-    sha256 cellar: :any,                 sonoma:         "e8d325b996e919f1eef949105a75891afe8f45292966901e354ce71e0da05c31"
-    sha256 cellar: :any,                 ventura:        "18a11c948c4c7a783165b75d31c90c5cbc58b8ebe61ad268ffe3bf92ec2ac21d"
-    sha256 cellar: :any,                 monterey:       "d6879fb531aac96a5898ee13d929d6a01d394a63906de0b2a24c1a5f67d067f5"
-    sha256 cellar: :any,                 big_sur:        "1d0680b952c9789665a1deb684382d781db88fa081e53029b4e6013fbbc9f01f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57c89c97863cb0d08251271de84ae157b364af3b304a0c0e8a13bdd57d4f026a"
+    sha256 cellar: :any,                 arm64_sonoma:   "71c4d6cc59a5bee30e0779b1d095c2e2db1cb63b51eac88d5d4191660e613d0c"
+    sha256 cellar: :any,                 arm64_ventura:  "28014245ba2ce1edebadedea884f9749c6c588352d938472821bc5c9e0f866cc"
+    sha256 cellar: :any,                 arm64_monterey: "209306f204f9cc2db3a1a500a9426f18e410f7783914d41e09e39782f94c55da"
+    sha256 cellar: :any,                 sonoma:         "af35898aedfbb852d0ff927c1c60bf3676c2c29c61408f971490e1289b40cc5b"
+    sha256 cellar: :any,                 ventura:        "b8363c20660b5304f2ab4d73614a4c5bec7461d7cf245f02ef05e965477e67e6"
+    sha256 cellar: :any,                 monterey:       "6e073b5307a7376673527aef03644a5bdd27c0abe9a0739a3be3275a3567efa6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18857bac44d9f49faeb1d147146ba7fb420d5bf85076f69c68a86a563b203c13"
   end
 
   head do
@@ -72,7 +45,7 @@ class Mpfr < Formula
   def install
     system "./autogen.sh" if build.head?
 
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules"
     system "make"
     system "make", "check"
