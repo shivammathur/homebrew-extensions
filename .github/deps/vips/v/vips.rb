@@ -1,10 +1,9 @@
 class Vips < Formula
   desc "Image processing library"
   homepage "https://github.com/libvips/libvips"
-  url "https://github.com/libvips/libvips/releases/download/v8.14.5/vips-8.14.5.tar.xz"
-  sha256 "90374e9f6fbd5657b5faf306cacda20658d6144d385316b59b865bc1a487b68d"
+  url "https://github.com/libvips/libvips/releases/download/v8.15.0/vips-8.15.0.tar.xz"
+  sha256 "d33f81c6ab4bd1faeedc36dc32f880b19e9d5ff69b502e59d175332dfb8f63f1"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Vips < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "2cbe1d771809811fa56a2acb028fb0820785795fc794af9b1b72e66b44f4f3fd"
-    sha256 arm64_ventura:  "c97a9b9780926184cf907c97b0ed7e554e25c038d72b3af8ba5d6cc12b064e78"
-    sha256 arm64_monterey: "00463fb1bd0925f36c8059e9f9754da0983388f07289f3b50ad6eacf128dc49a"
-    sha256 sonoma:         "4308408e413d3ac7296d7d8a0d0fdae068a2395cc49c6e2c161aba1d573223f2"
-    sha256 ventura:        "7986a5899d22a0fa29ad780261ca9f5284e36cf5ecdfbfa153f66ccd3592bb86"
-    sha256 monterey:       "91aeaa35b6e30fc59943d1ffa25719724dd458a5b31533cdfc5919372e90e5fd"
-    sha256 x86_64_linux:   "7139751abe3b9991dfde262b24cda79dc424874d9c6b0f7512b34a8a753a88c5"
+    sha256 arm64_sonoma:   "3dde52323459f5f3c8743c4f466e133bbb0d824478f02a357f5225f26135c7d5"
+    sha256 arm64_ventura:  "fa999a3bf8c9541dc3460a7c6ee078b7d9ab355fc0fe19600a43154961eab17b"
+    sha256 arm64_monterey: "34dfb0994b55aad6cba52cfab2a4dfb7234c1775117ef0a6b39b78dc539c155c"
+    sha256 sonoma:         "283531c71edefa0fe95fcabf32e8ca08e70a1a34090d5e4c7e214aea23087dd8"
+    sha256 ventura:        "153035b2e29a01f3fa4504d02dac52e039d178e07cc820ad5fd22fe5f49a2c25"
+    sha256 monterey:       "95aaa746d5f06b25f4b148488ed96d9544166f46aad27b8dc72712146bde45fb"
+    sha256 x86_64_linux:   "d9b9e53416ea83c962da3f5dbeee94c92bfe113c877b14c7d8f794744173ca27"
   end
 
   depends_on "gobject-introspection" => :build
@@ -52,6 +51,7 @@ class Vips < Formula
   depends_on "poppler"
   depends_on "webp"
 
+  uses_from_macos "python" => :build
   uses_from_macos "expat"
   uses_from_macos "zlib"
 
@@ -61,11 +61,9 @@ class Vips < Formula
     # mozjpeg needs to appear before libjpeg, otherwise it's not used
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["mozjpeg"].opt_lib/"pkgconfig"
 
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
