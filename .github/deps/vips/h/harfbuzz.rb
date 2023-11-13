@@ -1,19 +1,19 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://github.com/harfbuzz/harfbuzz/archive/refs/tags/8.2.2.tar.gz"
-  sha256 "0546aac7b2493b3681047914550860157f8799fc80bf5cb528927a9643d6ab3d"
+  url "https://github.com/harfbuzz/harfbuzz/archive/refs/tags/8.3.0.tar.gz"
+  sha256 "6a093165442348d99f3307480ea87ed83bdabaf642cdd9548cff6b329e93bfac"
   license "MIT"
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "ddf11a7bb71aec8283bb98afb89d83aef967849c92bc4e0e2d3c53fc2f05912a"
-    sha256 cellar: :any, arm64_ventura:  "741b8c4acc9fdee9815c619f7347fa66d63fc33ad8f515e856ea26df723ae0e7"
-    sha256 cellar: :any, arm64_monterey: "7e7b3e6e445929d6745697cc5c5435a45753253a850d47dfc616a0008ebc429c"
-    sha256 cellar: :any, sonoma:         "67f5e5ccdddab3fe657c6408e1eb7c8d354e5d8a6f6ec091f4376f03183ea7a4"
-    sha256 cellar: :any, ventura:        "7bca78a0f0c6737111547eff586b31ea63a35593234ce5093a9129aa9c997b0f"
-    sha256 cellar: :any, monterey:       "649392d9a148bd35aa1acbc8933dcb6ad13914aa28a6aa6248d407975f445260"
-    sha256               x86_64_linux:   "5de5c517257950521f3c98e5c6e70149b244650982c3526470b47794c8394fec"
+    sha256 cellar: :any, arm64_sonoma:   "b887133a87078eaa6e1ad50d0d429a981b756c1e43fc6c16fa49b10af31b382c"
+    sha256 cellar: :any, arm64_ventura:  "7a0e732036a11247848e521e4df990544415ab7810db00847231a52c4ad1093b"
+    sha256 cellar: :any, arm64_monterey: "cd064abfbaf0f5e861efe9562a73a70f736eaafd269e9234ee79a05b8d4791c3"
+    sha256 cellar: :any, sonoma:         "1bf9b5df00ba57b84584e03c86f44c491d34ca6c0c887c86d26afcad6df5155a"
+    sha256 cellar: :any, ventura:        "ad2cd36721e732f628f1a217ea0c38696a971b31f1cddaa11a3e903dc7377dbe"
+    sha256 cellar: :any, monterey:       "12047b6807717baf9fef822cc06181d21be4fd9ace801f1cb34d111c595bba00"
+    sha256               x86_64_linux:   "14b087a8f369a66f82888d7cd0d10eafdf3624d292bd1374be89225fc74b5139"
   end
 
   depends_on "gobject-introspection" => :build
@@ -31,12 +31,6 @@ class Harfbuzz < Formula
   resource "homebrew-test-ttf" do
     url "https://github.com/harfbuzz/harfbuzz/raw/fc0daafab0336b847ac14682e581a8838f36a0bf/test/shaping/fonts/sha1sum/270b89df543a7e48e206a2d830c0e10e5265c630.ttf"
     sha256 "9535d35dab9e002963eef56757c46881f6b3d3b27db24eefcc80929781856c77"
-  end
-
-  # remove for next release
-  patch do
-    url "https://github.com/harfbuzz/harfbuzz/commit/821d52a2665cd339722cfdede47d8c6ecb99fac7.patch?full_index=1"
-    sha256 "a25b5c51ac283fffea4da97f4166e2a724d03ae3f1e073ce7b1092f7dc617210"
   end
 
   def install

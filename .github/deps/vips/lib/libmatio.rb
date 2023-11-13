@@ -1,18 +1,18 @@
 class Libmatio < Formula
   desc "C library for reading and writing MATLAB MAT files"
   homepage "https://matio.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/matio/matio/1.5.25/matio-1.5.25.tar.gz"
-  sha256 "5ab2762bd0f459c731641fbe7b258ebd741951652b7107176f0181bdfb548231"
+  url "https://downloads.sourceforge.net/project/matio/matio/1.5.26/matio-1.5.26.tar.gz"
+  sha256 "8b47c29f58e468dba7a5555371c6a72ad4c6aa8b15f459b2b0b65a303c063933"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f85552518024128ef04ee7c1dba2c3a6e9030317d2e3b0d0c768235f71d18173"
-    sha256 cellar: :any,                 arm64_ventura:  "048e0e2343f33ef9fb1451693798a281391ce35997820d772e149c9ed3708658"
-    sha256 cellar: :any,                 arm64_monterey: "8790c3843fc7269d04453f9931bd87aa28b5f2624a026d35df985c867626189a"
-    sha256 cellar: :any,                 sonoma:         "9ed56ef8b0e021370b48074655fe49dc04fd8095d2026727bc3e316bf3c8616d"
-    sha256 cellar: :any,                 ventura:        "93d8365b14d466694fc018415584a7b8b1e0eff33c0ca719c7b5a76d3771d82e"
-    sha256 cellar: :any,                 monterey:       "766df412e9f581c34911cf69e3c86b6962d231c91207e88bea2bccda870d938d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c0d615a0534cc34c6deca585ec6480b996a9a5944cf33eecb3d7e205f5486bb"
+    sha256 cellar: :any,                 arm64_sonoma:   "13567c415371bc87b4cacd46de35b3ea36e618b685cdd42b3e1a1a0f90f4d22c"
+    sha256 cellar: :any,                 arm64_ventura:  "f72d1bb3e55e5236c5979b510043d38d7ab9313d0f4c110a3368adacda73f84f"
+    sha256 cellar: :any,                 arm64_monterey: "c59978c8734ff5373f244225e075e1efcc4b6e2c84cde84aa4bab99eebcae088"
+    sha256 cellar: :any,                 sonoma:         "f4c170f116b9ceb3ab4427188fb90e28576b9afbdef20916ebd3d3f7071dd196"
+    sha256 cellar: :any,                 ventura:        "85eb3ad8aaba3cb495dd884c05f214b04f5262c72029fa11ad17d766b369c42b"
+    sha256 cellar: :any,                 monterey:       "c854ec0a1d8ede9ab13b15dbf08126032af050e5d295b5e32c77493f7f62ae09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fa36654b9df0d1949829c67c19ca11f7a6f7873c2218617c9f936f2abbc32f5"
   end
 
   depends_on "pkg-config" => :test

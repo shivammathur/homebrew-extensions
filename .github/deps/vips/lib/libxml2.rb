@@ -14,13 +14,14 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8fd3dfc23275635bd786a3ef09749c909ac2bb2ea2e4b271ff82bd9f575d7215"
-    sha256 cellar: :any,                 arm64_ventura:  "ecd502e0a296fa9ff0b093eec0d0ff537ee6750a11ca3475c3317bdfe032b5ec"
-    sha256 cellar: :any,                 arm64_monterey: "77927824b8c8aaf89f77eeab57396835d1d33cc8d150c2e3ca86264dd4aef943"
-    sha256 cellar: :any,                 sonoma:         "fd14314e2f93b55340e363ebb5fa52283871c9df33e7d04674fe84ee865cf4b0"
-    sha256 cellar: :any,                 ventura:        "df22f461f6b5412d06d4e2dbf2802b59d09ebc2a599c112673e069c75e482757"
-    sha256 cellar: :any,                 monterey:       "696c7526f3e6d052af2e8c9d8556b0c32dc840b76574480025ede87b1f5d9d23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57ceccd15fd3b58cb7be51a09879c6d31f58ddc300a74379f29823177975f280"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b0b21fc25268efb423b653869d868e7182965e0760f202dc2454daa292cc143b"
+    sha256 cellar: :any,                 arm64_ventura:  "54ed974a34d64d9008e635c5a387d8d0ebac3f2dfd347d10d2b236dc2d0f0299"
+    sha256 cellar: :any,                 arm64_monterey: "d085654b54f0631eacd629c8dce2039a46dd998f04a05e0a93728b709bdc9e2b"
+    sha256 cellar: :any,                 sonoma:         "8e4f5d8fe0755ba25f73c2480ee622a46396f506040ac3378c090cc191d6ca0a"
+    sha256 cellar: :any,                 ventura:        "9ec7475f293387705ab3808bb1e5f44fc74e3cfc2e52bce82817004dddf9d731"
+    sha256 cellar: :any,                 monterey:       "8b07dbf738ff233d8cc12a1f909089c7bd1c704fa75519cb2b3135c171776cd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20d62e7fa845bcec29714a904aeb619a286a75bc97312154c94f1ab64ccad444"
   end
 
   head do
@@ -53,6 +54,7 @@ class Libxml2 < Formula
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", *std_configure_args,
+                          "--sysconfdir=#{etc}",
                           "--disable-silent-rules",
                           "--with-history",
                           "--with-icu",
