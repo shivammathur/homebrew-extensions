@@ -1,4 +1,4 @@
-# typed: false
+# typed: true
 # frozen_string_literal: true
 
 # Abstract class for PHP extensions
@@ -6,7 +6,7 @@ class AbstractPhpExtension < Formula
   desc "Abstract class for PHP Extension Formula"
   homepage "https://github.com/shivammathur/homebrew-extensions"
 
-  def initialize(*)
+  def initialize(name, path, spec, alias_path: nil, tap: nil, force_bottle: false)
     super
     @priority = self.class.priority || "20"
   end
