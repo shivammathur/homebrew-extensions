@@ -1,3 +1,6 @@
+# typed: true
+# frozen_string_literal: true
+
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 class Phalcon4AT73 < AbstractPhpExtension

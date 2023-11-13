@@ -1,3 +1,6 @@
+# typed: true
+# frozen_string_literal: true
+
 class ImapUw < Formula
   # This is a fork of imap-uw formula as homebrew/core no longer accepts patches to it.
   desc "University of Washington IMAP toolkit"
