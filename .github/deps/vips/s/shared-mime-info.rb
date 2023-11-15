@@ -1,8 +1,8 @@
 class SharedMimeInfo < Formula
   desc "Database of common MIME types"
   homepage "https://wiki.freedesktop.org/www/Software/shared-mime-info"
-  url "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.3/shared-mime-info-2.3.tar.bz2"
-  sha256 "96ac085d82e2e654e40e34c13d97b74f6657357ee6b443d922695adcf548961c"
+  url "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.4/shared-mime-info-2.4.tar.bz2"
+  sha256 "32dc32ae39ff1c1bf8434dd3b36770b48538a1772bc0298509d034f057005992"
   license "GPL-2.0-only"
   head "https://gitlab.freedesktop.org/xdg/shared-mime-info.git", branch: "master"
 
@@ -12,13 +12,13 @@ class SharedMimeInfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "c8c10b7f178cad9d256a152ce842e51700551680665ebd18813bfe61b8778919"
-    sha256 cellar: :any, arm64_ventura:  "ff934b29242da40309ac06396a6db24c2bf4b085c4d2f2345c30f421ebcb7f14"
-    sha256 cellar: :any, arm64_monterey: "df0461b3809d25a83f79a1bbbcac12ae82ebb25ec715566cb8cffe4ad9393999"
-    sha256 cellar: :any, sonoma:         "6f06bb47b5e5e6304953b148e349f4f2b61f088cd4f3b9cd4fab7ef5071dd1d9"
-    sha256 cellar: :any, ventura:        "948d258dc61609d4fdc9a37120a26226fa600a9ec5a813d1c4969db44634f49d"
-    sha256 cellar: :any, monterey:       "36752744ee2b7dd8b76d7212a739590d7ffb8158006bfedec1ecc4c21613785d"
-    sha256               x86_64_linux:   "e64b8fc08a9ad8af3b47cbe3d6b45057387ed7f10f2a77b85e1bb05253e4ef33"
+    sha256 cellar: :any, arm64_sonoma:   "7ae03513d2d3a6fa26507d7ad9c83f8d45918cb8702c945bcee1c0c468577768"
+    sha256 cellar: :any, arm64_ventura:  "a72325b3fd197cf31399ef2604a1ae3baf93e4a144ad548c7464608117a8dfab"
+    sha256 cellar: :any, arm64_monterey: "0c4211d8572f33a5c3c7f3c1b7cc57a6e9f5599456269fcd31a7da9ed7b20f66"
+    sha256 cellar: :any, sonoma:         "cbaf7565626aac827d36135bb5c7a034d36f76577a4a77aaa78bfc89e508c0bf"
+    sha256 cellar: :any, ventura:        "555377ce54f93784fb32582161278fbb16228571cbdfb87ae7857ff8424ec267"
+    sha256 cellar: :any, monterey:       "eb9240c54296df715bd7f77ca11a86200d49accdc449d5fd1b00e752029924ea"
+    sha256               x86_64_linux:   "714303fdaefab5a012a1aa3d37243c02b1b4ff9bcd8347058165e903c4972840"
   end
 
   depends_on "gettext" => :build
@@ -30,20 +30,6 @@ class SharedMimeInfo < Formula
   depends_on "glib"
 
   uses_from_macos "libxml2"
-
-  # Fix string literal concatenation
-  # https://gitlab.freedesktop.org/xdg/shared-mime-info/-/merge_requests/251
-  patch do
-    url "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/commit/12a3a6b1141c704fc594379af1808bb9008d588c.diff"
-    sha256 "a63b61be35711561d819d68747c0cec1228819832f1062a8095bed73aad4c746"
-  end
-
-  # Fix false positive fdatasync detection on darwin
-  # https://gitlab.freedesktop.org/xdg/shared-mime-info/-/merge_requests/252
-  patch do
-    url "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/commit/7499ac1a85b2487b94e315e6b55c34bcf220295f.diff"
-    sha256 "750630319628c3e313b633913873fccaf0ac640a0acd5953085733ec18bb1289"
-  end
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
