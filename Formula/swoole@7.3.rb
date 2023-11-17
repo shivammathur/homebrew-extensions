@@ -35,6 +35,8 @@ class SwooleAT73 < AbstractPhpExtension
       --enable-brotli
       --enable-openssl
       --enable-swoole
+      --enable-swoole-curl
+      --enable-http2
       --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
       --with-brotli-dir=#{Formula["brotli"].opt_prefix}
     ]
