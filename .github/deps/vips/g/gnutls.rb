@@ -1,9 +1,9 @@
 class Gnutls < Formula
   desc "GNU Transport Layer Security (TLS) Library"
   homepage "https://gnutls.org/"
-  url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.1.tar.xz"
-  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.8/gnutls-3.8.1.tar.xz"
-  sha256 "ba8b9e15ae20aba88f44661978f5b5863494316fe7e722ede9d069fe6294829c"
+  url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.2.tar.xz"
+  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.8/gnutls-3.8.2.tar.xz"
+  sha256 "e765e5016ffa9b9dd243e363a0460d577074444ee2491267db2e96c9c2adef77"
   license all_of: ["LGPL-2.1-or-later", "GPL-3.0-only"]
 
   livecheck do
@@ -12,15 +12,13 @@ class Gnutls < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d2276a461466ed38b0f14742b6e844c0278a2a8d9a66fae442af291fc8060dfa"
-    sha256 arm64_ventura:  "e3c3e0156bee79b8af745e9d4587ccca48afe3a50a25071bfb185b3cfe41a215"
-    sha256 arm64_monterey: "cdc74eb7c4741a37f941c079e8b9ffccf5eba5bec0bef0a8ccd4015ffa47a6d6"
-    sha256 arm64_big_sur:  "3c9025adfc14b84487257f7947e0dbe9566713ed885076f21d5d5215c23add87"
-    sha256 sonoma:         "304cfac219956fd29b7e504d7c18830fef1459804994464aa2058be9dc620ade"
-    sha256 ventura:        "ca7d2a952ba2da27cc1a8b2441036ec3da0ec2957c97a97ab309390f147e335e"
-    sha256 monterey:       "dfa28ed4633b865f74e66bc1ceb43c3ab6f372b93e3325323de7a3d00d334c6c"
-    sha256 big_sur:        "18aeb28de21fa30a45feb1de8398f02a87010ee9399c58d15e8b75fe786e81ed"
-    sha256 x86_64_linux:   "e31730b3d965f48969ce3bcc1a8710aa2324ae8d29487f03e75bef68adbe8ab3"
+    sha256 arm64_sonoma:   "3e685ee9d72100553637eb11933f0b5d19497ced063cf80cfa490a6b74da6009"
+    sha256 arm64_ventura:  "48cbe35994d3baa0f4fcaf1567c8143b63800c9f913c673d9ececf9a0be676f7"
+    sha256 arm64_monterey: "dfcc31686500bfe4b91038963b6e4a86caf023ae08f4300d09453434494fddbe"
+    sha256 sonoma:         "8b242a4f13fccec63998dc480d3ba6b5a18138e954ba0923dfcffaed4973b9b9"
+    sha256 ventura:        "d01d7954a2d08a809491d36d21b99e31aebfa2278853a99f055b5b83d91628bb"
+    sha256 monterey:       "e261b16cd10d7fe654a10862efd9a2aaf28eced0142201e19cd53734654cdc77"
+    sha256 x86_64_linux:   "3827cd32aa6a9cd29a91bf788afa51ac5a88bf87f93355fd0f260a17480ab176"
   end
 
   depends_on "pkg-config" => :build
