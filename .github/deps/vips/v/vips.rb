@@ -11,13 +11,14 @@ class Vips < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "3dde52323459f5f3c8743c4f466e133bbb0d824478f02a357f5225f26135c7d5"
-    sha256 arm64_ventura:  "fa999a3bf8c9541dc3460a7c6ee078b7d9ab355fc0fe19600a43154961eab17b"
-    sha256 arm64_monterey: "34dfb0994b55aad6cba52cfab2a4dfb7234c1775117ef0a6b39b78dc539c155c"
-    sha256 sonoma:         "283531c71edefa0fe95fcabf32e8ca08e70a1a34090d5e4c7e214aea23087dd8"
-    sha256 ventura:        "153035b2e29a01f3fa4504d02dac52e039d178e07cc820ad5fd22fe5f49a2c25"
-    sha256 monterey:       "95aaa746d5f06b25f4b148488ed96d9544166f46aad27b8dc72712146bde45fb"
-    sha256 x86_64_linux:   "d9b9e53416ea83c962da3f5dbeee94c92bfe113c877b14c7d8f794744173ca27"
+    rebuild 1
+    sha256 arm64_sonoma:   "caa30071abf2446d03427e7dbdcbc152adef0202fd91d551d9fb672e72e79b8a"
+    sha256 arm64_ventura:  "efae6d026af0cf86f9529944fda70befb21cfe6a622b36bed9f12239c42245c0"
+    sha256 arm64_monterey: "58c0cf167e6925aad64a2b75dd9ab7c589e154d0b694da02dd945b19c385f92b"
+    sha256 sonoma:         "62c4200e382307d414ed98b0cdd62ad042809fded00009a764594a2fb3d842ba"
+    sha256 ventura:        "8ed30dea84e852abf5e23611d7d1cbf7a6141af5a19f3b407a396d644861fac2"
+    sha256 monterey:       "cbb5c8ad2aaee578ce150519de43f179c0c15ea968d9f11b598aef5620649b9b"
+    sha256 x86_64_linux:   "7d88c621b04abb06cbe3e2cc23c9f13478a37cae172af35b2a7f59953e3786b6"
   end
 
   depends_on "gobject-introspection" => :build
@@ -33,8 +34,8 @@ class Vips < Formula
   depends_on "glib"
   depends_on "imagemagick"
   depends_on "jpeg-xl"
+  depends_on "libarchive"
   depends_on "libexif"
-  depends_on "libgsf"
   depends_on "libheif"
   depends_on "libimagequant"
   depends_on "libmatio"
