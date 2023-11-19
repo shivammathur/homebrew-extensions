@@ -15,14 +15,13 @@ class VipsAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 7
-    sha256 cellar: :any,                 arm64_ventura:  "2a154eb4ce6f95bfad692c675f5c7fcc964b94821d241d265a5f484ee2bd8ffa"
-    sha256 cellar: :any,                 arm64_monterey: "ae969e0a82e2be99482730b92b14d18dbf498b8ec691c0d857c4271aef8aaa31"
-    sha256 cellar: :any,                 arm64_big_sur:  "f22ba2ab99af891a3b001f53cd13fd8b9adb1b57e966db2b22037cb71c1558ba"
-    sha256 cellar: :any,                 ventura:        "a7616f54f85ecff8d74b34a66d91bc84aa62abbe4ff6c7c86f31e3226430b29a"
-    sha256 cellar: :any,                 monterey:       "567a4293ab0858d8c41bfb5b0b579369a37776d275d5b9cdecee6c81a15bd37a"
-    sha256 cellar: :any,                 big_sur:        "961d2cfbb9fd120c34abaa6a7a3f353342928b4d715e67268f6437aeaa32a9a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81848c2f56342332eebe1648f2a727851ab7c26f34906a6211b4fa2e046efddc"
+    rebuild 8
+    sha256 cellar: :any,                 arm64_sonoma:   "5182cab429dcabce1f23d762bf4f9f572a1981b7c476b52227ca146df8019d86"
+    sha256 cellar: :any,                 arm64_ventura:  "116250504d086bbc1f953bb34659c76a9e34b7a5d5d323dc0d84ee3d777dc192"
+    sha256 cellar: :any,                 arm64_monterey: "720109ffff09581f9c18c50d1e34458ba8258f608744de5babfaba110a24b199"
+    sha256 cellar: :any,                 ventura:        "7d17a0b04917d9679aecd9cec1437fdfb2021d1b68fe2d8a198b35dca95f4632"
+    sha256 cellar: :any,                 monterey:       "b7e0554a0aacb2b52b0afdd13cabd21aad2c7c9653c0abf7aec70ff16560fa24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e59dffba025ba1a7f251eb4e596cc1c8fb7bcb19c0e135ded08d3b2b66f4b367"
   end
 
   depends_on "vips"
