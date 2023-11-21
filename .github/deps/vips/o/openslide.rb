@@ -1,28 +1,29 @@
 class Openslide < Formula
   desc "C library to read whole-slide images (a.k.a. virtual slides)"
   homepage "https://openslide.org/"
-  url "https://github.com/openslide/openslide/releases/download/v3.4.1/openslide-3.4.1.tar.xz"
-  sha256 "9938034dba7f48fadc90a2cdf8cfe94c5613b04098d1348a5ff19da95b990564"
+  url "https://github.com/openslide/openslide/releases/download/v4.0.0/openslide-4.0.0.tar.xz"
+  sha256 "cc227c44316abb65fb28f1c967706eb7254f91dbfab31e9ae6a48db6cf4ae562"
   license "LGPL-2.1-only"
-  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "afb277f95420c92e38e2735224127bfe63bbca01549c3ad63b2b1d110f85df3b"
-    sha256 cellar: :any,                 arm64_ventura:  "e583738663abd681d8251f1dc228f025c1c6938a928a96b728bce74fa34353c0"
-    sha256 cellar: :any,                 arm64_monterey: "d37da9b5759f55d1d70a911a237c9be6275b3dc645c393cbd0467799fa17e989"
-    sha256 cellar: :any,                 arm64_big_sur:  "b2368526acf0b7b6ea124c2c9b5faa93aff6f6e933ff7f53c8db6499094d2782"
-    sha256 cellar: :any,                 sonoma:         "4f3fa6514f9f6449b0a23962cbef7c89c1801efe93d5c4e28cd40d23519985ed"
-    sha256 cellar: :any,                 ventura:        "196c77d171091b1ebdd7c8697c3241fa8102b0965fb2bee4f03118ed139061eb"
-    sha256 cellar: :any,                 monterey:       "33e28390bea7296e1eac8f5e70c4099d53c90191138690382933350615ece546"
-    sha256 cellar: :any,                 big_sur:        "f62cbddfc327ae795bdceed9c3c66dc22e955a28cd14190ae6844f990c346301"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34556c96b3b25692de68c4a7896f59ff5ce4a2d8940844e64b6ab6674fb6e40d"
+    sha256 cellar: :any, arm64_sonoma:   "5bdd7e9c3409e9a540d861b0cb58ff7e94b51f38ec1c04d2b07dbf8d69d01933"
+    sha256 cellar: :any, arm64_ventura:  "389ba9d6f9bb8e28d960277976ba1159083ded06ca6b6d01cbbdb5688296579b"
+    sha256 cellar: :any, arm64_monterey: "413e235cb5da773c304affa0719c5b8d1e0031d0f17fbc4263ad411d4c97b784"
+    sha256 cellar: :any, sonoma:         "24268fa9a0759d1ee9997ca8b4f34d8fbd24ad5f0b5b5cbdbf7a4eea8f447324"
+    sha256 cellar: :any, ventura:        "954bbde8c99630dd94c6486021674eed997475307f248d4957767e4a018b0739"
+    sha256 cellar: :any, monterey:       "05788d5b3c3101ce73c9080c0d0c360d151cf2460a68b7dfe0bd3effb2c20460"
+    sha256               x86_64_linux:   "d67053c017a5e1e57189a2d774cac9d8bbe2c655240183ce65247a0a8650c917"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "jpeg-turbo"
+  depends_on "libdicom"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "libxml2"
@@ -36,13 +37,14 @@ class Openslide < Formula
   end
 
   def install
-    system "./configure", *std_configure_args
-    system "make", "install"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
     resource("homebrew-svs").stage do
-      system bin/"openslide-show-properties", "CMU-1-Small-Region.svs"
+      system bin/"slidetool", "prop", "list", "CMU-1-Small-Region.svs"
     end
   end
 end

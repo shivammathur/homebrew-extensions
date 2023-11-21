@@ -8,9 +8,11 @@ class Zstd < Formula
   license "BSD-3-Clause"
   head "https://github.com/facebook/zstd.git", branch: "dev"
 
+  # The upstream repository contains old, one-off tags (5.5.5, 6.6.6) that are
+  # higher than current versions, so we check the "latest" release instead.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
