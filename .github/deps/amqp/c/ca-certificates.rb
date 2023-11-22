@@ -11,15 +11,8 @@ class CaCertificates < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a331e92e7a759571296581f029e5cc2ec7cee70cd92dc0b5f8eb76095f94a21a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a331e92e7a759571296581f029e5cc2ec7cee70cd92dc0b5f8eb76095f94a21a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a331e92e7a759571296581f029e5cc2ec7cee70cd92dc0b5f8eb76095f94a21a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a331e92e7a759571296581f029e5cc2ec7cee70cd92dc0b5f8eb76095f94a21a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a331e92e7a759571296581f029e5cc2ec7cee70cd92dc0b5f8eb76095f94a21a"
-    sha256 cellar: :any_skip_relocation, ventura:        "a331e92e7a759571296581f029e5cc2ec7cee70cd92dc0b5f8eb76095f94a21a"
-    sha256 cellar: :any_skip_relocation, monterey:       "a331e92e7a759571296581f029e5cc2ec7cee70cd92dc0b5f8eb76095f94a21a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a331e92e7a759571296581f029e5cc2ec7cee70cd92dc0b5f8eb76095f94a21a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68805f32523ea598c61d118e1a41cceb4589fe6e8c265133dcf70d6b1ae05883"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a331e92e7a759571296581f029e5cc2ec7cee70cd92dc0b5f8eb76095f94a21a"
   end
 
   def install
