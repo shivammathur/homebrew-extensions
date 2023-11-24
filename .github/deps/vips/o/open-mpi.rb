@@ -1,8 +1,8 @@
 class OpenMpi < Formula
   desc "High performance message passing library"
   homepage "https://www.open-mpi.org/"
-  url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.bz2"
-  sha256 "f740994485516deb63b5311af122c265179f5328a0d857a567b85db00b11e415"
+  url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.0.tar.bz2"
+  sha256 "9d845ca94bc1aeb445f83d98d238cd08f6ec7ad0f73b0f79ec1668dbfdacd613"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class OpenMpi < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "3ca19067c481dab3a6bde6188538b04dacd260fd5964cc860e329d7454248fd1"
-    sha256 arm64_ventura:  "1fa61c44514902b4ae2bd80f7e7cbd1031398ab73e3ddaacceffb6aeb5ac609c"
-    sha256 arm64_monterey: "49d9e6ad8c084027e14bf5a20aca55e6389b418d0a736e4aea74b8f3c491a9c6"
-    sha256 sonoma:         "964f31c111fb9b7d2009f98ac609874dd64dd4d1732ee5bffaef861140029ae9"
-    sha256 ventura:        "572ebd4fa62b6e4e07d55e357805808da8e4f5c79a3a754852e72f507a7c6d87"
-    sha256 monterey:       "a1c4c8d7d78be674e02e9732f74dd3c362c980ee2aa64a50f6a6757cc4cd2d3e"
-    sha256 x86_64_linux:   "d26acff6ab14a30003aa6eff1c92e75bff3b29c07bbf9ddecc89514bf5e2b33d"
+    sha256 arm64_sonoma:   "721f47612d276c34f260631cd8a3068cdf8d34bcad71d3739f6a7e5e87eec7de"
+    sha256 arm64_ventura:  "3dbf329e311776033ddbed2618582a2f77e9b22f5e14a42259098894c806ee8c"
+    sha256 arm64_monterey: "03bc418d5c9a4fd2844849d75831e998383d8f8a29fb4fd3bf0eaec86ad53450"
+    sha256 sonoma:         "4b23e51972592f56566f2d76fa23d9184baf33df947b14e349ce7b3a526a0ddb"
+    sha256 ventura:        "b8a5a61ae950b3007e86d7b5f3219fd5a3d1c85c4ed69d6055216d4bf4db99f8"
+    sha256 monterey:       "8b80836c29cc6de8366376f7670bb648734f9047f6ec2cbbeed294f60cdcec5c"
+    sha256 x86_64_linux:   "f9522b1a7de34785cd4aad4d47282c8fdee45ce4a31e539d9379b61fbb0b0fd1"
   end
 
   head do
@@ -30,6 +30,7 @@ class OpenMpi < Formula
   depends_on "gcc" # for gfortran
   depends_on "hwloc"
   depends_on "libevent"
+  depends_on "pmix"
 
   conflicts_with "mpich", because: "both install MPI compiler wrappers"
 
@@ -39,24 +40,22 @@ class OpenMpi < Formula
       ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
     end
 
-    # Work around asm incompatibility with new linker (FB13194320)
-    # https://github.com/open-mpi/ompi/issues/11935
-    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
-
     # Avoid references to the Homebrew shims directory
     inreplace_files = %w[
       ompi/tools/ompi_info/param.c
       oshmem/tools/oshmem_info/param.c
     ]
+    inreplace_files_cc = %w[
+      3rd-party/openpmix/src/tools/pmix_info/support.c
+      3rd-party/prrte/src/tools/prte_info/param.c
+    ]
 
     cxx = OS.linux? ? "g++" : ENV.cxx
     inreplace inreplace_files, "OMPI_CXX_ABSOLUTE", "\"#{cxx}\""
 
-    inreplace_files << "orte/tools/orte-info/param.c" unless build.head?
-    inreplace_files << "opal/mca/pmix/pmix3x/pmix/src/tools/pmix_info/support.c" unless build.head?
-
     cc = OS.linux? ? "gcc" : ENV.cc
     inreplace inreplace_files, /(OPAL|PMIX)_CC_ABSOLUTE/, "\"#{cc}\""
+    inreplace inreplace_files_cc, /(PMIX|PRTE)_CC_ABSOLUTE/, "\"#{cc}\""
 
     ENV.cxx11
     ENV.runtime_cpu_detection
@@ -68,6 +67,7 @@ class OpenMpi < Formula
       --sysconfdir=#{etc}
       --with-hwloc=#{Formula["hwloc"].opt_prefix}
       --with-libevent=#{Formula["libevent"].opt_prefix}
+      --with-pmix=#{Formula["pmix"].opt_prefix}
       --with-sge
     ]
     args << "--with-platform-optimized" if build.head?
