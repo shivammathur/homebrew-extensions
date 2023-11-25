@@ -27,6 +27,10 @@ class Libuv < Formula
   depends_on "pkg-config" => :build
   depends_on "sphinx-doc" => :build
 
+  # Fix compile on older macOS.
+  # Remove with v1.48.
+  patch :DATA
+
   def install
     # This isn't yet handled by the make install process sadly.
     cd "docs" do
@@ -59,3 +63,20 @@ class Libuv < Formula
     system "./test"
   end
 end
+
+__END__
+diff --git a/src/unix/fs.c b/src/unix/fs.c
+index 891306da..9671f0dd 100644
+--- a/src/unix/fs.c
++++ b/src/unix/fs.c
+@@ -84,7 +84,9 @@
+ 
+ #if defined(__CYGWIN__) ||                                                    \
+     (defined(__HAIKU__) && B_HAIKU_VERSION < B_HAIKU_VERSION_1_PRE_BETA_5) || \
+-    (defined(__sun) && !defined(__illumos__))
++    (defined(__sun) && !defined(__illumos__)) ||                              \
++    (defined(__APPLE__) && !TARGET_OS_IPHONE &&                               \
++     MAC_OS_X_VERSION_MIN_REQUIRED < 110000)
+ #define preadv(fd, bufs, nbufs, off)                                          \
+   pread(fd, (bufs)->iov_base, (bufs)->iov_len, off)
+ #define pwritev(fd, bufs, nbufs, off)                                         \
