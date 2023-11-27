@@ -36,51 +36,51 @@
 
 | Extension    | PHP Version            |
 |--------------|------------------------|
-| `amqp`       | `PHP 5.6` to `PHP 8.3` |
-| `apcu`       | `PHP 5.6` to `PHP 8.3` |
-| `ast`        | `PHP 7.0` to `PHP 8.3` |
-| `couchbase`  | `PHP 5.6` to `PHP 8.3` |
-| `ds`         | `PHP 7.0` to `PHP 8.3` |
-| `event`      | `PHP 5.6` to `PHP 8.3` |
-| `expect`     | `PHP 5.6` to `PHP 8.3` |
-| `gearman`    | `PHP 5.6` to `PHP 8.3` |
-| `gnupg`      | `PHP 5.6` to `PHP 8.3` |
-| `grpc`       | `PHP 5.6` to `PHP 8.3` |
-| `igbinary`   | `PHP 5.6` to `PHP 8.3` |
-| `imagick`    | `PHP 5.6` to `PHP 8.3` |
-| `imap`       | `PHP 5.6` to `PHP 8.3` |
+| `amqp`       | `PHP 5.6` to `PHP 8.4` |
+| `apcu`       | `PHP 5.6` to `PHP 8.4` |
+| `ast`        | `PHP 7.0` to `PHP 8.4` |
+| `couchbase`  | `PHP 5.6` to `PHP 8.4` |
+| `ds`         | `PHP 7.0` to `PHP 8.4` |
+| `event`      | `PHP 5.6` to `PHP 8.4` |
+| `expect`     | `PHP 5.6` to `PHP 8.4` |
+| `gearman`    | `PHP 5.6` to `PHP 8.4` |
+| `gnupg`      | `PHP 5.6` to `PHP 8.4` |
+| `grpc`       | `PHP 5.6` to `PHP 8.4` |
+| `igbinary`   | `PHP 5.6` to `PHP 8.4` |
+| `imagick`    | `PHP 5.6` to `PHP 8.4` |
+| `imap`       | `PHP 5.6` to `PHP 8.4` |
 | `lua`        | `PHP 5.6` to `PHP 7.4` |
-| `mailparse`  | `PHP 5.6` to `PHP 8.3` |
-| `mcrypt`     | `PHP 5.6` to `PHP 8.3` |
-| `memcache`   | `PHP 5.6` to `PHP 8.3` |
-| `memcached`  | `PHP 5.6` to `PHP 8.3` |
-| `mongodb`    | `PHP 5.6` to `PHP 8.3` |
-| `msgpack`    | `PHP 5.6` to `PHP 8.3` |
+| `mailparse`  | `PHP 5.6` to `PHP 8.4` |
+| `mcrypt`     | `PHP 5.6` to `PHP 8.4` |
+| `memcache`   | `PHP 5.6` to `PHP 8.4` |
+| `memcached`  | `PHP 5.6` to `PHP 8.4` |
+| `mongodb`    | `PHP 5.6` to `PHP 8.4` |
+| `msgpack`    | `PHP 5.6` to `PHP 8.4` |
 | `newrelic`   | `PHP 7.4` to `PHP 8.1` |
-| `pcov`       | `PHP 7.1` to `PHP 8.3` |
-| `pdo_sqlsrv` | `PHP 7.0` to `PHP 8.3` |
-| `pecl_http`  | `PHP 5.6` to `PHP 8.3` |
+| `pcov`       | `PHP 7.1` to `PHP 8.4` |
+| `pdo_sqlsrv` | `PHP 7.0` to `PHP 8.4` |
+| `pecl_http`  | `PHP 5.6` to `PHP 8.4` |
 | `phalcon3`   | `PHP 5.6` to `PHP 7.3` |
 | `phalcon4`   | `PHP 7.2` to `PHP 7.4` |
 | `phalcon5`   | `PHP 7.4` to `PHP 8.2` |
 | `propro`     | `PHP 5.6` to `PHP 7.4` |
-| `protobuf`   | `PHP 5.6` to `PHP 8.3` |
-| `psr`        | `PHP 5.6` to `PHP 8.3` |
-| `raphf`      | `PHP 5.6` to `PHP 8.3` |
-| `rdkafka`    | `PHP 5.6` to `PHP 8.3` |
-| `redis`      | `PHP 5.6` to `PHP 8.3` |
-| `snmp`       | `PHP 5.6` to `PHP 8.3` |
-| `sqlsrv`     | `PHP 7.0` to `PHP 8.3` |
-| `ssh2`       | `PHP 5.6` to `PHP 8.3` |
-| `swoole`     | `PHP 5.6` to `PHP 8.3` |
-| `uuid`       | `PHP 5.6` to `PHP 8.3` |
-| `v8js`       | `PHP 7.0` to `PHP 8.3` |
-| `vips`       | `PHP 7.0` to `PHP 8.3` |
-| `xdebug`     | `PHP 5.6` to `PHP 8.3` |
+| `protobuf`   | `PHP 5.6` to `PHP 8.4` |
+| `psr`        | `PHP 5.6` to `PHP 8.4` |
+| `raphf`      | `PHP 5.6` to `PHP 8.4` |
+| `rdkafka`    | `PHP 5.6` to `PHP 8.4` |
+| `redis`      | `PHP 5.6` to `PHP 8.4` |
+| `snmp`       | `PHP 5.6` to `PHP 8.4` |
+| `sqlsrv`     | `PHP 7.0` to `PHP 8.4` |
+| `ssh2`       | `PHP 5.6` to `PHP 8.4` |
+| `swoole`     | `PHP 5.6` to `PHP 8.4` |
+| `uuid`       | `PHP 5.6` to `PHP 8.4` |
+| `v8js`       | `PHP 7.0` to `PHP 8.4` |
+| `vips`       | `PHP 7.0` to `PHP 8.4` |
+| `xdebug`     | `PHP 5.6` to `PHP 8.4` |
 | `xdebug2`    | `PHP 7.2` to `PHP 7.4` |
-| `xlswriter`  | `PHP 7.0` to `PHP 8.3` |
-| `yaml`       | `PHP 5.6` to `PHP 8.3` |
-| `zmq`        | `PHP 5.6` to `PHP 8.3` |
+| `xlswriter`  | `PHP 7.0` to `PHP 8.4` |
+| `yaml`       | `PHP 5.6` to `PHP 8.4` |
+| `zmq`        | `PHP 5.6` to `PHP 8.4` |
 
 ## OS Support
 
@@ -106,12 +106,12 @@ brew update
 ```zsh
 php -v
 ```
-- If not, install the required PHP version, For example to install `PHP 8.2`:
+- If not, install the required PHP version. For example, to install `PHP 8.3`:
 
 ```zsh
 brew tap shivammathur/php
-brew install shivammathur/php/php@8.2
-brew link --force --overwrite shivammathur/php/php@8.2
+brew install shivammathur/php/php@8.3
+brew link --force --overwrite shivammathur/php/php@8.3
 ```
 
 Refer to [shivammathur/php](https://github.com/shivammathur/homebrew-php) tap for more information about installing PHP.
@@ -126,18 +126,18 @@ brew tap shivammathur/extensions
 
 - Then install the required extension. See [Formula](Formula) directory for available formulae.
 
-- For example, to install `Xdebug` on `PHP 8.2`:
+- For example, to install `Xdebug` on `PHP 8.3`:
 
 ```zsh
-brew install shivammathur/extensions/xdebug@8.2
+brew install shivammathur/extensions/xdebug@8.3
 ```
 
 ### Upgrade extensions
 
-- For example, to upgrade `Xdebug` on `PHP 8.2`.
+- For example, to upgrade `Xdebug` on `PHP 8.3`.
 
 ```zsh
-brew upgrade shivammathur/extensions/xdebug@8.2
+brew upgrade shivammathur/extensions/xdebug@8.3
 ```
 
 ### Restart your webserver
