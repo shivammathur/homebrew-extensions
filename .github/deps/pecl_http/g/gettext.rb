@@ -1,20 +1,20 @@
 class Gettext < Formula
   desc "GNU internationalization (i18n) and localization (l10n) library"
   homepage "https://www.gnu.org/software/gettext/"
-  url "https://ftp.gnu.org/gnu/gettext/gettext-0.22.3.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gettext/gettext-0.22.3.tar.gz"
-  mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.22.3.tar.gz"
-  sha256 "839a260b2314ba66274dae7d245ec19fce190a3aa67869bf31354cb558df42c7"
+  url "https://ftp.gnu.org/gnu/gettext/gettext-0.22.4.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gettext/gettext-0.22.4.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.22.4.tar.gz"
+  sha256 "c1e0bb2a4427a9024390c662cd532d664c4b36b8ff444ed5e54b115fdb7a1aea"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "287240f844318fe88193b706d6e07121b2cc7cfb3b5e2f47e21ee6970ffceb09"
-    sha256 arm64_ventura:  "9bf5b0ea5fb893fe294c2c5f9195026e082e84e4dce24c81b544f62d9d85dd02"
-    sha256 arm64_monterey: "29b5bf933d4cc986e2f7b580d11aee8b755f5fab5621bd955dd3ca6867922e10"
-    sha256 sonoma:         "1853891cc14ff16ab102dd75b8ee313975bfdb17c03737975ca61b5a05159e5a"
-    sha256 ventura:        "6971461fbd5d738e7f5609ced872ff87b88a4425c7ba42450871abe743178574"
-    sha256 monterey:       "3600ef54a17fc9782a367a70d60a3996eae4613075ba05e8943cb1e5190d35fc"
-    sha256 x86_64_linux:   "173e5e5fac30885db41e894d9b46798e3023b1543f2d855eaaf77e99e6ed3ddd"
+    sha256 arm64_sonoma:   "43d00547f4a1036a642c8a41650b483f0054cd239ab4b9ca171563067c8db264"
+    sha256 arm64_ventura:  "c652190aa716f3ca57678562de9cef6380d124f45a799f1f6eb1506a9b05ab1a"
+    sha256 arm64_monterey: "3dd6b9cc575a927171c63822100d0597a2784258496ee134d670d946f3250a2b"
+    sha256 sonoma:         "a43af8b39c3661bdc073174c6fffb49a3a1899647a541131a1cd67947807ca79"
+    sha256 ventura:        "1fd9c7c6577705d3a1ce1c9064b9a853a930b63ee8984e07997758dd2c233448"
+    sha256 monterey:       "f484781a99d2299b08d46c58f6c296ea9d9dd84b47ccdfbb2510b65c7344ad4a"
+    sha256 x86_64_linux:   "dc631c067b99d2620dfa6994b89bd6435ab95d4f1e5f19e00eca290df8c3bc3c"
   end
 
   uses_from_macos "libxml2"

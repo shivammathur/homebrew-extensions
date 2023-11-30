@@ -12,19 +12,20 @@ class Vips < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "078279e9ff1641e99580311c235cc82f843e53520da25bb8f54cd4d2c54f4324"
-    sha256 arm64_ventura:  "64c13154e13cf2803a8436ad21dbd3661edf23ce5e071df146afc68b3d8dc3d8"
-    sha256 arm64_monterey: "0bbaa70e54466a77eaa1c0ad9bf863494d27cca5b5b0dc69c82b87902e1721b4"
-    sha256 sonoma:         "6acebfd71c2a9f1d0deff6af82fd67ca7a7aff3bc06ee32bca3b0b1abc566496"
-    sha256 ventura:        "05d5f7494fa6ca05f9921ed2cfbe784b8545ab3f57182df5d0c101dbf601541a"
-    sha256 monterey:       "6c9650b657d019b878e8e87d4fe796c6839f6c4df95091695cc79732d61586c0"
-    sha256 x86_64_linux:   "be9e39d54712042ca86e495c4cac83e4b4674c171b2c70967d08b502aa9dbc90"
+    rebuild 1
+    sha256 arm64_sonoma:   "c07bcfa87c9626650fe2cd9a2c4fb5d15d3f8e9c73f6c1e4766eb86efb1978e6"
+    sha256 arm64_ventura:  "cb54cd1fad7e525fa01096b505fac563bd18c3ebaa8d65b74c1c02a0720e40d2"
+    sha256 arm64_monterey: "197ece8f606f4b7098db44cb6e195a4336e5994c028a76cf273d4b10d9307386"
+    sha256 sonoma:         "b879542f76e4c69aec1b4ab6ddb78338b053ca9f7cfcf663f86773a670c093a1"
+    sha256 ventura:        "255dc94a81840c99835a36f0445d0294462c4c39353555031401a2c866d0a6c4"
+    sha256 monterey:       "f7b754159679bf13c4963a13a6cc0a0f622da3d1e643a556126b56468ca8cb75"
+    sha256 x86_64_linux:   "cd7afaaafd424d1ac9e9d60a65aa16ac81e5ae5fb3317b47d5d9e1a2769c06e2"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "cairo"
   depends_on "cfitsio"
   depends_on "cgif"
@@ -65,6 +66,17 @@ class Vips < Formula
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
+
+    if OS.mac?
+      # `pkg-config --libs vips` includes libarchive, but that package is
+      # keg-only so it needs to look for the pkgconfig file in libarchive's opt
+      # path.
+      libarchive = Formula["libarchive"].opt_prefix
+      inreplace [lib/"pkgconfig/vips.pc", lib/"pkgconfig/vips-cpp.pc"] do |s|
+        s.gsub!(/^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$/,
+                "Requires.private:\\1#{libarchive}/lib/pkgconfig/libarchive.pc\\3")
+      end
+    end
   end
 
   test do
@@ -79,5 +91,9 @@ class Vips < Formula
     # [palette] requires libimagequant, vips warns if it's not present
     cmd = "#{bin}/vips copy #{test_fixtures("test.png")} #{testpath}/test.png[palette] 2>&1"
     assert_equal "", shell_output(cmd)
+
+    # Make sure `pkg-config` can parse `vips.pc` and `vips-cpp.pc` after the `inreplace`.
+    system "pkg-config", "vips"
+    system "pkg-config", "vips-cpp"
   end
 end
