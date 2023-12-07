@@ -15,14 +15,12 @@ class IgbinaryAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06f3a3ac2956bd9d3bbecebb1d79145f06507900543b7ea12cfdbd440dfd7650"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "126fb99dd4a090a028c7c04761dce4489b651e016b18c7ea41be19f82904a2f7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c5eb26a1466108e210b2095e90808fb17416287f304ecb6f8eb157cbb2dc468"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4e716b766d7b16fbd26dfaa3b9acfffb8c03dbb100b2e82696607442f1f2f90e"
-    sha256 cellar: :any_skip_relocation, ventura:        "ed616d7fda7c2046ff36f8da7d91f661fc81a39306c299e79f67d3c214694e57"
-    sha256 cellar: :any_skip_relocation, monterey:       "c20a21029ac8c72452406dfad74bb4096fb23933e6451f79c0972be2d81bf29b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "181558c079ba08fbe09bfd72f68823a7f7e80a574af505891d38f3b4974f5a08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04b0d92d3356063d4426daaa4ce11edc2f6a184ec6c5cb78fd2e7332173f65e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "44b05cda0bc9b9438d37249bdb8ed7a8c0b950ef1d47de9ade7069a208001ad8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6fb010260b1ede6169b471974704d5502ddc570ae1a9e090b09ac8b0cb3b23cf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "623902ede6d5ab03f2200fccab154c9d532d1043439cd9e04fc778dda3ce87a2"
+    sha256 cellar: :any_skip_relocation, ventura:        "d3f0a9c0229f9db7637cc6da4a7d42d2eca942a0a81fe7a612c18bfa6e58e09c"
+    sha256 cellar: :any_skip_relocation, monterey:       "dde51cccae1737df8a4f83176f6b57f7e9166646aea7e8fd2dc43989641a20a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e08427ef49e6ba5c8a57a3daf9068939ffb3e091ad57d93b52afe6718c281d6"
   end
 
   def install
