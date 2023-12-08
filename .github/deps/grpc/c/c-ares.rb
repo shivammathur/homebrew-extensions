@@ -15,19 +15,26 @@ class CAres < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e9f95be6725d5e210fdf2d590cd0112df3654815d24a0aaff28ae14794a7c98c"
-    sha256 cellar: :any,                 arm64_ventura:  "f4d0de11e8d6e5866b9e9b3d4b4cb9fef935e5f9aedd8c974618b61712754cd0"
-    sha256 cellar: :any,                 arm64_monterey: "c30c928efaaff5bd838f960ba472a823a9cb3496325a95a1f02ea1ff893eb983"
-    sha256 cellar: :any,                 sonoma:         "9f4b1d48de67b5df13c9824460519eeefd2335dfb1abe1f23d21fdae60fed50a"
-    sha256 cellar: :any,                 ventura:        "49a244389c56ec7608ff80daba29516168a406d7b5bbb83f4e9b9ac7c66bd983"
-    sha256 cellar: :any,                 monterey:       "36f5b3f8c718f1374f6449c4eabd78ff3dd6846150feeb86422261d410d11622"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f5b82056bc0c47fe33bdb55062c01fb7f8a36b40cfdc5d8352b8e9f329023a7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "a2659a49b749fa30972d68042f23ae8500eb2ef470b39d4d7c1d006b0d631192"
+    sha256 cellar: :any,                 arm64_ventura:  "6afea5fb4e5ff029cc3f68c6523458f7f4d800d1e20e1f7617d776c77c203e22"
+    sha256 cellar: :any,                 arm64_monterey: "52797daa8054095bf4d4c8d0f3bdce6b41a5ae4d5f6e34ac8c2d09851ca6c187"
+    sha256 cellar: :any,                 sonoma:         "eb6e1e08bc53b05cdbdcb64b6b494646b93cec6650e58182b80a22dfcee72c7d"
+    sha256 cellar: :any,                 ventura:        "7a5d3e35412af7e9f924ae2314579bb47874f5c1183a43cdcd955c92ac3065aa"
+    sha256 cellar: :any,                 monterey:       "5d56fbdc7854b40681bc7d76cbeb463d2d15524b0ea646d4ea169cd27e8a99b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59015edadad722031a2b46a0791c728b3453015c1c217175cf22c41ea12ddf5c"
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    args = %W[
+      -DCARES_STATIC=ON
+      -DCARES_SHARED=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
