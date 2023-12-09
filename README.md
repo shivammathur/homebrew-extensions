@@ -34,53 +34,54 @@
 
 ## Extensions
 
-| Extension    | PHP Version            |
-|--------------|------------------------|
-| `amqp`       | `PHP 5.6` to `PHP 8.4` |
-| `apcu`       | `PHP 5.6` to `PHP 8.4` |
-| `ast`        | `PHP 7.0` to `PHP 8.4` |
-| `couchbase`  | `PHP 5.6` to `PHP 8.4` |
-| `ds`         | `PHP 7.0` to `PHP 8.4` |
-| `event`      | `PHP 5.6` to `PHP 8.4` |
-| `expect`     | `PHP 5.6` to `PHP 8.4` |
-| `gearman`    | `PHP 5.6` to `PHP 8.4` |
-| `gnupg`      | `PHP 5.6` to `PHP 8.4` |
-| `grpc`       | `PHP 5.6` to `PHP 8.4` |
-| `igbinary`   | `PHP 5.6` to `PHP 8.4` |
-| `imagick`    | `PHP 5.6` to `PHP 8.4` |
-| `imap`       | `PHP 5.6` to `PHP 8.4` |
-| `lua`        | `PHP 5.6` to `PHP 7.4` |
-| `mailparse`  | `PHP 5.6` to `PHP 8.4` |
-| `mcrypt`     | `PHP 5.6` to `PHP 8.4` |
-| `memcache`   | `PHP 5.6` to `PHP 8.4` |
-| `memcached`  | `PHP 5.6` to `PHP 8.4` |
-| `mongodb`    | `PHP 5.6` to `PHP 8.4` |
-| `msgpack`    | `PHP 5.6` to `PHP 8.4` |
-| `newrelic`   | `PHP 7.4` to `PHP 8.1` |
-| `pcov`       | `PHP 7.1` to `PHP 8.4` |
-| `pdo_sqlsrv` | `PHP 7.0` to `PHP 8.4` |
-| `pecl_http`  | `PHP 5.6` to `PHP 8.4` |
-| `phalcon3`   | `PHP 5.6` to `PHP 7.3` |
-| `phalcon4`   | `PHP 7.2` to `PHP 7.4` |
-| `phalcon5`   | `PHP 7.4` to `PHP 8.2` |
-| `propro`     | `PHP 5.6` to `PHP 7.4` |
-| `protobuf`   | `PHP 5.6` to `PHP 8.4` |
-| `psr`        | `PHP 5.6` to `PHP 8.4` |
-| `raphf`      | `PHP 5.6` to `PHP 8.4` |
-| `rdkafka`    | `PHP 5.6` to `PHP 8.4` |
-| `redis`      | `PHP 5.6` to `PHP 8.4` |
-| `snmp`       | `PHP 5.6` to `PHP 8.4` |
-| `sqlsrv`     | `PHP 7.0` to `PHP 8.4` |
-| `ssh2`       | `PHP 5.6` to `PHP 8.4` |
-| `swoole`     | `PHP 5.6` to `PHP 8.4` |
-| `uuid`       | `PHP 5.6` to `PHP 8.4` |
-| `v8js`       | `PHP 7.0` to `PHP 8.4` |
-| `vips`       | `PHP 7.0` to `PHP 8.4` |
-| `xdebug`     | `PHP 5.6` to `PHP 8.4` |
-| `xdebug2`    | `PHP 7.2` to `PHP 7.4` |
-| `xlswriter`  | `PHP 7.0` to `PHP 8.4` |
-| `yaml`       | `PHP 5.6` to `PHP 8.4` |
-| `zmq`        | `PHP 5.6` to `PHP 8.4` |
+| Extension       | PHP Version            |
+|-----------------|------------------------|
+| `amqp`          | `PHP 5.6` to `PHP 8.4` |
+| `apcu`          | `PHP 5.6` to `PHP 8.4` |
+| `ast`           | `PHP 7.0` to `PHP 8.4` |
+| `couchbase`     | `PHP 5.6` to `PHP 8.4` |
+| `ds`            | `PHP 7.0` to `PHP 8.4` |
+| `event`         | `PHP 5.6` to `PHP 8.4` |
+| `expect`        | `PHP 5.6` to `PHP 8.4` |
+| `gearman`       | `PHP 5.6` to `PHP 8.4` |
+| `gnupg`         | `PHP 5.6` to `PHP 8.4` |
+| `grpc`          | `PHP 5.6` to `PHP 8.4` |
+| `igbinary`      | `PHP 5.6` to `PHP 8.4` |
+| `imagick`       | `PHP 5.6` to `PHP 8.4` |
+| `imap`          | `PHP 5.6` to `PHP 8.4` |
+| `lua`           | `PHP 5.6` to `PHP 7.4` |
+| `mailparse`     | `PHP 5.6` to `PHP 8.4` |
+| `mcrypt`        | `PHP 5.6` to `PHP 8.4` |
+| `memcache`      | `PHP 5.6` to `PHP 8.4` |
+| `memcached`     | `PHP 5.6` to `PHP 8.4` |
+| `mongodb`       | `PHP 5.6` to `PHP 8.4` |
+| `msgpack`       | `PHP 5.6` to `PHP 8.4` |
+| `newrelic`      | `PHP 7.4` to `PHP 8.1` |
+| `opentelemetry` | `PHP 8.0` to `PHP 8.4` |
+| `pcov`          | `PHP 7.1` to `PHP 8.4` |
+| `pdo_sqlsrv`    | `PHP 7.0` to `PHP 8.4` |
+| `pecl_http`     | `PHP 5.6` to `PHP 8.4` |
+| `phalcon3`      | `PHP 5.6` to `PHP 7.3` |
+| `phalcon4`      | `PHP 7.2` to `PHP 7.4` |
+| `phalcon5`      | `PHP 7.4` to `PHP 8.2` |
+| `propro`        | `PHP 5.6` to `PHP 7.4` |
+| `protobuf`      | `PHP 5.6` to `PHP 8.4` |
+| `psr`           | `PHP 5.6` to `PHP 8.4` |
+| `raphf`         | `PHP 5.6` to `PHP 8.4` |
+| `rdkafka`       | `PHP 5.6` to `PHP 8.4` |
+| `redis`         | `PHP 5.6` to `PHP 8.4` |
+| `snmp`          | `PHP 5.6` to `PHP 8.4` |
+| `sqlsrv`        | `PHP 7.0` to `PHP 8.4` |
+| `ssh2`          | `PHP 5.6` to `PHP 8.4` |
+| `swoole`        | `PHP 5.6` to `PHP 8.4` |
+| `uuid`          | `PHP 5.6` to `PHP 8.4` |
+| `v8js`          | `PHP 7.0` to `PHP 8.4` |
+| `vips`          | `PHP 7.0` to `PHP 8.4` |
+| `xdebug`        | `PHP 5.6` to `PHP 8.4` |
+| `xdebug2`       | `PHP 7.2` to `PHP 7.4` |
+| `xlswriter`     | `PHP 7.0` to `PHP 8.4` |
+| `yaml`          | `PHP 5.6` to `PHP 8.4` |
+| `zmq`           | `PHP 5.6` to `PHP 8.4` |
 
 ## OS Support
 
@@ -227,6 +228,7 @@ This project is also generously supported by many other users and organisations 
 - [m6w6/ext-raphf](https://github.com/m6w6/ext-raphf "Raphf")
 - [mongodb/mongo-php-driver](https://github.com/mongodb/mongo-php-driver "Mongodb")
 - [msgpack/msgpack](https://github.com/msgpack/msgpack-php "Msgpack")
+- [open-telemetry/opentelemetry-php-instrumentation](https://github.com/open-telemetry/opentelemetry-php-instrumentation "OpenTelemetry auto-instrumentation extension")
 - [osmanov/pecl-event](https://bitbucket.org/osmanov/pecl-event "Event")
 - [phalcon/cphalcon](https://github.com/phalcon/cphalcon "Phalcon")
 - [php-amqp/php-amqp](https://github.com/php-amqp/php-amqp "amqp")
