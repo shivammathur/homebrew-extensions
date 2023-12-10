@@ -18,6 +18,7 @@ class OpentelemetryAT84 < AbstractPhpExtension
   end
 
   def install
+    Dir.chdir "opentelemetry-#{version}"
     patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig
