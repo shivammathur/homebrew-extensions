@@ -3,18 +3,18 @@ class Glib < Formula
 
   desc "Core application library for C"
   homepage "https://developer.gnome.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.78/glib-2.78.2.tar.xz"
-  sha256 "4409eb63f7711a45e70c3b5ff5b42214ef2df056c254228bef4e45f4b6b74b12"
+  url "https://download.gnome.org/sources/glib/2.78/glib-2.78.3.tar.xz"
+  sha256 "609801dd373796e515972bf95fc0b2daa44545481ee2f465c4f204d224b2bc21"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "dc1bb3d78fd901741067b04391347e5d2fef8ba48e3fe9315e3065d402f104fa"
-    sha256 arm64_ventura:  "26a1f5942a25a02b0f80103f9425fdbbeda6b7bb724343d68abf0edeba1de2da"
-    sha256 arm64_monterey: "6fd5b566a577f1000a15912a36d48e9e3919e6b397a7f9efb4ac864071109a6a"
-    sha256 sonoma:         "f1a3c1e0ddc6869a900531e94d5380838d03b99df110071f5991e0205879039b"
-    sha256 ventura:        "e67f056b7f9766304377220132dba0af53f1cca9ee08eff83aa582d48e68f641"
-    sha256 monterey:       "00923c1a7eb3a5843f4c25f305716cf570f00331b1881fd85a3df61da5a34485"
-    sha256 x86_64_linux:   "a102ddadc1afcdd61514ef86a449c6cc2dac6b8c492df4aca5fd4fa1c7a0c292"
+    sha256 arm64_sonoma:   "0508a3adb74773f5cc36db72a52b206250f58e3a63038b4d839912a672f705a3"
+    sha256 arm64_ventura:  "25043e7acd81017477a6125097802b9482026786037ef9ed40fcffca5ca3fcc9"
+    sha256 arm64_monterey: "459ebb452eeab56e6e4343a89e9b077ebfce48d2cfb27ec9646d360ec0ee754e"
+    sha256 sonoma:         "740a493df231d3dfe99c09fa27a8ad415fff7650640ae56de6249caa5d452eaf"
+    sha256 ventura:        "b152fe3051632e427e1ee58e68c5627ae5291d038120765a870ffb4978109020"
+    sha256 monterey:       "ce7245d82b2dd64a41c0f95ccea14a197412f2d5c479dbd0e17e0d7d7e300f67"
+    sha256 x86_64_linux:   "8657e856d1ea8610a23fccaf0cfa94b3a3271986c54101b69d5734ad1f9b0807"
   end
 
   depends_on "gettext" => :build
