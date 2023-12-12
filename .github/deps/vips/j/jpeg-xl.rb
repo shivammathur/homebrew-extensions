@@ -46,14 +46,6 @@ class JpegXl < Formula
 
   fails_with gcc: "5"
   fails_with gcc: "6"
-  fails_with :clang do
-    build 1000
-    cause <<-EOS
-      lib/jxl/enc_fast_lossless.cc:369:7: error: invalid cpu feature string for builtin
-        if (__builtin_cpu_supports("avx512vbmi2")) {
-            ^                      ~~~~~~~~~~~~~
-    EOS
-  end
 
   # These resources are versioned according to the script supplied with jpeg-xl to download the dependencies:
   # https://github.com/libjxl/libjxl/tree/v#{version}/third_party
@@ -61,6 +53,10 @@ class JpegXl < Formula
     url "https://github.com/webmproject/sjpeg.git",
         revision: "868ab558fad70fcbe8863ba4e85179eeb81cc840"
   end
+
+  # Upstream fixes for older macOS, remove for the next version.
+  # See https://github.com/libjxl/libjxl/issues/2461#issuecomment-1813388521
+  patch :DATA
 
   def install
     ENV.append_path "XML_CATALOG_FILES", HOMEBREW_PREFIX/"etc/xml/catalog"
@@ -122,3 +118,55 @@ class JpegXl < Formula
     system "./jxl_threads_test"
   end
 end
+__END__
+diff --git a/lib/jxl/enc_fast_lossless.cc b/lib/jxl/enc_fast_lossless.cc
+index e646dbc..492e31f 100644
+--- a/lib/jxl/enc_fast_lossless.cc
++++ b/lib/jxl/enc_fast_lossless.cc
+@@ -30,6 +30,18 @@
+ #elif (defined(__x86_64__) || defined(_M_X64)) && !defined(_MSC_VER)
+ #include <immintrin.h>
+ 
++// manually add _mm512_cvtsi512_si32 definition if missing
++// (e.g. with Xcode on macOS Mojave)
++// copied from gcc 11.1.0 include/avx512fintrin.h line 14367-14373
++#if defined(__clang__) &&                                           \
++    ((!defined(__apple_build_version__) && __clang_major__ < 10) || \
++     (defined(__apple_build_version__) && __apple_build_version__ < 12000032))
++inline int __attribute__((__gnu_inline__, __always_inline__, __artificial__)) _mm512_cvtsi512_si32(__m512i __A) {
++  __v16si __B = (__v16si)__A;
++  return __B[0];
++}
++#endif
++
+ // TODO(veluca): MSVC support for dynamic dispatch.
+ #if defined(__clang__) || defined(__GNUC__)
+ 
+@@ -39,7 +51,10 @@
+ 
+ #ifndef FJXL_ENABLE_AVX512
+ // On clang-7 or earlier, and gcc-10 or earlier, AVX512 seems broken.
+-#if (defined(__clang__) && __clang_major__ > 7) || \
++#if (defined(__clang__) &&                                             \
++         (!defined(__apple_build_version__) && __clang_major__ > 7) || \
++     (defined(__apple_build_version__) &&                              \
++      __apple_build_version__ > 10010046)) ||                          \
+     (defined(__GNUC__) && __GNUC__ > 10)
+ #define FJXL_ENABLE_AVX512 1
+ #endif
+diff --git a/lib/jxl/image.cc b/lib/jxl/image.cc
+index 70f3ba6..0bccbf2 100644
+--- a/lib/jxl/image.cc
++++ b/lib/jxl/image.cc
+@@ -111,7 +111,10 @@ void PlaneBase::InitializePadding(const size_t sizeof_t, Padding padding) {
+ 
+   for (size_t y = 0; y < ysize_; ++y) {
+     uint8_t* JXL_RESTRICT row = static_cast<uint8_t*>(VoidRow(y));
+-#if defined(__clang__) && (__clang_major__ <= 6)
++#if defined(__clang__) &&                                           \
++    ((!defined(__apple_build_version__) && __clang_major__ <= 6) || \
++     (defined(__apple_build_version__) &&                           \
++      __apple_build_version__ <= 10001145))
+     // There's a bug in msan in clang-6 when handling AVX2 operations. This
+     // workaround allows tests to pass on msan, although it is slower and
+     // prevents msan warnings from uninitialized images.
