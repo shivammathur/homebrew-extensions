@@ -13,13 +13,14 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "453417f77f5cf2db1f655b954481d284e534c47f6dddaff12b9b85f4065ee11c"
-    sha256 cellar: :any,                 arm64_ventura:  "447c9f79b9c2a593be28847fd9c5a071764b69342b0a840e580e39ac593ff0cc"
-    sha256 cellar: :any,                 arm64_monterey: "4e623965ae481d839a42f3cf70ad643db738175fda702571f9f169973a6464e3"
-    sha256 cellar: :any,                 sonoma:         "d68ad38e33ed1c7b9652a5b68292deede4010acbbd0aa4a06fcc634169e1d129"
-    sha256 cellar: :any,                 ventura:        "641e376f6d4d82fa26a9112fd5593cbb5e3248481b5b2b2f12d527f4c4b6914f"
-    sha256 cellar: :any,                 monterey:       "e8ec61e2b3eb51698eb438936f8a6599b2da545f0acebaa0306e2ffd87f4bed0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "225fc1bec5ec6e76c54845c33862e12baad3fcd2e30079761d2f23856b638424"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "34cc1a7ee0899c9f7b76d613f193fb75b031ac675c30d8ac9cb5fa573b9f342c"
+    sha256 cellar: :any,                 arm64_ventura:  "3eb913b29ebfcb4d50fc6be34d8dc34075041d3d79eb946dca32aa246def7503"
+    sha256 cellar: :any,                 arm64_monterey: "37e6624ed7ce5f93d4eb07ebc82da3561bd8d58a0dfc396069af3d83493e3450"
+    sha256 cellar: :any,                 sonoma:         "aeea6d081d0936cb7761239908e1422cd6ff4db2828178953ebdd7c0ed09ebf7"
+    sha256 cellar: :any,                 ventura:        "1e28ef1dd7610e3b97806b2df0b981d21898d08e144ddca7271c5b3fb928aca6"
+    sha256 cellar: :any,                 monterey:       "f597ca327e3712747f350b2cff37ec0d78f44606ab79368faee6d2c5283dea42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "734fe7e52cbc179655c878d723703fce12b94c9e3409999a10e8a0b68df3cd77"
   end
 
   head do
@@ -34,7 +35,6 @@ class Libxml2 < Formula
   keg_only :provided_by_macos
 
   depends_on "python-setuptools" => :build
-  depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
   depends_on "pkg-config" => :test
