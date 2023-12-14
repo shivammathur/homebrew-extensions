@@ -83,16 +83,16 @@ class Glib < Formula
         s.gsub! "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include",
                 "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include -I#{gettext}/include"
       end
-    end
 
-    if MacOS.version < :catalina
-      # `pkg-config --print-requires-private gobject-2.0` includes libffi,
-      # but that package is keg-only so it needs to look for the pkgconfig file
-      # in libffi's opt path.
-      libffi = Formula["libffi"].opt_prefix
-      inreplace lib/"pkgconfig/gobject-2.0.pc" do |s|
-        s.gsub! "Requires.private: libffi",
-                "Requires.private: #{libffi}/lib/pkgconfig/libffi.pc"
+      if MacOS.version < :catalina
+        # `pkg-config --print-requires-private gobject-2.0` includes libffi,
+        # but that package is keg-only so it needs to look for the pkgconfig file
+        # in libffi's opt path.
+        libffi = Formula["libffi"].opt_prefix
+        inreplace lib/"pkgconfig/gobject-2.0.pc" do |s|
+          s.gsub! "Requires.private: libffi",
+                  "Requires.private: #{libffi}/lib/pkgconfig/libffi.pc"
+        end
       end
     end
 
