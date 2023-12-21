@@ -113,7 +113,7 @@ jobs:
 
       - name: Upload logs
         if: failure()
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: ${{matrix.workdir || github.workspace}}/bottles/logs
@@ -136,7 +136,7 @@ jobs:
 
       - name: Upload bottles to GitHub Actions
         if: always() && steps.bottles.outputs.count > 0
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v3
         with:
           name: bottles
           path: ${{matrix.workdir || github.workspace}}/bottles
@@ -174,7 +174,7 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Download bottles from GitHub Actions
-        uses: actions/download-artifact@main
+        uses: actions/download-artifact@v3
         with:
           name: bottles
           path: ~/bottles/

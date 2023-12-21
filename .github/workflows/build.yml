@@ -212,7 +212,7 @@ jobs:
 
       - name: Upload logs
         if: always()
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v3
         with:
           if-no-files-found: ignore
           name: logs-${{ matrix.runner }}
@@ -238,7 +238,7 @@ jobs:
 
       - name: Upload failed bottles
         if: always() && steps.bottles.outputs.failures > 0
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v3
         with:
           name: bottles-${{ matrix.runner }}
           path: ${{matrix.workdir || github.workspace}}/bottles/failed
@@ -251,7 +251,7 @@ jobs:
 
       - name: Upload bottles
         if: always() && steps.bottles.outputs.count > 0
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v3
         with:
           name: bottles
           path: ${{matrix.workdir || github.workspace}}/bottles
