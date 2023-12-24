@@ -1,10 +1,9 @@
 class OpenMpi < Formula
   desc "High performance message passing library"
   homepage "https://www.open-mpi.org/"
-  url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.0.tar.bz2"
-  sha256 "9d845ca94bc1aeb445f83d98d238cd08f6ec7ad0f73b0f79ec1668dbfdacd613"
+  url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.1.tar.bz2"
+  sha256 "e357043e65fd1b956a47d0dae6156a90cf0e378df759364936c1781f1a25ef80"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :homepage
@@ -12,14 +11,13 @@ class OpenMpi < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "09a4eabfe2712992910a9e20dbade1b5feece7d50aab633cd3e978b25d2b82e6"
-    sha256 arm64_ventura:  "28f1cfccfd6c8ddbf28a6a474470ea08825177961abe42904dfad4410ba4754a"
-    sha256 arm64_monterey: "8a04d2aebe184cc417c29dd7887776adb8c592694e9c696dd4b7cd99e0d488c9"
-    sha256 sonoma:         "6651f0be6f28d3649b335987b145769aabb50179d72cc1cff3a31c6e7b774d70"
-    sha256 ventura:        "4701253b1cbaae1dcb93110375d9c8fe333d206c23ec552165c919f4ec6069f4"
-    sha256 monterey:       "81bde866142f398d211ce01b0c7916b83d5955d376d92f715c156898be4c4773"
-    sha256 x86_64_linux:   "f302c6d4ab55591bd8739e155f35c3f07f8940c17b8775b0bafbea1f3899ce6a"
+    sha256 arm64_sonoma:   "5b7047332a0bb6901d3214f49108707d7a014c2bb56158cbab2eec35a133384e"
+    sha256 arm64_ventura:  "6d21c211bf67d8135e342ae5223d7db1d62db6d0e12c057bf34f5aeb51ca112f"
+    sha256 arm64_monterey: "f077d332fee1b6887e3e391a052691a98b0166bc63b013b1f491a357039c4f0f"
+    sha256 sonoma:         "37332076fe2ec7639b9ebc2cae2087effa3318c58b327e863b726dabd5b58172"
+    sha256 ventura:        "ddf1458a6dc01093a016c182fa53a81e0d1fb7f910989daba4820c324095b01e"
+    sha256 monterey:       "81444525829ce3b4142cecf2762b81ea68761f67be7a4fe4d047c5ac16b20b39"
+    sha256 x86_64_linux:   "867b570d2a45bfd73f54548d88074d748d625cf92fb32176e9989ca9398366bb"
   end
 
   head do
