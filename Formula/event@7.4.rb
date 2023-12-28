@@ -15,13 +15,12 @@ class EventAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_ventura:  "5be1c66564b59a0e5881488cce3827c0280bff357b3f0ba654ca44b09f248dd5"
-    sha256 cellar: :any,                 arm64_monterey: "2fcf1e5df42eb79faf492aa32c8fa5e8145517dc4646d0e3863c7f4750e03d22"
-    sha256 cellar: :any,                 arm64_big_sur:  "e36be118970e99e84005b49775c044db6d3e2e7284d6aaf9c429e8921d8ba699"
-    sha256 cellar: :any,                 ventura:        "008e1d37f1e1daaf5ac9fc15cdfd892aac7313843f3f2d648feb72f847902d15"
-    sha256 cellar: :any,                 monterey:       "d59b648b87d769ad46deb5a5934b67568c67580d99c52f5fb1c4a6a8c79dcc24"
-    sha256 cellar: :any,                 big_sur:        "49df35b963606f99ca37b9c3b395efd5f02a0a0f2f244ddf0f746a6fdc760fdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40519d61252e67ddb7148447897a4f8002f55c310d17be710856151b9a1d1375"
+    sha256 cellar: :any,                 arm64_sonoma:   "98eb86d84507e23a1b2f98386f7ec8ca5f7735feb09d4e54f19a5c7e58964f08"
+    sha256 cellar: :any,                 arm64_ventura:  "654a06e34f215de7dd43e5d0afc173fb2cdfaf12fe94f28956fa5176433b32e9"
+    sha256 cellar: :any,                 arm64_monterey: "5ed37a776feb6f57b8e001e203707fb134682a6b62f37184b69d1910887dbf46"
+    sha256 cellar: :any,                 ventura:        "98373d121278c3027d29e790f222bea14ecf649a1782b463f56e65b7b6b9fd44"
+    sha256 cellar: :any,                 monterey:       "fbd5554156c4fff3c8eaa9d6de9394d20305a3a311f4850647dbe21c1e40533c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94255fa19af1e73578cbeb4f2909d26155d826958c8f641bccfbdc665c71a4b6"
   end
 
   depends_on "libevent"
