@@ -5,15 +5,16 @@ class Aom < Formula
       tag:      "v3.8.0",
       revision: "b681eac83963950afc7be55df56c22fa5210aaa2"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cb4fff67b23992cdac1190e2e519e9bd110facfcc3ae8a7bea626eed706267b6"
-    sha256 cellar: :any,                 arm64_ventura:  "f057d8a8f56fc40cfee61e8a0e59c8f116965e93dda28249063262cc1747b211"
-    sha256 cellar: :any,                 arm64_monterey: "f0ff69a82a6a7eb4c299358fa079643995ee850873836f46f71b1a23b1638c87"
-    sha256 cellar: :any,                 sonoma:         "641c6a30080e42660c171fbd22c707a20ad093688ebd1cecfe5f02fb97abe387"
-    sha256 cellar: :any,                 ventura:        "24abebb2a8d24bf5cebfaacd461ac84f4e37aa9585f9c45ffc9b643d981875cb"
-    sha256 cellar: :any,                 monterey:       "4a7da5e7b7431bcb2c0e46d332a36058d04e2f3b15473eb6947e75a5af7010b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "033a3ade47c5141a40a27c23ed7932bf85a33861421b68397c10abfa194d6ecf"
+    sha256 cellar: :any,                 arm64_sonoma:   "01f8e59744fa29cae72a1e0772ce380a5d9d66e5bdbaf81292494291d9569216"
+    sha256 cellar: :any,                 arm64_ventura:  "f37d0d91a32ddc56289b0cd6634e652b9a1fa35b5ff89a0ab16c7efce4920ec9"
+    sha256 cellar: :any,                 arm64_monterey: "e418f6594bf193d011347d2469168f1e8ff253a0ae899b40a7c2947bfa036925"
+    sha256 cellar: :any,                 sonoma:         "f813e7d7f925eccbbf429c1122db2600faecdf0314eed94736388992448c9abd"
+    sha256 cellar: :any,                 ventura:        "182c0a4a1d2652113072287becd4b1c5d87fd67958bd8cf600049b23d66d072e"
+    sha256 cellar: :any,                 monterey:       "0692b9f3cdd421e7aae051f571ccaae5f78c05fd6e8a1fc2b09c49c7fa9a6c52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "156f20d4404ee11bb294bb48ea553ba866a5bf8fb674b86f1376fc88470e5117"
   end
 
   depends_on "cmake" => :build
@@ -45,7 +46,6 @@ class Aom < Formula
       "-DENABLE_TESTS=off",
       "-DENABLE_TOOLS=off",
       "-DBUILD_SHARED_LIBS=on",
-      "-DCONFIG_TUNE_BUTTERAUGLI=1",
       "-DCONFIG_TUNE_VMAF=1",
     ]
 

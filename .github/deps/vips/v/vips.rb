@@ -4,6 +4,7 @@ class Vips < Formula
   url "https://github.com/libvips/libvips/releases/download/v8.15.1/vips-8.15.1.tar.xz"
   sha256 "06811f5aed3e7bc03e63d05537ff4b501de5283108c8ee79396c60601a00830c"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class Vips < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e0c84cf3f62d7a835876e8a356f06e8f058b3d235b5dd0bf47641f1417446923"
-    sha256 arm64_ventura:  "12e94f29a8a99e9c4a1a1095beaaceeeb20970bf5a2dbe82d76218a9d512bac2"
-    sha256 arm64_monterey: "e9ae8571a1a67b87bd26708e98e3e5084280fea0d63de0010b0957e3385a9b46"
-    sha256 sonoma:         "f09cd03bd7fbe1abb868d0b651ac831db68e4a4deaf2edcabc7aacc06ee8c933"
-    sha256 ventura:        "3a9b5b3cfe2e488b6dbd2834b9051b6d3f0f70f01d9aa119466c6880fe40ddf9"
-    sha256 monterey:       "b7813a21cb0313baecd2e06e886fc45bc94290502409f9004aaaf486bee8f465"
-    sha256 x86_64_linux:   "3d29ed4a2074fb0302760214a96ab51d8ebd9b1aea36feb59cf346f2c5f38ac8"
+    sha256 arm64_sonoma:   "0ce6e2f093a74e6fa2adf8607791b8f5fc7a0b7b3db540f5ce17f3fb148de0e5"
+    sha256 arm64_ventura:  "ba9dd80c99ac9548198b5a424b2443b1cf057fb4675a19706ab1be1b42361df4"
+    sha256 arm64_monterey: "f6b17ef6cd050470143edb9a333b7d16f9c75c6c9a01cea6435a7cf6492ab93b"
+    sha256 sonoma:         "ba9fd4d955329bac44ad9386a18bfa1b7e6bc480e9eee50db229eef0f10cadb6"
+    sha256 ventura:        "24adbdec960792b53bac9a34f65efffddf73d419bc0c5c036ededcfd7232edef"
+    sha256 monterey:       "a1d85c403562bfe56b12a4d808d784293c7b0bb17cc2e2f4a5ad8334daa28d78"
+    sha256 x86_64_linux:   "5793d85ac3a625f530eac21f16606132f9ad24085f4f92fd5afad61b45fa115f"
   end
 
   depends_on "gobject-introspection" => :build
