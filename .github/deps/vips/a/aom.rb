@@ -5,16 +5,16 @@ class Aom < Formula
       tag:      "v3.8.0",
       revision: "b681eac83963950afc7be55df56c22fa5210aaa2"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "01f8e59744fa29cae72a1e0772ce380a5d9d66e5bdbaf81292494291d9569216"
-    sha256 cellar: :any,                 arm64_ventura:  "f37d0d91a32ddc56289b0cd6634e652b9a1fa35b5ff89a0ab16c7efce4920ec9"
-    sha256 cellar: :any,                 arm64_monterey: "e418f6594bf193d011347d2469168f1e8ff253a0ae899b40a7c2947bfa036925"
-    sha256 cellar: :any,                 sonoma:         "f813e7d7f925eccbbf429c1122db2600faecdf0314eed94736388992448c9abd"
-    sha256 cellar: :any,                 ventura:        "182c0a4a1d2652113072287becd4b1c5d87fd67958bd8cf600049b23d66d072e"
-    sha256 cellar: :any,                 monterey:       "0692b9f3cdd421e7aae051f571ccaae5f78c05fd6e8a1fc2b09c49c7fa9a6c52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "156f20d4404ee11bb294bb48ea553ba866a5bf8fb674b86f1376fc88470e5117"
+    sha256 cellar: :any,                 arm64_sonoma:   "4f1ffd5a5e4f7ca84f5e59a8cbd85320f963a6d2cfcda375163e854c8b202a80"
+    sha256 cellar: :any,                 arm64_ventura:  "8d5e157d688ce99ba5078a2021f269ebc603089c7c5ee2c19ebe311626bc9963"
+    sha256 cellar: :any,                 arm64_monterey: "bd118dde35192603412ddd1f8c2da3677b03287780d543e828a3566691c29383"
+    sha256 cellar: :any,                 sonoma:         "302e6660697f101f28f0c345c592e38773e1cd53d7cb216efe79f209f26ee854"
+    sha256 cellar: :any,                 ventura:        "002bda2d195541c3f7413097f6d67f219e4e29cddf415eb9146b3178d8fa4612"
+    sha256 cellar: :any,                 monterey:       "63df4b3621997f240e686f5ce233ca757bbb02b9e75edb7f6975b6e15e054572"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06bec413b397a4f30c0d65d1704751adf0438de7d6a9ad064ae8d859d7e485c0"
   end
 
   depends_on "cmake" => :build
