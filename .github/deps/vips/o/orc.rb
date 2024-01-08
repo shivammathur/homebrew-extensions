@@ -26,14 +26,26 @@ class Orc < Formula
   depends_on "ninja" => :build
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, "-Dgtk_doc=disabled", ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", "-Dgtk_doc=disabled", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
-    system "#{bin}/orcc", "--version"
+    assert_match version.to_s, shell_output("#{bin}/orcc --version 2>&1")
+
+    (testpath/"test.c").write <<~EOS
+      #include <orc/orc.h>
+
+      int main(int argc, char *argv[]) {
+        if (orc_version_string() == NULL) {
+          return 1;
+        }
+        return 0;
+      }
+    EOS
+
+    system ENV.cc, "test.c", "-I#{include}/orc-0.4", "-L#{lib}", "-lorc-0.4", "-o", "test"
+    system "./test"
   end
 end
