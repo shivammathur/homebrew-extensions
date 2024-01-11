@@ -15,18 +15,18 @@ class Hdf5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2658a6143881a18a3acbca5cc36167ba4b5ea9b62d5e0a354a1b1e920d2e5c73"
-    sha256 cellar: :any,                 arm64_ventura:  "3ba3cb6130a388b6e5b3a1b6c1cb4a32da01b3def5213449fa0551a69f08fcda"
-    sha256 cellar: :any,                 arm64_monterey: "7a39fc3c46ecfe1302b50112958d6cce60886cf709650fd1f23600d860ead9d2"
-    sha256 cellar: :any,                 sonoma:         "1122c40ec4d438fa9fffbad0342c1537169eac9c053cfadb70c43391e72dd869"
-    sha256 cellar: :any,                 ventura:        "7b75e6dc9ebe984a7786a5406098580023554bbe3ce7808280134e8b2f019bb1"
-    sha256 cellar: :any,                 monterey:       "1598746b46e5cedbd18baf8cdac110ad44584be0ea95dcab822b70b61ca95c12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45a3ba08b9c14d54fa5afbfe214e8397af81e50e1b3a2b5bf8d97cc5e88b898f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "e6638bc9a427fea8b0780f109435ef0cab0e6283a1c37f57b9f53e4df3c782ed"
+    sha256 cellar: :any,                 arm64_ventura:  "963478f609bba6f6d6bc5c2248e2874de300fb89387fa3ce0b2bcf82f815b2dd"
+    sha256 cellar: :any,                 arm64_monterey: "49767270cc6e15422bb76c0aff00754104a3068139c3cb26dde450a909eb42fc"
+    sha256 cellar: :any,                 sonoma:         "35c676055e0e20e0c1129f87dae1549495e1c2ab4648356ad026eff518def215"
+    sha256 cellar: :any,                 ventura:        "122a0613d1ec5c2feab4393b16301084c18f0c7b46d3facf1551656c79a0ea8e"
+    sha256 cellar: :any,                 monterey:       "414de2f604f2f9b42227390e8944c8c344efd7c00b8d988a58fc0f658ada98f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33e5b31295a816186e78a8026a33f9576561de88c85a4941109ef466510c1ae8"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
+  depends_on "pkg-config" => :test
   depends_on "gcc" # for gfortran
   depends_on "libaec"
 
@@ -43,32 +43,33 @@ class Hdf5 < Formula
               "settingsdir=$(libdir)",
               "settingsdir=#{pkgshare}"
 
-    system "autoreconf", "--force", "--install", "--verbose"
-
-    args = %W[
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --enable-build-mode=production
-      --enable-fortran
-      --enable-cxx
-      --prefix=#{prefix}
-      --with-szlib=#{Formula["libaec"].opt_prefix}
+    ENV["libaec_DIR"] = Formula["libaec"].opt_prefix.to_s
+    args = %w[
+      -DHDF5_BUILD_FORTRAN:BOOL=ON
+      -DHDF5_BUILD_CPP_LIB:BOOL=ON
+      -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=ON
     ]
-    args << "--with-zlib=#{Formula["zlib"].opt_prefix}" if OS.linux?
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
 
-    system "./configure", *args
-
-    # Avoid shims in settings file
-    inreplace_files = %w[
-      src/H5build_settings.c
-      src/libhdf5.settings
-      src/Makefile
+    # Avoid c shims in settings files
+    inreplace_c_files = %w[
+      build/src/H5build_settings.c
+      build/src/libhdf5.settings
+      build/CMakeFiles/h5cc
+      build/CMakeFiles/h5hlcc
     ]
+    inreplace inreplace_c_files, Superenv.shims_path/ENV.cc, ENV.cc
 
-    inreplace inreplace_files, Superenv.shims_path/ENV.cxx, ENV.cxx
-    inreplace inreplace_files, Superenv.shims_path/ENV.cc, ENV.cc
+    # Avoid cpp shims in settings files
+    inreplace_cxx_files = %w[
+      build/CMakeFiles/h5c++
+      build/CMakeFiles/h5hlc++
+    ]
+    inreplace_cxx_files << "build/src/libhdf5.settings" if OS.linux?
+    inreplace inreplace_cxx_files, Superenv.shims_path/ENV.cxx, ENV.cxx
 
-    system "make", "install"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -111,7 +112,11 @@ class Hdf5 < Formula
       write (*,"(I0,'.',I0,'.',I0)") major, minor, rel
       end
     EOS
-    system "#{bin}/h5fc", "test.f90"
+    system bin/"h5fc", "test.f90"
     assert_equal version.to_s, shell_output("./a.out").chomp
+
+    # Make sure that it was built with SZIP/libaec
+    config = shell_output("#{bin}/h5cc -showconfig")
+    assert_match %r{I/O filters.*DECODE}, config
   end
 end
