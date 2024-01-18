@@ -15,14 +15,14 @@ class Hdf5 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "e6638bc9a427fea8b0780f109435ef0cab0e6283a1c37f57b9f53e4df3c782ed"
-    sha256 cellar: :any,                 arm64_ventura:  "963478f609bba6f6d6bc5c2248e2874de300fb89387fa3ce0b2bcf82f815b2dd"
-    sha256 cellar: :any,                 arm64_monterey: "49767270cc6e15422bb76c0aff00754104a3068139c3cb26dde450a909eb42fc"
-    sha256 cellar: :any,                 sonoma:         "35c676055e0e20e0c1129f87dae1549495e1c2ab4648356ad026eff518def215"
-    sha256 cellar: :any,                 ventura:        "122a0613d1ec5c2feab4393b16301084c18f0c7b46d3facf1551656c79a0ea8e"
-    sha256 cellar: :any,                 monterey:       "414de2f604f2f9b42227390e8944c8c344efd7c00b8d988a58fc0f658ada98f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33e5b31295a816186e78a8026a33f9576561de88c85a4941109ef466510c1ae8"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "ad2b2ec5442797b6cfbefc14a35245aaae00f34c8a0c5f84261be7e2257622e2"
+    sha256 cellar: :any,                 arm64_ventura:  "b5cb99e5a146bde44cb47001d0a132f130b95a99a08021dd7862d6f2322e1add"
+    sha256 cellar: :any,                 arm64_monterey: "79438f18f7afc5b35604e78f24f602c46c081e264c3d2123a4ed6ceff84324ac"
+    sha256 cellar: :any,                 sonoma:         "8ab91c00e93fe120a7841c567e1c044f0452e95442c0077410abd74ea11b7556"
+    sha256 cellar: :any,                 ventura:        "12e48da1da2bed27ba60d14400b2ad3231fab077b7b285b2f86b6e012c3bc22b"
+    sha256 cellar: :any,                 monterey:       "cd208c46b25275cd3b343b49ce32a9f7c16d65a59cc977bd9e1c56ec98c51a26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f05a8bc85c403fc9cf7aeeb3dad173392eb03a2c6485bb8c885a3a25a44e9be"
   end
 
   depends_on "cmake" => :build
@@ -35,16 +35,9 @@ class Hdf5 < Formula
   conflicts_with "hdf5-mpi", because: "hdf5-mpi is a variant of hdf5, one can only use one or the other"
 
   def install
-    inreplace %w[c++/src/h5c++.in fortran/src/h5fc.in bin/h5cc.in],
-              "${libdir}/libhdf5.settings",
-              "#{pkgshare}/libhdf5.settings"
-
-    inreplace "src/Makefile.am",
-              "settingsdir=$(libdir)",
-              "settingsdir=#{pkgshare}"
-
     ENV["libaec_DIR"] = Formula["libaec"].opt_prefix.to_s
     args = %w[
+      -DHDF5_USE_GNU_DIRS:BOOL=ON
       -DHDF5_BUILD_FORTRAN:BOOL=ON
       -DHDF5_BUILD_CPP_LIB:BOOL=ON
       -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=ON
