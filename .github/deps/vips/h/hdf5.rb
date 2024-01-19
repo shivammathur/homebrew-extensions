@@ -15,14 +15,14 @@ class Hdf5 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "ad2b2ec5442797b6cfbefc14a35245aaae00f34c8a0c5f84261be7e2257622e2"
-    sha256 cellar: :any,                 arm64_ventura:  "b5cb99e5a146bde44cb47001d0a132f130b95a99a08021dd7862d6f2322e1add"
-    sha256 cellar: :any,                 arm64_monterey: "79438f18f7afc5b35604e78f24f602c46c081e264c3d2123a4ed6ceff84324ac"
-    sha256 cellar: :any,                 sonoma:         "8ab91c00e93fe120a7841c567e1c044f0452e95442c0077410abd74ea11b7556"
-    sha256 cellar: :any,                 ventura:        "12e48da1da2bed27ba60d14400b2ad3231fab077b7b285b2f86b6e012c3bc22b"
-    sha256 cellar: :any,                 monterey:       "cd208c46b25275cd3b343b49ce32a9f7c16d65a59cc977bd9e1c56ec98c51a26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f05a8bc85c403fc9cf7aeeb3dad173392eb03a2c6485bb8c885a3a25a44e9be"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sonoma:   "98677647262aa47e03f35205eec6f304fe8b400536cb1806c263f70ac216be1e"
+    sha256 cellar: :any,                 arm64_ventura:  "9ea139be087c57e390a3fb5a82f6cf0c5ee1f208caa27478b555ab9e2b07e3c5"
+    sha256 cellar: :any,                 arm64_monterey: "2e562bf0121cc44ede0ae5e2c87433cd2c9167778a86538a21f4fafd9fe29587"
+    sha256 cellar: :any,                 sonoma:         "bc9cf0071e374c7d236854e25120ceebc04365d873814055980d0c6adcaa76a9"
+    sha256 cellar: :any,                 ventura:        "1c8d524731199c49cfaf2ff4d4830e0f7810a92c9dfb550a8065cd6d1f8a82ac"
+    sha256 cellar: :any,                 monterey:       "e1e0a1e9ec50b76d282dbfec3dcc54cedf711506ec56f5462e70012b875570b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e54ae02556855296e1704cf7d0c62b4fdda00f9a95370908537a969466c3030"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +38,7 @@ class Hdf5 < Formula
     ENV["libaec_DIR"] = Formula["libaec"].opt_prefix.to_s
     args = %w[
       -DHDF5_USE_GNU_DIRS:BOOL=ON
+      -DHDF5_INSTALL_CMAKE_DIR=lib/cmake/hdf5
       -DHDF5_BUILD_FORTRAN:BOOL=ON
       -DHDF5_BUILD_CPP_LIB:BOOL=ON
       -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=ON
