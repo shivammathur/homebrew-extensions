@@ -59,8 +59,13 @@ case $extension in
     patch_github_tag "$tag" "$repo"
     ;;
   imap|snmp)
-    php_url=$(get_php_url)
-    patch_php_url "$php_url"
+    if [[ $extension = "snmp" || "$version" =~ imap@(5.6|7.[0-4]|8.[0-3]) ]]; then
+      php_url=$(get_php_url)
+      patch_php_url "$php_url"
+    else
+      tag=$(get_latest_pecl_tag "$extension")
+      patch_pecl_tag "$tag" "$extension"
+    fi  
   ;;
   "phalcon5")
     tag=$(get_latest_pecl_tag "phalcon")
