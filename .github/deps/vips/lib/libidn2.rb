@@ -1,10 +1,10 @@
 class Libidn2 < Formula
   desc "International domain name library (IDNA2008, Punycode and TR46)"
   homepage "https://www.gnu.org/software/libidn/#libidn2"
-  url "https://ftp.gnu.org/gnu/libidn/libidn2-2.3.5.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libidn/libidn2-2.3.5.tar.gz"
-  mirror "http://ftp.gnu.org/gnu/libidn/libidn2-2.3.5.tar.gz"
-  sha256 "0c19609b3ba7450a9c8b0536accca8d091cdd9fe6a24307af38e23b3bddec803"
+  url "https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz"
+  mirror "https://ftpmirror.gnu.org/libidn/libidn2-2.3.7.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz"
+  sha256 "4c21a791b610b9519b9d0e12b8097bf2f359b12f8dd92647611a929e6bfd7d64"
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -13,13 +13,13 @@ class Libidn2 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "6862482aa4673a01ead7cc752289d1165c0f1592f2292a26da1571656c48c229"
-    sha256 arm64_ventura:  "18ea3d276b8f225849225dc39d5bfd72e0628d2ae38ad0a7c69e225a4cf5ee07"
-    sha256 arm64_monterey: "ca8cec0ba825fca688d1ed2794edb176bad67ea5509753b3d6f29dc650f019c2"
-    sha256 sonoma:         "7961e97e69531215f957315f5895b756d9af0d0ab79255616fb31ce2824403f4"
-    sha256 ventura:        "b6b3823f9de4b88044eae95f619dcd846888090780b0ad7d3e767efc21c107d9"
-    sha256 monterey:       "fa1f5ed5ae23097e925ef722d38c12b95bcad440dd90aa2a0252b1ff07ab7a37"
-    sha256 x86_64_linux:   "904b2587e5481510d7881f8c8c15df6f5988e293bfd2370ddc1ea21fc4ae7f0a"
+    sha256 arm64_sonoma:   "670f6ed3768acde8ce10b5dcfc88fef69cea994ff84491b253a5e818cd4f9a1b"
+    sha256 arm64_ventura:  "df4d2b529ac1534d36e44c63aeee6e9be8ee856f3545e75511497de5c60e0e80"
+    sha256 arm64_monterey: "621dbb561aeddc8c0d7e856e990414526c43d9da400d3a2a613d2be3c1ebb41f"
+    sha256 sonoma:         "32aec190642166c2081088f424cd39cc8b820105ce0b3372d0d8835635424b38"
+    sha256 ventura:        "4b4f5eadc82273fb3b0d384466dab53d9fdc7200cbfae1eb5b5bebfe359f4f1e"
+    sha256 monterey:       "a1b41989b1decc3a33e8a64a914680c881f9931e2bd2bdac47a9215a4579d686"
+    sha256 x86_64_linux:   "2d94c867e00156a44644758c62895dd6d13538aff7f638ea598ff70e0e8f6505"
   end
 
   head do
