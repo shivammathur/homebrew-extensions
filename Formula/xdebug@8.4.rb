@@ -8,8 +8,8 @@ class XdebugAT84 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/70e8452db0171456bcadc64ff547bc12b6557464.tar.gz"
-  sha256 "8245dea42f7945bd53ffa61be6b3a54ea5aedd5cdc43ec64d00d85721af5d5ea"
+  url "https://github.com/xdebug/xdebug/archive/a27262d63ca93117e6cffe2e617731be13030165.tar.gz"
+  sha256 "c36e3d6dcfb2ca847a5c3c7975657f55f8ff654deaac664016f220a7ee0b6948"
   version "3.3.0"
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
