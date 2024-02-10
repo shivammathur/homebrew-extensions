@@ -28,6 +28,7 @@ class PcovAT84 < AbstractPhpExtension
   def install
     patch_spl_symbols
     safe_phpize
+    inreplace "pcov.c", "0, 0, 0, 0", "0, 0, 0"
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-pcov"
     system "make"
     prefix.install "modules/#{extension}.so"
