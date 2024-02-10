@@ -59,7 +59,7 @@ class RedisAT84 < AbstractPhpExtension
     inreplace "library.c", "ext/standard/php_rand.h", "ext/random/php_random.h"
     inreplace "backoff.c" do |s|
       s.gsub!("ext/standard/php_rand.h", "ext/random/php_random.h")
-      s.gsub!(/#include "php_mt_rand.h"/, "")
+      s.gsub!("#include <ext/standard/php_mt_rand.h>", "")
     end
     inreplace "redis.c", "standard/php_random.h", "ext/random/php_random.h"
     safe_phpize
