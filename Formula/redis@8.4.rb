@@ -56,6 +56,12 @@ class RedisAT84 < AbstractPhpExtension
     Dir.chdir "redis-#{version}"
     patch_redis
     patch_spl_symbols
+    inreplace "library.c", "ext/standard/php_rand.h", "ext/random/php_random.h"
+    inreplace "backoff.c" do |s|
+      s.gsub!("ext/standard/php_rand.h", "ext/random/php_random.h")
+      s.gsub!(/#include "php_mt_rand.h"/, "")
+    end
+    inreplace "redis.c", "standard/php_random.h", "ext/random/php_random.h"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
