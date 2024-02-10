@@ -75,7 +75,7 @@
 | `ssh2`          | `PHP 5.6` to `PHP 8.4` |
 | `swoole`        | `PHP 5.6` to `PHP 8.4` |
 | `uuid`          | `PHP 5.6` to `PHP 8.4` |
-| `v8js`          | `PHP 7.0` to `PHP 8.4` |
+| `v8js`          | `PHP 7.0` to `PHP 8.3` |
 | `vips`          | `PHP 7.0` to `PHP 8.4` |
 | `xdebug`        | `PHP 5.6` to `PHP 8.4` |
 | `xdebug2`       | `PHP 7.2` to `PHP 7.4` |
