@@ -50,6 +50,7 @@ class McryptAT84 < AbstractPhpExtension
     end
 
     Dir.chdir "mcrypt-#{version}"
+    inreplace "mcrypt.c", "ext/standard/php_rand.h", "ext/random/php_random.h"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-mcrypt=#{prefix}"
     system "make"
