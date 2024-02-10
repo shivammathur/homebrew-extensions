@@ -8,8 +8,8 @@ class MemcachedAT84 < AbstractPhpExtension
   init
   desc "Memcached PHP extension"
   homepage "https://github.com/php-memcached-dev/php-memcached"
-  url "https://pecl.php.net/get/memcached-3.2.0.tgz"
-  sha256 "2a41143a7b29f4a962a3805b77aa207a99e4566e2d314ce98a051cd24d6e9636"
+  url "https://github.com/php-memcached-dev/php-memcached/archive/dfd038f13c4347fc15835cd9077a960218e01d98.tar.gz"
+  sha256 "d4ea5558d6ab246d955e87904c49ac84e06cd474fce911fd2519348ae583631c"
   head "https://github.com/php-memcached-dev/php-memcached.git", branch: "master"
   license "PHP-3.01"
 
@@ -53,7 +53,6 @@ class MemcachedAT84 < AbstractPhpExtension
       --with-libmemcached-dir=#{Formula["libmemcached"].opt_prefix}
       --with-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
     ]
-    Dir.chdir "memcached-#{version}"
     patch_memcached
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
