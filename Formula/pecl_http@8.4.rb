@@ -44,6 +44,8 @@ class PeclHttpAT84 < AbstractPhpExtension
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
     Dir.chdir "pecl_http-#{version}"
     inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.4"
+    inreplace "src/php_http_message_body.c", "standard/php_lcg.h", "random/php_random.h"
+    inreplace "src/php_http_misc.c", "standard/php_lcg.h", "random/php_random.h"
     patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
