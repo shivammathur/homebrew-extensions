@@ -9,7 +9,7 @@ class CouchbaseAT84 < AbstractPhpExtension
   desc "Couchbase PHP extension"
   homepage "https://github.com/couchbase/couchbase-php-client"
   url "https://github.com/couchbase/couchbase-php-client.git",
-      branch: "main",
+      branch:   "main",
       revision: "1494ce9e90841ca614b2d70e9acc1bd2cc388f89"
   version "4.1.6"
   head "https://github.com/couchbase/couchbase-php-client.git", branch: "main"
@@ -37,6 +37,7 @@ class CouchbaseAT84 < AbstractPhpExtension
 
   def install
     ENV["OPENSSL_ROOT_DIR"] = "#{Formula["openssl@3"]}.opt_prefix"
+    ENV["CURL_SSL_BACKEND"] = "SecureTransport"
     safe_phpize
     inreplace "configure",
       "EXTENSION_DIR=`$PHP_CONFIG --extension-dir 2>/dev/null`",
