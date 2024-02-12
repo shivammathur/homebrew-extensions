@@ -8,8 +8,8 @@ class CouchbaseAT84 < AbstractPhpExtension
   init
   desc "Couchbase PHP extension"
   homepage "https://github.com/couchbase/couchbase-php-client"
-  url "https://pecl.php.net/get/couchbase-4.1.6.tgz"
-  sha256 "43da457eceb494a8fee95cbb7ff9383efe66899f525cf530760507257080597f"
+  url "https://github.com/couchbase/couchbase-php-client/archive/1494ce9e90841ca614b2d70e9acc1bd2cc388f89.tar.gz"
+  sha256 "c39fc4b27a7243ab457235ae0f84fd343e15040936fe4ac56e28f5e15a89c7b3"
   head "https://github.com/couchbase/couchbase-php-client.git", branch: "main"
   license "Apache-2.0"
 
@@ -35,7 +35,6 @@ class CouchbaseAT84 < AbstractPhpExtension
 
   def install
     ENV["OPENSSL_ROOT_DIR"] = "#{Formula["openssl@3"]}.opt_prefix"
-    Dir.chdir "couchbase-#{version}"
     safe_phpize
     inreplace "configure",
       "EXTENSION_DIR=`$PHP_CONFIG --extension-dir 2>/dev/null`",
