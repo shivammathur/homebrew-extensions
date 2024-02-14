@@ -16,13 +16,14 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c2a712e6f567969c05d1a1e369f44db38f9449a95ba0da3a458129274927a84a"
-    sha256 arm64_ventura:  "9bb2dbdec18c6d93a571768733a687b76ace38d41890830fe29750e21199ff60"
-    sha256 arm64_monterey: "faa80599f00a1da75b643542048737b37b1d70f007764ade599276aa85dfcb4b"
-    sha256 sonoma:         "81bf1c32858d32b1ac7bec3ddbe027208dc77689301b40b6d5e3b3e1e3de131e"
-    sha256 ventura:        "8d686e92b2c6960b7d6ed6523ad4260c608d4dedb555421580a1ae0d828d5236"
-    sha256 monterey:       "f2f4d0a1ce994696e8dbca6bca86518aff563fd8747060e7caa398f103a84475"
-    sha256 x86_64_linux:   "31969bedc346be02a767ecf22de1b8d713425a57f3f2e4b636576b692ee60216"
+    rebuild 1
+    sha256 arm64_sonoma:   "fce7bf159988bf2b0960fa3d33ea810688d422c433b6461c7020cd0c937827a6"
+    sha256 arm64_ventura:  "020785e015f7b8ef638abc5835890bf3f0273c1eecba54b2f749e82cab0ddeec"
+    sha256 arm64_monterey: "a99828f7bf992193ab24f93eb85da1d89901d2f7ba32acb6fff9506d9b030897"
+    sha256 sonoma:         "ef8211c5115fc85f01261037f8fea76cc432b92b4fb23bc87bbf41e9198fcc0f"
+    sha256 ventura:        "f3cd46e866f40f134ee02ca264456e69730c721f577af6bd6927fdb90f2807e0"
+    sha256 monterey:       "6f7645cf9afb08c84f129bf39de4974c857bfff8941587cbb08ee20b9feed8d8"
+    sha256 x86_64_linux:   "0e4d59371d274c67e9f09ce81542e2856c7496e5d1bf70d7fed707bfbdfa04c0"
   end
 
   depends_on "ca-certificates"
@@ -51,13 +52,6 @@ class OpensslAT3 < Formula
   link_overwrite "lib/libcrypto*", "lib/libssl*"
   link_overwrite "lib/pkgconfig/libcrypto.pc", "lib/pkgconfig/libssl.pc", "lib/pkgconfig/openssl.pc"
   link_overwrite "share/doc/openssl/*", "share/man/man*/*ssl"
-
-  # Fix multi-certificate PEM loading.
-  # Remove with OpenSSL 3.2.1.
-  patch do
-    url "https://github.com/openssl/openssl/commit/cafccb768be5b8f5c21852764f7b2863b6f5e204.patch?full_index=1"
-    sha256 "fd1628e55a6db01324bd4acf693316999b94de45b56c7460f92b15e65199bb6e"
-  end
 
   # SSLv2 died with 1.1.0, so no-ssl2 no longer required.
   # SSLv3 & zlib are off by default with 1.1.0 but this may not
