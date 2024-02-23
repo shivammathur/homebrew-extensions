@@ -53,6 +53,8 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: ${{ matrix.extensions }}
+        env:
+          update: true    
       - name: Testing PHP version
         run: |
           php -v
