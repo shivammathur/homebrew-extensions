@@ -14,7 +14,7 @@ class Re2 < Formula
     url :stable
     regex(/^(\d{2,4}-\d{2}-\d{2})$/i)
     strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.gsub(/\D/, "") }.compact
+      tags.filter_map { |tag| tag[regex, 1]&.gsub(/\D/, "") }
     end
   end
 

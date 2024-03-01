@@ -3,7 +3,7 @@ class Readline < Formula
   homepage "https://tiswww.case.edu/php/chet/readline/rltop.html"
   url "https://ftp.gnu.org/gnu/readline/readline-8.2.tar.gz"
   mirror "https://ftpmirror.gnu.org/readline/readline-8.2.tar.gz"
-  version "8.2.7"
+  version "8.2.10"
   sha256 "3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35"
   license "GPL-3.0-or-later"
 
@@ -15,6 +15,9 @@ class Readline < Formula
     005 622ba387dae5c185afb4b9b20634804e5f6c1c6e5e87ebee7c35a8f065114c99
     006 c7b45ff8c0d24d81482e6e0677e81563d13c74241f7b86c4de00d239bc81f5a1
     007 5911a5b980d7900aabdbee483f86dab7056851e6400efb002776a0a4a1bab6f6
+    008 a177edc9d8c9f82e8c19d0630ab351f3fd1b201d655a1ddb5d51c4cee197b26a
+    009 3d9885e692e1998523fd5c61f558cecd2aafd67a07bd3bfe1d7ad5a31777a116
+    010 758e2ec65a0c214cfe6161f5cde3c5af4377c67d820ea01d13de3ca165f67b4c
   ].each_slice(2) do |p, checksum|
     patch :p0 do
       url "https://ftp.gnu.org/gnu/readline/readline-8.2-patches/readline82-#{p}"
@@ -62,13 +65,13 @@ class Readline < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4b08134e70e90a968bf82227fbec6861b07fdf630e7ab66e6effe95b6721cf36"
-    sha256 cellar: :any,                 arm64_ventura:  "1cbe9a00128c3b5cdf1107419087f00505533c73a60c3a210212e041dd12b3ee"
-    sha256 cellar: :any,                 arm64_monterey: "210af83c5ce5ca9fe63a5ef41db95cdd555391656b5f807c23e00a50c3a47b60"
-    sha256 cellar: :any,                 sonoma:         "e1e1f92fcb4d3685d9b074949e7e11543fa8f9e3bf06f6a68674c3f841fcf82a"
-    sha256 cellar: :any,                 ventura:        "65951f699eed34b0ae5d612b88bed9a5e2f64324d4c19443db492e57c2d6625f"
-    sha256 cellar: :any,                 monterey:       "f87042db256d98a53353dad8e81d567a94f74d766ab2cfc3dc7ecf5a5670fa05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3eac4b1dedcc5724be3e63f0347a6b5829313022f4e71d3c5dc28904479b579"
+    sha256 cellar: :any,                 arm64_sonoma:   "713fd1fa8544426b7e97eb21d13153195fea4c407db8a174bd183777b81c9192"
+    sha256 cellar: :any,                 arm64_ventura:  "90351660d5ceca72a4c0a287555f2045db95f78aa5f65011b94213429f729cde"
+    sha256 cellar: :any,                 arm64_monterey: "e58bc8376c36602c3cedf94075bb1097b04b77438c5a946fdbd37bf0eb6579c2"
+    sha256 cellar: :any,                 sonoma:         "9796e0ff1cc29ae7e75d8fc1a3e2c5e8ae2aeade8d9d59a16363306bf6c5b8f4"
+    sha256 cellar: :any,                 ventura:        "952e2975dffc98bd35673c86474dbb91fadc8d993c0720e4f085597f7a484af9"
+    sha256 cellar: :any,                 monterey:       "3633320dce51662036ea90acfc9adf5bb5e6f1dca7dbdb539839736129c474b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65181d2c0a9bd1d91ded6f7ec4a69b1110f65e875b332947e86a30aed7eab20f"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BSD libedit"
