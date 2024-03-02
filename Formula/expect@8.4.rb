@@ -36,6 +36,7 @@ class ExpectAT84 < AbstractPhpExtension
   def add_expect_headers
     headers = Dir["#{Formula["tcl-tk"].opt_include}/**/*.h"]
     (buildpath/"expect-#{version}/include").install_symlink headers unless headers.empty?
+    ENV.append "CFLAGS", "-I#{buildpath}/expect-#{version}/include"
   end
 
   def install
