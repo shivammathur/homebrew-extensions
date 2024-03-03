@@ -1,8 +1,8 @@
 class JpegXl < Formula
   desc "New file format for still image compression"
   homepage "https://jpeg.org/jpegxl/index.html"
-  url "https://github.com/libjxl/libjxl/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "a0e72e9ece26878147069ad4888ac3382021d4bbee71c2e1b687d5bde7fd7e01"
+  url "https://github.com/libjxl/libjxl/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "91b9a83a230d608b5d35d2ab5068bd0ec7028797575e3013211be5928028c8cd"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class JpegXl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9717b3a20f72b2c9338ecba113f827bd692651bec59579c8073d7e682089b251"
-    sha256 cellar: :any,                 arm64_ventura:  "95fefc2f6ff4380170eb5e5994fa51c3d92e510c85e08c8b4ac2c6812efa7013"
-    sha256 cellar: :any,                 arm64_monterey: "c7296788164ccec3dc2794d0585b4964bf60eef76508244c31dbe8fbeb96db4a"
-    sha256 cellar: :any,                 sonoma:         "82798cf0cd1e27e27bb939073859fc77deecebfb49b5081d6e202d9815d18532"
-    sha256 cellar: :any,                 ventura:        "3f2c8f02c4a1eb328bfce0f33c1d7f2128d7ffe95ab0d5d04e523f73ce649534"
-    sha256 cellar: :any,                 monterey:       "ad77301a874d06c2b3c2a583f0fd8ca574444f95793c27842fa33b95f4b4c131"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59698c2ed849067386f59d23dc9c665858698184b6bbe399495492cc4a28ff33"
+    sha256 cellar: :any,                 arm64_sonoma:   "bb6ef9768ecf5a59ff9a25507f46e040d14261a8da6e5f943caf286e4bee1ffd"
+    sha256 cellar: :any,                 arm64_ventura:  "d75498b5adccc226e94fef183cce058d2e7c81c6193e6959ee4cba0ce6e2097b"
+    sha256 cellar: :any,                 arm64_monterey: "4892e8d3cc4fa0c52ca95337592e3dc008dcc1197267c2db7c89af0cf051ef93"
+    sha256 cellar: :any,                 sonoma:         "7732aea9d3110b61bf18b598362f3e6849550b5aaa012136f04a5c6520022405"
+    sha256 cellar: :any,                 ventura:        "21268bc3870c597b3d6932ca463e995f011382d93e18947ba701ee63304bf710"
+    sha256 cellar: :any,                 monterey:       "993af6a93eb460fb8766c9da82fcafbc797b5d300989fb5d994a910b226441e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cd0d9944eded139932a31b011b412ec8684c1b4f028081a588d613ab0ccb374"
   end
 
   depends_on "asciidoc" => :build

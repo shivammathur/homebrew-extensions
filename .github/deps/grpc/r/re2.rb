@@ -1,9 +1,9 @@
 class Re2 < Formula
   desc "Alternative to backtracking PCRE-style regular expression engines"
   homepage "https://github.com/google/re2"
-  url "https://github.com/google/re2/archive/refs/tags/2024-02-01.tar.gz"
-  version "20240201"
-  sha256 "cd191a311b84fcf37310e5cd876845b4bf5aee76fdd755008eef3b6478ce07bb"
+  url "https://github.com/google/re2/archive/refs/tags/2024-03-01.tar.gz"
+  version "20240301"
+  sha256 "7b2b3aa8241eac25f674e5b5b2e23d4ac4f0a8891418a2661869f736f03f57f4"
   license "BSD-3-Clause"
   head "https://github.com/google/re2.git", branch: "main"
 
@@ -19,13 +19,13 @@ class Re2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "449a2574e5176bba9ee0083df70a771f8896755ded690fa834d1b34e8c7cd5b9"
-    sha256 cellar: :any,                 arm64_ventura:  "8e3116d6a49b76af5f0e26dcb0aa65c1649bc44c797736137c03db3376ae5fee"
-    sha256 cellar: :any,                 arm64_monterey: "dd68535374ccc86bf9884afeadd81c1a9a58d6a6a220b9924abe38c9b515a71f"
-    sha256 cellar: :any,                 sonoma:         "c42018fd50d387154925225770cd507716db373275ca55ddfcb7d52e129feda4"
-    sha256 cellar: :any,                 ventura:        "30f1edea42afffcfe7ea739e1dd6562f7c86711d4d6d882103ba5218dbdd775f"
-    sha256 cellar: :any,                 monterey:       "fc7d697be94601f084f35e497637b9d631b0e897786cbf54cb24277b9c6493fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc0c1f75d2b1ea3ced3c2a9cfcf5fe5f853f419b4b90dd9171b54a969315d00d"
+    sha256 cellar: :any,                 arm64_sonoma:   "a483640c4d197e1a8391c3f2fef6e43e26eb65b6d8f1307fb6b5dad3b47f6cd1"
+    sha256 cellar: :any,                 arm64_ventura:  "907ecc0af3d53b1dfc3495b1b0ae7e88e58fbba84e2343e2002e02e74f709f71"
+    sha256 cellar: :any,                 arm64_monterey: "da782c1c859492d2ba5c71ffbaddee44819dde1f917c7e87009c5f93131483c1"
+    sha256 cellar: :any,                 sonoma:         "19967d1f89012d68c06783a0863f7fe6b065d208cbf15dc3c2b02dba2747db98"
+    sha256 cellar: :any,                 ventura:        "9015fc1c22e7bd053434a62c8c1aeb089a3262ceb1950d5fa01146a8d5dd2d2c"
+    sha256 cellar: :any,                 monterey:       "ca2e9619a036c9583e6a72e58af408c8dccbc18fb5c0f59bab154a2a5ea95efd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe82589db5abf0c1d9f45266d00a3d775f6c7f6fb419b303052deaf06f832d16"
   end
 
   depends_on "cmake" => :build

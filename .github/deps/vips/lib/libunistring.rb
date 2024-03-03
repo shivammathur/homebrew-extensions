@@ -1,22 +1,20 @@
 class Libunistring < Formula
   desc "C string library for manipulating Unicode strings"
   homepage "https://www.gnu.org/software/libunistring/"
-  url "https://ftp.gnu.org/gnu/libunistring/libunistring-1.1.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libunistring/libunistring-1.1.tar.gz"
-  mirror "http://ftp.gnu.org/gnu/libunistring/libunistring-1.1.tar.gz"
-  sha256 "a2252beeec830ac444b9f68d6b38ad883db19919db35b52222cf827c385bdb6a"
+  url "https://ftp.gnu.org/gnu/libunistring/libunistring-1.2.tar.gz"
+  mirror "https://ftpmirror.gnu.org/libunistring/libunistring-1.2.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/libunistring/libunistring-1.2.tar.gz"
+  sha256 "fd6d5662fa706487c48349a758b57bc149ce94ec6c30624ec9fdc473ceabbc8e"
   license any_of: ["GPL-2.0-only", "LGPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6d49946a29c0b11e7c273edcdcff15d90b4d55bd9038e85f83fe7741e035ab28"
-    sha256 cellar: :any,                 arm64_ventura:  "c78e7b0af88bef155ad7f12d63ad60f0c87e5a8cccb8f40ec5d9304f8fdfaee7"
-    sha256 cellar: :any,                 arm64_monterey: "4224b6d2525c68567fba97103f44fe6f95e62990bddab83e4849d048f3799cda"
-    sha256 cellar: :any,                 arm64_big_sur:  "91c48a9bed24806ed74c964ac39010de737a83ca8a4f2b29e07180902112985e"
-    sha256 cellar: :any,                 sonoma:         "230dfb1be5d93330335494e2e2757d3463aaccbeef84e52d2f6ab8b480c20611"
-    sha256 cellar: :any,                 ventura:        "10dbdabb2d2fd8465ee4b89196dda6fc80e80fbb61425d42f0bf1e3ee3476145"
-    sha256 cellar: :any,                 monterey:       "73ef01fda8958a495f4d7031cb8d270432d4ae2f11760190676762b95ac7c0f4"
-    sha256 cellar: :any,                 big_sur:        "55a30f8d2ad0058a9869751ccb9b7e949469cf20f29810e70ff2b7eff63a6762"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "252f3716191a8c08f8d10e2c20b84cf9645e2c264f409f58d3255d9a4edce77f"
+    sha256 cellar: :any,                 arm64_sonoma:   "4a1c0f956e528e0fe9a5040da6a2002e221024835916fdc198b5d734e3c2638d"
+    sha256 cellar: :any,                 arm64_ventura:  "317dccbd509f4703664238e8d61b1f15c83d298b6d1945578eac33c1e18eab25"
+    sha256 cellar: :any,                 arm64_monterey: "4f2cc0abb15a3e11a9b5fe64f874f2b3aff4e763133ba499d91bc65e8745cb21"
+    sha256 cellar: :any,                 sonoma:         "e9a705a5442b3ee55f054a695bfbca741ff8a7f31d856ef08a72ad498bd42d60"
+    sha256 cellar: :any,                 ventura:        "66091a34396e4e17fc78f31410bf5878091ee6887cec79995f3598093ee481ea"
+    sha256 cellar: :any,                 monterey:       "7c53563d2a893c2b204cd667904d7b5ff650a8d153808135f3d6a38cae2b234d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "416da7b6b8d158de4adccc0479df3b8cc6a532f39f71df928dd979b01812da21"
   end
 
   def install
