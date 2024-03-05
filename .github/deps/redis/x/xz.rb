@@ -1,5 +1,3 @@
-# Upstream project has requested we use a mirror as the main URL
-# https://github.com/Homebrew/legacy-homebrew/pull/21419
 class Xz < Formula
   desc "General-purpose data compression with high compression ratio"
   homepage "https://xz.tukaani.org/xz-utils/"
