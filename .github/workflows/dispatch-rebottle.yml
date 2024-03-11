@@ -35,9 +35,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - runner: 'macos-14-arm64'
           - runner: 'macos-13-arm64'
           - runner: 'macos-12-arm64'
+          - runner: 'macos-14'
           - runner: 'macos-13'
           - runner: 'macos-12'
           - runner: 'ubuntu-22.04'
