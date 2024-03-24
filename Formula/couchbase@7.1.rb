@@ -26,7 +26,7 @@ class CouchbaseAT71 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "87f4a26848d822cc47a1b68e11006b2709a9261387d0fea228b869e342e3ba80"
   end
 
-  depends_on "libcouchbase@2"
+  depends_on "shivammathur/extensions/libcouchbase@2"
   depends_on "zlib"
 
   def install
