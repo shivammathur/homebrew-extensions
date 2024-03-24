@@ -20,6 +20,9 @@ class LibcouchbaseAT2 < Formula
     depends_on "openssl@3"
   
     def install
+      inreplace "plugins/io/libuv/libuv_compat.h",
+                "#define LIBUV_COMPAT_H",
+                "#define LIBUV_COMPAT_H\n#ifndef EUNATCH\n#define EUNATCH EAI_FAIL\n#endif"
       mkdir "build" do
         system "cmake", "..", *std_cmake_args,
                               "-DLCB_NO_TESTS=1",
