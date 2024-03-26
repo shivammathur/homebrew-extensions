@@ -54,7 +54,7 @@ case $extension in
     tag=$(get_latest_pecl_tag "$extension")
     patch_pecl_tag "$tag" "$extension"
     ;;
-  igbinary|pcov|swoole)
+  igbinary|pcov|swoole|vld)
     tag="$(get_latest_remote_git_tag "$repo")"
     patch_github_tag "$tag" "$repo"
     ;;

@@ -6,7 +6,7 @@ fetch() {
      [[ "$VERSION" =~ (couchbase|phalcon5)@(8.[0-3]) ]] ||
      [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
      [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.0) ]] ||
-     [[ "$VERSION" =~ (memcached)@(7.[0-4]|8.[0-3]) ]] ||
+     [[ "$VERSION" =~ (memcached|vld)@(7.[0-4]|8.[0-3]) ]] ||
      [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|pecl_http|raphf|rdkafka|ssh2|uuid|vips|xlswriter)@(7.[0-4]|8.[0-4]) ]] ||
      [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-4]) ]] ||
      [[ "$VERSION" =~ (ast|mcrypt|redis)@(7.[2-4]|8.[0-4]) ]] ||
