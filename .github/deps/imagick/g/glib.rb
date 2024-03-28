@@ -6,25 +6,28 @@ class Glib < Formula
   url "https://download.gnome.org/sources/glib/2.80/glib-2.80.0.tar.xz"
   sha256 "8228a92f92a412160b139ae68b6345bd28f24434a7b5af150ebe21ff587a561d"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_sonoma:   "aa44de729d2a822013b8466aac7b5bf9fd05a2cb30be6417d46a6bfb5681d789"
-    sha256 arm64_ventura:  "4fbe903dc8bd989384cb7c9fb78e3c36d8a5f29f7e48ce289c48bd42b52f51f1"
-    sha256 arm64_monterey: "508a98f46f737a0c45b777124d51123313805f8fa8354645542ef5973ce28810"
-    sha256 sonoma:         "b1bd1a9384825561f54870aff0f5f3d4e2d5670dc6562fbda956090d447321f3"
-    sha256 ventura:        "904e5feef4f8d753cf9fae04b1659e42cb3c29c26b9c0ec054bfb44d792aeafd"
-    sha256 monterey:       "c1020494efbf833c6504f7ae92f18f8238aca0d9cdf1722660a37a5f700b3c4e"
-    sha256 x86_64_linux:   "2f7670c6ca1eda7a4a3ef12cb1599a8ab8139add55188b05db08af1a39fe4b62"
+    sha256 arm64_sonoma:   "cfb04cb6f69ccce6b98f2e028f21a6e71a0d55fd157d7fb83e3d602dad8294fd"
+    sha256 arm64_ventura:  "e5bef115fbdeae3f2d43a9509d7050f785a0c45b551438010ca4d9b7029d9357"
+    sha256 arm64_monterey: "d5c9c0ad7efe4327c3efde307cfb789d6e6aaf8976522ed3a65a8646c9ddbc12"
+    sha256 sonoma:         "39d8494c82a793f34853649e1e26a1a1f6a00e9ad89330e70e348c60a093e0b9"
+    sha256 ventura:        "c38a32e98f6cd669499a3deb1a7b220cb9de04300471537ac22f27f2e6aa3d35"
+    sha256 monterey:       "f8543922f24f6f122411842e72732dd624afedad18581d15827c5e4c2cae627e"
+    sha256 x86_64_linux:   "24a55d75657e5ccf5ae945dae717e7574ebcb8cf7d9dcc161dadd4f2eba7e13b"
   end
 
+  depends_on "bison" => :build # for gobject-introspection
   depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build # for gobject-introspection
   depends_on "pcre2"
   depends_on "python@3.12"
 
+  uses_from_macos "flex" => :build # for gobject-introspection
   uses_from_macos "libffi", since: :catalina
 
   on_macos do
@@ -39,6 +42,11 @@ class Glib < Formula
   # These used to live in the now defunct `glib-utils`.
   link_overwrite "bin/gdbus-codegen", "bin/glib-genmarshal", "bin/glib-mkenums", "bin/gtester-report"
   link_overwrite "share/glib-2.0/codegen", "share/glib-2.0/gdb"
+
+  resource "gobject-introspection" do
+    url "https://download.gnome.org/sources/gobject-introspection/1.80/gobject-introspection-1.80.0.tar.xz"
+    sha256 "54a90b4a3cb82fd6a3e8b8a7775178ebc954af3c2bc726ed5961e6503ce62636"
+  end
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
@@ -71,15 +79,33 @@ class Glib < Formula
     # Disable dtrace; see https://trac.macports.org/ticket/30413
     # and https://gitlab.gnome.org/GNOME/glib/-/issues/653
     args = %W[
-      --default-library=both
       --localstatedir=#{var}
       -Dgio_module_dir=#{HOMEBREW_PREFIX}/lib/gio/modules
       -Dbsymbolic_functions=false
       -Ddtrace=false
       -Druntime_dir=#{var}/run
+      -Dtests=false
     ]
 
-    system "meson", "setup", "build", *args, *std_meson_args
+    # Stage build in order to deal with circular dependency as `gobject-introspection`
+    # is needed to generate `glib` introspection data used by dependents; however,
+    # `glib` is a dependency of `gobject-introspection`.
+    # Ref: https://discourse.gnome.org/t/dealing-with-glib-and-gobject-introspection-circular-dependency/18701
+    staging_dir = buildpath/"staging"
+    staging_meson_args = std_meson_args.map { |s| s.sub prefix, staging_dir }
+    system "meson", "setup", "build_staging", "-Dintrospection=disabled", *args, *staging_meson_args
+    system "meson", "compile", "-C", "build_staging", "--verbose"
+    system "meson", "install", "-C", "build_staging"
+    ENV.append_path "PKG_CONFIG_PATH", staging_dir/"lib/pkgconfig"
+    ENV.append_path "LD_LIBRARY_PATH", staging_dir/"lib" if OS.linux?
+    resource("gobject-introspection").stage do
+      system "meson", "setup", "build", "-Dcairo=disabled", "-Ddoctool=disabled", *staging_meson_args
+      system "meson", "compile", "-C", "build", "--verbose"
+      system "meson", "install", "-C", "build"
+    end
+    ENV.append_path "PATH", staging_dir/"bin"
+
+    system "meson", "setup", "build", "--default-library=both", "-Dintrospection=enabled", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
@@ -90,32 +116,28 @@ class Glib < Formula
               "giomoduledir=#{HOMEBREW_PREFIX}/lib/gio/modules",
               "giomoduledir=${libdir}/gio/modules"
 
-    if OS.mac?
-      # `pkg-config --libs glib-2.0` includes -lintl, and gettext itself does not
-      # have a pkgconfig file, so we add gettext lib and include paths here.
-      gettext = Formula["gettext"].opt_prefix
-      inreplace lib/"pkgconfig/glib-2.0.pc" do |s|
-        s.gsub! "Libs: -L${libdir} -lglib-2.0 -lintl",
-                "Libs: -L${libdir} -lglib-2.0 -L#{gettext}/lib -lintl"
-        s.gsub! "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include",
-                "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include -I#{gettext}/include"
-      end
-
-      if MacOS.version < :catalina
-        # `pkg-config --print-requires-private gobject-2.0` includes libffi,
-        # but that package is keg-only so it needs to look for the pkgconfig file
-        # in libffi's opt path.
-        libffi = Formula["libffi"].opt_prefix
-        inreplace lib/"pkgconfig/gobject-2.0.pc" do |s|
-          s.gsub! "Requires.private: libffi",
-                  "Requires.private: #{libffi}/lib/pkgconfig/libffi.pc"
-        end
-      end
-    end
-
-    rm "gio/completion/.gitignore"
+    (buildpath/"gio/completion/.gitignore").unlink
     bash_completion.install (buildpath/"gio/completion").children
     rewrite_shebang detected_python_shebang, *bin.children
+    return unless OS.mac?
+
+    # `pkg-config --libs glib-2.0` includes -lintl, and gettext itself does not
+    # have a pkgconfig file, so we add gettext lib and include paths here.
+    gettext = Formula["gettext"]
+    inreplace lib/"pkgconfig/glib-2.0.pc" do |s|
+      s.gsub! "Libs: -L${libdir} -lglib-2.0 -lintl",
+              "Libs: -L${libdir} -lglib-2.0 -L#{gettext.opt_lib} -lintl"
+      s.gsub! "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include",
+              "Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include -I#{gettext.opt_include}"
+    end
+    return if MacOS.version >= :catalina
+
+    # `pkg-config --print-requires-private gobject-2.0` includes libffi,
+    # but that package is keg-only so it needs to look for the pkgconfig file
+    # in libffi's opt path.
+    inreplace lib/"pkgconfig/gobject-2.0.pc",
+              "Requires.private: libffi",
+              "Requires.private: #{Formula["libffi"].opt_lib}/pkgconfig/libffi.pc"
   end
 
   def post_install
