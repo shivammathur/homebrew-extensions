@@ -15,13 +15,14 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d781bc589b8740c836c3339a2eb5fa6ad87727bec92f294d3ba9e01955329599"
-    sha256 cellar: :any,                 arm64_ventura:  "af732a6303664d58d7ba6185a4f3604e6db6653dbac247d07617edb1619475a7"
-    sha256 cellar: :any,                 arm64_monterey: "c1c14ab94a76bc667466a573b14f658c6ac1532aec787988bb7dc6d2d3ed145e"
-    sha256 cellar: :any,                 sonoma:         "52cb38432f13d3e4c9f3d8c2035edc90bff33f3182725b819b48faecd496a8d2"
-    sha256 cellar: :any,                 ventura:        "679a579128450f432f67e89fede3d5adddb4b0e9e7ffe47e3f54d258a204dd19"
-    sha256 cellar: :any,                 monterey:       "5daeb595d977fddd1c854f1e36f91a8694ba993b2432430962a1636f78d787e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85f7c32e66ce2050bbf7e26dfa98b5fa15a2a1ad82be4292a8629ebc730fe20c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "f109fe367f5761d5fd5b1800e538330e1e40627c2b1cfc8b684406853ed7f78d"
+    sha256 cellar: :any,                 arm64_ventura:  "34e96a963efa6b850d216b40c27c1cdd02ebe9a39a2d7c28fc180d004a68028b"
+    sha256 cellar: :any,                 arm64_monterey: "22d7372b0c62c46c13b346c5bafdd0d4fb9b48a4bec387d1573c3083e80e6a3f"
+    sha256 cellar: :any,                 sonoma:         "cabdbf0618f62f936c5480736adf309fe08746d644cfaab2fdad17b68ba5cf47"
+    sha256 cellar: :any,                 ventura:        "7924233ec09083c8ea9cbcaae0058274cbd4bd384ac99f0bcaca7cf3d1cb1a24"
+    sha256 cellar: :any,                 monterey:       "60707c9053cd1b81b59e179238cd3fdd1c7df0ba83876688e04f712ba1185543"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed5fe25460d3df70e6819aedba6870e44176a8cef633fc365ecf828bb3d5f71f"
   end
 
   head do
@@ -46,6 +47,13 @@ class Curl < Formula
 
   uses_from_macos "krb5"
   uses_from_macos "zlib"
+
+  # Fixes `curl: (23) Failed writing received data to disk/application`
+  # Remove in next release
+  patch do
+    url "https://github.com/curl/curl/commit/b30d694a027eb771c02a3db0dee0ca03ccab7377.patch?full_index=1"
+    sha256 "da4ae2efdf05169938c2631ba6e7bca45376f1d67abc305cf8b6a982c618df4d"
+  end
 
   def install
     tag_name = "curl-#{version.to_s.tr(".", "_")}"
