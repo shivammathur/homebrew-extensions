@@ -4,6 +4,7 @@ class Gpgme < Formula
   url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.23.2.tar.bz2"
   sha256 "9499e8b1f33cccb6815527a1bc16049d35a6198a6c5fae0185f2bd561bce5224"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpgme/"
@@ -11,14 +12,13 @@ class Gpgme < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "4b49bf5ea7e69c0c9cb5f13ca94398eb1a30a00e53d5193adb56f0aac5626ec3"
-    sha256 cellar: :any,                 arm64_ventura:  "2e549053a2c930e434bdef847fe2e819aef1e5ff7bb09ff9e5e803473f36effe"
-    sha256 cellar: :any,                 arm64_monterey: "4836f5e1527f50d698845d99ae67a92e28e302d8d0383d527c930d0e5e157cbc"
-    sha256 cellar: :any,                 sonoma:         "442157cb14484e7a8a4a0e83e6ff9f63841f48199d3eaac71ba80a282d41cc29"
-    sha256 cellar: :any,                 ventura:        "92aaa37de9c8f4376aa5a8bc21427f968bcf6cb8b971fe1dce805ad1bf31a2fc"
-    sha256 cellar: :any,                 monterey:       "47ca2ef9ba26f00419c1494b4213c5555fc7bb6dcad1689f481cc6ccbcd1eeda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7e1abe69918c83216b4394e4723eb37e19bfb7911fad6c359ea759e573726c8"
+    sha256 cellar: :any,                 arm64_sonoma:   "eedb9535788809e98ab8feebae75fabd5ffa39f89ec5fcc50b5d7b36ad612e69"
+    sha256 cellar: :any,                 arm64_ventura:  "148a6fdda6b21c51ede9d5885488d8d2b84180d3f7c1a557d5141b510b433c82"
+    sha256 cellar: :any,                 arm64_monterey: "2098f6407f43115f8b8309d5e75b0a7b40351bb60f0e8d6eba9d70026d587778"
+    sha256 cellar: :any,                 sonoma:         "b7454a4447fb551431c9a922af388721cc817f4d2f6e676b6f0e938c00bf70d7"
+    sha256 cellar: :any,                 ventura:        "e01422542cb10489454f6138817c7864ce951af1cc2cc2d05c09065f612cb1aa"
+    sha256 cellar: :any,                 monterey:       "f74f4bb89b250e4b2f7a50863f87129ea34bffdad74a52440e05a0a4233f78ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9b08fc6006ba8ef398c061eea1af523a7855924c12940913849524b87a88e52"
   end
 
   depends_on "python-setuptools" => :build
@@ -56,6 +56,10 @@ class Gpgme < Formula
 
     # avoid triggering mandatory rebuilds of software that hard-codes this path
     inreplace bin/"gpgme-config", prefix, opt_prefix
+
+    # replace libassuan Cellar paths to avoid breakage on libassuan version/revision bumps
+    dep_cellar_path_files = [bin/"gpgme-config", lib/"cmake/Gpgmepp/GpgmeppConfig.cmake"]
+    inreplace dep_cellar_path_files, Formula["libassuan"].prefix.realpath, Formula["libassuan"].opt_prefix
   end
 
   test do
