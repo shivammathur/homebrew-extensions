@@ -397,9 +397,9 @@ class PythonAT312 < Formula
        If you wish to install a Python library that isn't in Homebrew,
        use a virtual environment:
 
-         python -m venv path/to/venv
-         source env/bin/activate
-         python -m pip install xyz
+         python3 -m venv path/to/venv
+         source path/to/venv/bin/activate
+         python3 -m pip install xyz
 
        If you wish to install a Python application that isn't in Homebrew,
        it may be easiest to use 'pipx install xyz', which will manage a
