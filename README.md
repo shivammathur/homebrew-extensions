@@ -17,7 +17,7 @@
       <img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg?logo=open%20source%20initiative&logoColor=white&labelColor=555555">
     </a>
     <a href="https://github.com/shivammathur/homebrew-extensions/tree/master/Formula" title="Formulae for PHP extensions">
-      <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.3-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
+      <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.4-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
     </a>
 </p>
 <p align="center">
