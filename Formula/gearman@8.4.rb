@@ -8,8 +8,8 @@ class GearmanAT84 < AbstractPhpExtension
   init
   desc "Gearman PHP extension"
   homepage "https://github.com/php/pecl-networking-gearman"
-  url "https://pecl.php.net/get/gearman-2.1.0.tgz"
-  sha256 "77075fc250fac2d3878deb255d44efc3ad76cf7b2c7f1af420cb17839a03c0bc"
+  url "https://pecl.php.net/get/gearman-2.1.2.tgz"
+  sha256 "46ac184d0f67913ef5fbbd65596bd193a2ef11a7af896a7efd81d671a5230277"
   head "https://github.com/php/pecl-networking-gearman.git", branch: "master"
   license "PHP-3.01"
 
@@ -31,7 +31,6 @@ class GearmanAT84 < AbstractPhpExtension
       --with-gearman=#{Formula["gearman"].opt_prefix}
     ]
     Dir.chdir "gearman-#{version}"
-    inreplace "php_gearman_worker.c", "ZVAL_NEW_ARR", "array_init"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
