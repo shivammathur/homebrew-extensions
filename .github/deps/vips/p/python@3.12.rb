@@ -1,10 +1,9 @@
 class PythonAT312 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.2/Python-3.12.2.tgz"
-  sha256 "a7c4f6a9dc423d8c328003254ab0c9338b83037bd787d680826a5bf84308116e"
+  url "https://www.python.org/ftp/python/3.12.3/Python-3.12.3.tgz"
+  sha256 "a6b9459f45a6ebbbc1af44f5762623fa355a0c87208ed417628b379d762dddb0"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,14 +11,13 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "9b92843ec6a9bd77c121f63bb8937b5b17327f9fbeb45c949053cbb50c9b3b12"
-    sha256 arm64_ventura:  "bc24eb536beef7478f7f6c7fd05d02fb252915d65ae9833c4119273d8acbb482"
-    sha256 arm64_monterey: "8cdcdf6fa5ad05caeb2b54abd37b0c78b6932a07c80f5833aca698f5c33702c4"
-    sha256 sonoma:         "04806c7e7b3d89c366bbe3434af0fddb47548b40fb94101ab11b8a13628e825a"
-    sha256 ventura:        "c3ba89dca54a1af743dbecc096e384ae8f192e7015dfba39ceb54bbfcac65273"
-    sha256 monterey:       "a9fd3fdc8d23865c189369da4a4963723cbe25c178e9d79add62f8847a12f637"
-    sha256 x86_64_linux:   "9e38d534f22a81f283f99d842316b912f236aedaac87ee43237129589b2d65a1"
+    sha256 arm64_sonoma:   "fd301f96783de7d57e8d704ca0967e5cf111350acbf1ad8bec36fa27bb75fc3c"
+    sha256 arm64_ventura:  "94baa02aa52145f2a41a11ef2f12787510ab31c449457e334abd9f09b126c01f"
+    sha256 arm64_monterey: "a04e80f97f70f22b4ca6dc15160585bf4f7863c689497e38a44b984e9c5f533e"
+    sha256 sonoma:         "2bd309f8e329a645ac48a64e7b7983accf6773711491f635c9c5ed5c5f3a78fb"
+    sha256 ventura:        "9f5d156dee8517f0dd0bd7542974787cd38156bab4f897c4700d5787106e02a5"
+    sha256 monterey:       "75ae75d6dafd805e42ba57d823d4dd8ffdbfde545ccc0340a2229ec183619274"
+    sha256 x86_64_linux:   "faa009be56acac74433c08417d4ba15d65faae30535edc465601e33324c399d3"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
