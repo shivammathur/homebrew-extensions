@@ -11,13 +11,14 @@ class JpegXl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7624f860e59e279c5810bb7c2baa1a1a70beae2166f1781b00ce32ea3c949860"
-    sha256 cellar: :any,                 arm64_ventura:  "136444e6e6c21514af90cd1b4abdaa95a9559b3996fe4710deba5edb825af2cf"
-    sha256 cellar: :any,                 arm64_monterey: "4fefef455164e3c000c11fb55579c5b43983666d4898dec23dce4f4964a3433a"
-    sha256 cellar: :any,                 sonoma:         "90c89d7f44a6a3cdb6f369d23fe2c7d6a2a013ed14acfe65c8637586aad721d9"
-    sha256 cellar: :any,                 ventura:        "a00279e231490fa6419f3fb17f1c5933fa470e92cb15c5a13f405d9e03f63527"
-    sha256 cellar: :any,                 monterey:       "f9012616b6d6d773dd97f21f9f1306027e49d9a2165ff5c0670b845e58292bfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c6a70e3be41ab8b953baf0bbc9eac8c4be9b5d4caaea58b916fa569fd3805c2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "436eb06c81b1c2d812b571570a91e546f002e213c8b00badbf717e366cd68e4e"
+    sha256 cellar: :any,                 arm64_ventura:  "834b2ded08dd0df929eb26802da73d7a1566872450122db6da53098b5899d3b8"
+    sha256 cellar: :any,                 arm64_monterey: "f57984afc191c960b52714bac03ce5ddb4c7f6f34d9a390083560208c1511ced"
+    sha256 cellar: :any,                 sonoma:         "ac73a83204e84ffa4fea0bc1f4822c28e5790f0212ff14f23200b016a951c507"
+    sha256 cellar: :any,                 ventura:        "6b22ba67bfcafe41e5d82e41d62d41b7b18598d97b9593e4ffb0b9465a1676b9"
+    sha256 cellar: :any,                 monterey:       "d0e69905eb08fc5a9db6b233eb4261b99b4329f5ec486500b3f2321fecfc95eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "770513514db0021af965aefe191926cd144134df3af32c2774e6bcbbd61706ce"
   end
 
   depends_on "asciidoc" => :build
@@ -58,6 +59,7 @@ class JpegXl < Formula
                     "-DJPEGXL_FORCE_SYSTEM_BROTLI=ON",
                     "-DJPEGXL_FORCE_SYSTEM_LCMS2=ON",
                     "-DJPEGXL_FORCE_SYSTEM_HWY=ON",
+                    "-DJPEGXL_ENABLE_DEVTOOLS=ON",
                     "-DJPEGXL_ENABLE_JNI=OFF",
                     "-DJPEGXL_ENABLE_JPEGLI=OFF",
                     "-DJPEGXL_ENABLE_SKCMS=OFF",
