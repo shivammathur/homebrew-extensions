@@ -1,21 +1,18 @@
 class GdkPixbuf < Formula
   desc "Toolkit for image loading and pixel buffer manipulation"
   homepage "https://gtk.org"
-  url "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.10.tar.xz"
-  sha256 "ee9b6c75d13ba096907a2e3c6b27b61bcd17f5c7ebeab5a5b439d2f2e39fe44b"
+  url "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.11.tar.xz"
+  sha256 "49dcb402388708647e8c321d56b6fb30f21e51e515d0c5a942268d23052a2f00"
   license "LGPL-2.1-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "2fa4dee638dff110b3884b6c878898061a2fed8fe111f3311b9c0c99c37a8cfe"
-    sha256 arm64_ventura:  "fe74fd0d46b3042bf5bdc0a281f4d2f4fc873456ca2be043eeb7f9430723f26c"
-    sha256 arm64_monterey: "5c995956e552bb56edf6a65394a7638b9c6851e778db47e7038afc671ea05412"
-    sha256 arm64_big_sur:  "f875e17f1233c385be75b0d7e1b3a7887c4de1613186cc902de41fa7d4857ad6"
-    sha256 sonoma:         "c176aae3c3688e9086a6609e08baa86255d40760e376a1dae14eff8b0f663039"
-    sha256 ventura:        "df616ba6672581575db43297f7af9cf7b9220b0dec24d1dc108f2e1ca2c1a1c8"
-    sha256 monterey:       "e1fb42aac96f8e1b10dbdf8cbb74957678bfc405885653391f2436facd07e026"
-    sha256 big_sur:        "40c99bdc4ae06e902bcefcdd20525f9a3aaef0509d61a18489ab1639572b708a"
-    sha256 x86_64_linux:   "a10537012075ba29b2eef89b0f5958bff034f82695fb4ea334c5c50fc9c54e1c"
+    sha256 arm64_sonoma:   "c8ddfaecf9b492cd84e50cbb7afb46353beed4655b084224390efcfa545b8a2c"
+    sha256 arm64_ventura:  "5495c9c9e4c5fe2d5955f0591017f2b256d75ef5e001591ed21533128f257b3f"
+    sha256 arm64_monterey: "f32af33727ca22c91b112c447b7a7840ec90f3d82c7d81dfd8e840d84f2a2ec6"
+    sha256 sonoma:         "21894a6e676c0fbb83c293b8d2c053430d70a42a5c613a4ca8aa7868e81c84ad"
+    sha256 ventura:        "0a3ed0543a0cb03ff8aa58f7a1b93b3c5d8b803f0cf6d8ba9de383cfcd0d99ed"
+    sha256 monterey:       "396b15005fc1ff21cf5c6d8a4da52b6c2d8935ba3e18759f4305865b0c7d5249"
+    sha256 x86_64_linux:   "c3c0936bc79841a7c219a2d9470f919273dc795ca173bd9dd131bb19edb00e30"
   end
 
   depends_on "docutils" => :build # for rst2man
