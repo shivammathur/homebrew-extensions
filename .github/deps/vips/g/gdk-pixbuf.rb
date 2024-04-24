@@ -6,13 +6,14 @@ class GdkPixbuf < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "c8ddfaecf9b492cd84e50cbb7afb46353beed4655b084224390efcfa545b8a2c"
-    sha256 arm64_ventura:  "5495c9c9e4c5fe2d5955f0591017f2b256d75ef5e001591ed21533128f257b3f"
-    sha256 arm64_monterey: "f32af33727ca22c91b112c447b7a7840ec90f3d82c7d81dfd8e840d84f2a2ec6"
-    sha256 sonoma:         "21894a6e676c0fbb83c293b8d2c053430d70a42a5c613a4ca8aa7868e81c84ad"
-    sha256 ventura:        "0a3ed0543a0cb03ff8aa58f7a1b93b3c5d8b803f0cf6d8ba9de383cfcd0d99ed"
-    sha256 monterey:       "396b15005fc1ff21cf5c6d8a4da52b6c2d8935ba3e18759f4305865b0c7d5249"
-    sha256 x86_64_linux:   "c3c0936bc79841a7c219a2d9470f919273dc795ca173bd9dd131bb19edb00e30"
+    rebuild 1
+    sha256 arm64_sonoma:   "5a18df52c38f2483e8d361e19ae4f715bdb356ea6153c3893d5ec649e1b059e7"
+    sha256 arm64_ventura:  "edae1d685ce2be541cfc989dd0cabf434b1cb15fc4ba5ef41978b057f7784a5c"
+    sha256 arm64_monterey: "07e5673a7ca296a149e6e3b3373c6fb68d590111f1319c0c0633b75185c8af9d"
+    sha256 sonoma:         "6b6cd905e2c52acc955b08fc1391f3fbba75195b59f4ec1173c19182434c04e6"
+    sha256 ventura:        "9a78d1735066a77f229532ce0ccb5a463c4fb31fd5e9c54c4daa2cf3840795da"
+    sha256 monterey:       "933b909c3b15de0832c6b6a1d47109e46a1cd78328dbf38a7c2383a3bb700d8f"
+    sha256 x86_64_linux:   "d1c178c5725d7841f8f887521ab43dfbdc12d9ff5f10075048abe4ab3be627db"
   end
 
   depends_on "docutils" => :build # for rst2man
@@ -57,6 +58,7 @@ class GdkPixbuf < Formula
                                       "-Dpng=enabled",
                                       "-Dtiff=enabled",
                                       "-Djpeg=enabled",
+                                      "-Dothers=enabled",
                                       "-Dintrospection=enabled",
                                       *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
