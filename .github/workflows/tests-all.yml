@@ -14,13 +14,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.1', '7.2', '7.3', '7.4']
+        php: ['7.2', '7.3', '7.4']
         extensions: ['amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro']
         include:
           - php: '5.6'
             extensions: amqp, apcu, couchbase, event, expect, gnupg, gearman, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, snmp, ssh2, swoole, uuid, vld, xdebug, yaml, zmq, propro
           - php: '7.0'
-            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, propro
+            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, propro
+          - php: '7.1'
+            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro
           - php: '8.0'
             extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.1'
