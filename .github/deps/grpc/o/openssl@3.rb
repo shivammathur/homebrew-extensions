@@ -13,13 +13,14 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "537ea9242799c0b0214ba268a197577aae3198f629513cc1ae7f3479008166ad"
-    sha256 arm64_ventura:  "7cb105fc65311277aa69b87beebe51cf4e5bee35a4ddd49123517184a0b1fcac"
-    sha256 arm64_monterey: "d187613c85000dcfa0b20ab00e03bb6b5fe168ed613585bf3e6aafbe62f3bdb1"
-    sha256 sonoma:         "0493185552a97607d21036b01ba4352d161396cc189074b8410e2103dde10595"
-    sha256 ventura:        "7239a6fd2d2453ddbd6ef4fffa5820267c4c7ed0c164ed26286aaf856fb4fbae"
-    sha256 monterey:       "758da4962b897e09e39d83c9feaab2ee0d021fc375d36257e938c68ab7feba19"
-    sha256 x86_64_linux:   "ebe27077f1806776af8d7d93f715b788ccfd235bbc0868465609561b9f49674c"
+    rebuild 1
+    sha256 arm64_sonoma:   "ec6f9daf8e32d96f4a2f4cd56d18533ee47bb8d9e7cb3d832ac64115d8a1a4ca"
+    sha256 arm64_ventura:  "58665ec9e2873dba2799be5992eab3973f230acc352d09bd4a69131ac3ccd2d4"
+    sha256 arm64_monterey: "1afa5e6964d9418fb8bb2d489e5069becd55f963c1ea7a2a30ca838b17d9bf66"
+    sha256 sonoma:         "f37328addd300e16046ee900f26d3ed026a6c810ea88269e114a4e0f06ed41b6"
+    sha256 ventura:        "28be258776e175a8c29a19be5312b885574a98324d7b03c7ec12f2d7eadcbce1"
+    sha256 monterey:       "f5b70155f3fdbf574843741924758ca05fc996263e348660ac817e75052dacf9"
+    sha256 x86_64_linux:   "005380f94547e270e9c8617fe0211c30daad8a5712d038f7edee3fb5bc0f1226"
   end
 
   depends_on "ca-certificates"
@@ -57,7 +58,7 @@ class OpensslAT3 < Formula
     args = %W[
       --prefix=#{prefix}
       --openssldir=#{openssldir}
-      --libdir=#{lib}
+      --libdir=lib
       no-ssl3
       no-ssl3-method
       no-zlib
