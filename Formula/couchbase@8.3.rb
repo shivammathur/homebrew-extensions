@@ -15,12 +15,12 @@ class CouchbaseAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sonoma:   "1b2266856887630af20f090cf237c4be23412e356c9ac03342662f186bc6b341"
-    sha256 cellar: :any,                 arm64_ventura:  "85caaba8f4710a4f28fe9a59d0fed7d1343d2ceea9b0a7218332897bcc0efebb"
-    sha256 cellar: :any,                 arm64_monterey: "68aa1eb1f553e1d9b4db35837aa3480debd05ad5efb0f2dee4443296a21506cd"
-    sha256 cellar: :any,                 ventura:        "3c875d47768c7241d4657cf629de99b0a8112f05c31d6e7391025307630f67e5"
-    sha256 cellar: :any,                 monterey:       "6995d3997eae8064afc7acf6ea1f897f8f1f946fe76a0c8610097730af8347fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8c82288d539857ece128ed8e22976ba2256189b576ca4286253763d1144f696"
+    sha256 cellar: :any,                 arm64_sonoma:   "3f4860af220ecc5d99ab15e139a184ef4abcac708976cf088a43ace1c332d2bf"
+    sha256 cellar: :any,                 arm64_ventura:  "16d154b18f3ce303233e326c8ad7ee0bba86696e089e9e1796195a54b7da887b"
+    sha256 cellar: :any,                 arm64_monterey: "6c1d86222bac5bc9fff5c03627d9ffdc64f0b8b9a5322fafcf460fdb617286a8"
+    sha256 cellar: :any,                 ventura:        "6ff167ceb12ceabcaf8d7680fbca575ddd9884e267dd0ace6801c0ea98dd8fb5"
+    sha256 cellar: :any,                 monterey:       "49b69a64459261ed718ea89f782847127d2a74c5f2cadf6ea68cc45ba2d9b54f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96f9377993cde8158d9b7ccc653b0f6c4bac4dd40865ed8c0b58502a2f83a31a"
   end
 
   depends_on "cmake" => :build
