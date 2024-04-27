@@ -4,16 +4,16 @@ class Gearman < Formula
   url "https://github.com/gearman/gearmand/releases/download/1.1.21/gearmand-1.1.21.tar.gz"
   sha256 "2688b83e48f26fdcd4fbaef2413ff1a76c9ecb067d1621d0e0986196efecd308"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f37a97052a0c768f6474c07ee6dc636720099622645e1c3c7ba0f4c9c8f6b4bc"
-    sha256 cellar: :any,                 arm64_ventura:  "479948561c6e4e081bb53d3bd3128b9ab52b7455d4a4848a421328b2dc2baa25"
-    sha256 cellar: :any,                 arm64_monterey: "9c5707a987732d2186688e7a394cd365d4b95b2fcb65243ee978a9dca6030961"
-    sha256 cellar: :any,                 sonoma:         "912859d0ae86ffacf41772d91f5d1ed426ed0cf8c19e7a6c961696502b0ff6d5"
-    sha256 cellar: :any,                 ventura:        "5bdc353fd35e643166441a9a4f1421b048f8b8a47939fcb1bfd61600870b7619"
-    sha256 cellar: :any,                 monterey:       "73bde1653a0fd68c2e6e978a3a9ba70c2066c152dcb75364d984a53e61c9fbe2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a58ca217f1d747007d9796533836368b7cb598541b412a33336f86e072af0472"
+    sha256 cellar: :any,                 arm64_sonoma:   "74f5aa57dbcf69a26944221ef18fba6b822087ea7b39277763014c48e38bd400"
+    sha256 cellar: :any,                 arm64_ventura:  "22708e244f0929d56c2d2a51c6c3aed5d696374836fac0d35cbd7a1e9292b8ad"
+    sha256 cellar: :any,                 arm64_monterey: "1bd6ee6cc9c64a344a0b5c0a19d6acc72abbe6ca4522ba82f6e95e84540f6854"
+    sha256 cellar: :any,                 sonoma:         "e13aa47f17d1aa91e3879baaf4a9ed56714b2ebf2fc0f9be3efe17e02b068156"
+    sha256 cellar: :any,                 ventura:        "69e8a9f74ab27c7625227fbb074d263dab038d5bb6ab1bcffeb816d142d18b62"
+    sha256 cellar: :any,                 monterey:       "eb6cb5c35772f870d9b09c899a9359625edb47d0fa1283997ac9832987aa4267"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1a082418fa3b4fc4be651b4e8237b46f1a2b5c681e32553a144241323dce57e"
   end
 
   depends_on "pkg-config" => :build
