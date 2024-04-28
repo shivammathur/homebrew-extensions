@@ -1,18 +1,18 @@
 class Libimagequant < Formula
   desc "Palette quantization library extracted from pnquant2"
   homepage "https://pngquant.org/lib/"
-  url "https://github.com/ImageOptim/libimagequant/archive/refs/tags/4.3.0.tar.gz"
-  sha256 "7f590ed400def273381ac066f46b9f9e8b3e0b1985a5b7e82ca7a65541a6681b"
+  url "https://github.com/ImageOptim/libimagequant/archive/refs/tags/4.3.1.tar.gz"
+  sha256 "75020204491f14a8cdf4b857f6c5bab08b6b5f1736345412b296a253bc632bf6"
   license :cannot_represent
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "39a3af49326b7a8edfcbd2a0bc4394f82c2ac544ab56b34f10f20e0b58be0b99"
-    sha256 cellar: :any,                 arm64_ventura:  "343b1df95cf3f09e13cba025be250e2dc188397f42436dfba0b768f66517dc17"
-    sha256 cellar: :any,                 arm64_monterey: "b7bff6724391e9b9510b084fcd312d0fa5229525315bc5ba6dc67b37ee709a90"
-    sha256 cellar: :any,                 sonoma:         "1aab3673286a279d4ae820ba20df817794b82a8412ab1dd8a10adde7e0edaa81"
-    sha256 cellar: :any,                 ventura:        "76b9b67a8626d999ccfee91cb5e506ee540b193b20d19257401955a6db20016f"
-    sha256 cellar: :any,                 monterey:       "133beb288e5c4d6b0d2b1b530753d63d8674593de8526194b0404d19bca5f3f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5133f87312d636594022e09247cff1a7ecfc6d1058fb73a1cc8f153f5f16c34a"
+    sha256 cellar: :any,                 arm64_sonoma:   "e23067942a8b4aba83f14cadc2266d38ecec6e87db5afc5c6cfcc0671385fe86"
+    sha256 cellar: :any,                 arm64_ventura:  "339baf076ca69378c7e6b7fdf5dd73902f98291685b1a585437706f9993b9842"
+    sha256 cellar: :any,                 arm64_monterey: "3cfa156f5e5748ccdce2a44179fae4f90f0360024a5c913c28f69240f37a9aad"
+    sha256 cellar: :any,                 sonoma:         "3ef069b0b98dff21c925a1def7aaed932e51b1ba5e6ddf17dcc87435a66e4285"
+    sha256 cellar: :any,                 ventura:        "2e13ace7112a6bab367d817339d0df55f87e206a1012707412f0e32321393464"
+    sha256 cellar: :any,                 monterey:       "8f0a65aca0cbc760d065171a17fcffa53d2bddc43fcc323913254b1a8785cc8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d814c871cdd4ef25149e85a048c1d125eef93cb782d0f41deb0a8c6a576d90c"
   end
 
   depends_on "cargo-c" => :build

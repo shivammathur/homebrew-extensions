@@ -15,14 +15,14 @@ class Curl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "f109fe367f5761d5fd5b1800e538330e1e40627c2b1cfc8b684406853ed7f78d"
-    sha256 cellar: :any,                 arm64_ventura:  "34e96a963efa6b850d216b40c27c1cdd02ebe9a39a2d7c28fc180d004a68028b"
-    sha256 cellar: :any,                 arm64_monterey: "22d7372b0c62c46c13b346c5bafdd0d4fb9b48a4bec387d1573c3083e80e6a3f"
-    sha256 cellar: :any,                 sonoma:         "cabdbf0618f62f936c5480736adf309fe08746d644cfaab2fdad17b68ba5cf47"
-    sha256 cellar: :any,                 ventura:        "7924233ec09083c8ea9cbcaae0058274cbd4bd384ac99f0bcaca7cf3d1cb1a24"
-    sha256 cellar: :any,                 monterey:       "60707c9053cd1b81b59e179238cd3fdd1c7df0ba83876688e04f712ba1185543"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed5fe25460d3df70e6819aedba6870e44176a8cef633fc365ecf828bb3d5f71f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "d26dcef01fd3158c59dec70673ebbdcecc44bdffc51b735a45d018f3046d0dfd"
+    sha256 cellar: :any,                 arm64_ventura:  "abef4ff5922a5046cf31afc38dcdfec4cce7985a93d997276a8a9fe822782103"
+    sha256 cellar: :any,                 arm64_monterey: "562cd9cf121cb54692bdaade8319bc070421c426779fdfd4e7d9ce59d81e304c"
+    sha256 cellar: :any,                 sonoma:         "c98c05f1441d74c327717bddf1e4ea0d914a2f325550885c6b5084d6f03875ef"
+    sha256 cellar: :any,                 ventura:        "30c589452ee996815867e03b5104b7464b2580a991cb686d69485ab7c2348984"
+    sha256 cellar: :any,                 monterey:       "26ea8f03d564d0b7fb27dc9416bf989fb012185636e8cabf8bd6680b11b9dfdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f439e638e5fb4c63c8aa359eb5effd351fb8f3a6e59736281544cd1d739dc4f"
   end
 
   head do
@@ -79,6 +79,8 @@ class Curl < Formula
       --with-librtmp
       --with-libssh2
       --without-libpsl
+      --with-zsh-functions-dir=#{zsh_completion}
+      --with-fish-functions-dir=#{fish_completion}
     ]
 
     args << if OS.mac?
