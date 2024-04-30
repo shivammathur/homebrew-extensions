@@ -23,6 +23,8 @@ class Xz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0736983b952c5273bb5a345008bac7311c2f4b60758d69cc05495d5b050f88f1"
   end
 
+  deny_network_access! [:build, :postinstall]
+
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules", "--disable-nls"
     system "make", "check"
