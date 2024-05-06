@@ -9,8 +9,10 @@ class Ghostscript < Formula
 
     on_macos do
       # 1. Prevent dependent rebuilds on minor version bumps.
+      # 2. Fix missing pointer dereference
       # Reported upstream at:
       #   https://bugs.ghostscript.com/show_bug.cgi?id=705907
+      #   https://bugs.ghostscript.com/show_bug.cgi?id=707649
       patch :DATA
     end
   end
@@ -25,13 +27,14 @@ class Ghostscript < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5a4d2e12ec9ad26a94cb92817fe6685bc2b29d406174825cbe256e01a20f8e21"
-    sha256 arm64_ventura:  "ba6c4d70667d55f5275bd53695269ee2110fcc98316ac4c8772c65d68695bc00"
-    sha256 arm64_monterey: "66b6b08bcc0464ee44f37c3ae5004f6c7b9f218b647dced944963a0c924efb00"
-    sha256 sonoma:         "bd8ac911d2c568d9cd2e01b6dc2056d876c9a63580488f69630227bf41340a44"
-    sha256 ventura:        "ffc9f0f5ab002fcee2afaa5b7a32c08f34f3da59e26f50903b14e8b07bc5f4b6"
-    sha256 monterey:       "d8233c88f480d3a0c099dd482ecdf41b77de8610ba9c8a21324db949772ca6f5"
-    sha256 x86_64_linux:   "9f0a3bff7c308669561afe78692b58d27a3571ab4fbb94cfa175fd5cd67360c9"
+    rebuild 1
+    sha256 arm64_sonoma:   "594347d6f46952a38c6a622ebbd4b25e5f35457aec19b3eb9f6492871478d1af"
+    sha256 arm64_ventura:  "f9ca8d8a33c9d18a260ab2d2a4d964e6afe46f7b3b8e3428545a357b2efd1abc"
+    sha256 arm64_monterey: "f5304ddf40c3bd1ad81bb1f223bc4d55d9ce3412878bc3088d4e694e92ef31bb"
+    sha256 sonoma:         "a3bd66ce8138ac5f93756b4c2c1397214a896e1c9c87dde69c061d5fe6641a48"
+    sha256 ventura:        "afa6fd52efcdfb3e9591c80f173362546c807633f03b3975c70f58c554a10e83"
+    sha256 monterey:       "72ceaaae22d5248b4c4cf7190e6d1c7016f4aae6d18def06ee8796fa0f56a20f"
+    sha256 x86_64_linux:   "e377efe1ada9faa1a00e589745997dfa867cdcc3fddc7d5116c1d0f8cb845fa3"
   end
 
   head do
@@ -128,3 +131,18 @@ index 89dfa5a..c907831 100644
  #LDFLAGS_SO=-dynamiclib -flat_namespace
  #LDFLAGS_SO_MAC=-dynamiclib -install_name $(GS_SONAME_MAJOR_MINOR)
  #LDFLAGS_SO=-dynamiclib -install_name $(FRAMEWORK_NAME)
+diff --git a/pdf/pdf_sec.c b/pdf/pdf_sec.c
+index 565ae80ca..7e8f6719d 100644
+--- a/pdf/pdf_sec.c
++++ b/pdf/pdf_sec.c
+@@ -183,8 +183,8 @@ static int apply_sasl(pdf_context *ctx, char *Password, int Len, char **NewPassw
+          * this easy: the errors we want to ignore are the ones with
+          * codes less than 100. */
+         if ((int)err < 100) {
+-            NewPassword = Password;
+-            NewLen = Len;
++            *NewPassword = Password;
++            *NewLen = Len;
+             return 0;
+         }
+ 
