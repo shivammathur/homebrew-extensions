@@ -37,13 +37,16 @@ class JpegTurbo < Formula
 
   def install
     args = ["-DWITH_JPEG8=1", "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{rpath}"]
-    # https://github.com/libjpeg-turbo/libjpeg-turbo/issues/709
-    if Hardware::CPU.arm? && MacOS.version >= :ventura
-      args += ["-DFLOATTEST8=fp-contract",
-               "-DFLOATTEST12=fp-contract"]
+    if Hardware::CPU.arm? && OS.mac?
+      if MacOS.version >= :ventura
+        # https://github.com/libjpeg-turbo/libjpeg-turbo/issues/709
+        args += ["-DFLOATTEST8=fp-contract",
+                 "-DFLOATTEST12=fp-contract"]
+      elsif MacOS.version == :monterey
+        # https://github.com/libjpeg-turbo/libjpeg-turbo/issues/734
+        args << "-DFLOATTEST12=no-fp-contract"
+      end
     end
-    # https://github.com/libjpeg-turbo/libjpeg-turbo/issues/734
-    args << "-DFLOATTEST12=no-fp-contract" if Hardware::CPU.arm? && MacOS.version == :monterey
     args += std_cmake_args.reject { |arg| arg["CMAKE_INSTALL_LIBDIR"].present? }
 
     system "cmake", "-S", ".", "-B", "build", *args
