@@ -12,23 +12,25 @@ for extension in "${extensions[@]}"; do
   if ! [ -e "$formula_file" ]; then
     formula_file=./Formula/"$extension"@7.4.rb
   fi
-  IFS=' ' read -r -a deps <<<"$(brew deps --formula "$formula_file" | tr '\n' ' ')"
-  
-  if [[ -n "${deps// }" ]]; then
-    printf "\n----- %s -----\n" "$extension"
-    echo "${deps[@]//shivammathur*}"
-    sudo rm -rf "./.github/deps/$extension"
-    sudo mkdir -p "./.github/deps/$extension"
-    for formula in "${deps[@]//shivammathur*}"; do
-      [ "$formula" = "python" ] && continue;
-      if [ "x$formula" != "x" ]; then
-        [[ ${formula:0:3} == "lib" ]] && prefix=lib || prefix="${formula:0:1}"
-        sudo mkdir -p "./.github/deps/$extension/$prefix"
-        sudo curl -o "./.github/deps/$extension/$prefix/$formula.rb" -sL "$trunk"/"$prefix"/"$formula".rb
-        grep -q "Formula" "./.github/deps/$extension/$prefix/$formula.rb" || exit 1
-      fi
-    done
-    ls -R "./.github/deps/$extension"
+  if [ -e "$formula_file" ]; then
+    IFS=' ' read -r -a deps <<<"$(brew deps --formula "$formula_file" | tr '\n' ' ')"
+    
+    if [[ -n "${deps// }" ]]; then
+      printf "\n----- %s -----\n" "$extension"
+      echo "${deps[@]//shivammathur*}"
+      sudo rm -rf "./.github/deps/$extension"
+      sudo mkdir -p "./.github/deps/$extension"
+      for formula in "${deps[@]//shivammathur*}"; do
+        [ "$formula" = "python" ] && continue;
+        if [ "x$formula" != "x" ]; then
+          [[ ${formula:0:3} == "lib" ]] && prefix=lib || prefix="${formula:0:1}"
+          sudo mkdir -p "./.github/deps/$extension/$prefix"
+          sudo curl -o "./.github/deps/$extension/$prefix/$formula.rb" -sL "$trunk"/"$prefix"/"$formula".rb
+          grep -q "Formula" "./.github/deps/$extension/$prefix/$formula.rb" || exit 1
+        fi
+      done
+      ls -R "./.github/deps/$extension"
+    fi  
   fi
 done
 sudo git status
