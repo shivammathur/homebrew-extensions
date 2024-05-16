@@ -1,27 +1,26 @@
 class GdkPixbuf < Formula
   desc "Toolkit for image loading and pixel buffer manipulation"
   homepage "https://gtk.org"
-  url "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.11.tar.xz"
-  sha256 "49dcb402388708647e8c321d56b6fb30f21e51e515d0c5a942268d23052a2f00"
+  url "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz"
+  sha256 "b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7"
   license "LGPL-2.1-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "5a18df52c38f2483e8d361e19ae4f715bdb356ea6153c3893d5ec649e1b059e7"
-    sha256 arm64_ventura:  "edae1d685ce2be541cfc989dd0cabf434b1cb15fc4ba5ef41978b057f7784a5c"
-    sha256 arm64_monterey: "07e5673a7ca296a149e6e3b3373c6fb68d590111f1319c0c0633b75185c8af9d"
-    sha256 sonoma:         "6b6cd905e2c52acc955b08fc1391f3fbba75195b59f4ec1173c19182434c04e6"
-    sha256 ventura:        "9a78d1735066a77f229532ce0ccb5a463c4fb31fd5e9c54c4daa2cf3840795da"
-    sha256 monterey:       "933b909c3b15de0832c6b6a1d47109e46a1cd78328dbf38a7c2383a3bb700d8f"
-    sha256 x86_64_linux:   "d1c178c5725d7841f8f887521ab43dfbdc12d9ff5f10075048abe4ab3be627db"
+    sha256 arm64_sonoma:   "25939bb8cc913348f52c3c72ad16089b15cd2293397b3a9a4bcec90dbd409987"
+    sha256 arm64_ventura:  "b5d7e955fda95853264840a0f05fa7c9f1d7b45a08e0d1b4bcf15c16b3c03820"
+    sha256 arm64_monterey: "a32e123ccc804f092841336600e33fc67c6ac912d5aee8f99465afd7390014db"
+    sha256 sonoma:         "3e7266d92df1d8a3afde5e67030878a610ede9d9dfa75572e54dcb74d5779cdc"
+    sha256 ventura:        "80e5eacf286d8371d7fcc13cc9b79d4612ded6d0db3398c5741790174ae70f85"
+    sha256 monterey:       "8949303fe5fe4f755cdde41339de6485b4fc0da74b9991eafb78eabe6fe38e1e"
+    sha256 x86_64_linux:   "1acee0ae28b67cd12f744e7923ff8a5e8c9396777af0bb661089b6e33492b8b3"
   end
 
   depends_on "docutils" => :build # for rst2man
-  depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
+  depends_on "gettext"
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libpng"
