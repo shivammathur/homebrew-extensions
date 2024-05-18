@@ -4,6 +4,7 @@ class OpenMpi < Formula
   url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.3.tar.bz2"
   sha256 "990582f206b3ab32e938aa31bbf07c639368e4405dca196fabe7f0f76eeda90b"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,13 +12,13 @@ class OpenMpi < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "14f9d433b601aa9cb6c072a18fe585214c5684b08711cfbf422ca2ab469ea7e3"
-    sha256 arm64_ventura:  "37c3628954f736dccf41af3110ccfeb9fd8c0191b5b3949f72d512c17a98aa05"
-    sha256 arm64_monterey: "349c1be9e22da58c890fab40e1ebe85bb0fd059ae8e910ffd359bf4cf8c29448"
-    sha256 sonoma:         "d1c7d15b340c353c56809246c9ea834da5ea0cf65967bad5d23f32a278e607e7"
-    sha256 ventura:        "3d92d622b3b68cace6bf91d451c49d887a11c37c7319e456aa6fc63d10298c90"
-    sha256 monterey:       "750b582c5f009fcf737426b1387ab3432425ebc07c15f14fc3e9dc6f7336596d"
-    sha256 x86_64_linux:   "b99d9e2602eeb49ec33c21c6792b921be5ddca9cbbde248924b1bc5e2e6b8d07"
+    sha256 arm64_sonoma:   "2eb8af01260123ac14e6c47dc0c2d6533ae846b93805e95940fd991af286b228"
+    sha256 arm64_ventura:  "41fbd96be69b9cd6f06f29acb9e29d7f182af84ee9a35ccb2b60b3fea526cbea"
+    sha256 arm64_monterey: "e62156754013d4acf586032f28da661f0ff0275a664347a77a616ac76dede707"
+    sha256 sonoma:         "963cccb887f66a3da95feb19098e65309c46219491cb080d0bf864ea45e7fcdc"
+    sha256 ventura:        "ee9132e624c3e74d153362aedac38bc327937ca8c99e45aea4e19a7c188aade1"
+    sha256 monterey:       "d3e7aa52538f37cfae1da06cdf23d04bdfe29fc9e3c9c6ad7c8c4cf2c2f6523e"
+    sha256 x86_64_linux:   "96f0736d212d804309eebd055632619b99242e895e195013be2b01ba742fa798"
   end
 
   head do
@@ -78,7 +79,7 @@ class OpenMpi < Formula
 
     # Work around asm incompatibility with new linker (FB13194320)
     # https://github.com/open-mpi/ompi/issues/11935
-    args << "--with-wrapper-ldflags=-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
+    args << "--with-wrapper-fcflags=-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
     system "./autogen.pl", "--force" if build.head?
     system "./configure", *std_configure_args, *args
