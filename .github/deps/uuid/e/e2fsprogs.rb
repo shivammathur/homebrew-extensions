@@ -1,8 +1,8 @@
 class E2fsprogs < Formula
   desc "Utilities for the ext2, ext3, and ext4 file systems"
   homepage "https://e2fsprogs.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.0/e2fsprogs-1.47.0.tar.gz"
-  sha256 "6667afde56eef0c6af26684974400e4d2288ea49e9441bf5e6229195d51a3578"
+  url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.1/e2fsprogs-1.47.1.tar.gz"
+  sha256 "9afcd201f39429d2db2492aeb13dba5e75d6cc50682b732dca35643bd5f092e3"
   license all_of: [
     "GPL-2.0-or-later",
     "LGPL-2.0-or-later", # lib/ex2fs
@@ -18,15 +18,13 @@ class E2fsprogs < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "bf31f70850a44d4af3a5f82a558787044028c85977eed6c53d7f5328f86ea0e4"
-    sha256 arm64_ventura:  "32c3579e1a33775074fb35ae5e6f499682da918d6310a653600bb3a97b3ac235"
-    sha256 arm64_monterey: "b7fe9f7b148e778ef9b4d9d6bc97d39fdc942436692b33b518ff1cc85d2b123b"
-    sha256 arm64_big_sur:  "b81365c6dafa1ddf9d37fb0ac9b748f70c832ed01c48a97ccb030bfe35ced118"
-    sha256 sonoma:         "65ec0887a0910e8793321e1945193d4db1395af0e58113b3a26d01b6d1bbb0f5"
-    sha256 ventura:        "e3bb6dbd23b93bfa37ada501134be5ab997ea98b62d800f3e448cd1e627a9bcb"
-    sha256 monterey:       "bc1f1731ebae67bcfd0426e72e0dda411d0737103996344cf351f469e5c6b5f6"
-    sha256 big_sur:        "5fb3d45aa2cd60cd733f346f2433f3b203c7f06065d901efbcb28d207081186e"
-    sha256 x86_64_linux:   "fd9a98171952631479167b5777230f041b2b81cab97f68b2437e3821e472aed4"
+    sha256 arm64_sonoma:   "98368d23728fb485ff67766148c8aee4bbeee3c542ba0d5c200cb608aedb8e1a"
+    sha256 arm64_ventura:  "2226708887d3d43427d39d355a75b2367d7ecf5145621de5dae2749dd4f130e4"
+    sha256 arm64_monterey: "942b459a0a9bc92157d4afa5e0f71d3f14d5ddccb0b8d652c4e70416d6d32cc4"
+    sha256 sonoma:         "248320615070b5b3f32ee4c581c46a4e9e74e51c4765624d253aa74a2cc44469"
+    sha256 ventura:        "85f74a6d50a82f4e2f2c29e0569cd102034a127e81d0fdef83c15411aa240042"
+    sha256 monterey:       "07e61dc2625c27caa877ce698f5c3f5cd2f7aaee3cba6da22d865db7224105ae"
+    sha256 x86_64_linux:   "eb63ea295700e11246a09b546f36a360db3c56c227deb4a30e12450e2c76dbab"
   end
 
   keg_only "this installs several executables which shadow macOS system commands"

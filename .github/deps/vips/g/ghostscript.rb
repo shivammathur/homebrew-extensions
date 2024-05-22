@@ -4,8 +4,8 @@ class Ghostscript < Formula
   license "AGPL-3.0-or-later"
 
   stable do
-    url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/ghostpdl-10.03.0.tar.xz"
-    sha256 "854fd1958711b9b5108c052a6d552b906f1e3ebf3262763febf347d77618639d"
+    url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostpdl-10.03.1.tar.xz"
+    sha256 "05eee45268f6bb2c6189f9a40685c4608ca089443a93f2af5f5194d83dc368db"
 
     on_macos do
       # 1. Prevent dependent rebuilds on minor version bumps.
@@ -27,14 +27,13 @@ class Ghostscript < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "594347d6f46952a38c6a622ebbd4b25e5f35457aec19b3eb9f6492871478d1af"
-    sha256 arm64_ventura:  "f9ca8d8a33c9d18a260ab2d2a4d964e6afe46f7b3b8e3428545a357b2efd1abc"
-    sha256 arm64_monterey: "f5304ddf40c3bd1ad81bb1f223bc4d55d9ce3412878bc3088d4e694e92ef31bb"
-    sha256 sonoma:         "a3bd66ce8138ac5f93756b4c2c1397214a896e1c9c87dde69c061d5fe6641a48"
-    sha256 ventura:        "afa6fd52efcdfb3e9591c80f173362546c807633f03b3975c70f58c554a10e83"
-    sha256 monterey:       "72ceaaae22d5248b4c4cf7190e6d1c7016f4aae6d18def06ee8796fa0f56a20f"
-    sha256 x86_64_linux:   "e377efe1ada9faa1a00e589745997dfa867cdcc3fddc7d5116c1d0f8cb845fa3"
+    sha256 arm64_sonoma:   "8ab8a34d5c2e94851b167c20962d0d70f95eb403bc81d71dccaecdba81e167a8"
+    sha256 arm64_ventura:  "8908f37eee3e93867a5b8ebe94e2b0c8985bb6a4dcd30b447968922269f40cd1"
+    sha256 arm64_monterey: "713177ff722b4f602a5c0812c754fde1100aef030e1682bfdf90884a39655c2f"
+    sha256 sonoma:         "cb23a60add5b459b9862a75f1536ff6633f41761a64d62955975371ef0dd5bdd"
+    sha256 ventura:        "9b76871f2967c4a2175a8033f4184993401f744e7f321dd161eac398efacddf0"
+    sha256 monterey:       "d4a48d2459c05360daaca6a8bf427fc87d6ffb32be497dedc73651f16ef6e057"
+    sha256 x86_64_linux:   "d011e49ea2b732da0e26445c335eef1dd8a71da0097a0f743d3d917703a24c0c"
   end
 
   head do
