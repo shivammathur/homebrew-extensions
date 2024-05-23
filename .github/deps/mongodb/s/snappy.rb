@@ -1,19 +1,19 @@
 class Snappy < Formula
   desc "Compression/decompression library aiming for high speed"
   homepage "https://google.github.io/snappy/"
-  url "https://github.com/google/snappy/archive/refs/tags/1.2.0.tar.gz"
-  sha256 "9b8f10fbb5e3bc112f2e5e64f813cb73faea42ec9c533a5023b5ae08aedef42e"
+  url "https://github.com/google/snappy/archive/refs/tags/1.2.1.tar.gz"
+  sha256 "736aeb64d86566d2236ddffa2865ee5d7a82d26c9016b36218fcc27ea4f09f86"
   license "BSD-3-Clause"
   head "https://github.com/google/snappy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4a20c424a6cab88e165030ce17f347cfcbf27c32b3ef4f03c5622b054510b4a2"
-    sha256 cellar: :any,                 arm64_ventura:  "c8bd2d0f2c8812acabf1054836f36b65f05bc423967eea60e2eb0227ebc02d81"
-    sha256 cellar: :any,                 arm64_monterey: "c2c8cde9635ba55b3b0f6cb8994b07d157166926fc809bfe5b2d8664898ca84b"
-    sha256 cellar: :any,                 sonoma:         "d5541a4d0489d0fb44cd2777c15b3dc0a9e8645cad4756e48dafcf076ce03f84"
-    sha256 cellar: :any,                 ventura:        "51b567229c4139ff3cab524055cb8c40e53a63d1d8fe2267916f0ffa61bcd0ed"
-    sha256 cellar: :any,                 monterey:       "bf3865f380331ba25729c5856caac0668fcc242e70b4ac768b713ea68018f8ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ae12c0660f75dd132bc44df65b8ee38152f1dae9f616589ae4ca95a2b46eae7"
+    sha256 cellar: :any,                 arm64_sonoma:   "2b905dfed7d6c0b44de9c89a79a6aa69824758c2727dcffe95bc6ebef465cf3f"
+    sha256 cellar: :any,                 arm64_ventura:  "ca5b33ef7fd245020808bcb339f5b7799a4d4441b50c430c9bdd4eeca6a7d785"
+    sha256 cellar: :any,                 arm64_monterey: "a3ad18bfdb378542375074f5f3423bb4972147595ee7b3ec38acd04469bff5db"
+    sha256 cellar: :any,                 sonoma:         "4a39b310e4c5a726de262265e14cb0ee219f89c0da0afd19328007d965dba7f8"
+    sha256 cellar: :any,                 ventura:        "80fa828013ffa932262d110a351fc4f28f44524cc783d23c15b61328182170ac"
+    sha256 cellar: :any,                 monterey:       "e31f618776a2346ae18b6aa8bc035e0edc3c1dbf421498ef13f8b5a1e75fd1be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c33db20cdc5d828f5f90eb3996f6729a02ebf697bf0a67d28f59feeb24bed42"
   end
 
   depends_on "cmake" => :build
