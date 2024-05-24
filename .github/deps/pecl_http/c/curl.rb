@@ -2,11 +2,11 @@ class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.se"
   # Don't forget to update both instances of the version in the GitHub mirror URL.
-  url "https://curl.se/download/curl-8.7.1.tar.bz2"
-  mirror "https://github.com/curl/curl/releases/download/curl-8_7_1/curl-8.7.1.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/curl-8.7.1.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/legacy/curl-8.7.1.tar.bz2"
-  sha256 "05bbd2b698e9cfbab477c33aa5e99b4975501835a41b7ca6ca71de03d8849e76"
+  url "https://curl.se/download/curl-8.8.0.tar.bz2"
+  mirror "https://github.com/curl/curl/releases/download/curl-8_8_0/curl-8.8.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/curl-8.8.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/legacy/curl-8.8.0.tar.bz2"
+  sha256 "40d3792d38cfa244d8f692974a567e9a5f3387c547579f1124e95ea2a1020d0d"
   license "curl"
 
   livecheck do
@@ -15,14 +15,13 @@ class Curl < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "d26dcef01fd3158c59dec70673ebbdcecc44bdffc51b735a45d018f3046d0dfd"
-    sha256 cellar: :any,                 arm64_ventura:  "abef4ff5922a5046cf31afc38dcdfec4cce7985a93d997276a8a9fe822782103"
-    sha256 cellar: :any,                 arm64_monterey: "562cd9cf121cb54692bdaade8319bc070421c426779fdfd4e7d9ce59d81e304c"
-    sha256 cellar: :any,                 sonoma:         "c98c05f1441d74c327717bddf1e4ea0d914a2f325550885c6b5084d6f03875ef"
-    sha256 cellar: :any,                 ventura:        "30c589452ee996815867e03b5104b7464b2580a991cb686d69485ab7c2348984"
-    sha256 cellar: :any,                 monterey:       "26ea8f03d564d0b7fb27dc9416bf989fb012185636e8cabf8bd6680b11b9dfdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f439e638e5fb4c63c8aa359eb5effd351fb8f3a6e59736281544cd1d739dc4f"
+    sha256 cellar: :any,                 arm64_sonoma:   "f2c86a65bd81527768bfe1464538cdafa4c84ee8bde7ee8fca55e3eb7b99c93d"
+    sha256 cellar: :any,                 arm64_ventura:  "41cd3aa1fb8fda366927e67109db45bbb38e5b0d4147770d1d7d2253b73a66ed"
+    sha256 cellar: :any,                 arm64_monterey: "8ddd1307221e3a07c85540f5f960e6461c44f7a08a7fc82ad2ebe8ce640b45a4"
+    sha256 cellar: :any,                 sonoma:         "f658e4e63d62acf2d42b63393291ba780e693e994c54a26b1df5de61a2b874ca"
+    sha256 cellar: :any,                 ventura:        "d42520fffc0aff7d901e564cf03d8a60756cf2f5c07e6cbfd9f011eabd96692f"
+    sha256 cellar: :any,                 monterey:       "42cc69a0abd1bdc7dd390c7a61b61574f6dfd86f6f9e450161e2138aa85850f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98513bfbe492f9217b3142f2bbeed216972e06951e201a7e1d5f2d84f7d457e0"
   end
 
   head do
@@ -47,13 +46,6 @@ class Curl < Formula
 
   uses_from_macos "krb5"
   uses_from_macos "zlib"
-
-  # Fixes `curl: (23) Failed writing received data to disk/application`
-  # Remove in next release
-  patch do
-    url "https://github.com/curl/curl/commit/b30d694a027eb771c02a3db0dee0ca03ccab7377.patch?full_index=1"
-    sha256 "da4ae2efdf05169938c2631ba6e7bca45376f1d67abc305cf8b6a982c618df4d"
-  end
 
   def install
     tag_name = "curl-#{version.to_s.tr(".", "_")}"
