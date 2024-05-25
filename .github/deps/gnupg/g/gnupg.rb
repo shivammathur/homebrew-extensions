@@ -11,13 +11,14 @@ class Gnupg < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "06ef66459900967866adbca613753707c6836c7b32b1c1f9d7a647771db88e2a"
-    sha256 arm64_ventura:  "5640c700c6d704a612f849d00dfd00b1361cfb7664ce1e4be14b981044917aef"
-    sha256 arm64_monterey: "74cdf0e0430980129545583496f6a2d908b9f8a8b0e69a4e8484f3aee4e7647d"
-    sha256 sonoma:         "bd0eaa9e5cb762f3426380799089831c34fd27dc608cc3bd15a86b0b43df8ce2"
-    sha256 ventura:        "3e1ab240be58c5267dbd3bc9cd82a19b09b96507169188a20adf710886733bd3"
-    sha256 monterey:       "9ea477a517f2de40c9bf7a8a335f6f2d7c1c234a31f47596f016305d175de908"
-    sha256 x86_64_linux:   "3d0b4817c65315ef6457feb0e6e26672fc0a91475e64499304ebf5fc5faeb39d"
+    rebuild 1
+    sha256 arm64_sonoma:   "788b60ce047a2f42d2ecd7d2aa9df254d1757c48e1b7e4754b03f0659a326848"
+    sha256 arm64_ventura:  "1c7b98bc6ee15c3802434b579d8c3c22871394bf67b90f1c812d338b548d4784"
+    sha256 arm64_monterey: "61e9545b0230b560f37fcfe4a8733d0ccd2380e8378314facb5b9f4bc8d8abb2"
+    sha256 sonoma:         "96d57cbeb4c200ffd1b86109504c0ee3b3bd471c686e9f2209e5cda6a3c63731"
+    sha256 ventura:        "1cf8c4e10b1fb68dc4ecbe7103afc397269483029d25d34536da7852af50397c"
+    sha256 monterey:       "7db109b4a863f306649ef7176eb3d35131ab5b10753c056c426d0472b3514f91"
+    sha256 x86_64_linux:   "c4cd477cce7539e1c111562e2d23960a90bc807d4871ccde28e84d0b7198d5ca"
   end
 
   depends_on "pkg-config" => :build
@@ -28,11 +29,11 @@ class Gnupg < Formula
   depends_on "libksba"
   depends_on "libusb"
   depends_on "npth"
-  depends_on "openldap"
   depends_on "pinentry"
   depends_on "readline"
 
   uses_from_macos "bzip2"
+  uses_from_macos "openldap"
   uses_from_macos "sqlite", since: :catalina
   uses_from_macos "zlib"
 
