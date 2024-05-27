@@ -31,6 +31,16 @@ class Librsvg < Formula
   depends_on "glib"
   depends_on "pango"
 
+  uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "fontconfig"
+    depends_on "freetype"
+    depends_on "gettext"
+    depends_on "harfbuzz"
+    depends_on "libpng"
+  end
+
   def install
     args = %W[
       --disable-dependency-tracking
