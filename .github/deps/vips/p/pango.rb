@@ -1,19 +1,19 @@
 class Pango < Formula
   desc "Framework for layout and rendering of i18n text"
   homepage "https://pango.gnome.org"
-  url "https://download.gnome.org/sources/pango/1.52/pango-1.52.2.tar.xz"
-  sha256 "d0076afe01082814b853deec99f9349ece5f2ce83908b8e58ff736b41f78a96b"
+  url "https://download.gnome.org/sources/pango/1.54/pango-1.54.0.tar.xz"
+  sha256 "8a9eed75021ee734d7fc0fdf3a65c3bba51dfefe4ae51a9b414a60c70b2d1ed8"
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/pango.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "d7310d07a8e4de1846e72e1965012b706df6b6b68b7d7044d0b626927dd0dbda"
-    sha256 cellar: :any, arm64_ventura:  "70afddfad7b00656b7220b029d06d74097a0db1d5d7989157240e8b3c20ec383"
-    sha256 cellar: :any, arm64_monterey: "beb7df52397c4bf1d05384f41878938fb1bf582a73cc02ee91ffda6595b7d4fd"
-    sha256 cellar: :any, sonoma:         "c444b645580247700e28bd354648b317eb63f7f6bf2baae0f098911056b0f7a1"
-    sha256 cellar: :any, ventura:        "a4f074c18620090f87aa15b1879126cf9cb2f5ddaaa2c0b54e2fd17cd591485d"
-    sha256 cellar: :any, monterey:       "fb4cfb5fb199236e438b2da4ad85d510b0c64434c65060fbef6a74140ba651b2"
-    sha256               x86_64_linux:   "1cd2f38a7df814a3153d1d9904fa9de169621d35a70a38507879fa101010e44f"
+    sha256 cellar: :any, arm64_sonoma:   "c47cf2f24449280a2643d958e6f211a2db089f1c2cb3e9f27ef50f35701601ed"
+    sha256 cellar: :any, arm64_ventura:  "1a20935a0a5377fadbb6f02c6b9689d4d5e2a6e6d489e1d9e77b0684876046a6"
+    sha256 cellar: :any, arm64_monterey: "b79420edeeacdb59d0b1a131d3198f6dfcc8ec9dd3e6a4c6136271718e9ad41d"
+    sha256 cellar: :any, sonoma:         "2e8dc6924252fc6df5b73a0eae636f81a9cf872ac654ce08a7866f00f2169e5f"
+    sha256 cellar: :any, ventura:        "11d51f9281cd68d0b8718158df55bc28029e25956f1ad313cae99b31ae130dbb"
+    sha256 cellar: :any, monterey:       "03e0d179c3a4c47cf210c52073a2eee075013ee5617b026abc13aafc45f8ee22"
+    sha256               x86_64_linux:   "3cdf86a860b1e40093330d83b705cfdc326f2974332d65565e2ce8e15c9213b8"
   end
 
   depends_on "gobject-introspection" => :build
