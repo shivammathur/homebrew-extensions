@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: ${{github.event.inputs.formula}}
+      - name: ${{github.event.inputs.extension}}
         id: print_details
         run: |
           echo sender=${{github.event.sender.login}}
@@ -28,9 +28,8 @@ jobs:
 
       - name: Dispatch
         run: |
-           json_array=()
-           extension=${{github.event.inputs.extension}}
-           for formula in ./Formula/$extension@*.rb; do
-             json="{\"formula\": \"$(basename ${formula%.*})\", \"issue\":\"${{github.event.inputs.issue}}\", \"upload\":\"${{github.event.inputs.upload}}\"}"
-             echo $json | GITHUB_TOKEN=${{ secrets.HOMEBREW_GITHUB_API_TOKEN }} gh workflow run dispatch-rebottle.yml --json
-           done
+          extension=${{github.event.inputs.extension}}
+          for formula in "./Formula/$extension"@*.rb; do
+            json="{\"formula\": \"$(basename "${formula%.*}")\", \"issue\":\"${{github.event.inputs.issue}}\", \"upload\":\"${{github.event.inputs.upload}}\"}"
+            echo "$json" | GITHUB_TOKEN="${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}" gh workflow run dispatch-rebottle.yml --json
+          done

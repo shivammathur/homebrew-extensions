@@ -146,12 +146,13 @@ jobs:
         if: always()
         run: |
           cd bottles
-          count=$(ls *.json | wc -l | xargs echo -n)
+          count="$(find . -maxdepth 1 -name '*.json' -print | wc -l | xargs echo -n)"
           echo "$count bottles"
-          echo "::set-output name=count::$count"
-          failures=$(ls failed/*.json | wc -l | xargs echo -n)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          failures="$(find failed -maxdepth 1 -name '*.json' -print | wc -l | xargs echo -n)"
           echo "$failures failed bottles"
-          echo "::set-output name=failures::$failures"
+          echo "failures=$failures" >> "$GITHUB_OUTPUT"
+          
       - name: Upload failed bottles
         if: always() && steps.bottles.outputs.failures > 0
         uses: actions/upload-artifact@v3

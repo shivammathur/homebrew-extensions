@@ -53,16 +53,23 @@ jobs:
         env:
           GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-           json_array=()
-           if [[ "$GITHUB_MESSAGE" != *--build-only-* ]]; then
-             mapfile -t extensions < <(find ./Formula -name "*@*.rb" -print0 | xargs -0 basename -a | sed "s/@.*//" | sort | uniq)
-           else
-             IFS=, read -a extensions <<< $(echo "$GITHUB_MESSAGE" | grep -Po 'build-only-.*' | cut -d '-' -f 3-)
-           fi
-           for extension in ${extensions[@]}; do
-             json_array+=("{\"extension\": \"$extension\"}")
-           done
-           echo "matrix={\"include\":[$(echo ${json_array[@]} | sed -e 's|} {|}, {|g')]}" >> "$GITHUB_OUTPUT"
+          extensions=()
+          if [[ "$GITHUB_MESSAGE" != *--build-only-* ]]; then
+              mapfile -t extensions < <(find ./Formula -name "*@*.rb" -print0 | xargs -0 basename -a | sed "s/@.*//" | sort | uniq)
+          else
+              IFS=, read -ra extensions <<< "$(echo "$GITHUB_MESSAGE" | grep -Po 'build-only-.*' | cut -d '-' -f 3-)"
+          fi
+          json_array=""
+          first=true
+          for extension in "${extensions[@]}"; do
+              if [ "$first" = true ]; then
+                  first=false
+                  json_array="{\"extension\": \"$extension\"}"
+              else
+                  json_array+=", {\"extension\": \"$extension\"}"
+              fi
+          done
+          echo "matrix={\"include\":[$json_array]}" >> "$GITHUB_OUTPUT"
 
   create-pr:
     if: github.event_name != 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
@@ -75,7 +82,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Add brew to PATH
-        run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+        run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> "$GITHUB_PATH"
 
       - name: Patch formula
         id: patch
@@ -275,4 +282,4 @@ jobs:
       - name: Add Label
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr edit "$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')" --add-label "build-complete"
+        run: gh pr edit "$(echo "$GITHUB_REF" | awk 'BEGIN { FS = "/" } ; { print $3 }')" --add-label "build-complete"
