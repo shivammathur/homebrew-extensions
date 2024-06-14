@@ -111,7 +111,7 @@ jobs:
           IFS=', ' read -ra extensions <<< "${{ matrix.extensions }}"
           for extension in "${extensions[@]}"; do
             echo "::group::$extension"
-            brew linkage shivammathur/extensions/$extension@${{ matrix.php }}
+            brew linkage "shivammathur/extensions/$extension@${{ matrix.php }}"
             echo "::endgroup::"
           done
           

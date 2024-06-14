@@ -67,9 +67,9 @@ jobs:
       - name: Set environment variables
         if: runner.os == 'macOS'
         run: |
-          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> $GITHUB_ENV
+          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> "$GITHUB_ENV"
           # TODO: remove the line below once set in the runner .env file
-          echo 'GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED=1' >> $GITHUB_ENV
+          echo 'GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED=1' >> "$GITHUB_ENV"
 
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -130,9 +130,9 @@ jobs:
         if: always()
         run: |
           cd bottles
-          count=$(ls *.json | wc -l | xargs echo -n)
+          count="$(find . -maxdepth 1 -name '*.json' -print | wc -l)"
           echo "$count bottles"
-          echo "::set-output name=count::$count"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
 
       - name: Upload bottles to GitHub Actions
         if: always() && steps.bottles.outputs.count > 0
