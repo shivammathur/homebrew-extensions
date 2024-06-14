@@ -8,8 +8,8 @@ class SwooleAT84 < AbstractPhpExtension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
-  url "https://github.com/swoole/swoole-src/archive/v5.1.2.tar.gz"
-  sha256 "89d88ef2f7dfca96d4ff74febc62ec78ccbf92996176107cf30d538b30dee1ba"
+  url "https://github.com/swoole/swoole-src/archive/v5.1.3.tar.gz"
+  sha256 "dc7a24094fe86025de4a0fed2a94005d2266a29332e7e9e6be50238a8ef6cafb"
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -25,6 +25,7 @@ class SwooleAT84 < AbstractPhpExtension
   end
 
   depends_on "brotli"
+  depends_on "curl"
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
@@ -37,7 +38,6 @@ class SwooleAT84 < AbstractPhpExtension
       --enable-swoole-curl
       --enable-http2
       --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
-      --with-brotli-dir=#{Formula["brotli"].opt_prefix}
     ]
     inreplace "ext-src/php_swoole_private.h", "0, NULL, 0, ", ""
     safe_phpize
