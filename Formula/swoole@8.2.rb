@@ -15,12 +15,12 @@ class SwooleAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sonoma:   "a375d8ecae9d98f5aaaa0ea33cd5055abc3afa008e28226955603a67c2240f38"
-    sha256 cellar: :any,                 arm64_ventura:  "c086ed1d62906d8542a57484ca163d3c6aad3bf11df0503b393fd22820b3c7d5"
-    sha256 cellar: :any,                 arm64_monterey: "44b1029d4fdb19f3fac24c735b9a77ced989b367092b28054e9d573bec2d2e65"
-    sha256 cellar: :any,                 ventura:        "035ddb5a62ae4d8d185ebfba5c24eb287ed0b7f5d5e0c7149c80d2f5e9a9aa64"
-    sha256 cellar: :any,                 monterey:       "d27cf752333afddce3a3b74bce2bc48fe83d8aa0cd42a24a652bdaf3805abcc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ef45e8b4f21bbccea2f8cd7900735d9a36a4cd1605652e1696a6f94522f9827"
+    sha256 cellar: :any,                 arm64_sonoma:   "e4a5d9fcbdd887292ac5f0a72597c69acb3c5c42a6152aebf7753954dad3fdd9"
+    sha256 cellar: :any,                 arm64_ventura:  "365f739dc0b584a4f6720762a4141ed0bd1c96b0f65d5dc6f6d2aa28c947414d"
+    sha256 cellar: :any,                 arm64_monterey: "533397984e367e481447ed3db4a74812b0c23cc4d2bff074ce8f24f9b217c07c"
+    sha256 cellar: :any,                 ventura:        "b7fe73616cb5adaba0e633c10490f11ca51f7b42e88a2159308cafd76404af53"
+    sha256 cellar: :any,                 monterey:       "1cade96c1c47b49a21e4c8ed645d6637bbbb8d9d6be69b2e1cd729863c984aa3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21a47064be81c2939c8e7a334ab007b34152fa395dbedf8f580d3c3577b9ebe0"
   end
 
   depends_on "brotli"
