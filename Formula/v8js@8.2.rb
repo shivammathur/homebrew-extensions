@@ -37,6 +37,7 @@ class V8jsAT82 < AbstractPhpExtension
     ENV.append "CXXFLAGS", "-Wno-c++11-narrowing"
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
+    inreplace "v8js_variables.cc", ", v8::PROHIBITS_OVERWRITING, v8::ReadOnly", ""
     inreplace "v8js_v8object_class.cc", "static int v8js_v8object_get" \
                                       , "static zend_result v8js_v8object_get"
     safe_phpize

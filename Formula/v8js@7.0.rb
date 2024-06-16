@@ -37,6 +37,7 @@ class V8jsAT70 < AbstractPhpExtension
     ENV.append "CXXFLAGS", "-Wno-c++11-narrowing -Wno-deprecated-register -Wno-register"
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
+    inreplace "v8js_variables.cc", ", v8::PROHIBITS_OVERWRITING, v8::ReadOnly", ""
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
