@@ -1,8 +1,8 @@
 class Cfitsio < Formula
   desc "C access to FITS data files with optional Fortran wrappers"
   homepage "https://heasarc.gsfc.nasa.gov/docs/software/fitsio/fitsio.html"
-  url "https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.4.0.tar.gz"
-  sha256 "95900cf95ae760839e7cb9678a7b2fad0858d6ac12234f934bd1cb6bfc246ba9"
+  url "https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.4.1.tar.gz"
+  sha256 "66a1dc3f21800f9eeabd9eac577b91fcdd9aabba678fbba3b8527319110d1d25"
   license "CFITSIO"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cfitsio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b03ed1452ea75406a4cb032d9ffdff6d0212fe32ed37c804dbed5131326b50b8"
-    sha256 cellar: :any,                 arm64_ventura:  "eeef88260a116dfd268b0da53b5b29f68703a60d1a6d73f548c512c2bc40f8a0"
-    sha256 cellar: :any,                 arm64_monterey: "9cdb23e252f43ad8297eb56127828dd3d57e925e5a697f22a572ea3246888c32"
-    sha256 cellar: :any,                 sonoma:         "6fa804978d31fade2b596e6b7f8c511d7306b48521a1bfbfb99af1fb175bca26"
-    sha256 cellar: :any,                 ventura:        "5dd2a84c1e4b537b80dc95cac5693fb6621407477e3dcdd2d5026d7395330b92"
-    sha256 cellar: :any,                 monterey:       "15c76678e98ca4b654ebafd68915fdca5fa06641a2870bc4f2bf7995a5c7a25c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06931190944abe9dd019cb2be0bf2ef97607e80e27610b1e77c550a19294df94"
+    sha256 cellar: :any,                 arm64_sonoma:   "c163bdde8590001f48dd1b31e6282c2b75122851da72af9aeebb43779bc15a0d"
+    sha256 cellar: :any,                 arm64_ventura:  "f5f1d388397eb146f018874376eedb74ade30214a5cd7e70abfef9784e47e6c3"
+    sha256 cellar: :any,                 arm64_monterey: "5f791cd81d01fb4613d3f2676054e593bcbc0374ac6e70f9b22a7e879069e0b7"
+    sha256 cellar: :any,                 sonoma:         "46d2b20c6465f76fb47462bf8c05784fd85084c06096fc9aa2598f4a4421cb58"
+    sha256 cellar: :any,                 ventura:        "189ff0c8bf05f6b237414d7784795361c142b999bdf27e6a89738ac20f682db5"
+    sha256 cellar: :any,                 monterey:       "4e848192f3a797f9f9494bccccf614e35d493a869dd8a782ff77071fd14572d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7aa412137e37b4faac67cfe2f30ebc3ad52a97b5658bc64a476131d461d14c8b"
   end
 
   uses_from_macos "zlib"
