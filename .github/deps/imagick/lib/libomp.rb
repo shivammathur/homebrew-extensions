@@ -1,8 +1,8 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.7/openmp-18.1.7.src.tar.xz"
-  sha256 "6523c898d754d466b77b64ddca8fd0185c5aeb7f24260ddb0fae5779eb31cee3"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/openmp-18.1.8.src.tar.xz"
+  sha256 "60ed57245e73894e4a2a89b15889f367bd906abfe6d3f92e1718223d4b496150"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Libomp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4c7d313007a69ef594934a732b09f93109b5071c9ce918048c3fd922c24eccc4"
-    sha256 cellar: :any,                 arm64_ventura:  "783c9e9a0e4a44efe2061b5d32671796030def2851177fce57f88238591fa7c6"
-    sha256 cellar: :any,                 arm64_monterey: "0ad87bf571356f09edac66f4faaab5db4162151e7d453457a41071225045e302"
-    sha256 cellar: :any,                 sonoma:         "0b7b1a00df016c58a3cd456678265ecaf0001221904c7de2771a5fc3a4fbac9c"
-    sha256 cellar: :any,                 ventura:        "84a9586dd4bcb38323758f38bc6690c5124b74cba07eecc8e580eebe39956b1b"
-    sha256 cellar: :any,                 monterey:       "797b4ab69872a061424d72e74fbec8dfcacce0e92a67e891d49266837fcfeea4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "023d6df02df05f287362186dd71f56ca60b01c2b53e16d5def86d18470009dfd"
+    sha256 cellar: :any,                 arm64_sonoma:   "697ee21826162653faddf3c7eb7810ee90cbdaad1a2f07019b8824e4113094b8"
+    sha256 cellar: :any,                 arm64_ventura:  "dce27dc860127be3aa739a30496efe474f80ee7c8927d26ac7e3985f45a2f46b"
+    sha256 cellar: :any,                 arm64_monterey: "a1953d256b69b0b29cb1b2f933a15878ef9cfa8caf5f8c439ce4d4a8d6892ca3"
+    sha256 cellar: :any,                 sonoma:         "8b1ba704e73036c4e844193d67fe537534aa2901006cbaca25315fac3cdfcb95"
+    sha256 cellar: :any,                 ventura:        "6acfa701a4c5a2256a6996f669b81a494626f635a1366cca25d7cfff5b8142f8"
+    sha256 cellar: :any,                 monterey:       "0f1883c4651a04259281cc0fb4791effe7ab409a0d55d62fdd16435bf4d7e61e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7a55a0b85f9e65bb3d14b5acad4876509a312ed78f03cddf76ba75ec65e77a3"
   end
 
   # Ref: https://github.com/Homebrew/homebrew-core/issues/112107
@@ -32,8 +32,8 @@ class Libomp < Formula
   end
 
   resource "cmake" do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.7/cmake-18.1.7.src.tar.xz"
-    sha256 "f0b67599f51cddcdbe604c35b6de97f2d0a447e18b9c30df300c82bf1ee25bd7"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/cmake-18.1.8.src.tar.xz"
+    sha256 "59badef592dd34893cd319d42b323aaa990b452d05c7180ff20f23ab1b41e837"
   end
 
   def install
