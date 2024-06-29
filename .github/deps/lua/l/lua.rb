@@ -1,8 +1,8 @@
 class Lua < Formula
   desc "Powerful, lightweight programming language"
   homepage "https://www.lua.org/"
-  url "https://www.lua.org/ftp/lua-5.4.6.tar.gz"
-  sha256 "7d5ea1b9cb6aa0b59ca3dde1c6adcb57ef83a1ba8e5432c0ecd06bf439b3ad88"
+  url "https://www.lua.org/ftp/lua-5.4.7.tar.gz"
+  sha256 "9fbf5e28ef86c69858f6d3d34eccc32e911c1a28b4120ff3e84aaa70cfbf1e30"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,13 @@ class Lua < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c9f783687410f8f1e396db95652fc18af7a0ffc9aab00bdd3b705a855fb74cb4"
-    sha256 cellar: :any,                 arm64_ventura:  "8d0982a83cf18477e039858ae1d8b2393758f2d78a6bb3aaf14379af8973a5d9"
-    sha256 cellar: :any,                 arm64_monterey: "f2f26a580bc00fdb0babd48810eaa4eb8cdc9fb28706ff49e8c4178afac6ebf1"
-    sha256 cellar: :any,                 arm64_big_sur:  "42984d1fbac9444e75a4713d62e28fef139dc539fdbc9ab260738c8bc153547c"
-    sha256 cellar: :any,                 sonoma:         "51f2d4b50118528724f7966e6daaea11b2a84d32971860544f1038298c41aa38"
-    sha256 cellar: :any,                 ventura:        "9b7170b3d84e70b9e89f356355744a277718ffcbee6a1b385ec6431d7ada2da2"
-    sha256 cellar: :any,                 monterey:       "d3f55cd3b4122bfa85992aab125205041379f99879d90740d62f054498cba97d"
-    sha256 cellar: :any,                 big_sur:        "e16b7d9390a3906a71d419b840ff81486607dcf557d1c35a03aee2f4b20b538b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "035de73c3dd1a67be2767da79c1fea114132ccc8965c3536113e7477d3b70d42"
+    sha256 cellar: :any,                 arm64_sonoma:   "84862c80e0cba6ae50dc62a560bbff91a2607a2952d037da127588b5582bb272"
+    sha256 cellar: :any,                 arm64_ventura:  "751b91605496a0ca76301b9dbfbdd151b6dd807dfd0acc3d517f631bf7dac110"
+    sha256 cellar: :any,                 arm64_monterey: "9fa819a1bf2476966556690ca374e34543e33395af8147c7d9fc163bec02fc0b"
+    sha256 cellar: :any,                 sonoma:         "e683482576a98b94e06c2049e874da06b2fe6a27fd6ad1076d280af7c8f9ad8d"
+    sha256 cellar: :any,                 ventura:        "21f349c23444c0f74e7626e6837b4236f1617c3f0828157efe7438ed941cfb3d"
+    sha256 cellar: :any,                 monterey:       "b3efe2d96158718df6a5255bf92e2809565cab7ede49d1631fa0247040fa148e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e21c57b663809dfdbf18aa773bac852c0206c728e73daab48767c60bb8b1a7c"
   end
 
   uses_from_macos "unzip" => :build
