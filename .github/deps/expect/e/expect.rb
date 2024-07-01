@@ -32,6 +32,7 @@ class Expect < Formula
   depends_on "tcl-tk"
 
   conflicts_with "ircd-hybrid", because: "both install an `mkpasswd` binary"
+  conflicts_with "bash-snippets", because: "both install `weather` binaries"
 
   # Patch for configure scripts and various headers:
   # https://core.tcl-lang.org/expect/tktview/0d5b33c00e5b4bbedb835498b0360d7115e832a0

@@ -33,6 +33,7 @@ class TclTk < Formula
   end
 
   conflicts_with "page", because: "both install `page` binaries"
+  conflicts_with "the_platinum_searcher", because: "both install `pt` binaries"
 
   resource "critcl" do
     url "https://github.com/andreas-kupries/critcl/archive/refs/tags/3.2.tar.gz"

@@ -30,6 +30,8 @@ class Libcouchbase < Formula
   depends_on "libuv"
   depends_on "openssl@3"
 
+  conflicts_with "cbc", because: "both install `cbc` binaries"
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DLCB_NO_TESTS=1",
