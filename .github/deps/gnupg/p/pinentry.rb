@@ -1,9 +1,9 @@
 class Pinentry < Formula
   desc "Passphrase entry dialog utilizing the Assuan protocol"
   homepage "https://www.gnupg.org/related_software/pinentry/"
-  url "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.0.tar.bz2"
-  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/pinentry/pinentry-1.3.0.tar.bz2"
-  sha256 "9b3cd5226e7597f2fded399a3bc659923351536559e9db0826981bca316494de"
+  url "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.1.tar.bz2"
+  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/pinentry/pinentry-1.3.1.tar.bz2"
+  sha256 "bc72ee27c7239007ab1896c3c2fae53b076e2c9bd2483dc2769a16902bce8c04"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,20 +12,23 @@ class Pinentry < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "929d0da215b25c904bd6745e6f61d778384857cd45221382670f72bf94d04968"
-    sha256 cellar: :any,                 arm64_ventura:  "90851b4108753f8b10f6c084200348809d3e306f5bf766fe8ba42b5358acd909"
-    sha256 cellar: :any,                 arm64_monterey: "14a6bd33b369d31d49e3e95c825b30cb17999412713c8d5fa9fa063aded47398"
-    sha256 cellar: :any,                 sonoma:         "bbcc4d94c528861d9d3823ad697f65b6e15562f80ca671beb723b338079c7024"
-    sha256 cellar: :any,                 ventura:        "f2f61b16e0cab610927e312be8cdff73c9b2a6da7fe97fde09e3b0ee27d01823"
-    sha256 cellar: :any,                 monterey:       "901f46be67b462a5939b59e4cd525b335522f091bde44a0d773b289f4a7f957b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cf5904bae7ec29fa198f7af8d75d0889286933e87c9886ab5c7a78e1aa72c9f"
+    sha256 cellar: :any,                 arm64_sonoma:   "4a616fc6972d5fc1d62eec71faee16d51712a1c257fa7595c7cdeaeab8a35dc7"
+    sha256 cellar: :any,                 arm64_ventura:  "621c724b56c3c2c3d1bda6c53a8c46323a238e3ca7d8e7403da2fa723340ee3f"
+    sha256 cellar: :any,                 arm64_monterey: "41b0516e2c6ca3a409f067a5b0f1a34d64710e06fb60175e0b6e508df8c21e50"
+    sha256 cellar: :any,                 sonoma:         "1538fbb8af64f8a3703d75a1d08a9e04440aa097d770d2c47b7e363e97df6aa4"
+    sha256 cellar: :any,                 ventura:        "29920d31f4b229b34eaf8d4912d4ce260610212ef0f3586d8816e12bf64a067c"
+    sha256 cellar: :any,                 monterey:       "c6afcdf1164022a8dafd712b729d1003d7c02aa23106fb0120862f6e6f32ebbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f624e07c6da1c5bca8ac869ca0012dd7aa92a98fc72a4c89b98a66063cd40b8"
   end
 
   depends_on "pkg-config" => :build
   depends_on "libassuan"
   depends_on "libgpg-error"
 
+  uses_from_macos "ncurses"
+
   on_linux do
+    depends_on "glib"
     depends_on "libsecret"
   end
 
