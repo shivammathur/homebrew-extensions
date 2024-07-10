@@ -2,19 +2,19 @@ class Glib < Formula
   include Language::Python::Shebang
 
   desc "Core application library for C"
-  homepage "https://developer.gnome.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.80/glib-2.80.3.tar.xz"
-  sha256 "3947a0eaddd0f3613d0230bb246d0c69e46142c19022f5c4b1b2e3cba236d417"
+  homepage "https://docs.gtk.org/glib/"
+  url "https://download.gnome.org/sources/glib/2.80/glib-2.80.4.tar.xz"
+  sha256 "24e029c5dfc9b44e4573697adf33078a9827c48938555004b3b9096fa4ea034f"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "1658d3a6f68cbd4d92652971f9c8fcbb485a792bb4ade14159949e32891e930f"
-    sha256 arm64_ventura:  "7da35cf5176cfc050731a54ce2ec43035c1fd44b10a31308d4430dc825cc36f4"
-    sha256 arm64_monterey: "188c7c13365db163ecd4210ae60e315f0f84a16901c2126df0687c485ddda8d6"
-    sha256 sonoma:         "00fd287ab762d8e4b7f458a20d7a5a8924b5a185df6a070a9139f21ccd685b29"
-    sha256 ventura:        "6c1018e3de9ee27e0da413a56afaf42bc75eb148a846bfbbe86fe0cde6f29a07"
-    sha256 monterey:       "b6761564a1021728437898d4b91c5468cf237ec972a06abc296082ca5c32acd1"
-    sha256 x86_64_linux:   "0e5f553733e0bf87c88c0c98cbcb5dc4de4aa41ced5b78e345924362fbaf62a4"
+    sha256 arm64_sonoma:   "e52c5b1cfc4a9c37fbd697a29d37c96d778d0699d2051d167ca3fd76010c25e2"
+    sha256 arm64_ventura:  "78dbeb891e3cb378b5ac090cd994b70b4acb2595e7dd5e5240b91074c9dbbefe"
+    sha256 arm64_monterey: "3334b87e3251be90cd19a0494aa4b97a8dfabc0b83eff705c703df17cc07b925"
+    sha256 sonoma:         "84e37b74429bf0d264437160040f6f2b39ea7ef707898974e77c01f3b619de67"
+    sha256 ventura:        "3f1731d0f5daad69f028f15e2477c6f1211efdfd19fb653cf6727901709d9827"
+    sha256 monterey:       "a282c1539c408ba9245b009f5babdd7b8a9522cfcbcf00f8697718af1fc62528"
+    sha256 x86_64_linux:   "75af431b3cf94313eb31f3e6433ca3e39b42d1cfe538bc7bc92c57240b9889ee"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -53,8 +53,8 @@ class Glib < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   # replace several hardcoded paths with homebrew counterparts
