@@ -1,8 +1,8 @@
 class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/confluentinc/librdkafka"
-  url "https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "d645e47d961db47f1ead29652606a502bdd2a880c85c1e060e94eea040f1a19a"
+  url "https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "3dc62de731fd516dfb1032861d9a580d4d0b5b0856beb0f185d06df8e6c26259"
   license "BSD-2-Clause"
   head "https://github.com/confluentinc/librdkafka.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Librdkafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "208f157d26a48df8e85e59eb6416210b0270c61d7f9c5ca69abd7381189b5d90"
-    sha256 cellar: :any,                 arm64_ventura:  "8b36d9d001260c150ff6daf09e860ff75dedc4ac6c1b1f01320ac88c497960df"
-    sha256 cellar: :any,                 arm64_monterey: "63d803e4ba387ac1f52bd7fa37211e002c812c5b480bee5d3c8825a4672249c1"
-    sha256 cellar: :any,                 sonoma:         "9dbfd2304c6a916db25834f834a320ab66010cf1ff227a865fa59d236af4b64d"
-    sha256 cellar: :any,                 ventura:        "cc8320ea4a52b79de84ec017fa61c23a8a20ed2c9d59f1df63043d7fa124c8a5"
-    sha256 cellar: :any,                 monterey:       "cb218e8ee407e456447205a1ea8fcf92963b2bf25c6cd4ed163aa5811f89597b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80ac119525092a81ac6d0306c20de38a30a3a1123b6d853c7f3bc165de85328f"
+    sha256 cellar: :any,                 arm64_sonoma:   "a8fe68b05e077d9fcc4b56dfce0464b2de12945b4f1456ca18613640c1d15846"
+    sha256 cellar: :any,                 arm64_ventura:  "98b46b50c48c052a562d621c39f9dfa07fa9780bde0de32470499dc5e4ffe6a1"
+    sha256 cellar: :any,                 arm64_monterey: "6103608170fa619a4ad6aa4276dc889c86140ef0bc78019f4197ce8019da26dc"
+    sha256 cellar: :any,                 sonoma:         "2423f0e26db407d1bc02ed4022b6a2e6aadf2567b866e28f46231127a0684dce"
+    sha256 cellar: :any,                 ventura:        "a2c7322e256621f5722c2a6f8e1b9bc300916d3bf29fb717a3c035a3cec0b9f7"
+    sha256 cellar: :any,                 monterey:       "8d76e1d2e176f7900fdc4d762a7d9392d71b67188fa555c82a55d2da64e1eec4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f765cf7002aaacbba352b14147904383fcddeefe599648edd73afe0f8fee4bb"
   end
 
   depends_on "pkg-config" => :build

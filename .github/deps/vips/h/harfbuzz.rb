@@ -1,19 +1,19 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://github.com/harfbuzz/harfbuzz/archive/refs/tags/8.5.0.tar.gz"
-  sha256 "7ad8e4e23ce776efb6a322f653978b3eb763128fd56a90252775edb9fd327956"
+  url "https://github.com/harfbuzz/harfbuzz/archive/refs/tags/9.0.0.tar.gz"
+  sha256 "b7e481b109d19aefdba31e9f5888aa0cdfbe7608fed9a43494c060ce1f8a34d2"
   license "MIT"
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "27ef5184c6701225923ed823c9f142cb4c3da654c9c0411228694d022d3f9958"
-    sha256 cellar: :any, arm64_ventura:  "577a436c50b9781051f192b6d2b582403577e9a9b7f371b3a8876d7681115572"
-    sha256 cellar: :any, arm64_monterey: "df3b31872298cfdc1ef6f9160e5718e758447ddcbd98db02e9bab36a4e789de2"
-    sha256 cellar: :any, sonoma:         "ce3db185a842341d92c1d11a18e37773e71534e3d5cf274cadfa49ebe1bef687"
-    sha256 cellar: :any, ventura:        "7ad6e99d2aab379be5bc3925b7b55a2e2ece3d0effb8150b5cf8969cd265fd01"
-    sha256 cellar: :any, monterey:       "1f4580cb1cb69ab2c2feffbdbba507d10f797d6a316f345448e91671954d702b"
-    sha256               x86_64_linux:   "cea529ad4ff59ec2fdb40d9784ce1c041a7d99404e969d0a7a1fab6e4b458e57"
+    sha256 cellar: :any, arm64_sonoma:   "9b683aa2fa183d1b26a5a2758663bebc1d45042be4c90cd3a5ab9de9c5d77d42"
+    sha256 cellar: :any, arm64_ventura:  "c565c041c5acf667970844755cfb9ed546607a0027fcefce6e2f055201212823"
+    sha256 cellar: :any, arm64_monterey: "b877274a0347b535bd526fc2b95b9aaabb3758b5bea76344adc71aabfd9e45ba"
+    sha256 cellar: :any, sonoma:         "748d0382c160b1501bc1e3020a7963b794d6afed4239f1baa4c01b7bd0f3b760"
+    sha256 cellar: :any, ventura:        "90cd2b6049560e6b719f666bf62c2a2a5ef4ee71717c249792d61ddf5433168e"
+    sha256 cellar: :any, monterey:       "0ae8564fad4510b9987eb42529b8b550d1b80834648d5a23d4f3b6f164e79d15"
+    sha256               x86_64_linux:   "3e2dc2ca41c19053edbef4c19808943597e6eda7530dd894021e1b3e4178c508"
   end
 
   depends_on "gobject-introspection" => :build
