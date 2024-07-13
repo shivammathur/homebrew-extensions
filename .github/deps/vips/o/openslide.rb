@@ -28,12 +28,12 @@ class Openslide < Formula
   depends_on "libtiff"
   depends_on "libxml2"
   depends_on "openjpeg"
+  depends_on "sqlite"
 
-  uses_from_macos "sqlite"
+  uses_from_macos "zlib"
 
-  resource "homebrew-svs" do
-    url "https://github.com/libvips/libvips/raw/d510807e/test/test-suite/images/CMU-1-Small-Region.svs"
-    sha256 "ed92d5a9f2e86df67640d6f92ce3e231419ce127131697fbbce42ad5e002c8a7"
+  on_macos do
+    depends_on "gettext"
   end
 
   def install
@@ -43,6 +43,11 @@ class Openslide < Formula
   end
 
   test do
+    resource "homebrew-svs" do
+      url "https://github.com/libvips/libvips/raw/d510807e/test/test-suite/images/CMU-1-Small-Region.svs"
+      sha256 "ed92d5a9f2e86df67640d6f92ce3e231419ce127131697fbbce42ad5e002c8a7"
+    end
+
     resource("homebrew-svs").stage do
       system bin/"slidetool", "prop", "list", "CMU-1-Small-Region.svs"
     end
