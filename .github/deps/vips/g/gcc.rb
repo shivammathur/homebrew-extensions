@@ -2,7 +2,7 @@ class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  revision 1
+  revision 2
   head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   stable do
@@ -30,13 +30,13 @@ class Gcc < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "55d0308e8b18062a65b5e021b0d2378bfa59ce00f1aab168692bacce2309d7c3"
-    sha256                               arm64_ventura:  "d392d25a2843f698a4a9b28264b0797759b94d6b617af829c345e6c35513bd47"
-    sha256                               arm64_monterey: "ed9b9cdb77ab2125576ee83995f67a0ad652d2a60eb492d143352fa65e79941b"
-    sha256                               sonoma:         "2e0a345d1d9730af4ff668daebeb8e7477175f1a18f6b83446a88944cf3a6dd7"
-    sha256                               ventura:        "ad8d000ac673d10434c1c12b945c707115536cb6ef8437780fae92b087b5b53b"
-    sha256                               monterey:       "eb2742da4807117169cf733f69b0eabfa514347c510067686c58f03971124c2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6356fd3788f92d60a10ed20cd6b1ec4f4d53235ece41bb7d8678707fabcbfdb1"
+    sha256                               arm64_sonoma:   "e1227afa804f5ee85190d5535a0a0fe73c58b1eab5237587eff70ab1b9ca9e5f"
+    sha256                               arm64_ventura:  "3f8ed3e421ef22d01d17ffc2cdb5c1cb76ca282965f8856df57adb4f500fc749"
+    sha256                               arm64_monterey: "9892be5aca16cc3af27d9a880887a06692c30e42b265ef8756e8440c2d9d3cb1"
+    sha256                               sonoma:         "716e2a7c8c1d730545cb2e4ac1672d352b5fabf27b047516910332dfc40d3236"
+    sha256                               ventura:        "5232770600bcf29aa29c975e15e2507ddbb2fbc659c23df8082b7d7b638a164f"
+    sha256                               monterey:       "b096ff8885dd151beedede482b30ef69e18782942e95acd9f44fe2894c83cf08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43f2a32e78d80b34474723d215347cb4be7c6ab1e6b3d42576bb202e1bbdae6c"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -49,7 +49,14 @@ class Gcc < Formula
   depends_on "mpfr"
   depends_on "zstd"
 
+  uses_from_macos "flex" => :build
+  uses_from_macos "m4" => :build
   uses_from_macos "zlib"
+
+  on_macos do
+    # macOS make is too old, has intermittent parallel build issue
+    depends_on "make" => :build
+  end
 
   on_linux do
     depends_on "binutils"
@@ -74,7 +81,7 @@ class Gcc < Formula
     #  - Ada and D, which require a pre-existing GCC to bootstrap
     #  - Go, currently not supported on macOS
     #  - BRIG
-    languages = %w[c c++ objc obj-c++ fortran]
+    languages = %w[c c++ objc obj-c++ fortran m2]
 
     pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
 
@@ -128,7 +135,7 @@ class Gcc < Formula
 
     mkdir "build" do
       system "../configure", *args
-      system "make", *make_args
+      system "gmake", *make_args
 
       # Do not strip the binaries on macOS, it makes them unsuitable
       # for loading plugins
@@ -137,11 +144,12 @@ class Gcc < Formula
       # To make sure GCC does not record cellar paths, we configure it with
       # opt_prefix as the prefix. Then we use DESTDIR to install into a
       # temporary location, then move into the cellar path.
-      system "make", install_target, "DESTDIR=#{Pathname.pwd}/../instdir"
+      system "gmake", install_target, "DESTDIR=#{Pathname.pwd}/../instdir"
       mv Dir[Pathname.pwd/"../instdir/#{opt_prefix}/*"], prefix
     end
 
     bin.install_symlink bin/"gfortran-#{version_suffix}" => "gfortran"
+    bin.install_symlink bin/"gm2-#{version_suffix}" => "gm2"
 
     # Provide a `lib/gcc/xy` directory to align with the versioned GCC formulae.
     # We need to create `lib/gcc/xy` as a directory and not a symlink to avoid `brew link` conflicts.
@@ -289,5 +297,16 @@ class Gcc < Formula
     EOS
     system "#{bin}/gfortran", "-o", "test", "test.f90"
     assert_equal "Done\n", shell_output("./test")
+
+    (testpath/"hello.mod").write <<~EOS
+      MODULE hello;
+      FROM InOut IMPORT WriteString, WriteLn;
+      BEGIN
+           WriteString("Hello, world!");
+           WriteLn;
+      END hello.
+    EOS
+    system "#{bin}/gm2", "-o", "hello-m2", "hello.mod"
+    assert_equal "Hello, world!\n", shell_output("./hello-m2")
   end
 end
