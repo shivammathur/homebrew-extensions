@@ -8,8 +8,8 @@ class EventAT73 < AbstractPhpExtension
   init
   desc "Event PHP extension"
   homepage "https://bitbucket.org/osmanov/pecl-event"
-  url "https://pecl.php.net/get/event-3.1.3.tgz"
-  sha256 "854a0bf07c6f3fedad398186ec71c3cd1bb8d35651e3f3341657a616a6981707"
+  url "https://pecl.php.net/get/event-3.1.4.tgz"
+  sha256 "5c4caa73bc2dceee31092ff9192139df28e9a80f1147ade0dfe869db2e4ddfd3"
   head "https://bitbucket.org/osmanov/pecl-event.git"
   license "PHP-3.01"
 
