@@ -8,8 +8,10 @@ class RedisAT84 < AbstractPhpExtension
   init
   desc "Redis PHP extension"
   homepage "https://github.com/phpredis/phpredis"
-  url "https://pecl.php.net/get/redis-6.0.2.tgz"
-  sha256 "01aeccb0e14f897fe56f0509be6e6991ff0ad459f9d34e95e4556d02699b9a03"
+  url "https://github.com/phpredis/phpredis.git",
+      branch:   "develop",
+      revision: "6673b5b2bed7f50600aad0bf02afd49110a49d81"
+  version "6.0.2"
   head "https://github.com/phpredis/phpredis.git", branch: "develop"
   license "PHP-3.01"
 
@@ -34,7 +36,7 @@ class RedisAT84 < AbstractPhpExtension
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
       headers = Dir["#{Formula["#{e}@8.4"].opt_include}/**/*.h"]
-      (buildpath/"redis-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
+      (buildpath/"include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
   end
 
@@ -54,15 +56,8 @@ class RedisAT84 < AbstractPhpExtension
       args << "--with-liblzf=#{Formula["liblzf"].opt_prefix}"
     end
 
-    Dir.chdir "redis-#{version}"
     patch_redis
     patch_spl_symbols
-    inreplace "library.c", "ext/standard/php_rand.h", "ext/random/php_random.h"
-    inreplace "backoff.c" do |s|
-      s.gsub!("ext/standard/php_rand.h", "ext/random/php_random.h")
-      s.gsub!("#include <ext/standard/php_mt_rand.h>", "")
-    end
-    inreplace "redis.c", "standard/php_random.h", "ext/random/php_random.h"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
