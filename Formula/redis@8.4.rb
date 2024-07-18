@@ -8,7 +8,7 @@ class RedisAT84 < AbstractPhpExtension
   init
   desc "Redis PHP extension"
   homepage "https://github.com/phpredis/phpredis"
-  url "https://github.com/phpredis/phpredis.git",
+  url "https://pecl.php.net/get/redis-6.0.2.tgz"
       branch:   "develop",
       revision: "6673b5b2bed7f50600aad0bf02afd49110a49d81"
   version "6.0.2"
