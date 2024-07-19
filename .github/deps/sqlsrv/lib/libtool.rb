@@ -7,16 +7,14 @@ class Libtool < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "211b174c29c24b3bdd42c44a12262ba479c4707b19bd2abd41f41a67f1b45cf5"
-    sha256 cellar: :any,                 arm64_ventura:  "a7196b340a6b2ee833b9451409a2e83b08ba192bebe4fd019c6e658789c76298"
-    sha256 cellar: :any,                 arm64_monterey: "359d2a8f85d03f310263b91c665bf591703e8a7a6e79396bc2fc64df75e0655a"
-    sha256 cellar: :any,                 arm64_big_sur:  "faa1bb0c78ff5881efcaf476ccfc6ec400e56a4583fcc850d265b70f37fd577e"
-    sha256 cellar: :any,                 sonoma:         "47676ae503261483d5f1f35caa074efc416527bc471e25b0dc5c19bf588ed39f"
-    sha256 cellar: :any,                 ventura:        "d20beb0eb96c3ab67be5987393c64a575781c5d7abe6fb20efd2ae343a0680c7"
-    sha256 cellar: :any,                 monterey:       "4b248059b3fed99774183f17e335eca05edb25698dabcecbe916f4ec63a48cc6"
-    sha256 cellar: :any,                 big_sur:        "deffadfecec61da06dde9edf5eae19381f80f99ae78e57607732fd54be366b8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f55d5bcc07a45f599800b2c9fb5818c13be90803355e169cdb0e1ddc621bee5e"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "340b9fbf2269cecb88e577fa3aa7b176c3d49ef41eb3554ffeb0c35f0c0993af"
+    sha256 cellar: :any,                 arm64_ventura:  "0460265825de454568c55d6489ed8eb85297815a1f1ab37f2dafea5fd4414818"
+    sha256 cellar: :any,                 arm64_monterey: "f8d612f923986ac31e852356353e6b0caf7b607cca5fe18ef4487c8f118258c3"
+    sha256 cellar: :any,                 sonoma:         "443df5cc0b5333bf99339d2c93e1c4e28ab38a07babd46b1bfa561aa364a5075"
+    sha256 cellar: :any,                 ventura:        "079d5187a97c87b14bafa3e63d31b8c15338b09cae2ccd006538d3df46676279"
+    sha256 cellar: :any,                 monterey:       "ac3d1ccd5595e489d6b8185eb93c985a7f955e3b50057a5370678a911371ca58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "450ce5348079f2ad8dff146ca5c28a725b397ec4a7b3effb2090235ef9a61f67"
   end
 
   depends_on "m4"
@@ -38,7 +36,7 @@ class Libtool < Formula
         (libexec/"gnubin").install_symlink bin/"g#{prog}" => prog
         (libexec/"gnuman/man1").install_symlink man1/"g#{prog}.1" => "#{prog}.1"
       end
-      libexec.install_symlink "gnuman" => "man"
+      (libexec/"gnubin").install_symlink "../gnuman" => "man"
     end
 
     if OS.linux?
