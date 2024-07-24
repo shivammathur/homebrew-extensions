@@ -15,13 +15,14 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f2c86a65bd81527768bfe1464538cdafa4c84ee8bde7ee8fca55e3eb7b99c93d"
-    sha256 cellar: :any,                 arm64_ventura:  "41cd3aa1fb8fda366927e67109db45bbb38e5b0d4147770d1d7d2253b73a66ed"
-    sha256 cellar: :any,                 arm64_monterey: "8ddd1307221e3a07c85540f5f960e6461c44f7a08a7fc82ad2ebe8ce640b45a4"
-    sha256 cellar: :any,                 sonoma:         "f658e4e63d62acf2d42b63393291ba780e693e994c54a26b1df5de61a2b874ca"
-    sha256 cellar: :any,                 ventura:        "d42520fffc0aff7d901e564cf03d8a60756cf2f5c07e6cbfd9f011eabd96692f"
-    sha256 cellar: :any,                 monterey:       "42cc69a0abd1bdc7dd390c7a61b61574f6dfd86f6f9e450161e2138aa85850f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98513bfbe492f9217b3142f2bbeed216972e06951e201a7e1d5f2d84f7d457e0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "bc8132ec0801b0424847779b9d166df631206350f498a94be4c60acc54bd2632"
+    sha256 cellar: :any,                 arm64_ventura:  "62b31756d29a3e075cbd535f394c09608b37575699c645dd38940aac348f8f43"
+    sha256 cellar: :any,                 arm64_monterey: "d7c937ccbdb88a479ef59fedff0ff87e8682c07da0d1b82cba0d7cb4286c0bc7"
+    sha256 cellar: :any,                 sonoma:         "cf27c98e8c217202001cc4ff9f51e65d2c8ab35c4ce71e431838f1564bfbbe87"
+    sha256 cellar: :any,                 ventura:        "77964c43a5dab72136ba23d39d22372e0163620c16551a524ee258a9c078db87"
+    sha256 cellar: :any,                 monterey:       "82fadaf6b7d23af8e8e3ef6ad35fa2cd246585dea5620c86a779b3c4469b8a71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dda21443d095d3c0f36b8a728e83553c234fbc9a7bfedf149516dbebf1c2744"
   end
 
   head do
@@ -39,12 +40,12 @@ class Curl < Formula
   depends_on "libidn2"
   depends_on "libnghttp2"
   depends_on "libssh2"
-  depends_on "openldap"
   depends_on "openssl@3"
   depends_on "rtmpdump"
   depends_on "zstd"
 
   uses_from_macos "krb5"
+  uses_from_macos "openldap"
   uses_from_macos "zlib"
 
   def install
