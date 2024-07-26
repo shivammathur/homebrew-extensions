@@ -1,15 +1,14 @@
 class OpensslAT3 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
-  homepage "https://openssl.org/"
+  homepage "https://openssl-library.org"
   url "https://github.com/openssl/openssl/releases/download/openssl-3.3.1/openssl-3.3.1.tar.gz"
-  mirror "https://www.openssl.org/source/openssl-3.3.1.tar.gz"
   mirror "http://fresh-center.net/linux/misc/openssl-3.3.1.tar.gz"
   sha256 "777cd596284c883375a2a7a11bf5d2786fc5413255efab20c50d6ffe6d020b7e"
   license "Apache-2.0"
 
   livecheck do
-    url "https://www.openssl.org/source/"
-    regex(/href=.*?openssl[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://openssl-library.org/source/"
+    regex(/href=.*?openssl[._-]v?(3(?:\.\d+)+)\.t/i)
   end
 
   bottle do
