@@ -2,11 +2,11 @@ class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.se"
   # Don't forget to update both instances of the version in the GitHub mirror URL.
-  url "https://curl.se/download/curl-8.8.0.tar.bz2"
-  mirror "https://github.com/curl/curl/releases/download/curl-8_8_0/curl-8.8.0.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/curl-8.8.0.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/legacy/curl-8.8.0.tar.bz2"
-  sha256 "40d3792d38cfa244d8f692974a567e9a5f3387c547579f1124e95ea2a1020d0d"
+  url "https://curl.se/download/curl-8.9.0.tar.bz2"
+  mirror "https://github.com/curl/curl/releases/download/curl-8_9_0/curl-8.9.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/curl-8.9.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/legacy/curl-8.9.0.tar.bz2"
+  sha256 "1cb4c3657bd092b8c8e586afe87679c0aaa3d761af2aebabd6effd553e57936c"
   license "curl"
 
   livecheck do
@@ -15,14 +15,13 @@ class Curl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "bc8132ec0801b0424847779b9d166df631206350f498a94be4c60acc54bd2632"
-    sha256 cellar: :any,                 arm64_ventura:  "62b31756d29a3e075cbd535f394c09608b37575699c645dd38940aac348f8f43"
-    sha256 cellar: :any,                 arm64_monterey: "d7c937ccbdb88a479ef59fedff0ff87e8682c07da0d1b82cba0d7cb4286c0bc7"
-    sha256 cellar: :any,                 sonoma:         "cf27c98e8c217202001cc4ff9f51e65d2c8ab35c4ce71e431838f1564bfbbe87"
-    sha256 cellar: :any,                 ventura:        "77964c43a5dab72136ba23d39d22372e0163620c16551a524ee258a9c078db87"
-    sha256 cellar: :any,                 monterey:       "82fadaf6b7d23af8e8e3ef6ad35fa2cd246585dea5620c86a779b3c4469b8a71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dda21443d095d3c0f36b8a728e83553c234fbc9a7bfedf149516dbebf1c2744"
+    sha256 cellar: :any,                 arm64_sonoma:   "3ea92a3c87baa57a8560145d3b5c04764b57bcead38aee9f4dbb5abe0ae9bb5a"
+    sha256 cellar: :any,                 arm64_ventura:  "2917eac8398eca5fe9b3e558868f79eff0065dca39482f057642940d182a1c57"
+    sha256 cellar: :any,                 arm64_monterey: "97e7416d4ad72938d6a954b2551a33001fa8343bc2c5eba0c65487ed96e73c95"
+    sha256 cellar: :any,                 sonoma:         "06ca318604b8749e691ff73e29f0188598dbf5fec10389e90d6ba5af8ef411ca"
+    sha256 cellar: :any,                 ventura:        "2fcc5d2866470c65e6ebd22e836052b7cf8aeb4043edaca7c54a80d24da2938f"
+    sha256 cellar: :any,                 monterey:       "145882d1e5e5ef68641dce88f9d93079cd595d1d654b6931ff65fa044c54a364"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "429d393da10784a69d02558f8623f4c34d1c61f7adcff01234b598c8b21a454c"
   end
 
   head do
