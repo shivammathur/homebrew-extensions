@@ -9,7 +9,8 @@ fetch() {
      [[ "$VERSION" =~ (memcached|vld)@(7.[0-4]|8.[0-3]) ]] ||
      [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|pecl_http|raphf|rdkafka|ssh2|uuid|vips|xlswriter)@(7.[0-4]|8.[0-4]) ]] ||
      [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-4]) ]] ||
-     [[ "$VERSION" =~ (ast|mcrypt|redis)@(7.[2-4]|8.[0-4]) ]] ||
+     [[ "$VERSION" =~ (redis)@(7.[2-4]|8.[0-3]) ]] ||
+     [[ "$VERSION" =~ (ast|mcrypt)@(7.[2-4]|8.[0-4]) ]] ||
      [[ "$VERSION" =~ (ds|mailparse|psr)@(7.[3-4]|8.[0-4]) ]] ||
      [[ "$VERSION" =~ (memcache|protobuf|swoole|sqlsrv|pdo_sqlsrv|xdebug)@(8.[0-4]) ]]; then
     sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION" "$REPO"
