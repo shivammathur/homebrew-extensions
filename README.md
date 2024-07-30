@@ -56,7 +56,7 @@
 | `memcached`     | `PHP 5.6` to `PHP 8.4` |
 | `mongodb`       | `PHP 5.6` to `PHP 8.4` |
 | `msgpack`       | `PHP 5.6` to `PHP 8.4` |
-| `newrelic`      | `PHP 7.4` to `PHP 8.1` |
+| `newrelic`      | `PHP 7.4` to `PHP 8.3` |
 | `opentelemetry` | `PHP 8.0` to `PHP 8.4` |
 | `pcov`          | `PHP 7.1` to `PHP 8.4` |
 | `pdo_sqlsrv`    | `PHP 7.0` to `PHP 8.4` |
