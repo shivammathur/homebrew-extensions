@@ -43,7 +43,7 @@ class NewrelicAT83 < AbstractPhpExtension
   end
 
   def install
-    inreplace "agent/php_autorum.c", "return (char*)emalloc(len);", "return (char*)emalloc((unsigned)len);"
+    inreplace "agent/config.m4", "-l:libprotobuf-c.a", "-lprotobuf-c"
     inreplace "axiom/Makefile", "AXIOM_CFLAGS += -Wimplicit-fallthrough", "#AXIOM_CFLAGS += -Wimplicit-fallthrough"
     system "make", "daemon"
     system "make", "agent"
