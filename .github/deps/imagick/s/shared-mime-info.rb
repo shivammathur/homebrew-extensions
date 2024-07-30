@@ -12,13 +12,14 @@ class SharedMimeInfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "7ae03513d2d3a6fa26507d7ad9c83f8d45918cb8702c945bcee1c0c468577768"
-    sha256 cellar: :any, arm64_ventura:  "a72325b3fd197cf31399ef2604a1ae3baf93e4a144ad548c7464608117a8dfab"
-    sha256 cellar: :any, arm64_monterey: "0c4211d8572f33a5c3c7f3c1b7cc57a6e9f5599456269fcd31a7da9ed7b20f66"
-    sha256 cellar: :any, sonoma:         "cbaf7565626aac827d36135bb5c7a034d36f76577a4a77aaa78bfc89e508c0bf"
-    sha256 cellar: :any, ventura:        "555377ce54f93784fb32582161278fbb16228571cbdfb87ae7857ff8424ec267"
-    sha256 cellar: :any, monterey:       "eb9240c54296df715bd7f77ca11a86200d49accdc449d5fd1b00e752029924ea"
-    sha256               x86_64_linux:   "714303fdaefab5a012a1aa3d37243c02b1b4ff9bcd8347058165e903c4972840"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "8bc2cab1abadcf5e1cae58ed5e7790836ca77bdffca2e822b166d1f0428f2043"
+    sha256 cellar: :any, arm64_ventura:  "f93ab2e3969c2f220aeacbaebeb207e69dc7017ad482a0245800e4284edecf60"
+    sha256 cellar: :any, arm64_monterey: "2a333234f3aeea4068ce80b4a2a9eef000efe8171ab8e0ae3c9ec47b9c048979"
+    sha256 cellar: :any, sonoma:         "5b1d636b97cee712556c0b4254323d348e88539aa2624ab26fd4f628b123bd9b"
+    sha256 cellar: :any, ventura:        "a3d0d249beec0cdd7aec131d420fbb8c91aca2a1cf56ae279c70c5111dcb51f8"
+    sha256 cellar: :any, monterey:       "91e6622c3a864359424f0177e558dfbc9f1e0704de17f57dec0391d85f64cf12"
+    sha256               x86_64_linux:   "561ecaae8e76fd5fd2a7fbf23c1a6a55d9f9139896441f65b2eef09e6ace60e4"
   end
 
   depends_on "gettext" => :build
