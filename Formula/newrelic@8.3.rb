@@ -16,12 +16,6 @@ class NewrelicAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sonoma:   "9c94a00e5b360e93591bbaa540ff9e20a044d6044e977ac06ae7fe1f2a1164cb"
-    sha256 cellar: :any,                 arm64_ventura:  "925bd33eb7d9a9af666300cf02eb5a87cfd512e0753d293b520510ef18364505"
-    sha256 cellar: :any,                 arm64_monterey: "aa9c1d706b5473ddb5c56cfa301f38baade0a2bf5e0892fa45abfeef5cdea0a0"
-    sha256 cellar: :any,                 ventura:        "511fabf26decc58594be013f1a15176cb345870cd6cffa41550f32b3cf0d9c45"
-    sha256 cellar: :any,                 monterey:       "7373e491fb8ccc7e42a329b5d3c2c1bf0ad94999a832de813bfa047a83f0f588"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0558afad4cf82689873f5fc5841eb7a1bd2faaa5996502792f568a826aa5cff"
   end
 
   # for pcre_compile
