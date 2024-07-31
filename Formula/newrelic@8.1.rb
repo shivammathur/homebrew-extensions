@@ -8,9 +8,9 @@ class NewrelicAT81 < AbstractPhpExtension
   init
   desc "Newrelic PHP extension"
   homepage "https://github.com/newrelic/newrelic-php-agent"
-  url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v10.4.0.316.tar.gz"
-  version "v10.4.0.316"
-  sha256 "84eee1791051dafbad6627134dd052cc89e6611b175fda7808a65786938591b3"
+  url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v11.0.0.13.tar.gz"
+  version "v11.0.0.13"
+  sha256 "69f72541acf03e63a4d7d4a1053857b009279d1c526c9b68ed1338670a9e2cc0"
   head "https://github.com/newrelic/newrelic-php-agent.git", branch: "main"
   license "Apache-2.0"
 
@@ -50,7 +50,7 @@ class NewrelicAT81 < AbstractPhpExtension
   end
 
   def install
-    inreplace "agent/php_autorum.c", "return (char*)emalloc(len);", "return (char*)emalloc((unsigned)len);"
+    inreplace "agent/config.m4", "-l:libprotobuf-c.a", "-lprotobuf-c"
     inreplace "axiom/Makefile", "AXIOM_CFLAGS += -Wimplicit-fallthrough", "#AXIOM_CFLAGS += -Wimplicit-fallthrough"
     system "make", "daemon"
     system "make", "agent"

@@ -1,10 +1,10 @@
-# typed: true
+# typed: false
 # frozen_string_literal: true
 
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Newrelic Extension
-class NewrelicAT80 < AbstractPhpExtension
+class NewrelicAT84 < AbstractPhpExtension
   init
   desc "Newrelic PHP extension"
   homepage "https://github.com/newrelic/newrelic-php-agent"
@@ -16,13 +16,12 @@ class NewrelicAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_ventura:  "a3dc2936ad8f1a545fe6b49312ceac0d799263aa5375cc4f13b035d812d8ee26"
-    sha256 cellar: :any,                 arm64_monterey: "7a4bf85dbe1038e2d3e163c94381baef1295d07b3d525772e09f850836b65c03"
-    sha256 cellar: :any,                 arm64_big_sur:  "8990f961183223c8f43b42cd0055b95258826ce8e4484f214e48860150ac8091"
-    sha256 cellar: :any,                 ventura:        "fa11b6108a73c9b30bf7b4dcbb50d4723e0122496cf06d25cce022c45f2dfc6e"
-    sha256 cellar: :any,                 monterey:       "643a3c1287de199522276af033bbecc4661d8dd0458396a512f2c4491b624261"
-    sha256 cellar: :any,                 big_sur:        "20f52f3ebc0187b9c499dde86bb8faf709b5aea2e78adfec4e0761b7b9d5038d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72d21b4b2055aaf5b48282e95503fd3cd0c468e9f07c6164528fb73c7f1e70c4"
+    sha256 cellar: :any,                 arm64_sonoma:   "9c94a00e5b360e93591bbaa540ff9e20a044d6044e977ac06ae7fe1f2a1164cb"
+    sha256 cellar: :any,                 arm64_ventura:  "925bd33eb7d9a9af666300cf02eb5a87cfd512e0753d293b520510ef18364505"
+    sha256 cellar: :any,                 arm64_monterey: "aa9c1d706b5473ddb5c56cfa301f38baade0a2bf5e0892fa45abfeef5cdea0a0"
+    sha256 cellar: :any,                 ventura:        "511fabf26decc58594be013f1a15176cb345870cd6cffa41550f32b3cf0d9c45"
+    sha256 cellar: :any,                 monterey:       "7373e491fb8ccc7e42a329b5d3c2c1bf0ad94999a832de813bfa047a83f0f588"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0558afad4cf82689873f5fc5841eb7a1bd2faaa5996502792f568a826aa5cff"
   end
 
   # for pcre_compile
@@ -40,8 +39,8 @@ class NewrelicAT80 < AbstractPhpExtension
       [#{extension}]
       #{extension_type}="#{module_path}"
       newrelic.daemon.location="#{prefix}/daemon"
-      newrelic.daemon.address="/tmp/.newrelic80.sock"
-      newrelic.daemon.port="/tmp/.newrelic80.sock"
+      newrelic.daemon.address="/tmp/.newrelic84.sock"
+      newrelic.daemon.port="/tmp/.newrelic84.sock"
       newrelic.logfile="/var/log/newrelic_php_agent.log"
       newrelic.daemon.logfile="/var/log/newrelic_daemon.log"
     EOS
