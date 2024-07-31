@@ -24,11 +24,9 @@ class Libvmaf < Formula
   end
 
   def install
-    Dir.chdir("libvmaf") do
-      system "meson", *std_meson_args, "build"
-      system "ninja", "-vC", "build"
-      system "ninja", "-vC", "build", "install"
-    end
+    system "meson", "setup", "build", "libvmaf", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
     pkgshare.install "model"
   end
 
