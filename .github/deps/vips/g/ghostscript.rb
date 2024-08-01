@@ -71,7 +71,7 @@ class Ghostscript < Formula
   def install
     # Delete local vendored sources so build uses system dependencies
     libs = %w[expat freetype jbig2dec jpeg lcms2mt libpng openjpeg tiff zlib]
-    libs.each { |l| (buildpath/l).rmtree }
+    libs.each { |l| rm_r(buildpath/l) }
 
     configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, *std_configure_args,

@@ -40,7 +40,7 @@ class SharedMimeInfo < Formula
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
     pkgshare.install share/"mime/packages"
-    rmdir share/"mime"
+    rm_r(share/"mime") if (share/"mime").exist?
   end
 
   def post_install
@@ -48,12 +48,10 @@ class SharedMimeInfo < Formula
     cellar_mime = share/"mime"
 
     # Remove bad links created by old libheif postinstall
-    rm_rf global_mime if global_mime.symlink?
+    rm_r(global_mime) if global_mime.symlink?
 
-    if !cellar_mime.exist? || !cellar_mime.symlink?
-      rm_rf cellar_mime
-      ln_sf global_mime, cellar_mime
-    end
+    rm_r(cellar_mime) if cellar_mime.exist? && !cellar_mime.symlink?
+    ln_sf(global_mime, cellar_mime)
 
     (global_mime/"packages").mkpath
     cp (pkgshare/"packages").children, global_mime/"packages"

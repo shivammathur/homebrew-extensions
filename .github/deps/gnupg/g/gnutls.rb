@@ -54,7 +54,7 @@ class Gnutls < Formula
   end
 
   def post_install
-    rm_f pkgetc/"cert.pem"
+    rm(pkgetc/"cert.pem")
     pkgetc.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
   end
 
