@@ -79,7 +79,7 @@ class Vips < Formula
   end
 
   test do
-    system "#{bin}/vips", "-l"
+    system bin/"vips", "-l"
     cmd = "#{bin}/vipsheader -f width #{test_fixtures("test.png")}"
     assert_equal "8", shell_output(cmd).chomp
 

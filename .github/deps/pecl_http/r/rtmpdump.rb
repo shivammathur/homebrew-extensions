@@ -59,6 +59,6 @@ class Rtmpdump < Formula
   end
 
   test do
-    system "#{bin}/rtmpdump", "-h"
+    system bin/"rtmpdump", "-h"
   end
 end

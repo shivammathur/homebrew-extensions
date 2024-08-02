@@ -32,8 +32,8 @@ class Brotli < Formula
 
   test do
     (testpath/"file.txt").write("Hello, World!")
-    system "#{bin}/brotli", "file.txt", "file.txt.br"
-    system "#{bin}/brotli", "file.txt.br", "--output=out.txt", "--decompress"
+    system bin/"brotli", "file.txt", "file.txt.br"
+    system bin/"brotli", "file.txt.br", "--output=out.txt", "--decompress"
     assert_equal (testpath/"file.txt").read, (testpath/"out.txt").read
   end
 end
