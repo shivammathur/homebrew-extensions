@@ -51,6 +51,6 @@ class Nspr < Formula
   end
 
   test do
-    system "#{bin}/nspr-config", "--version"
+    system bin/"nspr-config", "--version"
   end
 end

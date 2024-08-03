@@ -40,7 +40,7 @@ class Krb5 < Formula
   end
 
   test do
-    system "#{bin}/krb5-config", "--version"
+    system bin/"krb5-config", "--version"
     assert_match include.to_s,
       shell_output("#{bin}/krb5-config --cflags")
   end

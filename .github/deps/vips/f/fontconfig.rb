@@ -54,7 +54,7 @@ class Fontconfig < Formula
       font_dirs << Dir["/System/Library/Assets{,V2}/com_apple_MobileAsset_Font*"].max
     end
 
-    system "autoreconf", "-iv" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     ENV["UUID_CFLAGS"] = "-I#{Formula["util-linux"].include}" if OS.linux?
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
@@ -69,10 +69,10 @@ class Fontconfig < Formula
 
   def post_install
     ohai "Regenerating font cache, this may take a while"
-    system "#{bin}/fc-cache", "-frv"
+    system bin/"fc-cache", "-frv"
   end
 
   test do
-    system "#{bin}/fc-list"
+    system bin/"fc-list"
   end
 end

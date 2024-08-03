@@ -56,6 +56,6 @@ class P11Kit < Formula
   end
 
   test do
-    system "#{bin}/p11-kit", "list-modules"
+    system bin/"p11-kit", "list-modules"
   end
 end

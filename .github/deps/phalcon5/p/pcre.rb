@@ -75,6 +75,6 @@ class Pcre < Formula
   end
 
   test do
-    system "#{bin}/pcregrep", "regular expression", "#{prefix}/README"
+    system bin/"pcregrep", "regular expression", prefix/"README"
   end
 end

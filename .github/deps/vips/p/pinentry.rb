@@ -52,7 +52,7 @@ class Pinentry < Formula
   end
 
   test do
-    system "#{bin}/pinentry", "--version"
-    system "#{bin}/pinentry-tty", "--version"
+    system bin/"pinentry", "--version"
+    system bin/"pinentry-tty", "--version"
   end
 end

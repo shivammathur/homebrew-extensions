@@ -76,7 +76,7 @@ class Hdf5 < Formula
         return 0;
       }
     EOS
-    system "#{bin}/h5cc", "test.c"
+    system bin/"h5cc", "test.c"
     assert_equal version.to_s, shell_output("./a.out").chomp
 
     (testpath/"test.f90").write <<~EOS

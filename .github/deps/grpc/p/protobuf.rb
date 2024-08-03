@@ -1,8 +1,8 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://github.com/protocolbuffers/protobuf/releases/download/v27.1/protobuf-27.1.tar.gz"
-  sha256 "6fbe2e6f703bcd3a246529c2cab586ca12a98c4e641f5f71d51fde09eb48e9e7"
+  url "https://github.com/protocolbuffers/protobuf/releases/download/v27.3/protobuf-27.3.tar.gz"
+  sha256 "1535151efbc7893f38b0578e83cac584f2819974f065698976989ec71c1af84a"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "09e3b895f13d83aee27211a9fcb2258c637960bf143ee34082b6ff291a147e06"
-    sha256 cellar: :any,                 arm64_ventura:  "cd5f9910f39ae8acc2bc57cf72601e9934156d538dc554f0d6bd63cb4ba7aed0"
-    sha256 cellar: :any,                 arm64_monterey: "4e0ad3edeb7438ec98e3a6769f875184058bbdfc559269ba52c33506514b7d1d"
-    sha256 cellar: :any,                 sonoma:         "8290acb228f9ec0d188af19b517550e663ebda375fc1db711ae53ea88a5a5683"
-    sha256 cellar: :any,                 ventura:        "d00dec9425b9806aba49ba29b4a2d83a51ea4e00b4378fd0a224f15787fda7a4"
-    sha256 cellar: :any,                 monterey:       "0b07cffc9b3f26b3aecad8b57088437c90c7a3623f75820f040e0c334d14ee2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09c8d9271d6fc39f29f2f2d8f2e9bdb19318804b14bff235853e5582b08537af"
+    sha256 cellar: :any,                 arm64_sonoma:   "ef49251d7dcbf1ed41c1cfbf861f8b79ab5798c27658f76b836ac4d5be21a6da"
+    sha256 cellar: :any,                 arm64_ventura:  "acf2248d085678edee5e7e89c214b30e36e620e66a38dc29b881ce9288e8e412"
+    sha256 cellar: :any,                 arm64_monterey: "e088b3cbcbd625b9abc24794e4df00e7142d0b7edb476fe120f35e3aef667ff6"
+    sha256 cellar: :any,                 sonoma:         "4ea12f80efc823c067d1ffeb76ca2e86fd9cfd03866f3ecdc4bbb86876feb5ce"
+    sha256 cellar: :any,                 ventura:        "e32ccce57d7121052a34257b470a117fad7a26a82f30cea841081dbab5a8bb2e"
+    sha256 cellar: :any,                 monterey:       "6bdad04930839eaddccba5e4efa229f49bffd27e5205fa642cf0eb601bd534d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "040275d703222fac0c09f8f9e49e27387220c3e7e831f8e362536f0365b97562"
   end
 
   depends_on "cmake" => :build

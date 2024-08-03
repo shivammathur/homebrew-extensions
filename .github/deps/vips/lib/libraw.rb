@@ -35,11 +35,6 @@ class Libraw < Formula
     depends_on "libomp"
   end
 
-  resource "homebrew-librawtestfile" do
-    url "https://www.rawsamples.ch/raws/nikon/d1/RAW_NIKON_D1.NEF"
-    sha256 "7886d8b0e1257897faa7404b98fe1086ee2d95606531b6285aed83a0939b768f"
-  end
-
   def install
     args = []
     if OS.mac?
@@ -59,10 +54,15 @@ class Libraw < Formula
   end
 
   test do
+    resource "homebrew-librawtestfile" do
+      url "https://www.rawsamples.ch/raws/nikon/d1/RAW_NIKON_D1.NEF"
+      sha256 "7886d8b0e1257897faa7404b98fe1086ee2d95606531b6285aed83a0939b768f"
+    end
+
     resource("homebrew-librawtestfile").stage do
       filename = "RAW_NIKON_D1.NEF"
-      system "#{bin}/raw-identify", "-u", filename
-      system "#{bin}/simple_dcraw", "-v", "-T", filename
+      system bin/"raw-identify", "-u", filename
+      system bin/"simple_dcraw", "-v", "-T", filename
     end
   end
 end

@@ -30,6 +30,6 @@ class M4 < Formula
 
   test do
     assert_match "Homebrew",
-      pipe_output("#{bin}/m4", "define(TEST, Homebrew)\nTEST\n")
+      pipe_output(bin/"m4", "define(TEST, Homebrew)\nTEST\n")
   end
 end

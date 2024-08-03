@@ -37,12 +37,14 @@ class Libtasn1 < Formula
       }
       END
     EOS
+
     (testpath/"assign.asn1").write <<~EOS
       dp PKIX1.Dss-Sig-Value
       r 42
       s 47
     EOS
-    system "#{bin}/asn1Coding", "pkix.asn", "assign.asn1"
+
+    system bin/"asn1Coding", "pkix.asn", "assign.asn1"
     assert_match "Decoding: SUCCESS", shell_output("#{bin}/asn1Decoding pkix.asn assign.out PKIX1.Dss-Sig-Value 2>&1")
   end
 end

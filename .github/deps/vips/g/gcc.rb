@@ -266,7 +266,7 @@ class Gcc < Formula
         return 0;
       }
     EOS
-    system "#{bin}/gcc-#{version_suffix}", "-o", "hello-c", "hello-c.c"
+    system bin/"gcc-#{version_suffix}", "-o", "hello-c", "hello-c.c"
     assert_equal "Hello, world!\n", shell_output("./hello-c")
 
     (testpath/"hello-cc.cc").write <<~EOS
@@ -281,7 +281,7 @@ class Gcc < Formula
         return 0;
       }
     EOS
-    system "#{bin}/g++-#{version_suffix}", "-o", "hello-cc", "hello-cc.cc"
+    system bin/"g++-#{version_suffix}", "-o", "hello-cc", "hello-cc.cc"
     assert_equal "Hello, world!\n", shell_output("./hello-cc")
 
     (testpath/"test.f90").write <<~EOS
@@ -295,7 +295,7 @@ class Gcc < Formula
       write(*,"(A)") "Done"
       end
     EOS
-    system "#{bin}/gfortran", "-o", "test", "test.f90"
+    system bin/"gfortran", "-o", "test", "test.f90"
     assert_equal "Done\n", shell_output("./test")
 
     (testpath/"hello.mod").write <<~EOS
@@ -306,7 +306,7 @@ class Gcc < Formula
            WriteLn;
       END hello.
     EOS
-    system "#{bin}/gm2", "-o", "hello-m2", "hello.mod"
+    system bin/"gm2", "-o", "hello-m2", "hello.mod"
     assert_equal "Hello, world!\n", shell_output("./hello-m2")
   end
 end

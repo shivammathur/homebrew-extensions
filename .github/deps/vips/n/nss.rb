@@ -84,8 +84,8 @@ class Nss < Formula
   test do
     # See: https://developer.mozilla.org/docs/Mozilla/Projects/NSS/tools/NSS_Tools_certutil
     (testpath/"passwd").write("It's a secret to everyone.")
-    system "#{bin}/certutil", "-N", "-d", pwd, "-f", "passwd"
-    system "#{bin}/certutil", "-L", "-d", pwd
+    system bin/"certutil", "-N", "-d", pwd, "-f", "passwd"
+    system bin/"certutil", "-L", "-d", pwd
   end
 
   # A very minimal nss-config for configuring firefox etc. with this nss,
