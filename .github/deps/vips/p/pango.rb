@@ -19,7 +19,7 @@ class Pango < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"
@@ -28,13 +28,16 @@ class Pango < Formula
   depends_on "harfbuzz"
 
   def install
-    system "meson", *std_meson_args, "build",
-                    "-Ddefault_library=both",
-                    "-Dintrospection=enabled",
-                    "-Dfontconfig=enabled",
-                    "-Dcairo=enabled",
-                    "-Dfreetype=enabled"
-    system "meson", "compile", "-C", "build", "-v"
+    args = %w[
+      -Ddefault_library=both
+      -Dintrospection=enabled
+      -Dfontconfig=enabled
+      -Dcairo=enabled
+      -Dfreetype=enabled
+    ]
+
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
@@ -53,37 +56,8 @@ class Pango < Formula
         return 0;
       }
     EOS
-    cairo = Formula["cairo"]
-    fontconfig = Formula["fontconfig"]
-    freetype = Formula["freetype"]
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    harfbuzz = Formula["harfbuzz"]
-    libpng = Formula["libpng"]
-    pixman = Formula["pixman"]
-    flags = %W[
-      -I#{cairo.opt_include}/cairo
-      -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{include}/pango-1.0
-      -I#{libpng.opt_include}/libpng16
-      -I#{pixman.opt_include}/pixman-1
-      -D_REENTRANT
-      -L#{cairo.opt_lib}
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{lib}
-      -lcairo
-      -lglib-2.0
-      -lgobject-2.0
-      -lpango-1.0
-      -lpangocairo-1.0
-    ]
-    flags << "-lintl" if OS.mac?
+
+    flags = shell_output("pkg-config --cflags --libs pangocairo").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
