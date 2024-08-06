@@ -7,28 +7,28 @@ class Libtool < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "340b9fbf2269cecb88e577fa3aa7b176c3d49ef41eb3554ffeb0c35f0c0993af"
-    sha256 cellar: :any,                 arm64_ventura:  "0460265825de454568c55d6489ed8eb85297815a1f1ab37f2dafea5fd4414818"
-    sha256 cellar: :any,                 arm64_monterey: "f8d612f923986ac31e852356353e6b0caf7b607cca5fe18ef4487c8f118258c3"
-    sha256 cellar: :any,                 sonoma:         "443df5cc0b5333bf99339d2c93e1c4e28ab38a07babd46b1bfa561aa364a5075"
-    sha256 cellar: :any,                 ventura:        "079d5187a97c87b14bafa3e63d31b8c15338b09cae2ccd006538d3df46676279"
-    sha256 cellar: :any,                 monterey:       "ac3d1ccd5595e489d6b8185eb93c985a7f955e3b50057a5370678a911371ca58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "450ce5348079f2ad8dff146ca5c28a725b397ec4a7b3effb2090235ef9a61f67"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sonoma:   "53032e6f9f95662e8d7e5776c13d99e526f27aa91046b379537e6c9926328532"
+    sha256 cellar: :any,                 arm64_ventura:  "ddc4cbe56b2858f9e653d6c675e2e0a5a283748d1e21192963f9d5d828d9b4c8"
+    sha256 cellar: :any,                 arm64_monterey: "c075f2068699ea5ad408b952a58d9b0721072905014490d3adcc42c5636b9491"
+    sha256 cellar: :any,                 sonoma:         "774349ad71c3a2d6c2e0680939b995833d0c936fbb7dcf711a7b4503f986f0e6"
+    sha256 cellar: :any,                 ventura:        "abebe5e185ad6d66e8798be461ccbb2bf2ef58e5da78376713f760d0929098ee"
+    sha256 cellar: :any,                 monterey:       "eee91ce66c36b14328492b85f7fb4dd4bbe25c84fe48cda37352ca071faf4d03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b4b093e7110026279c01fe6604308e0cc0e2ce4e341852f5cea87d944a59be1"
   end
 
   depends_on "m4"
 
   def install
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    ENV["M4"] = Formula["m4"].opt_bin/"m4"
+
+    args = %w[
+      --disable-silent-rules
       --enable-ltdl-install
     ]
-
     args << "--program-prefix=g" if OS.mac?
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     if OS.mac?
@@ -37,9 +37,7 @@ class Libtool < Formula
         (libexec/"gnuman/man1").install_symlink man1/"g#{prog}.1" => "#{prog}.1"
       end
       (libexec/"gnubin").install_symlink "../gnuman" => "man"
-    end
-
-    if OS.linux?
+    else
       bin.install_symlink "libtool" => "glibtool"
       bin.install_symlink "libtoolize" => "glibtoolize"
 
@@ -72,5 +70,7 @@ class Libtool < Formula
     system bin/"glibtool", "--mode=link", "--tag=CC",
       ENV.cc, "hello.o", "-o", "hello"
     assert_match "Hello, world!", shell_output("./hello")
+
+    system bin/"glibtoolize", "--ltdl"
   end
 end
