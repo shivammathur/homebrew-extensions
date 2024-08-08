@@ -8,9 +8,9 @@ class SnmpAT70 < AbstractPhpExtension
   init
   desc "Snmp PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/a4ea0fdb28141b4ca8c902d7dfceea9b435fae33.tar.gz"
+  url "https://github.com/shivammathur/php-src-backports/archive/0788496bca56ea3a6ad75758aeaa38f81267415a.tar.gz"
   version "7.0.33"
-  sha256 "59e7a3a8c00e063fbc4c1698824751b5ccf6e9432522347073cd8edb0c9ec98e"
+  sha256 "6b59873eef34f7205e20683a0e6ad99509a1c158e619ff52ae6269d64d49f5e9"
   revision 1
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
@@ -30,6 +30,9 @@ class SnmpAT70 < AbstractPhpExtension
   depends_on "openssl@3"
 
   def install
+    # Work around configure issues with Xcode 12
+    ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
+
     args = %W[
       --with-snmp=#{Formula["net-snmp"].opt_prefix}
       --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
