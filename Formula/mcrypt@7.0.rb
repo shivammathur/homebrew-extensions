@@ -8,9 +8,9 @@ class McryptAT70 < AbstractPhpExtension
   init
   desc "Mcrypt PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/a4ea0fdb28141b4ca8c902d7dfceea9b435fae33.tar.gz"
+  url "https://github.com/shivammathur/php-src-backports/archive/0788496bca56ea3a6ad75758aeaa38f81267415a.tar.gz"
   version "7.0.33"
-  sha256 "59e7a3a8c00e063fbc4c1698824751b5ccf6e9432522347073cd8edb0c9ec98e"
+  sha256 "6b59873eef34f7205e20683a0e6ad99509a1c158e619ff52ae6269d64d49f5e9"
   license "PHP-3.01"
 
   bottle do
@@ -35,6 +35,7 @@ class McryptAT70 < AbstractPhpExtension
   def install
     # Work around configure issues with Xcode 12
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    ENV.append "CFLAGS", "-Wno-implicit-int"
 
     resource("libmcrypt").stage do
       # Workaround for ancient config files not recognising aarch64 macos.
