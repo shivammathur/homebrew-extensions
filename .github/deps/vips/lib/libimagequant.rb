@@ -3,7 +3,7 @@ class Libimagequant < Formula
   homepage "https://pngquant.org/lib/"
   url "https://github.com/ImageOptim/libimagequant/archive/refs/tags/4.3.3.tar.gz"
   sha256 "c50a59003a4c4ce53c76314e62f1e86d86d882bc09addb13daa0faa9260b9614"
-  license :cannot_represent
+  license all_of: ["GPL-3.0-or-later", "HPND"]
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "979e2b7ba7184cfa5c8f7f6c6f49ac20483c319421ea0de84e64846683635d5f"

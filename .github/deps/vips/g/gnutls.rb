@@ -22,6 +22,7 @@ class Gnutls < Formula
   end
 
   depends_on "pkg-config" => :build
+
   depends_on "ca-certificates"
   depends_on "gmp"
   depends_on "libidn2"
@@ -33,19 +34,21 @@ class Gnutls < Formula
 
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     args = %W[
-      --disable-dependency-tracking
       --disable-silent-rules
       --disable-static
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --with-default-trust-store-file=#{pkgetc}/cert.pem
       --disable-heartbeat-support
       --with-p11-kit
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
 
     # certtool shadows the macOS certtool utility
