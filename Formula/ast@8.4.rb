@@ -8,8 +8,8 @@ class AstAT84 < AbstractPhpExtension
   init
   desc "Ast PHP extension"
   homepage "https://github.com/nikic/php-ast"
-  url "https://pecl.php.net/get/ast-1.1.1.tgz"
-  sha256 "0c55e09a4da43b9cc1da72ecb4ae892941f73e157b73d46326bc6a5ed7fc44b1"
+  url "https://pecl.php.net/get/ast-1.1.2.tgz"
+  sha256 "8742427ff7c07ba93f940968f7363972ea040d97d847da3b79b4283c2a369dea"
   head "https://github.com/nikic/php-ast.git", branch: "master"
   license "BSD-3-Clause"
 
