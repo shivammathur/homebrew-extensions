@@ -1,10 +1,16 @@
 class Libassuan < Formula
   desc "Assuan IPC Library"
   homepage "https://www.gnupg.org/related_software/libassuan/"
+  # TODO: On next release, check if `-std=gnu89` workaround can be removed.
+  # Ref: https://dev.gnupg.org/T7246
   url "https://gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.1.tar.bz2"
   mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/libassuan/libassuan-3.0.1.tar.bz2"
   sha256 "c8f0f42e6103dea4b1a6a483cb556654e97302c7465308f58363778f95f194b1"
-  license "GPL-3.0-only"
+  license all_of: [
+    "LGPL-2.1-or-later",
+    "GPL-3.0-or-later", # assuan.info
+    "FSFULLR", # libassuan-config, libassuan.m4
+  ]
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/libassuan/"
@@ -27,10 +33,9 @@ class Libassuan < Formula
     # Fixes duplicate symbols errors - https://lists.gnupg.org/pipermail/gnupg-devel/2024-July/035614.html
     ENV.append_to_cflags "-std=gnu89"
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--enable-static"
+    system "./configure", "--disable-silent-rules",
+                          "--enable-static",
+                          *std_configure_args
     system "make", "install"
 
     # avoid triggering mandatory rebuilds of software that hard-codes this path
