@@ -3,7 +3,7 @@ class Libexif < Formula
   homepage "https://libexif.github.io/"
   url "https://github.com/libexif/libexif/releases/download/v0.6.24/libexif-0.6.24.tar.bz2"
   sha256 "d47564c433b733d83b6704c70477e0a4067811d184ec565258ac563d8223f6ae"
-  license "LGPL-2.1"
+  license all_of: ["LGPL-2.1-or-later", "LGPL-2.0-or-later"]
 
   bottle do
     sha256 arm64_sonoma:   "576b58859b1716d6e828174b0ffef8e34e33b8dab31230750402007f8a242086"
@@ -18,14 +18,22 @@ class Libexif < Formula
     sha256 x86_64_linux:   "9a72e30a88de8a164a4b249e181747639b9b2e2fc2b089f0e1cbaf850d6a0acb"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
-  depends_on "gettext"
+  head do
+    url "https://github.com/libexif/libexif.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gettext" => :build
+    depends_on "libtool" => :build
+  end
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
-    system "autoreconf", "-ivf"
-    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
