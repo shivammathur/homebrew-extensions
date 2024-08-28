@@ -12,13 +12,14 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d57cf59ebcfa7755895707f5eab2c07cbcc177b1c1803d160a8633db99b110ba"
-    sha256 arm64_ventura:  "09883397c900867cc82802c965b617ccb129619b4a63955e69b49727e32f8dfa"
-    sha256 arm64_monterey: "0d88c67b408ad9520a28d195418d14875f2237fbd808114763f980a7a9190831"
-    sha256 sonoma:         "ec3aa180c8c474ad3eece67ddcff9bd1f17992d89da91f71431354fd849adc1f"
-    sha256 ventura:        "dfedf75692505f5d750dd5af97d0a4ea0a9cf24112e1e9339dc802658711a3e6"
-    sha256 monterey:       "06e6ff16eb23a8fd4dc9222e6cf5bcf2b680d250ba0233e6e0c0dc6e9616cb34"
-    sha256 x86_64_linux:   "d84029bfaf8a5452329d7e2535ba32d720b361b398e46051ee6090ff989dfd55"
+    rebuild 1
+    sha256 arm64_sonoma:   "f0dc71fe6bb0ce1618acd7c4a68dcaf5d725bd2beb2b703c1992e8ba91b5c7c7"
+    sha256 arm64_ventura:  "b39924b6b665832c7dcb46e99a5e257ca3e932313c528086631769933c78d9a0"
+    sha256 arm64_monterey: "4cde73aab115e6c814c8a98488c742a622f26ee8d7b2cfb422b69eccbde8148f"
+    sha256 sonoma:         "5bf5e00bd262cb450490fad19b167cb684dfe8ba9c4f3dfa079871f437cac84a"
+    sha256 ventura:        "c3148aa9a81e9cd5e05f6171a9febdbe2de43a9ce1d9b8dc58bf041ce112c7fc"
+    sha256 monterey:       "f18b36971ea359ccc7d69b5b4a7ab22ccf363c45a51417d984301700c1c73fdf"
+    sha256 x86_64_linux:   "63d76975c55730b4f46dd00ed325de913e8319b7fa6dae1e03eb11cc86514c7a"
   end
 
   depends_on "ca-certificates"
@@ -107,6 +108,9 @@ class OpensslAT3 < Formula
     # AF_ALG support isn't always enabled (e.g. some containers), which breaks the tests.
     # AF_ALG is a kernel feature and failures are unlikely to be issues with the formula.
     system "make", "test", "TESTS=-test_afalg"
+
+    # Prevent `brew` from pruning the `certs` and `private` directories.
+    touch %w[certs private].map { |subdir| openssldir/subdir/".keepme" }
   end
 
   def openssldir
