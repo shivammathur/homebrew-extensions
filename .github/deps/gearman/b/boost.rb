@@ -1,10 +1,23 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://github.com/boostorg/boost/releases/download/boost-1.86.0/boost-1.86.0-b2-nodocs.tar.xz"
-  sha256 "a4d99d032ab74c9c5e76eddcecc4489134282245fffa7e079c5804b92b45f51d"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
+
+  stable do
+    url "https://github.com/boostorg/boost/releases/download/boost-1.86.0/boost-1.86.0-b2-nodocs.tar.xz"
+    sha256 "a4d99d032ab74c9c5e76eddcecc4489134282245fffa7e079c5804b92b45f51d"
+
+    # Backport Boost.Compute support for latest Boost.Uuid
+    patch :p2 do
+      url "https://github.com/boostorg/compute/commit/79452d5279831ee59a650c17b71259a821f1a554.patch?full_index=1"
+      sha256 "ed4b9740c1f300ed0413498f0cba6f05389b570bec6a4b456d53314a2561d061"
+    end
+    patch :p2 do
+      url "https://github.com/boostorg/compute/commit/54915acaafa003b7aab6f24c74e7fdeaae297ad6.patch?full_index=1"
+      sha256 "1d1e83f4cb371003bad84a3789b2fecf215768f4a6f933444eaa4c26905f1e9f"
+    end
+  end
 
   livecheck do
     url "https://www.boost.org/users/download/"
@@ -15,13 +28,14 @@ class Boost < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "48fa740e0e78e1afe506dbc3c09adfd7b4a1d4d45b3d81c19a0d170cd3c9f034"
-    sha256 cellar: :any,                 arm64_ventura:  "0288442b61e733e4306b298bc30cdeadb93d4ab4cd3c01f584e88657b172bff4"
-    sha256 cellar: :any,                 arm64_monterey: "e071ec7d4801da50dea5eaffcf89c141ad7bf2297d06ab79d850f256aad23e49"
-    sha256 cellar: :any,                 sonoma:         "198ce7320dfe7ab1495bae0d4109dfbbc36a2df0bf1abe512dc8e6464ed7e529"
-    sha256 cellar: :any,                 ventura:        "a5df756a7a0ea9104d9042a1d563e1e8459cefe57805a4614135a639c4322655"
-    sha256 cellar: :any,                 monterey:       "88c9dcccd6e5a36aa76de1b6747668b433b69678cc01e0554a50948bd8ebb93d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dbec60f7afc516b207c85e990ff839f2ad75f4681ac9010b5875bec1da4ce4a"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "8f6d3d3c76708a287c0157a0e48f0e2b8c7175ee23269c03c8eb0ad7c003dc86"
+    sha256 cellar: :any,                 arm64_ventura:  "7eb491c2e34ff445b92883bba4483f085c35eeb40cc6f021636d09c9fc3b7b25"
+    sha256 cellar: :any,                 arm64_monterey: "e1942964bba4803b5c01bf1b69f1fa15908e4f1372732f7bf2edb5fa1be54a75"
+    sha256 cellar: :any,                 sonoma:         "eb5a1eab5cfa550707a4e2148451c9a9c2b0ecdd2b7a4f4cf786cc830055e80c"
+    sha256 cellar: :any,                 ventura:        "f40318ac4b779df9fbb13bed9166a39eb9819438fe8b9c4b764cca973f739295"
+    sha256 cellar: :any,                 monterey:       "bd5f3394381a43315858c033adfbc430ead8e53d607686efef760637fe77298f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b54de744fca5203371e41bbe08f18fe347d9873558b9b0e1c40b60e4bc5515c"
   end
 
   depends_on "icu4c"
