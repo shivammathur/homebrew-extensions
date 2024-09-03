@@ -27,13 +27,14 @@ class Ghostscript < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "8ab8a34d5c2e94851b167c20962d0d70f95eb403bc81d71dccaecdba81e167a8"
-    sha256 arm64_ventura:  "8908f37eee3e93867a5b8ebe94e2b0c8985bb6a4dcd30b447968922269f40cd1"
-    sha256 arm64_monterey: "713177ff722b4f602a5c0812c754fde1100aef030e1682bfdf90884a39655c2f"
-    sha256 sonoma:         "cb23a60add5b459b9862a75f1536ff6633f41761a64d62955975371ef0dd5bdd"
-    sha256 ventura:        "9b76871f2967c4a2175a8033f4184993401f744e7f321dd161eac398efacddf0"
-    sha256 monterey:       "d4a48d2459c05360daaca6a8bf427fc87d6ffb32be497dedc73651f16ef6e057"
-    sha256 x86_64_linux:   "d011e49ea2b732da0e26445c335eef1dd8a71da0097a0f743d3d917703a24c0c"
+    rebuild 1
+    sha256 arm64_sonoma:   "b0d9503a7efa718b2c1c2994b442065e79cf3a7807402944e19d278391766077"
+    sha256 arm64_ventura:  "7bd21d992e534be507dd7d457c6a0b1cdf76ef1743976276c1eaa256bca2306c"
+    sha256 arm64_monterey: "ac3c82a2bccbea544614781dc85aa1400d1665d40e37f1df1de0986daa76e1f0"
+    sha256 sonoma:         "42ea47a742a77e6b96346d8989cbe9dbeed019537865aa38e61209fe73e28bc4"
+    sha256 ventura:        "1f4b9b7577337c6702d6891d1ad686cca240c9895135b917d3bc146c580a9d86"
+    sha256 monterey:       "ea25cdd4def41ef333c0503b3101d6baf6a47505cd585de55d1e0cba88426f53"
+    sha256 x86_64_linux:   "b2b04161201e1f17a9ca9511e0579ae97d65a40f4bc7d195865ac7f5d8c972f6"
   end
 
   head do
@@ -74,12 +75,16 @@ class Ghostscript < Formula
     libs.each { |l| rm_r(buildpath/l) }
 
     configure = build.head? ? "./autogen.sh" : "./configure"
-    system configure, *std_configure_args,
-                      "--disable-compile-inits",
-                      "--disable-cups",
-                      "--disable-gtk",
-                      "--with-system-libtiff",
-                      "--without-x"
+
+    args = %w[--disable-compile-inits
+              --disable-cups
+              --disable-gtk
+              --with-system-libtiff
+              --without-x]
+    # Work around neon detection bug: https://bugs.ghostscript.com/show_bug.cgi?id=707993
+    odie "`--disable-neon` workaround should be removed!" if build.stable? && version > "10.03.1"
+    args << "--disable-neon" if DevelopmentTools.clang_build_version >= 1600
+    system configure, *std_configure_args, *args
 
     # Install binaries and libraries
     system "make", "install"

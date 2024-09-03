@@ -92,7 +92,7 @@ class OpenMpi < Formula
     include.install lib.glob("*.mod")
 
     # Avoid references to cellar paths.
-    inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix, false
+    inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix, audit_result: false
   end
 
   test do
