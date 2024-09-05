@@ -29,10 +29,11 @@ class Libheif < Formula
 
   def install
     args = %W[
-      -DWITH_RAV1E=OFF
-      -DWITH_DAV1D=OFF
-      -DWITH_SvtEnc=OFF
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DWITH_DAV1D=OFF
+      -DWITH_GDK_PIXBUF=OFF
+      -DWITH_RAV1E=OFF
+      -DWITH_SvtEnc=OFF
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
