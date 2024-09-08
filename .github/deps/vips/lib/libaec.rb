@@ -27,12 +27,12 @@ class Libaec < Formula
   link_overwrite "lib/libsz.so.2"
 
   def install
-    mkdir "build" do
-      # We run `make test` for libraries
-      system "cmake", "..", *std_cmake_args, "-DBUILD_TESTING=ON"
-      system "make", "install"
-      system "make", "test"
-    end
+    # run ctest for libraries, also added `"-DBUILD_TESTING=ON` in the end as
+    # `std_cmake_args` has `BUILD_TESTING` off
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_TESTING=ON"
+    system "cmake", "--build", "build"
+    system "ctest", "--test-dir", "build", "--verbose"
+    system "cmake", "--install", "build"
   end
 
   test do
