@@ -1,8 +1,8 @@
 class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
-  url "https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.8.tar.xz"
-  sha256 "43ad877b018bc63deb2468d71f95219c2fac196876ef36d1bee51d226173ec93"
+  url "https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.3.tar.xz"
+  sha256 "0805d7c180cf09caad71666c7a458a74f041561a532902454da5047d83948138"
   license "MIT"
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
@@ -13,13 +13,13 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0615b18f4e0089dbc3a350d5e2c56bbd87052c17386128500413b857ce0b1f88"
-    sha256 cellar: :any,                 arm64_ventura:  "95fc101400de6205dd55127c67a035127cd74ae3374e157fff8ae8159c22b429"
-    sha256 cellar: :any,                 arm64_monterey: "1e3c987fb48b4e15f129ed713aa0808b8774bf36584c358a2f5b7627ff54c2a7"
-    sha256 cellar: :any,                 sonoma:         "15583249513a6844e95a41a9126bd9bfc0e18a1e1b2fb5520ea85904ac202c01"
-    sha256 cellar: :any,                 ventura:        "53ce0db80ca3161b27f238a2516e78237f43bc5d1d1191bf8591ee838427fb19"
-    sha256 cellar: :any,                 monterey:       "5d61a00a0694e8be7aebe53de8a4b9744b6ca68fedefa6f6b06ba0363eacb772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb5cd905b75c9bed36f3deb284e6a6f4c3338f78368cff9f52356b48590897a7"
+    sha256 cellar: :any,                 arm64_sonoma:   "60fae010908a477182adf4bd01f33796a1a05bb6eb33059c4e2f6d817b60d655"
+    sha256 cellar: :any,                 arm64_ventura:  "58f36e33c3c80c748b96759bdea5245fc969b65b448d1a02733ba13174e0faa7"
+    sha256 cellar: :any,                 arm64_monterey: "b3091b47ebea0a2a646f58525f92156b962cd5c76fd1cae4f0a86e5e5ab2a4a0"
+    sha256 cellar: :any,                 sonoma:         "16a96d824e62c68557954f1ef1e7e0c45ed7d1767496dec9c341b6bef9b5e637"
+    sha256 cellar: :any,                 ventura:        "3e902495665dfbf3a98a4578cecf7ee2738f53f15713f4c053939cc7cd97e9f3"
+    sha256 cellar: :any,                 monterey:       "942e9cbf5f554359c3ec38b5cc93c68b54b0f7e5f2a4916279cce6a6422467c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68b231988738df70bd936a4862dbb76a4470aa3ebc2cd6963398beb90925905c"
   end
 
   head do
@@ -54,6 +54,7 @@ class Libxml2 < Formula
                           "--sysconfdir=#{etc}",
                           "--disable-silent-rules",
                           "--with-history",
+                          "--with-http",
                           "--with-icu",
                           "--without-python",
                           "--without-lzma"

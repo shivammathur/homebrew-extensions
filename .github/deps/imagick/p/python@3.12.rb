@@ -1,8 +1,8 @@
 class PythonAT312 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tgz"
-  sha256 "38dc4e2c261d49c661196066edbfb70fdb16be4a79cc8220c224dfeb5636d405"
+  url "https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz"
+  sha256 "85a4c1be906d20e5c5a69f2466b00da769c221d6a684acfd3a514dbf5bf10a66"
   license "Python-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "b0ff9819a9f471ac30796037098acdc318883b1a8fdfb4f9b9926590eace41dd"
-    sha256 arm64_ventura:  "46bfedee260602e564ba4da5551a676c7c4c5605357c79183f2da0855f81fac5"
-    sha256 arm64_monterey: "a8cbb6621923a75a61511d6478ae231ed4f56f703b9f244bfb9d5d6ec45d5b14"
-    sha256 sonoma:         "9f9356133056b279b4dc874b44ccade6690f07d8dcbe8bc387b2158f9218a78e"
-    sha256 ventura:        "af7af812d9b66eddb1164ff90a0851da6658516b04746abee8c44d953dc8bc8e"
-    sha256 monterey:       "26ab776eaefe245d630a22bd358c7422af2ae65afe6623f7ec4b9c64fc986b84"
-    sha256 x86_64_linux:   "44f7dd6260f4e4d3e802e55b8226e498c0c9949ac48eb0ba7c04b13a179ce9f1"
+    sha256 arm64_sonoma:   "00871488a4207f0265eab8e339146f63874e7454487169e819a1e4a5bd13a62b"
+    sha256 arm64_ventura:  "2d4c6e84be927a29d116e1f2bd5e09e0b00dab2141d58377f255949d363b5892"
+    sha256 arm64_monterey: "d9c70d61697dc082c561f47bf8bde3cf2dcdb1070f0705a65d9acd67ff3acf65"
+    sha256 sonoma:         "ac351a070751905ceb68a1f570601ff0b712613830e2b6c14063c7243b2bb259"
+    sha256 ventura:        "8abd20343a066df8d2be5c81c4a2a968838003cf40da8838c052255747d704eb"
+    sha256 monterey:       "594da1f2f1785d54cc85b646fe0520813071fc74fd7d610f4ecad4b55ce842c0"
+    sha256 x86_64_linux:   "e0c5b329ce19642fa0d54abf71fb33eae36cee265ff03479fe1ae929918a1329"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -42,6 +42,7 @@ class PythonAT312 < Formula
   on_linux do
     depends_on "berkeley-db@5"
     depends_on "libnsl"
+    depends_on "libtirpc"
   end
 
   link_overwrite "bin/2to3"
@@ -72,8 +73,8 @@ class PythonAT312 < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/5e/11/487b18cc768e2ae25a919f230417983c8d5afa1b6ee0abd8b6db0b89fa1d/setuptools-72.1.0.tar.gz"
-    sha256 "8d243eff56d095e5817f796ede6ae32941278f542e0f941867cc05ae52b162ec"
+    url "https://files.pythonhosted.org/packages/3e/2c/f0a538a2f91ce633a78daaeb34cbfb93a54bd2132a6de1f6cec028eee6ef/setuptools-74.1.2.tar.gz"
+    sha256 "95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6"
   end
 
   resource "wheel" do
