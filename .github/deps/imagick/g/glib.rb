@@ -3,18 +3,19 @@ class Glib < Formula
 
   desc "Core application library for C"
   homepage "https://docs.gtk.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.80/glib-2.80.4.tar.xz"
-  sha256 "24e029c5dfc9b44e4573697adf33078a9827c48938555004b3b9096fa4ea034f"
+  url "https://download.gnome.org/sources/glib/2.82/glib-2.82.0.tar.xz"
+  sha256 "f4c82ada51366bddace49d7ba54b33b4e4d6067afa3008e4847f41cb9b5c38d3"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "e52c5b1cfc4a9c37fbd697a29d37c96d778d0699d2051d167ca3fd76010c25e2"
-    sha256 arm64_ventura:  "78dbeb891e3cb378b5ac090cd994b70b4acb2595e7dd5e5240b91074c9dbbefe"
-    sha256 arm64_monterey: "3334b87e3251be90cd19a0494aa4b97a8dfabc0b83eff705c703df17cc07b925"
-    sha256 sonoma:         "84e37b74429bf0d264437160040f6f2b39ea7ef707898974e77c01f3b619de67"
-    sha256 ventura:        "3f1731d0f5daad69f028f15e2477c6f1211efdfd19fb653cf6727901709d9827"
-    sha256 monterey:       "a282c1539c408ba9245b009f5babdd7b8a9522cfcbcf00f8697718af1fc62528"
-    sha256 x86_64_linux:   "75af431b3cf94313eb31f3e6433ca3e39b42d1cfe538bc7bc92c57240b9889ee"
+    sha256 arm64_sequoia:  "fabde59fd4ed3dd1168b9fcb2c7ad2962ac6862b2cbf75b2c79e0d3ad16a204a"
+    sha256 arm64_sonoma:   "4047dfc944e3dc37dfe960135d7db67ab8c8422ed311787d894cae93dba02b37"
+    sha256 arm64_ventura:  "3a15a1b25c99c4c391329d0233a939d77caae3855cb203e7918ffa9be9254e02"
+    sha256 arm64_monterey: "5b44345a0a91d94d9e4fc196ccfcfe05cdb47c1f986cdf285aac1f69270df213"
+    sha256 sonoma:         "805d2a6a335c180f53fd3969b3d16d9ee28c787b415fbdad8fbc777196011c1a"
+    sha256 ventura:        "8f5e08e3c5f963536f5f81cc810d0a2a40c457c4a5f42d8f33ebf603214b3597"
+    sha256 monterey:       "9b9af94e4333899c424e3464550acb4294a24290fa491551f9b690317ac2e7b3"
+    sha256 x86_64_linux:   "0d30e9405f5ae1ae74ac73618b3b3fff37b42eea1f9262a1df192ba4059eaab4"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -50,6 +51,12 @@ class Glib < Formula
   resource "gobject-introspection" do
     url "https://download.gnome.org/sources/gobject-introspection/1.80/gobject-introspection-1.80.1.tar.xz"
     sha256 "a1df7c424e15bda1ab639c00e9051b9adf5cea1a9e512f8a603b53cd199bc6d8"
+
+    # Backport removed distutils.msvccompiler
+    patch do
+      url "https://gitlab.gnome.org/GNOME/gobject-introspection/-/commit/a2139dba59eac283a7f543ed737f038deebddc19.diff"
+      sha256 "62c1e9816effdb2f2d50bc577ea36b875cdd5e38f67ddb27eb0e0c380fa29700"
+    end
   end
 
   resource "packaging" do
@@ -79,6 +86,10 @@ class Glib < Formula
                                                    *std_pip_args(prefix: false, build_isolation: true), "."
     end
     ENV.prepend_path "PYTHONPATH", share/"glib-2.0"
+
+    # build patch for `ld: missing LC_LOAD_DYLIB (must link with at least libSystem.dylib) \
+    # in ../gobject-introspection-1.80.1/build/tests/offsets/liboffsets-1.0.1.dylib`
+    ENV.append "LDFLAGS", "-Wl,-ld_classic" if OS.mac? && MacOS.version == :ventura
 
     # Disable dtrace; see https://trac.macports.org/ticket/30413
     # and https://gitlab.gnome.org/GNOME/glib/-/issues/653

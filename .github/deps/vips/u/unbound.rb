@@ -15,6 +15,7 @@ class Unbound < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "6a94d87593b391a86be0ab3bdf0079897ec185f1e6418c5137dafa87597a5ea7"
     sha256 arm64_sonoma:   "7d736a54f65236d835cb7d8b5c57389fedf36f0d8e73d3d0d2c3571132a36b7b"
     sha256 arm64_ventura:  "f515fa33570a24ff6859f9949f37f9379606817bb65ea0c518dc8ca337c32c1f"
     sha256 arm64_monterey: "d3e32be6d1541200ba20a268bed52a5b886ecea5ca3c306165afea5ba1903da5"

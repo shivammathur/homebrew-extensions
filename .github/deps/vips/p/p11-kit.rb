@@ -7,6 +7,7 @@ class P11Kit < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "a411c523067edccdf5288ff53f725d590c60d0a182f1e69238fcfc86018f3395"
     sha256 arm64_sonoma:   "844c2f2f63155c6da1a6af44030866700c57981c974f71f4159a6d794e05fcfc"
     sha256 arm64_ventura:  "97ccac96157529edec341b35d57e6ca9579fb25f42d62bb573a1013572101eed"
     sha256 arm64_monterey: "aab401574960e088578df801ab10d600bfe6277f6d174bfc1bf90ea8348529e8"

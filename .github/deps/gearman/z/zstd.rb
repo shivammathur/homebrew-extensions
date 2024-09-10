@@ -20,6 +20,7 @@ class Zstd < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "487f35700f563b07036cfd429e4e7a4e37f13e22578e688cbfee2fa9484aaf9d"
     sha256 cellar: :any,                 arm64_sonoma:   "2028141683f55bffcd0693b9e49eef1e3dabc1e184214cacb173ca9bd54dabc0"
     sha256 cellar: :any,                 arm64_ventura:  "035cbadb205abbe00107f0c7746f3715e3841c007e4b3a309398e65d50c43cf5"
     sha256 cellar: :any,                 arm64_monterey: "7f12fa16033d6576099c481f93a7423a526a7b3252a0ea0921ea0016c18f49f8"

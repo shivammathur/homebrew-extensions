@@ -7,6 +7,7 @@ class Abseil < Formula
   head "https://github.com/abseil/abseil-cpp.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "280f470ee5ae12531a5528850dd90010acb872699064ee273598e4bbc46e304b"
     sha256 cellar: :any,                 arm64_sonoma:   "922c5d7b256fed577b3f7c84ec7a8ce67dddfc7670726e417eaed71bb6878fc6"
     sha256 cellar: :any,                 arm64_ventura:  "0e81f268b9e514694f0dbe17a2cf6fecf1537ed680206e6ef88671345482f7e9"
     sha256 cellar: :any,                 arm64_monterey: "e10b87de708e6731f27a22e3585884749dbcf967a3bd2486ddcae0f410951c3f"

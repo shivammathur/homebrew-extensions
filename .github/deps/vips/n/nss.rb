@@ -14,6 +14,7 @@ class Nss < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "81c70cbb8e09eb189d8f04260e1e990bfdd331022c94b9277e9788d6f1183a55"
     sha256 cellar: :any,                 arm64_sonoma:   "fdb2eec983bf3b1c1d104c214cc99a3a3f35f64b8c3229f049e957c6dbaacfb0"
     sha256 cellar: :any,                 arm64_ventura:  "86a106faa1047190cb262dd08d19cb32a55513dd28a2e4bd50641ef2af8ba99f"
     sha256 cellar: :any,                 arm64_monterey: "6e5b16c90009ef80e767b90386080d14572546a47fad5166a4724c622a964932"

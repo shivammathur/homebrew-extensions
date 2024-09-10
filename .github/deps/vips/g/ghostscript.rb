@@ -28,6 +28,7 @@ class Ghostscript < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sequoia:  "c5f70c8ebed71bf33bfc579776e9d0b161dd2a6cb2b5db19d63c09a366d361d4"
     sha256 arm64_sonoma:   "b0d9503a7efa718b2c1c2994b442065e79cf3a7807402944e19d278391766077"
     sha256 arm64_ventura:  "7bd21d992e534be507dd7d457c6a0b1cdf76ef1743976276c1eaa256bca2306c"
     sha256 arm64_monterey: "ac3c82a2bccbea544614781dc85aa1400d1665d40e37f1df1de0986daa76e1f0"

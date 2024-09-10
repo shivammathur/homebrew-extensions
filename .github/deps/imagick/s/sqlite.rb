@@ -15,6 +15,7 @@ class Sqlite < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "7bd90d0910ec7b1dd2be0421a5a76fff773e26eb6e9416ab885b05bd498e35fa"
     sha256 cellar: :any,                 arm64_sonoma:   "ea8ee59ee1cf5599778ed5ce03f118dfc96cc814f0a8aefa059502101ee45c7c"
     sha256 cellar: :any,                 arm64_ventura:  "0b50035ff0b93300155a67a6c42a1fa2c88e39fc4d4daba4471eda9ac9b3224c"
     sha256 cellar: :any,                 arm64_monterey: "b04e7f909acd9753598e0d00ea3eb5f409d219c8efd48888725812e7ca68bfa1"

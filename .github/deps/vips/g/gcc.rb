@@ -23,6 +23,7 @@ class Gcc < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "28aade77b6754d6231cc5af51128399d27089972edcbf655f033a96a5f6c45ad"
     sha256                               arm64_sonoma:   "1f68353bd346d182e0037a6cd24140e16c8984b3a26092578d4fe2c1e5560adb"
     sha256                               arm64_ventura:  "ac0d447abd61d6e312942ca3df2ad03bc9e4ff41edff884816ffc9cdfb78331b"
     sha256                               arm64_monterey: "485bee1b2f704a0a9a503c999bfd990daad938ca780d8fd8d0c32116ff22e120"

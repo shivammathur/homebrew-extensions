@@ -15,6 +15,7 @@ class Lz4 < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "5bd143b7b784989e549637ea4e484af85ba481e640dde69bc35f3843ae25abc6"
     sha256 cellar: :any,                 arm64_sonoma:   "6590245dc4a919c46afa16366914cd4b5c0c4a8f4fb35a4f6ab89053f289ae5d"
     sha256 cellar: :any,                 arm64_ventura:  "03119aa78b7a96d4b8fde7553f5601ff104d59156aca4086a2af7aaec6cba5a4"
     sha256 cellar: :any,                 arm64_monterey: "3ace9946a02899abcc0b8852863a62e70e1eec91deffa579512f0e6c493738a3"

@@ -12,6 +12,7 @@ class Freetype < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "bcd39d3a523690cb0673df46122ff62763c5cd93bfff21bdcab856501d2dfb49"
     sha256 cellar: :any,                 arm64_sonoma:   "939f90de3dd92919020832ba03d6617a0d2ec9a8e185f6a2c518f149c7b299f4"
     sha256 cellar: :any,                 arm64_ventura:  "47122c7d025f841f3816f1bc2c14ad1e6b4227ccc56eae2827fa585d3b58dbc5"
     sha256 cellar: :any,                 arm64_monterey: "ace9a5d707a94eb85c67fe349e48c9264287c2d80e0ce60f9bfe5772be2983f4"

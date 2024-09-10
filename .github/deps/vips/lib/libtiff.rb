@@ -12,6 +12,7 @@ class Libtiff < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "8f7adcae099f9d84445a5a5a7bf8908e3dd0059f0db1b02510fdebf56665dbea"
     sha256 cellar: :any,                 arm64_sonoma:   "a9cafbce08b697fb25e326ea1dd3a0e01c3acc3f8f616e844940e49b33386ab3"
     sha256 cellar: :any,                 arm64_ventura:  "12f3e1b0e5cd225a05d914692cf6de0f86f29ba1f51b806723237da2f85a7b13"
     sha256 cellar: :any,                 arm64_monterey: "8a7ed5ea7efe9534f15bca3ae2134d9f35bd08372da5949c33d025f80ae1d47e"

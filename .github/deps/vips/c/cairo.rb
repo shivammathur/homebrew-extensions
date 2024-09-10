@@ -12,6 +12,7 @@ class Cairo < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "d74a4f1916b9fe1254268c0b20c50d8a5e8cb101c914450d2c5a34066837a366"
     sha256 cellar: :any, arm64_sonoma:   "8d7d5bc22a123340ce7092b9bf1438ce8e959157e38b784226f48b616a76122a"
     sha256 cellar: :any, arm64_ventura:  "b87ffd7bf969bed012cdce5d639fb12849108a6864afa2d1fd990889856405e4"
     sha256 cellar: :any, arm64_monterey: "3f8d520f1560515c17710512daba768af0ef5b9f7f620cdeec0a619f556b3487"

@@ -11,6 +11,7 @@ class Libarchive < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e3d1226bdd3e0861e3b76344aa8af138101ea6988cc13c86767e768fab722030"
     sha256 cellar: :any,                 arm64_sonoma:   "d97e0d2bf8558c7c09b84a48931a75b69e91635d876aee86d99ff2f2f1857ef6"
     sha256 cellar: :any,                 arm64_ventura:  "cd817acf144903029b3afcd77f71676cee79c8836709d31f53ef25b2416ca11e"
     sha256 cellar: :any,                 arm64_monterey: "2eee8e2a8945d77bea76a2640d1cb7206d6968a98bb9c3ee5dd1cd1d55f864a4"

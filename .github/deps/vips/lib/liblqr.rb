@@ -16,6 +16,7 @@ class Liblqr < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "0adf2f9c0c8b464c301df3595f6dab6a86944b1227c7934a2cfdaedce985bc69"
     sha256 cellar: :any,                 arm64_sonoma:   "9ad43c688c7604dc0d12d25a55e5dba657312e6f702c5c7779a529e7b0788c3b"
     sha256 cellar: :any,                 arm64_ventura:  "c93518552d7c18f49dd1fb7e15e23bc36fcd6e43c7a28c82493f552ff4cf4d1a"
     sha256 cellar: :any,                 arm64_monterey: "5a0057c2916952556b4ef88ebdb3facc0dea309da38adb0540ce12d18c08a5cd"

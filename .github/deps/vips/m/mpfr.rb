@@ -24,6 +24,7 @@ class Mpfr < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "51f0ca19e897731b928742401c9c8d1d7d93c3c275aa8a66a77b9ac01d0c223c"
     sha256 cellar: :any,                 arm64_sonoma:   "71c4d6cc59a5bee30e0779b1d095c2e2db1cb63b51eac88d5d4191660e613d0c"
     sha256 cellar: :any,                 arm64_ventura:  "28014245ba2ce1edebadedea884f9749c6c588352d938472821bc5c9e0f866cc"
     sha256 cellar: :any,                 arm64_monterey: "209306f204f9cc2db3a1a500a9426f18e410f7783914d41e09e39782f94c55da"

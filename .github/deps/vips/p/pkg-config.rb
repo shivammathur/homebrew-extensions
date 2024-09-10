@@ -14,6 +14,7 @@ class PkgConfig < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "ee6fe55249da7637626c82195cba7f4251c64066cc067935d35317c484460a09"
     sha256                               arm64_sonoma:   "7b59abc0b5381065b1eab174217307af9324e0d02edf903171b29250ae58aeaf"
     sha256                               arm64_ventura:  "3ff612c5e44b945c8c0cc6df7d3edb407ca67cddad9c89f9ab99ced494b7a8c2"
     sha256                               arm64_monterey: "2af9bceb60b70a259f236f1d46d2bb24c4d0a4af8cd63d974dde4d76313711e0"

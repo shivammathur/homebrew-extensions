@@ -12,6 +12,7 @@ class CAres < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "fa10ad06a1e386de0ce7e772a327b782054c396fba4186bf03eeab00e3081574"
     sha256 cellar: :any,                 arm64_sonoma:   "1db3cc921cd4aace48310a4e0d7ad4a9804017f886fd73ad605203d0cc259395"
     sha256 cellar: :any,                 arm64_ventura:  "3d4e3e1b41a2c00478ed4ba32403cf5984a81dc067add57f6a7b7b029941ec6d"
     sha256 cellar: :any,                 arm64_monterey: "bb3bda7abb9fe1d9d4e5b955b20c3ed062c1eed3173664b6ce75adc99fe7b14c"
