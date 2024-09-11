@@ -12,6 +12,7 @@ class OpenMpi < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "8fc089be34f447968039f7408a51e65ace25124ba417de52e950facce7e47475"
     sha256 arm64_sonoma:   "2eb8af01260123ac14e6c47dc0c2d6533ae846b93805e95940fd991af286b228"
     sha256 arm64_ventura:  "41fbd96be69b9cd6f06f29acb9e29d7f182af84ee9a35ccb2b60b3fea526cbea"
     sha256 arm64_monterey: "e62156754013d4acf586032f28da661f0ff0275a664347a77a616ac76dede707"

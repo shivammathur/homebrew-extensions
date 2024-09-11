@@ -6,6 +6,7 @@ class Libmatio < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "3e3a3064f2b94a6d6042b67365fd8cd44b47edeeeccf5a1564c78e8f6799cd5c"
     sha256 cellar: :any,                 arm64_sonoma:   "12a723da0082d255f8061cee5512636fbbda001bf3d7fc9b104b707f36898c31"
     sha256 cellar: :any,                 arm64_ventura:  "19d3701ee1d0070997c54c3a52e5e909603f52c9ab0a9e938ea7cf194cd003d8"
     sha256 cellar: :any,                 arm64_monterey: "75ae243a0b2a566a6d6d3988cf3e773749aae9330348d0e9006acee1311baf39"

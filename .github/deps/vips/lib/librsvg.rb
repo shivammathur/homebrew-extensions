@@ -14,6 +14,7 @@ class Librsvg < Formula
   end
 
   bottle do
+    sha256                               arm64_sequoia:  "e4eafbc3bdfff68709d347949c55d3474459a7f0470432290c6211f54769ed49"
     sha256                               arm64_sonoma:   "596ae828e6cdd559475ed07c03d6af06d8f7e504c97da2c1fb45f2bfdb16a874"
     sha256                               arm64_ventura:  "e884e9f94c31931a09b278bd774c2bd01d9a6414f724d2b0dbefbbfccabc0614"
     sha256                               arm64_monterey: "c6bc31cecc67c56d6c0cf0425dfa30f6a4dd39ed60fc40a515557600810cc98e"

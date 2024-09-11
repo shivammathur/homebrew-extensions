@@ -6,6 +6,7 @@ class Libexif < Formula
   license all_of: ["LGPL-2.1-or-later", "LGPL-2.0-or-later"]
 
   bottle do
+    sha256 arm64_sequoia:  "df36ccbc1e0580aabd7dc8bb37d092f961473d49e8731e0a35a5f675b44fa4f7"
     sha256 arm64_sonoma:   "576b58859b1716d6e828174b0ffef8e34e33b8dab31230750402007f8a242086"
     sha256 arm64_ventura:  "07c1f865b09e4e77513478147dd0ac074dfcb9cfed61fe6322677f60448b7425"
     sha256 arm64_monterey: "b71456dcf43a1697530075ed530dd4561e921de1ef9ac872ae173fb3c4b70596"

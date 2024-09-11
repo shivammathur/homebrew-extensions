@@ -16,6 +16,7 @@ class Hdf5 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "11d5709df72cf0278a42129d677a996ee7252811b5de8e578b36e5206be1a518"
     sha256 cellar: :any,                 arm64_sonoma:   "0bd0281269f954e5d6cea61797cbe1d285040c00dc46610b97ba35a6bebc0393"
     sha256 cellar: :any,                 arm64_ventura:  "8675de344a05dc34325ee71ecaceff04795a70ba4c3c4c26ef5916f370b2002e"
     sha256 cellar: :any,                 arm64_monterey: "395a707db01aee75cc3e287b687c15bc34765a233fb3636f2151f5ca98a2dc5d"

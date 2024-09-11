@@ -7,6 +7,7 @@ class Pango < Formula
   head "https://gitlab.gnome.org/GNOME/pango.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any, arm64_sequoia:  "555a0ea1e85a5f5b5d26e4bfdc1f1c19a3d1108ba0801deed64d301a6d912c58"
     sha256 cellar: :any, arm64_sonoma:   "c47cf2f24449280a2643d958e6f211a2db089f1c2cb3e9f27ef50f35701601ed"
     sha256 cellar: :any, arm64_ventura:  "1a20935a0a5377fadbb6f02c6b9689d4d5e2a6e6d489e1d9e77b0684876046a6"
     sha256 cellar: :any, arm64_monterey: "b79420edeeacdb59d0b1a131d3198f6dfcc8ec9dd3e6a4c6136271718e9ad41d"
