@@ -12,6 +12,7 @@ class Gpgme < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "3be0ed36949874bc0c6b0b5936750b498cc6d74ff5949bef213c1bbc252ecc7c"
     sha256 cellar: :any,                 arm64_sonoma:   "5990f0751f5bce504beaaa9379e0bb082cea842010a6f94f11cfe0c99baba01b"
     sha256 cellar: :any,                 arm64_ventura:  "4cf824bf4138deda8878af6ad5ea2e6af519a8d7793c0a168f724799d5f97e42"
     sha256 cellar: :any,                 arm64_monterey: "5b94224d8226e2e49d3ea30bf5bd3d76672a5fd1fb59cdfbf160c35e6d2a4fa3"
@@ -32,6 +33,12 @@ class Gpgme < Formula
     "python3.12"
   end
 
+  # Backport fix for newer setuptools
+  patch do
+    url "https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpgme.git;a=patch;h=ecd0c86d62351d267bdc9566286c532a394c711b"
+    sha256 "69202c576f5f9980bc88bf9e963fd6199093c89ab8dc3be02ab6c460d65fe1b4"
+  end
+
   def install
     ENV["PYTHON"] = python3
     # HACK: Stop build from ignoring our PYTHON input. As python versions are
@@ -48,9 +55,9 @@ class Gpgme < Formula
               /^\s*\$\$PYTHON setup\.py\s*\\/,
               "$$PYTHON -m pip install --use-pep517 #{std_pip_args.join(" ")} . && : \\"
 
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--enable-static"
+    system "./configure", "--disable-silent-rules",
+                          "--enable-static",
+                          *std_configure_args
     system "make"
     system "make", "install"
 

@@ -7,6 +7,7 @@ class Aom < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "8ab0ca54bc4adb96a43fefa315e92c391855b1d9eeaa44f17d4cdb3421aebd08"
     sha256 cellar: :any,                 arm64_sonoma:   "64ae34cc94bd038a3c2072757a794b5eb04084a937fba9caf522c8a752454c14"
     sha256 cellar: :any,                 arm64_ventura:  "3c9b27fc4d94f24bde45494301863ee458a04cb8784889b8232b43ae9e56ccde"
     sha256 cellar: :any,                 arm64_monterey: "ab03b82135121d0d4ab152e931756a9d729e0505b4de4c0b05ab0a0c4105d1ed"

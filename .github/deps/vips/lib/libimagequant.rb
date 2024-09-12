@@ -21,7 +21,7 @@ class Libimagequant < Formula
 
   def install
     cd "imagequant-sys" do
-      system "cargo", "cinstall", "--prefix", prefix, "--libdir", lib
+      system "cargo", "cinstall", "--jobs", ENV.make_jobs.to_s, "--release", "--prefix", prefix, "--libdir", lib
     end
   end
 
