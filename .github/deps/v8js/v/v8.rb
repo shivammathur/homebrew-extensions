@@ -23,6 +23,7 @@ class V8 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "c970a5657a165144470702ac586a5b17349397446a421f35e9323a0f01dcd385"
     sha256 cellar: :any,                 arm64_sonoma:   "15a1692bba6d316446d00640d6f0975a221cb519031b76e9fc8a7036c93a2550"
     sha256 cellar: :any,                 arm64_ventura:  "b40b3f0daae622cc1d258b8834c9f5f6b942652deb785c22350e9b8ce08ac7c5"
     sha256 cellar: :any,                 arm64_monterey: "d4236596413abd930b07c749b5b87c7551cc68ff744ee9878bacafe668a8b055"

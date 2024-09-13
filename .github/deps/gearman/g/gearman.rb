@@ -7,6 +7,7 @@ class Gearman < Formula
   revision 3
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "5cdfdb84c2102f65926d2265929435a919eca018f7535e7cc68c022923065b18"
     sha256 cellar: :any,                 arm64_sonoma:   "9d1da4a4f4163500fa5526812bc3a0568378e01a89001545bf45cee7c61d5ed7"
     sha256 cellar: :any,                 arm64_ventura:  "4b43f495ded047c9a8bbf9cd1007151049cebf7cefcde392d00b9e3bb16b6bdb"
     sha256 cellar: :any,                 arm64_monterey: "93ccbc7bf2fe168924a57d16851206fbf781f3ff78460c66f1e97e5551287bfd"

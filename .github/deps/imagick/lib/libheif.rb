@@ -6,6 +6,7 @@ class Libheif < Formula
   license "LGPL-3.0-only"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sequoia:  "e8d16fb379fb5bcc42d9cafcb0bb4cf6907baf36cee1e7f274e5d63feea6c525"
     sha256 cellar: :any,                 arm64_sonoma:   "3ac03a6aa83b0c636c640cd953082d5e06f06d2fa74d7a50914812bf6bd73203"
     sha256 cellar: :any,                 arm64_ventura:  "392d7fd61637d1912c95ad3f1629dac3da032f49d01d966c9813d0f65e36d994"
     sha256 cellar: :any,                 arm64_monterey: "c43506ecb80ccd6f46951d459579e4af1ebeb4a91ae800681f26f28457b17ec4"

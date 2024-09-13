@@ -12,6 +12,7 @@ class Imagemagick < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "7b3eb028e810abfd11c0d7af78bc490c91a96556b7974983ce39ee4f2a009e75"
     sha256 arm64_sonoma:   "6e974a3e9c5b276469857e52bbbed3e4c5a174abd50cf1bb609c1dfcefc01f72"
     sha256 arm64_ventura:  "3018867e80782b6ab31221788fcc21737da60b15720d60b3fee5ec5fc2dc2290"
     sha256 arm64_monterey: "e18a67869e57df979c9dc9822b32d1555e1473b8eb4c97b1d02bb79c04684466"

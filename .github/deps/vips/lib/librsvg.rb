@@ -1,8 +1,8 @@
 class Librsvg < Formula
   desc "Library to render SVG files using Cairo"
   homepage "https://wiki.gnome.org/Projects/LibRsvg"
-  url "https://download.gnome.org/sources/librsvg/2.58/librsvg-2.58.3.tar.xz"
-  sha256 "49f29a0a92f4c2d19a2cb41e96ab2fce7eb5bde41850c8a914fcf655e3110944"
+  url "https://download.gnome.org/sources/librsvg/2.58/librsvg-2.58.4.tar.xz"
+  sha256 "296e3760d2347d0767c3e291dec962ab36baecd25c4898c6e8150a731f967c7b"
   license "LGPL-2.1-or-later"
 
   # librsvg doesn't use GNOME's "even-numbered minor is stable" version scheme.
@@ -14,14 +14,14 @@ class Librsvg < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia:  "e4eafbc3bdfff68709d347949c55d3474459a7f0470432290c6211f54769ed49"
-    sha256                               arm64_sonoma:   "596ae828e6cdd559475ed07c03d6af06d8f7e504c97da2c1fb45f2bfdb16a874"
-    sha256                               arm64_ventura:  "e884e9f94c31931a09b278bd774c2bd01d9a6414f724d2b0dbefbbfccabc0614"
-    sha256                               arm64_monterey: "c6bc31cecc67c56d6c0cf0425dfa30f6a4dd39ed60fc40a515557600810cc98e"
-    sha256                               sonoma:         "60853c4e5612c06e17fb911d8ed7a445c10d0ae413ff4ea44afd0aa75a89ab1d"
-    sha256                               ventura:        "991f503080cce423cb98594915ac9d24ba14e2877552d6fdeaf004a0c24a4c2f"
-    sha256                               monterey:       "f64f5ef0539af135afa91fd868c5b49c421af1fadb02126fe10444d1891a33d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1692a55a60d93415e41ab9fcab6597fa54080ab9ac61d7fd63ab6dab338f97bf"
+    sha256                               arm64_sequoia:  "62c2bd6cd94b22a8231b423b1a1fc9084c8496e2ffd08fda39df2a11af3b668f"
+    sha256                               arm64_sonoma:   "12c692788acb39a1b01ab52ec3a9042a590449dc4c1ca3a37f6dfb8de1ade404"
+    sha256                               arm64_ventura:  "42eeef26afba840075b5a42b644a2ee369c280dbd955eff559edad4c5e310edd"
+    sha256                               arm64_monterey: "fcb9205a1cf574f392c5188e85f90f3a96d36d9bd65cbde98b3481ad02c23887"
+    sha256                               sonoma:         "593325eefc9b94aeb1c1b3186add9d4b980e195c617a7e736ee9498b177fae85"
+    sha256                               ventura:        "67f803506a82f16b08461005382dbabfce218ec9dca90f2159fa467e6e5cdaeb"
+    sha256                               monterey:       "eb49065b7846d1f7fa4a1cab3baa0048f689288eb8512e09ea7a5d64fbe47290"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c71dffd85fd7b3553766305adf685a59fc00b87d3120f0e96b199f079ac0fda"
   end
 
   depends_on "gobject-introspection" => :build
