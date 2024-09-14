@@ -15,6 +15,7 @@ class Libcouchbase < Formula
   end
 
   bottle do
+    sha256 arm64_sequoia:  "4b9c7045a71e8a72fb7b493031972e46b6196a50d3d216a91c8e3c35056de4ca"
     sha256 arm64_sonoma:   "0ffde6d5799d351b615e209633510b278fb118778de121d6a5087950a557039c"
     sha256 arm64_ventura:  "4da283f5643ee2514c6aceeedff4831db3396482cf882a04cde7cffe23ec55f0"
     sha256 arm64_monterey: "a3eaa5aac0eb967ec979f6541a94ee06d90bd2c5c31cd2f6e431c3e9be4777c2"
