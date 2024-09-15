@@ -2,12 +2,23 @@ class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.se"
   # Don't forget to update both instances of the version in the GitHub mirror URL.
-  url "https://curl.se/download/curl-8.10.0.tar.bz2"
-  mirror "https://github.com/curl/curl/releases/download/curl-8_10_0/curl-8.10.0.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/curl-8.10.0.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/legacy/curl-8.10.0.tar.bz2"
-  sha256 "be30a51f7bbe8819adf5a8e8cc6991393ede31f782b8de7b46235cc1eb7beb9f"
+  # `url` goes below this comment when the `stable` block is removed.
   license "curl"
+
+  # Remove `stable` block when patch is no longer needed.
+  stable do
+    url "https://curl.se/download/curl-8.10.0.tar.bz2"
+    mirror "https://github.com/curl/curl/releases/download/curl-8_10_0/curl-8.10.0.tar.bz2"
+    mirror "http://fresh-center.net/linux/www/curl-8.10.0.tar.bz2"
+    mirror "http://fresh-center.net/linux/www/legacy/curl-8.10.0.tar.bz2"
+    sha256 "be30a51f7bbe8819adf5a8e8cc6991393ede31f782b8de7b46235cc1eb7beb9f"
+
+    # Prevents segfault in julia test - https://github.com/curl/curl/pull/14862
+    patch do
+      url "https://github.com/curl/curl/commit/60ac76d67bf32dfb020cd155fc27fe1f03ac404f.patch?full_index=1"
+      sha256 "c9330acd41390cada341322c81affba24fb422b1123ee4360c2a617a42d6f517"
+    end
+  end
 
   livecheck do
     url "https://curl.se/download/"
@@ -50,12 +61,6 @@ class Curl < Formula
 
   on_system :linux, macos: :monterey_or_older do
     depends_on "libidn2"
-  end
-
-  # Prevents segfault in julia test - https://github.com/curl/curl/pull/14862
-  patch do
-    url "https://github.com/curl/curl/commit/60ac76d67bf32dfb020cd155fc27fe1f03ac404f.patch?full_index=1"
-    sha256 "c9330acd41390cada341322c81affba24fb422b1123ee4360c2a617a42d6f517"
   end
 
   def install

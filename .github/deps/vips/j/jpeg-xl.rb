@@ -1,8 +1,8 @@
 class JpegXl < Formula
   desc "New file format for still image compression"
   homepage "https://jpeg.org/jpegxl/index.html"
-  url "https://github.com/libjxl/libjxl/archive/refs/tags/v0.10.3.tar.gz"
-  sha256 "e0191411cfcd927eebe5392d030fe4283fe27ba1685ab7265104936e0b4283a6"
+  url "https://github.com/libjxl/libjxl/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "7ce4ec8bb37a435a73ac18c4c9ff56c2dc6c98892bf3f53a328e3eca42efb9cf"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class JpegXl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "2237374ff0cb4166e8f77c7915f14488a3c6348c98e3e28263121686e57fa266"
-    sha256 cellar: :any,                 arm64_sonoma:   "00d633fdbcd07f7e1b99b981bebce471cea4e6787970fbb07a9a824df603a5b0"
-    sha256 cellar: :any,                 arm64_ventura:  "7f8e717c60fe7d3f05d41dedde1cb648484a43caea06b6d80fcb45e75d8d8c88"
-    sha256 cellar: :any,                 arm64_monterey: "8e7a3bb9fc00497ceb70d4c3774cf4175b510f1368db8964ae57ce43cab06a78"
-    sha256 cellar: :any,                 sonoma:         "e15c98d5454618125d3a164c97460b52b4e006c995783fc0664152760d6f09ed"
-    sha256 cellar: :any,                 ventura:        "480ae7e486257d0e0d819254b1a0b2418e5994a7343be4f431ee029623ac79d5"
-    sha256 cellar: :any,                 monterey:       "398c84d9563b6c2d7ad1654764d37eb300a11259b4ad8f3bfe00bc9edeaf9142"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64b61d8a8d21bed6842b83b3e2810fe12ad1d77bdad9781850edef818a1355e7"
+    sha256 cellar: :any,                 arm64_sequoia: "1b2259f4a8de0738dd4fd7372cde4c27d7b88ffd05b3d4332f0a26f198bdb66d"
+    sha256 cellar: :any,                 arm64_sonoma:  "d3c74c5e1251537f657139d522c679101aa27ef9adcc502b67a2c65d4e566cd1"
+    sha256 cellar: :any,                 arm64_ventura: "acdf147b1d55d1d2a5b70966359a8dc109daa4267e7573bc5f44816e2fd15170"
+    sha256 cellar: :any,                 sonoma:        "73232fde73828823576c61b2377b719add934499e2932aefa1b610ed07fe82ca"
+    sha256 cellar: :any,                 ventura:       "a44ff4d24ef1c099f979c8f96af5b541f9df54e11ba9db68cd7adbc690729bfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3010ddddc0ad684240ff63ef3a7e9dc84e2022cdda4f53c63b3c7243334ef67"
   end
 
   depends_on "asciidoc" => :build
