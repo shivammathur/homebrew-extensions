@@ -16,6 +16,7 @@ class MsgpackAT74 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "61b74827058190ad527979afff9f995c44de518a636e59343f00b0b951434fa7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "344c0c3ade4c110b8ffbe1072ba0defc2fdba4cb597cc3bd0fec8b65d8630026"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "74062a8898b7d4c7811d05782c5860b406df5470ba47735ea0f545e1f7aa34dd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b72e1a45f1f3af1996491a65fcbfed3f87ca3c648ac8ecb22c9ccbd873fc930a"
