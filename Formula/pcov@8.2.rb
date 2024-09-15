@@ -16,6 +16,7 @@ class PcovAT82 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2b71077347b65c21f2dadb9e92cd1fd4ee714d6d82c91e5d877e4ec516906efd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "77ee224f5d4dc609534b4871335c2fe92a0bfa55da2994cc2ac5936057f85963"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8898b35621bdd0034fa1b496fa20d915c4b3e34c0a7c91e2f2b43602e5a23e07"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60c7d4e17d4727b664183a9073d15ffedf166cb7e76f4b057b059e381f9bcb9a"
