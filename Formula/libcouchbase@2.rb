@@ -8,6 +8,7 @@ class LibcouchbaseAT2 < Formula
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "4acf9f80c58ecbff26f918ee0a113e8fb25ca8f03c0e14c5368caacc76c9f24d"
     sha256 cellar: :any,                 arm64_sonoma:   "1f934247cd79b9f5e3b079a06ef6145c5fd02c51de8afab62dabbd9d3bd2a352"
     sha256 cellar: :any,                 arm64_ventura:  "799566d704fb9e8d7277c1f19ffc664cb5442741710ec88aa66ac3d56a9bd1ef"
     sha256 cellar: :any,                 arm64_monterey: "ae6fdeb94c99edb5c3c50382156b09797f66532c2ea8013c46f93eaa2c1b5873"
