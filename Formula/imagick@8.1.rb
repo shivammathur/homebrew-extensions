@@ -16,6 +16,7 @@ class ImagickAT81 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 5
+    sha256 cellar: :any,                 arm64_sequoia:  "1e4d2ab329735f01840040f9b314c968574e88421eaf5b87d274552f20abf715"
     sha256 cellar: :any,                 arm64_ventura:  "19b72f476fd14dc2a8335aa1c7033cf261873eab749008a69fdd8bced8c04d7e"
     sha256 cellar: :any,                 arm64_monterey: "4bbb77e5251ad646ed9d4a583264be9d5d01c573c2fafc268eb8096312788814"
     sha256 cellar: :any,                 arm64_big_sur:  "ffa39ff9606d00c0c0b8b48bf0450e2678c62f97c9747c137e01946721bc029d"
