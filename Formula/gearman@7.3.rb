@@ -15,6 +15,7 @@ class GearmanAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_sequoia:  "71842b09903ec6f0257c024ff79322d945e632c600bb45842a5a6779df19366c"
     sha256 cellar: :any,                 arm64_sonoma:   "9c4ae7e3179088325515d0e9e405fdf0e0760625d8ab897df3e2dcbef427f7d2"
     sha256 cellar: :any,                 arm64_ventura:  "ca33b0f2f9e64a8e6ae2fc3fdbbcef97ac27f36602cf6c9e8550e8aa83a3c978"
     sha256 cellar: :any,                 arm64_monterey: "ef70ab535917adf9000cf4d12746a479a9b2f2a59129d1415d848165eee88501"
