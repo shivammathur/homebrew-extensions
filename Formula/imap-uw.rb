@@ -106,8 +106,6 @@ class ImapUw < Formula
   def install
     ENV.deparallelize
 
-    ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
-
     inreplace "Makefile" do |s|
       s.gsub! "SSLINCLUDE=/usr/include/openssl",
               "SSLINCLUDE=#{Formula["openssl@3"].opt_include}/openssl"
@@ -122,14 +120,20 @@ class ImapUw < Formula
     # Skip IPv6 warning on Linux as libc should be IPv6 safe.
     touch "ip6"
 
+    extra_cflags = []
+    # Workaround for Xcode 14.3
+    extra_cflags << "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # Workaround for Xcode 15
+    extra_cflags << "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     if OS.mac?
       add_headers
-      system "make", "oxp"
+      system "make", "oxp", "EXTRACFLAGS=#{extra_cflags.join(" ")}"
     else
-      system "make", "ldbs"
+      system "make", "ldbs", "EXTRACFLAGS=#{extra_cflags.join(" ")}"
       lib.install "c-client/libc-client.so"
       system "make", "clean"
-      system "make", "ldb"
+      system "make", "ldb", "EXTRACFLAGS=#{extra_cflags.join(" ")}"
     end
 
     # email servers:
