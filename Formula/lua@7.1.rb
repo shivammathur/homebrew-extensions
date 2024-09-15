@@ -16,6 +16,7 @@ class LuaAT71 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "5f4f8ff231a0a51d07deda4553b497d064a4445ce7c0c7d7a66cf4c96927df2d"
     sha256 cellar: :any,                 arm64_ventura:  "f760a20a316ba07b8311a982bc66bfaf327e040f71c3f606020f963543c2c594"
     sha256 cellar: :any,                 arm64_monterey: "b8c9f57d766e4c849162d091b4ae8da4fe7965dba12181c01dcf5775e326fc44"
     sha256 cellar: :any,                 arm64_big_sur:  "b606b228851e979bc65f5f3d697739e73174be6d6e88b54f8885de79ab888199"
