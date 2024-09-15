@@ -15,6 +15,7 @@ class Ssh2AT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_sequoia:  "e8430547364b32e5b19a351b97561d3893ca040c58969d136b17f3c34b4e7c35"
     sha256 cellar: :any,                 arm64_sonoma:   "eb74a5432f99c67000de5a7873841369d02aec3835fcfe97bf718713c5c1cbea"
     sha256 cellar: :any,                 arm64_ventura:  "a250ed4b09c41ac7ea4df4ca4088e579f62484b99b3a46aa6afb9459fc655759"
     sha256 cellar: :any,                 arm64_monterey: "54af2af41d84b078c41d3956be2f446b0f3a66bfff460a32288d14c3c948b75d"
