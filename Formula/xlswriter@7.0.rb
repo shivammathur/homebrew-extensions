@@ -15,6 +15,7 @@ class XlswriterAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ebecadb080ffbb16f32c0aad4f34e2a93f3e7f2d1cf858e388b2081704cb9f04"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b1df26cd56d65e6ea04f7d4ad68c7ba2305f6e4e6a35542534a7e523537efd1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0ae1227c50bcf07cf7ba1cde70d17550b71755640066f61b8c4f6e77d8d570b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6573836cc68aa97515b20e95a496855ae8e7151e5beac3d7504831ecfde79e3e"
