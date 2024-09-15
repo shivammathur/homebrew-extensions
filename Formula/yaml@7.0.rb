@@ -16,6 +16,7 @@ class YamlAT70 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia:  "284089c7a1788c2e4cb6488faa06edc4fea6cad58de4ab61df99b5d7bbcb6667"
     sha256 cellar: :any,                 arm64_ventura:  "8d82351ea87d7c5986398e9bce39a52695095f2c6345abf9224a281123b56d20"
     sha256 cellar: :any,                 arm64_monterey: "e9215339046ecb30bb185cf14e05bdca9f497538e59bd69a05f071a25aa2ab17"
     sha256 cellar: :any,                 arm64_big_sur:  "7dc63852d7b05ccecd1b7421c29114af4b39ccdbdbc015b960c3148e03590ba9"
