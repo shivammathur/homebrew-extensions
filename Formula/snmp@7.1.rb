@@ -18,6 +18,7 @@ class SnmpAT71 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 9
+    sha256 cellar: :any,                 arm64_sequoia:  "d24ceb11988b207409cfb89690c00d8c5d867f3d34a04192679ab70cb8ac5733"
     sha256 cellar: :any,                 arm64_sonoma:   "e9948a14d00cdb6e52abbc8c1977c24e85693206822d768f1b4d5c56486a3b04"
     sha256 cellar: :any,                 arm64_ventura:  "ab62061758d4d9ee58818b311a6f174fdb74449997f541a543abe8c21820d657"
     sha256 cellar: :any,                 arm64_monterey: "c37ea5ec9369272c5ee9d3b6f844df2511e7d446382579b4947da3e946cf477e"
