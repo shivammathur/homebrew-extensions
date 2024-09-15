@@ -16,6 +16,7 @@ class GnupgAT82 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 4
+    sha256 cellar: :any,                 arm64_sequoia:  "153ae630364c534e57c8eb3faa2a619e8582bcfabf4e3a60b8d3314f65e1681f"
     sha256 cellar: :any,                 arm64_ventura:  "23db356556cb20acdcd7e3e05ffeae393ff2649a80cb5270fe72102f9899e038"
     sha256 cellar: :any,                 arm64_monterey: "be5184ee59c71b2c682b70b8eac14c9da337cc064a3312e2f128a21cd2d6d817"
     sha256 cellar: :any,                 arm64_big_sur:  "3237337f33d23cbaff0cbf28a1f65a15cefebf6c5f702248ae0b86b7bffffe97"
