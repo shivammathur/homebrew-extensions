@@ -15,6 +15,7 @@ class SqlsrvAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_sequoia:  "f1209cb35f705ab3083edd603d485ef93958e2b5b35e5a7cc4a7971eee4a0d63"
     sha256 cellar: :any,                 arm64_ventura:  "688375d211af9d91dd966bc5018c4f28973dbe7af8e1f65ea9914c4f667fdbe0"
     sha256 cellar: :any,                 arm64_monterey: "1b19469574e30a9b770d7502e9bfb01f7ec73cf53997ed1a9e8f3758e9b49837"
     sha256 cellar: :any,                 arm64_big_sur:  "a85a2fc309cb2b5699a8e731e271b46e19dd0d0c124d046782f3e4a4a0e0325f"
