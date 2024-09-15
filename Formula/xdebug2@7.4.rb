@@ -15,6 +15,7 @@ class Xdebug2AT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e249a25090006497feca4a421db71ea5e85f51bc2ce2ead8b9bfdd5576408396"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "474df28652b10fdc5ad8aa4456220c3387b2f9432a39c7b96227830fde9c5d85"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "63d43e420777aa9362fb04dccd7108ac5e2312a0248dc649fc1740d8a17606d2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7a780f4925f7ec3becafd5bedd6e56256aab21d1ace4330158775aa90be0f58"
