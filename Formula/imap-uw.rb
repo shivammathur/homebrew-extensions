@@ -106,6 +106,8 @@ class ImapUw < Formula
   def install
     ENV.deparallelize
 
+    ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
+
     inreplace "Makefile" do |s|
       s.gsub! "SSLINCLUDE=/usr/include/openssl",
               "SSLINCLUDE=#{Formula["openssl@3"].opt_include}/openssl"
