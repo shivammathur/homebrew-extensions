@@ -91,6 +91,7 @@ jobs:
           cleanup: ${{ matrix.cleanup }}
 
       - name: Run brew test-bot --only-formulae --keep-old --only-json-tab --skip-online-checks --skip-dependents ${{inputs.formula}}
+        working-directory: ${{ env.BOTTLES_DIR }}
         run: |
           brew test-bot \
                       --only-formulae \
