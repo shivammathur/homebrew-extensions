@@ -16,6 +16,7 @@ class ImapAT56 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 23
+    sha256 cellar: :any,                 arm64_sequoia:  "60b3ebb2e705d546c49f7bbe87141a1ce520ebefb63540cce1db52571f90d454"
     sha256 cellar: :any,                 arm64_sonoma:   "4ea993735956da2308d86ec1e362c7b7797884370e5e02c213b05355208a3cc9"
     sha256 cellar: :any,                 arm64_ventura:  "d91e665b5264b26aa010901b90a14a337f10d9f2b348ba768d11610d2ac6c585"
     sha256 cellar: :any,                 arm64_monterey: "86fb9ca69e93c135bebe62e8e0720fc6f1b674c14bcb6f595ac392dc9c5dfc56"
