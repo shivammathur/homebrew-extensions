@@ -16,6 +16,7 @@ class ExpectAT84 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 3
+    sha256 cellar: :any,                 arm64_sequoia:  "c128364092e76f663eb3e87846eb11215efcc18858b41e0cf99e3b69c49d5d5e"
     sha256 cellar: :any,                 arm64_sonoma:   "174c76a1e56c6976c2520770f3deb1635430f65057ca59ac3686743f2ebf9740"
     sha256 cellar: :any,                 arm64_ventura:  "691ddfd380e499867cf88bb5a566fbee8cf7e11214ec51c27d89e555afd57db3"
     sha256 cellar: :any,                 arm64_monterey: "87f470d42766140aadcf5bb47dde03e63d7828a557f864a71e9255b81950a688"
