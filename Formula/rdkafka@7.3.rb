@@ -16,6 +16,7 @@ class RdkafkaAT73 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "8dc714d457c1a7abe19cc006ec9d5339c5296b5a4faf31e4ad37cce7e5d61ee7"
     sha256 cellar: :any,                 arm64_ventura:  "a2fc07eda2d3e206db2d21ff873ba837e134ff2b0eda5bf7605e8346654ac6c0"
     sha256 cellar: :any,                 arm64_monterey: "459577b1673b0f58dacedeffeabbbf2ead267109e588cad9819a98f53d71ceb4"
     sha256 cellar: :any,                 arm64_big_sur:  "e530788fe7afe4a936cb85004d5556a47862fd759c787be176a30807ac97beb4"
