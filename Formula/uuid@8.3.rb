@@ -16,6 +16,7 @@ class UuidAT83 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "46e8e0c68b62d90001fbd0a3ff7cbd9fdef76abb79f7de2b25fa669b6d39ce4a"
     sha256 cellar: :any,                 arm64_ventura:  "2a014e709ed7a2bc7a0061dee253d5732e63e58d6aedad63886a1c6e26f00072"
     sha256 cellar: :any,                 arm64_monterey: "fbc64a6d05aa6f17c4fddc34f55d91073d3cbb2b45b0e1e980e629f39340e147"
     sha256 cellar: :any,                 arm64_big_sur:  "136f77a8bbc2c74a2f3696a81f43cb626fd1129a5babc69f30f14c36d07656d6"
