@@ -25,6 +25,9 @@ class MailparseAT84 < AbstractPhpExtension
   end
 
   def install
+    # Work around configure issues with Xcode 16
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     Dir.chdir "mailparse-#{version}"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mailparse"
