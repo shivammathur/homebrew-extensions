@@ -15,6 +15,7 @@ class VldAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "aca253d9c0ee9f042a8e32b9f4f49027b893a24710600540fa05baee417946da"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aaaf4190e1435a473faf34d5152819ad0c0ca8cac85afcb294b0ba5c804a0415"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "19f49458578ba6a3e47f4ec7d89fe16928469bebfd59896d2c32303c7e4a30ed"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ddd275bfaec04edadcaf3a3df502e6c685555e92ccb9f6d6182cb1279e502dd7"
