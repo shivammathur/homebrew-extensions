@@ -27,6 +27,7 @@ class ImagickAT84 < AbstractPhpExtension
   depends_on "imagemagick"
 
   def install
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     Dir.chdir "imagick-#{version}"
     safe_phpize
     system "./configure"

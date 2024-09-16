@@ -47,6 +47,7 @@ class ExpectAT56 < AbstractPhpExtension
     add_expect_lib
     add_expect_headers
     Dir.chdir "expect-#{version}"
+    ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

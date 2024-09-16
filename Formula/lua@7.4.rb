@@ -37,6 +37,7 @@ class LuaAT74 < AbstractPhpExtension
     inreplace "php_lua.h", "include \"l", "include \"lua/l"
     inreplace "lua_closure.c", "include \"l", "include \"lua/l"
     inreplace "lua_closure.c", "lua/lua_closure.h", "lua_closure.h"
+    ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

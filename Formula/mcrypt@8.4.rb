@@ -35,6 +35,7 @@ class McryptAT84 < AbstractPhpExtension
   def install
     # Work around configure issues with Xcode 12
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    ENV.append "CFLAGS", "-Wno-implicit-int"
 
     resource("libmcrypt").stage do
       # Workaround for ancient config files not recognising aarch64 macos.

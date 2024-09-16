@@ -32,6 +32,7 @@ class Ssh2AT56 < AbstractPhpExtension
       --with-ssh2=shared,#{Formula["libssh2"].opt_prefix}
     ]
     Dir.chdir "ssh2-#{version}"
+    ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
