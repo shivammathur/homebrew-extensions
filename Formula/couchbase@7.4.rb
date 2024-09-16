@@ -37,6 +37,10 @@ class CouchbaseAT74 < AbstractPhpExtension
 
   def install
     ENV["OPENSSL_ROOT_DIR"] = "#{Formula["openssl@3"]}.opt_prefix"
+    on_macos do
+      ENV["CXX"] = "clang++"
+      ENV["CXXFLAGS"] = "-std=c++17"
+    end
     Dir.chdir "couchbase-#{version}"
     safe_phpize
     inreplace "configure",
