@@ -17,6 +17,7 @@ class ZmqAT73 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia:  "9060710138d86ec54bf598552d457aa53c82555c53c815654a5e5e283c6d5bcd"
     sha256 cellar: :any,                 arm64_sonoma:   "f54e5a7f52057ffe1205e97462de97844744de7ef259edac278211c4ab94ddcb"
     sha256 cellar: :any,                 arm64_ventura:  "42e5a8f6499b450bcf181d725be362dda1bc4965ac1fc95de7667f148f594c87"
     sha256 cellar: :any,                 arm64_monterey: "a3b1333f99f412658db97f1e6dea285953f7249f86bc6e551af4ffbe9dcb434b"
