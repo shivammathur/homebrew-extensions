@@ -17,6 +17,7 @@ class ProproAT74 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "32c04718d4125da99b464b8d0b88835bf92e90a99869a940989e0d770484622f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a53792c2aa180ca34b643964b2504ab0fd5d9ab59db5c6206148aebf12c247fa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae2e92ba5b2e13f850a4aa018296c30008ba5774db44e23f3081f21a1c001931"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a95d2280977b1574d1bee77f07a2db4b0440a2e18f40dbf4cf15b4c7b0c21fd7"
