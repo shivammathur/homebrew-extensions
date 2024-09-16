@@ -15,6 +15,7 @@ class OpentelemetryAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c3fbf0ce375994f0b858e16359dc4cb8f2b06b23a4055b37c71004d55f6a62e4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14a3cf18c9449bb11c26876ed79b6eb816559c637a576fc010fff2775db5c254"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4de59359fbedeaec121ac80d67b5197735c5a479e4bd57052463e224666f3e78"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "668df3bed3bfcf73224dc38f5c3d0e8282f9d5f209dba90401980c5f0fca4e33"
