@@ -14,6 +14,7 @@ class Phalcon3AT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "afec3762fdf6ad6e657e895100f5f2ad90c5337e93d2396a01ef00245014e196"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b22ef05017228225c30f0cc2322f6b70b6fe558f5638136a4a095cc968ae933"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "69474b879b0126dc8412d91baec153ff9862c753284a13e009a1a4cb8aaffc9f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8b71f9583bf4b304ca9068e537541a8bd4444f227360359d6a9dc6bf0a8b315"
