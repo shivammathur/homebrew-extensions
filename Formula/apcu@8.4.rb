@@ -26,6 +26,9 @@ class ApcuAT84 < AbstractPhpExtension
 
   def install
     Dir.chdir "apcu-#{version}"
+    inreplace "config.m4",
+      "PHP_NEW_EXTENSION(apcu, $apc_sources, $ext_shared,, \\\\$(APCU_CFLAGS))",
+      "PHP_NEW_EXTENSION([apcu], [$apc_sources], [$ext_shared],, [$APCU_CFLAGS])"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-apcu"
     system "make"
