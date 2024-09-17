@@ -21,6 +21,7 @@ class Isl < Formula
     sha256 cellar: :any,                 arm64_sonoma:   "8f1af90ff2967e80c1a757e8e6aae61c9f6876a8ad98c1613e252f7daaa8a483"
     sha256 cellar: :any,                 arm64_ventura:  "7d74b1abc36c01f14202d8d4f3105826cca0a1ac5db3fd831c8fd3673097e2d6"
     sha256 cellar: :any,                 arm64_monterey: "f09ed357251a8f1771f93c22b5c18441299cf4ecbabf4f83a63b71abba565904"
+    sha256 cellar: :any,                 sequoia:        "edae3d6050998a8b6c40d79244d1c73231537371e7a36a3a72f756ed965088be"
     sha256 cellar: :any,                 sonoma:         "23be453b3fbe9ab4a1baeb8a99eea31a6362825f03f74a1c7015bb0bda9ad4d8"
     sha256 cellar: :any,                 ventura:        "df3c2c3161184a8cea83dfda47bbf31f81e3527951c2dc72bdeb2ac1638e2709"
     sha256 cellar: :any,                 monterey:       "fea18e3734c269de46cb70dc7a263e5784e0e67d16e59598aaea22618c6a4650"

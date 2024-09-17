@@ -24,6 +24,7 @@ class Zstd < Formula
     sha256 cellar: :any,                 arm64_sonoma:   "2028141683f55bffcd0693b9e49eef1e3dabc1e184214cacb173ca9bd54dabc0"
     sha256 cellar: :any,                 arm64_ventura:  "035cbadb205abbe00107f0c7746f3715e3841c007e4b3a309398e65d50c43cf5"
     sha256 cellar: :any,                 arm64_monterey: "7f12fa16033d6576099c481f93a7423a526a7b3252a0ea0921ea0016c18f49f8"
+    sha256 cellar: :any,                 sequoia:        "eb32988fe6b57b6a5f46ed6de10f0e7c74177c8971f4ae1f9c6e7cd4af539a77"
     sha256 cellar: :any,                 sonoma:         "09953f22fd56bc85e0d7ceac8de7e35ed622f3affe78dd782154e5e21623037b"
     sha256 cellar: :any,                 ventura:        "78fd5d1b6afaef60879445e3de8227257e79ec6fca6af1e1324896bc93cf2a75"
     sha256 cellar: :any,                 monterey:       "b5099f7c339af2fff89af3a844a004b35aba400787ef71e1db6e856889f56557"
