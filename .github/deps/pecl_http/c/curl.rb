@@ -3,22 +3,12 @@ class Curl < Formula
   homepage "https://curl.se"
   # Don't forget to update both instances of the version in the GitHub mirror URL.
   # `url` goes below this comment when the `stable` block is removed.
+  url "https://curl.se/download/curl-8.10.1.tar.bz2"
+  mirror "https://github.com/curl/curl/releases/download/curl-8_10_1/curl-8.10.1.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/curl-8.10.1.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/legacy/curl-8.10.1.tar.bz2"
+  sha256 "3763cd97aae41dcf41950d23e87ae23b2edb2ce3a5b0cf678af058c391b6ae31"
   license "curl"
-
-  # Remove `stable` block when patch is no longer needed.
-  stable do
-    url "https://curl.se/download/curl-8.10.0.tar.bz2"
-    mirror "https://github.com/curl/curl/releases/download/curl-8_10_0/curl-8.10.0.tar.bz2"
-    mirror "http://fresh-center.net/linux/www/curl-8.10.0.tar.bz2"
-    mirror "http://fresh-center.net/linux/www/legacy/curl-8.10.0.tar.bz2"
-    sha256 "be30a51f7bbe8819adf5a8e8cc6991393ede31f782b8de7b46235cc1eb7beb9f"
-
-    # Prevents segfault in julia test - https://github.com/curl/curl/pull/14862
-    patch do
-      url "https://github.com/curl/curl/commit/60ac76d67bf32dfb020cd155fc27fe1f03ac404f.patch?full_index=1"
-      sha256 "c9330acd41390cada341322c81affba24fb422b1123ee4360c2a617a42d6f517"
-    end
-  end
 
   livecheck do
     url "https://curl.se/download/"
@@ -26,15 +16,12 @@ class Curl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "d9d4391883506d26a872dfed2aaecd1b4b56e24475d90987f8257d3085699253"
-    sha256 cellar: :any,                 arm64_sonoma:   "55c7257e15917f412d8dc643f1ebe78d45852b5d21adf6c9bd57aaef10b66a59"
-    sha256 cellar: :any,                 arm64_ventura:  "25298eb0770e532801a9a717e801ba85667ca1704a6cc48203c6c194f296bd42"
-    sha256 cellar: :any,                 arm64_monterey: "bed918cbd5c6d1a651dab2afb36fe4618dfe2013e1725e6dbdbf77aa088e7fed"
-    sha256 cellar: :any,                 sonoma:         "09c95049ffe8bbcd3d7d85bbdc1c2861ef9de3383af72cd2def501910b94d442"
-    sha256 cellar: :any,                 ventura:        "5440bf2de93261bd5e90369a9251c3a3778ccd9a4ae45a515b264896648b0288"
-    sha256 cellar: :any,                 monterey:       "0c78cda5623e209247941153f56b05e426e0f39fc970b7ff6eadd07db42f2d2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3620272f06ff1d93a9895197ed7e4be6cc39936a18cf276a88a86dd1ea50ecb5"
+    sha256 cellar: :any,                 arm64_sequoia: "100108ddf12c4b3a9e7877e3f8c18bdfe4a0a51b273ffe74ea7545d0308450af"
+    sha256 cellar: :any,                 arm64_sonoma:  "91ba6f1d338eb2eb2b833efa332f43a4f9a562e120ed85661632e7dd20c3ed2a"
+    sha256 cellar: :any,                 arm64_ventura: "6526f3319a007cb30ec844458dfa4a6c9979d8ffb7ef810b6183998ce4c43d04"
+    sha256 cellar: :any,                 sonoma:        "c9e0fde442aef9d270c54eda97b16b9e1dfc946b0fe99d945839e654fc4de84e"
+    sha256 cellar: :any,                 ventura:       "f4ed8d096a11e53f8741cda841783fa0e904b5a862f6062be1ed1703444a4b44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4284c064a03c57efbcac375ce3c2df8718653eebbedbf54a7957d94a223dc9ad"
   end
 
   head do
