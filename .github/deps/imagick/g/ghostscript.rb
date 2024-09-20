@@ -1,26 +1,9 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
+  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostpdl-10.04.0.tar.xz"
+  sha256 "0603f5629bc6f567b454911d104cd96702489c9e70e577787843f480b23d4a77"
   license "AGPL-3.0-or-later"
-
-  stable do
-    url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostpdl-10.03.1.tar.xz"
-    sha256 "05eee45268f6bb2c6189f9a40685c4608ca089443a93f2af5f5194d83dc368db"
-
-    on_macos do
-      # 1. Prevent dependent rebuilds on minor version bumps.
-      # Reported upstream at:
-      #   https://bugs.ghostscript.com/show_bug.cgi?id=705907
-      patch :DATA
-    end
-
-    # Backport fix for missing pointer dereference
-    # https://bugs.ghostscript.com/show_bug.cgi?id=707649
-    patch do
-      url "https://github.com/ArtifexSoftware/ghostpdl/commit/90cabe08422afdd16bac5dd9217602679d943045.patch?full_index=1"
-      sha256 "deed9573aa17adbab2776f44b58a851b5aac06e2cdd99440169ca16ec9504de0"
-    end
-  end
 
   # The GitHub tags omit delimiters (e.g. `gs9533` for version 9.53.3). The
   # `head` repository tags are formatted fine (e.g. `ghostpdl-9.53.3`) but a
@@ -32,15 +15,12 @@ class Ghostscript < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia:  "c5f70c8ebed71bf33bfc579776e9d0b161dd2a6cb2b5db19d63c09a366d361d4"
-    sha256 arm64_sonoma:   "b0d9503a7efa718b2c1c2994b442065e79cf3a7807402944e19d278391766077"
-    sha256 arm64_ventura:  "7bd21d992e534be507dd7d457c6a0b1cdf76ef1743976276c1eaa256bca2306c"
-    sha256 arm64_monterey: "ac3c82a2bccbea544614781dc85aa1400d1665d40e37f1df1de0986daa76e1f0"
-    sha256 sonoma:         "42ea47a742a77e6b96346d8989cbe9dbeed019537865aa38e61209fe73e28bc4"
-    sha256 ventura:        "1f4b9b7577337c6702d6891d1ad686cca240c9895135b917d3bc146c580a9d86"
-    sha256 monterey:       "ea25cdd4def41ef333c0503b3101d6baf6a47505cd585de55d1e0cba88426f53"
-    sha256 x86_64_linux:   "b2b04161201e1f17a9ca9511e0579ae97d65a40f4bc7d195865ac7f5d8c972f6"
+    sha256 arm64_sequoia: "1ec5dc13df46f9336bd39399ba4d0564fcba2f63f0c4ca008f2b86e3172f4d04"
+    sha256 arm64_sonoma:  "0193b5a6ca5b47a35263cb547d09b438048ff532315d010cd544bf513d2a64ec"
+    sha256 arm64_ventura: "ddc4cba70de0af25125eba0ba9e5b7ced5e2290622f83bba20f20da246637594"
+    sha256 sonoma:        "0ea2144019a3128a6b1e0b640d491b5d457666be21d0763166ffe94764eab716"
+    sha256 ventura:       "6505dca6f56f4af62d12af839ee75b3ad5ef91c880d87982b81567b1f59835e2"
+    sha256 x86_64_linux:  "51882cc46695af1c7e7732ddedfa8e02e41a4c7797981e5c77bd3dc75bdb6950"
   end
 
   head do
@@ -56,11 +36,14 @@ class Ghostscript < Formula
   depends_on "freetype"
   depends_on "jbig2dec"
   depends_on "jpeg-turbo"
+  depends_on "leptonica"
+  depends_on "libarchive"
   depends_on "libidn"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "little-cms2"
   depends_on "openjpeg"
+  depends_on "tesseract"
 
   uses_from_macos "expat"
   uses_from_macos "zlib"
@@ -77,7 +60,7 @@ class Ghostscript < Formula
 
   def install
     # Delete local vendored sources so build uses system dependencies
-    libs = %w[expat freetype jbig2dec jpeg lcms2mt libpng openjpeg tiff zlib]
+    libs = %w[expat freetype jbig2dec jpeg lcms2mt leptonica libpng openjpeg tesseract tiff zlib]
     libs.each { |l| rm_r(buildpath/l) }
 
     configure = build.head? ? "./autogen.sh" : "./configure"
@@ -87,9 +70,7 @@ class Ghostscript < Formula
               --disable-gtk
               --with-system-libtiff
               --without-x]
-    # Work around neon detection bug: https://bugs.ghostscript.com/show_bug.cgi?id=707993
-    odie "`--disable-neon` workaround should be removed!" if build.stable? && version > "10.03.1"
-    args << "--disable-neon" if DevelopmentTools.clang_build_version >= 1600
+
     system configure, *std_configure_args, *args
 
     # Install binaries and libraries
@@ -104,40 +85,3 @@ class Ghostscript < Formula
     assert_match "Hello World!", shell_output("#{bin}/ps2ascii #{ps}")
   end
 end
-
-__END__
-diff --git a/base/unix-dll.mak b/base/unix-dll.mak
-index 89dfa5a..c907831 100644
---- a/base/unix-dll.mak
-+++ b/base/unix-dll.mak
-@@ -100,10 +100,26 @@ GS_DLLEXT=$(DLL_EXT)
- 
- 
- # MacOS X
--#GS_SOEXT=dylib
--#GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
--#GS_SONAME_MAJOR=$(GS_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_SOEXT)
--#GS_SONAME_MAJOR_MINOR=$(GS_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR).$(GS_SOEXT)
-+GS_SOEXT=dylib
-+GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
-+GS_SONAME_MAJOR=$(GS_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_SOEXT)
-+GS_SONAME_MAJOR_MINOR=$(GS_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR).$(GS_SOEXT)
-+
-+PCL_SONAME=$(PCL_SONAME_BASE).$(GS_SOEXT)
-+PCL_SONAME_MAJOR=$(PCL_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_SOEXT)
-+PCL_SONAME_MAJOR_MINOR=$(PCL_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR).$(GS_SOEXT)
-+
-+XPS_SONAME=$(XPS_SONAME_BASE).$(GS_SOEXT)
-+XPS_SONAME_MAJOR=$(XPS_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_SOEXT)
-+XPS_SONAME_MAJOR_MINOR=$(XPS_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR).$(GS_SOEXT)
-+
-+PDF_SONAME=$(PDF_SONAME_BASE).$(GS_SOEXT)
-+PDF_SONAME_MAJOR=$(PDF_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_SOEXT)
-+PDF_SONAME_MAJOR_MINOR=$(PDF_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR).$(GS_SOEXT)
-+
-+GPDL_SONAME=$(GPDL_SONAME_BASE).$(GS_SOEXT)
-+GPDL_SONAME_MAJOR=$(GPDL_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_SOEXT)
-+GPDL_SONAME_MAJOR_MINOR=$(GPDL_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR).$(GS_SOEXT)
- #LDFLAGS_SO=-dynamiclib -flat_namespace
- #LDFLAGS_SO_MAC=-dynamiclib -install_name $(GS_SONAME_MAJOR_MINOR)
- #LDFLAGS_SO=-dynamiclib -install_name $(FRAMEWORK_NAME)
