@@ -34,7 +34,7 @@ class V8 < Formula
   end
 
   depends_on "ninja" => :build
-  depends_on xcode: ["10.0", :build] # required by v8
+  depends_on xcode: ["10.0", :build] # for xcodebuild, min version required by v8
 
   uses_from_macos "python" => :build
 
