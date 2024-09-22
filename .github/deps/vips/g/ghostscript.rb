@@ -71,6 +71,8 @@ class Ghostscript < Formula
               --with-system-libtiff
               --without-x]
 
+    # Set the correct library install names so that `brew` doesn't need to fix them up later.
+    ENV["DARWIN_LDFLAGS_SO_PREFIX"] = "#{opt_lib}/"
     system configure, *std_configure_args, *args
 
     # Install binaries and libraries
