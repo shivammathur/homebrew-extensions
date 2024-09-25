@@ -49,6 +49,7 @@ class Ghostscript < Formula
   uses_from_macos "zlib"
 
   conflicts_with "gambit-scheme", because: "both install `gsc` binary"
+  conflicts_with "git-spice", because: "both install `gs` binary"
 
   fails_with gcc: "5"
 
