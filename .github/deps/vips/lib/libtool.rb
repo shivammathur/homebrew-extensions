@@ -1,22 +1,18 @@
 class Libtool < Formula
   desc "Generic library support script"
   homepage "https://www.gnu.org/software/libtool/"
-  url "https://ftp.gnu.org/gnu/libtool/libtool-2.4.7.tar.xz"
-  mirror "https://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.xz"
-  sha256 "4f7f217f057ce655ff22559ad221a0fd8ef84ad1fc5fcb6990cecc333aa1635d"
+  url "https://ftp.gnu.org/gnu/libtool/libtool-2.5.3.tar.xz"
+  mirror "https://ftpmirror.gnu.org/libtool/libtool-2.5.3.tar.xz"
+  sha256 "898011232cc59b6b3bbbe321b60aba9db1ac11578ab61ed0df0299458146ae2e"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sequoia:  "a4c270c88d58da31c9747afc4d4c79274439df0569a7e09c31476d7e61c5cf5b"
-    sha256 cellar: :any,                 arm64_sonoma:   "53032e6f9f95662e8d7e5776c13d99e526f27aa91046b379537e6c9926328532"
-    sha256 cellar: :any,                 arm64_ventura:  "ddc4cbe56b2858f9e653d6c675e2e0a5a283748d1e21192963f9d5d828d9b4c8"
-    sha256 cellar: :any,                 arm64_monterey: "c075f2068699ea5ad408b952a58d9b0721072905014490d3adcc42c5636b9491"
-    sha256 cellar: :any,                 sequoia:        "35d0895086c9f57bbaf09b55028081ec9ba3c20b6d4e4646b3a927e30978b928"
-    sha256 cellar: :any,                 sonoma:         "774349ad71c3a2d6c2e0680939b995833d0c936fbb7dcf711a7b4503f986f0e6"
-    sha256 cellar: :any,                 ventura:        "abebe5e185ad6d66e8798be461ccbb2bf2ef58e5da78376713f760d0929098ee"
-    sha256 cellar: :any,                 monterey:       "eee91ce66c36b14328492b85f7fb4dd4bbe25c84fe48cda37352ca071faf4d03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b4b093e7110026279c01fe6604308e0cc0e2ce4e341852f5cea87d944a59be1"
+    sha256 cellar: :any,                 arm64_sequoia: "1f26cc2d321343e11736fa4f7aea031651544291262584c0c94f5b6269422a29"
+    sha256 cellar: :any,                 arm64_sonoma:  "e857244e8cf19dd0d0005ab9ad0a3a180e61285dcb981fd6deda5c2e362d98cd"
+    sha256 cellar: :any,                 arm64_ventura: "904b1aba635748ba67a6c8e64264edef34e9ab444faee45def5b6a5689942a8b"
+    sha256 cellar: :any,                 sonoma:        "169193ec2d3672a4b13cdcad155723ee0ea03fdc726db81213569f6aa2a83246"
+    sha256 cellar: :any,                 ventura:       "c35e90a528d4351c4b8c6b2d244dcec015851393fccd88e96d09f1497bed6274"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91784670a1d9f78f471156a9d9633529d0ae06599f64de93de4210ac95f96b3f"
   end
 
   depends_on "m4"
