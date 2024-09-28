@@ -26,14 +26,14 @@ class RedisAT85 < AbstractPhpExtension
 
   depends_on "liblzf"
   depends_on "lz4"
-  depends_on "shivammathur/extensions/igbinary@8.4"
-  depends_on "shivammathur/extensions/msgpack@8.4"
+  depends_on "shivammathur/extensions/igbinary@8.5"
+  depends_on "shivammathur/extensions/msgpack@8.5"
   depends_on "zstd"
 
   def patch_redis
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
-      headers = Dir["#{Formula["#{e}@8.4"].opt_include}/**/*.h"]
+      headers = Dir["#{Formula["#{e}@8.5"].opt_include}/**/*.h"]
       (buildpath/"include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
   end
