@@ -15,6 +15,11 @@ class MemcachedAT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_sequoia: "96feb9d6a53453a24b4266989ba2faeac6b5683b9b7c52b1be47f98df429184c"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a68b91efd6d9b0222035b7f89bb68d28b22518ae8775a71a88a73e7bafbdcf4"
+    sha256 cellar: :any,                 arm64_ventura: "47812d5ed459bb0ef71a7fc84fbaddfc0adddd8c1d93e85174685990c9677f14"
+    sha256 cellar: :any,                 ventura:       "c35b39a32d14d5b7bbf4fb22e57b4762b99293659d310a31b913bd84fbf14734"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adffbca5ebf7f51b0ef83a0b071571baa356a0d9fa2fa40e272094ecca4c0c12"
   end
 
   depends_on "libevent"
