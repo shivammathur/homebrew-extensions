@@ -15,6 +15,11 @@ class EventAT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_sequoia: "b997107e76e387b47d642a485d11287060557e0b556290cb25168ef9192d0506"
+    sha256 cellar: :any,                 arm64_sonoma:  "dfa2c455feede8cd20ebdd399fe82b74607d328249cc08de9d4ce0c779f74fad"
+    sha256 cellar: :any,                 arm64_ventura: "b865c99814b0cf2809ac9772ccba383f0add0a23d2c25fd7a56042011ba03710"
+    sha256 cellar: :any,                 ventura:       "9b58742575af62dbab133ce16291445ae42d62e71a6d63ed9e567fc57bd5529b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66912f1c88d5a44ab05a5722e32266a427e6409bc6762040ef5fdecb8badb79a"
   end
 
   depends_on "libevent"
