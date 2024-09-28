@@ -15,6 +15,11 @@ class Ssh2AT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_sequoia: "727cc9cdcd781f3ca79ddd807d04dc2d1bb9e3c1755290a94055b455b93110dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "15cfa52dab69cd1b912d0d61e27e5b57e7f9ef01a284285e01d18d7c9ed99b58"
+    sha256 cellar: :any,                 arm64_ventura: "326ddcccd5810d572df4b036d07bb6456a69a8a9fee2b48b9e45c0527ba0af71"
+    sha256 cellar: :any,                 ventura:       "7ab4f7fa05f21cb6ee9e65e01c07159f6e06081ef44d9d9e62827ea1741e4730"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e02ea99c1a5799ffd78f83fa4464e0e30265483f614ebe51aff81a358966e818"
   end
 
   depends_on "libssh2"
