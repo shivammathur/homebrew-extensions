@@ -52,6 +52,7 @@ class Imagemagick < Formula
 
   on_linux do
     depends_on "libx11"
+    depends_on "libxext"
   end
 
   skip_clean :la
