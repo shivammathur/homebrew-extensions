@@ -7,12 +7,12 @@ class Hdf5 < Formula
   license "BSD-3-Clause"
   version_scheme 1
 
-  # This regex isn't matching filenames within href attributes (as we normally
-  # do on HTML pages) because this page uses JavaScript to handle the download
-  # buttons and the HTML doesn't contain the related URLs.
+  # Upstream maintains multiple major/minor versions and the "latest" release
+  # may be for a lower version, so we have to check multiple releases to
+  # identify the highest version.
   livecheck do
-    url "https://www.hdfgroup.org/downloads/hdf5/source-code/"
-    regex(/>\s*hdf5[._-]v?(\d+(?:\.\d+)+)(?:-\d+)?\.t/i)
+    url :url
+    strategy :github_releases
   end
 
   bottle do
