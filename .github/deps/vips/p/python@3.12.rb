@@ -1,8 +1,8 @@
 class PythonAT312 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz"
-  sha256 "85a4c1be906d20e5c5a69f2466b00da769c221d6a684acfd3a514dbf5bf10a66"
+  url "https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tgz"
+  sha256 "73ac8fe780227bf371add8373c3079f42a0dc62deff8d612cd15a618082ab623"
   license "Python-2.0"
 
   livecheck do
@@ -11,15 +11,12 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "27e2aeca98ebad5afc7a2937f9571826ee3c8bd724306f7d85de5e47d9dce571"
-    sha256 arm64_sonoma:   "00871488a4207f0265eab8e339146f63874e7454487169e819a1e4a5bd13a62b"
-    sha256 arm64_ventura:  "2d4c6e84be927a29d116e1f2bd5e09e0b00dab2141d58377f255949d363b5892"
-    sha256 arm64_monterey: "d9c70d61697dc082c561f47bf8bde3cf2dcdb1070f0705a65d9acd67ff3acf65"
-    sha256 sequoia:        "723e1c33533e84a6762051f25180b64f36942f47f988bccd9b1956c1852d39c4"
-    sha256 sonoma:         "ac351a070751905ceb68a1f570601ff0b712613830e2b6c14063c7243b2bb259"
-    sha256 ventura:        "8abd20343a066df8d2be5c81c4a2a968838003cf40da8838c052255747d704eb"
-    sha256 monterey:       "594da1f2f1785d54cc85b646fe0520813071fc74fd7d610f4ecad4b55ce842c0"
-    sha256 x86_64_linux:   "e0c5b329ce19642fa0d54abf71fb33eae36cee265ff03479fe1ae929918a1329"
+    sha256 arm64_sequoia: "dae254a79c219351dd33d3535ac1be664dfacb870c856ac0b97e24f8eaf9fdf8"
+    sha256 arm64_sonoma:  "d0e1fe1f460402df99489a781ffda25b27fa53114c5b9015ac88d23d8f5fe583"
+    sha256 arm64_ventura: "63329700aac6d65079251e11f1f3aa5e6517f3051dd7b1faab4ed8d63f99353d"
+    sha256 sonoma:        "6c4d92cd420da5130c6ec3b4400476061c4c8d14c7bfa9b224ffa5bcb70d4e9a"
+    sha256 ventura:       "c5f909352d0d73bc7e667258641f93b9847b867b547863162304f435335f63bb"
+    sha256 x86_64_linux:  "9101a81905cb2afb850253f5fd20c5e44b5ca22549311d87a3f0ba2b70bf58fa"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -75,8 +72,8 @@ class PythonAT312 < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/3e/2c/f0a538a2f91ce633a78daaeb34cbfb93a54bd2132a6de1f6cec028eee6ef/setuptools-74.1.2.tar.gz"
-    sha256 "95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6"
+    url "https://files.pythonhosted.org/packages/27/b8/f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74b/setuptools-75.1.0.tar.gz"
+    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
   end
 
   resource "wheel" do
