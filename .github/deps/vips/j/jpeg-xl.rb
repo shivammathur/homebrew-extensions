@@ -4,6 +4,7 @@ class JpegXl < Formula
   url "https://github.com/libjxl/libjxl/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "7ce4ec8bb37a435a73ac18c4c9ff56c2dc6c98892bf3f53a328e3eca42efb9cf"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class JpegXl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1b2259f4a8de0738dd4fd7372cde4c27d7b88ffd05b3d4332f0a26f198bdb66d"
-    sha256 cellar: :any,                 arm64_sonoma:  "d3c74c5e1251537f657139d522c679101aa27ef9adcc502b67a2c65d4e566cd1"
-    sha256 cellar: :any,                 arm64_ventura: "acdf147b1d55d1d2a5b70966359a8dc109daa4267e7573bc5f44816e2fd15170"
-    sha256 cellar: :any,                 sonoma:        "73232fde73828823576c61b2377b719add934499e2932aefa1b610ed07fe82ca"
-    sha256 cellar: :any,                 ventura:       "a44ff4d24ef1c099f979c8f96af5b541f9df54e11ba9db68cd7adbc690729bfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3010ddddc0ad684240ff63ef3a7e9dc84e2022cdda4f53c63b3c7243334ef67"
+    sha256 cellar: :any,                 arm64_sequoia: "a872b8c7a7f18381dc62c164f6e38de1750de1909de14ae2f5cbca72c0da93d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "a5ccfecd1eb7d5997c1aec2e904846031a4c990f175aed3ab4a5a1bdc783a500"
+    sha256 cellar: :any,                 arm64_ventura: "7f176bd80a18add2adb418755b29f1c6165f6e3e2a016c9ab029ccaa67ba959b"
+    sha256 cellar: :any,                 sonoma:        "5d8a0e9b7344952bc35481d52e0cc045f106775fdd0e47c7fcb1bf563b1e398b"
+    sha256 cellar: :any,                 ventura:       "64deb00f3a86e43b905ccf527af915f4d6f0a6d16e39b99c89df45aa698605ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11a5997b6ed08cba8626d3b9df0a03db954c96eb200866b7799d0a2eb269e572"
   end
 
   depends_on "asciidoc" => :build

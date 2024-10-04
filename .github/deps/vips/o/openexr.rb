@@ -1,19 +1,17 @@
 class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
-  url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.2.4.tar.gz"
-  sha256 "81e6518f2c4656fdeaf18a018f135e96a96e7f66dbe1c1f05860dd94772176cc"
+  url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "58b00f50d2012f3107573c4b7371f70516d2972c2b301a50925e1b4a60a7be6f"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "c728f040633260155ac1d368eb7eea0a773f7b4c0ec1335e10c4a3e542724a62"
-    sha256 cellar: :any,                 arm64_sonoma:   "49b4acf727abd6a736d9d7cf8b38fe96ef3f89979523186ce4eb947d5478b772"
-    sha256 cellar: :any,                 arm64_ventura:  "690f103efb1ab0a421cc8c7aa4c0eb0c1715f3e35e26b05f54820bc7896c16ef"
-    sha256 cellar: :any,                 arm64_monterey: "eafdc1854757f9215568e38005d69884c3da63b23d62cc6496e95430d2713796"
-    sha256 cellar: :any,                 sonoma:         "e2d68cb84ae057f4323e7f52214ddb1c3db955a02db865acddcc8d41828ef445"
-    sha256 cellar: :any,                 ventura:        "893b120aee538446c12c39d819f2a56a54d4493558d6c6e339ef3f0f2a382607"
-    sha256 cellar: :any,                 monterey:       "bc8c4411b513c76de4c416642341c8f72b29a4fff10f0bcfc2c13c17ef899261"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7c839fd2991b3cc8a66a5e5fa6aa4d86e3d9621280d56b24219900c81ed7d1e"
+    sha256 cellar: :any,                 arm64_sequoia: "3975252966c93511bd10cb56369e3d576e04c3b107d79fa54d0126c84067dc88"
+    sha256 cellar: :any,                 arm64_sonoma:  "e69ceaeff7a1da39254e801541fdb9124f3eb063596b3218a80ae57f6a993b22"
+    sha256 cellar: :any,                 arm64_ventura: "f3940304428ee703d5ca9e45c1480e7524fd1b4d780316b589e85fdab6d915de"
+    sha256 cellar: :any,                 sonoma:        "98243512ea405b594d31d98787ac95b3fa89b06e950325c6742ad69ecbc6d9b0"
+    sha256 cellar: :any,                 ventura:       "05f5c17a741f9fdedfacaf812e6c1ec940eb72bf2bd9b2000996348bde725193"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18df0af78679bb1b9e344670f793d540cb8945b2411b16c794a728f9cbf459ac"
   end
 
   depends_on "cmake" => :build
