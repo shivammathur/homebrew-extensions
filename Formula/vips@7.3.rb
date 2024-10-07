@@ -25,6 +25,8 @@ class VipsAT73 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d62df3e498a393f2fb6c76e274bbdf44c682e92f4aa61ef7a0589bd437ae9c4c"
   end
 
+  depends_on "gettext"
+  depends_on "glib"
   depends_on "vips"
 
   def install
