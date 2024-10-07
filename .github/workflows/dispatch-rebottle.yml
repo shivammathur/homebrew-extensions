@@ -135,7 +135,7 @@ jobs:
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
         working-directory: ${{ env.BOTTLES_DIR }}
         run: |
-          brew pr-upload --verbose --keep-old --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions"
+          brew pr-upload --verbose --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions"
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
