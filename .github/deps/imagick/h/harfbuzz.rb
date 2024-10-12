@@ -8,19 +8,20 @@ class Harfbuzz < Formula
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "9929dbfee478a7df8af8a4dc20064b06075269a69c85c3ac7987debf32eb1613"
-    sha256 cellar: :any, arm64_sonoma:  "385db025846a56597809370f470ce1c387d818895c4f9151ece6d1fe6bd557d3"
-    sha256 cellar: :any, arm64_ventura: "d9048c6446a50919c93ebac94a1b5ffbe5b53f33be4c42a76272d272b7c287b8"
-    sha256 cellar: :any, sonoma:        "820ef457c7a3272aa5164b8231cb9f7a80751684ab73b4fe2878f69177ab5640"
-    sha256 cellar: :any, ventura:       "2da1ef5e13bb060f10654db7f573f5ca8fd6a96799c1a8b7c1b3f6caaaf40b6a"
-    sha256               x86_64_linux:  "0e3cce49524e68d3d89f703c7faca12791a4f5d0b674870bdba92ba5286e79da"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "4a924069e0783e226a57ed0ce2f9b95d261f9a33b58f7810938d0624f5be9d4b"
+    sha256 cellar: :any, arm64_sonoma:  "8b14b8bbc667af5a01a311e9928d7dac53770dd322731480f3e3ab65ea38f7ca"
+    sha256 cellar: :any, arm64_ventura: "f98ec690b0fb7890beb4979de8c7705f6a3ea0aa255a464d64a399dc0c81fb59"
+    sha256 cellar: :any, sonoma:        "b8590c108de2eca0ae5e6d92ab357f726f7143a020f14a4aa1c6da5aa637fa1f"
+    sha256 cellar: :any, ventura:       "28516fdc43f471c1b7e8e85f9aa76276379e9341b51da0ddc338b635fb065994"
+    sha256               x86_64_linux:  "82d5f95395dbaf51b6a561de5f931722f4a97d4899d44af032bd0afa30bc5edb"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
   depends_on "pygobject3" => :test
   depends_on "cairo"
   depends_on "freetype"
@@ -57,6 +58,6 @@ class Harfbuzz < Formula
       shape = pipe_output("#{bin}/hb-shape 270b89df543a7e48e206a2d830c0e10e5265c630.ttf", "സ്റ്റ്").chomp
       assert_equal "[glyph201=0+1183|U0D4D=0+0]", shape
     end
-    system "python3.12", "-c", "from gi.repository import HarfBuzz"
+    system "python3.13", "-c", "from gi.repository import HarfBuzz"
   end
 end
