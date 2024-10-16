@@ -463,11 +463,11 @@ class PythonAT313 < Formula
 
   def caveats
     <<~EOS
-      Python has been installed as
+      Python is installed as
         #{HOMEBREW_PREFIX}/bin/python3
 
       Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
-      `python3`, `python3-config`, `pip3` etc., respectively, have been installed into
+      `python3`, `python3-config`, `pip3` etc., respectively, are installed into
         #{opt_libexec}/bin
 
       See: https://docs.brew.sh/Homebrew-and-Python
