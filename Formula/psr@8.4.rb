@@ -14,14 +14,12 @@ class PsrAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b7bb32d9fed7eb5137be6fdf09025528061dcc113747d8607ce4daadd8d77fe9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11ae5ff3d89691e8e75c898b474fd1c3c57107e1dca57446df440ff25d98fb87"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fce735b494af238afbc58c0d60c9b443e8cb98924f38f8e18129fcd67eb5bc1f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b15df51bf411c8367870ace6f129e0a5c8bc2a8731ed57f8b581c071de9b9d6c"
-    sha256 cellar: :any_skip_relocation, ventura:        "c15e3821fd39596044f813b9942ac4439f605d0c026dc9eaed5253add2d9da49"
-    sha256 cellar: :any_skip_relocation, monterey:       "c1b206db94c5579b54247cccaabc135724e35fc2073de5e70574ae3e12a526fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20455b55f709c11d75526c8f4e737dba0790ba7b0529d7765548ed08f9042187"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c569850ae4c54cabe0e41400aeb93a912f8542838619e900bcd4b9d3cf8c10d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "161b422bf54ed2fa120e63260dfa4b05bb5592a9915adc87319bd8633ba9ac9a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c46ddaca8d83dfd497d1f5e5b0b947356dd6abc0407682b1d1a7159173ea3ba5"
+    sha256 cellar: :any_skip_relocation, ventura:       "9c89e4c590ab148f75e831497bb31c84396b0a5292a5a58298e91786060567b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce7f43605c79e7192fca51f6376223fdfc51545f24f901073018b3307db9ec75"
   end
 
   depends_on "pcre"
