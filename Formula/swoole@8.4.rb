@@ -10,7 +10,7 @@ class SwooleAT84 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src.git",
       branch:   "master",
-      revision: "c71b7d450fcad748316f2424b8602c6f2df20516"
+      revision: "848aeac7b8f5ab383daf57f9701556779c3788f7"
   version "5.1.4"
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
