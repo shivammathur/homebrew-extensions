@@ -31,7 +31,7 @@ class MemcacheAT83 < AbstractPhpExtension
   def install
     args = %W[
       --enable-memcache
-      --with-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
+      --with-zlib-dir=#{Formula["zlib"].opt_prefix}
     ]
     Dir.chdir "memcache-#{version}"
     safe_phpize

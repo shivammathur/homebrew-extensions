@@ -34,13 +34,14 @@ class PeclHttpAT56 < AbstractPhpExtension
   depends_on "libidn2"
   depends_on "shivammathur/extensions/propro@5.6"
   depends_on "shivammathur/extensions/raphf@5.6"
+  depends_on "zlib"
 
   priority "30"
 
   def install
     args = %W[
       --with-http
-      --with-http-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
+      --with-http-zlib-dir=#{Formula["zlib"].opt_prefix}
     ]
     extra_includes = %W[
       -I#{Formula["shivammathur/extensions/propro@5.6"].opt_include}/php

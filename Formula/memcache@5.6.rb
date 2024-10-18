@@ -40,10 +40,12 @@ class MemcacheAT56 < AbstractPhpExtension
     sha256 "576cbbd01cda50cf6ed10ee7c3ca8f8c2ee10d3394e8a1f40ea012c2a0b92346"
   end
 
+  depends_on "zlib"
+
   def install
     args = %W[
       --enable-memcache
-      --with-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
+      --with-zlib-dir=#{Formula["zlib"].opt_prefix}
     ]
     Dir.chdir "memcache-#{version}"
     resources.each do |r|

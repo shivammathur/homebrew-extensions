@@ -33,6 +33,7 @@ class PeclHttpAT73 < AbstractPhpExtension
   depends_on "libidn2"
   depends_on "shivammathur/extensions/propro@7.3"
   depends_on "shivammathur/extensions/raphf@7.3"
+  depends_on "zlib"
 
   priority "30"
 
@@ -40,7 +41,7 @@ class PeclHttpAT73 < AbstractPhpExtension
     args = %W[
       --with-http
       --with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}
-      --with-http-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
+      --with-http-zlib-dir=#{Formula["zlib"].opt_prefix}
     ]
     extra_includes = %W[
       -I#{Formula["shivammathur/extensions/propro@7.3"].opt_include}/php

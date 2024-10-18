@@ -29,8 +29,7 @@ class MemcachedAT84 < AbstractPhpExtension
   depends_on "libmemcached"
   depends_on "shivammathur/extensions/igbinary@8.4"
   depends_on "shivammathur/extensions/msgpack@8.4"
-
-  uses_from_macos "zlib"
+  depends_on "zlib"
 
   def patch_memcached
     %w[igbinary msgpack].each do |e|
@@ -51,7 +50,7 @@ class MemcachedAT84 < AbstractPhpExtension
       --disable-memcached-sasl
       --enable-memcached-session
       --with-libmemcached-dir=#{Formula["libmemcached"].opt_prefix}
-      --with-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
+      --with-zlib-dir=#{Formula["zlib"].opt_prefix}
     ]
     patch_memcached
     safe_phpize

@@ -25,10 +25,12 @@ class MemcacheAT70 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cde95ce57b5b4063af5c6a0a13710d84a07a2c4f387c87f91d3852d96eb7c355"
   end
 
+  depends_on "zlib"
+
   def install
     args = %W[
       --enable-memcache
-      --with-zlib-dir=#{MacOS.sdk_path_if_needed}/usr
+      --with-zlib-dir=#{Formula["zlib"].opt_prefix}
     ]
     Dir.chdir "memcache-#{version}"
     safe_phpize
