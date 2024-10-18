@@ -15,14 +15,12 @@ class RdkafkaAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sequoia:  "d6e86aaa045de4445897505f6b8fd8306888de467287ee6703071cd07cdc2349"
-    sha256 cellar: :any,                 arm64_sonoma:   "417a1ebd991f2d34d62de0f472c359678e2857b44d98f7dcb65273606113cc41"
-    sha256 cellar: :any,                 arm64_ventura:  "b4c9b529b36ed06559ede358487258f901b852f03bfd961b38040d040b77f6ca"
-    sha256 cellar: :any,                 arm64_monterey: "2ff86ba2f44deab43fa56739c49edc66020564c01df4216ddb0f659e6cbe6ecd"
-    sha256 cellar: :any,                 ventura:        "900956c9abb314c602d60e22ed9a6d08f46307368607ef41d8f3ea72e4dfe6eb"
-    sha256 cellar: :any,                 monterey:       "3677981b89a50e63cc844b3da898f519650d133f11e281fbd7cd1950bbb15ce4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d6ea482cc15d86f1c1600f7487a2db360ba4234fd27baa9c4869c3b4c187798"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_sequoia: "a76a291f69823af7e083487093e10b139be3114f5e73c4e3fe23717a82729a23"
+    sha256 cellar: :any,                 arm64_sonoma:  "14ef7007dd1f38d625a37e3fd2c0c45461370839c8f624566981d25592d26dd1"
+    sha256 cellar: :any,                 arm64_ventura: "3bedc5715ece88718473002f6a27055ab475bd22b85ec8456a1e8d95b8477b54"
+    sha256 cellar: :any,                 ventura:       "8cf0d5f096386bd95096f16eee4fab63d82db5dc4bce18b19fb197ce708aee2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f63f2b6a4073467adcc87b6848c6003270824e5ca590e1c3e4d11d176194fe55"
   end
 
   depends_on "librdkafka"
