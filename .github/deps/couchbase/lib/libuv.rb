@@ -1,8 +1,8 @@
 class Libuv < Formula
   desc "Multi-platform support library with a focus on asynchronous I/O"
   homepage "https://libuv.org"
-  url "https://github.com/libuv/libuv/archive/refs/tags/v1.49.1.tar.gz"
-  sha256 "94312ede44c6cae544ae316557e2651aea65efce5da06f8d44685db08392ec5d"
+  url "https://github.com/libuv/libuv/archive/refs/tags/v1.49.2.tar.gz"
+  sha256 "388ffcf3370d4cf7c4b3a3205504eea06c4be5f9e80d2ab32d19f8235accc1cf"
   license "MIT"
   head "https://github.com/libuv/libuv.git", branch: "v1.x"
 
@@ -12,12 +12,12 @@ class Libuv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c18b0e0d1e2b638d3262a848b19041fd86207cf805780ece6e8ee2808309d493"
-    sha256 cellar: :any,                 arm64_sonoma:  "9c23ac1a83b934938a24173ac408644d656e353ad19bd7690cd9ab99d0fd6daa"
-    sha256 cellar: :any,                 arm64_ventura: "9afefc18232568a28ca3f5c2a66237f04d778834535d3256f1ed4684fcfb063d"
-    sha256 cellar: :any,                 sonoma:        "ca00d77194a448a0c5729ea0dc37924f0aac0f67098903d3863a762e5049bc98"
-    sha256 cellar: :any,                 ventura:       "f93080535137e4f547afccfc47e89afd1d1b0b5ff53405c04d2931c3dd833cd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a71db46a99622b9c8a1819fe0225c676c8056fc71ae3b8f003d8ed99e88b1958"
+    sha256 cellar: :any,                 arm64_sequoia: "0b28a00add187590626c395c52a9295857fc1320e9ff0b8dd9fe726f4614ebcf"
+    sha256 cellar: :any,                 arm64_sonoma:  "bf7e4fc58b402b235dabb022fcba6e7960c8e1afb28e482a35771345de91d117"
+    sha256 cellar: :any,                 arm64_ventura: "f7f9df3d16699a31cd90bd8e5a8172d590c3f18bef7c03f6cd0bdf32fa4b968e"
+    sha256 cellar: :any,                 sonoma:        "1c30f58448ce9c0d30cef601a475a1986d1cf072188b110adf783c7002a9b559"
+    sha256 cellar: :any,                 ventura:       "219fe43b746aaaa223c27cedf8634da8e0977a4e03bf970c254dc050e300da29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6d13b73eee595b1bf4157d8c047bcdbc46f61b8a3aa2d7225d80a9183849396"
   end
 
   depends_on "autoconf" => :build
