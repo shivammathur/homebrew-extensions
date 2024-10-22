@@ -3,18 +3,17 @@ class Glib < Formula
 
   desc "Core application library for C"
   homepage "https://docs.gtk.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.82/glib-2.82.1.tar.xz"
-  sha256 "478634440bf52ee4ec4428d558787398c0be6b043c521beb308334b3db4489a6"
+  url "https://download.gnome.org/sources/glib/2.82/glib-2.82.2.tar.xz"
+  sha256 "ab45f5a323048b1659ee0fbda5cecd94b099ab3e4b9abf26ae06aeb3e781fd63"
   license "LGPL-2.1-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "f2abd982579380fa01cf4bde3fba4e4e8c3f637968ed5f877abe9b2f03867546"
-    sha256 arm64_sonoma:  "59b2f7c8083f75518cf7389076d53273da8dd3408b64c96d16b1b98a4fcfbfd5"
-    sha256 arm64_ventura: "03f99542d1f48c8f4a3219523ea4dcd854959a45d5024b69fb9fed312cfc03ab"
-    sha256 sonoma:        "4d6212217fd522c5771a970cf836090ac0e61dc8e71fc87348bb02f16133d1de"
-    sha256 ventura:       "3a1546e0953f0dc82f81a8bcff6d0a58ec12cc646532ae7682313e4b8c0a19fd"
-    sha256 x86_64_linux:  "5ab4a7c3a7b616b4a472fde55d9341fb65d048258b6d63a85b4005fc85a4652b"
+    sha256 arm64_sequoia: "1c59c3a26014dfb7600a87c990581e6d0792cfbaa99b74a074ce148155b5d943"
+    sha256 arm64_sonoma:  "2a2a3aee202d26ffe9ad335f95bad32039422d295928a04c7718718b13f51128"
+    sha256 arm64_ventura: "87a49358961d8d5f9c928d135fe16b19e9e5d5730bdd5882ba1a66678889b31f"
+    sha256 sonoma:        "8475a750c4781fea4b855830122161bc099eea855a4602220191913d39cc6108"
+    sha256 ventura:       "635ce24d5a4bdd5abb7d49d83e089aee4fbea757478a89e29519201757269c9f"
+    sha256 x86_64_linux:  "3357a6c04dc78db3f79a0e01ff0a5515a1c2745c111b5adbf7d81aa8a60c77eb"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -141,7 +140,7 @@ class Glib < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <string.h>
       #include <glib.h>
 
@@ -155,7 +154,7 @@ class Glib < Formula
 
           return (strcmp(str, result_2) == 0) ? 0 : 1;
       }
-    EOS
+    C
     system ENV.cc, "-o", "test", "test.c", "-I#{include}/glib-2.0",
                    "-I#{lib}/glib-2.0/include", "-L#{lib}", "-lglib-2.0"
     system "./test"

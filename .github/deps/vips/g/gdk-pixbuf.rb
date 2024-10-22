@@ -89,14 +89,14 @@ class GdkPixbuf < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <gdk-pixbuf/gdk-pixbuf.h>
 
       int main(int argc, char *argv[]) {
         GType type = gdk_pixbuf_get_type();
         return 0;
       }
-    EOS
+    C
     flags = shell_output("pkg-config --cflags --libs gdk-pixbuf-#{gdk_so_ver}").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

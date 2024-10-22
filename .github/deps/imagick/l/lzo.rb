@@ -38,7 +38,7 @@ class Lzo < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <lzo/lzoconf.h>
       #include <stdio.h>
 
@@ -48,7 +48,7 @@ class Lzo < Formula
         LZO_VERSION_STRING);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-o", "test"
     assert_match "Testing LZO v#{version} in Homebrew.", shell_output("./test")
   end

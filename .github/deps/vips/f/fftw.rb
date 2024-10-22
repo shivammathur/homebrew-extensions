@@ -76,7 +76,7 @@ class Fftw < Formula
   test do
     # Adapted from the sample usage provided in the documentation:
     # https://www.fftw.org/fftw3_doc/Complex-One_002dDimensional-DFTs.html
-    (testpath/"fftw.c").write <<~EOS
+    (testpath/"fftw.c").write <<~C
       #include <fftw3.h>
       int main(int argc, char* *argv)
       {
@@ -91,7 +91,7 @@ class Fftw < Formula
           fftw_free(in); fftw_free(out);
           return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "-o", "fftw", "fftw.c", "-L#{lib}", "-lfftw3"
     system "./fftw"

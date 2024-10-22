@@ -8,26 +8,25 @@ class Gettext < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia:  "7f005ca74e89d423f7be79f4c5eb7b646a19de23c23c4ca09cbe68d18da4fe10"
-    sha256 arm64_sonoma:   "4b5b6cb0692b4606b9220fcbc9da3ab546234348dc87ef8033830e22c4c7bdb1"
-    sha256 arm64_ventura:  "06ee5992f8a7dbf85a1b0e4c6311029cefda6d70852e5abd28f2e8e30d27cfcf"
-    sha256 arm64_monterey: "2707884e348a412db35279bdd713c9026c1b1cf40fcc67fc562e68b26189bb86"
-    sha256 sonoma:         "13492dddf82cad8dcb20d1c6375138a0712ce8e3c25b612256672446175c9727"
-    sha256 ventura:        "1a35820de97aa8d93019d64f7add5443bcf1c14f05bd249e670e7ca0f0fc6b2a"
-    sha256 monterey:       "93211634913a6762dbf0e50dd644b9c932ec19124c4500f97228fbff80b0821c"
-    sha256 x86_64_linux:   "11f57f3c216f3603a194fe96d22ee05b2d01fbbaeb4a0047ed43cee25d29f9aa"
+    rebuild 1
+    sha256 arm64_sequoia: "9ad2a8e2fff717a18460818d086c02b8ed9f4c42a853f41a88c6f9b601b36615"
+    sha256 arm64_sonoma:  "7cf6084ae306256b1df18c8d75ba63abeccd5c605cfc8406dab8c09d98815bc1"
+    sha256 arm64_ventura: "3ead4ac2832bf1fbf02a5d1e8cdac9f0b46957615215d42382a85c4cf0f32aa0"
+    sha256 sonoma:        "1bb442e6a65a0d7930a5cfcee44e8e3c4a41ff99351535cce6101b32ce723706"
+    sha256 ventura:       "668023b6002ad5f2aca0e78a0d33ec8a24a660f82149b95cd42d14008dd59d2a"
+    sha256 x86_64_linux:  "c1a3a97412d28be6552c4b4191c174ce145329b165599c280b550f9a54bed9b8"
   end
 
+  depends_on "libunistring"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
 
   def install
     args = [
+      "--with-libunistring-prefix=#{Formula["libunistring"].opt_prefix}",
       "--disable-silent-rules",
       "--with-included-glib",
       "--with-included-libcroco",
-      "--with-included-libunistring",
-      "--with-included-libxml",
       "--with-emacs",
       "--with-lispdir=#{elisp}",
       "--disable-java",

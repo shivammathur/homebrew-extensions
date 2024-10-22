@@ -51,7 +51,7 @@ class Isl < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <isl/ctx.h>
 
       int main()
@@ -60,7 +60,7 @@ class Isl < Formula
         isl_ctx_free(ctx);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lisl", "-o", "test"
     system "./test"
   end
