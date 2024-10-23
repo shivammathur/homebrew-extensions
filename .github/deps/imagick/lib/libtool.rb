@@ -10,6 +10,7 @@ class Libtool < Formula
     sha256 cellar: :any,                 arm64_sequoia: "1f26cc2d321343e11736fa4f7aea031651544291262584c0c94f5b6269422a29"
     sha256 cellar: :any,                 arm64_sonoma:  "e857244e8cf19dd0d0005ab9ad0a3a180e61285dcb981fd6deda5c2e362d98cd"
     sha256 cellar: :any,                 arm64_ventura: "904b1aba635748ba67a6c8e64264edef34e9ab444faee45def5b6a5689942a8b"
+    sha256 cellar: :any,                 sequoia:       "e989f7ac6c96f10ffc29c995faae51642772742c82f8167d07224dd6b9695881"
     sha256 cellar: :any,                 sonoma:        "169193ec2d3672a4b13cdcad155723ee0ea03fdc726db81213569f6aa2a83246"
     sha256 cellar: :any,                 ventura:       "c35e90a528d4351c4b8c6b2d244dcec015851393fccd88e96d09f1497bed6274"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "91784670a1d9f78f471156a9d9633529d0ae06599f64de93de4210ac95f96b3f"
