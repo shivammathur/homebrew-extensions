@@ -48,7 +48,7 @@ class PeclHttpAT74 < AbstractPhpExtension
     # Work around to support `icu4c` 75, which needs C++17.
     ENV.append "CXX", "-std=c++17"
     ENV.libcxx if ENV.compiler == :clang
-    ENV["EXTRA_INCLUDES"] = extra_includes * " " 
+    ENV["EXTRA_INCLUDES"] = extra_includes * " "
     Dir.chdir "pecl_http-#{version}"
     inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@7.4"
     inreplace "src/php_http_api.h", "ext/propro", "ext/propro@7.4"
