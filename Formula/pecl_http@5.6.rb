@@ -39,6 +39,7 @@ class PeclHttpAT56 < AbstractPhpExtension
   priority "30"
 
   def install
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     args = %W[
       --with-http
       --with-http-zlib-dir=#{Formula["zlib"].opt_prefix}
