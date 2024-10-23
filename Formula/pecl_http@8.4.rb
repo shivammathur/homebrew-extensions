@@ -25,7 +25,7 @@ class PeclHttpAT84 < AbstractPhpExtension
 
   depends_on "brotli"
   depends_on "curl"
-  depends_on "icu4c"
+  depends_on "icu4c@75"
   depends_on "libevent"
   depends_on "libidn2"
   depends_on "shivammathur/extensions/raphf@8.4"
@@ -42,7 +42,10 @@ class PeclHttpAT84 < AbstractPhpExtension
     extra_includes = %W[
       -I#{Formula["shivammathur/extensions/raphf@8.4"].opt_include}/php
     ]
-    ENV["EXTRA_INCLUDES"] = extra_includes * " "
+    # Work around to support `icu4c` 75, which needs C++17.
+    ENV.append "CXX", "-std=c++17"
+    ENV.libcxx if ENV.compiler == :clang
+    ENV["EXTRA_INCLUDES"] = extra_includes * " " 
     Dir.chdir "pecl_http-#{version}"
     inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.4"
     inreplace "src/php_http_message_body.c", "standard/php_lcg.h", "random/php_random.h"

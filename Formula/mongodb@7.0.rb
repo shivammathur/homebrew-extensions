@@ -24,12 +24,15 @@ class MongodbAT70 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5d032c04a371d181f8816497da50899bc16e0f0fcc0c8e26969bdce0b8c22c3"
   end
 
-  depends_on "icu4c"
+  depends_on "icu4c@75"
   depends_on "openssl@3"
   depends_on "snappy"
   depends_on "zstd"
 
   def install
+    # Work around to support `icu4c` 75, which needs C++17.
+    ENV.append "CXX", "-std=c++17"
+    ENV.libcxx if ENV.compiler == :clang
     Dir.chdir "mongodb-#{version}"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mongodb"
