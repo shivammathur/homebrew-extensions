@@ -11,7 +11,7 @@ class Hdf5 < Formula
   # may be for a lower version, so we have to check multiple releases to
   # identify the highest version.
   livecheck do
-    url :url
+    url :stable
     strategy :github_releases
   end
 
