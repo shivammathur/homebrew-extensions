@@ -1,9 +1,9 @@
 class OpensslAT3 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://github.com/openssl/openssl/releases/download/openssl-3.3.2/openssl-3.3.2.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-3.3.2.tar.gz"
-  sha256 "2e8a40b01979afe8be0bbfb3de5dc1c6709fedb46d6c89c10da114ab5fc3d281"
+  url "https://github.com/openssl/openssl/releases/download/openssl-3.4.0/openssl-3.4.0.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-3.4.0.tar.gz"
+  sha256 "e15dda82fe2fe8139dc2ac21a36d4ca01d5313c75f99f46c4e8a27709b7294bf"
   license "Apache-2.0"
 
   livecheck do
@@ -12,15 +12,12 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "13cc290ab3a88f06dd43a9fe09c6f00befd30f953e945d9656966d1975b54bd7"
-    sha256 arm64_sonoma:   "df4760f0256178172f6193d8bb6c4cbeffd78ac646926ad345c5170331c5d55c"
-    sha256 arm64_ventura:  "fbfe31302a2c0fdf0a6691a3106b93d51a89d41d6534e8ce1853cd3b8d94981d"
-    sha256 arm64_monterey: "4c602286ae85c4395575637afebcada6e9cc13a9a7663389af16b2aca978a041"
-    sha256 sequoia:        "32da4055066fca85ebd5057718d0ec5c80eb162f796e5f54badf9fac56189a5b"
-    sha256 sonoma:         "39bc60aa67712dcf946d0465c7f9d838deb5623834dd5229c9ce9621214cc21e"
-    sha256 ventura:        "bfacdc5431d2c774ab7e8ed770c32c8da81f7b3524f28a35ddb829fc1806493f"
-    sha256 monterey:       "1a08c37e9c8b8458e791f27983f493482996437bbc55db3a5af10964498d2069"
-    sha256 x86_64_linux:   "1c54baa903d258fba6b5aef6818c5f282681d371933aaf8ccc71f34f3ac0f673"
+    sha256 arm64_sequoia: "bf2e6c5cb39433b00fa2aaf4a6db681814149f62c01f04d381c3c64cd32c1bd3"
+    sha256 arm64_sonoma:  "706b2f224c9519816d987e28ecfae9cfb41d99b728e237ef98fa1c0698d1f626"
+    sha256 arm64_ventura: "4b27265cc378fad113f0ab2f8609098c3ac84f79a76ad68a03d6af96f4eb2380"
+    sha256 sonoma:        "28e2abc928e8afd0c58303de69dab5e4ec8663c5591fe3c425ad9177bf377ded"
+    sha256 ventura:       "9017cd4ac641f4a961b27328bf519cbed91d5e3be2ae8e7f833b866412697d2f"
+    sha256 x86_64_linux:  "424afb56cdd116602c373db5ff55fbaef0865775cfacdc18c5e6a71aa24845e9"
   end
 
   depends_on "ca-certificates"
@@ -136,8 +133,8 @@ class OpensslAT3 < Formula
 
   test do
     # Make sure the necessary .cnf file exists, otherwise OpenSSL gets moody.
-    assert_predicate pkgetc/"openssl.cnf", :exist?,
-            "OpenSSL requires the .cnf file for some functionality"
+    assert_predicate pkgetc/"openssl.cnf", :exist?, "OpenSSL requires the .cnf file for some functionality"
+    assert_predicate openssldir/"certs", :exist?, "OpenSSL throws confusing errors when this directory is missing"
 
     # Check OpenSSL itself functions as expected.
     (testpath/"testfile.txt").write("This is a test file")
@@ -147,5 +144,30 @@ class OpensslAT3 < Formula
       checksum = f.read(100).split("=").last.strip
       assert_equal checksum, expected_checksum
     end
+
+    # Invalid cert from superfish.badssl.com
+    bad_cert = <<~PEM
+      -----BEGIN CERTIFICATE-----
+      MIIC9TCCAl6gAwIBAgIJAK5EmlK7Klu5MA0GCSqGSIb3DQEBCwUAMFsxGDAWBgNV
+      BAoTD1N1cGVyZmlzaCwgSW5jLjELMAkGA1UEBxMCU0YxCzAJBgNVBAgTAkNBMQsw
+      CQYDVQQGEwJVUzEYMBYGA1UEAxMPU3VwZXJmaXNoLCBJbmMuMB4XDTE4MDUxNjE3
+      MTUyM1oXDTIwMDUxNTE3MTUyM1owajELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNh
+      bGlmb3JuaWExFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xDzANBgNVBAoMBkJhZFNT
+      TDEdMBsGA1UEAwwUc3VwZXJmaXNoLmJhZHNzbC5jb20wggEiMA0GCSqGSIb3DQEB
+      AQUAA4IBDwAwggEKAoIBAQDCBOz4jO4EwrPYUNVwWMyTGOtcqGhJsCK1+ZWesSss
+      dj5swEtgTEzqsrTAD4C2sPlyyYYC+VxBXRMrf3HES7zplC5QN6ZnHGGM9kFCxUbT
+      Focnn3TrCp0RUiYhc2yETHlV5NFr6AY9SBVSrbMo26r/bv9glUp3aznxJNExtt1N
+      wMT8U7ltQq21fP6u9RXSM0jnInHHwhR6bCjqN0rf6my1crR+WqIW3GmxV0TbChKr
+      3sMPR3RcQSLhmvkbk+atIgYpLrG6SRwMJ56j+4v3QHIArJII2YxXhFOBBcvm/mtU
+      mEAnhccQu3Nw72kYQQdFVXz5ZD89LMOpfOuTGkyG0cqFAgMBAAGjLjAsMAkGA1Ud
+      EwQCMAAwHwYDVR0RBBgwFoIUc3VwZXJmaXNoLmJhZHNzbC5jb20wDQYJKoZIhvcN
+      AQELBQADgYEAKgHH4VD3jfwzxvtWTmIA1nwK+Fjqe9VFXyDwXiBnhqDwJp9J+/2y
+      r7jbXfEKf7WBS6OmnU+HTjxUCFx2ZnA4r7dU5nIsNadKEDVHDOvYEJ6mXHPkrvlt
+      k79iHC0DJiJX36BTXcU649wKEVjgX/kT2yy3YScPdBoN0vtzPN3yFsQ=
+      -----END CERTIFICATE-----
+    PEM
+    output = pipe_output("#{bin}/openssl verify 2>&1", bad_cert, 2)
+    assert_match "verification failed", output
+    refute_match "error:80000002", output
   end
 end

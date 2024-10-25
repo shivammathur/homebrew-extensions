@@ -27,6 +27,7 @@ class Gcc < Formula
     sha256                               arm64_sequoia: "96d8bf02f621cfa180cfe6c466fe0aff2cf3f48eab52ea5a5232cdd2a5cc30c4"
     sha256                               arm64_sonoma:  "4d94c81d3aea48d77d6e7d7d359d05b48024bac44ade59e08dc3fe0f62539a17"
     sha256                               arm64_ventura: "2869b13880fbe3d3d9d074e3b5f2dbf3bd0593f826d11b8b10165fd489b94deb"
+    sha256                               sequoia:       "548e5453b0cbf88fe86d63aeef2dacfa7eacc030ccdf037113add3040d64db50"
     sha256                               sonoma:        "901263863f3f4e8b99f9ffb1cccdb00e5fe74fd1013ac79d37af7ce07f600123"
     sha256                               ventura:       "7832d72cd4f578e244d5b920f2523e77b8f30328229440a569afa5a88df353fb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0902085b2185b224dd20c2ee5f12d83284cdbb68d0dab1e2edbd4c6603545de6"
