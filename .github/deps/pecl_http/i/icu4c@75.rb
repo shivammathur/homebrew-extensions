@@ -8,7 +8,7 @@ class Icu4cAT75 < Formula
 
   livecheck do
     url :stable
-    regex(/^release[._-]v?(\d+(?:[.-]\d+)+)$/i)
+    regex(/^release[._-]v?(75(?:[.-]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.filter_map { |tag| tag[regex, 1]&.tr("-", ".") }
     end
