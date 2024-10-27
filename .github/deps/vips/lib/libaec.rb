@@ -48,7 +48,7 @@ class Libaec < Formula
     # Check directory structure of CMake file in case new release changed layout
     assert_predicate lib/"cmake/libaec/libaec-config.cmake", :exist?
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <cassert>
       #include <cstddef>
       #include <cstdlib>
@@ -74,10 +74,10 @@ class Libaec < Formula
         free(compressed);
         return 0;
       }
-    EOS
+    CPP
 
     # Test CMake config package can be automatically found
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(test LANGUAGES CXX)
 
@@ -85,7 +85,7 @@ class Libaec < Formula
 
       add_executable(test test.cpp)
       target_link_libraries(test libaec::aec)
-    EOS
+    CMAKE
     system "cmake", ".", *std_cmake_args
     system "cmake", "--build", "."
     system "./test"

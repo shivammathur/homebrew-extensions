@@ -54,7 +54,7 @@ class Abseil < Formula
   end
 
   test do
-    (testpath/"hello_world.cc").write <<~EOS
+    (testpath/"hello_world.cc").write <<~CPP
       #include <iostream>
       #include <string>
       #include <vector>
@@ -66,8 +66,8 @@ class Abseil < Formula
 
         std::cout << "Joined string: " << s << "\\n";
       }
-    EOS
-    (testpath/"CMakeLists.txt").write <<~EOS
+    CPP
+    (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.16)
 
       project(my_project)
@@ -81,7 +81,7 @@ class Abseil < Formula
 
       # Declare dependency on the absl::strings library
       target_link_libraries(hello_world absl::strings)
-    EOS
+    CMAKE
     system "cmake", testpath
     system "cmake", "--build", testpath, "--target", "hello_world"
     assert_equal "Joined string: foo-bar-baz\n", shell_output("#{testpath}/hello_world")

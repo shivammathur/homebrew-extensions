@@ -41,7 +41,7 @@ class Pixman < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <pixman.h>
 
       int main(int argc, char *argv[])
@@ -51,7 +51,7 @@ class Pixman < Formula
         pixman_image_unref(image);
         return 0;
       }
-    EOS
+    C
     flags = %W[
       -I#{include}/pixman-1
       -L#{lib}

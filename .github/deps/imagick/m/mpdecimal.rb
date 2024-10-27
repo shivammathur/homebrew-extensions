@@ -32,7 +32,7 @@ class Mpdecimal < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <mpdecimal.h>
       #include <string.h>
@@ -62,7 +62,7 @@ class Mpdecimal < Formula
 
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lmpdec"
     system "./test"
   end

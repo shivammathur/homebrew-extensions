@@ -55,7 +55,7 @@ class Mpfr < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <mpfr.h>
       #include <math.h>
       #include <stdlib.h>
@@ -73,7 +73,7 @@ class Mpfr < Formula
         if (strcmp("#{version}", mpfr_get_version())) abort();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-L#{Formula["gmp"].opt_lib}",
                    "-lgmp", "-lmpfr", "-o", "test"
     system "./test"

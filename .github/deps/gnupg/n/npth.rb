@@ -28,7 +28,7 @@ class Npth < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <npth.h>
 
@@ -52,7 +52,7 @@ class Npth < Formula
           return 0;
       }
 
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lnpth", "-o", "test"
     assert_match "Hello from nPth thread!", shell_output("./test")
   end

@@ -29,7 +29,7 @@ class Nettle < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <nettle/sha1.h>
       #include <stdio.h>
 
@@ -51,7 +51,7 @@ class Nettle < Formula
         printf("\\n");
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lnettle", "-o", "test"
     system "./test"
   end

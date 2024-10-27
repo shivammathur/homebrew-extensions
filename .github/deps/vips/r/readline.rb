@@ -93,7 +93,7 @@ class Readline < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <readline/readline.h>
@@ -103,7 +103,7 @@ class Readline < Formula
         printf("%s\\n", readline("test> "));
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "-L", lib, "test.c", "-L#{lib}", "-lreadline", "-o", "test"
     assert_equal "test> Hello, World!\nHello, World!", pipe_output("./test", "Hello, World!\n").strip

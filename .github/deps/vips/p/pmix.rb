@@ -55,7 +55,7 @@ class Pmix < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <pmix.h>
 
@@ -66,7 +66,7 @@ class Pmix < Formula
 
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpmix", "-o", "test"
     system "./test"

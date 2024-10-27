@@ -89,7 +89,7 @@ class Hdf5 < Formula
     system bin/"h5cc", "test.c"
     assert_equal version.major_minor_patch.to_s, shell_output("./a.out").chomp
 
-    (testpath/"test.f90").write <<~EOS
+    (testpath/"test.f90").write <<~FORTRAN
       use hdf5
       integer(hid_t) :: f, dspace, dset
       integer(hsize_t), dimension(2) :: dims = [2, 2]
@@ -115,7 +115,7 @@ class Hdf5 < Formula
       if (error /= 0) call abort
       write (*,"(I0,'.',I0,'.',I0)") major, minor, rel
       end
-    EOS
+    FORTRAN
     system bin/"h5fc", "test.f90"
     assert_equal version.major_minor_patch.to_s, shell_output("./a.out").chomp
 

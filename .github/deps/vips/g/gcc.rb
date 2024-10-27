@@ -264,7 +264,7 @@ class Gcc < Formula
     system bin/"gcc-#{version_suffix}", "-o", "hello-c", "hello-c.c"
     assert_equal "Hello, world!\n", shell_output("./hello-c")
 
-    (testpath/"hello-cc.cc").write <<~EOS
+    (testpath/"hello-cc.cc").write <<~CPP
       #include <iostream>
       struct exception { };
       int main()
@@ -275,11 +275,11 @@ class Gcc < Formula
           catch (...) { }
         return 0;
       }
-    EOS
+    CPP
     system bin/"g++-#{version_suffix}", "-o", "hello-cc", "hello-cc.cc"
     assert_equal "Hello, world!\n", shell_output("./hello-cc")
 
-    (testpath/"test.f90").write <<~EOS
+    (testpath/"test.f90").write <<~FORTRAN
       integer,parameter::m=10000
       real::a(m), b(m)
       real::fact=0.5
@@ -289,7 +289,7 @@ class Gcc < Formula
       end do
       write(*,"(A)") "Done"
       end
-    EOS
+    FORTRAN
     system bin/"gfortran", "-o", "test", "test.f90"
     assert_equal "Done\n", shell_output("./test")
 

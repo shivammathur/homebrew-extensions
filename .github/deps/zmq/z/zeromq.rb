@@ -55,7 +55,7 @@ class Zeromq < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <zmq.h>
 
@@ -65,7 +65,7 @@ class Zeromq < Formula
         assert(0 == zmq_msg_init_size(&query, 1));
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lzmq", "-o", "test"
     system "./test"
     system "pkg-config", "libzmq", "--cflags"

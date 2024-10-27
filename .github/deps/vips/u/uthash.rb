@@ -16,7 +16,7 @@ class Uthash < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -52,7 +52,7 @@ class Uthash < Formula
         assert(s == NULL);
         printf("ok");
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-o", "test"
     assert_equal "ok", shell_output("./test")
   end

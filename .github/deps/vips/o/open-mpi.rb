@@ -88,7 +88,7 @@ class OpenMpi < Formula
   end
 
   test do
-    (testpath/"hello.c").write <<~EOS
+    (testpath/"hello.c").write <<~C
       #include <mpi.h>
       #include <stdio.h>
 
@@ -104,11 +104,11 @@ class OpenMpi < Formula
         MPI_Finalize();
         return 0;
       }
-    EOS
+    C
     system bin/"mpicc", "hello.c", "-o", "hello"
     system "./hello"
     system bin/"mpirun", "./hello"
-    (testpath/"hellof.f90").write <<~EOS
+    (testpath/"hellof.f90").write <<~FORTRAN
       program hello
       include 'mpif.h'
       integer rank, size, ierror, tag, status(MPI_STATUS_SIZE)
@@ -118,12 +118,12 @@ class OpenMpi < Formula
       print*, 'node', rank, ': Hello Fortran world'
       call MPI_FINALIZE(ierror)
       end
-    EOS
+    FORTRAN
     system bin/"mpifort", "hellof.f90", "-o", "hellof"
     system "./hellof"
     system bin/"mpirun", "./hellof"
 
-    (testpath/"hellousempi.f90").write <<~EOS
+    (testpath/"hellousempi.f90").write <<~FORTRAN
       program hello
       use mpi
       integer rank, size, ierror, tag, status(MPI_STATUS_SIZE)
@@ -133,12 +133,12 @@ class OpenMpi < Formula
       print*, 'node', rank, ': Hello Fortran world'
       call MPI_FINALIZE(ierror)
       end
-    EOS
+    FORTRAN
     system bin/"mpifort", "hellousempi.f90", "-o", "hellousempi"
     system "./hellousempi"
     system bin/"mpirun", "./hellousempi"
 
-    (testpath/"hellousempif08.f90").write <<~EOS
+    (testpath/"hellousempif08.f90").write <<~FORTRAN
       program hello
       use mpi_f08
       integer rank, size, tag, status(MPI_STATUS_SIZE)
@@ -148,7 +148,7 @@ class OpenMpi < Formula
       print*, 'node', rank, ': Hello Fortran world'
       call MPI_FINALIZE()
       end
-    EOS
+    FORTRAN
     system bin/"mpifort", "hellousempif08.f90", "-o", "hellousempif08"
     system "./hellousempif08"
     system bin/"mpirun", "./hellousempif08"

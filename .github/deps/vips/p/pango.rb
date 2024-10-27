@@ -44,7 +44,7 @@ class Pango < Formula
 
   test do
     system bin/"pango-view", "--version"
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <pango/pangocairo.h>
 
       int main(int argc, char *argv[]) {
@@ -56,7 +56,7 @@ class Pango < Formula
         g_free(families);
         return 0;
       }
-    EOS
+    C
 
     flags = shell_output("pkg-config --cflags --libs pangocairo").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags

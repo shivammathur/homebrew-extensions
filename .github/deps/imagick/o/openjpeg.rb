@@ -32,7 +32,7 @@ class Openjpeg < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <openjpeg.h>
 
       int main () {
@@ -45,7 +45,7 @@ class Openjpeg < Formula
         opj_image_destroy(image);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "-I#{include.children.first}",
            testpath/"test.c", "-L#{lib}", "-lopenjp2", "-o", "test"
     system "./test"
