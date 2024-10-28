@@ -48,7 +48,7 @@ class Libssh2 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libssh2.h>
 
       int main(void)
@@ -56,7 +56,7 @@ class Libssh2 < Formula
       libssh2_exit();
       return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-L#{lib}", "-lssh2", "-o", "test"
     system "./test"

@@ -38,7 +38,7 @@ class Librdkafka < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <librdkafka/rdkafka.h>
 
       int main (int argc, char **argv)
@@ -47,7 +47,7 @@ class Librdkafka < Formula
         int version = rd_kafka_version();
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lrdkafka", "-lz", "-lpthread", "-o", "test"
     system "./test"
   end

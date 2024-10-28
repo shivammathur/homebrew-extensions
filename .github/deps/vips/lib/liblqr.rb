@@ -35,7 +35,7 @@ class Liblqr < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <lqr.h>
 
       int main() {
@@ -48,7 +48,7 @@ class Liblqr < Formula
 
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-o", "test",
                    "-I#{include}/lqr-1",

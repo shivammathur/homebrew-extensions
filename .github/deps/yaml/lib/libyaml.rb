@@ -37,7 +37,7 @@ class Libyaml < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <yaml.h>
 
       int main()
@@ -47,7 +47,7 @@ class Libyaml < Formula
         yaml_parser_delete(&parser);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lyaml", "-o", "test"
     system "./test"
   end

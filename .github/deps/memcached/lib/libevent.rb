@@ -40,7 +40,7 @@ class Libevent < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <event2/event.h>
 
       int main()
@@ -50,7 +50,7 @@ class Libevent < Formula
         event_base_free(base);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-levent", "-o", "test"
     system "./test"
   end

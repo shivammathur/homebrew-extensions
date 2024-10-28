@@ -41,7 +41,7 @@ class Libtiff < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <tiffio.h>
 
       int main(int argc, char* argv[])
@@ -51,7 +51,7 @@ class Libtiff < Formula
         TIFFClose(out);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-ltiff", "-o", "test"
     system "./test", "test.tif"
     assert_match(/ImageWidth.*10/, shell_output("#{bin}/tiffdump test.tif"))

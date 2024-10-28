@@ -39,7 +39,7 @@ class Libexif < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <libexif/exif-loader.h>
 
@@ -52,7 +52,7 @@ class Libexif < Formula
           printf(data ? "Exif data loaded" : "No Exif data");
         }
       }
-    EOS
+    C
     flags = %W[
       -I#{include}
       -L#{lib}

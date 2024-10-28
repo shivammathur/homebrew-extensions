@@ -42,7 +42,7 @@ class Libb2 < Formula
   end
 
   test do
-    (testpath/"blake2test.c").write <<~EOS
+    (testpath/"blake2test.c").write <<~C
       #include <blake2.h>
       #include <stdio.h>
       #include <string.h>
@@ -69,7 +69,7 @@ class Libb2 < Formula
             return 1;
           }
       }
-    EOS
+    C
     system ENV.cc, "blake2test.c", "-L#{lib}", "-lb2", "-o", "b2test"
     system "./b2test"
   end

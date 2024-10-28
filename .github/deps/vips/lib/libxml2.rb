@@ -94,7 +94,7 @@ class Libxml2 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libxml/tree.h>
 
       int main()
@@ -105,7 +105,7 @@ class Libxml2 < Formula
         xmlFreeDoc(doc);
         return 0;
       }
-    EOS
+    C
 
     # Test build with xml2-config
     args = shell_output("#{bin}/xml2-config --cflags --libs").split

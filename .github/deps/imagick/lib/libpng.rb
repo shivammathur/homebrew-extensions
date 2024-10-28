@@ -43,7 +43,7 @@ class Libpng < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <png.h>
 
       int main()
@@ -53,7 +53,7 @@ class Libpng < Formula
         png_destroy_write_struct(&png_ptr, (png_infopp)NULL);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpng", "-o", "test"
     system "./test"
   end

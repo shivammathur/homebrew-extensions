@@ -44,7 +44,7 @@ class Libev < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       /* Wait for stdin to become readable, then read and echo the first line. */
 
       #include <stdio.h>
@@ -70,7 +70,7 @@ class Libev < Formula
         ev_run(EV_DEFAULT, 0);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lev", "-o", "test"
     input = "hello, world\n"
     assert_equal input, pipe_output("./test", input, 0)

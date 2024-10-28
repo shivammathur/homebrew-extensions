@@ -30,7 +30,7 @@ class Leptonica < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <iostream>
       #include <leptonica/allheaders.h>
 
@@ -38,7 +38,7 @@ class Leptonica < Formula
           fprintf(stdout, "%d.%d.%d", LIBLEPT_MAJOR_VERSION, LIBLEPT_MINOR_VERSION, LIBLEPT_PATCH_VERSION);
           return 0;
       }
-    EOS
+    CPP
 
     flags = ["-I#{include}/leptonica"] + ENV.cflags.to_s.split
     system ENV.cxx, "test.cpp", *flags

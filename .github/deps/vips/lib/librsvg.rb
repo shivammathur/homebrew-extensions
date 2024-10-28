@@ -73,14 +73,14 @@ class Librsvg < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <librsvg/rsvg.h>
 
       int main(int argc, char *argv[]) {
         RsvgHandle *handle = rsvg_handle_new();
         return 0;
       }
-    EOS
+    C
     cairo = Formula["cairo"]
     fontconfig = Formula["fontconfig"]
     freetype = Formula["freetype"]

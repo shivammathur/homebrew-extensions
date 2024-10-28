@@ -35,14 +35,14 @@ class Libxdmcp < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "X11/Xdmcp.h"
 
       int main(int argc, char* argv[]) {
         xdmOpCode code;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

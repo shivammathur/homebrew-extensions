@@ -58,7 +58,7 @@ class Libomp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <omp.h>
       #include <array>
       int main (int argc, char** argv) {
@@ -73,7 +73,7 @@ class Libomp < Formula
         else
             return 1;
       }
-    EOS
+    CPP
     system ENV.cxx, "-Werror", "-Xpreprocessor", "-fopenmp", "test.cpp", "-std=c++11",
                     "-I#{include}", "-L#{lib}", "-lomp", "-o", "test"
     system "./test"

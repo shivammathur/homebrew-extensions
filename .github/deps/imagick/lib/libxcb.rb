@@ -45,7 +45,7 @@ class Libxcb < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <string.h>
@@ -90,7 +90,7 @@ class Libxcb < Formula
         xcb_disconnect(connection);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lxcb"
     system "./test"
     assert_equal 0, $CHILD_STATUS.exitstatus

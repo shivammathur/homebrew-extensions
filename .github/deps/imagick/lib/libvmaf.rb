@@ -33,12 +33,12 @@ class Libvmaf < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libvmaf/libvmaf.h>
       int main() {
         return 0;
       }
-    EOS
+    C
 
     flags = [
       "-I#{HOMEBREW_PREFIX}/include/libvmaf",

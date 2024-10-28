@@ -41,7 +41,7 @@ class Libuv < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <uv.h>
       #include <stdlib.h>
 
@@ -53,7 +53,7 @@ class Libuv < Formula
         free(loop);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-luv", "-o", "test"
     system "./test"
   end

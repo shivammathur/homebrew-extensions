@@ -43,7 +43,7 @@ class Libx11 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <X11/Xlib.h>
       #include <stdio.h>
       int main() {
@@ -73,7 +73,7 @@ class Libx11 < Formula
 
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lX11", "-o", "test", "-I#{include}"
     system "./test"
   end

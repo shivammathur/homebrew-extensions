@@ -26,7 +26,7 @@ class Libimagequant < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libimagequant.h>
 
       int main()
@@ -39,7 +39,7 @@ class Libimagequant < Formula
           return 0;
         }
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-limagequant", "-o", "test"
     system "./test"
   end

@@ -29,7 +29,7 @@ class Libunistring < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <uniname.h>
       #include <unistdio.h>
       #include <unistr.h>
@@ -42,7 +42,7 @@ class Libunistring < Formula
         printf ("%s\\n", buff);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lunistring",
                    "-o", "test"
     assert_equal "🍺", shell_output("./test").chomp

@@ -41,7 +41,7 @@ class Libmpc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <mpc.h>
       #include <assert.h>
       #include <math.h>
@@ -55,7 +55,7 @@ class Libmpc < Formula
         mpc_clear (x);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-L#{Formula["mpfr"].opt_lib}",
                    "-L#{Formula["gmp"].opt_lib}", "-lmpc", "-lmpfr",
                    "-lgmp", "-o", "test"

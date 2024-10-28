@@ -41,7 +41,7 @@ class Libmemcached < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <string.h>
 
@@ -74,7 +74,7 @@ class Libmemcached < Formula
 
           memcached_free(memc);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmemcached", "-o", "test"
 
     memcached = Formula["memcached"].bin/"memcached"

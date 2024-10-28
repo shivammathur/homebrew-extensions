@@ -36,14 +36,14 @@ class Libxext < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include "X11/extensions/shape.h"
 
       int main(int argc, char* argv[]) {
         XShapeEvent event;
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

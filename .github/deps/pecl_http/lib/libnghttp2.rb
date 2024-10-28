@@ -49,7 +49,7 @@ class Libnghttp2 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <nghttp2/nghttp2.h>
       #include <stdio.h>
 
@@ -58,7 +58,7 @@ class Libnghttp2 < Formula
         printf("%s", info->version_str);
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lnghttp2", "-o", "test"
     assert_equal version.to_s, shell_output("./test")

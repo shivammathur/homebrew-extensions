@@ -59,10 +59,10 @@ class Libtool < Formula
   test do
     system bin/"glibtool", "execute", File.executable?("/usr/bin/true") ? "/usr/bin/true" : "/bin/true"
 
-    (testpath/"hello.c").write <<~EOS
+    (testpath/"hello.c").write <<~C
       #include <stdio.h>
       int main() { puts("Hello, world!"); return 0; }
-    EOS
+    C
 
     system bin/"glibtool", "--mode=compile", "--tag=CC",
       ENV.cc, "-c", "hello.c", "-o", "hello.o"

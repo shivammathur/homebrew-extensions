@@ -41,7 +41,7 @@ class Liblzf < Formula
 
   test do
     # Adapted from bench.c in the liblzf source
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <string.h>
       #include <stdlib.h>
@@ -60,7 +60,7 @@ class Liblzf < Formula
         assert (!memcmp (data, data3, DSIZE));
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-llzf", "-o", "test"
     system "./test"
   end

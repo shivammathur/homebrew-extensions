@@ -188,7 +188,7 @@ class Glib < Formula
     assert_match "my_app_net_corp_my_app_frobber_call_hello_world", (testpath/"myapp-generated.h").read
 
     # Keep (u)int64_t and g(u)int64 aligned. See install comment for details
-    (testpath/"typecheck.cpp").write <<~EOS
+    (testpath/"typecheck.cpp").write <<~CPP
       #include <cstdint>
       #include <type_traits>
       #include <glib.h>
@@ -199,7 +199,7 @@ class Glib < Formula
         static_assert(std::is_same<uint64_t, guint64>::value == true, "guint64 should match uint64_t");
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-o", "typecheck", "typecheck.cpp", "-I#{include}/glib-2.0", "-I#{lib}/glib-2.0/include"
   end
 end

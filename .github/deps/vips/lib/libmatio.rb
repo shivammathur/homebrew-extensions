@@ -41,7 +41,7 @@ class Libmatio < Formula
     end
 
     testpath.install resource("homebrew-test_mat_file")
-    (testpath/"mat.c").write <<~EOS
+    (testpath/"mat.c").write <<~C
       #include <stdlib.h>
       #include <matio.h>
 
@@ -68,7 +68,7 @@ class Libmatio < Formula
         mat = Mat_CreateVer("foo", NULL, MAT_FT_MAT73);
         return EXIT_SUCCESS;
       }
-    EOS
+    C
     system ENV.cc, "mat.c", "-o", "mat", "-I#{include}", "-L#{lib}", "-lmatio"
     system "./mat", "poc_data.mat.sfx"
 

@@ -38,7 +38,7 @@ class Libsodium < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <assert.h>
       #include <sodium.h>
 
@@ -47,7 +47,7 @@ class Libsodium < Formula
         assert(sodium_init() != -1);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}",
                    "-lsodium", "-o", "test"
     system "./test"
