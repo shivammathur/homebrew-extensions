@@ -18,8 +18,13 @@ class Gettext < Formula
   end
 
   depends_on "libunistring"
+
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
+
+  on_linux do
+    depends_on "acl"
+  end
 
   def install
     args = [
