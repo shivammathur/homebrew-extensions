@@ -4,16 +4,15 @@ class Libheif < Formula
   url "https://github.com/strukturag/libheif/releases/download/v1.18.2/libheif-1.18.2.tar.gz"
   sha256 "c4002a622bec9f519f29d84bfdc6024e33fd67953a5fb4dc2c2f11f67d5e45bf"
   license "LGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "e8d16fb379fb5bcc42d9cafcb0bb4cf6907baf36cee1e7f274e5d63feea6c525"
-    sha256 cellar: :any,                 arm64_sonoma:   "3ac03a6aa83b0c636c640cd953082d5e06f06d2fa74d7a50914812bf6bd73203"
-    sha256 cellar: :any,                 arm64_ventura:  "392d7fd61637d1912c95ad3f1629dac3da032f49d01d966c9813d0f65e36d994"
-    sha256 cellar: :any,                 arm64_monterey: "c43506ecb80ccd6f46951d459579e4af1ebeb4a91ae800681f26f28457b17ec4"
-    sha256 cellar: :any,                 sonoma:         "8243388a035f0666bb9cbb1950b0c2cb3d0ffd06640e8eb8baae9f82b1f1e64e"
-    sha256 cellar: :any,                 ventura:        "352eeaa2087cf976407e06b883825374c033299c339e507b8525fad82bef3613"
-    sha256 cellar: :any,                 monterey:       "9aa1dbd3f239169fc2de33fdf18a2b4ffadcca81d9121264ccbb4054ce8374ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "054df00dc283e020bd17612943df5e0c5143fe3d89122d87c8c97cd14eb534fa"
+    sha256 cellar: :any,                 arm64_sequoia: "ed325fb88684986ddb0e1ea928234cbcdf338532d617dd1772c942e6fb6fc523"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb441a4c7b0af9d301f40febc15d7e47e5c36b3dd736fa5568f6f88d664b56a3"
+    sha256 cellar: :any,                 arm64_ventura: "f900c9eac6cdf2e134f9150fe61888ed279eb057efd18099245f9a326fe82a35"
+    sha256 cellar: :any,                 sonoma:        "729b267c46f64bf463a96aef0b866ec41e08ee802ced4eb4f45d5bc44e8e9dd1"
+    sha256 cellar: :any,                 ventura:       "3cb8608c18c3cea4cc34469c5d00a96d583980ad55e3bc2675df48754d15a0b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dc7b284f1a2b082fc81a2a01e6ebb1ecaec10b2f29cb1b53607dc63e8d39234"
   end
 
   depends_on "cmake" => :build

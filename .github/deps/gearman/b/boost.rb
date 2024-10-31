@@ -2,7 +2,7 @@ class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
   license "BSL-1.0"
-  revision 1
+  revision 2
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   stable do
@@ -31,15 +31,15 @@ class Boost < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7ed42f5454994b547066d52549a57edd157ca6f80a9f2d73fe69eec4a7bbc5ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "70a85cfceb6b54c0ace4956b937aae3cde81a874741f5d9aa5938ffdd7de3d77"
-    sha256 cellar: :any,                 arm64_ventura: "da2a9898cde2900e528109b4e0c4db3e26c3f5c7f8d0830c9523c4b3bc9d44a0"
-    sha256 cellar: :any,                 sonoma:        "ccd461109e3760cefcc170e8ec75c166e780aba32fa852581e2f88e777bd40aa"
-    sha256 cellar: :any,                 ventura:       "6c3b8d51bcbae0c803953304c8c8d9c5743e29df9659b9a28d9fc5f0a6df24e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd0a090c857598cd14490425b8a80351355e23c064d57d7e0a29ca1ea016d9fd"
+    sha256 cellar: :any,                 arm64_sequoia: "9cbf3c05fdd327dd0e0f1a9419e63e10c2351ec7cd51904e054e37d11751a21d"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c969ba39918df9f26ac5d283081bd263009747db450095888697c0c83e3a8d2"
+    sha256 cellar: :any,                 arm64_ventura: "d49dc78ee528470d8ca0f9762a96d1eba1f80fd4a8d70dea010c7d524cec7133"
+    sha256 cellar: :any,                 sonoma:        "14ea0ee012bdb555dcc20fb5b6429ea34bd7aab7b16db606de04074fdf37ddcd"
+    sha256 cellar: :any,                 ventura:       "b2ffcb38ea2326444acc8b95c6ccd4fa8d8edbab95270108ecfb85a25b89aeaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a9279f11fcd81f48f47d0b86389cddd27dc077f0ca6948f2ff83f720267119d"
   end
 
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "xz"
   depends_on "zstd"
 

@@ -1,18 +1,17 @@
 class Libmatio < Formula
   desc "C library for reading and writing MATLAB MAT files"
   homepage "https://matio.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/matio/matio/1.5.27/matio-1.5.27.tar.gz"
-  sha256 "0a6aa00b18c4512b63a8d27906b079c8c6ed41d4b2844f7a4ae598e18d22d3b3"
+  url "https://downloads.sourceforge.net/project/matio/matio/1.5.28/matio-1.5.28.tar.gz"
+  sha256 "9da698934a21569af058e6348564666f45029e6c2b0878ca0d8f9609bf77b8d8"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7bfbaa9c2de6d92700c10352d5558bc10e1257ea31cfe20a3b595ad7f16d3c51"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4b7ba02b711df4335d9086e72cb20668fc1d353cac2d21f2d4958de980e1f2c"
-    sha256 cellar: :any,                 arm64_ventura: "288e89283a9015d9d60d590f182e6a702bbf08b799b063b0e028a66c756955cb"
-    sha256 cellar: :any,                 sonoma:        "6448a61dcaa62861d5c9577f2107a1df81a796f5e70dea9da803799456c91773"
-    sha256 cellar: :any,                 ventura:       "39385330a5ad873eadb670181cce882cfd56ff62e541382adcb43636a6926252"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34f93f1a1b59dff1ca2a03c5ce0cbe6bdd73452661917fa16641d0311187f7f7"
+    sha256 cellar: :any,                 arm64_sequoia: "8548b3cb9b21fa982216451647db1a47b4c739312584234cd1985427b8d6b257"
+    sha256 cellar: :any,                 arm64_sonoma:  "80694bb2600a33e2628fd55db525539d5105d2fea1928cf161881b752d498d88"
+    sha256 cellar: :any,                 arm64_ventura: "54cce8262a21cca0d84f505bcc89393d9aa70df7cde6efc1e7732f563c8beee4"
+    sha256 cellar: :any,                 sonoma:        "8165133fb675edcc6db39d59e8c67bf3ea3b63bf22948d7acc638b3b9759a86b"
+    sha256 cellar: :any,                 ventura:       "00b4f5bdbec014ea1675de1c8f53b0d206f01bcfd31dbd61390e38ed6577648f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f29e5ed508bb8cf1acbe9e69829f7beb0971efb72fcc4cb3a5a9c1b9ad66c2c7"
   end
 
   depends_on "pkg-config" => :test

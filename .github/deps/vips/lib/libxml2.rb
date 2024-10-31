@@ -4,7 +4,7 @@ class Libxml2 < Formula
   url "https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.4.tar.xz"
   sha256 "65d042e1c8010243e617efb02afda20b85c2160acdbfbcb5b26b80cec6515650"
   license "MIT"
-  revision 2
+  revision 3
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -14,12 +14,12 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e3da26e48d36ae965d6b6382868b8c4e76819255d961b9d50f0e907e027f2196"
-    sha256 cellar: :any,                 arm64_sonoma:  "d05f1c3c1ac62a534fd64a5b6b9242381e2ddd85afe3d91bed859c908c586215"
-    sha256 cellar: :any,                 arm64_ventura: "c455c5e0f4d98beade4bc108a9e810da9af9b63245624c7688420d342a59c2d6"
-    sha256 cellar: :any,                 sonoma:        "f2025b32b04925a6586ab983660435d2d678ea321bf671f9455d8c1d68ee4442"
-    sha256 cellar: :any,                 ventura:       "274643e3f77ebffc1f4c38082453c1c15446f277e233ac07a5006b5c63c1cb6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e93c2ad1c67a4e949a149d3d742bd672b37259d15bb765930b25ccae582ed7bf"
+    sha256                               arm64_sequoia: "016dc2a96950af0b748b4e98a46cfa8935e8d43d20a75ba23791c78c037f215a"
+    sha256                               arm64_sonoma:  "b954917a8437c8ff6cb6787736a13680e4185726dd5c45edb6d3b69391191883"
+    sha256                               arm64_ventura: "62e7f160283b1d43ba9117b9cd8d29ea30d93640ff42f3bfd2331476f1fab3f3"
+    sha256                               sonoma:        "39aaefbfe24737fe3399a26fd2248374d4dc1ec87644bf16fdba1b7b5545f5b3"
+    sha256                               ventura:       "b8287a71c78ff3dfa6b84b9ec72e7f95c516712a874fdd231dd449289dc49804"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7758c59760b0454356e2bc7aa6e2b46d530e6699196c99eaa047c1c8e26f95e"
   end
 
   head do
@@ -37,7 +37,7 @@ class Libxml2 < Formula
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "pkg-config" => :test
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "readline"
 
   uses_from_macos "zlib"

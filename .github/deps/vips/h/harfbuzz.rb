@@ -4,17 +4,16 @@ class Harfbuzz < Formula
   url "https://github.com/harfbuzz/harfbuzz/archive/refs/tags/10.0.1.tar.gz"
   sha256 "e7358ea86fe10fb9261931af6f010d4358dac64f7074420ca9bc94aae2bdd542"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "4a924069e0783e226a57ed0ce2f9b95d261f9a33b58f7810938d0624f5be9d4b"
-    sha256 cellar: :any, arm64_sonoma:  "8b14b8bbc667af5a01a311e9928d7dac53770dd322731480f3e3ab65ea38f7ca"
-    sha256 cellar: :any, arm64_ventura: "f98ec690b0fb7890beb4979de8c7705f6a3ea0aa255a464d64a399dc0c81fb59"
-    sha256 cellar: :any, sonoma:        "b8590c108de2eca0ae5e6d92ab357f726f7143a020f14a4aa1c6da5aa637fa1f"
-    sha256 cellar: :any, ventura:       "28516fdc43f471c1b7e8e85f9aa76276379e9341b51da0ddc338b635fb065994"
-    sha256               x86_64_linux:  "82d5f95395dbaf51b6a561de5f931722f4a97d4899d44af032bd0afa30bc5edb"
+    sha256 cellar: :any, arm64_sequoia: "aefbd0dc673b6ac8c680e73113a9341e92e9bbecefb0b651214b4c1772c1d0f7"
+    sha256 cellar: :any, arm64_sonoma:  "022fc58cf542375163e9bd5ea65cad2bddf23c81d8dc7424d3815d1f6ebea25c"
+    sha256 cellar: :any, arm64_ventura: "567e507de1a1dba9ae2183f40b5eab427e02f021c9ebaad3b8e110e0fb751b63"
+    sha256 cellar: :any, sonoma:        "a7a541d7239372f5cda14d6afd3bc98bfcccb2bf2615be73b79eced2bbc48e48"
+    sha256 cellar: :any, ventura:       "88470083fcb616bbbce103345773ac226fdfff4fdd572424c569430a58c8726c"
+    sha256               x86_64_linux:  "3a8df5b0bc86fdf08c52a240343c1c6c7ebc96c4694d48e33b42d823f3368d35"
   end
 
   depends_on "gobject-introspection" => :build
@@ -27,7 +26,7 @@ class Harfbuzz < Formula
   depends_on "freetype"
   depends_on "glib"
   depends_on "graphite2"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
 
   resource "homebrew-test-ttf" do
     url "https://github.com/harfbuzz/harfbuzz/raw/fc0daafab0336b847ac14682e581a8838f36a0bf/test/shaping/fonts/sha1sum/270b89df543a7e48e206a2d830c0e10e5265c630.ttf"
