@@ -1,18 +1,19 @@
 class X265 < Formula
   desc "H.265/HEVC encoder"
   homepage "https://bitbucket.org/multicoreware/x265_git"
-  url "https://bitbucket.org/multicoreware/x265_git/get/4.0.tar.gz"
-  sha256 "66b64be4b316362fdadb33ad8273a74236042cc380691bdbec42946b0437a389"
+  url "https://bitbucket.org/multicoreware/x265_git/downloads/x265_4.0.tar.gz"
+  sha256 "75b4d05629e365913de3100b38a459b04e2a217a8f30efaa91b572d8e6d71282"
   license "GPL-2.0-only"
+  revision 1
   head "https://bitbucket.org/multicoreware/x265_git.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d42a6c874641eac96bb6a0c622ac42a2b691659a02c0fa357212eab370dc7c35"
-    sha256 cellar: :any,                 arm64_sonoma:  "91a955b8db45ff2818d1eda64e394a132726a9a768d373752c3e02357607dfd5"
-    sha256 cellar: :any,                 arm64_ventura: "6b04b6c694c9ff62f54db532f5557601f9ec038e1940a31601728abf49c1a750"
-    sha256 cellar: :any,                 sonoma:        "c23fa40a11314b02ab4ad95c079b01445197ebe7cf3a7134469d97ed37fc083f"
-    sha256 cellar: :any,                 ventura:       "17f959afb92f42732454bcdc8108eb22583feac30c9d6d0b3b3876a67eebed71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6048f799a3388953510fc94c6072a3e91098fca293db4a4cec923742f7308fce"
+    sha256 cellar: :any,                 arm64_sequoia: "64a91e7e9f9181a5c5c964f4b4e61cccadf12392544574ea75c1ad74c3b5a89f"
+    sha256 cellar: :any,                 arm64_sonoma:  "2320907225bc99fd3167f1871af876630458ebbb4030a0706e12ba846c07b194"
+    sha256 cellar: :any,                 arm64_ventura: "02dfe1f1d44105fbf40e26abc95b2528850e5d0c435fb3b89e13a1ca6c15b4b6"
+    sha256 cellar: :any,                 sonoma:        "1bb7c6f5ea0defd63998ccd4b48a59afb98d711d81639f026fa8cc2a827a5daf"
+    sha256 cellar: :any,                 ventura:       "5312e05c09c369b267d629220dfd0a71cd4eb53c2228d84dc41a9a13a1bbd6c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8c5bc441686cd06bf2ac1c1a740a58e7f1b40e0ee6b4c2b6b866ccef009f289"
   end
 
   depends_on "cmake" => :build
@@ -22,6 +23,7 @@ class X265 < Formula
   end
 
   def install
+    ENV.runtime_cpu_detection
     # Build based off the script at ./build/linux/multilib.sh
     args = std_cmake_args + %W[
       -DLINKED_10BIT=ON
@@ -78,5 +80,7 @@ class X265 < Formula
     system bin/"x265", "--input-res", "360x640", "--fps", "60", "--input", yuv_path, "-o", x265_path
     header = "AAAAAUABDAH//w=="
     assert_equal header.unpack("m"), [x265_path.read(10)]
+
+    assert_match "version #{version}", shell_output("#{bin}/x265 -V 2>&1")
   end
 end
