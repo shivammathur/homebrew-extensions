@@ -12,7 +12,6 @@ class PythonPackaging < Formula
     sha256 cellar: :any_skip_relocation, all: "575595301a31862ca4d2d0f6a39fd8e209adb81ff0926d65a81e7f1173f7d30d"
   end
 
-  depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
 
