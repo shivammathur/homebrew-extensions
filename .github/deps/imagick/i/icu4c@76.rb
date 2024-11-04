@@ -5,6 +5,7 @@ class Icu4cAT76 < Formula
   version "76.1"
   sha256 "dfacb46bfe4747410472ce3e1144bf28a102feeaa4e3875bac9b4c6cf30f4f3e"
   license "ICU"
+  revision 1
 
   # We allow the livecheck to detect new `icu4c` major versions in order to
   # automate version bumps. To make sure PRs are created correctly, we output
@@ -18,17 +19,15 @@ class Icu4cAT76 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "864ab79f49fd097e8537c281af64e3987d085c753086c60cde74fc84f55ee771"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b28efee579ee1a87cb4264e4ea714dd4af6edf59fa2e29955ffe4408428d726"
-    sha256 cellar: :any,                 arm64_ventura: "7ca03c808b01c40b270146e476bfcb18367f830e9f1722c9effc4f1c5954b20f"
-    sha256 cellar: :any,                 sonoma:        "30d9e64dbac8658ab81012ccfe1e52f87cd1ec8cb247b562d4484665ef6b5247"
-    sha256 cellar: :any,                 ventura:       "6d57d5ff7ed6d83916f9c47aa82eb84d1555fc23f8c779491e42e71817d8b2ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0e8e698c09aee143fce7529fcdf776be98d15f3a000ed8c3e74dc387ce364ac"
+    sha256 cellar: :any,                 arm64_sequoia: "66a2995c046a7d78b727cac1b90f52a2fd3bcf07488ae41c711109bbd1fca8e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "38c00ad782ec16cf4c5b3439b15a38e11e8be3ffc5b029135cfff102e36bcfa3"
+    sha256 cellar: :any,                 arm64_ventura: "2f7b9091aa04a8310a473037175e2242f3ef87526fb6914b9078c4002d6098e3"
+    sha256 cellar: :any,                 sonoma:        "f7e042054dd71e1167f8c93bd64d817def4c229772a897de0e905e1566985fef"
+    sha256 cellar: :any,                 ventura:       "49b0d34d41e6785b7324ec4fd8d503227b619941343379cfdb037b11f4fbf68b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e371567ddebb72c0aac6143d10bc47d6f0e0ed87aa7d3962a1ee8b6d86438f26"
   end
 
-  # TODO: Switch keg_only reason after renaming `icu4c` formula to `icu4c@75` and updating alias to `icu4c@76`
-  # keg_only :provided_by_macos, "macOS provides libicucore.dylib (but nothing else)"
-  keg_only :versioned_formula
+  keg_only :shadowed_by_macos, "macOS provides libicucore.dylib (but nothing else)"
 
   def install
     odie "Major version bumps need a new formula!" if version.major.to_s != name[/@(\d+)$/, 1]

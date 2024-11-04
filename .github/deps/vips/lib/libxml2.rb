@@ -4,7 +4,7 @@ class Libxml2 < Formula
   url "https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.4.tar.xz"
   sha256 "65d042e1c8010243e617efb02afda20b85c2160acdbfbcb5b26b80cec6515650"
   license "MIT"
-  revision 3
+  revision 4
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -14,12 +14,12 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "016dc2a96950af0b748b4e98a46cfa8935e8d43d20a75ba23791c78c037f215a"
-    sha256                               arm64_sonoma:  "b954917a8437c8ff6cb6787736a13680e4185726dd5c45edb6d3b69391191883"
-    sha256                               arm64_ventura: "62e7f160283b1d43ba9117b9cd8d29ea30d93640ff42f3bfd2331476f1fab3f3"
-    sha256                               sonoma:        "39aaefbfe24737fe3399a26fd2248374d4dc1ec87644bf16fdba1b7b5545f5b3"
-    sha256                               ventura:       "b8287a71c78ff3dfa6b84b9ec72e7f95c516712a874fdd231dd449289dc49804"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7758c59760b0454356e2bc7aa6e2b46d530e6699196c99eaa047c1c8e26f95e"
+    sha256 cellar: :any,                 arm64_sequoia: "958deabfc4c6a8908580a7538b1392e4a50c6f3cc7246239a62bf603ae33acaf"
+    sha256 cellar: :any,                 arm64_sonoma:  "7dd663ec7beda167b1f0705d984ccb38db2d882ef1f78678b7abecd81ddeb119"
+    sha256 cellar: :any,                 arm64_ventura: "4fe3f65d703d925efbeeff545561dabc1e3d70de359c3b2cc3e6799aa4b33e6f"
+    sha256 cellar: :any,                 sonoma:        "3bd5fd6fa2457c18f3f68e71dfc1cb0f6155a7aaa2acd93b42d3e7eb955b72d3"
+    sha256 cellar: :any,                 ventura:       "be5ba075471da4de1260ec75e78c496b3689678e8edaf5860febe9f26f4a2cd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d43aafed4f334588e937fac87b381df3c6e42f790b3828dd932512bf349b77df"
   end
 
   head do
@@ -56,15 +56,19 @@ class Libxml2 < Formula
     ENV.append "CFLAGS", "-std=gnu11" if OS.linux?
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args,
+    system "./configure", "--disable-silent-rules",
                           "--sysconfdir=#{etc}",
-                          "--disable-silent-rules",
                           "--with-history",
                           "--with-http",
                           "--with-icu",
+                          "--without-lzma",
                           "--without-python",
-                          "--without-lzma"
+                          *std_configure_args
     system "make", "install"
+
+    icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
+                .to_formula
+    inreplace [bin/"xml2-config", lib/"pkgconfig/libxml-2.0.pc"], icu4c.prefix.realpath, icu4c.opt_prefix
 
     cd "python" do
       sdk_include = if OS.mac?

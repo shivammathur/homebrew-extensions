@@ -5,6 +5,7 @@ class Icu4cAT75 < Formula
   version "75.1"
   sha256 "cb968df3e4d2e87e8b11c49a5d01c787bd13b9545280fc6642f826527618caef"
   license "ICU"
+  revision 1
 
   livecheck do
     url :stable
@@ -15,16 +16,15 @@ class Icu4cAT75 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "55042c6a0fb92e96cd620d6550426eba88121760f1ffc26eb88e535eafffdb02"
-    sha256 cellar: :any,                 arm64_sonoma:  "a2a2f7ee32720e5365d536d6d0c110d596ffd2e0e9c47b05e13aee3853e3802d"
-    sha256 cellar: :any,                 arm64_ventura: "e6fcf7a0d4a9c4ba533e2e325d09742d623841b9c66ac0aaeff853dec98229d0"
-    sha256 cellar: :any,                 sonoma:        "26198a2f44a3a179d025608288108480d9bab3b1a8ee53aef0e8469be78ea7a1"
-    sha256 cellar: :any,                 ventura:       "4de74b9cdfbf91930651b09a81a67037a1ff571a2a7ef79ab5eb971b3cd6d279"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7ca9ed261455d9f114079bb46b3175c57265a5e254f9d33404c10a70e5523b5"
+    sha256 cellar: :any,                 arm64_sequoia: "4f07c25ad9219c64a89315c92926a4ed100abee56ca8239697f4d4ed96fc8c4e"
+    sha256 cellar: :any,                 arm64_sonoma:  "992749cb6ae752008a3ae031fdc6972833f7ccece25557990797abedb65cdc34"
+    sha256 cellar: :any,                 arm64_ventura: "bc6e3f3b55834a9d8ed02b27160c5fad0fc51083d3d75a5241ac7fb6396ac2d0"
+    sha256 cellar: :any,                 sonoma:        "db53be7588fef20af9fd3b8c065119fddc412c40715784cc92329d22c01c655b"
+    sha256 cellar: :any,                 ventura:       "9f3b96254d2b5ddddff97938832693cadf666c2ea7d9d6085eb8e04358f54b2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9ba262410561b5fcd350ddadb7b0704ccabca5d2556817caf5e3ab31560ef25"
   end
 
-  keg_only :shadowed_by_macos, "macOS provides libicucore.dylib (but nothing else)"
+  keg_only :versioned_formula
 
   def install
     odie "Major version bumps need a new formula!" if version.major.to_s != name[/@(\d+)$/, 1]
