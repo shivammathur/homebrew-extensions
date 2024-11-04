@@ -13,6 +13,15 @@ class ZstdAT74 < AbstractPhpExtension
   head "https://github.com/kjdev/php-ext-zstd.git", branch: "master"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_sequoia: "15c5675e975d3d1acc6a107bf9402c91cd6d3d8705da7f4395871b78e283677d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2bbed94db177550d5511c2a2182486e2ab48051f42b46bd0fc5924c1fc527ee4"
+    sha256 cellar: :any,                 arm64_ventura: "a4ff0477a669fffb4a6d88ed47e9322d5efc9f7810f7d98fad3d03d0302f3cb9"
+    sha256 cellar: :any,                 ventura:       "62b90f25d37055cab15d323ed909117e94480d0ac3722434403221d719a5d1bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba29a262c638b3c978dc830087467eb3d201f9a92674b4c4bedba5fc76161d69"
+  end
+
   depends_on "zstd"
 
   def install
