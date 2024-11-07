@@ -51,7 +51,7 @@ class Re2 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <re2/re2.h>
       #include <assert.h>
       int main() {
@@ -59,7 +59,7 @@ class Re2 < Formula
         assert(RE2::PartialMatch("hello", "e"));
         return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
                     "-I#{include}", "-L#{lib}", "-lre2"
     system "./test"

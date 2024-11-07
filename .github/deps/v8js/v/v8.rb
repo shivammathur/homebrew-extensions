@@ -190,7 +190,7 @@ class V8 < Formula
     t = "#{bin}/d8 -e 'print(new Intl.DateTimeFormat(\"en-US\").format(new Date(\"2012-12-20T03:00:00\")));'"
     assert_match %r{12/\d{2}/2012}, shell_output(t).chomp
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <libplatform/libplatform.h>
       #include <v8.h>
       int main(){
@@ -199,7 +199,7 @@ class V8 < Formula
         v8::V8::Initialize();
         return 0;
       }
-    EOS
+    CPP
 
     # link against installed libc++
     system ENV.cxx, "-std=c++20", "test.cpp",
