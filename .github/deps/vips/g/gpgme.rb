@@ -4,6 +4,7 @@ class Gpgme < Formula
   url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.0.tar.bz2"
   sha256 "61e3a6ad89323fecfaff176bc1728fb8c3312f2faa83424d9d5077ba20f5f7da"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpgme/"
@@ -11,23 +12,23 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "78c81de80215bee3d83cb1fc44eb2879b43c95db1bd5485f94fe27bb6a92b660"
-    sha256 cellar: :any,                 arm64_sonoma:  "b8ded7959409a8be4698b2a197244078ebd01f07e7e97420fc2b127cdd63fa73"
-    sha256 cellar: :any,                 arm64_ventura: "9959f29142bc193839ed1c812c3394be30cab3989059759e83f60c2fdaba5dea"
-    sha256 cellar: :any,                 sonoma:        "45980c9bc5d6c15c5766b247db1cf43dab13aeb1f8c4110fc9db288dd01fa113"
-    sha256 cellar: :any,                 ventura:       "b0901cdec310a522dfc6d2e588c9c3f621d1d6a35c7d884bf2874bbfdccf27fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1254e2feb2e8aa071dc0f998c81799ee1d8b85c0d08028c78372f8bf3b8f988"
+    sha256 cellar: :any,                 arm64_sequoia: "d527527678278ec8a1d1bbbfe47ae4c14ec6efde616ff423a444f620731cfa66"
+    sha256 cellar: :any,                 arm64_sonoma:  "126aa60956ea71060c3a7214a208909f44c5ef3d809b8861a11be31dd88090b9"
+    sha256 cellar: :any,                 arm64_ventura: "ad15a53119725ccc499fea4aa7611fcacd7b0e517913c3d4be5e07bd7a9bac13"
+    sha256 cellar: :any,                 sonoma:        "1f5747663a4d8fa271388a8683ae2d87ab4e10247ef5189b575b980dce82438b"
+    sha256 cellar: :any,                 ventura:       "ded898081e74189b242056b66b5979d86f11de849d4569ddd64c9a9f904e2ec2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc5a08c5f2e458631a86a0a3447813157356513bfb0649307883fa53f84abac5"
   end
 
   depends_on "python-setuptools" => :build
-  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
   depends_on "swig" => :build
   depends_on "gnupg"
   depends_on "libassuan"
   depends_on "libgpg-error"
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install
