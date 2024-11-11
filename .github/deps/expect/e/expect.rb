@@ -4,7 +4,7 @@ class Expect < Formula
   url "https://downloads.sourceforge.net/project/expect/Expect/5.45.4/expect5.45.4.tar.gz"
   sha256 "49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34"
   license :public_domain
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -12,17 +12,12 @@ class Expect < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_sequoia:  "1155721ca9166f849b6ecc739a43ecfe6f20c056ff050f39e520f87f11ac8475"
-    sha256 arm64_sonoma:   "25b5d92689067d186416b78ffa0524d5a02a3e1c7068db8998dffaed2dd02e0c"
-    sha256 arm64_ventura:  "848515e0ab82921d9292b7a616d33dc02e9dfcaab91793ec4d5ef241c3e08f29"
-    sha256 arm64_monterey: "753d526bf20551dde2c60c1580989292e8c8f5f436da14b6901ec92a8bc30f6a"
-    sha256 arm64_big_sur:  "664f8a8ff901cacbe76465d4f13dc0ca775ccb0b48b34fa0aeb02b1e2e4dfe82"
-    sha256 sonoma:         "60f75545be4c3bc3f91dc895770d20654ee7112da5e92950ab49b3ef6e577538"
-    sha256 ventura:        "25d93f37370c458e865d809dd3489c1843acdc21dd74cabf2413e49f15d7994b"
-    sha256 monterey:       "37b95bd265607a74986db6259597e98963a0ff2d845533918105e9396b8f8d24"
-    sha256 big_sur:        "8462f3377db850b33a44bea729acd7b8c516aca8ed24d70b155c6b965f6997b1"
-    sha256 x86_64_linux:   "1386f4bebace25fb0635d385ada1481d5a176a80cf880bbcbf3612aacfccd570"
+    sha256 arm64_sequoia: "bc49887735929062d3e347a111a7b53a0de95813652d626f00d9b5663ecb0c1d"
+    sha256 arm64_sonoma:  "67bbdee9a025af2b9a8be9a9f6a1692078f5ce4d2b6528b2bad75ff41154dee9"
+    sha256 arm64_ventura: "095903e79761e107ffdca6ebf7833be3d83437977a1e7fd5e962f7d4a46014ba"
+    sha256 sonoma:        "8e07086c078379a4c6cdbde7b14b70376228b8a15798fc32059c9336287ce18b"
+    sha256 ventura:       "3e841e410fdcbb63b135eda50a712df978fa54e6288347718a63fcc77d5cb8e7"
+    sha256 x86_64_linux:  "500bbf556dea3b9536753959c9a2a7c6c8b8d79ac929ce3008529812b62f6209"
   end
 
   # Autotools are introduced here to regenerate configure script. Remove
@@ -30,7 +25,7 @@ class Expect < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "tcl-tk"
+  depends_on "tcl-tk@8"
 
   conflicts_with "ircd-hybrid", because: "both install an `mkpasswd` binary"
   conflicts_with "bash-snippets", because: "both install `weather` binaries"
@@ -52,7 +47,7 @@ class Expect < Formula
   end
 
   def install
-    tcltk = Formula["tcl-tk"]
+    tcltk = Formula["tcl-tk@8"]
     args = %W[
       --prefix=#{prefix}
       --exec-prefix=#{prefix}
@@ -77,13 +72,11 @@ class Expect < Formula
     system "make"
     system "make", "install"
     lib.install_symlink Dir[lib/"expect*/libexpect*"]
-    if OS.mac?
-      bin.env_script_all_files libexec/"bin",
-                               PATH:       "#{tcltk.opt_bin}:$PATH",
-                               TCLLIBPATH: lib.to_s
-      # "expect" is already linked to "tcl-tk", no shim required
-      bin.install libexec/"bin/expect"
-    end
+    bin.env_script_all_files libexec/"bin",
+                             PATH:       "#{tcltk.opt_bin}:$PATH",
+                             TCLLIBPATH: lib.to_s
+    # "expect" is already linked to "tcl-tk", no shim required
+    bin.install libexec/"bin/expect"
   end
 
   test do

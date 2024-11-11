@@ -1,10 +1,9 @@
 class Tesseract < Formula
   desc "OCR (Optical Character Recognition) engine"
   homepage "https://github.com/tesseract-ocr/"
-  url "https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.4.1.tar.gz"
-  sha256 "c4bc2a81c12a472f445b7c2fb4705a08bd643ef467f51ec84f0e148bd368051b"
+  url "https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.5.0.tar.gz"
+  sha256 "f2fb34ca035b6d087a42875a35a7a5c4155fa9979c6132365b1e5a28ebc3fc11"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/tesseract-ocr/tesseract.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class Tesseract < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8fcb98f3a22aa1d29cd5888a3e6ce2ac92668a5253fbfb65589e8a5cb9d1e46a"
-    sha256 cellar: :any,                 arm64_sonoma:  "319ea172e57a9527618aad9a1b6f3bcfe7b725441be143db829866c5065e8fbd"
-    sha256 cellar: :any,                 arm64_ventura: "8b22cdcd05bf1dd80d515a4719ee3aaaf7daaeb839766bccf3acd418cae4082d"
-    sha256 cellar: :any,                 sonoma:        "0ae82f77452cad60a0360c9f1d647d68b176656cf0d1fcb2a92b9058d56153ec"
-    sha256 cellar: :any,                 ventura:       "e03d3ecdbf5fe86664ffb7ad8aeee6490e74cfb8ab0c2f54e9908b2d5c07711d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f67d0cb6c0d8d980485597bfe38162dcfb9705b481c083af4799fd563a535eb"
+    sha256 cellar: :any,                 arm64_sequoia: "5caba25c2552970a19808a6b2e1e937d58f1eda75f81236da444f79d099f3bcd"
+    sha256 cellar: :any,                 arm64_sonoma:  "5bb5c51c61356a74a7493d4ba09287f27ec83a7a9b5aaf114f908e3135c45087"
+    sha256 cellar: :any,                 arm64_ventura: "3226ebc3987937dbad65be4aa2ed1a7abcb12c780d2044f453b52c3f80263096"
+    sha256 cellar: :any,                 sonoma:        "1a39073c1bca10140bb67b3a1fcb73ecf426fa82c69b657e528f9f90f7e9e168"
+    sha256 cellar: :any,                 ventura:       "4d722e7c79d135c1a5abe6ae7512027f1fd394866106f69b73bad5ccedd3370b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76d71758dd00d54af51a346d9364707a98f28f2aa1c7bd6046952997611321f7"
   end
 
   depends_on "autoconf" => :build
