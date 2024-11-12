@@ -5,6 +5,7 @@ class TclTk < Formula
   mirror "https://fossies.org/linux/misc/tcl9.0.0-src.tar.gz"
   sha256 "3bfda6dbaee8e9b1eeacc1511b4e18a07a91dff82d9954cdb9c729d8bca4bbb7"
   license "TCL"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,14 +13,15 @@ class TclTk < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "2c27d5e6c848fce8b9fc2e55bb327156b723aced146d168b20e6a50ea9e12d81"
-    sha256 arm64_sonoma:  "a2b0702eb43cd4fcbee39855e449071a2ce54c159c9f4bb99ba0e8dcdd626c71"
-    sha256 arm64_ventura: "579217dd31a6faedfb47ae50ae5ef419b913caeed21548f2cd9205b52d165da1"
-    sha256 sonoma:        "de199bfd7e6dae1b3899c0e621a834616e44e5f7ce696392ad33233bca6b3f98"
-    sha256 ventura:       "897a500d271cde81fb57a2f57c44d39b35a7ce67587bccc328c93bb2dbf0ea40"
-    sha256 x86_64_linux:  "8c642a395db96898a9b178784a8f9b2bbd0d720c64c93587f5048222f898d9c2"
+    sha256 arm64_sequoia: "79816a34a9032468694f7012b4457c12c509286a4945a9f7f819b24c3b0d87c2"
+    sha256 arm64_sonoma:  "ea5cebe7b8904fed9984cf1cae476ded6c6faba100129302cf30ab3681ecb886"
+    sha256 arm64_ventura: "c2cf04609d2aee47cdf13a77bed58f5d01c4b0e4d2ec5389ef4de6c5564b93ca"
+    sha256 sonoma:        "0a287afc7d38356e93b2a2a4c8152f4e6a56569f6a31fa91c7b5a121d7c88e72"
+    sha256 ventura:       "5d813f6349c4d822ec316f54d96e3e22cb58a7182b027198bb73e0f17bcfe0f7"
+    sha256 x86_64_linux:  "a9120fcb0ccacf1239e9da396bc9212ef38cb45505b6af95496a9f1828294334"
   end
 
+  depends_on "libtommath"
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
@@ -44,8 +46,8 @@ class TclTk < Formula
     sha256 "642c2c679c9017ab6fded03324e4ce9b5f4292473b62520e82aacebb63c0ce20"
   end
 
-  # There is no tcltls release compatible with TCL 9 so using latest HEAD
-  # https://core.tcl-lang.org/tcltls/info/1505883e4a18b50e
+  # There is no tcltls release compatible with TCL 9 so using latest
+  # check-in at https://core.tcl-lang.org/tcltls/timeline
   # Ref: https://sourceforge.net/p/tcl/mailman/tcl-core/thread/eab3a8bf-b846-45ef-a80c-6bc94d6dfe91@elmicron.de/
   resource "tcltls" do
     url "https://core.tcl-lang.org/tcltls/tarball/6d3664930c/tcltls-6d3664930c.tar.gz"
@@ -70,18 +72,25 @@ class TclTk < Formula
   def install
     odie "tk resource needs to be updated" if version != resource("tk").version
 
+    # Remove bundled libraries. Some private headers are still needed
+    ["compat/zlib", "libtommath"].each do |dir|
+      (buildpath/dir).find do |path|
+        rm(path) if path.file? && path.extname != ".h"
+      end
+    end
+
     args = %W[
       --prefix=#{prefix}
       --includedir=#{include}/tcl-tk
       --mandir=#{man}
       --disable-zipfs
-      --enable-threads
+      --enable-man-suffix
       --enable-64bit
     ]
 
     ENV["TCL_PACKAGE_PATH"] = "#{HOMEBREW_PREFIX}/lib"
     cd "unix" do
-      system "./configure", *args
+      system "./configure", *args, "--with-system-libtommath"
       system "make"
       system "make", "install"
       system "make", "install-private-headers"
@@ -115,8 +124,7 @@ class TclTk < Formula
     end
 
     resource("tcltls").stage do
-      system "./configure", "--with-ssl=openssl",
-                            "--with-openssl-dir=#{Formula["openssl@3"].opt_prefix}",
+      system "./configure", "--with-openssl-dir=#{Formula["openssl@3"].opt_prefix}",
                             "--prefix=#{prefix}",
                             "--mandir=#{man}"
       system "make", "install"
@@ -142,9 +150,6 @@ class TclTk < Formula
       system "make", "install"
     end
 
-    # Rename all section 3 man pages in the Debian/Ubuntu style, to avoid conflicts
-    man3.glob("*.3") { |file| file.rename("#{file}tcl") }
-
     # Use the sqlite-analyzer formula instead
     # https://github.com/Homebrew/homebrew-core/pull/82698
     rm bin/"sqlite3_analyzer"
@@ -163,7 +168,7 @@ class TclTk < Formula
     # Fails with: no display name and no $DISPLAY environment variable
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    test_itk = <<~EOS
+    test_itk = <<~TCL
       # Check that Itcl and Itk load, and that we can define, instantiate,
       # and query the properties of a widget.
 
@@ -193,7 +198,7 @@ class TclTk < Formula
           }
       }
       exit
-    EOS
+    TCL
     assert_equal "OK\n", pipe_output("#{bin}/wish", test_itk), "Itk test failed"
   end
 end

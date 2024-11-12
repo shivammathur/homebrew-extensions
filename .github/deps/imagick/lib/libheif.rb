@@ -1,18 +1,17 @@
 class Libheif < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://github.com/strukturag/libheif/releases/download/v1.19.2/libheif-1.19.2.tar.gz"
-  sha256 "f73eb786e75ef1f815ed3d37aca9eadd41dc1d26dfde11f8a4f92f911622d19e"
+  url "https://github.com/strukturag/libheif/releases/download/v1.19.3/libheif-1.19.3.tar.gz"
+  sha256 "1e6d3bb5216888a78fbbf5fd958cd3cf3b941aceb002d2a8d635f85cc59a8599"
   license "LGPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "49ea2b6b26a9c6850bbd09c5478316a0533a99c2559af83658beb01da42df9b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc70477bb1daae813245cbab42474216aadb2384710fd45b1ef04557ae7e8010"
-    sha256 cellar: :any,                 arm64_ventura: "7edaf722b52739c798f14be2d926bb5a44bbcca17ee442bef882469dfe1fc918"
-    sha256 cellar: :any,                 sonoma:        "e4225e4404b37f238b38f5d6baaf19181b971826aef5cfad119412f63a99d358"
-    sha256 cellar: :any,                 ventura:       "a01a8cdee32b9d024db53c5d037e7f6cea662bd41166095401c0fb075605551c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e31a49f56504d7f499793ae18e9d224326bd7555aa62af73cbc535e81819773"
+    sha256 cellar: :any,                 arm64_sequoia: "3bba2eed59bb0073ef058222fc3a130ae0ce6d93c69f48655c4a749b0587743a"
+    sha256 cellar: :any,                 arm64_sonoma:  "dacdaaf5421f0f89d5fe8ecd99e95905daf70ad31ede6a53bc77f2c33d671dc2"
+    sha256 cellar: :any,                 arm64_ventura: "d84bc349dc1b4242cfd016076c7a40f098493c3ca350a2fcc444be7166b419b3"
+    sha256 cellar: :any,                 sonoma:        "6ab96e8a54de72e8b599c5e931560e52909f6706abb5a0f996856285175f0636"
+    sha256 cellar: :any,                 ventura:       "0a6ae4df76da6138e1baa7edb79be89447ca8911c2f0081e91e53bc76d71b638"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff3a7253f7e2369a09ece3574e7f8918af8eb007bf5f5cb8d9be9296ae6110bc"
   end
 
   depends_on "cmake" => :build
@@ -27,13 +26,6 @@ class Libheif < Formula
   depends_on "webp"
   depends_on "x265"
 
-  # Fix to api error for 'cannot assign to non-static data member'
-  # apply upstream patch and should check for removal on next release
-  patch do
-    url "https://github.com/strukturag/libheif/commit/3dd7019ff579c038cba96353390cd41edfda927e.patch?full_index=1"
-    sha256 "9397a8b1b92f311eb1f9bf5c1bae4f5244a406556fd0ce91b3caed7a91daa0d0"
-  end
-
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
@@ -42,6 +34,7 @@ class Libheif < Formula
       -DWITH_RAV1E=OFF
       -DWITH_SvtEnc=OFF
     ]
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

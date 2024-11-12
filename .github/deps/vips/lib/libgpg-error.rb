@@ -1,8 +1,8 @@
 class LibgpgError < Formula
   desc "Common error values for all GnuPG components"
   homepage "https://www.gnupg.org/related_software/libgpg-error/"
-  url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.50.tar.bz2"
-  sha256 "69405349e0a633e444a28c5b35ce8f14484684518a508dc48a089992fe93e20a"
+  url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.bz2"
+  sha256 "be0f1b2db6b93eed55369cdf79f19f72750c8c7c39fc20b577e724545427e6b2"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class LibgpgError < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "bd6a0df1e2dc2a571fd5b6301bc52b60c0406fbb6eec9a819ff191c0c8873c5b"
-    sha256 arm64_sonoma:   "ca69e2f2ede55c1ec6ca0775514d8fcf1325929c2075cba5ce6f13c7beb48ee6"
-    sha256 arm64_ventura:  "39a574d760ce7edb87090cd0d40496dbdb44c54937e92aabdca28dacff160034"
-    sha256 arm64_monterey: "6669e9645a1d9469e2b9e51905d8294e6fab2aca452f00044da8d226146f58f2"
-    sha256 sonoma:         "842bb37e5e6354e8c9b9a023abcd7f81c3d752adaccc74e5f8e393290c321cc9"
-    sha256 ventura:        "3539b7806b7dbcadaf1fbbce13601766ef509c53a8efbbfc09ab7ff4d8b9fb49"
-    sha256 monterey:       "91e502d42e3f42a5c3c5bf8d5dbb326bea645fce31113805a45a6f84491d1758"
-    sha256 x86_64_linux:   "c242b00ecb9d4d2e98604bfba093161f6f275322cb015d83c5b28d51caf0a26d"
+    sha256 arm64_sequoia: "7db996510272893e4db9cd536e65e7fa6d0f20c4dbef13c55e95a3ebab67d103"
+    sha256 arm64_sonoma:  "92893cbf03a9de9c16bc05f67e2bb6ab257ad2108aa61bdf1cea6178ac2dcac7"
+    sha256 arm64_ventura: "88f92f8777d3dbe2e163ea5736727b804a843ed707fcf270991a853943df686a"
+    sha256 sonoma:        "cb513c9b9bc05125027e8dee2b2f6ae5a7288ca27ee28aed032086f6f1a9629a"
+    sha256 ventura:       "a184d3d66348ce9885b39561a7c6f98bdaae83791400c018f2634720889cd10d"
+    sha256 x86_64_linux:  "9b65876e4b4b45e6111dd0047e8a3ebb46df26a42d75fc2af41e91beca83ee7d"
   end
 
   on_macos do

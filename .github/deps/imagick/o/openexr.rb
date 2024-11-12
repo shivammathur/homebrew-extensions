@@ -1,17 +1,17 @@
 class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
-  url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.3.1.tar.gz"
-  sha256 "58aad2b32c047070a52f1205b309bdae007442e0f983120e4ff57551eb6f10f1"
+  url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.3.2.tar.gz"
+  sha256 "5013e964de7399bff1dd328cbf65d239a989a7be53255092fa10b85a8715744d"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9056886cae9e3591511bbef200d0b79718959be9ac68f364bf7a2b221706b843"
-    sha256 cellar: :any,                 arm64_sonoma:  "8948c7c401d3bf05e7ba64ba4fb6b761b9d19f99c8d8bfd9bfaecebc440125d1"
-    sha256 cellar: :any,                 arm64_ventura: "d8a76305facaaa7bb3501bf964832263aadcdb3006d0334eeba850c42362ae41"
-    sha256 cellar: :any,                 sonoma:        "2262a6d834c058798019765aae0715564b5e30715bd487c6636c478230649877"
-    sha256 cellar: :any,                 ventura:       "a5f2a08d6ac61d88be9934ad1acde807742f3be7cb0b2bbe1fe2e2fa45b3bd3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c331aa26cf88dba0b42a71ef7e01d0a778784b2efce77f81e21e56236d27066c"
+    sha256 cellar: :any,                 arm64_sequoia: "15c440ea45fe300c8756c9013538b86d946ed456f425c01afafb33ff1a8da7d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "0fe7eadd18353953998350145a571f9345785dd13d4f7a6b68d4ac76b5981732"
+    sha256 cellar: :any,                 arm64_ventura: "af8d8617924061ea03870e15c819d6517d7af6560eb4636b99bdd30c34eb96e2"
+    sha256 cellar: :any,                 sonoma:        "94a0453a5ec9b940438dd111a56e762275915851d61ea5d5eb43e510172b1e08"
+    sha256 cellar: :any,                 ventura:       "575cdfa90c04906376aa9083f75f0405c38ffb5b033164f140244a3e572d854d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "544108614f9156fde192de0bb340669a48a175b1d1c8e4a549b7ea14011f59c7"
   end
 
   depends_on "cmake" => :build
