@@ -53,7 +53,7 @@ class Curl < Formula
 
   keg_only :provided_by_macos
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "brotli"
   depends_on "libnghttp2"
   depends_on "libssh2"

@@ -31,7 +31,7 @@ class Zeromq < Formula
   end
 
   depends_on "asciidoc" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "xmlto" => :build
 
   depends_on "libsodium"
@@ -49,7 +49,7 @@ class Zeromq < Formula
     # https://github.com/Homebrew/homebrew-core/pull/35940#issuecomment-454177261
 
     system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}", "--with-libsodium"
+    system "./configure", "--with-libsodium", *std_configure_args
     system "make"
     system "make", "install"
   end

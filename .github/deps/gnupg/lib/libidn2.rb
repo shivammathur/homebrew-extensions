@@ -50,7 +50,7 @@ class Libidn2 < Formula
     end
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libunistring"
 
   on_macos do

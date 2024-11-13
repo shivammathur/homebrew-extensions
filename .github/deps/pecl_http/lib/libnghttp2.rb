@@ -30,7 +30,7 @@ class Libnghttp2 < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   # These used to live in `nghttp2`.
   link_overwrite "include/nghttp2"
