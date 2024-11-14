@@ -1,10 +1,9 @@
 class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
-  url "https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.4.tar.xz"
-  sha256 "65d042e1c8010243e617efb02afda20b85c2160acdbfbcb5b26b80cec6515650"
+  url "https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.5.tar.xz"
+  sha256 "74fc163217a3964257d3be39af943e08861263c4231f9ef5b496b6f6d4c7b2b6"
   license "MIT"
-  revision 4
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -14,13 +13,12 @@ class Libxml2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "3211945521a13a278641145097b44c242a91afb03819efdce733dd2a39b4ca9b"
-    sha256 cellar: :any,                 arm64_sonoma:  "c7661433ff9cf455314ec3bd7fa0cc15debee3df74e6c894f82707f804471f7d"
-    sha256 cellar: :any,                 arm64_ventura: "7d218dd815b26bf68e824b45e491bbad0d4e8c5c8246d8bbe5f6de784815d788"
-    sha256 cellar: :any,                 sonoma:        "c3f316fa073279036b0c81fad21d158ddac26a30d0a457be67b753bb8fcdc2b5"
-    sha256 cellar: :any,                 ventura:       "7e48fccee11b2ee6d789460b57e1ac3b49c42297be839f05361bcfff61795b73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29e6b3900187de9084702abb031c991f7918b1d44b8084bec2c52d7d37ba6a0f"
+    sha256 cellar: :any,                 arm64_sequoia: "102e5b38b5b0b5684ae3d93bc46d8b88f2e9a24c11037259dce62c98ffcc441e"
+    sha256 cellar: :any,                 arm64_sonoma:  "199930ce1a2ccfffb601b6c0184d654ba63b17d23405bfd6a8d03ebb63c9949f"
+    sha256 cellar: :any,                 arm64_ventura: "0409c964334828f8ff5da217513e5a53ca3eb4d217aec3b33e4f0a05e89b61fe"
+    sha256 cellar: :any,                 sonoma:        "e35e0281a720de96d33744f08af0e3042ccb88c6f235ed7319d638bb9b731f07"
+    sha256 cellar: :any,                 ventura:       "89a2efeccbbe3c5beb5ce925d33b7bf23a1565dcc51b206d2c08c279311f1914"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "824b48add1fdaac3fdebf652d9b1a9c03977829c803ef5b36623da600dd22266"
   end
 
   head do
