@@ -12,14 +12,13 @@ class Webp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "31a5101ac333638f0b5ea2a2d3a7a40c0ff9a235a038158461cab52666a8f8f0"
-    sha256 cellar: :any,                 arm64_sonoma:   "1ba924051fcd614b0841d704d8302233611aad0e5981657424e0ac16f1cdd6f9"
-    sha256 cellar: :any,                 arm64_ventura:  "56b147b011c79a23b72746d5e8bf186e86e82a13799e473f6c72921b15ef4622"
-    sha256 cellar: :any,                 arm64_monterey: "c99036e412ed1c672a2be4805edfe156f1446255f7394e61a297bbc1589aff19"
-    sha256 cellar: :any,                 sonoma:         "600311045d5469c75d84d6b3aa7161c085bcc3c862c7e7421e7e157efeb3f5bf"
-    sha256 cellar: :any,                 ventura:        "a16422ec4d0f554a78e5d8ca08ee7b979770361772bbfd18d8a096d4bed8ad0c"
-    sha256 cellar: :any,                 monterey:       "dd492a06f46d931a677984e2663a62c70be6bb99b28f4a0bb8d573b3fe8259b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "689bc7cdc7b5468f779265c66b4140ad911ea6bac85dc1df33bb64a9b7fd0f26"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "e10ece3ad9a497f43c19b9b266153ab695618efa56d4fb71a3d93a30e8794d34"
+    sha256 cellar: :any,                 arm64_sonoma:  "25da1a969839c498daa50512a463a472671cf26abe1620d659b7bb5a8cbc8f61"
+    sha256 cellar: :any,                 arm64_ventura: "5fbe5e4ca1a6460ae98a69d41da4cfd3a7af126a11187ccc13c7d55c5efe7e08"
+    sha256 cellar: :any,                 sonoma:        "d4a2bb7f9093c305ef3275bc9a9b23475ff0fb5ddf708e93b8b9ba8b3a760303"
+    sha256 cellar: :any,                 ventura:       "30b378eea3097c2227e91b07571bf8577e4702c02bd53ceb9564e352574f1071"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be18bbf7a53ce2f1a4d4f7f92fae9baadf888c0ea0b0bd2842050bf77bf86936"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +37,9 @@ class Webp < Formula
     system "cmake", "-S", ".", "-B", "static", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF", *args
     system "cmake", "--build", "static"
     lib.install buildpath.glob("static/*.a")
+
+    # Avoid rebuilding dependents that hard-code the prefix.
+    inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix
   end
 
   test do

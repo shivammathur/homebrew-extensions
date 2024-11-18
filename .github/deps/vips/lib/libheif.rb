@@ -6,12 +6,13 @@ class Libheif < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3bba2eed59bb0073ef058222fc3a130ae0ce6d93c69f48655c4a749b0587743a"
-    sha256 cellar: :any,                 arm64_sonoma:  "dacdaaf5421f0f89d5fe8ecd99e95905daf70ad31ede6a53bc77f2c33d671dc2"
-    sha256 cellar: :any,                 arm64_ventura: "d84bc349dc1b4242cfd016076c7a40f098493c3ca350a2fcc444be7166b419b3"
-    sha256 cellar: :any,                 sonoma:        "6ab96e8a54de72e8b599c5e931560e52909f6706abb5a0f996856285175f0636"
-    sha256 cellar: :any,                 ventura:       "0a6ae4df76da6138e1baa7edb79be89447ca8911c2f0081e91e53bc76d71b638"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff3a7253f7e2369a09ece3574e7f8918af8eb007bf5f5cb8d9be9296ae6110bc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "dd0280b46fc9f2a96513f84fecc39f33bcbf63c2d66bb4c499f88fcc4d732205"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd766246f75d32c9ac7cde63d5ad3461acdd3b0dc4e0ccc9adffaa71d0493dce"
+    sha256 cellar: :any,                 arm64_ventura: "4a0fff7327682a50ec5f3d02f2417d9cf51a0ada7796e85ef55571f8e611ede1"
+    sha256 cellar: :any,                 sonoma:        "f164e3c4c16433d67114da8648b385737754727614d204b253ecd3a90caf63eb"
+    sha256 cellar: :any,                 ventura:       "886a527680d9f16b774dd32121b9dea3dc248290ab0874b7120ae46dfbaf311a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16cc60c0af4787d7f943e19204122cf8d6f8132e84ec9cf008dd3f0f070314d3"
   end
 
   depends_on "cmake" => :build
@@ -44,6 +45,9 @@ class Libheif < Formula
     system "cmake", "-S", ".", "-B", "static", *args, *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "static"
     lib.install "static/libheif/libheif.a"
+
+    # Avoid rebuilding dependents that hard-code the prefix.
+    inreplace lib/"pkgconfig/libheif.pc", prefix, opt_prefix
   end
 
   def post_install

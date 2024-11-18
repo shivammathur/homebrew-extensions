@@ -11,14 +11,13 @@ class Jasper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "6d7a00cd2f4286a4d90f1674cdc5a152632211cabf335c65106d6e24a2ca2b89"
-    sha256 cellar: :any,                 arm64_sonoma:   "a9c32c908bdf797743a22d851efd4c28b6abf6ad132bcececfb83de354383f72"
-    sha256 cellar: :any,                 arm64_ventura:  "c3215fa4215361e882b4701ac82da30bf175d3f13e9e34ebc375c1406f6ab1b4"
-    sha256 cellar: :any,                 arm64_monterey: "180626f41ecce9cec96f869ac6efc0106cd7442eb887a00809f3fedf82db4a89"
-    sha256 cellar: :any,                 sonoma:         "ccc68dcf709d995ef9f91ab109a2dcabbc9aba82c475a9d32309545df18f155e"
-    sha256 cellar: :any,                 ventura:        "18d3d583cb960f8e4872ffc5b2181b6282f95d2c1ebd3a659d0e0b3edf55bc10"
-    sha256 cellar: :any,                 monterey:       "09c601a2f468798fe0746f56a47a9ba3d3642c9da9b08a3cc57a4b99ab7105bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8a209bbc3755e5ae06cf4c7ab8040e079b0202635555ea4c75e8e36d8137c74"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "ae5a19fe27ce17c27965adda1ef26fdfcf37930ca43fe9f05a60967273eaa3ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee37209f33bc9a553d7d4cc6340d6cce02265699b6cfd3120b969897f7f3c66b"
+    sha256 cellar: :any,                 arm64_ventura: "26a590dd28ce14c8c8d21daae5c40f2315596dff9da3a8f062b3c7f68c6f4884"
+    sha256 cellar: :any,                 sonoma:        "f7fa9f0518f18c0e2856b21b53a9608942fe76a406ba1d22645d73b76a873fc0"
+    sha256 cellar: :any,                 ventura:       "cd0eff6cd64657baaeab5db4cb40d91976c1774a11a65602c511f8e83c223bce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cef68cee21420fe8cba6a74bf82a0fddc67b6ff1f96b5d0e6901fa0039ab2ef"
   end
 
   depends_on "cmake" => :build
@@ -52,6 +51,9 @@ class Jasper < Formula
       system "make"
       lib.install "src/libjasper/libjasper.a"
     end
+
+    # Avoid rebuilding dependents that hard-code the prefix.
+    inreplace lib/"pkgconfig/jasper.pc", prefix, opt_prefix
   end
 
   test do

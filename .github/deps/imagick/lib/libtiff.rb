@@ -12,12 +12,13 @@ class Libtiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8562d5a43bac7a9e4e615d0ba4bb72b8d1cebdf52a1b92f924f7358b587d139d"
-    sha256 cellar: :any,                 arm64_sonoma:  "90bc1ab8734f27d41ceaeadc9e999de4c18766cf4b62e8fed1449dc828ea2395"
-    sha256 cellar: :any,                 arm64_ventura: "7276c94db8b9a550cb79d37a97fd0d3a64765399640d9d37b791b4aa3b3a2341"
-    sha256 cellar: :any,                 sonoma:        "746c2b4389ee7163e708c081ee1b967c60bb28a7d46fe8883f4798f137e897a0"
-    sha256 cellar: :any,                 ventura:       "84ecc0430f40983d58c2c8cb2107846b2a20d99d9f089c27464b97260e3091d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95966f571ddb04072257468f8545c9204a1aee180015a9f6c44db8113e57f060"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "5f771cedcb37119c3927c32d72589a66701db16fe3ef86b2daf9b87c3142b309"
+    sha256 cellar: :any,                 arm64_sonoma:  "7400825c55ab3f7aef5c0571d59bd62ffc509a5252784c08034df07995cb9e71"
+    sha256 cellar: :any,                 arm64_ventura: "b8952fb7bfabe979c42b9742cd959e5ba33bab2f8e44c536b9f5f6346190c33a"
+    sha256 cellar: :any,                 sonoma:        "5610196cb9396c468513adc5bc7c4834a3f475ff6f3ebd98f77e3f8b2123da3e"
+    sha256 cellar: :any,                 ventura:       "93fdbce17863cff383485295a955eae308f3bfc0f6b83d311645c5830a9964ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e873d7ab4e4159cd3ee973a2ec9cf7530fa3679abb8968832269dd206dea6859"
   end
 
   depends_on "jpeg-turbo"
@@ -38,6 +39,9 @@ class Libtiff < Formula
     ]
     system "./configure", *args
     system "make", "install"
+
+    # Avoid rebuilding dependents that hard-code the prefix.
+    inreplace lib/"pkgconfig/libtiff-4.pc", prefix, opt_prefix
   end
 
   test do

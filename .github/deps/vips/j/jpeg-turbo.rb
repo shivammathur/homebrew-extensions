@@ -16,12 +16,13 @@ class JpegTurbo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f85cd191b0fce773ae3d3502395ee2d56eec5be7607a95834a13d63d22181d78"
-    sha256 cellar: :any,                 arm64_sonoma:  "e936777455b6cb66819a7db9f4396dfd4d0b8c7b0d700ea28213780b16c2dac1"
-    sha256 cellar: :any,                 arm64_ventura: "95a0c93dc8f316a7235471cf16203aa1efb595c4568294ef854510d3c0050699"
-    sha256 cellar: :any,                 sonoma:        "54fe1e9ac8988d4461fcca02ac0f85b3d534acc0b9b42f6115a0ce423732d877"
-    sha256 cellar: :any,                 ventura:       "0e7ef21719a1106c59fab1f82cbbd20144898fa29c0e74407b9d55ed14feb951"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7eb799fd7e23195d2cb8ef8bf5282518a26f06864cc2d5a9d134a520916291e2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "45448929e1c82c5c958da022e2c4396d8c5e7d753005da3dce89fe4f33b80d91"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f9b4512cc023a468d69a021eb4ce1a6cc112a94202f7a6c2c2a69982c210f2b"
+    sha256 cellar: :any,                 arm64_ventura: "8f8c316eca20f02b946386c2bfd11ced6d1953272336eb01661779697d6f7b55"
+    sha256 cellar: :any,                 sonoma:        "39ec0259e399be685749b2a9cef9cef6ba25314ff2fe32be0e4b0cbcb903e070"
+    sha256 cellar: :any,                 ventura:       "8cc44d75e66f9fd844d9275b5289b2dbf3ffad9bc1651391ae84e1406b5c6a3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c5a765ce6321ddfb4704d06037ae21ca71883135581c4717f395736cb448c2f"
   end
 
   depends_on "cmake" => :build
@@ -56,6 +57,10 @@ class JpegTurbo < Formula
     system "cmake", "--build", "build"
     system "ctest", "--test-dir", "build", "--rerun-failed", "--output-on-failure", "--parallel", ENV.make_jobs
     system "cmake", "--install", "build"
+
+    # Avoid rebuilding dependents that hard-code the prefix.
+    inreplace [lib/"pkgconfig/libjpeg.pc", lib/"pkgconfig/libturbojpeg.pc"],
+              prefix, opt_prefix
   end
 
   test do

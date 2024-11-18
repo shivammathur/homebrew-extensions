@@ -18,14 +18,13 @@ class LittleCms2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "cbd8af49cc4b8454636a2cdcfae87b7005f11cbb7466994f0bf419968f33ea5d"
-    sha256 cellar: :any,                 arm64_sonoma:   "d1ed5796de3f00d4b1301e9062cb54b2337c8e8dcf2ae9be8e03f3ed7af791e0"
-    sha256 cellar: :any,                 arm64_ventura:  "c7eee75a83a2be3f19aa53ad043da4a316af7bc7f57e6aaf8f311f9e6e354be8"
-    sha256 cellar: :any,                 arm64_monterey: "2f155dd797f8d008616c61677d7b7ebc49b349feb06a1c86239d49e1b9a5118d"
-    sha256 cellar: :any,                 sonoma:         "46dd0d6ba9293999feaeb701a4c614440250a51daf0949478fbd486650a637bc"
-    sha256 cellar: :any,                 ventura:        "1c2e7ed787c6ff05b52bf3d1f6e27047e390f609af8a2dcfbb5904cdee8a0fff"
-    sha256 cellar: :any,                 monterey:       "c3add26aa2b85ad6bda455cb9ad2f14a3e0055f458722757162dcfe91a992044"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79268ac2afeaaa7bce8af516f329f808443c3bbad64e705f8a39e4f0ccc112e2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "ca8251ccf62b685661dbec30548774e27c9d0fbcd5fc656993b2689a09ac5eb2"
+    sha256 cellar: :any,                 arm64_sonoma:  "b607bb445fb9a11ee2fb8ff80748d6213adb5819cf0f2c680bf075cd2f192632"
+    sha256 cellar: :any,                 arm64_ventura: "4b0f277b9e10759f8987455ffba6c9bd6223bdd78d91581e5f42e2cac64ac268"
+    sha256 cellar: :any,                 sonoma:        "39b4f4d4508587316f9e65a69146de2f79d562fe33993819527c666cd636e732"
+    sha256 cellar: :any,                 ventura:       "c125594c81f2ed6d880c471eed83efe94e92bf7975515b4814441b90c8847a02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54d4aa2b4c4801a8bc575661e5db6c676bf7acb531a6fd0bba49b15366231546"
   end
 
   depends_on "jpeg-turbo"
@@ -34,6 +33,9 @@ class LittleCms2 < Formula
   def install
     system "./configure", *std_configure_args
     system "make", "install"
+
+    # Avoid rebuilding dependents that hard-code the prefix.
+    inreplace lib/"pkgconfig/lcms2.pc", prefix, opt_prefix
   end
 
   test do

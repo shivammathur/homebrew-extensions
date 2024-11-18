@@ -16,7 +16,7 @@ class Aom < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-xl"
   depends_on "libvmaf"
 
@@ -38,7 +38,7 @@ class Aom < Formula
       "-DCONFIG_TUNE_VMAF=1",
     ]
 
-    system "cmake", "-S", ".", "-B", "brewbuild", *std_cmake_args, *args
+    system "cmake", "-S", ".", "-B", "brewbuild", *args, *std_cmake_args
     system "cmake", "--build", "brewbuild"
     system "cmake", "--install", "brewbuild"
   end
@@ -52,13 +52,13 @@ class Aom < Formula
     testpath.install resource("homebrew-bus_qcif_15fps.y4m")
 
     system bin/"aomenc", "--webm",
-                            "--tile-columns=2",
-                            "--tile-rows=2",
-                            "--cpu-used=8",
-                            "--output=bus_qcif_15fps.webm",
-                            "bus_qcif_15fps.y4m"
+                         "--tile-columns=2",
+                         "--tile-rows=2",
+                         "--cpu-used=8",
+                         "--output=bus_qcif_15fps.webm",
+                         "bus_qcif_15fps.y4m"
 
     system bin/"aomdec", "--output=bus_qcif_15fps_decode.y4m",
-                            "bus_qcif_15fps.webm"
+                         "bus_qcif_15fps.webm"
   end
 end

@@ -12,12 +12,13 @@ class JpegXl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a872b8c7a7f18381dc62c164f6e38de1750de1909de14ae2f5cbca72c0da93d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "a5ccfecd1eb7d5997c1aec2e904846031a4c990f175aed3ab4a5a1bdc783a500"
-    sha256 cellar: :any,                 arm64_ventura: "7f176bd80a18add2adb418755b29f1c6165f6e3e2a016c9ab029ccaa67ba959b"
-    sha256 cellar: :any,                 sonoma:        "5d8a0e9b7344952bc35481d52e0cc045f106775fdd0e47c7fcb1bf563b1e398b"
-    sha256 cellar: :any,                 ventura:       "64deb00f3a86e43b905ccf527af915f4d6f0a6d16e39b99c89df45aa698605ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11a5997b6ed08cba8626d3b9df0a03db954c96eb200866b7799d0a2eb269e572"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "dab129af0d9abb0ccb9f9a0ac7e99384499f879b7cb761ba65c4d7d9eb676467"
+    sha256 cellar: :any,                 arm64_sonoma:  "634df52a146cffc78ed34fb5c14faa759e18c5316d2aa8122feb0c3ee2d8085b"
+    sha256 cellar: :any,                 arm64_ventura: "1a706d2233f5be30460d898953e357d34bf8dacb0effe9bc7e6cc088f63417f2"
+    sha256 cellar: :any,                 sonoma:        "3c94d3e7138bbb5bc30c36a973cce8481c8ef77be5e16ddac80c165e37b77507"
+    sha256 cellar: :any,                 ventura:       "49c9bfe13944566c94c76740c6f69357fce31646b2f2d219581ee03a042b22ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a3737e6b13ac9b624414d4883adcf1b5202c440ae4f0e730e389653fbe4e626"
   end
 
   depends_on "asciidoc" => :build
@@ -70,6 +71,9 @@ class JpegXl < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--build", "build", "--target", "install"
+
+    # Avoid rebuilding dependents that hard-code the prefix.
+    inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix
   end
 
   test do
