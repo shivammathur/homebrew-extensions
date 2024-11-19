@@ -30,7 +30,7 @@ class E2fsprogs < Formula
 
   keg_only :shadowed_by_macos
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   on_macos do
     depends_on "gettext"

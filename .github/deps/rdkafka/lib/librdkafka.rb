@@ -1,8 +1,8 @@
 class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/confluentinc/librdkafka"
-  url "https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.6.0.tar.gz"
-  sha256 "abe0212ecd3e7ed3c4818a4f2baf7bf916e845e902bb15ae48834ca2d36ac745"
+  url "https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.6.1.tar.gz"
+  sha256 "0ddf205ad8d36af0bc72a2fec20639ea02e1d583e353163bf7f4683d949e901b"
   license "BSD-2-Clause"
   head "https://github.com/confluentinc/librdkafka.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Librdkafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "693a6fe34842b1d47c891be46f8e3908431bd4623e501053506387aa01c46800"
-    sha256 cellar: :any,                 arm64_sonoma:  "0a350ffbe5862f1280f05d60b42ad56be84b96b59c6bc80b1f6f8e7c2dfaa486"
-    sha256 cellar: :any,                 arm64_ventura: "45b7755b4be54acf3da779deebe109ce15c07c0f21736e776eeb6fac50d62cbf"
-    sha256 cellar: :any,                 sonoma:        "9055f279bd0e7509a3f44017ca28b62528b6573141d94faad31604739947ca25"
-    sha256 cellar: :any,                 ventura:       "9a47205ff702facd739a9fb17c658a4e5267f512b32f79fb352fbc1f356fd37e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c41229a894e19c9d4442d1883b12dbd362694fdc531f3d42fc56a6f573e5345"
+    sha256 cellar: :any,                 arm64_sequoia: "c8cb62d6249166d482dbc61eabc6abe6a57effa571b5a4a03d9b2e2ee9b75d62"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a057cedacf435fb436f56e8fb18e85fdfb5a89a87465a7a0deeb3fe7eb8d648"
+    sha256 cellar: :any,                 arm64_ventura: "aa31edae9841cf293319ebacf345b299e76767abee5d3e890ba704bdac755210"
+    sha256 cellar: :any,                 sonoma:        "ca4719ab13622e709823e8a0c1582e087feacb1825dc2a4d3051c6725d2996bd"
+    sha256 cellar: :any,                 ventura:       "8294e9370476400ea3ae4cd6ce95bc49c106372bae929008fc5f75e706c653a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fea707e4636ced72b92ee2a83d4dc345ba66c7cada66533a575a5ec4e89cc37"
   end
 
   depends_on "pkg-config" => :build
