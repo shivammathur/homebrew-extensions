@@ -21,19 +21,17 @@ class Xorgproto < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc1ef8db0fe244a7a47541fe8494131a281814a4110d3af41d76226274601df7"
   end
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "util-macros" => :build
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
