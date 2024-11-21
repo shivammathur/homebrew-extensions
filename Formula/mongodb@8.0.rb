@@ -23,7 +23,7 @@ class MongodbAT80 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "081c6dfea71ef0dbd890467b82f34366aa7d877103592906082d87f293483155"
   end
 
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "openssl@3"
   depends_on "snappy"
   depends_on "zlib"

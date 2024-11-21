@@ -26,7 +26,7 @@ class PeclHttpAT71 < AbstractPhpExtension
 
   depends_on "brotli"
   depends_on "curl"
-  depends_on "icu4c@75"
+  depends_on "icu4c@76"
   depends_on "libevent"
   depends_on "libidn2"
   depends_on "shivammathur/extensions/propro@7.1"
