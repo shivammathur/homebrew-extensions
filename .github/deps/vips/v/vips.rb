@@ -22,7 +22,7 @@ class Vips < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "cairo"
   depends_on "cfitsio"
   depends_on "cgif"
@@ -53,8 +53,6 @@ class Vips < Formula
   uses_from_macos "python" => :build
   uses_from_macos "expat"
   uses_from_macos "zlib"
-
-  fails_with gcc: "5"
 
   def install
     # mozjpeg needs to appear before libjpeg, otherwise it's not used

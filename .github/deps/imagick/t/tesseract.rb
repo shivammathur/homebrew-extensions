@@ -23,7 +23,7 @@ class Tesseract < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "glib"
@@ -37,8 +37,6 @@ class Tesseract < Formula
     depends_on "freetype"
     depends_on "gettext"
   end
-
-  fails_with gcc: "5"
 
   resource "eng" do
     url "https://github.com/tesseract-ocr/tessdata_fast/raw/4.1.0/eng.traineddata"
