@@ -27,7 +27,7 @@ class ExpectAT73 < AbstractPhpExtension
   end
 
   depends_on "expect"
-  depends_on "tcl-tk"
+  depends_on "tcl-tk@8"
 
   def add_expect_lib
     expect_lib = Dir["#{Formula["homebrew/core/expect"].opt_lib}/expect*/libexpect*"].first
@@ -36,14 +36,14 @@ class ExpectAT73 < AbstractPhpExtension
   end
 
   def add_expect_headers
-    headers = Dir["#{Formula["tcl-tk"].opt_include}/**/*.h"]
+    headers = Dir["#{Formula["tcl-tk@8"].opt_include}/**/*.h"]
     (buildpath/"expect-#{version}/include").install_symlink headers unless headers.empty?
   end
 
   def install
     args = %W[
       --with-expect=shared,#{Formula["expect"].opt_prefix}
-      --with-tcldir=#{Formula["tcl-tk"].opt_prefix}/lib
+      --with-tcldir=#{Formula["tcl-tk@8"].opt_prefix}/lib
     ]
     add_expect_lib
     add_expect_headers

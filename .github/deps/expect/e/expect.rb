@@ -75,7 +75,7 @@ class Expect < Formula
     bin.env_script_all_files libexec/"bin",
                              PATH:       "#{tcltk.opt_bin}:$PATH",
                              TCLLIBPATH: lib.to_s
-    # "expect" is already linked to "tcl-tk", no shim required
+    # "expect" is already linked to "tcl-tk@8", no shim required
     bin.install libexec/"bin/expect"
   end
 
