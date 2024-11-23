@@ -25,9 +25,8 @@ class JpegXl < Formula
   depends_on "cmake" => :build
   depends_on "docbook-xsl" => :build
   depends_on "doxygen" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "sphinx-doc" => :build
-  depends_on "pkg-config" => :test
   depends_on "brotli"
   depends_on "giflib"
   depends_on "highway"
@@ -41,9 +40,6 @@ class JpegXl < Formula
   uses_from_macos "libxml2" => :build
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "python"
-
-  fails_with gcc: "5"
-  fails_with gcc: "6"
 
   # These resources are versioned according to the script supplied with jpeg-xl to download the dependencies:
   # https://github.com/libjxl/libjxl/tree/v#{version}/third_party
@@ -78,7 +74,7 @@ class JpegXl < Formula
 
   test do
     system bin/"cjxl", test_fixtures("test.jpg"), "test.jxl"
-    assert_predicate testpath/"test.jxl", :exist?
+    assert_path_exists testpath/"test.jxl"
 
     (testpath/"jxl_test.c").write <<~C
       #include <jxl/encode.h>
@@ -94,7 +90,7 @@ class JpegXl < Formula
           return EXIT_SUCCESS;
       }
     C
-    jxl_flags = shell_output("pkg-config --cflags --libs libjxl").chomp.split
+    jxl_flags = shell_output("pkgconf --cflags --libs libjxl").chomp.split
     system ENV.cc, "jxl_test.c", *jxl_flags, "-o", "jxl_test"
     system "./jxl_test"
 
@@ -112,7 +108,7 @@ class JpegXl < Formula
           return EXIT_SUCCESS;
       }
     C
-    jxl_threads_flags = shell_output("pkg-config --cflags --libs libjxl_threads").chomp.split
+    jxl_threads_flags = shell_output("pkgconf --cflags --libs libjxl_threads").chomp.split
     system ENV.cc, "jxl_threads_test.c", *jxl_threads_flags, "-o", "jxl_threads_test"
     system "./jxl_threads_test"
   end

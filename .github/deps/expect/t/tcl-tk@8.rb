@@ -27,7 +27,7 @@ class TclTkAT8 < Formula
 
   on_linux do
     depends_on "freetype" => :build
-    depends_on "pkg-config" => :build
+    depends_on "pkgconf" => :build
     depends_on "libx11"
     depends_on "libxext"
   end

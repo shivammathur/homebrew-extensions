@@ -26,18 +26,18 @@ class Hwloc < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
 
   def install
     system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args,
-                          "--enable-shared",
+    system "./configure", "--enable-shared",
                           "--enable-static",
                           "--disable-cairo",
-                          "--without-x"
+                          "--without-x",
+                          *std_configure_args
     system "make", "install", "bashcompletionsdir=#{bash_completion}"
 
     pkgshare.install "tests"
