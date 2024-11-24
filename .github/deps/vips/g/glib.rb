@@ -20,7 +20,7 @@ class Glib < Formula
   depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build # for gobject-introspection
   depends_on "pcre2"
   depends_on "python-packaging"
@@ -87,16 +87,19 @@ class Glib < Formula
     # Ref: https://discourse.gnome.org/t/dealing-with-glib-and-gobject-introspection-circular-dependency/18701
     staging_dir = buildpath/"staging"
     staging_meson_args = std_meson_args.map { |s| s.sub prefix, staging_dir }
-    system "meson", "setup", "build_staging", "-Dintrospection=disabled", *args, *staging_meson_args
+    system "meson", "setup", "build_staging", "-Dintrospection=disabled", *args, *std_meson_args
     system "meson", "compile", "-C", "build_staging", "--verbose"
     system "meson", "install", "-C", "build_staging"
-    ENV.append_path "PKG_CONFIG_PATH", staging_dir/"lib/pkgconfig"
-    ENV.append_path "LD_LIBRARY_PATH", staging_dir/"lib" if OS.linux?
+    ENV.append_path "PKG_CONFIG_PATH", lib/"pkgconfig"
+    ENV.append_path "LD_LIBRARY_PATH", lib if OS.linux?
+
     resource("gobject-introspection").stage do
       system "meson", "setup", "build", "-Dcairo=disabled", "-Ddoctool=disabled", *staging_meson_args
       system "meson", "compile", "-C", "build", "--verbose"
       system "meson", "install", "-C", "build"
     end
+    ENV.append_path "PKG_CONFIG_PATH", staging_dir/"lib/pkgconfig"
+    ENV.append_path "LD_LIBRARY_PATH", staging_dir/"lib" if OS.linux?
     ENV.append_path "PATH", staging_dir/"bin"
 
     system "meson", "setup", "build", "--default-library=both", "-Dintrospection=enabled", *args, *std_meson_args

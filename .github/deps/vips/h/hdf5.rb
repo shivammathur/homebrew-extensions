@@ -26,7 +26,7 @@ class Hdf5 < Formula
   depends_on "cmake" => :build
   depends_on "gcc" # for gfortran
   depends_on "libaec"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
 
   uses_from_macos "zlib"
 

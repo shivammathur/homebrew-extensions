@@ -18,7 +18,7 @@ class Harfbuzz < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => [:build, :test]
   depends_on "pygobject3" => :test
   depends_on "cairo"
@@ -46,7 +46,7 @@ class Harfbuzz < Formula
       -Dtests=disabled
     ]
 
-    system "meson", "setup", "build", *std_meson_args, *args
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
