@@ -110,7 +110,7 @@ class AbstractPhpExtension < Formula
       @extension = parse_extension matches
       @php_version = "#{matches[2]}.#{matches[3]}" if matches
       depends_on "autoconf" => :build
-      depends_on "pkg-config" => :build
+      depends_on "pkgconf" => :build
       depends_on "shivammathur/php/php@#{@php_version}" => [:build, :test]
     end
   end
