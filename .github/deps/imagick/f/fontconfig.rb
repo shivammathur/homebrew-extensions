@@ -30,7 +30,7 @@ class Fontconfig < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "freetype"
 
   uses_from_macos "gperf" => :build
@@ -57,14 +57,13 @@ class Fontconfig < Formula
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     ENV["UUID_CFLAGS"] = "-I#{Formula["util-linux"].include}" if OS.linux?
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--disable-docs",
                           "--enable-static",
                           "--with-add-fonts=#{font_dirs.join(",")}",
-                          "--prefix=#{prefix}",
                           "--localstatedir=#{var}",
-                          "--sysconfdir=#{etc}"
+                          "--sysconfdir=#{etc}",
+                          *std_configure_args
     system "make", "install", "RUN_FC_CACHE_TEST=false"
   end
 

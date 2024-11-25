@@ -22,7 +22,7 @@ class Freetype < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d847168ffbda85c4470d7599436263b0fd8623687863e26ee434db56cd5dde9"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "libpng"
 
   uses_from_macos "bzip2"

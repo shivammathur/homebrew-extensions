@@ -14,7 +14,7 @@ class Leptonica < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b2c01e724c093ba4b4bf19bdd65edcc3ff70dbc5071e5e801f07b9f24cc2d63"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "giflib"
   depends_on "jpeg-turbo"
   depends_on "libpng"
@@ -42,6 +42,6 @@ class Leptonica < Formula
 
     flags = ["-I#{include}/leptonica"] + ENV.cflags.to_s.split
     system ENV.cxx, "test.cpp", *flags
-    assert_equal version.to_s, `./a.out`
+    assert_equal version.to_s, shell_output("./a.out")
   end
 end
