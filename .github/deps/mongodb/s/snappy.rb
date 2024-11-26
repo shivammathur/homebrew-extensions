@@ -18,7 +18,7 @@ class Snappy < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   # Fix issue where Mojave clang fails due to entering a __GNUC__ block
   on_macos do
