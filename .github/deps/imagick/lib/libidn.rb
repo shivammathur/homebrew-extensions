@@ -17,13 +17,12 @@ class Libidn < Formula
     sha256               x86_64_linux:   "3cc66b8450c436a5047d8075a004be087d3f21b5322834ef741165487fad262b"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--disable-csharp",
-                          "--with-lispdir=#{elisp}"
+    system "./configure", "--disable-csharp",
+                          "--with-lispdir=#{elisp}",
+                          *std_configure_args
     system "make", "install"
   end
 

@@ -17,7 +17,7 @@ class Gearman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "285adf59fe86f27e59a6292255c4d62b281db259ec4f6f49a88469a8e0491e3a"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
   depends_on "boost"
   depends_on "libevent"

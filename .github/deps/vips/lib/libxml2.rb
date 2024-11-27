@@ -46,7 +46,7 @@ class Libxml2 < Formula
 
   keg_only :provided_by_macos
 
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "python-setuptools" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
@@ -144,7 +144,7 @@ class Libxml2 < Formula
 
     # Test build with pkg-config
     ENV.append "PKG_CONFIG_PATH", lib/"pkgconfig"
-    args = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs libxml-2.0").split
+    args = shell_output("#{Formula["pkgconf"].opt_bin}/pkgconf --cflags --libs libxml-2.0").split
     system ENV.cc, "test.c", "-o", "test", *args
     system "./test"
 

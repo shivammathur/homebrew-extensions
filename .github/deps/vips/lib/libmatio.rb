@@ -14,7 +14,7 @@ class Libmatio < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f29e5ed508bb8cf1acbe9e69829f7beb0971efb72fcc4cb3a5a9c1b9ad66c2c7"
   end
 
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "hdf5"
   uses_from_macos "zlib"
 
@@ -29,7 +29,7 @@ class Libmatio < Formula
     ]
     args << "--with-zlib=#{Formula["zlib"].opt_prefix}" unless OS.mac?
 
-    system "./configure", *std_configure_args, *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
@@ -71,7 +71,7 @@ class Libmatio < Formula
     system ENV.cc, "mat.c", "-o", "mat", "-I#{include}", "-L#{lib}", "-lmatio"
     system "./mat", "poc_data.mat.sfx"
 
-    refute_includes shell_output("pkg-config --cflags matio"), "-I/usr/include"
+    refute_includes "-I/usr/include", shell_output("pkgconf --cflags matio")
   end
 end
 

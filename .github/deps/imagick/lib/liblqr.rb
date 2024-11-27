@@ -26,8 +26,12 @@ class Liblqr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "df9a20d9afa1541e259edeadd06e3ec8501a9a5b75a5a973e61f321521c37c80"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "glib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "./configure", "--enable-install-man", *std_configure_args

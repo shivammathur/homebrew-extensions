@@ -81,7 +81,7 @@ class Expect < Formula
 
   test do
     assert_match "works", shell_output("echo works | #{bin}/timed-read 1")
-    assert_equal "", shell_output("{ sleep 3; echo fails; } | #{bin}/timed-read 1 2>&1")
+    assert_empty shell_output("{ sleep 3; echo fails; } | #{bin}/timed-read 1 2>&1")
     assert_match "Done", pipe_output(bin/"expect", "exec true; puts Done")
   end
 end

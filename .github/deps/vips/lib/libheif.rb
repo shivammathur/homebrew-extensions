@@ -15,7 +15,7 @@ class Libheif < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "aom"
   depends_on "jpeg-turbo"
@@ -59,14 +59,14 @@ class Libheif < Formula
     exout = testpath/"exampleheic.jpg"
 
     assert_match output, shell_output("#{bin}/heif-convert #{example} #{exout}")
-    assert_predicate testpath/"exampleheic-1.jpg", :exist?
-    assert_predicate testpath/"exampleheic-2.jpg", :exist?
+    assert_path_exists testpath/"exampleheic-1.jpg"
+    assert_path_exists testpath/"exampleheic-2.jpg"
 
     output = "File contains 1 image"
     example = pkgshare/"example.avif"
     exout = testpath/"exampleavif.jpg"
 
     assert_match output, shell_output("#{bin}/heif-convert #{example} #{exout}")
-    assert_predicate testpath/"exampleavif.jpg", :exist?
+    assert_path_exists testpath/"exampleavif.jpg"
   end
 end
