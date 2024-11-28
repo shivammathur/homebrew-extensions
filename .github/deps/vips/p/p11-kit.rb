@@ -28,7 +28,7 @@ class P11Kit < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "ca-certificates"
   depends_on "libtasn1"
 
@@ -48,7 +48,7 @@ class P11Kit < Formula
     system "meson", "setup", "_build", *args, *std_meson_args
     system "meson", "compile", "-C", "_build", "--verbose"
     # This formula is used with crypto libraries, so let's run the test suite.
-    system "meson", "test", "-C", "_build"
+    system "meson", "test", "-C", "_build", "--timeout-multiplier=2"
     system "meson", "install", "-C", "_build"
 
     # HACK: Work around p11-kit: couldn't load module: .../lib/pkcs11/p11-kit-trust.so

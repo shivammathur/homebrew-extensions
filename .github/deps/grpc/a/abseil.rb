@@ -23,8 +23,6 @@ class Abseil < Formula
     depends_on "googletest" => :build # For test helpers
   end
 
-  fails_with gcc: "5" # C++17
-
   # Fix shell option group handling in pkgconfig files
   # https://github.com/abseil/abseil-cpp/pull/1738
   patch do
