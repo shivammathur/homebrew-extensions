@@ -6,6 +6,14 @@ class Pango < Formula
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/pango.git", branch: "main"
 
+  # Pango doesn't follow GNOME's "even-numbered minor is stable" version
+  # scheme but they do appear to use 90+ minor/patch versions, which may
+  # indicate unstable versions (e.g., 1.90, etc.).
+  livecheck do
+    url "https://download.gnome.org/sources/pango/cache.json"
+    regex(/pango[._-]v?(\d+(?:(?!\.9\d)\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_sequoia:  "555a0ea1e85a5f5b5d26e4bfdc1f1c19a3d1108ba0801deed64d301a6d912c58"
     sha256 cellar: :any, arm64_sonoma:   "c47cf2f24449280a2643d958e6f211a2db089f1c2cb3e9f27ef50f35701601ed"
