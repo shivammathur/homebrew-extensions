@@ -53,7 +53,7 @@ class Curl < Formula
 
   keg_only :provided_by_macos
 
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "brotli"
   depends_on "libnghttp2"
   depends_on "libssh2"
@@ -121,13 +121,14 @@ class Curl < Formula
     # We manually inreplace as upstream fix requires re-generating configure.
     # TODO: Remove in the next release (inreplace will fail)
     # Ref: https://github.com/curl/curl/commit/e244d50064a56723c2ba4f0df8c847d6b70de0cb
-    inreplace lib/"pkgconfig/libcurl.pc", /^(Requires\.private: )ldap,(.*),mit-krb5-gssapi,/, "\\1\\2,"
+    requires_private_regex = /^(Requires\.private: (?:.*,)?)ldap,(.*),mit-krb5-gssapi(,|$)/
+    inreplace lib/"pkgconfig/libcurl.pc", requires_private_regex, "\\1\\2\\3", audit_result: build.bottle?
   end
 
   test do
     # Fetch the curl tarball and see that the checksum matches.
     # This requires a network connection, but so does Homebrew in general.
-    filename = (testpath/"test.tar.gz")
+    filename = testpath/"test.tar.gz"
     system bin/"curl", "-L", stable.url, "-o", filename
     filename.verify_checksum stable.checksum
 
@@ -142,7 +143,11 @@ class Curl < Formula
     end
 
     system libexec/"mk-ca-bundle.pl", "test.pem"
-    assert_predicate testpath/"test.pem", :exist?
-    assert_predicate testpath/"certdata.txt", :exist?
+    assert_path_exists testpath/"test.pem"
+    assert_path_exists testpath/"certdata.txt"
+
+    with_env(PKG_CONFIG_PATH: lib/"pkgconfig") do
+      system "pkgconf", "--cflags", "libcurl"
+    end
   end
 end
