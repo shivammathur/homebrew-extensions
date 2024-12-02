@@ -1,5 +1,3 @@
-git config --global user.name "BrewTestBot"
-git config --global user.email "1589480+BrewTestBot@users.noreply.github.com"
 for formula in ./Formula/"$EXTENSION"@*.rb; do
   VERSION="$EXTENSION"@"$(echo "$formula" | grep -Eo '[0-9]+\.[0-9]+')"
   BRANCH="update-$VERSION-${GITHUB_SHA:0:7}"
@@ -9,7 +7,10 @@ for formula in ./Formula/"$EXTENSION"@*.rb; do
   bash .github/scripts/edit.sh
   if ! git diff --exit-code; then
     git add "$formula"
+    git config --global user.name "BrewTestBot"
+    git config --global user.email "1589480+BrewTestBot@users.noreply.github.com"
     git commit -m "Update $VERSION"
+    git config --global user.name "$GITHUB_REPOSITORY_OWNER"
     git push origin "$BRANCH"
     gh label list --search ${VERSION%@*} | grep -q "$VERSION" || gh label create "$VERSION"
     bash .github/scripts/retry.sh 10 5 gh pr create --title "Update $VERSION" \
