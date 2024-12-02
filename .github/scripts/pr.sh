@@ -11,10 +11,11 @@ for formula in ./Formula/"$EXTENSION"@*.rb; do
     git add "$formula"
     git commit -m "Update $VERSION"
     git push origin "$BRANCH"
-    gh label list | grep "$VERSION" || gh label create "$VERSION"
+    gh label list --search ${VERSION%@*} | grep -q "$VERSION" || gh label create "$VERSION"
     bash .github/scripts/retry.sh 10 5 gh pr create --title "Update $VERSION" \
                  --body "Build $VERSION" \
                  --base "$GITHUB_DEFAULT_BRANCH" \
-                 --assignee "$GITHUB_REPOSITORY_OWNER"
+                 --assignee "$GITHUB_REPOSITORY_OWNER" \
+                 --label "$VERSION" --label "automated-pr"
   fi
 done
