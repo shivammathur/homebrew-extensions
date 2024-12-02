@@ -15,7 +15,6 @@ for formula in ./Formula/"$EXTENSION"@*.rb; do
     bash .github/scripts/retry.sh 10 5 gh pr create --title "Update $VERSION" \
                  --body "Build $VERSION" \
                  --base "$GITHUB_DEFAULT_BRANCH" \
-                 --assignee "$GITHUB_REPOSITORY_OWNER" \
-                 --label "$VERSION" --label "automated-pr"
+                 --assignee "$GITHUB_REPOSITORY_OWNER"
   fi
 done
