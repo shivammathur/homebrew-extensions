@@ -8,9 +8,9 @@ class XdebugAT85 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/12adc6394adbf14f239429d72cf34faadddd19fb.tar.gz"
-  sha256 "67bc7b1ec133a1a38dc9c23c892878bd2a0a308833964fccbae897b58aa6fe88"
-  version "3.3.0"
+  url "https://github.com/xdebug/xdebug/archive/8793825438dc539bbc15f39369cab4f01318431b.tar.gz"
+  sha256 "6cef4d23af57c595f642e7e00eef87a8f805845c108e0ea851c4bcb1ea698ec2"
+  version "3.4.0"
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
 
@@ -26,8 +26,6 @@ class XdebugAT85 < AbstractPhpExtension
   uses_from_macos "zlib"
 
   def install
-    inreplace "src/lib/usefulstuff.c", "ext/standard/php_lcg.h", "ext/random/php_random.h"
-    inreplace "config.m4", "80500", "80600"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
