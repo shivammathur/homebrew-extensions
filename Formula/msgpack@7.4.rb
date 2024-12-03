@@ -8,8 +8,8 @@ class MsgpackAT74 < AbstractPhpExtension
   init
   desc "Msgpack PHP extension"
   homepage "https://github.com/msgpack/msgpack-php"
-  url "https://pecl.php.net/get/msgpack-2.2.0.tgz"
-  sha256 "82aa1e404c5ff54ec41d2a201305cd6594ed14a7529e9119fa7ca457e4bbd12a"
+  url "https://pecl.php.net/get/msgpack-3.0.0.tgz"
+  sha256 "55306a84797d399c6b269181ec484634f18bea1330bbd9d7405043c597de69cd"
   head "https://github.com/msgpack/msgpack-php.git"
   license "BSD-3-Clause"
 
