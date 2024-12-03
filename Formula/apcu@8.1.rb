@@ -15,13 +15,11 @@ class ApcuAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8f5dc17f240834120ee9764ba185e6987ee8a09fd47541a0b2834b549d0ae98a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3e4317bca4ebbf150d9ac5dfdda8ccdebe4dde413c2da5a7e94e93924781f17"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9c201ceb68a8308cc926a4f58b18124f3bec9b9495c51bbf5102a9847540caf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fc8e771a19099244c3c09bbabbb378756c725c0c1e1505d68a2de66ac9f1811"
-    sha256 cellar: :any_skip_relocation, ventura:        "20273cdea4c339b3907319360a28602c3afa98da3871e532d7a0115fbcad727e"
-    sha256 cellar: :any_skip_relocation, monterey:       "571b3466d51ab11a6c8f064c33dcc7c7c4a507dc7bf30a4156c077142e14ffd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33fcc2f8c6a7b392fcc4128560563ea4e06a7a9e5713c82a2b6ea217b8dbe6d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e15062f210d162bf731e35dd4e0663132845829c0aae89cd6e9d19b86d076290"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "522d5d02c3e56f56688e6e7793a1f54ea627e4c0949b34b646a32d3508f7c0d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "726c95f9809ad874000d7e8902b3cd0807d4d68d0e2ed83ff8e8c792ebb2170b"
+    sha256 cellar: :any_skip_relocation, ventura:       "c6baef6372e3caf1367f024d307029a647c65916f9e53a56a09a8e159245c26d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f603d52622605e137148c209645646ee5395f4be1fa90f8a04d6216ef09f214"
   end
 
   def install
