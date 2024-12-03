@@ -8,8 +8,8 @@ class ImapAT84 < AbstractPhpExtension
   init
   desc "Imap PHP extension"
   homepage "https://github.com/php/pecl-mail-imap"
-  url "https://pecl.php.net/get/imap-1.0.2.tgz"
-  sha256 "eb6d13fe10668dbb0ad6aa424139645434d0f8b4816c69dd1b251367adb3a16c"
+  url "https://pecl.php.net/get/imap-1.0.3.tgz"
+  sha256 "0c2c0b1f94f299004be996b85a424e3d11ff65ac0a3c980db3213289a4a3faaf"
   license "PHP-3.01"
 
   bottle do
