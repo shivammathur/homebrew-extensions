@@ -8,14 +8,13 @@ class ApcuAT84 < AbstractPhpExtension
   init
   desc "Apcu PHP extension"
   homepage "https://github.com/krakjoe/apcu"
-  url "https://pecl.php.net/get/apcu-5.1.23.tgz"
-  sha256 "67ee7464ccad2335c3fa4aeb0b8edbcf6d8344feea7922620c6a13015d604482"
+  url "https://pecl.php.net/get/apcu-5.1.24.tgz"
+  sha256 "5c28a55b27082c69657e25b7ecf553e2cf6b74ec3fa77d6b76f4fb982e001e43"
   head "https://github.com/krakjoe/apcu.git", branch: "master"
   license "PHP-3.01"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f55a8c638e5956f881107ac59925ac6bb291481c9a41e13a6a49eea646cd7246"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ef0d4afd325aeed6301e919e37cd81035a3f25edff882744d88b3759f14e92b"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "71791decd68594f5f76b2bbc03d8d386cba4d931377cce474c0fe89665e2b3d4"
@@ -25,9 +24,6 @@ class ApcuAT84 < AbstractPhpExtension
 
   def install
     Dir.chdir "apcu-#{version}"
-    inreplace "config.m4",
-      "PHP_NEW_EXTENSION(apcu, $apc_sources, $ext_shared,, \\\\$(APCU_CFLAGS))",
-      "PHP_NEW_EXTENSION([apcu], [$apc_sources], [$ext_shared],, [$APCU_CFLAGS])"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-apcu"
     system "make"
