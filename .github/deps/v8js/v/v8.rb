@@ -114,11 +114,11 @@ class V8 < Formula
     ENV.prepend_path "PATH", buildpath/"gn/out"
 
     # create gclient_args.gni
-    (buildpath/"build/config/gclient_args.gni").write <<~EOS
+    (buildpath/"build/config/gclient_args.gni").write <<~GN
       declare_args() {
         checkout_google_benchmark = false
       }
-    EOS
+    GN
 
     # setup gn args
     gn_args = {

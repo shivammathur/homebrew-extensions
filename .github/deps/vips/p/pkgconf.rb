@@ -13,12 +13,13 @@ class Pkgconf < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e20314280a6fccd1153b13f137f9e7a15fc4450c877d548360a259c22266efa0"
-    sha256 arm64_sonoma:  "5f83615f295e78e593c767d84f3eddf61bfb0b849a1e6a5ea343506b30b2c620"
-    sha256 arm64_ventura: "715c2c815d44a6c06da7e249c6b7d6f10c51784866c1ca43c22e5d56c45d5ebd"
-    sha256 sonoma:        "b180115e5725a12657fa74d80f0c8f15e852d6c84b7f982b72b5be4f5cd0e97a"
-    sha256 ventura:       "7077e63921d21433ef33d38a2a4cd14f2b08bccf6647bcc25b3f285135e9038c"
-    sha256 x86_64_linux:  "4fe98600d631d8d816217b96f905beb7ee40f2b736a3b74621973f908b6d295a"
+    rebuild 1
+    sha256                               arm64_sequoia: "6b946f8b716f639a88b6fb05fadf57de8309a53d04d4daef93dda1365f0222e3"
+    sha256                               arm64_sonoma:  "bee6257d97fd7331e4b6c1bc7f150a230d7f2f49e9104cf98cc52e04c26fb69d"
+    sha256                               arm64_ventura: "a4b704e993c8129fb60951d175733f3d5eb34d3b5bc7c56695b41dab0aa4a047"
+    sha256                               sonoma:        "fb3a6a6fcba8172e5e7512080ff0fb802526e4a93c384508d2e4031bd297e697"
+    sha256                               ventura:       "3f6b06fa2e6d99fbd6607c32691b1d7fcab827c80a81d70b01264d922aea040c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67699e7fc430708e7e591e1af5d088e719293018e87a9bccd664ad401f18b6f2"
   end
 
   head do
@@ -28,6 +29,10 @@ class Pkgconf < Formula
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
+
+  # FIXME: The bottle is mistakenly considered relocatable on Linux.
+  # See https://github.com/Homebrew/homebrew-core/pull/85032.
+  pour_bottle? only_if: :default_prefix
 
   def install
     if build.head?
@@ -49,9 +54,14 @@ class Pkgconf < Formula
       ["#{HOMEBREW_LIBRARY}/Homebrew/os/linux/pkgconfig"]
     end
 
-    system "./configure", "--disable-silent-rules",
-                          "--with-pkg-config-dir=#{pc_path.uniq.join(File::PATH_SEPARATOR)}",
-                          *std_configure_args
+    args = %W[
+      --disable-silent-rules
+      --with-pkg-config-dir=#{pc_path.uniq.join(File::PATH_SEPARATOR)}
+      --with-system-includedir=#{MacOS.sdk_path_if_needed if OS.mac?}/usr/include
+      --with-system-libdir=/usr/lib
+    ]
+
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 
@@ -96,5 +106,11 @@ class Pkgconf < Formula
 
     system ENV.cc, "test.c", "-I#{include}/pkgconf", "-L#{lib}", "-lpkgconf"
     system "./a.out"
+
+    # Make sure system-libdir is removed as it can cause problems in superenv
+    if OS.mac?
+      ENV.delete "PKG_CONFIG_LIBDIR"
+      refute_match "-L/usr/lib", shell_output("#{bin}/pkgconf --libs libcurl")
+    end
   end
 end

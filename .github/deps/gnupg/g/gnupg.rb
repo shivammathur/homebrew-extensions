@@ -19,7 +19,7 @@ class Gnupg < Formula
     sha256 x86_64_linux:  "861b48d7bc2aa8e2a81f6c300d425ff2453ffb5bc948bc58cf1bdf1d93bd13ec"
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "gnutls"
   depends_on "libassuan"
   depends_on "libgcrypt"
