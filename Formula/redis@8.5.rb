@@ -8,8 +8,8 @@ class RedisAT85 < AbstractPhpExtension
   init
   desc "Redis PHP extension"
   homepage "https://github.com/phpredis/phpredis"
-  url "https://pecl.php.net/get/redis-6.0.2.tgz"
-  sha256 "01aeccb0e14f897fe56f0509be6e6991ff0ad459f9d34e95e4556d02699b9a03"
+  url "https://pecl.php.net/get/redis-6.1.0.tgz"
+  sha256 "f10405f639fe415e9ed4ec99538e72c90694d8dbd62868edcfcd6a453466b48c"
   head "https://github.com/phpredis/phpredis.git", branch: "develop"
   license "PHP-3.01"
 
@@ -33,7 +33,7 @@ class RedisAT85 < AbstractPhpExtension
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
       headers = Dir["#{Formula["#{e}@8.5"].opt_include}/**/*.h"]
-      (buildpath/"include/php/ext/#{e}").install_symlink headers unless headers.empty?
+      (buildpath/"redis-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
   end
 
@@ -53,6 +53,7 @@ class RedisAT85 < AbstractPhpExtension
       args << "--with-liblzf=#{Formula["liblzf"].opt_prefix}"
     end
 
+    Dir.chdir "redis-#{version}"
     patch_redis
     patch_spl_symbols
     safe_phpize
