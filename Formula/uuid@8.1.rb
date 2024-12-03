@@ -15,14 +15,11 @@ class UuidAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia:  "b0d1eefacb47a7d683b482d45d9050af4d33084ea1e9e29080b1e8bc09879ed0"
-    sha256 cellar: :any,                 arm64_ventura:  "52f7de388531ed1e9babbd192f7c1f434c925a34994b00f251ad8bfade6c3208"
-    sha256 cellar: :any,                 arm64_monterey: "45b9d81bb03758a0ec2f2dd21b6e1896a89d25b492b152d1e6700f67dd7d1483"
-    sha256 cellar: :any,                 arm64_big_sur:  "0814b656e9654e65c56e6a57f72176c40c569870f75ef6696275688a2b428d86"
-    sha256 cellar: :any,                 ventura:        "26dd84ac441e6c97bd2e537d25ed6ddb0c730dca59d38294e5a039721586a560"
-    sha256 cellar: :any,                 monterey:       "4b1a2b9b09dc1ee3e7e39143419b340727156ff15ace5d4e6e29bd5b04abe0fe"
-    sha256 cellar: :any,                 big_sur:        "9e970f33f6a8404f0de18714ba08b7d8468eed79304b0ecb5c1ad2f3c7e8bbc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5740d1aba422e6c57cbd9ba79fc98222d75493564d63a4acd2faf59f3b328162"
+    sha256 cellar: :any,                 arm64_sequoia: "67b5c1b01c445bd97c641c52d03399dbd96c4f7cea8f03f6e8daafec7a8693c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "ff235b3fbe069e5c34bb27d126f073d9d6e65ac36945e3745168b7506923149a"
+    sha256 cellar: :any,                 arm64_ventura: "e11a34fcee66213fe11a09a263f095f64f8e56f5387fe544afc8d350aa30479e"
+    sha256 cellar: :any,                 ventura:       "5c4064ffca4f21c8365149caf7244b626c94ac655969ab067781933be3dea2b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db4c29fa168f9f4873bfa482cf79cf0bc0c18469e95e22e038f3beabaaaeb028"
   end
 
   def uuid_dependency
