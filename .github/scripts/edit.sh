@@ -3,16 +3,16 @@ fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   if [[ "$EXTENSION" =~ event|expect|gnupg|imagick|imap|mcrypt|pcov|snmp ]] ||
      [[ "$VERSION" =~ (amqp|mongodb)@(7.4|8.[0-5]) ]] ||
-     [[ "$VERSION" =~ (couchbase|phalcon5)@(8.[0-3]) ]] ||
+     [[ "$VERSION" =~ (couchbase|phalcon5|swoole)@(8.[0-3]) ]] ||
      [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
      [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.[0-5]) ]] ||
      [[ "$VERSION" =~ (memcached|vld)@(7.[0-4]|8.[0-5]) ]] ||
      [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|pecl_http|raphf|rdkafka|ssh2|uuid|vips|xlswriter)@(7.[0-4]|8.[0-5]) ]] ||
      [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-5]) ]] ||
-     [[ "$VERSION" =~ (redis)@(7.[2-4]|8.[0-5]) ]] ||
+     [[ "$VERSION" =~ (redis)@(7.4|8.[0-5]) ]] ||
      [[ "$VERSION" =~ (ast|mcrypt)@(7.[2-4]|8.[0-5]) ]] ||
      [[ "$VERSION" =~ (ds|mailparse|psr)@(7.[3-4]|8.[0-5]) ]] ||
-     [[ "$VERSION" =~ (memcache|protobuf|swoole|sqlsrv|pdo_sqlsrv|xdebug)@(8.[0-5]) ]]; then
+     [[ "$VERSION" =~ (memcache|protobuf|sqlsrv|pdo_sqlsrv|xdebug)@(8.[0-5]) ]]; then
     sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION" "$REPO"
     url=$(grep '^  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
     checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
