@@ -8,8 +8,8 @@ class MemcachedAT71 < AbstractPhpExtension
   init
   desc "Memcached PHP extension"
   homepage "https://github.com/php-memcached-dev/php-memcached"
-  url "https://pecl.php.net/get/memcached-3.2.0.tgz"
-  sha256 "2a41143a7b29f4a962a3805b77aa207a99e4566e2d314ce98a051cd24d6e9636"
+  url "https://pecl.php.net/get/memcached-3.3.0.tgz"
+  sha256 "2b85bf6699497170801fb4d06eb9c9a06bfc551cdead04101dd75c980be9eebf"
   head "https://github.com/php-memcached-dev/php-memcached.git"
   license "PHP-3.01"
 
