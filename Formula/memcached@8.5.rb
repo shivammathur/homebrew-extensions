@@ -8,8 +8,8 @@ class MemcachedAT85 < AbstractPhpExtension
   init
   desc "Memcached PHP extension"
   homepage "https://github.com/php-memcached-dev/php-memcached"
-  url "https://github.com/php-memcached-dev/php-memcached/archive/dfd038f13c4347fc15835cd9077a960218e01d98.tar.gz"
-  sha256 "d4ea5558d6ab246d955e87904c49ac84e06cd474fce911fd2519348ae583631c"
+  url "https://pecl.php.net/get/memcached-3.3.0.tgz"
+  sha256 "2b85bf6699497170801fb4d06eb9c9a06bfc551cdead04101dd75c980be9eebf"
   head "https://github.com/php-memcached-dev/php-memcached.git", branch: "master"
   license "PHP-3.01"
 
@@ -24,15 +24,15 @@ class MemcachedAT85 < AbstractPhpExtension
 
   depends_on "libevent"
   depends_on "libmemcached"
-  depends_on "shivammathur/extensions/igbinary@8.4"
-  depends_on "shivammathur/extensions/msgpack@8.4"
+  depends_on "shivammathur/extensions/igbinary@8.5"
+  depends_on "shivammathur/extensions/msgpack@8.5"
   depends_on "zlib"
 
   def patch_memcached
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
-      headers = Dir["#{Formula["#{e}@8.4"].opt_include}/**/*.h"]
-      (buildpath/"include/php/ext/#{e}").install_symlink headers unless headers.empty?
+      headers = Dir["#{Formula["#{e}@8.5"].opt_include}/**/*.h"]
+      (buildpath/"memcached-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
   end
 
@@ -49,6 +49,7 @@ class MemcachedAT85 < AbstractPhpExtension
       --with-libmemcached-dir=#{Formula["libmemcached"].opt_prefix}
       --with-zlib-dir=#{Formula["zlib"].opt_prefix}
     ]
+    Dir.chdir "memcached-#{version}"
     patch_memcached
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
