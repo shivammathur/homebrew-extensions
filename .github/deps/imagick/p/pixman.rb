@@ -1,8 +1,8 @@
 class Pixman < Formula
   desc "Low-level library for pixel manipulation"
   homepage "https://cairographics.org/"
-  url "https://cairographics.org/releases/pixman-0.44.0.tar.gz"
-  sha256 "89a4c1e1e45e0b23dffe708202cb2eaffde0fe3727d7692b2e1739fec78a7dac"
+  url "https://cairographics.org/releases/pixman-0.44.2.tar.gz"
+  sha256 "6349061ce1a338ab6952b92194d1b0377472244208d47ff25bef86fc71973466"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pixman < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b26be1b25cf0bdda8c0d59d991ddfa34a3c220c42a3008872491c5e83973485c"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c7d27ea7cc15c0283badcc09ee681c7d34aa368d1f73a078a616514e94dface"
-    sha256 cellar: :any,                 arm64_ventura: "375eefc10510f6061e00967ca595cdadce5a42540ed54665f8fe1220ce50b338"
-    sha256 cellar: :any,                 sonoma:        "95af491e269b608248d34c4dbc31a8bd3d06bb02b36a7519c44521e184ee8459"
-    sha256 cellar: :any,                 ventura:       "ab1538d1bd569f5183a9482e6f3399b5342bf9c5d5634c8dafc1ae056a0c1877"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cf37e617951c3acc3f85ccb404e76be4a0e3b62a92467126a6448743530af5c"
+    sha256 cellar: :any,                 arm64_sequoia: "8ec43a3f69d7c97d8ce1d07611638040c8ebec305e7dd76cb02dc3609982fa9f"
+    sha256 cellar: :any,                 arm64_sonoma:  "9864683edbe6d854ac00331ede5a69e8fcd624dda02d27c7e240a0c6b9e73feb"
+    sha256 cellar: :any,                 arm64_ventura: "9ba0bb20e92ef367e72978e2d73f4fe15567d5ce5624ddc095f1fc7774dcfce4"
+    sha256 cellar: :any,                 sonoma:        "d5cad71f43737f7c3d0dbfa3658c315f59253f965d69a32c308ae6e4ed601852"
+    sha256 cellar: :any,                 ventura:       "b705fc0334ba602eef3ed78f672b00b95f9564bdfb387c9d1b519e8a7a1cb560"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6825da7bb96ac0019357cc7425c98ec6e578642c06c48e8c6bf89877181e8805"
   end
 
   depends_on "meson" => :build
