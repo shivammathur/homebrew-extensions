@@ -1,8 +1,8 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://github.com/protocolbuffers/protobuf/releases/download/v29.0/protobuf-29.0.tar.gz"
-  sha256 "10a0d58f39a1a909e95e00e8ba0b5b1dc64d02997f741151953a2b3659f6e78c"
+  url "https://github.com/protocolbuffers/protobuf/releases/download/v29.1/protobuf-29.1.tar.gz"
+  sha256 "3d32940e975c4ad9b8ba69640e78f5527075bae33ca2890275bf26b853c0962c"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dfe35b4841816f440599518a78d61d1b91a3fc738dc50d08e206d763ef19c631"
-    sha256 cellar: :any,                 arm64_sonoma:  "6263e1687849f94fd6c7a31b58ed545b910499b7d7369c72b0c2d16e94ab2df5"
-    sha256 cellar: :any,                 arm64_ventura: "521c902f43ed6691296ec1c1d087247ff9acdd540430a6d18bc19438308eaff9"
-    sha256 cellar: :any,                 sonoma:        "48bec7510ed0b4e1f099a57f312dea0ab7448e1d47ed2ef59a3d66a76e014e17"
-    sha256 cellar: :any,                 ventura:       "64a2573e5245d607a96da0de2dd24d885141c12c403c727e6137ef9904e07ba1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd0a8bf5b004412e31231c841e2e4748ee87a962e131c8943666f864df4cb5ee"
+    sha256 cellar: :any,                 arm64_sequoia: "f195f72fabe5f1daa8351ff6aab65a8c804a3dbb92fcfaf8d1232b4ebf25a66a"
+    sha256 cellar: :any,                 arm64_sonoma:  "5e9a5397b8ab7cd8ac4e7481c1af5d64241df86f4205bc477fb8d366e004da5e"
+    sha256 cellar: :any,                 arm64_ventura: "4d68c9a70abedef5e23774faa6a421588067794c02bd3892e0b57a9338c899b9"
+    sha256 cellar: :any,                 sonoma:        "cf40b8edaaf2df31d1724f470604faad18345b2c74515b970b755fc0f186697a"
+    sha256 cellar: :any,                 ventura:       "82758d30260da4dbc686ec09e14dc747f45559119ee5a29e9e69a95db3584bb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b1b7c978bdf5e8f0b50089df1d1b24e5f2448e6aeb59250c6b38dcef351e97f"
   end
 
   depends_on "cmake" => :build
