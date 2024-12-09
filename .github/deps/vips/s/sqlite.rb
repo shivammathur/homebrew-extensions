@@ -1,9 +1,9 @@
 class Sqlite < Formula
   desc "Command-line interface for SQLite"
   homepage "https://sqlite.org/index.html"
-  url "https://www.sqlite.org/2024/sqlite-autoconf-3470100.tar.gz"
-  version "3.47.1"
-  sha256 "416a6f45bf2cacd494b208fdee1beda509abda951d5f47bc4f2792126f01b452"
+  url "https://www.sqlite.org/2024/sqlite-autoconf-3470200.tar.gz"
+  version "3.47.2"
+  sha256 "f1b2ee412c28d7472bc95ba996368d6f0cdcf00362affdadb27ed286c179540b"
   license "blessing"
 
   livecheck do
@@ -15,12 +15,12 @@ class Sqlite < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "22aa891d3868b2ff3cf5b2fff0b7c3bdc43fa9cf0c2f7047b213710e2710fbdd"
-    sha256 cellar: :any,                 arm64_sonoma:  "0a8421e2daf5553cdacec61126c2f654fc4ed5687dd4e0784f1d7240a1d6085d"
-    sha256 cellar: :any,                 arm64_ventura: "0bcd7e4d48a0a9c721a93ee7ea4f3a2c3461c900c7595c7c2b323168398b1a50"
-    sha256 cellar: :any,                 sonoma:        "296329a5f36f981fda8c7870c9e591d08c84e84d989d91eb92a7fcae1cc1e448"
-    sha256 cellar: :any,                 ventura:       "3ec83a8caed77476623d709d6d980698f09c0fb267907a2bf8323e6fc5b8439b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae9ae05a9ea1d51a5c3a93684d4913bfec54c9afcd1efb07c0abb32d0f9abc2c"
+    sha256 cellar: :any,                 arm64_sequoia: "7eca69ad4697874a907a2eb2ae60ceec930d93e92796b3433b65fc7c65a8dbaa"
+    sha256 cellar: :any,                 arm64_sonoma:  "725168435181011bdd06d7d1f18dad719529aec4ae0176392b0a16a725612b37"
+    sha256 cellar: :any,                 arm64_ventura: "3ab78c5df09c610070f4a64a8fc55e4ef5037de719e9361b8e30dd00590bd510"
+    sha256 cellar: :any,                 sonoma:        "03bd52415c045f9ee4cc5c9e4711aee2872ca186cca60c8c7f6296fec8d3e87c"
+    sha256 cellar: :any,                 ventura:       "0f2d1a76178f1da4bfbc684b8e4a0393bb18ff6ed4a24261aa66b3d2e2011f04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "082aa7c1c531ca9f74fbc8833fcf8459f985c11bdf5164e2ea4a820d479497ae"
   end
 
   keg_only :provided_by_macos
