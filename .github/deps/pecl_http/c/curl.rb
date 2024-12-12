@@ -3,30 +3,12 @@ class Curl < Formula
   homepage "https://curl.se"
   # Don't forget to update both instances of the version in the GitHub mirror URL.
   # `url` goes below this comment when the `stable` block is removed.
+  url "https://curl.se/download/curl-8.11.1.tar.bz2"
+  mirror "https://github.com/curl/curl/releases/download/curl-8_11_1/curl-8.11.1.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/curl-8.11.1.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/legacy/curl-8.11.1.tar.bz2"
+  sha256 "e9773ad1dfa21aedbfe8e1ef24c9478fa780b1b3d4f763c98dd04629b5e43485"
   license "curl"
-  revision 1
-
-  stable do
-    url "https://curl.se/download/curl-8.11.0.tar.bz2"
-    mirror "https://github.com/curl/curl/releases/download/curl-8_11_0/curl-8.11.0.tar.bz2"
-    mirror "http://fresh-center.net/linux/www/curl-8.11.0.tar.bz2"
-    mirror "http://fresh-center.net/linux/www/legacy/curl-8.11.0.tar.bz2"
-    sha256 "c95d5a1368803729345a632ce42cceeefd5f09c3b4d9582f858f6779f4b8b254"
-
-    # Remove the following patches with `stable` block on next release.
-    # Fix netrc parsing that affects git.
-    # https://github.com/curl/curl/issues/15496
-    patch do
-      url "https://github.com/curl/curl/commit/f5c616930b5cf148b1b2632da4f5963ff48bdf88.patch?full_index=1"
-      sha256 "fa1991cab62d62ef97a86aae215330e9df3d54d60dcf8338fdd98e758b87cc62"
-    end
-    # Fix support for larger netrc file or longer lines/tokens in it
-    # https://github.com/curl/curl/issues/15513
-    patch do
-      url "https://github.com/curl/curl/commit/0cdde0fdfbeb8c35420f6d03fa4b77ed73497694.patch?full_index=1"
-      sha256 "e1d10cb2327b4aa6b90eb153dce8b06fb4c683936edb9353fb2c9a4341cababd"
-    end
-  end
 
   livecheck do
     url "https://curl.se/download/"
@@ -34,13 +16,12 @@ class Curl < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "fa00dd72ba2ae659dd1df16944fd500e8b7a661cf6bad08333057f2aa4f04ac0"
-    sha256 cellar: :any,                 arm64_sonoma:  "c72dd1cedeac49b1017aced05874cbc659876f2188b0e2e1a971c4bad3ca655f"
-    sha256 cellar: :any,                 arm64_ventura: "f1aca9b7d22a8b1efa4e6f1f123bd65163bfaf93f9d9e3cd9633754be4e5dea2"
-    sha256 cellar: :any,                 sonoma:        "260961cdb1ae53fb8fc139f795521e47ffa2657d91e4ed39e522aff441a66808"
-    sha256 cellar: :any,                 ventura:       "180e8327f2b6a3442dd1596b81341e8bee042904e3b6027e50d48cb35af8c35e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d05dbe3184bcfcaeb057b67cdb4c53cb4cbf727964ae5df3ba421740e3c28d56"
+    sha256 cellar: :any,                 arm64_sequoia: "9becff07bed074d7ccf57b6875c54e0f81313faf5304d0a83c3b4a5f030fb7d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "abe90ee3f273e4101cc2a6d597341de4f0fcff5add2ac70664bf6abd045cc204"
+    sha256 cellar: :any,                 arm64_ventura: "a2a7f0e1b2ec4b1444c6fb74e747801da3b2cc17fa2defab8e8766ca66fa2317"
+    sha256 cellar: :any,                 sonoma:        "d3f0ef75ee89823890173bae4caf3eff9cf552361dc400ea576e439b69045a5b"
+    sha256 cellar: :any,                 ventura:       "af443263f1ce0d8330fc4a8863b5bcd094686cf5e7c7352b5670f3137008fe0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76e0a5154b41a48c92434df18bc22727f50e1c5d85dbda724c7353ce0bbe385a"
   end
 
   head do
@@ -115,14 +96,6 @@ class Curl < Formula
     system "make", "install"
     system "make", "install", "-C", "scripts"
     libexec.install "scripts/mk-ca-bundle.pl"
-    return if build.head? || !OS.mac?
-
-    # Workaround to fix Requires.private for system libraries that don't have pkg-config files.
-    # We manually inreplace as upstream fix requires re-generating configure.
-    # TODO: Remove in the next release (inreplace will fail)
-    # Ref: https://github.com/curl/curl/commit/e244d50064a56723c2ba4f0df8c847d6b70de0cb
-    requires_private_regex = /^(Requires\.private: (?:.*,)?)ldap,(.*),mit-krb5-gssapi(,|$)/
-    inreplace lib/"pkgconfig/libcurl.pc", requires_private_regex, "\\1\\2\\3", audit_result: build.bottle?
   end
 
   test do

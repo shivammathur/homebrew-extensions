@@ -1,8 +1,8 @@
 class TclTkAT8 < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl-lang.org"
-  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.15/tcl8.6.15-src.tar.gz"
-  sha256 "861e159753f2e2fbd6ec1484103715b0be56be3357522b858d3cbb5f893ffef1"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.16/tcl8.6.16-src.tar.gz"
+  sha256 "91cb8fa61771c63c262efb553059b7c7ad6757afa5857af6265e4b0bdc2a14a5"
   license "TCL"
 
   livecheck do
@@ -11,12 +11,12 @@ class TclTkAT8 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "b0014023f7ec4972cf80f05b10a73a53b55636edf9feae4be8e2a90591dda956"
-    sha256 arm64_sonoma:  "64d42662917f5c9a20db0b6f38ad45c577228d6e86cfb780426df985ff547b11"
-    sha256 arm64_ventura: "4eb35b49cee9db142bb0bc3a2bed1fb97b8a415d8b490a4c74fd2cab4275c47f"
-    sha256 sonoma:        "40a34778d277bc8630b796d7ebf16e26d9dcc59d1bd390ed732b61498719279c"
-    sha256 ventura:       "befba542838d1bf3a5d9a8439f2b76586e92c9e034f0043aebd062a7bb3c6ccf"
-    sha256 x86_64_linux:  "1ef83a31cf19fa26dc54ad9d79c581fa1d03aee953b791c35a92a5079c10e665"
+    sha256 arm64_sequoia: "f2bc0545e0e48b4029c35281527224d2dd12deead360a6a982c77e82986c9bfd"
+    sha256 arm64_sonoma:  "f3f32a9ace4e639678829daae9c7d8ced421144db16d944438ff5a2285d99e7f"
+    sha256 arm64_ventura: "72de6c290a2095906aea8dc034af2b81f88c5efc162adf642c90486c74ef0ab5"
+    sha256 sonoma:        "2d568cf0322e7bd4151c7bc1fd714c017a8c037fb238ea0d2f9aed7ac8cb22dd"
+    sha256 ventura:       "5cd357c52827c17fc0c648f7134f4cf0bb11f3621a65f2b2a58f2ddd86db2c62"
+    sha256 x86_64_linux:  "1208ceb8fe4df5fde9596567c11a8f2e956dacec3af26f6148eee9f6a93d7294"
   end
 
   keg_only :versioned_formula
@@ -48,8 +48,8 @@ class TclTkAT8 < Formula
   end
 
   resource "tk" do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.15/tk8.6.15-src.tar.gz"
-    sha256 "550969f35379f952b3020f3ab7b9dd5bfd11c1ef7c9b7c6a75f5c49aca793fec"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.16/tk8.6.16-src.tar.gz"
+    sha256 "be9f94d3575d4b3099d84bc3c10de8994df2d7aa405208173c709cc404a7e5fe"
   end
 
   # "https://downloads.sourceforge.net/project/incrtcl/%5Bincr%20Tcl_Tk%5D-4-source/itk%204.1.0/itk4.1.0.tar.gz"
