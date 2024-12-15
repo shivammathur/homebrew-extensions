@@ -11,13 +11,13 @@ class Vips < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "a29f5e97a297ea093c4a1516b76b44d389c6c08e213721beea24d38a77f644fe"
-    sha256 arm64_sonoma:  "03caa719e0ae47c6461ff1c4415c62b3cb7b4f06d7ce364d78c9d64477123fed"
-    sha256 arm64_ventura: "61345da3c9e08dd0d9ac3babd74d6f95c21fa565918a75bec92fe642f9a9ac76"
-    sha256 sonoma:        "93c1dc1ec9f93f931db8b1a214f0ad80383564c293d3e8f75b3c8a5719dfcff5"
-    sha256 ventura:       "83d9c9fb4e55d6c6912d97a24a6d672271748cfebb2070362991c718ab718bc2"
-    sha256 x86_64_linux:  "66b79e1b3205a38c5ee6dfdf7846a73a8c323aa235fb3024a0a45281d9d65140"
+    rebuild 2
+    sha256 arm64_sequoia: "d21c54f55b3a51f7a4fce360f996f8363d523b5a52ff37f93788d292e4fda75f"
+    sha256 arm64_sonoma:  "6160ce321b213ed0b4c323d6086742273e2814949943f7fa684b534513965bec"
+    sha256 arm64_ventura: "3f89494aca6ca8dcd2e1067c0ed1e775de4bcf633be4c1499ad1b7ebd0533da4"
+    sha256 sonoma:        "8969af30ed345a9a80215938dd02dae3158d61022cf2cefe8e017e5eb0e3e028"
+    sha256 ventura:       "b4d12ec545298204beeef2722f5dd914268176b5cdb6ece318b50aa578430381"
+    sha256 x86_64_linux:  "7d1acd4661c389afe2b37616d813a542e0b9d0cc58929c4868a5841d42e41815"
   end
 
   depends_on "gobject-introspection" => :build
@@ -58,7 +58,6 @@ class Vips < Formula
   def install
     # mozjpeg needs to appear before libjpeg, otherwise it's not used
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["mozjpeg"].opt_lib/"pkgconfig"
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["cfitsio"].opt_lib/"pkgconfig"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

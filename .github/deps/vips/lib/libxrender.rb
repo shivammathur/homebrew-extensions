@@ -1,21 +1,17 @@
 class Libxrender < Formula
   desc "X.Org: Library for the Render Extension to the X11 protocol"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXrender-0.9.11.tar.gz"
-  sha256 "6aec3ca02e4273a8cbabf811ff22106f641438eb194a12c0ae93c7e08474b667"
+  url "https://www.x.org/archive/individual/lib/libXrender-0.9.12.tar.gz"
+  sha256 "0fff64125819c02d1102b6236f3d7d861a07b5216d8eea336c3811d31494ecf7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "ae75035fb02f10c04b256a0dcb5b51498e5e99f98baebdcbc9819c35fddbb704"
-    sha256 cellar: :any,                 arm64_sonoma:   "387261107110957df83504ec68c9328d84b3ce5a1f2a8e01f7d8f9112d8372ad"
-    sha256 cellar: :any,                 arm64_ventura:  "510d0cd0f72480d716b38cd935e3a334ed1be972210ffac7309d0dd80469c8bb"
-    sha256 cellar: :any,                 arm64_monterey: "660b41237f01b7561da61e4abd212f4575e6c97f4c76cc70c550868edbe227e5"
-    sha256 cellar: :any,                 arm64_big_sur:  "2ed6a16e43342c1a068a59c7f250111d88ef0f7d7e0ae7c935cb979f09542a57"
-    sha256 cellar: :any,                 sonoma:         "f61874ac3d98dfed35aa0a8790a71fa3a802d3d310d2e57e35570219a5864800"
-    sha256 cellar: :any,                 ventura:        "5eb0bb57e683a00176a5702bdf021641fe9290e84e0414d2979823ad0aad1d3a"
-    sha256 cellar: :any,                 monterey:       "ab54f6ca9a3dc9c86a16813ebc86456a012dace089f51b2c8d16aea72cd78ec5"
-    sha256 cellar: :any,                 big_sur:        "be6b3af9fd07f7a95bf2a70e1673383dca5ba972a6984ba359ea0c36be2dee44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e83a61cd4894dea2942520f9147fdaa1e92b71089f288f6a1ae2fb1236b79f5"
+    sha256 cellar: :any,                 arm64_sequoia: "edcb8884f9d33219d276051be3b5ad64f390cdf3abe9794d9a0050c02895c3a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "a9e072e66b91797a41879d60271ac73a0b6a6e487a80ca054a44c209352e20ae"
+    sha256 cellar: :any,                 arm64_ventura: "0d5c91bc0d13b447077fadd8a7b73e1b65091db9d03e5f6f515eb506591c8bec"
+    sha256 cellar: :any,                 sonoma:        "97554360bb9c9e82ebc7140f0186f02c103e877988c1d4a0139fbd5be1990f6a"
+    sha256 cellar: :any,                 ventura:       "7738d05da7567ca24736fc6ea5a4f881a0cd33ebbbb023d647844e183b785e7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44bddde0557643e137ddd5aa00d60bf220527719d2cb9263e397098dee2664c5"
   end
 
   depends_on "pkgconf" => :build

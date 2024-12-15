@@ -1,8 +1,8 @@
 class CAres < Formula
   desc "Asynchronous DNS library"
   homepage "https://c-ares.org/"
-  url "https://github.com/c-ares/c-ares/releases/download/v1.34.3/c-ares-1.34.3.tar.gz"
-  sha256 "26e1f7771da23e42a18fdf1e58912a396629e53a2ac71b130af93bbcfb90adbe"
+  url "https://github.com/c-ares/c-ares/releases/download/v1.34.4/c-ares-1.34.4.tar.gz"
+  sha256 "fa38dbed659ee4cc5a32df5e27deda575fa6852c79a72ba1af85de35a6ae222f"
   license "MIT"
   head "https://github.com/c-ares/c-ares.git", branch: "main"
 
@@ -12,12 +12,12 @@ class CAres < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e0a8f161010f3f7ea690a32812121acf1fe2fd5f9f61dee32ed19fbe9677222a"
-    sha256 cellar: :any,                 arm64_sonoma:  "5433ae54213bd83e5832581a25ffc63c2fa977accf4501ef3126c2766454c28e"
-    sha256 cellar: :any,                 arm64_ventura: "8b60282b8775785b865d51c4916081e98b30bb74edd8c83807974fe89de2e59b"
-    sha256 cellar: :any,                 sonoma:        "1e05842f0ed0d461ad12df47938ffbdeb1061d19b52224b5bdfed4739caeeb52"
-    sha256 cellar: :any,                 ventura:       "02da84df0a0f3c1a5a7e8a539d25b0da0a6a022c77447d396512034a55b52797"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad86ef643c7f3253ac301f868c7dcb13a5421decabcf146944d812179b7e2637"
+    sha256 cellar: :any,                 arm64_sequoia: "1db34e25cf5af8441aa0cf479f1ca4330e031d2a35ed3b717563b1f1a1104cf4"
+    sha256 cellar: :any,                 arm64_sonoma:  "93b4eabc07d647638e19c3293d52f803ce5b1ebf45b817525e6307241e790301"
+    sha256 cellar: :any,                 arm64_ventura: "96657bac75a42089fdf829f450125b77c3cdb216a981a8350f4f06814f94983e"
+    sha256 cellar: :any,                 sonoma:        "81825f7f6a7a5d3f449535c1fb6242a3372c435c93db3f042fae96d2c4abe119"
+    sha256 cellar: :any,                 ventura:       "271f20135a100723f4138e3353cefd9509ce952d64c57c04feb2b20c306430f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ba26d45c3a98cf3a424b279be104e885005c31bca12f0d663e841d09ed4f6f4"
   end
 
   depends_on "cmake" => :build
