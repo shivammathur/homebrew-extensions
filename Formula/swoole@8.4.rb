@@ -37,7 +37,6 @@ class SwooleAT84 < AbstractPhpExtension
       --enable-http2
       --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
     ]
-    inreplace "ext-src/php_swoole_private.h", "0, NULL, 0, ", ""
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
