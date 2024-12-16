@@ -1,26 +1,10 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
+  url "https://github.com/boostorg/boost/releases/download/boost-1.87.0/boost-1.87.0-b2-nodocs.tar.xz"
+  sha256 "3abd7a51118a5dd74673b25e0a3f0a4ab1752d8d618f4b8cea84a603aeecc680"
   license "BSL-1.0"
-  revision 2
   head "https://github.com/boostorg/boost.git", branch: "master"
-
-  stable do
-    # TODO: Drop single-threaded libraries at version bump.
-    #   https://github.com/Homebrew/homebrew-core/pull/182995
-    url "https://github.com/boostorg/boost/releases/download/boost-1.86.0/boost-1.86.0-b2-nodocs.tar.xz"
-    sha256 "a4d99d032ab74c9c5e76eddcecc4489134282245fffa7e079c5804b92b45f51d"
-
-    # Backport Boost.Compute support for latest Boost.Uuid
-    patch :p2 do
-      url "https://github.com/boostorg/compute/commit/79452d5279831ee59a650c17b71259a821f1a554.patch?full_index=1"
-      sha256 "ed4b9740c1f300ed0413498f0cba6f05389b570bec6a4b456d53314a2561d061"
-    end
-    patch :p2 do
-      url "https://github.com/boostorg/compute/commit/54915acaafa003b7aab6f24c74e7fdeaae297ad6.patch?full_index=1"
-      sha256 "1d1e83f4cb371003bad84a3789b2fecf215768f4a6f933444eaa4c26905f1e9f"
-    end
-  end
 
   livecheck do
     url "https://www.boost.org/users/download/"
@@ -31,12 +15,12 @@ class Boost < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9cbf3c05fdd327dd0e0f1a9419e63e10c2351ec7cd51904e054e37d11751a21d"
-    sha256 cellar: :any,                 arm64_sonoma:  "9c969ba39918df9f26ac5d283081bd263009747db450095888697c0c83e3a8d2"
-    sha256 cellar: :any,                 arm64_ventura: "d49dc78ee528470d8ca0f9762a96d1eba1f80fd4a8d70dea010c7d524cec7133"
-    sha256 cellar: :any,                 sonoma:        "14ea0ee012bdb555dcc20fb5b6429ea34bd7aab7b16db606de04074fdf37ddcd"
-    sha256 cellar: :any,                 ventura:       "b2ffcb38ea2326444acc8b95c6ccd4fa8d8edbab95270108ecfb85a25b89aeaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a9279f11fcd81f48f47d0b86389cddd27dc077f0ca6948f2ff83f720267119d"
+    sha256 cellar: :any,                 arm64_sequoia: "00a8471e4eca0c3f486e94cfe0609fc467d0805270dd18e5e8bad0a237aadeba"
+    sha256 cellar: :any,                 arm64_sonoma:  "e343b4cb9530c8685040b7f33be212f8da78756060b3400f37242446a6b4c452"
+    sha256 cellar: :any,                 arm64_ventura: "e68b84eed4a2fe54c3de30ae35852c8fbe217bfdc28b8f063059cc1491d5f7b1"
+    sha256 cellar: :any,                 sonoma:        "4365d15232d6c4980c51f0c3b729b1adfe80ee6088d1276cf7d56a609a8025f5"
+    sha256 cellar: :any,                 ventura:       "125c0502cdfedda094229358e3173375cb8f020cd129a43ecfa43ffc251eb57a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed501937c2b5e96c65f5b44c852f7fb8e8692fcd009459980b3751d10e762164"
   end
 
   depends_on "icu4c@76"
@@ -79,10 +63,10 @@ class Boost < Formula
       --libdir=#{lib}
       -d2
       -j#{ENV.make_jobs}
-      --layout=tagged-1.66
+      --layout=system
       --user-config=user-config.jam
       install
-      threading=multi,single
+      threading=multi
       link=shared,static
     ]
 

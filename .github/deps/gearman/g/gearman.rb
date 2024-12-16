@@ -4,17 +4,15 @@ class Gearman < Formula
   url "https://github.com/gearman/gearmand/releases/download/1.1.21/gearmand-1.1.21.tar.gz"
   sha256 "2688b83e48f26fdcd4fbaef2413ff1a76c9ecb067d1621d0e0986196efecd308"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5cdfdb84c2102f65926d2265929435a919eca018f7535e7cc68c022923065b18"
-    sha256 cellar: :any,                 arm64_sonoma:   "9d1da4a4f4163500fa5526812bc3a0568378e01a89001545bf45cee7c61d5ed7"
-    sha256 cellar: :any,                 arm64_ventura:  "4b43f495ded047c9a8bbf9cd1007151049cebf7cefcde392d00b9e3bb16b6bdb"
-    sha256 cellar: :any,                 arm64_monterey: "93ccbc7bf2fe168924a57d16851206fbf781f3ff78460c66f1e97e5551287bfd"
-    sha256 cellar: :any,                 sonoma:         "af960e8b7736a776909060bb4544f46058ab065a4bef2472b02bd4119142f2c1"
-    sha256 cellar: :any,                 ventura:        "30f5a814200b4eef0fa30ed3a26d526c18cf8fd03e9466e37699c1f16a09ad07"
-    sha256 cellar: :any,                 monterey:       "157e08eabcf0400b1f4c79a678b77433fc3d6c10390b372c641478ed4e5352c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "285adf59fe86f27e59a6292255c4d62b281db259ec4f6f49a88469a8e0491e3a"
+    sha256 cellar: :any,                 arm64_sequoia: "4467566d914682138283953f1311ddf23572a4afd959d82ac0b2a603549e0cee"
+    sha256 cellar: :any,                 arm64_sonoma:  "4b67a0129dce2a868d5079867cbdb4d115d9eae56ec52a41c9b562a509415599"
+    sha256 cellar: :any,                 arm64_ventura: "008c71b1e3df7004c782f0278295b7b3a7e664ffba761a30975e4913134ad2b2"
+    sha256 cellar: :any,                 sonoma:        "6c5c2cace944c91f0306e7f4ec3ee247fa9af89b8b9b24c2ce66a6c9ce1260de"
+    sha256 cellar: :any,                 ventura:       "6fc4431c7fab994717bb3a95f4b0f716398a4ebd83a5c677ea9776f7df211600"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c855de1197c2a51653daf11305124821fe5fa2283f604dfbc332f6cee4e4236"
   end
 
   depends_on "pkgconf" => :build

@@ -1,17 +1,17 @@
 class Libdeflate < Formula
   desc "Heavily optimized DEFLATE/zlib/gzip compression and decompression"
   homepage "https://github.com/ebiggers/libdeflate"
-  url "https://github.com/ebiggers/libdeflate/archive/refs/tags/v1.22.tar.gz"
-  sha256 "7f343c7bf2ba46e774d8a632bf073235e1fd27723ef0a12a90f8947b7fe851d6"
+  url "https://github.com/ebiggers/libdeflate/archive/refs/tags/v1.23.tar.gz"
+  sha256 "1ab18349b9fb0ce8a0ca4116bded725be7dcbfa709e19f6f983d99df1fb8b25f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cb6e2d1eb27e02b14541f965fb81f8bfd98852e8db7729540e135c2a356ab4fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0855ef6b2947b130aae38dc3f7e758c450b03dfcd4e923669b573d4aeefede1"
-    sha256 cellar: :any,                 arm64_ventura: "ad4a626589cb82f253cf065aef92ea5dc77f51bb80cbbf66558a212cd88665ac"
-    sha256 cellar: :any,                 sonoma:        "34c07181913c15251daa7dcf9801d29f1bb7abfb6719ea6c98054e48e25dcebb"
-    sha256 cellar: :any,                 ventura:       "d0fb44f38bffe30a903f94c28a4097e5b6a034af7d676931b351cac801aa985b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4014531967553e8f002d52585698b5f2cdc689e1359563145ec3723c7ddc490b"
+    sha256 cellar: :any,                 arm64_sequoia: "0a70dfdf41b38cacf0886866614b2e1fa1187cf45cfa34b05442fa129471b1cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "15e665a6443b3f652cb920892a936cf09af93fb518c2771fde48211f3cb81a11"
+    sha256 cellar: :any,                 arm64_ventura: "163a29ded43e4a43301b2293f791046149afed398d3d25db99606c1a72747db5"
+    sha256 cellar: :any,                 sonoma:        "c623df6939889263cdaa4467ab95f63f911bfc2bed786b1a27733b0c055ae9cc"
+    sha256 cellar: :any,                 ventura:       "29c4f0b40032c3d9e95c6e2994369da30a8b3f90b2dd91529eac78c8bde952a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2ff89c9b3782110b6b0d3f6c99398ada2780ce3a3d98b50ec2fa6e2d2c7c82e"
   end
 
   depends_on "cmake" => :build
