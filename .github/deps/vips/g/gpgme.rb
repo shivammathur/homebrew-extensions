@@ -1,10 +1,9 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.0.tar.bz2"
-  sha256 "61e3a6ad89323fecfaff176bc1728fb8c3312f2faa83424d9d5077ba20f5f7da"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.1.tar.bz2"
+  sha256 "ea05d0258e71061d61716584ec34cef59330a91340571edc46b78374973ba85f"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpgme/"
@@ -12,12 +11,12 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d527527678278ec8a1d1bbbfe47ae4c14ec6efde616ff423a444f620731cfa66"
-    sha256 cellar: :any,                 arm64_sonoma:  "126aa60956ea71060c3a7214a208909f44c5ef3d809b8861a11be31dd88090b9"
-    sha256 cellar: :any,                 arm64_ventura: "ad15a53119725ccc499fea4aa7611fcacd7b0e517913c3d4be5e07bd7a9bac13"
-    sha256 cellar: :any,                 sonoma:        "1f5747663a4d8fa271388a8683ae2d87ab4e10247ef5189b575b980dce82438b"
-    sha256 cellar: :any,                 ventura:       "ded898081e74189b242056b66b5979d86f11de849d4569ddd64c9a9f904e2ec2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc5a08c5f2e458631a86a0a3447813157356513bfb0649307883fa53f84abac5"
+    sha256 cellar: :any,                 arm64_sequoia: "4817886d1fd2a4bfaa9b895ef0a57ae83b2728ed2ccf4430a6c46ea130764a14"
+    sha256 cellar: :any,                 arm64_sonoma:  "647b8377a6821214e63e6367692acf707217c2f961cc682727dd855a5a1ae13e"
+    sha256 cellar: :any,                 arm64_ventura: "25c16405a157103f48b918a8205c2bc6329a58de7ac1a40e6d47c63ab76e5763"
+    sha256 cellar: :any,                 sonoma:        "ada24cc3c379aab878c538753ce1d112d2a5d7ac43a521755ade797eb984100d"
+    sha256 cellar: :any,                 ventura:       "9654900d27991ce8b5f69d2ef5010237b2a47b5d12fd108ae9da8adc94654646"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7484caa7a112dc0d76711a3861dcac6cd8c48d3125317b8330e03dbca15e0c0a"
   end
 
   depends_on "python-setuptools" => :build
