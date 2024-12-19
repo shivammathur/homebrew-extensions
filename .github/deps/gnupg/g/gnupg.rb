@@ -11,12 +11,13 @@ class Gnupg < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "504f8f29547995be5fef21f91769f05e1b2e317c424d3d481d3e1c69561f93b6"
-    sha256 arm64_sonoma:  "5a23f8f2c150986e2e727a25bc42c12c5f89455bc27a213dcfa98289df377bf2"
-    sha256 arm64_ventura: "31f920052dda3ede08d6a75b56c7b38cdb41a0964ab18305ebfc70ac55bbcc37"
-    sha256 sonoma:        "e71ab7138942ea33cac896389aa8e82a4583d0ac5c1691d816e3671bd9327e7b"
-    sha256 ventura:       "e6106c117ccdceeadbad2f16a6ddb551e93b08be6c60e9fc5af615ec23c26e3d"
-    sha256 x86_64_linux:  "861b48d7bc2aa8e2a81f6c300d425ff2453ffb5bc948bc58cf1bdf1d93bd13ec"
+    rebuild 1
+    sha256 arm64_sequoia: "1158518050462f44e5ce0f85bdff8c1b6d773b5a8e4e2d23c71c3b3b46e9505c"
+    sha256 arm64_sonoma:  "4d4e17420b3e2c4ce95358f51991099f66bfcba197b5f9ac75b2bb15c25c0fc2"
+    sha256 arm64_ventura: "702b2cb99bae04925d020ed886aab095190b486b5caa418af85a1a30c7169212"
+    sha256 sonoma:        "f35b61defdaa19b0cb577bb0e8129a69d508afc3b3932fb449fa9082b8fff576"
+    sha256 ventura:       "19d12de3d1baf0ea5d5978c85cd8fce2d735ecd7432dfb7bd1214dadc82e370f"
+    sha256 x86_64_linux:  "7eecb260956f7ff5bd31488ec423caabf1fdf88d8280ae9c9cf4b7b6f7b1ee64"
   end
 
   depends_on "pkgconf" => :build
@@ -54,6 +55,7 @@ class Gnupg < Formula
                              "--enable-all-tests",
                              "--sysconfdir=#{etc}",
                              "--with-pinentry-pgm=#{Formula["pinentry"].opt_bin}/pinentry",
+                             "--with-readline=#{Formula["readline"].opt_prefix}",
                              *std_configure_args
       system "make"
       system "make", "check"
