@@ -5,9 +5,11 @@ class Gnupg < Formula
   sha256 "95acfafda7004924a6f5c901677f15ac1bda2754511d973bb4523e8dd840e17a"
   license "GPL-3.0-or-later"
 
+  # GnuPG appears to indicate stable releases with an even-numbered minor
+  # (https://gnupg.org/download/#end-of-life).
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gnupg/"
-    regex(/href=.*?gnupg[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?gnupg[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
   end
 
   bottle do
