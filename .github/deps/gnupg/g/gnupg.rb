@@ -1,8 +1,8 @@
 class Gnupg < Formula
   desc "GNU Pretty Good Privacy (PGP) package"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.6.tar.bz2"
-  sha256 "95acfafda7004924a6f5c901677f15ac1bda2754511d973bb4523e8dd840e17a"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.7.tar.bz2"
+  sha256 "7b24706e4da7e0e3b06ca068231027401f238102c41c909631349dcc3b85eb46"
   license "GPL-3.0-or-later"
 
   # GnuPG appears to indicate stable releases with an even-numbered minor
@@ -13,13 +13,12 @@ class Gnupg < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "1158518050462f44e5ce0f85bdff8c1b6d773b5a8e4e2d23c71c3b3b46e9505c"
-    sha256 arm64_sonoma:  "4d4e17420b3e2c4ce95358f51991099f66bfcba197b5f9ac75b2bb15c25c0fc2"
-    sha256 arm64_ventura: "702b2cb99bae04925d020ed886aab095190b486b5caa418af85a1a30c7169212"
-    sha256 sonoma:        "f35b61defdaa19b0cb577bb0e8129a69d508afc3b3932fb449fa9082b8fff576"
-    sha256 ventura:       "19d12de3d1baf0ea5d5978c85cd8fce2d735ecd7432dfb7bd1214dadc82e370f"
-    sha256 x86_64_linux:  "7eecb260956f7ff5bd31488ec423caabf1fdf88d8280ae9c9cf4b7b6f7b1ee64"
+    sha256 arm64_sequoia: "47b40c87309680baa445bb8b9bb71c94f7c9020789a6ae5f45980febeb6d1e42"
+    sha256 arm64_sonoma:  "f2778e812043b14964316eaaa17bc8fde02331fea2746af82bd5694d93456710"
+    sha256 arm64_ventura: "7f2f1d42257dc87ee46240ae4ea8eff46455245fdf832b905d52d8364e08da2c"
+    sha256 sonoma:        "989a2348d01b160110ab4ba3bedda4e194bf02122d31e6029fc536baba261a37"
+    sha256 ventura:       "1b8bfec784f857856a2471ed8702259987fab15b101f9d948c81467b0fd5bc91"
+    sha256 x86_64_linux:  "a091d36b710f7fdd8db5cb20dc4af2f20254b04f3d17fd2df2155701e0da9d27"
   end
 
   depends_on "pkgconf" => :build
@@ -40,12 +39,6 @@ class Gnupg < Formula
 
   on_macos do
     depends_on "gettext"
-  end
-
-  # Backport fix for missing unistd.h
-  patch do
-    url "https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=patch;h=1d5cfa9b7fd22e1c46eeed5fa9fed2af6f81d34f"
-    sha256 "610d0c50004e900f1310f58255fbf559db641edf22abb86a6f0eb6c270959a5d"
   end
 
   def install

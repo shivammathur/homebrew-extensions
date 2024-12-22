@@ -28,17 +28,18 @@ class Graphite2 < Formula
     depends_on "freetype" => :build
   end
 
-  resource "testfont" do
-    url "https://scripts.sil.org/pub/woff/fonts/Simple-Graphite-Font.ttf"
-    sha256 "7e573896bbb40088b3a8490f83d6828fb0fd0920ac4ccdfdd7edb804e852186a"
-  end
-
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
+    resource "testfont" do
+      url "https://scripts.sil.org/pub/woff/fonts/Simple-Graphite-Font.ttf"
+      sha256 "7e573896bbb40088b3a8490f83d6828fb0fd0920ac4ccdfdd7edb804e852186a"
+    end
+
     resource("testfont").stage do
       shape = shell_output("#{bin}/gr2fonttest Simple-Graphite-Font.ttf 'abcde'")
       assert_match(/67.*36.*37.*38.*71/m, shape)
