@@ -1,8 +1,8 @@
 class Webp < Formula
   desc "Image format providing lossless and lossy compression for web images"
   homepage "https://developers.google.com/speed/webp/"
-  url "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.4.0.tar.gz"
-  sha256 "61f873ec69e3be1b99535634340d5bde750b2e4447caa1db9f61be3fd49ab1e5"
+  url "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.5.0.tar.gz"
+  sha256 "7d6fab70cf844bf6769077bd5d7a74893f8ffd4dfb42861745750c63c2a5c92c"
   license "BSD-3-Clause"
   head "https://chromium.googlesource.com/webm/libwebp.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Webp < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "e10ece3ad9a497f43c19b9b266153ab695618efa56d4fb71a3d93a30e8794d34"
-    sha256 cellar: :any,                 arm64_sonoma:  "25da1a969839c498daa50512a463a472671cf26abe1620d659b7bb5a8cbc8f61"
-    sha256 cellar: :any,                 arm64_ventura: "5fbe5e4ca1a6460ae98a69d41da4cfd3a7af126a11187ccc13c7d55c5efe7e08"
-    sha256 cellar: :any,                 sonoma:        "d4a2bb7f9093c305ef3275bc9a9b23475ff0fb5ddf708e93b8b9ba8b3a760303"
-    sha256 cellar: :any,                 ventura:       "30b378eea3097c2227e91b07571bf8577e4702c02bd53ceb9564e352574f1071"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be18bbf7a53ce2f1a4d4f7f92fae9baadf888c0ea0b0bd2842050bf77bf86936"
+    sha256 cellar: :any,                 arm64_sequoia: "700e1f0c8a32f99de402e714237c786191c5ef782b8639b2f2b1c5794b025825"
+    sha256 cellar: :any,                 arm64_sonoma:  "121c8d526d62724c65ca82ad99a2edfa56bf7aeb6a69a231399e0faab96cad1f"
+    sha256 cellar: :any,                 arm64_ventura: "a0ce31323770314c805a305cccb2e30f2a0f04d461842448de9d569f5baa6306"
+    sha256 cellar: :any,                 sonoma:        "18e9cdc6a27311b71e215cfc392f4d2b032a8f9f43b80b65dc920ed1bccbbc34"
+    sha256 cellar: :any,                 ventura:       "6df9e02a753aabd2aa0a1096ad30a2460ff87c86e8bb0b9dd0562cbd74c03bb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04808907272edc079436cb1e6cec57021d17007d0df49842158865e2ff48f601"
   end
 
   depends_on "cmake" => :build

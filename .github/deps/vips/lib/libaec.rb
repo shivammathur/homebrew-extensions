@@ -86,8 +86,9 @@ class Libaec < Formula
       add_executable(test test.cpp)
       target_link_libraries(test libaec::aec)
     CMAKE
-    system "cmake", ".", *std_cmake_args
-    system "cmake", "--build", "."
-    system "./test"
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "./build/test"
   end
 end
