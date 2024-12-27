@@ -8,12 +8,13 @@ class Glib < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "12badac43dfd9e9cdccca73ad4c6777eb5095ce589c11b1bbfcd84e1bf2bef82"
-    sha256 arm64_sonoma:  "bf1cbeb7a308a025cf2848f2e7ec442fc7ccd81eb951ac4d0c8e78e502078ef1"
-    sha256 arm64_ventura: "d033605c0619ca209230a1e436e61a466075932689184056e99087f92625a8c9"
-    sha256 sonoma:        "1e49d9e4f1d3ce798a4b19e8ba99818e63cfffd5b5fb8da38b3dd87cc7367e5f"
-    sha256 ventura:       "a7ef2463aa0b5986e92282d4cbef6491ad241ac76acfaa43e5379eebb324fd2a"
-    sha256 x86_64_linux:  "aca84b5f7f3da62a84ae77d1018bf27c235685ac560e4411ad3194c69723e408"
+    rebuild 1
+    sha256 arm64_sequoia: "cb7e1e45b994e3bf05cc2b21427368d9e417589017786f789c7aefa585b2c0b3"
+    sha256 arm64_sonoma:  "26c4a5cd06dc075dabe28e94dba63742d881343d4fde244b29126086eefb3711"
+    sha256 arm64_ventura: "7108b33ae6d63a669c4bc13a60c2c664b5498691c5dcdb3d40e0e8fbd66a0585"
+    sha256 sonoma:        "1c127e38938c337d06f4dcbee381249f5caee71ae479d2c69c2fe37aad02d0f6"
+    sha256 ventura:       "d13fc9b102ae989dcc0da96b2162269020479da5523f3df1d3d05373345a7ae2"
+    sha256 x86_64_linux:  "275da32f00d6860c91be2ece5094c320638252f1a066fd53ba891ecd378e694e"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -55,8 +56,8 @@ class Glib < Formula
 
   # replace several hardcoded paths with homebrew counterparts
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/43467fd8dfc0e8954892ecc08fab131242dca025/glib/hardcoded-paths.diff"
-    sha256 "d81c9e8296ec5b53b4ead6917f174b06026eeb0c671dfffc4965b2271fb6a82c"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/b46d8deae6983110b4e39bb2971bcbd10bb59716/glib/hardcoded-paths.diff"
+    sha256 "d846efd0bf62918350da94f850db33b0f8727fece9bfaf8164566e3094e80c97"
   end
 
   def install
