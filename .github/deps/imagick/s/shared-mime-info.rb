@@ -8,7 +8,10 @@ class SharedMimeInfo < Formula
 
   livecheck do
     url "https://gitlab.freedesktop.org/api/v4/projects/1205/releases"
-    regex(/shared-mime-info v?(\d+(?:\.\d+)+)/i)
+    regex(/^(?:Release[._-])?v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :json do |json, regex|
+      json.map { |item| item["tag_name"]&.[](regex, 1)&.tr("-", ".") }
+    end
   end
 
   bottle do
