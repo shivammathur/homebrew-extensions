@@ -1,19 +1,19 @@
 class Gettext < Formula
   desc "GNU internationalization (i18n) and localization (l10n) library"
   homepage "https://www.gnu.org/software/gettext/"
-  url "https://ftp.gnu.org/gnu/gettext/gettext-0.23.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gettext/gettext-0.23.tar.gz"
-  mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.23.tar.gz"
-  sha256 "945dd7002a02dd7108ad0510602e13416b41d327898cf8522201bc6af10907a6"
+  url "https://ftp.gnu.org/gnu/gettext/gettext-0.23.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gettext/gettext-0.23.1.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.23.1.tar.gz"
+  sha256 "52a578960fe308742367d75cd1dff8552c5797bd0beba7639e12bdcda28c0e49"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "920c38bf7e32b5e72c9863f35332d47e8b3b972256a5c2b49ca454beeadd2984"
-    sha256 arm64_sonoma:  "2041dafd8f25affab963100bd7735c493abc0efef0ca141a9239ac6fc60e5a19"
-    sha256 arm64_ventura: "dbdefb1ee1b6de90e4cca9d5a370239d19e9f1cbb9f07892dd046de134d3cebc"
-    sha256 sonoma:        "c93fc77db63462932e615d295ef455f3dab6d4c0ec0f20db130082998ee6ac57"
-    sha256 ventura:       "4a9d298346e29db0230996416a154e54fdc8056fdb268ef7493576d82aadb9e2"
-    sha256 x86_64_linux:  "17a3a3358d80af17a45be7d2b71b4d1961bd1b044cf83e3d0457c3a54a6ce85f"
+    sha256 arm64_sequoia: "9179f473099573a8c4a42f70e39f1a36376914d6b634e0975b5cb514dcecb4ee"
+    sha256 arm64_sonoma:  "f3b350830a3da3a44f3981838651accad39c14a3bd0ceac8d4a3c94eb7b24c02"
+    sha256 arm64_ventura: "2e98d7dae6dce086135060db70e767c5bfb0bcb8d190eea5f0a4c192315f2b0f"
+    sha256 sonoma:        "89b1b668765938504ce64f991cf6b81fc96765f5dec84bbf64c007c3d811b8fe"
+    sha256 ventura:       "fffb8da1a3258ca710829d0b9cf048d2a3434625e3fc202d845b0238ccc16d0f"
+    sha256 x86_64_linux:  "a3f66e4195312f949e9b94b12de4d888945150b3e4dccfcb67403fde034ed073"
   end
 
   depends_on "libunistring"
