@@ -24,7 +24,7 @@ class Cairo < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "fontconfig"
   depends_on "freetype"
@@ -73,24 +73,8 @@ class Cairo < Formula
         return 0;
       }
     C
-    fontconfig = Formula["fontconfig"]
-    freetype = Formula["freetype"]
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    libpng = Formula["libpng"]
-    pixman = Formula["pixman"]
-    flags = %W[
-      -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/cairo
-      -I#{libpng.opt_include}/libpng16
-      -I#{pixman.opt_include}/pixman-1
-      -L#{lib}
-      -lcairo
-    ]
+
+    flags = shell_output("pkgconf --cflags --libs cairo").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
