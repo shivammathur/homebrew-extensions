@@ -1,8 +1,8 @@
 class Libgcrypt < Formula
   desc "Cryptographic library based on the code from GnuPG"
   homepage "https://gnupg.org/related_software/libgcrypt/"
-  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.3.tar.bz2"
-  sha256 "8b0870897ac5ac67ded568dcfadf45969cfa8a6beb0fd60af2a9eadc2a3272aa"
+  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2"
+  sha256 "09120c9867ce7f2081d6aaa1775386b98c2f2f246135761aae47d81f58685b9c"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   livecheck do
@@ -11,14 +11,12 @@ class Libgcrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "170e800538f420a2e11b58cc8561b592b4cda07d5e6b76bd0edded6ef8d33192"
-    sha256 cellar: :any,                 arm64_sonoma:   "4cb7e27bd6c2531421aff6abe9a232ec6b6b074d70661ae2b2131992bea42845"
-    sha256 cellar: :any,                 arm64_ventura:  "7ed0f3acffe52376da207b2257249c899ebc5bf601f9d503e43092400a991e16"
-    sha256 cellar: :any,                 arm64_monterey: "ea034d81eb942145882668557e02d7d18460628af5c272d065dabd5a762dccf7"
-    sha256 cellar: :any,                 sonoma:         "b76b7d12d56c2db70d895c3babc24d909a39cd1e5af742ebb746b8485a0a9440"
-    sha256 cellar: :any,                 ventura:        "a632f697a152448256ec30b27cc46722ff734c8fbbb6e5d8976f1375e9f8fdfc"
-    sha256 cellar: :any,                 monterey:       "fca7474127331adde4cb1d4b1ca2d1e796a222941a166c9ed905dd6e85f0f571"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3e3d7d971a9b062d191e91488455eab709c6435c171b9642fd839c5c6303250"
+    sha256 cellar: :any,                 arm64_sequoia: "d6010619edaf0b17877797dc4beb14c1ccb423833e864bf9e2990cf4c21373ce"
+    sha256 cellar: :any,                 arm64_sonoma:  "7915e7cef1926e5d1613329f7972414c79824a5401034b01f858ed253dee0cbf"
+    sha256 cellar: :any,                 arm64_ventura: "53cba38f74d4eedbd8c74935b4b35f567f8f68455b8df38d66e5244f155c2ac8"
+    sha256 cellar: :any,                 sonoma:        "0b9a2f6ca55e36d113b8d3c2c6098fb0e66709624bf5d84aca682e26fb4da696"
+    sha256 cellar: :any,                 ventura:       "a2e2f896a1d89c8e7cecde7ba2a7f9a7e7470700b5b2ae88db5d4e26e18b14a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45ca7345d0a07b08c6802ff2d536235e5c8aa49592321faa4950611bb9ef8f87"
   end
 
   depends_on "libgpg-error"
