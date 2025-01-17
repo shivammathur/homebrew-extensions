@@ -11,12 +11,13 @@ class OpenMpi < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "c01948d46a7d4f21ae3e525edb3ef2c11a416ce754fa3afada59837b1aa6cfab"
-    sha256 arm64_sonoma:  "1b9c17dfafe3b8c4baa45936e0ab4a0b5ce53a1d21a1350d5bbf50e513ab395b"
-    sha256 arm64_ventura: "cde2b091f98b364ba6a8ea46015b2c3ca42fa6bb098a9609a0f8153971a43adb"
-    sha256 sonoma:        "25f8974a2c5ead1a0ec5a3e39a6b577c7ae86b2b4126554124f9279f01c4f53e"
-    sha256 ventura:       "3104a3972cb1f7ed08486a2656f88266e8d4a7f8fc6d8e325085a3cdbc94c98c"
-    sha256 x86_64_linux:  "192b5a87453c9389c8203c1651b693b2c98e50d1c4c559674a7c1232240436d6"
+    rebuild 1
+    sha256 arm64_sequoia: "ae388f3dc257fb94c8d6d9267e119143653111781e3538a74969dc6df170bb1c"
+    sha256 arm64_sonoma:  "4e2e7b020809bac8d48c5805a1900c1ad71296aa4e463cf857b51d738cb0959b"
+    sha256 arm64_ventura: "b52baf280c5e344aa64abd35a628feb2b05a1e6cd1074847bb8bf0df878cabf3"
+    sha256 sonoma:        "36f4d74db77b253b1e3d5cba4112b884c435d52f02f3d9306d239e76498e39bf"
+    sha256 ventura:       "b4eaa2a7ca07a41829f2b37d99fa29b4ae8d3327c18bf469fbc9f98fdb6cff2b"
+    sha256 x86_64_linux:  "0d45502c3b78d1e84f318ce0fdc0722e0630db7e2ac57efdb4da790b9ead9997"
   end
 
   head do
@@ -82,10 +83,20 @@ class OpenMpi < Formula
 
     # Avoid references to cellar paths.
     inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix, audit_result: false
+
+    # Avoid conflict with `putty` by renaming pterm to prte-term which matches
+    # upstream change[^1]. In future release, we may want to split out `prrte`
+    # to a separate formula and pass `--without-legacy-names`[^2].
+    #
+    # [^1]: https://github.com/openpmix/prrte/issues/1836#issuecomment-2564882033
+    # [^2]: https://github.com/openpmix/prrte/blob/master/config/prte_configure_options.m4#L390-L393
+    odie "Update configure for PRRTE or split to separate formula as prte-term exists" if (bin/"prte-term").exist?
+    bin.install bin/"pterm" => "prte-term"
+    man1.install man1/"pterm.1" => "prte-term.1"
   end
 
   test do
-    (testpath/"hello.c").write <<~C
+    (testpath/"hello.c").write <<~'C'
       #include <mpi.h>
       #include <stdio.h>
 
@@ -97,7 +108,7 @@ class OpenMpi < Formula
         MPI_Comm_size(MPI_COMM_WORLD, &size);
         MPI_Comm_rank(MPI_COMM_WORLD, &rank);
         MPI_Get_processor_name(name, &nameLen);
-        printf("[%d/%d] Hello, world! My name is %s.\\n", rank, size, name);
+        printf("[%d/%d] Hello, world! My name is %s.\n", rank, size, name);
         MPI_Finalize();
         return 0;
       }
