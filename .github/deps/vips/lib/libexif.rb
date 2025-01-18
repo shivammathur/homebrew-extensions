@@ -1,22 +1,22 @@
 class Libexif < Formula
   desc "EXIF parsing library"
   homepage "https://libexif.github.io/"
-  url "https://github.com/libexif/libexif/releases/download/v0.6.24/libexif-0.6.24.tar.bz2"
-  sha256 "d47564c433b733d83b6704c70477e0a4067811d184ec565258ac563d8223f6ae"
+  url "https://github.com/libexif/libexif/releases/download/v0.6.25/libexif-0.6.25.tar.bz2"
+  sha256 "7c9eba99aed3e6594d8c3e85861f1c6aaf450c218621528bc989d3b3e7a26307"
   license all_of: ["LGPL-2.1-or-later", "LGPL-2.0-or-later"]
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
-    sha256 arm64_sequoia:  "df36ccbc1e0580aabd7dc8bb37d092f961473d49e8731e0a35a5f675b44fa4f7"
-    sha256 arm64_sonoma:   "576b58859b1716d6e828174b0ffef8e34e33b8dab31230750402007f8a242086"
-    sha256 arm64_ventura:  "07c1f865b09e4e77513478147dd0ac074dfcb9cfed61fe6322677f60448b7425"
-    sha256 arm64_monterey: "b71456dcf43a1697530075ed530dd4561e921de1ef9ac872ae173fb3c4b70596"
-    sha256 arm64_big_sur:  "89e01320edd8d164b9a885c8f72b08215e175cece967f6c86a9bcf472e4d85bc"
-    sha256 sonoma:         "334879fc5fb0a4d47e33af9e1d6cf01434c5de0473a26c544875b4b03a585a98"
-    sha256 ventura:        "4c9a1d5ccb014a53709b251a51411d3f9269f1bd3226013e5d85ede67fec37c5"
-    sha256 monterey:       "b49a9f852c06e2a0df9310f0e550d952cd0ae0a675a3a2eab44a51583a8089bb"
-    sha256 big_sur:        "e8f4e1e32cba740b59dd9dfeea98c45d6fecfb3e5f52553da7963c92a83bc632"
-    sha256 catalina:       "ebbc780bac1eac5bf0afb384a36eea408e8dc35369558b256eea4283ff2c0c39"
-    sha256 x86_64_linux:   "9a72e30a88de8a164a4b249e181747639b9b2e2fc2b089f0e1cbaf850d6a0acb"
+    sha256 arm64_sequoia: "db630e3ebf4c47a7c96f14e8edf29eaf88d89fbe2b0fb6737e1babdc39c230da"
+    sha256 arm64_sonoma:  "a70285c25d276538094060000acea0828c0f0f287c5bea731b780f3a6d8357aa"
+    sha256 arm64_ventura: "44869b2f698103429ec8a0f46613fa6acf144a1e5b237addadb1902cc482e8fd"
+    sha256 sonoma:        "4ccd8b1a418d04e1991120ffb36e82b75dc255b3d652371f93b47032c4f5d829"
+    sha256 ventura:       "2fe6759911975daa49a08569542b4ca535310b6260112dbf8b34f97247632980"
+    sha256 x86_64_linux:  "1426d9fdac3dcf9359098176fa0a8477c0b3fb05bae374e5fa9daedf3142aead"
   end
 
   head do

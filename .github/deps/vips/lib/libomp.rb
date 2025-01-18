@@ -33,6 +33,10 @@ class Libomp < Formula
   resource "cmake" do
     url "https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/cmake-19.1.7.src.tar.xz"
     sha256 "11c5a28f90053b0c43d0dec3d0ad579347fc277199c005206b963c19aae514e3"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install
