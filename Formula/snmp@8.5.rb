@@ -16,12 +16,12 @@ class SnmpAT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 7
-    sha256 cellar: :any,                 arm64_sequoia: "75e589bc05b5024e9a8815056fcbed5082b6b2a7d2601c922702cf65cd4347ba"
-    sha256 cellar: :any,                 arm64_sonoma:  "d7fef05c69756d85103173cb3a08031dffa8c74ad4e7c28f13dba64931fc3cca"
-    sha256 cellar: :any,                 arm64_ventura: "6c97f6fc34dac02004a9c882582d0a1412a13347e3777e226f06fa93a4313f03"
-    sha256 cellar: :any,                 ventura:       "b2ec5cfbbf38b3b9a41b366979d5b554841003a9e712017109eec95fb2eae9c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dced7378ce32f493a884e2739a32b3588aa5be4a048e1e7154e27be0423a458"
+    rebuild 8
+    sha256 cellar: :any,                 arm64_sequoia: "c9180215b2c9c2afe77d845d8057df2aa982bbdb4397f66eac4fae5e57de38f1"
+    sha256 cellar: :any,                 arm64_sonoma:  "01ff354dc6ea50ea31d187906afcfcd2d36ec9f0970b809af4ce6305b4d741ba"
+    sha256 cellar: :any,                 arm64_ventura: "12b013b29a6f9006baade125e1e9d9e62945b1ddd61754198077258bd4aae6cd"
+    sha256 cellar: :any,                 ventura:       "c5e8a6c003d72f48c8474a0aca97a2bc65239e138736ee6662815faa35b27638"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37c0ac289e47c6336a700ed29457909af866ec83eca155370e35e949bed1a5bd"
   end
 
   depends_on "net-snmp"
