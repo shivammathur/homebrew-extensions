@@ -4,7 +4,7 @@ class Fftw < Formula
   url "https://fftw.org/fftw-3.3.10.tar.gz"
   sha256 "56c932549852cddcfafdab3820b0200c7742675be92179e59e6215b340e26467"
   license all_of: ["GPL-2.0-or-later", "BSD-2-Clause"]
-  revision 1
+  revision 2
 
   livecheck do
     url :homepage
@@ -12,17 +12,12 @@ class Fftw < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "d506a2d2ca1b49fdfe64bf2ffca4fca70f7e86d4e1006979dabcde37fc359c9b"
-    sha256 cellar: :any,                 arm64_sonoma:   "0bb0537238a59cc4677738091ec67b65e7bd12fafe3072e091e20a1143232322"
-    sha256 cellar: :any,                 arm64_ventura:  "f118b9b10a302aaa0a937b9c3004a1610a522f365022ab12e90e7ee929823ff4"
-    sha256 cellar: :any,                 arm64_monterey: "ac39928c08c6cec08f61b31c37ea69be21f6020c5c50bbdc66751fc1907ee600"
-    sha256 cellar: :any,                 arm64_big_sur:  "de50d4cd3e5de39ccbc168a8eb8555f9e36609198c9e4f91c1d1da122674d066"
-    sha256 cellar: :any,                 sonoma:         "3a0edb94f8ab04e42f953dc408ff0e7dcee211771091dcb6db93f9cfca79ae0a"
-    sha256 cellar: :any,                 ventura:        "31e8c75b13d33a17164163f3c5f5bb6605e26b2328a617696b0fae5aa08e8ad4"
-    sha256 cellar: :any,                 monterey:       "dc7a704928be8c4724db42be3161aebf3f0d3b8e0f79e893bc1b294aed4ca770"
-    sha256 cellar: :any,                 big_sur:        "bd3ae1b553913b3b627bd1af592d84da4c6a93e45dde5af4df7c393564b0f174"
-    sha256 cellar: :any,                 catalina:       "f2b0548dfd646545af732cb6ee7f1d58c1950067e4f7fd558655fb388e464897"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2b552eb0c8d31f577713c2e39ed6a22bd430d30d430d242767f253057839dca"
+    sha256 cellar: :any,                 arm64_sequoia: "9a89853940caaca128e46545d3999540ea0723767c8ef8245db8f2419a1b2565"
+    sha256 cellar: :any,                 arm64_sonoma:  "a1105be9ac0dd78978175a1b07b8ef429bf3d3c9074ad39a128fe5f01b910feb"
+    sha256 cellar: :any,                 arm64_ventura: "32a67cfa0e6452c6a8cba5ab8f0cf337ef1f3cb1f55125443332b930c7a307d7"
+    sha256 cellar: :any,                 sonoma:        "8b8af4f154be3b186932fd0050840760227958399093cee5241455194faf7505"
+    sha256 cellar: :any,                 ventura:       "70d0f25e977df25d22f29010ccfb0c4be49438f0b35f525acff56fa7f29c15dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d30800e3ad1513ceb764c62303bb2011a04256a0080b13f9e7803cfc1a4fa43"
   end
 
   depends_on "open-mpi"
@@ -32,6 +27,12 @@ class Fftw < Formula
   end
 
   fails_with :clang
+
+  # Fix the cmake config file when configured with autotools, upstream pr ref, https://github.com/FFTW/fftw3/pull/338
+  patch do
+    url "https://github.com/FFTW/fftw3/commit/394fa85ab5f8914b82b3404844444c53f5c7f095.patch?full_index=1"
+    sha256 "2f3c719ad965b3733e5b783a1512af9c2bd9731bb5109879fbce5a76fa62eb14"
+  end
 
   def install
     ENV.runtime_cpu_detection
