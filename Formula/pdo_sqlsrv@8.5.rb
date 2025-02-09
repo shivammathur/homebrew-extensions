@@ -26,6 +26,10 @@ class PdoSqlsrvAT85 < AbstractPhpExtension
 
   def install
     Dir.chdir "pdo_sqlsrv-#{version}"
+    inreplace "php_pdo_sqlsrv_int.h",
+              "zval_ptr_dtor( &dbh->query_stmt_zval );",
+              "OBJ_RELEASE(dbh->query_stmt_obj);" \
+              "dbh->query_stmt_obj = NULL;"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-pdo_sqlsrv"
     system "make"
