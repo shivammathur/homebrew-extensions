@@ -17,6 +17,7 @@ class Pkgconf < Formula
     sha256                               arm64_sequoia: "6b946f8b716f639a88b6fb05fadf57de8309a53d04d4daef93dda1365f0222e3"
     sha256                               arm64_sonoma:  "bee6257d97fd7331e4b6c1bc7f150a230d7f2f49e9104cf98cc52e04c26fb69d"
     sha256                               arm64_ventura: "a4b704e993c8129fb60951d175733f3d5eb34d3b5bc7c56695b41dab0aa4a047"
+    sha256                               sequoia:       "cf5bc095ae9bac5ff2782bf23d0720a2d38acebd59d3ea6a9b9dd34022b67bb8"
     sha256                               sonoma:        "fb3a6a6fcba8172e5e7512080ff0fb802526e4a93c384508d2e4031bd297e697"
     sha256                               ventura:       "3f6b06fa2e6d99fbd6607c32691b1d7fcab827c80a81d70b01264d922aea040c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "67699e7fc430708e7e591e1af5d088e719293018e87a9bccd664ad401f18b6f2"

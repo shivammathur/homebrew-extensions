@@ -1,8 +1,8 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.1.tar.bz2"
-  sha256 "ea05d0258e71061d61716584ec34cef59330a91340571edc46b78374973ba85f"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.2.tar.bz2"
+  sha256 "e11b1a0e361777e9e55f48a03d89096e2abf08c63d84b7017cfe1dce06639581"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4817886d1fd2a4bfaa9b895ef0a57ae83b2728ed2ccf4430a6c46ea130764a14"
-    sha256 cellar: :any,                 arm64_sonoma:  "647b8377a6821214e63e6367692acf707217c2f961cc682727dd855a5a1ae13e"
-    sha256 cellar: :any,                 arm64_ventura: "25c16405a157103f48b918a8205c2bc6329a58de7ac1a40e6d47c63ab76e5763"
-    sha256 cellar: :any,                 sonoma:        "ada24cc3c379aab878c538753ce1d112d2a5d7ac43a521755ade797eb984100d"
-    sha256 cellar: :any,                 ventura:       "9654900d27991ce8b5f69d2ef5010237b2a47b5d12fd108ae9da8adc94654646"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7484caa7a112dc0d76711a3861dcac6cd8c48d3125317b8330e03dbca15e0c0a"
+    sha256 cellar: :any,                 arm64_sequoia: "f050cd4be93a9a506d374f44be63b13f0063bea568c7508c947be36cd4fcf510"
+    sha256 cellar: :any,                 arm64_sonoma:  "243da3ea18b40219a0e492c3134b227964de1d7f2509e0f4c1cb9f0732865293"
+    sha256 cellar: :any,                 arm64_ventura: "62377cb3e11c7a85073332bb74b41b95fefe78cb19e5b93d4f42d9907474da28"
+    sha256 cellar: :any,                 sonoma:        "a04dc7c0d5059dbf98dee9468fb4ea7f417c00b81fa1a4ae4050f95f60f9e7c9"
+    sha256 cellar: :any,                 ventura:       "37e0d6e8cb0e550287cb803d3ec681714946620e25fb33db1fb0d1d90c3307f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baea5b8942625d34400cec21d2c90952b265847fd0bc01cb5294eea63eb6993b"
   end
 
   depends_on "python-setuptools" => :build

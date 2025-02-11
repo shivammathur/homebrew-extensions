@@ -18,6 +18,7 @@ class Sqlite < Formula
     sha256 cellar: :any,                 arm64_sequoia: "a91a65a3ba87aa27d72f88b2d390119c68fd70808bdb6e052ec90e6a9ae410cc"
     sha256 cellar: :any,                 arm64_sonoma:  "dabadec36af0936ea2271e30c9c0debf5400b33a5e494ef22d577edb3aa9e04d"
     sha256 cellar: :any,                 arm64_ventura: "9a21952b5fc721e40a60e733cc86d3aea9781abaccbe8d8c56ebfb7b642fcdf2"
+    sha256 cellar: :any,                 sequoia:       "ca6b22d1ff3554c652229f4ddb9c04bee0168fe88193173e9a901bb0f9309a3b"
     sha256 cellar: :any,                 sonoma:        "d3adb49dbd199ab48cf0f79ff2b796c074b2c0ac4ec0e9eaa3b0c7a2c7c50cb6"
     sha256 cellar: :any,                 ventura:       "e815e1bcaa86dbeff68ce9d00093be91884da3b20652fdf1dfff4fa9427da526"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7b98407d745abc5b56519d93267b67ccc0e3593c1415b0b62df779f2089eb97"
