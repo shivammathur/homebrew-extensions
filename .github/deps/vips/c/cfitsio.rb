@@ -12,12 +12,13 @@ class Cfitsio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e6139f7d1a4dfe717577e7226a84a1dd5d8d42040cc0a7c8354a75256b2b10d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e7e4fda58375d9d078b921619e56faf26bd292929efe86d92b71eb87ff1d0b8"
-    sha256 cellar: :any,                 arm64_ventura: "d35c85a73544d6203d2b3f56ca42442df061a0a6e51c9a4afe3f98ca2d9345aa"
-    sha256 cellar: :any,                 sonoma:        "bd4d8e9a2605a35c33e104e61a9e698779b24436dcc034c71971b4710a6f9ddc"
-    sha256 cellar: :any,                 ventura:       "89f00358a0b2e72c71145d284ad6a87e9a83ad21bac6dafdf1030b486421f579"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c62d02305a42040e5955fa82615f4b7be982d511cc166fbc85a0febbead1be5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "f75cf3efeae1f14e2f2a0e9bd613589b54b234d1f62d070cdf7655a664cefdc2"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b409af1b20a62e3cf0ac4b28d98710587fef00cedf2f0bcc15c5d9bd4495c1c"
+    sha256 cellar: :any,                 arm64_ventura: "6a810dabb0c64415cbd0d60fd14a7a0b1c9b778b03dacd5dd8c4a16e1b838be0"
+    sha256 cellar: :any,                 sonoma:        "7bb2a07deb32043204d42936bae06e59f6b05b35c5b692c756cc424d9d245a55"
+    sha256 cellar: :any,                 ventura:       "c2527d9855893cf751c2042b1f1ddc5e8ecc5cb3ccdbac007ffb36ed53510e3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90f174222a9f4dbc222ae1edee97a9dab1dc905cd37c2cdc3590dd60979250d9"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +31,7 @@ class Cfitsio < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DUSE_PTHREADS=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

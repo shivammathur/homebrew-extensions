@@ -3,8 +3,8 @@ class LittleCms2 < Formula
   homepage "https://www.littlecms.com/"
   # Ensure release is announced at https://www.littlecms.com/categories/releases/
   # (or https://www.littlecms.com/blog/)
-  url "https://downloads.sourceforge.net/project/lcms/lcms/2.16/lcms2-2.16.tar.gz"
-  sha256 "d873d34ad8b9b4cea010631f1a6228d2087475e4dc5e763eb81acc23d9d45a51"
+  url "https://downloads.sourceforge.net/project/lcms/lcms/2.17/lcms2-2.17.tar.gz"
+  sha256 "d11af569e42a1baa1650d20ad61d12e41af4fead4aa7964a01f93b08b53ab074"
   license "MIT"
   version_scheme 1
 
@@ -18,13 +18,12 @@ class LittleCms2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "ca8251ccf62b685661dbec30548774e27c9d0fbcd5fc656993b2689a09ac5eb2"
-    sha256 cellar: :any,                 arm64_sonoma:  "b607bb445fb9a11ee2fb8ff80748d6213adb5819cf0f2c680bf075cd2f192632"
-    sha256 cellar: :any,                 arm64_ventura: "4b0f277b9e10759f8987455ffba6c9bd6223bdd78d91581e5f42e2cac64ac268"
-    sha256 cellar: :any,                 sonoma:        "39b4f4d4508587316f9e65a69146de2f79d562fe33993819527c666cd636e732"
-    sha256 cellar: :any,                 ventura:       "c125594c81f2ed6d880c471eed83efe94e92bf7975515b4814441b90c8847a02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54d4aa2b4c4801a8bc575661e5db6c676bf7acb531a6fd0bba49b15366231546"
+    sha256 cellar: :any,                 arm64_sequoia: "3827b5a8583f0e92987bd0e7c721bda834157ad366d2cb66596559dd8654c9ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "aeb24e3f0d025808da8a3c0d9c4e42b0aa58a3dbc51813baf90940fcddf20be9"
+    sha256 cellar: :any,                 arm64_ventura: "a4edffc61a638164f92c20dbb084eb00a82ce81cb2e58aa18ad5f1d73c843c5e"
+    sha256 cellar: :any,                 sonoma:        "6f3a75284dcdd815c90822ac2d7ca5da326f9b1caa429b57bc95bc1f49d76881"
+    sha256 cellar: :any,                 ventura:       "0d73b47c0c2bc4974127934587472e9a6a7dc1c54ef6eaa409f64c99568c2edc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "667006576a5da32e7984c0c310cba11d63970e9f4f501200ef949ab9b0559709"
   end
 
   depends_on "jpeg-turbo"
