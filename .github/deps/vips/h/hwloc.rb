@@ -1,8 +1,8 @@
 class Hwloc < Formula
   desc "Portable abstraction of the hierarchical topology of modern architectures"
   homepage "https://www.open-mpi.org/projects/hwloc/"
-  url "https://download.open-mpi.org/release/hwloc/v2.11/hwloc-2.11.2.tar.bz2"
-  sha256 "f7f88fecae067100f1a1a915b658add0f4f71561259482910a69baea22fe8409"
+  url "https://download.open-mpi.org/release/hwloc/v2.12/hwloc-2.12.0.tar.bz2"
+  sha256 "06a0a2bdc0a5714e839164683846a0e936a896213758e9d37e49e232b89c58d4"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Hwloc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5e06b0910951fc93871258bc0470121dee0d30b8648a3486f28560b11b113aa4"
-    sha256 cellar: :any,                 arm64_sonoma:  "3326ee8e9bc54d139eef489ace43a53cc0ea4bb1791cadef30f8ac7072923958"
-    sha256 cellar: :any,                 arm64_ventura: "a9f8c1727ac42f73b51b014f71d0682200e7b08e3f46ed2e03a1db47ba58525a"
-    sha256 cellar: :any,                 sonoma:        "2b05c795f132fb9cba84ec4b2e3b66ab3b8d819b807b3777dafe9b9e3dda1327"
-    sha256 cellar: :any,                 ventura:       "02ca60d14701ebf17edfb09ce815dce1babf56006225d0b345223537fb9e8760"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68ac02a2a9f8af59f6f453515f445c30a106c6cd34b2d947d6be71af103e96c5"
+    sha256 cellar: :any,                 arm64_sequoia: "abc5173fdb1e8441a701efb7d3ae8f9214952cbf16e5da71d5a0f9656a0702ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "c60af835426f941a9a9afdb3174c89f3af17d305c269938bc278330fd0f4002b"
+    sha256 cellar: :any,                 arm64_ventura: "8d669ce99bbc2ec2cccbaffc8c40de2699e8987270fe2268b3d943f18aade700"
+    sha256 cellar: :any,                 sonoma:        "c225a90c17d6d38736b9e1a74ee85b63b0a86888c4dbf5935ff28b25b5240e50"
+    sha256 cellar: :any,                 ventura:       "8e2f1a677f6982f2ad8517a1114bfb773356fc14c5c81a8da77c14b10a5aef45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8fe14dfbcabf567c091b5d2a026546525665f76cf201f93064eddf49c146160"
   end
 
   head do
