@@ -8,13 +8,13 @@ class Glib < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "cb7e1e45b994e3bf05cc2b21427368d9e417589017786f789c7aefa585b2c0b3"
-    sha256 arm64_sonoma:  "26c4a5cd06dc075dabe28e94dba63742d881343d4fde244b29126086eefb3711"
-    sha256 arm64_ventura: "7108b33ae6d63a669c4bc13a60c2c664b5498691c5dcdb3d40e0e8fbd66a0585"
-    sha256 sonoma:        "1c127e38938c337d06f4dcbee381249f5caee71ae479d2c69c2fe37aad02d0f6"
-    sha256 ventura:       "d13fc9b102ae989dcc0da96b2162269020479da5523f3df1d3d05373345a7ae2"
-    sha256 x86_64_linux:  "275da32f00d6860c91be2ece5094c320638252f1a066fd53ba891ecd378e694e"
+    rebuild 2
+    sha256 arm64_sequoia: "3dd032d1978adb4b1cf801c02b278ab430afc0dc893bd0f3edce5a5760a7c476"
+    sha256 arm64_sonoma:  "8a69737dcf16d172b8c0b5e9fba91ff7aae9ad55451c5b6476c989023b4ac872"
+    sha256 arm64_ventura: "55572696d934d71b9d69b69446b0c05e61a0f8632d842c8833ce85fff57bda00"
+    sha256 sonoma:        "6a2bf01e7cbb06e8193daed7182b6f8af724c04136ad847a33235fc426ba56e8"
+    sha256 ventura:       "1950cda37b931bde73fb608546efd096970055d8b5501abc1adc4c9dfc767491"
+    sha256 x86_64_linux:  "d7530b29cb310116fddf8aede139354881d8d4e8f435bb6666fb8b5828731699"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -22,17 +22,19 @@ class Glib < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python-setuptools" => :build # for gobject-introspection
   depends_on "pcre2"
-  depends_on "python-packaging"
-  depends_on "python@3.13"
 
   uses_from_macos "flex" => :build # for gobject-introspection
   uses_from_macos "libffi", since: :catalina
+  uses_from_macos "python", since: :catalina
   uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_system :linux, macos: :mojave_or_older do
+    depends_on "python-setuptools" => :build # for gobject-introspection
   end
 
   on_linux do
@@ -54,6 +56,12 @@ class Glib < Formula
     sha256 "0f5a4c1908424bf26bc41e9361168c363685080fbdb87a196c891c8401ca2f09"
   end
 
+  # Backport PATH python shebang rather than manually rewriting
+  patch do
+    url "https://gitlab.gnome.org/GNOME/glib/-/commit/160e55575e2183464dbf5aa733d6c2df3c674c4c.diff"
+    sha256 "29b178b53a9a636ca9538ee97e20838b9942d24018d6679d3cc29e59b3b6c0c1"
+  end
+
   # replace several hardcoded paths with homebrew counterparts
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/b46d8deae6983110b4e39bb2971bcbd10bb59716/glib/hardcoded-paths.diff"
@@ -61,12 +69,8 @@ class Glib < Formula
   end
 
   def install
-    python = "python3.13"
     # Avoid the sandbox violation when an empty directory is created outside of the formula prefix.
     inreplace "gio/meson.build", "install_emptydir(glib_giomodulesdir)", ""
-
-    python_packaging_site_packages = Formula["python-packaging"].opt_prefix/Language::Python.site_packages(python)
-    (share/"glib-2.0").install_symlink python_packaging_site_packages.children
 
     # build patch for `ld: missing LC_LOAD_DYLIB (must link with at least libSystem.dylib) \
     # in ../gobject-introspection-1.80.1/build/tests/offsets/liboffsets-1.0.1.dylib`
@@ -117,7 +121,6 @@ class Glib < Formula
 
     (buildpath/"gio/completion/.gitignore").unlink
     bash_completion.install (buildpath/"gio/completion").children
-    rewrite_shebang detected_python_shebang, *bin.children
     return unless OS.mac?
 
     # `pkg-config --libs glib-2.0` includes -lintl, and gettext itself does not
