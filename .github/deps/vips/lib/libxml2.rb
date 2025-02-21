@@ -4,8 +4,8 @@ class Libxml2 < Formula
   license "MIT"
 
   stable do
-    url "https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.5.tar.xz"
-    sha256 "74fc163217a3964257d3be39af943e08861263c4231f9ef5b496b6f6d4c7b2b6"
+    url "https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.6.tar.xz"
+    sha256 "f453480307524968f7a04ec65e64f2a83a825973bcd260a2e7691be82ae70c96"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -27,13 +27,12 @@ class Libxml2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "4d0ac59958e6419780e35d2fffbec29e5bd1d3ba362c96c75fee9189a7440258"
-    sha256 cellar: :any,                 arm64_sonoma:  "6161bd132be3cf4f57a36f52196ff8e2efc9e12873a66eb106a36e1b547d4a3f"
-    sha256 cellar: :any,                 arm64_ventura: "bc0e89b3d940e145df2e6d3ee0fa6c745e79a6c2144c7959051ddbb016ab571a"
-    sha256 cellar: :any,                 sonoma:        "7b95ba4610395555dbb0736841982dae7fc09b130caa275bfb869d9d63e12f68"
-    sha256 cellar: :any,                 ventura:       "8607ad0853593b9bd9e98e97bb985361da9fcd9d1a89072cbfe560e7d97f8e75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c2c19bb2047f396a5620e50d5f6ddf4ec49fb2e8ef50b27d12c7898ef63618c"
+    sha256 cellar: :any,                 arm64_sequoia: "674576ac834e127f3938d10c6edcacce4892f789f80d61dee4f9d0f47aef398f"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b0519464a06fe588c8b8aab0052852369250f82f2ebc91bc6325876bea4e1e8"
+    sha256 cellar: :any,                 arm64_ventura: "060d66e316935cbdab9232ad6e68568d38c320a437e212c4e540b508d37107e4"
+    sha256 cellar: :any,                 sonoma:        "6df0aa4c5a0875ea3123b1c1542bd37b0555119a95dcc4f1499fd4833026f937"
+    sha256 cellar: :any,                 ventura:       "b600fe412e38deecdd01ef52feeb9a605d1926d68add75d84ebaa1e2f6e92bf5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abe7dbf126d30007a06f9c23cfd43fe9c5e84f244de59b33e4c172db8ed74a1e"
   end
 
   head do
