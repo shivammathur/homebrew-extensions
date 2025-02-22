@@ -1,9 +1,9 @@
 class Libpng < Formula
   desc "Library for manipulating PNG images"
   homepage "http://www.libpng.org/pub/png/libpng.html"
-  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.46/libpng-1.6.46.tar.xz"
-  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.46/libpng-1.6.46.tar.xz"
-  sha256 "f3aa8b7003998ab92a4e9906c18d19853e999f9d3bca9bd1668f54fa81707cb1"
+  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.47/libpng-1.6.47.tar.xz"
+  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.47/libpng-1.6.47.tar.xz"
+  sha256 "b213cb381fbb1175327bd708a77aab708a05adde7b471bc267bd15ac99893631"
   license "libpng-2.0"
 
   livecheck do
@@ -12,12 +12,12 @@ class Libpng < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "611e6044865656846804200a1fd64c1a2d509b9475a83cb9251f8947ed972b5b"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a44a2e8483ea80c3c785d817571885b1fd69796d50c9fde219000db0ba3b0fc"
-    sha256 cellar: :any,                 arm64_ventura: "c780af18d0dacace83df8ee015e9c01caa9f158f94d7a9a4090d6b07cb31633a"
-    sha256 cellar: :any,                 sonoma:        "34fde4703af6d8af9f765843eef9d3f6b3e6cd9575e77b9056c4748e7d5e26c8"
-    sha256 cellar: :any,                 ventura:       "0c6a41266b6f59ee539b7b60d763d3b9fadad6d0e9621ea1512bd1bfd85b48a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c282107afe3641f96eeecfec0cab9160ea429d03534a708e1efd1f7d87c4397c"
+    sha256 cellar: :any,                 arm64_sequoia: "b4a7f252793b6a2d9d111cecaf5f0c91fd91d9c1c174a8796a487621a05f6f24"
+    sha256 cellar: :any,                 arm64_sonoma:  "7f70c8ad51ae4da8e25564523c6e4eaf684693d61009246f11ea4e86e6a4e73b"
+    sha256 cellar: :any,                 arm64_ventura: "df1cb9573402b54fc2734ef48a046c9dcfe5dad5e13299882b2e8ce1f926b0e9"
+    sha256 cellar: :any,                 sonoma:        "d5f62a5676999c7ad51c469dee4135b4760dec9170b6c44cbb64493617b7b090"
+    sha256 cellar: :any,                 ventura:       "45d50d4bd1acb8e6a3e3e072ec38679fd97dd81f8e950ed983c24c5452b45ab3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8593cf808ca5ac81c78627bec4bae8f761fdd4f773a82ff441875efcc2b1fb0c"
   end
 
   head do
