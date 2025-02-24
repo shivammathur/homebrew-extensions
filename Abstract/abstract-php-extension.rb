@@ -97,7 +97,7 @@ class AbstractPhpExtension < Formula
   class << self
     attr_reader :php_version, :extension
 
-    sig { params(val: T::Boolean).returns(T.nilable(T::Boolean)) }
+    sig { params(val: T.nilable(String)).returns(T.nilable(String)) }
     def priority(val = T.unsafe(nil))
       val.nil? ? @priority : @priority = val
     end
