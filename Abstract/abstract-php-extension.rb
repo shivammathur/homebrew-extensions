@@ -97,7 +97,10 @@ class AbstractPhpExtension < Formula
   class << self
     attr_reader :php_version, :extension
 
-    attr_rw :priority
+    sig { params(val: T::Boolean).returns(T.nilable(T::Boolean)) }
+    def priority(val = T.unsafe(nil))
+      val.nil? ? @priority : @priority = val
+    end
 
     def parse_extension(matches)
       @extension = matches[1].downcase if matches
