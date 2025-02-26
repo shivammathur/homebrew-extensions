@@ -7,12 +7,9 @@ class Icu4cAT76 < Formula
   license "ICU"
   revision 1
 
-  # We allow the livecheck to detect new `icu4c` major versions in order to
-  # automate version bumps. To make sure PRs are created correctly, we output
-  # an error during installation to notify when a new formula is needed.
   livecheck do
     url :stable
-    regex(/^release[._-]v?(\d+(?:[.-]\d+)+)$/i)
+    regex(/^release[._-]v?(76(?:[.-]\d+)+)$/i)
     strategy :git do |tags, regex|
       tags.filter_map { |tag| tag[regex, 1]&.tr("-", ".") }
     end
@@ -30,8 +27,6 @@ class Icu4cAT76 < Formula
   keg_only :shadowed_by_macos, "macOS provides libicucore.dylib (but nothing else)"
 
   def install
-    odie "Major version bumps need a new formula!" if version.major.to_s != name[/@(\d+)$/, 1]
-
     args = %w[
       --disable-samples
       --disable-tests
