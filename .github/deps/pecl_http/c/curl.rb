@@ -16,12 +16,13 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2663f0a1bfbe370da2a4296bdf3de05485d89d4d648b2cbe1f8eef664d13f66d"
-    sha256 cellar: :any,                 arm64_sonoma:  "457619db75a4738c92ff6a390eeee0899efdf5611f2c7763607cb9e77d274b94"
-    sha256 cellar: :any,                 arm64_ventura: "4bb7dd339d9bb3de5aa76bf6ca0ce01d869df99f820c92a6d5dbad2966091a2f"
-    sha256 cellar: :any,                 sonoma:        "2a9b5f610de1972e9305ed412fcf72ecfa6cf5f4471427e7a5a97c1f045f6aae"
-    sha256 cellar: :any,                 ventura:       "c4d9c6d0328ad469f248ac04d8560d27cf79c1974e4d5ce87e24290445f7006a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58d5e891a8712ac06e0b7df853081601e45f0c0ba271beea6956f7bfa96d48e9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "75de4d84a396868c3d3d54e46241fb40d7875ef9fc09ad35e718a666167505df"
+    sha256 cellar: :any,                 arm64_sonoma:  "e503e72b7abf7710b3ba4e9b7d7e157e88d3d64291d9cb2b8a3048976a6cd9b7"
+    sha256 cellar: :any,                 arm64_ventura: "f6eb860f4682ca3b7a179900c4dfc26d478a8d6e034037cbff6e720f32868fc1"
+    sha256 cellar: :any,                 sonoma:        "548929dc8ff10764399f0395a68ac7093988e3db91d7a8a489cb14d2190ac550"
+    sha256 cellar: :any,                 ventura:       "bdf9ac1b882c1f1ede2fbd95ed66b6b96b6292b71ae44c758ee94edfbfe2dbdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "000fcb36884bef88b07da1e2ae01370215b746a02d345a9c83d83e203fb2c569"
   end
 
   head do
@@ -57,7 +58,7 @@ class Curl < Formula
            "Please make sure the URL is correct."
     end
 
-    system "./buildconf" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
     args = %W[
       --disable-silent-rules

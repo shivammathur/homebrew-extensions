@@ -6,14 +6,13 @@ class GdkPixbuf < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sequoia:  "ed8778a0516a3998bc1522378a4391750c6e105611ae6ac9a062950ce6a43dc1"
-    sha256 arm64_sonoma:   "25939bb8cc913348f52c3c72ad16089b15cd2293397b3a9a4bcec90dbd409987"
-    sha256 arm64_ventura:  "b5d7e955fda95853264840a0f05fa7c9f1d7b45a08e0d1b4bcf15c16b3c03820"
-    sha256 arm64_monterey: "a32e123ccc804f092841336600e33fc67c6ac912d5aee8f99465afd7390014db"
-    sha256 sonoma:         "3e7266d92df1d8a3afde5e67030878a610ede9d9dfa75572e54dcb74d5779cdc"
-    sha256 ventura:        "80e5eacf286d8371d7fcc13cc9b79d4612ded6d0db3398c5741790174ae70f85"
-    sha256 monterey:       "8949303fe5fe4f755cdde41339de6485b4fc0da74b9991eafb78eabe6fe38e1e"
-    sha256 x86_64_linux:   "1acee0ae28b67cd12f744e7923ff8a5e8c9396777af0bb661089b6e33492b8b3"
+    rebuild 1
+    sha256 arm64_sequoia: "bd7c665da295988ddc8fe13de0c2c70b0624ee9e235ab3b876e607f716a5e770"
+    sha256 arm64_sonoma:  "5f80c2ff70f3e6f7b0c6f052a3c19ac3c76022921b21455b41b51d133a17ab07"
+    sha256 arm64_ventura: "dfcb1fb233c3947a53c70f41539b01e7159d7cb9b9af1e4c317b7cc2c9038b7b"
+    sha256 sonoma:        "4f7f41b6668186d38484a0e09b93cbdc3c190e8a74e52d9a9e99abb4bb438df3"
+    sha256 ventura:       "aa3248566adb884512647eb9c9c932e3e0f32b0754f73f122e89d47c7879aed4"
+    sha256 x86_64_linux:  "1c2f6a7664949639803322ce3a043ba88f22034808fa6fb6f4a1d0155ef41be8"
   end
 
   depends_on "docutils" => :build # for rst2man
@@ -71,9 +70,7 @@ class GdkPixbuf < Formula
     # Other packages should use the top-level modules directory
     # rather than dumping their files into the gdk-pixbuf keg.
     inreplace lib/"pkgconfig/gdk-pixbuf-#{gdk_so_ver}.pc" do |s|
-      libv = s.get_make_var "gdk_pixbuf_binary_version"
-      s.change_make_var! "gdk_pixbuf_binarydir",
-        HOMEBREW_PREFIX/"lib/gdk-pixbuf-#{gdk_so_ver}"/libv
+      s.change_make_var! "prefix", HOMEBREW_PREFIX
     end
   end
 

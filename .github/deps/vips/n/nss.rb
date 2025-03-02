@@ -1,8 +1,8 @@
 class Nss < Formula
   desc "Libraries for security-enabled client and server applications"
   homepage "https://firefox-source-docs.mozilla.org/security/nss/index.html"
-  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_108_RTM/src/nss-3.108.tar.gz"
-  sha256 "a0f6fcb5dbadc1635b43827517a979e3a6d005d0788527802a6b31e2c5f66eec"
+  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_109_RTM/src/nss-3.109.tar.gz"
+  sha256 "bea46c256118cd8910202f05339627d75291f13b80054527df58419b9d29c18b"
   license "MPL-2.0"
 
   livecheck do
@@ -14,12 +14,12 @@ class Nss < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0c481cd9c0abeb317faa49ed1ee686a7729d85236363bc9fcea4600d85d544c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "e1fa78dce4497bb8477818df0f817f30660e8ffcfa503dca9ddabdc8b48030d2"
-    sha256 cellar: :any,                 arm64_ventura: "fcd397d8e2b51433daa24e87cb9979cc8aa392dbe643a9c0aed0e66c3cec91aa"
-    sha256 cellar: :any,                 sonoma:        "779332613bcfd21d9b02554cdfc9e0255a4095c85c6f39f8fe86d0a024ca01ef"
-    sha256 cellar: :any,                 ventura:       "b65f92e42d89038afe4cb9ab9e2b24e0d23d564d9184556fec71d4e980e93954"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7572ae7c53c7f68a426fefdb68a5c8457e59b915bc383c5c2cd65f97e43bf759"
+    sha256 cellar: :any,                 arm64_sequoia: "b478d21a9015b22d000c2b1c63a9ea73fcba94cc23845743ec0b68681ad00118"
+    sha256 cellar: :any,                 arm64_sonoma:  "f46e6052c58e4407c78a61b545e851e7b81c153c69a17672959df3f26627dbb3"
+    sha256 cellar: :any,                 arm64_ventura: "839645c865fc721ec618fc3f4d1f7c41b851c5204e3ff95a30e245c2b1f66d7b"
+    sha256 cellar: :any,                 sonoma:        "1f6ff419e3e6ba90bae75de7c8cc73740fa891163b40ad82f565cddc15551a69"
+    sha256 cellar: :any,                 ventura:       "6c53c7b61fb28fcc200538ba237d3279e48b50139202bfa5c798b42123ddc3f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd80182c04091a5b45fdaa187545fb9b92db5267e4d08ee25c735939fa319951"
   end
 
   depends_on "nspr"
