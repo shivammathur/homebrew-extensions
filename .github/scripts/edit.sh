@@ -2,8 +2,8 @@ fetch() {
   REPO="$(grep '^  homepage' < ./Formula/"$VERSION".rb | cut -d\" -f 2)"
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   if [[ "$EXTENSION" =~ event|expect|gnupg|imagick|imap|mcrypt|pcov|snmp ]] ||
-     [[ "$VERSION" =~ (amqp|mongodb)@(7.4|8.[0-5]) ]] ||
-     [[ "$VERSION" =~ (couchbase|phalcon5|swoole)@(8.[1-5]) ]] ||
+     [[ "$VERSION" =~ (amqp)@(7.4|8.[0-5]) ]] ||
+     [[ "$VERSION" =~ (couchbase|phalcon5|swoole|mongodb)@(8.[1-5]) ]] ||
      [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
      [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.[0-5]) ]] ||
      [[ "$VERSION" =~ (memcached|vld)@(7.[0-4]|8.[0-5]) ]] ||
