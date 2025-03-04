@@ -1,17 +1,17 @@
 class Libheif < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://github.com/strukturag/libheif/releases/download/v1.19.6/libheif-1.19.6.tar.gz"
-  sha256 "d59b66d8c5a1adeb4d32438f3d0d787b91540ef90ce36f1d1619f99fddeda95b"
+  url "https://github.com/strukturag/libheif/releases/download/v1.19.7/libheif-1.19.7.tar.gz"
+  sha256 "161c042d2102665fcee3ded851c78a0eb5f2d4bfe39fba48ba6e588fd6e964f3"
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f6e06fd7f1dbd258dd347c5c5501c3a100e6b68f36768733f2382a96e0b46b68"
-    sha256 cellar: :any,                 arm64_sonoma:  "b89062a39b2f7cc25e884671e69f4ed567c2b6f91d4fb9c8a392a2ae077051ca"
-    sha256 cellar: :any,                 arm64_ventura: "46a8927b0d06321f5364ec27e91eb0af3ae5f0769a561f67321bada9964ce101"
-    sha256 cellar: :any,                 sonoma:        "1011ade91e75b48b0f75462f24334aa0f0977cb2256abf3ec0614d7f1d06d47d"
-    sha256 cellar: :any,                 ventura:       "b58b96ace972108fe5521ba5a7e2545dea9d060f1779ef007d4d01d46c91abcc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "079fbe9c153e412ad185c26fce133eb98422205e3614ac1dd0a6681401dddaf9"
+    sha256 cellar: :any,                 arm64_sequoia: "0fc06cce535f6a1131182337ac5a50aa220f6a61b879db94002634483e1a5c3d"
+    sha256 cellar: :any,                 arm64_sonoma:  "09a066bd6db3bf2816defde4d0e8523cc0c77a9725bf6bb82962b491a2e70163"
+    sha256 cellar: :any,                 arm64_ventura: "bd4e27af3a4bcab55291ccb64b5837988ff053a9a4f9e3a5e855f099a3edf759"
+    sha256 cellar: :any,                 sonoma:        "7b0171ccd79095f52a6c16bde48c370d7b5ac047f0c0265dc0aa3e7cd59519f0"
+    sha256 cellar: :any,                 ventura:       "c093278679c0869f9f711c95e6b65b145d3e888de96608e1a5fe1f4734e3a2b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f95e3f3388b36bf3a81c226356158d7c045ba320d1d84a839c89e40d25a7d3eb"
   end
 
   depends_on "cmake" => :build
