@@ -8,8 +8,8 @@ class NewrelicAT74 < AbstractPhpExtension
   init
   desc "Newrelic PHP extension"
   homepage "https://github.com/newrelic/newrelic-php-agent"
-  url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v11.0.0.13.tar.gz"
-  sha256 "69f72541acf03e63a4d7d4a1053857b009279d1c526c9b68ed1338670a9e2cc0"
+  url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v11.6.0.19.tar.gz"
+  sha256 "3b28a421ecb2c2215c472c374d5fa37ed5d48526f1ab2ec1fb9d7768f8ac96fa"
   head "https://github.com/newrelic/newrelic-php-agent.git", branch: "main"
   license "Apache-2.0"
 
