@@ -13,6 +13,11 @@ class VldAT73 < AbstractPhpExtension
   head "https://github.com/derickr/vld.git", branch: "master"
   license "BSD-2-Clause"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4b4272940c227c8819764cd035fec4bb61b71deef8d031e76dd877a9867ad02c"

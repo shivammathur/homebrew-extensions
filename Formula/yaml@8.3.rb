@@ -13,6 +13,11 @@ class YamlAT83 < AbstractPhpExtension
   head "https://github.com/php/pecl-file_formats-yaml.git", branch: "php7"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/yaml/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "b28503b975d01a749a68b3177d4d20152bb3e7337fad96f54ee3df0f26cb57d7"

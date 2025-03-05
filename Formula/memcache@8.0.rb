@@ -13,6 +13,11 @@ class MemcacheAT80 < AbstractPhpExtension
   head "https://github.com/websupport-sk/pecl-memcache.git"
   license "PHP-3.0"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/memcache/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9b31d4f0a0ae00e6766b71671829f15cf2c7617d967bc0cb6f87d426bd88317c"

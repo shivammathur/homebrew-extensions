@@ -13,6 +13,11 @@ class RdkafkaAT70 < AbstractPhpExtension
   head "https://github.com/arnaud-lb/php-rdkafka.git"
   license "MIT"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/rdkafka/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "18d1c11de8e66c6ac0db759635aa2acd05b4807c1c01387d8e86abb94dece5c6"

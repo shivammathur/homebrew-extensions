@@ -13,6 +13,11 @@ class SwooleAT82 < AbstractPhpExtension
   head "https://github.com/swoole/swoole-src.git"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "4d5673724a786ecc4b6d7b94acf6da2c0523dd2eb4bc1ad3b956bc43f4b72b8b"

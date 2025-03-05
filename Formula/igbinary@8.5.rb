@@ -13,6 +13,14 @@ class IgbinaryAT85 < AbstractPhpExtension
   head "https://github.com/igbinary/igbinary.git", branch: "master"
   license "BSD-3-Clause"
 
+  livecheck do
+    url :homepage
+    strategy :git do |tags|
+      semver_tags = tags.map(&:to_s).grep(/^v?\d+(\.\d+)+$/)
+      semver_tags.max_by { |tag| Version.new(tag.delete_prefix("v")) }
+    end
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9448639d0e376565e6d274512e7bdc86869e6a48d77e2ac37ecf7a8f67e93b6a"

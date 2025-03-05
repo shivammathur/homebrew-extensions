@@ -13,6 +13,11 @@ class Phalcon5AT83 < AbstractPhpExtension
   head "https://github.com/phalcon/cphalcon.git", branch: "master"
   license "BSD-3-Clause"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/phalcon5/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f9b2f1c5fbcbfe16effd31617ee1a3357b484628bb059997ff078b7ad7158266"

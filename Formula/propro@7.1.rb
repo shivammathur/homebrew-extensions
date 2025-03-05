@@ -14,6 +14,11 @@ class ProproAT71 < AbstractPhpExtension
   license "BSD-2-Clause"
   revision 1
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/propro/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2

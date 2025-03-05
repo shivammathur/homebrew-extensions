@@ -13,6 +13,11 @@ class VipsAT71 < AbstractPhpExtension
   head "https://github.com/libvips/php-vips-ext.git"
   license "MIT"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/vips/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 12

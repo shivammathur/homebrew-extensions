@@ -13,6 +13,11 @@ class PcovAT80 < AbstractPhpExtension
   head "https://github.com/krakjoe/pcov.git"
   license "PHP-3.01"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "73118b76a9cb8b46f1a11bb852543f033a9f90e417ee8789c6f25e2072ccefbc"

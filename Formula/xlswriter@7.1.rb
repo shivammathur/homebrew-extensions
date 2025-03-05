@@ -13,6 +13,11 @@ class XlswriterAT71 < AbstractPhpExtension
   head "https://github.com/viest/php-ext-xlswriter.git"
   license "BSD-2-Clause"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/xlswriter/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1a099c535af7be8f0f57d484fa0d58c8bc74ca4815281de182686707382000b"

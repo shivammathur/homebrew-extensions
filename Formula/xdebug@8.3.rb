@@ -13,6 +13,11 @@ class XdebugAT83 < AbstractPhpExtension
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 arm64_sequoia: "240c0a78d36a7c065ff5f30b7620351767d0dade5c8cfc8ebd3576ef4b9f9ee8"

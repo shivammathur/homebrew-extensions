@@ -13,6 +13,11 @@ class SqlsrvAT83 < AbstractPhpExtension
   head "https://github.com/Microsoft/msphpsql.git"
   license "MIT"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/sqlsrv/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia:  "be109209e52865be34738566bff9af7d95c0920f4dd3c631836341d85ae70afd"

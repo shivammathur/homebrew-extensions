@@ -13,6 +13,11 @@ class ZstdAT74 < AbstractPhpExtension
   head "https://github.com/kjdev/php-ext-zstd.git", branch: "master"
   license "MIT"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/zstd/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "15c5675e975d3d1acc6a107bf9402c91cd6d3d8705da7f4395871b78e283677d"

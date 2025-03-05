@@ -13,6 +13,11 @@ class ProtobufAT85 < AbstractPhpExtension
   head "https://github.com/protocolbuffers/protobuf.git", branch: "main"
   license "BSD-3-Clause"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/protobuf/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b866e5cb8104770f944f14e4ea68d19d7c2799b1e9766f6eb63f8f2b6af4a87"

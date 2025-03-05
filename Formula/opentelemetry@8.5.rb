@@ -11,7 +11,11 @@ class OpentelemetryAT85 < AbstractPhpExtension
   url "https://pecl.php.net/get/opentelemetry-1.0.0.tgz"
   sha256 "c986887f3d97568e9457cdeae41f4b4c1ed92b340b7533ecf65945eb7e291f74"
   head "https://github.com/open-telemetry/opentelemetry-php-instrumentation.git", branch: "main"
-  license "BSD-2-Clause"
+
+  livecheck do
+    url "https://pecl.php.net/rest/r/opentelemetry/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"

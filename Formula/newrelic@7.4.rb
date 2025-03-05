@@ -9,10 +9,14 @@ class NewrelicAT74 < AbstractPhpExtension
   desc "Newrelic PHP extension"
   homepage "https://github.com/newrelic/newrelic-php-agent"
   url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v11.0.0.13.tar.gz"
-  version "v11.0.0.13"
   sha256 "69f72541acf03e63a4d7d4a1053857b009279d1c526c9b68ed1338670a9e2cc0"
   head "https://github.com/newrelic/newrelic-php-agent.git", branch: "main"
   license "Apache-2.0"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"

@@ -13,6 +13,11 @@ class EventAT82 < AbstractPhpExtension
   head "https://bitbucket.org/osmanov/pecl-event.git"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/event/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia:  "d9e9be83f922dc4af3daa5ccfb834b1097946ceabbf5ab450d52a3fedbe59e44"

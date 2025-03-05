@@ -13,6 +13,11 @@ class MemcachedAT74 < AbstractPhpExtension
   head "https://github.com/php-memcached-dev/php-memcached.git"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/memcached/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "74e21bb4a9dcf29ea25611b82a6c5be9282cb76f4fde661ba247e6c7e996f347"

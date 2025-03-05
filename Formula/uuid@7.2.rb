@@ -13,6 +13,11 @@ class UuidAT72 < AbstractPhpExtension
   head "https://github.com/php/pecl-networking-uuid.git", branch: "master"
   license "LGPL-2.1-only"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/uuid/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "79582f4e09cb0e929a88c048c3ace5ddca617f841f725d25cde2ad6ca8e56453"

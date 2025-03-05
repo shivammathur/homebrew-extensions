@@ -13,6 +13,11 @@ class ApcuAT74 < AbstractPhpExtension
   head "https://github.com/krakjoe/apcu.git"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/apcu/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a08b8fe234fd7c5b0edb8aa215cae3d363f33551e68caaf941b625069e5edfa"

@@ -13,6 +13,11 @@ class MsgpackAT70 < AbstractPhpExtension
   head "https://github.com/msgpack/msgpack-php.git"
   license "BSD-3-Clause"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/msgpack/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "84591ff2d3aae2876f343fa5ffcd644454bf269fb8eca565dda99b6376aefc33"

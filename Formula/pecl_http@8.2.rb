@@ -13,6 +13,11 @@ class PeclHttpAT82 < AbstractPhpExtension
   head "https://github.com/m6w6/ext-http.git"
   license "BSD-2-Clause"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/pecl_http/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "05d94c27dbca2ca80a0639eec8368e416bd0093939fafffc095be01082c55eb6"

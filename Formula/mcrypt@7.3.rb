@@ -13,6 +13,11 @@ class McryptAT73 < AbstractPhpExtension
   head "https://github.com/php/pecl-encryption-mcrypt.git"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/mcrypt/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia:  "51b7a59b95af998fe5df99929c812a59b671a68507bb041c3a780d15396f80b8"

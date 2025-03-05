@@ -13,6 +13,11 @@ class GearmanAT73 < AbstractPhpExtension
   head "https://github.com/php/pecl-networking-gearman.git"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/gearman/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "c2809282c1df9ce0adc7d8290adbafbce937c2c7a61ea5f40b16b0192e4361cc"

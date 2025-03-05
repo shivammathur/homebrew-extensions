@@ -8,10 +8,18 @@ class IgbinaryAT71 < AbstractPhpExtension
   init
   desc "Igbinary PHP extension"
   homepage "https://github.com/igbinary/igbinary"
-  url "https://github.com/igbinary/igbinary/archive/3.2.16.tar.gz"
+  url "https://github.com/igbinary/igbinary/archive/3.2.15.tar.gz"
   sha256 "941f1cf2ccbecdc1c221dbfae9213439d334be5d490a2f3da2be31e8a00b0cdb"
   head "https://github.com/igbinary/igbinary.git"
   license "BSD-3-Clause"
+
+  livecheck do
+    url :homepage
+    strategy :git do |tags|
+      semver_tags = tags.map(&:to_s).grep(/^v?\d+(\.\d+)+$/)
+      semver_tags.max_by { |tag| Version.new(tag.delete_prefix("v")) }
+    end
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"

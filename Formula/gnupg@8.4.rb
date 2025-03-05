@@ -13,6 +13,11 @@ class GnupgAT84 < AbstractPhpExtension
   head "https://github.com/php-gnupg/php-gnupg.git", branch: "master"
   license "BSD-2-Clause"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/gnupg/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 4

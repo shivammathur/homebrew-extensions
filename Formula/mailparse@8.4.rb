@@ -13,6 +13,11 @@ class MailparseAT84 < AbstractPhpExtension
   head "https://github.com/php/pecl-mail-mailparse.git", branch: "master"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/mailparse/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9d1e03d590f9ae15358b42381809697987b3a950faf294bb4dd02ffa8f3b782"

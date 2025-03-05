@@ -14,6 +14,11 @@ class RaphfAT85 < AbstractPhpExtension
   license "BSD-2-Clause"
   revision 1
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/raphf/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "88badf8fef35ae0e9c289abf41472982553093440da0561bdbae629d4e35650a"

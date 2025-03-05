@@ -12,6 +12,11 @@ class PsrAT73 < AbstractPhpExtension
   head "https://github.com/jbboehr/php-psr.git"
   license "BSD-2-Clause"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/psr/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6c27d8973e636bd8736920818c4b1f5c85ee8092e672c1a9159a39568c00bc0a"

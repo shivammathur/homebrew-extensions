@@ -13,6 +13,11 @@ class AstAT83 < AbstractPhpExtension
   head "https://github.com/nikic/php-ast.git", branch: "master"
   license "BSD-3-Clause"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/ast/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1ef0168b873e7a4ad4a9b2ff65a8492538dbbb4c4d7445410affb4e438f241b4"

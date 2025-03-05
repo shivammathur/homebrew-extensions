@@ -13,6 +13,11 @@ class PdoSqlsrvAT83 < AbstractPhpExtension
   head "https://github.com/Microsoft/msphpsql.git"
   license "MIT"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/pdo_sqlsrv/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia:  "d3dc100480d59ae6f0a9de4e97b0a8bde00521e37c81c8f7ba46310ec3e89d37"

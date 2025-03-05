@@ -12,6 +12,11 @@ class ImapAT82 < AbstractPhpExtension
   sha256 "3eec91294d8c09b3df80b39ec36d574ed9b05de4c8afcb25fa215d48f9ecbc6b"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://www.php.net/downloads"
+    regex(/href=.*?php-(8.2.\d+)\.t/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "0aa647c9548148750d3bbd0e4258df25c3ab845f1e8a3d23e7a1b9f855d41cc3"

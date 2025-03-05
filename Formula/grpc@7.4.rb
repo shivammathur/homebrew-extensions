@@ -13,6 +13,11 @@ class GrpcAT74 < AbstractPhpExtension
   head "https://github.com/grpc/grpc.git"
   license "Apache-2.0"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/grpc/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1ee46a46bf06b58a2b5676b912b3398e1a6667b71d8ad162a7d0f811fd69fe4"

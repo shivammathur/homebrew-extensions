@@ -13,6 +13,11 @@ class ImagickAT85 < AbstractPhpExtension
   head "https://github.com/Imagick/imagick.git", branch: "master"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/imagick/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "5d791bb2ec83ac3388e62ca1d0a006655d4f51b38e0616d4f31ea85eb8e14d1e"

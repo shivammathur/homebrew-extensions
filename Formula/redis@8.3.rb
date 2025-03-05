@@ -13,6 +13,11 @@ class RedisAT83 < AbstractPhpExtension
   head "https://github.com/phpredis/phpredis.git", branch: "develop"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/redis/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "86cd9a9de17ee1f4cb717154fd8c28925a9cbe90f63539cabb7bf85576e6adf5"

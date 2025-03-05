@@ -13,6 +13,11 @@ class AmqpAT80 < AbstractPhpExtension
   head "https://github.com/php-amqp/php-amqp"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/amqp/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia:  "83204ba65b6aac62fb71381b57cb8262b879e727ec13687e74cfb25687e7602c"

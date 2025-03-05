@@ -13,6 +13,11 @@ class DsAT85 < AbstractPhpExtension
   head "https://github.com/php-ds/ext-ds.git", branch: "master"
   license "MIT"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/ds/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c1d3162f6e543aea028d262da8da0821b1bbda294ade1984bd8207c938cf9fe"

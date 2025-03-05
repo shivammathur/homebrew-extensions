@@ -13,6 +13,11 @@ class SnmpAT81 < AbstractPhpExtension
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://www.php.net/downloads"
+    regex(/href=.*?php-(8.1.\d+)\.t/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "5dac2305c8fc4c4cfc72890d081fcb2a6d54c7f65c2a0e3582cd144dda2b1485"

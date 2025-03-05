@@ -13,6 +13,11 @@ class Ssh2AT71 < AbstractPhpExtension
   head "https://github.com/php/pecl-networking-ssh2.git"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/ssh2/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia:  "c91ee8358b38cec4a1f5274f0b95b0ebf365e178ffe00cd3fcf7860501fb6510"

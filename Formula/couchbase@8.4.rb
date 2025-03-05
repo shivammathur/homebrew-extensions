@@ -13,6 +13,11 @@ class CouchbaseAT84 < AbstractPhpExtension
   head "https://github.com/couchbase/couchbase-php-client.git", branch: "main"
   license "Apache-2.0"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/couchbase/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "f9f0305e639a86fb194d37268ea6d49c03c04a5d71a0b471241c3838d2ca023c"
