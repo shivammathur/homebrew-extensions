@@ -13,6 +13,11 @@ class MongodbAT84 < AbstractPhpExtension
   head "https://github.com/mongodb/mongo-php-driver.git", branch: "v1.x"
   license "Apache-2.0"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/mongodb/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "727e104288c131cedf9f717df33bd2eb62716f7e4b9792c726b441100780aa2e"
