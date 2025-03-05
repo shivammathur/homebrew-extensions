@@ -15,7 +15,7 @@ class MemcacheAT82 < AbstractPhpExtension
 
   livecheck do
     url "https://pecl.php.net/rest/r/memcache/allreleases.xml"
-    regex(/<v>(\d+\.\d+(?:\.\d+)(?:\.\d+)?)(?=<)/i)
+    regex(/<v>(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)(?=<)/i)
   end
 
   bottle do
