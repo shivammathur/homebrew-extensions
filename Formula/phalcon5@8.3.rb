@@ -14,7 +14,7 @@ class Phalcon5AT83 < AbstractPhpExtension
   license "BSD-3-Clause"
 
   livecheck do
-    url "https://pecl.php.net/rest/r/phalcon5/allreleases.xml"
+    url "https://pecl.php.net/rest/r/phalcon/allreleases.xml"
     regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
   end
 
