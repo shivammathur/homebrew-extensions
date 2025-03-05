@@ -96,11 +96,6 @@ grpc@8.2
 grpc@8.3
 grpc@8.4
 grpc@8.5
-pecl_http@7.0
-pecl_http@7.1
-pecl_http@7.2
-pecl_http@7.3
-pecl_http@7.4
 pecl_http@8.0
 pecl_http@8.1
 pecl_http@8.2
