@@ -1,8 +1,8 @@
 class Cairo < Formula
   desc "Vector graphics library with cross-device output support"
   homepage "https://cairographics.org/"
-  url "https://cairographics.org/releases/cairo-1.18.2.tar.xz"
-  sha256 "a62b9bb42425e844cc3d6ddde043ff39dbabedd1542eba57a2eb79f85889d45a"
+  url "https://cairographics.org/releases/cairo-1.18.4.tar.xz"
+  sha256 "445ed8208a6e4823de1226a74ca319d3600e83f6369f99b14265006599c32ccb"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
   head "https://gitlab.freedesktop.org/cairo/cairo.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Cairo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "d74a4f1916b9fe1254268c0b20c50d8a5e8cb101c914450d2c5a34066837a366"
-    sha256 cellar: :any, arm64_sonoma:   "8d7d5bc22a123340ce7092b9bf1438ce8e959157e38b784226f48b616a76122a"
-    sha256 cellar: :any, arm64_ventura:  "b87ffd7bf969bed012cdce5d639fb12849108a6864afa2d1fd990889856405e4"
-    sha256 cellar: :any, arm64_monterey: "3f8d520f1560515c17710512daba768af0ef5b9f7f620cdeec0a619f556b3487"
-    sha256 cellar: :any, sonoma:         "e20ab89a1a82b0ec40af53a5b131b46afb94022a3d97d3434710692ae8a90e32"
-    sha256 cellar: :any, ventura:        "a7a67c29e5456bd755e5a735fbe75421710b3bd3893da9ed854862f7c5281707"
-    sha256 cellar: :any, monterey:       "6069e82da93a9c3d0efe9efee7368674611dcf30c31f7e9e32cd0ab22e99b93d"
-    sha256               x86_64_linux:   "8ed937d16eca80e5acbf0b3ae533f933e2d30915abaafb9840026bd9149ed9ba"
+    sha256 cellar: :any, arm64_sequoia: "6b2d148a34a670430a459c374376ebed890b61eb7573e8aa952a4b909f443cee"
+    sha256 cellar: :any, arm64_sonoma:  "1fd50d14699ddc03d348baeda1e3a2c98bce8fa74b248481559c3afa17b7784b"
+    sha256 cellar: :any, arm64_ventura: "8ea2169c9cc4391f1a06be0b97413d11e5db2c845c65627ea122407b463c6b16"
+    sha256 cellar: :any, sonoma:        "76a88eab178ee0ada4fa05270834be6808e0f6480f68002d9f21bc41ee2e1cb6"
+    sha256 cellar: :any, ventura:       "44424dbd81d5e1c591c60243921fb0aea4a3bfd919d24883cd86e74d82d3bfcd"
+    sha256               x86_64_linux:  "ad2f527ee5910160b725637d97e64bea8cbfebebf6ffa8720a49c2de73763a48"
   end
 
   depends_on "meson" => :build
