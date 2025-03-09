@@ -20,11 +20,11 @@ class XdebugAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 arm64_sequoia: "a36bdadafd522089fe8a474b889e9c4ea0c1cd12a942af9d5da5985674504c59"
-    sha256 arm64_sonoma:  "b7c3f2dd6119a9ca4a9fa60ae3b8e59cb472ee6819be5fdca27ec063934a90db"
-    sha256 arm64_ventura: "8f2f6d019ae01027e869c6f2a28d30b40b53a02bdd175be737d48034736c4205"
-    sha256 ventura:       "47cabf7be5d33728be563b12b81b112d6cac830e4eb55511babcc8964281dad8"
-    sha256 x86_64_linux:  "c85846d14ff45ef5828aca4520c7662726a4dadd99a5cc9ea75d3e1058e0da9e"
+    sha256 arm64_sequoia: "0fb3306ed357842851dd87c4f3dacd41f54639205782c88b649e0d497c49568f"
+    sha256 arm64_sonoma:  "117e2ce0259c9aea96ffc4e351d27c1621ed4addfcf11c73514334745c8b1ad3"
+    sha256 arm64_ventura: "12d70f976919637312ad0eb9c652adf575a961a7cb4bfa94b01abba25b3846f8"
+    sha256 ventura:       "22265e5c49992c4abc17cfe531317b28814fcc52868422402444ba28adb64aa9"
+    sha256 x86_64_linux:  "0a42987b9ac7244cbb75e31b0d97c71933a648521ed4dbadbc4042ff401af991"
   end
 
   uses_from_macos "zlib"
