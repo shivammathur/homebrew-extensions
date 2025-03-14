@@ -8,12 +8,13 @@ class Glib < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "c14b2a422eb32d66ba0275d4ee81d86a2dd9b3ed5336a233ab4cdf7a28087046"
-    sha256 arm64_sonoma:  "0f66f5851b23b9c3b223bdaf92aa7f4afbd5fa6a0906fb0794d1a141e514bb57"
-    sha256 arm64_ventura: "8950974ac91b8a5d8a9010221d4846d54a9ea334e59941d4600f2b586f595104"
-    sha256 sonoma:        "8ba82d08116bcb2654b786ff252c7884397e7f7b04b3082a50493c4cc90836e8"
-    sha256 ventura:       "dd204b1bc47c2d3e39821d27d0db8a028dbdf606fd223f82319bf64443dc4fd2"
-    sha256 x86_64_linux:  "1e5b90aeceeb13cc06d3511ba1eb36062bb0e5d71b04f1517bbcf35675d58b9d"
+    rebuild 1
+    sha256 arm64_sequoia: "420f2762df64908e59b6052c41580bd03ed980eabbc6b6203c3b4eaa6658ade6"
+    sha256 arm64_sonoma:  "cb1ba6ea1a2e751508329e84a0c6a5787611c02c346c4f0a0e5f58f72e173c1b"
+    sha256 arm64_ventura: "67780cccb994a6864c561eb2e7a4f4744d48ffdf3b48731668ab35a02c871469"
+    sha256 sonoma:        "a4f443dd989b7ea9d7a6bc3ed45e77e904a5e753025094350130168f2407e685"
+    sha256 ventura:       "4647e5269bb706b3c22ddc1123fa007ee232981ebbe0d9d74f8ce88756bbfe7f"
+    sha256 x86_64_linux:  "6ecc4ef1d72d1f6bc3a5635452f30ae30483928b834ae1b906d1b793004d2c3f"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -21,8 +22,8 @@ class Glib < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+  depends_on "python-setuptools" => :build # for gobject-introspection
   depends_on "pcre2"
-  depends_on "python-setuptools"
 
   uses_from_macos "flex" => :build # for gobject-introspection
   uses_from_macos "libffi", since: :catalina
@@ -31,10 +32,6 @@ class Glib < Formula
 
   on_macos do
     depends_on "gettext"
-  end
-
-  on_system :linux, macos: :mojave_or_older do
-    depends_on "python-setuptools" => :build # for gobject-introspection
   end
 
   on_linux do
