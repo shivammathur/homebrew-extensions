@@ -4,15 +4,15 @@ class GdkPixbuf < Formula
   url "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz"
   sha256 "b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "bd7c665da295988ddc8fe13de0c2c70b0624ee9e235ab3b876e607f716a5e770"
-    sha256 arm64_sonoma:  "5f80c2ff70f3e6f7b0c6f052a3c19ac3c76022921b21455b41b51d133a17ab07"
-    sha256 arm64_ventura: "dfcb1fb233c3947a53c70f41539b01e7159d7cb9b9af1e4c317b7cc2c9038b7b"
-    sha256 sonoma:        "4f7f41b6668186d38484a0e09b93cbdc3c190e8a74e52d9a9e99abb4bb438df3"
-    sha256 ventura:       "aa3248566adb884512647eb9c9c932e3e0f32b0754f73f122e89d47c7879aed4"
-    sha256 x86_64_linux:  "1c2f6a7664949639803322ce3a043ba88f22034808fa6fb6f4a1d0155ef41be8"
+    sha256 arm64_sequoia: "64089a3ef04afef0dc8601d22cd534fdc155bef2458bf1a97e6e90f25b7529ad"
+    sha256 arm64_sonoma:  "c703ce18d2e7f538a643fcccca6a42b5fa8e4f1afeaf0fca8588fe1f475f95c9"
+    sha256 arm64_ventura: "f3b25a91f9e808d5811194ff0e49dcfb67b758e95b341fb95a53066b1e726994"
+    sha256 sonoma:        "4b55a027f7b848eee61127f19da0c29fd2ae32d51d5a936e32ac30d504864fe6"
+    sha256 ventura:       "62202745ffbf466de3dcc1901897f3625cb2e2449944bb76093731342ff4b375"
+    sha256 x86_64_linux:  "0b6776f4eafc2e63c2d718e73bb1714239201929074cbaa0c794a1dd0423d197"
   end
 
   depends_on "docutils" => :build # for rst2man

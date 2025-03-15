@@ -23,6 +23,7 @@ class Glib < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build # for gobject-introspection
+  depends_on "python@3.13" => :build
   depends_on "pcre2"
 
   uses_from_macos "flex" => :build # for gobject-introspection
