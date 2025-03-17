@@ -4,6 +4,7 @@ class Tesseract < Formula
   url "https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.5.0.tar.gz"
   sha256 "f2fb34ca035b6d087a42875a35a7a5c4155fa9979c6132365b1e5a28ebc3fc11"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/tesseract-ocr/tesseract.git", branch: "main"
 
   livecheck do
@@ -12,12 +13,12 @@ class Tesseract < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5caba25c2552970a19808a6b2e1e937d58f1eda75f81236da444f79d099f3bcd"
-    sha256 cellar: :any,                 arm64_sonoma:  "5bb5c51c61356a74a7493d4ba09287f27ec83a7a9b5aaf114f908e3135c45087"
-    sha256 cellar: :any,                 arm64_ventura: "3226ebc3987937dbad65be4aa2ed1a7abcb12c780d2044f453b52c3f80263096"
-    sha256 cellar: :any,                 sonoma:        "1a39073c1bca10140bb67b3a1fcb73ecf426fa82c69b657e528f9f90f7e9e168"
-    sha256 cellar: :any,                 ventura:       "4d722e7c79d135c1a5abe6ae7512027f1fd394866106f69b73bad5ccedd3370b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76d71758dd00d54af51a346d9364707a98f28f2aa1c7bd6046952997611321f7"
+    sha256               arm64_sequoia: "a38cf90d587ff998ce2df8fa9f5092700603f3a11828b964948911b93af532a1"
+    sha256               arm64_sonoma:  "a8a2450fbbbce956f492f02aba1bf2d3a7866263d428a823df6fa122cf3c1139"
+    sha256               arm64_ventura: "45c101cb9aa70fd7276bce49946043f14cb63210428cbdfc3bc6080f8c467f6f"
+    sha256 cellar: :any, sonoma:        "95b9ae7365584cdf4baaec48419138c8d35ccf207693b9eb1c3e026abc399d8e"
+    sha256 cellar: :any, ventura:       "ed5ba31f7c1f7b4f6645cf37cb7a18a37a543eb60c3c0199cb50a69d85507fe2"
+    sha256               x86_64_linux:  "3b17fc1d99ecf8ba3d829c90561c9198b36c78f9d8277cb0e95e41351cf90e40"
   end
 
   depends_on "autoconf" => :build
@@ -28,7 +29,7 @@ class Tesseract < Formula
   depends_on "fontconfig"
   depends_on "glib"
   depends_on "harfbuzz"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "leptonica"
   depends_on "libarchive"
   depends_on "pango"

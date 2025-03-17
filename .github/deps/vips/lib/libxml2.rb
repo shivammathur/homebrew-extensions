@@ -2,6 +2,7 @@ class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
   license "MIT"
+  revision 1
 
   stable do
     url "https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.6.tar.xz"
@@ -27,12 +28,12 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "674576ac834e127f3938d10c6edcacce4892f789f80d61dee4f9d0f47aef398f"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b0519464a06fe588c8b8aab0052852369250f82f2ebc91bc6325876bea4e1e8"
-    sha256 cellar: :any,                 arm64_ventura: "060d66e316935cbdab9232ad6e68568d38c320a437e212c4e540b508d37107e4"
-    sha256 cellar: :any,                 sonoma:        "6df0aa4c5a0875ea3123b1c1542bd37b0555119a95dcc4f1499fd4833026f937"
-    sha256 cellar: :any,                 ventura:       "b600fe412e38deecdd01ef52feeb9a605d1926d68add75d84ebaa1e2f6e92bf5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abe7dbf126d30007a06f9c23cfd43fe9c5e84f244de59b33e4c172db8ed74a1e"
+    sha256                               arm64_sequoia: "f585e030571f81a1755b03d29bfd9d0751e45ab36f8d2b21ad8674fcd821c32e"
+    sha256                               arm64_sonoma:  "581829bae5e41b8255c530e4845d57314cfead278eb85b8f922c7da3ede3fa41"
+    sha256                               arm64_ventura: "f52ef9fe5284f43672911d133b9fbb0e8b6f320a884f859df8a607a928e732f2"
+    sha256                               sonoma:        "47fc0fcaf1ea2b1979efbec0668613b3945fc56fd9a6b3d51215dc86b45e1892"
+    sha256                               ventura:       "c0d736a8dcbe532c843d604c503cf44a7c29be803ae3533c7588b96b7cef58ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "891911ca6d5116f17ad419581a45cc29d6679326902e986926015e6751783c00"
   end
 
   head do
@@ -49,7 +50,7 @@ class Libxml2 < Formula
   depends_on "python-setuptools" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "readline"
 
   uses_from_macos "zlib"

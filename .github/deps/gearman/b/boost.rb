@@ -4,6 +4,7 @@ class Boost < Formula
   url "https://github.com/boostorg/boost/releases/download/boost-1.87.0/boost-1.87.0-b2-nodocs.tar.xz"
   sha256 "3abd7a51118a5dd74673b25e0a3f0a4ab1752d8d618f4b8cea84a603aeecc680"
   license "BSL-1.0"
+  revision 1
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -15,15 +16,15 @@ class Boost < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "00a8471e4eca0c3f486e94cfe0609fc467d0805270dd18e5e8bad0a237aadeba"
-    sha256 cellar: :any,                 arm64_sonoma:  "e343b4cb9530c8685040b7f33be212f8da78756060b3400f37242446a6b4c452"
-    sha256 cellar: :any,                 arm64_ventura: "e68b84eed4a2fe54c3de30ae35852c8fbe217bfdc28b8f063059cc1491d5f7b1"
-    sha256 cellar: :any,                 sonoma:        "4365d15232d6c4980c51f0c3b729b1adfe80ee6088d1276cf7d56a609a8025f5"
-    sha256 cellar: :any,                 ventura:       "125c0502cdfedda094229358e3173375cb8f020cd129a43ecfa43ffc251eb57a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed501937c2b5e96c65f5b44c852f7fb8e8692fcd009459980b3751d10e762164"
+    sha256                               arm64_sequoia: "c827b28d0de5539243a36a04da69f1b67048647446b54cab341681855d222127"
+    sha256                               arm64_sonoma:  "6fc5abc3c3fada8158a4a73da562d09c04e71a0c816d98a7474ba6d10d0c592f"
+    sha256                               arm64_ventura: "6e81371cb46da9ec042933efb7425a8582c32fb67cd31e137611ff91351497d5"
+    sha256 cellar: :any,                 sonoma:        "7f8992a5964f0400a706d39a81b58dd3698c2256476a7234c36dfe8b9d358606"
+    sha256 cellar: :any,                 ventura:       "d2db29b27b0c7cd1e2ebd7119cad88973131406c6cce0345968be949a2f934a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a85d38911f532a83fba3707729b080f5d6ba29ffe366bd792d07f1413ac6954a"
   end
 
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "xz"
   depends_on "zstd"
 

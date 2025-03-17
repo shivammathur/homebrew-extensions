@@ -5,7 +5,7 @@ class Icu4cAT76 < Formula
   version "76.1"
   sha256 "dfacb46bfe4747410472ce3e1144bf28a102feeaa4e3875bac9b4c6cf30f4f3e"
   license "ICU"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -16,15 +16,15 @@ class Icu4cAT76 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "66a2995c046a7d78b727cac1b90f52a2fd3bcf07488ae41c711109bbd1fca8e1"
-    sha256 cellar: :any,                 arm64_sonoma:  "38c00ad782ec16cf4c5b3439b15a38e11e8be3ffc5b029135cfff102e36bcfa3"
-    sha256 cellar: :any,                 arm64_ventura: "2f7b9091aa04a8310a473037175e2242f3ef87526fb6914b9078c4002d6098e3"
-    sha256 cellar: :any,                 sonoma:        "f7e042054dd71e1167f8c93bd64d817def4c229772a897de0e905e1566985fef"
-    sha256 cellar: :any,                 ventura:       "49b0d34d41e6785b7324ec4fd8d503227b619941343379cfdb037b11f4fbf68b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e371567ddebb72c0aac6143d10bc47d6f0e0ed87aa7d3962a1ee8b6d86438f26"
+    sha256 cellar: :any,                 arm64_sequoia: "36740927f8bdb436e6a4fa4066ac13d32edaaf4125ba3f20ca12e18d7eecbd6f"
+    sha256 cellar: :any,                 arm64_sonoma:  "75dc3baf41567d78c356904dd11c66d4a052dc81fc8f06b574d169a10f373b94"
+    sha256 cellar: :any,                 arm64_ventura: "07be73f27660fabda108d0ac346f862763a871b6ac1b257b1e84ab234a6ca2b4"
+    sha256 cellar: :any,                 sonoma:        "15465a73773821af7d4b86219a496664b677b426794a43d1231ee57f86241ee8"
+    sha256 cellar: :any,                 ventura:       "d7186e6b5e4a11a0614ecc251633825ade3a548f8bdedce230dc0d2982c3ff78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96de6e1689d33123805108c40a8411dfa341b1cfc963af19ecd8f1ffe63b30b0"
   end
 
-  keg_only :shadowed_by_macos, "macOS provides libicucore.dylib (but nothing else)"
+  keg_only :versioned_formula
 
   def install
     args = %w[

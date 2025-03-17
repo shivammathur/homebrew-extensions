@@ -1,8 +1,8 @@
 class Pango < Formula
   desc "Framework for layout and rendering of i18n text"
   homepage "https://www.gtk.org/docs/architecture/pango"
-  url "https://download.gnome.org/sources/pango/1.56/pango-1.56.2.tar.xz"
-  sha256 "03b7afd7ed730bef651155cbfb5320556b8ef92b0dc04abbb9784dcd4057afe7"
+  url "https://download.gnome.org/sources/pango/1.56/pango-1.56.3.tar.xz"
+  sha256 "2606252bc25cd8d24e1b7f7e92c3a272b37acd6734347b73b47a482834ba2491"
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/pango.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Pango < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "066a35c5a432dc0e41d9b2018ba230c1a763617457cd127facef54c03f2dfbaf"
-    sha256 cellar: :any, arm64_sonoma:  "33bddc9fff28871f0875eff2e51cce86397afecf9ba21ba65b524444fa11336c"
-    sha256 cellar: :any, arm64_ventura: "a0867981173b782232271e4d3ff9f34e20f00a9b52466a87f6a1546613343b59"
-    sha256 cellar: :any, sonoma:        "39a78a1bb97393068d47753d7526e3256e7e1c112a170119ad7d67c77cb4a471"
-    sha256 cellar: :any, ventura:       "06a195e26f4f03ca7f2cf387658dbbd3d001ae9cbf5494a369a55d8e1cabc15b"
-    sha256               x86_64_linux:  "e7814fc2eedae2602bcd6482c395d801b414981c894d2fe155d61e4c97d34cb5"
+    sha256 cellar: :any, arm64_sequoia: "39c8338524e71bf6019b72a2bbebebc78c6935dfad75a76db43ff9a8815bfe6b"
+    sha256 cellar: :any, arm64_sonoma:  "10d76601d1eee9482d66a31d570c6704bb318eead6f83ec1404d6e520be581f2"
+    sha256 cellar: :any, arm64_ventura: "4d619b28828586db45c6eee3e82b1aca65596af17195a6b975c3b9fa7ccad963"
+    sha256 cellar: :any, sonoma:        "2e141cb0c33eb33fd2771efbac614b75dad3db4ed332ef84526e81e6a64b7d01"
+    sha256 cellar: :any, ventura:       "cbc5448e13f060afeb0aee80cba9fd228f4a8e199761c4a4114b39700e840c39"
+    sha256               x86_64_linux:  "cdcdca05be1495b3afd63d5b1951040e359278ee8bfbcbb65e37128c844a3737"
   end
 
   depends_on "gobject-introspection" => :build

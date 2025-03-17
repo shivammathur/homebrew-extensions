@@ -1,8 +1,8 @@
 class Pcre2 < Formula
   desc "Perl compatible regular expressions library with a new API"
   homepage "https://www.pcre.org/"
-  url "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.44/pcre2-10.44.tar.bz2"
-  sha256 "d34f02e113cf7193a1ebf2770d3ac527088d485d4e047ed10e5d217c6ef5de96"
+  url "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2"
+  sha256 "21547f3516120c75597e5b30a992e27a592a31950b5140e7b8bfde3f192033c4"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,15 +11,12 @@ class Pcre2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "c3f9e7a70ebc0986af6f0b7c69ac1495fdf4c7420ad831d3daa9c86c448b79c2"
-    sha256 cellar: :any,                 arm64_sonoma:   "78fe8885f70cc1ec83eefd678e1dfc3b341aedf4b44132327da98300c5e04cdf"
-    sha256 cellar: :any,                 arm64_ventura:  "58f5a3b0858236149a5792e1c1238510b3757c632d436e87b17acd8045dbeba2"
-    sha256 cellar: :any,                 arm64_monterey: "fe61ece0fe110928cbd9d325552064c1bc2b98a3dd6cc9f4039d0d41ead7fa83"
-    sha256 cellar: :any,                 sequoia:        "5bf0758d81478e59007717b43d854a1e2399818c2859fcbc5cdb2e616e4eb372"
-    sha256 cellar: :any,                 sonoma:         "c39e89e49f9ab7a8b5ae5efcdd38b27df9003e62a045b336117041da939d3136"
-    sha256 cellar: :any,                 ventura:        "22151e6b0e120939ec8240add51c3de8aecf0b716f8c91f97b7c106698ecb40d"
-    sha256 cellar: :any,                 monterey:       "ba8ab5793b9399926030e574ed376c003749ea775ca62c713b732b8d35fc1bfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbddfbb9921fa2894640db7f0395ea8a79ce5209ebe5ae6700762d0452a6910f"
+    sha256 cellar: :any,                 arm64_sequoia: "f2abc87de6796a4e639f93d42c6d515cad90418fd7b701bcf322fb8e1443704e"
+    sha256 cellar: :any,                 arm64_sonoma:  "549a4a79676a6e2c58896cb46cf7d36a8c86f3696e61c43f07dca6660c32cd08"
+    sha256 cellar: :any,                 arm64_ventura: "a780535fb2f47a39bd16d28f966da1c99b868d7e15b2d18b75b509b6deb85e0d"
+    sha256 cellar: :any,                 sonoma:        "5b1916e8e569da37aabc596561eb93a6bdf7cff4d55d35a351576c071ce723cc"
+    sha256 cellar: :any,                 ventura:       "83722732df9490388e3fa729d06063fbd3fe7e245b0269c5b67f736ffa8c9ba5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a5727c5e1b6d0aa922bc2d30ae6510dca32f1b738a7501bcdf18823c59e120e"
   end
 
   head do
