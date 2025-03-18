@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
-  url "https://github.com/v8/v8/archive/refs/tags/12.7.224.16.tar.gz"
-  sha256 "00425fe7fd851f11839537256922addbfee0f5d27c6bf5ab375b9d0347d8ed94"
+  url "https://github.com/v8/v8/archive/refs/tags/13.4.114.19.tar.gz"
+  sha256 "6ed878b3bb97b38431ec427d8b3a837c579dc5bafb8e8b706de85f160037197c"
   license "BSD-3-Clause"
 
   livecheck do
@@ -23,14 +23,12 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "c970a5657a165144470702ac586a5b17349397446a421f35e9323a0f01dcd385"
-    sha256 cellar: :any,                 arm64_sonoma:   "15a1692bba6d316446d00640d6f0975a221cb519031b76e9fc8a7036c93a2550"
-    sha256 cellar: :any,                 arm64_ventura:  "b40b3f0daae622cc1d258b8834c9f5f6b942652deb785c22350e9b8ce08ac7c5"
-    sha256 cellar: :any,                 arm64_monterey: "d4236596413abd930b07c749b5b87c7551cc68ff744ee9878bacafe668a8b055"
-    sha256 cellar: :any,                 sonoma:         "dc5ac107d6237165e8735bd3ba8b9ed4e45ccb1b5b9a9b6b97d35c7dfb4ba045"
-    sha256 cellar: :any,                 ventura:        "087168f4e81ef0d7c0b343c99e5e382acc08201b499c49c55990a137397c38dd"
-    sha256 cellar: :any,                 monterey:       "8340f34e94f455aa9250ba6915271606b08f14e31261c9584f098bcfa62ba532"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9106a7390ca79160d728d43c22e38ced8b861c1c98e38552325efa33584f526e"
+    sha256 cellar: :any,                 arm64_sequoia: "cfc5ab401bad36aafab32966a23d70bc284d5fbc99dea4bc23a891efb6d5551b"
+    sha256 cellar: :any,                 arm64_sonoma:  "9fe9a66d7d7b17a81be07ca4732d41cc9c5398c8efc4c04c8230e3282af9844d"
+    sha256 cellar: :any,                 arm64_ventura: "42dfd7d898fb4ce763f5c46ab2825df0806606380f9c454184aa3adab82c9368"
+    sha256 cellar: :any,                 sonoma:        "0ce9ddb45f339e92932bc3569c1f7149064a829cd95e15d851b6aa48e92f3de1"
+    sha256 cellar: :any,                 ventura:       "025fa441e2b8c17878c88aeabd84015abed718aadb87f4719e05943d79b6095c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4424792b53407e75eaa8c774874f0f0ef5bed25efcf5473fca62c2dce2828461"
   end
 
   depends_on "ninja" => :build
@@ -52,12 +50,17 @@ class V8 < Formula
   # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/<version>/DEPS#74
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "b3a0bff47dd81073bfe67a402971bad92e4f2423"
+        revision: "ed1abc107815210dc66ec439542bee2f6cbabc00"
   end
 
   resource "v8/build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "faf20f32f1d19bd492f8f16ac4a7ecfabdbb60c1"
+        revision: "a9640b2af4c541cbe6b716f447315d487351ae46"
+  end
+
+  resource "v8/third_party/fast_float/src" do
+    url "https://chromium.googlesource.com/external/github.com/fastfloat/fast_float.git",
+        revision: "cb1d42aaa1e14b09e1452cfdef373d051b8c02a4"
   end
 
   resource "v8/third_party/fp16/src" do
@@ -67,43 +70,56 @@ class V8 < Formula
 
   resource "v8/third_party/googletest/src" do
     url "https://chromium.googlesource.com/external/github.com/google/googletest.git",
-        revision: "a7f443b80b105f940225332ed3c31f2790092f47"
+        revision: "e235eb34c6c4fed790ccdad4b16394301360dcd4"
+  end
+
+  resource "third_party/highway/src" do
+    url "https://chromium.googlesource.com/external/github.com/google/highway.git",
+        revision: "00fe003dac355b979f36157f9407c7c46448958e"
   end
 
   resource "v8/third_party/icu" do
     url "https://chromium.googlesource.com/chromium/deps/icu.git",
-        revision: "98f2494518c2dbb9c488e83e507b070ea5910e95"
+        revision: "bbccc2f6efc1b825de5f2c903c48be685cd0cf22"
   end
 
   resource "v8/third_party/jinja2" do
     url "https://chromium.googlesource.com/chromium/src/third_party/jinja2.git",
-        revision: "2f6f2ff5e4c1d727377f5e1b9e1903d871f41e74"
+        revision: "5e1ee241ab04b38889f8d517f2da8b3df7cfbd9a"
   end
 
   resource "v8/third_party/markupsafe" do
     url "https://chromium.googlesource.com/chromium/src/third_party/markupsafe.git",
-        revision: "e582d7f0edb9d67499b0f5abd6ae5550e91da7f2"
+        revision: "9f8efc8637f847ab1ba984212598e6fb9cf1b3d4"
   end
 
   resource "v8/third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "209717dd69cd62f24cbacc4758261ae2dd78cfac"
+        revision: "5634698162b2182c350e4cb360a0f4dd7706afec"
   end
 
   resource "v8/third_party/abseil-cpp" do
     url "https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp.git",
-        revision: "bfe59c2726fda7494a800f7d0ee461f0564653b3"
+        revision: "aaed376e01b9f98ff29f70fd47468b7e806e1639"
+  end
+
+  resource "v8/third_party/simdutf" do
+    url "https://chromium.googlesource.com/chromium/src/third_party/simdutf.git",
+        revision: "5a9a2134b280c1b956ad68a0643797fe26dd1c94"
   end
 
   def install
     (buildpath/"build").install resource("v8/build")
     (buildpath/"third_party/jinja2").install resource("v8/third_party/jinja2")
     (buildpath/"third_party/markupsafe").install resource("v8/third_party/markupsafe")
+    (buildpath/"third_party/fast_float/src").install resource("v8/third_party/fast_float/src")
     (buildpath/"third_party/fp16/src").install resource("v8/third_party/fp16/src")
     (buildpath/"third_party/googletest/src").install resource("v8/third_party/googletest/src")
+    (buildpath/"third_party/highway/src").install resource("third_party/highway/src")
     (buildpath/"third_party/icu").install resource("v8/third_party/icu")
     (buildpath/"third_party/zlib").install resource("v8/third_party/zlib")
     (buildpath/"third_party/abseil-cpp").install resource("v8/third_party/abseil-cpp")
+    (buildpath/"third_party/simdutf").install resource("v8/third_party/simdutf")
 
     # Build gn from source and add it to the PATH
     (buildpath/"gn").install resource("gn")
@@ -144,6 +160,7 @@ class V8 < Formula
     else
       ENV["DEVELOPER_DIR"] = ENV["HOMEBREW_DEVELOPER_DIR"] # help run xcodebuild when xcode-select is set to CLT
       gn_args[:clang_base_path] = "\"#{Formula["llvm"].opt_prefix}\"" # uses Homebrew clang instead of Google clang
+      gn_args[:clang_version] = "\"#{Formula["llvm"].version.major}\""
       # Work around failure mixing newer `llvm` headers with older Xcode's libc++:
       # Undefined symbols for architecture x86_64:
       #   "std::__1::__libcpp_verbose_abort(char const*, ...)", referenced from:
