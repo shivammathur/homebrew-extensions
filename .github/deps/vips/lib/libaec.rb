@@ -13,6 +13,7 @@ class Libaec < Formula
     sha256 cellar: :any,                 arm64_ventura: "6eb5fcc80ba76dbf96d4c686d1596124c2f1cc21648e3b25b95e9a459fa982b4"
     sha256 cellar: :any,                 sonoma:        "60215c8f7af6e44926030f05c6ebc1344f2b23766c234268bf7ea5eb2fc2a1ad"
     sha256 cellar: :any,                 ventura:       "ea401973cd11d71d719097d9611d243ea5eaff7cc110a97136c18d8c74fb2c9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a279f9bb15a0800669f7ac3283c0e46760e09ea1489ae8871d35b9e4a80381e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "abf37dff4d0fd06ecc1086b33ed1a6fe308509c5b65dd063ff4ef0ca212d8d7e"
   end
 

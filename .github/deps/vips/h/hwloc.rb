@@ -16,6 +16,7 @@ class Hwloc < Formula
     sha256 cellar: :any,                 arm64_ventura: "8d669ce99bbc2ec2cccbaffc8c40de2699e8987270fe2268b3d943f18aade700"
     sha256 cellar: :any,                 sonoma:        "c225a90c17d6d38736b9e1a74ee85b63b0a86888c4dbf5935ff28b25b5240e50"
     sha256 cellar: :any,                 ventura:       "8e2f1a677f6982f2ad8517a1114bfb773356fc14c5c81a8da77c14b10a5aef45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b27ce6572ebf1505730dac09ebb79d96736dfcdf0b14bb35f83c747d088f7e7a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8fe14dfbcabf567c091b5d2a026546525665f76cf201f93064eddf49c146160"
   end
 

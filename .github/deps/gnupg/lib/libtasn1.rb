@@ -12,6 +12,7 @@ class Libtasn1 < Formula
     sha256 cellar: :any,                 arm64_ventura: "b202c24f2e22f7f709473f72ec9c26f3ec43d643b8488378690c83fd96d48d69"
     sha256 cellar: :any,                 sonoma:        "75cccbdfc213e905656c372ca5b9496cf88dea3a0fd9dcb032f06bbdd061228b"
     sha256 cellar: :any,                 ventura:       "544067beee3846eafd9a1ecdd5d25646d8ff3f417f5f2e464441b0a2c6a19b39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec6abf595dd54b05c55662226b05301d9e27b3e61f427866b1ba7686d01f8633"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a141f58624a57f3370d4ed714225a78f24bddbb6a3b60ed82127614090cdb9d9"
   end
 

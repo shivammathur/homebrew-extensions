@@ -13,6 +13,7 @@ class Libxext < Formula
     sha256 cellar: :any,                 sonoma:         "86fd68fab7f6cdcca7212812b697efc8d2c1349ceada7c74a1eeabf0f9ec8523"
     sha256 cellar: :any,                 ventura:        "5adc7a81fe4a19ce37d33850009bd3154f6723a501c932c572d43389d2399657"
     sha256 cellar: :any,                 monterey:       "eb71965f92cd97a43eaf0e9a8a49fab31ca397be6ffcbb30f5a8edc2f8853e3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0e502f2a45fc8fa5ebce3ad027926b4060ed350f7d1f5c1c6561a5fe4d97fd8b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c62be32e864f64fc9ed3392a2f6eae085350c5b929b52306ac5e26c07b38bd3f"
   end
 

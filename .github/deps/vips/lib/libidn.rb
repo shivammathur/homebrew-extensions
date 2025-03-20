@@ -14,6 +14,7 @@ class Libidn < Formula
     sha256 cellar: :any, sonoma:         "93f6802767b31f0f6b8baeafc8cbc07df4312879cf2416711bc22d66cda14690"
     sha256 cellar: :any, ventura:        "367c1d3e45212508a0a28291d4d750c6abdf6544ca9bd551c9f8367f176c0029"
     sha256 cellar: :any, monterey:       "f8600f13a5956e11500c5bb96435b2e41ac9ac0870839b630f42b6425a6c58e3"
+    sha256               arm64_linux:    "b962f8e96707859c0e327b6b9c0762f04dbfeb002e0642cb4bb5d589361c9a4e"
     sha256               x86_64_linux:   "3cc66b8450c436a5047d8075a004be087d3f21b5322834ef741165487fad262b"
   end
 

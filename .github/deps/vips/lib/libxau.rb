@@ -11,6 +11,7 @@ class Libxau < Formula
     sha256 cellar: :any,                 arm64_ventura: "7c0325743bb51f272a93e9fc1edd32f86d89f4f179ba474880b524834d305c2d"
     sha256 cellar: :any,                 sonoma:        "46c7dff8ac6917ffc355a1ac7242fb37f53cb4e7276a9c297b31cd0d35b36b6f"
     sha256 cellar: :any,                 ventura:       "9979936a79a670d37c775a0163b3f24544a264343242b1820332d86e7e5200c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec2a9c4d8d2311c730503f3b7976086612efce6a9a03193508f61f47d8ef5c53"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "eaab2aad3bf7abb8cf6f1b164cd6648731814a71b1b3cb1141055d48fa07914d"
   end
 

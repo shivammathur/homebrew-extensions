@@ -18,6 +18,7 @@ class Lua < Formula
     sha256 cellar: :any,                 sonoma:         "e683482576a98b94e06c2049e874da06b2fe6a27fd6ad1076d280af7c8f9ad8d"
     sha256 cellar: :any,                 ventura:        "21f349c23444c0f74e7626e6837b4236f1617c3f0828157efe7438ed941cfb3d"
     sha256 cellar: :any,                 monterey:       "b3efe2d96158718df6a5255bf92e2809565cab7ede49d1631fa0247040fa148e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "542e289c463b5252729f03346724f17c1e22a4d34db457457075bb812ff6c284"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e21c57b663809dfdbf18aa773bac852c0206c728e73daab48767c60bb8b1a7c"
   end
 

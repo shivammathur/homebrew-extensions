@@ -13,6 +13,7 @@ class Libunistring < Formula
     sha256 cellar: :any,                 arm64_ventura: "b0d7a7078508070bd67589f5060a92100bd1c4aea2a41bf19e7ee8442f483df6"
     sha256 cellar: :any,                 sonoma:        "e919f6ee2fe8a40addea1e1840eab8855e66812e18dfe05c130618ce517e2880"
     sha256 cellar: :any,                 ventura:       "9aebb86a6fb622dd2699db2b1b65c82d1b5aaa35f81d0ae4335c57e9411c36e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2bd48b651db50b0ad0205b27b38a21303b6a49b567dd5b682cc1b9562e9ea0a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "25ff65379463fe4a51008a36c45a963ebc8d13d054ce606e3fbb6635ea634311"
   end
 

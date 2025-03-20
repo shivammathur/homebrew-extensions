@@ -18,6 +18,7 @@ class Giflib < Formula
     sha256 cellar: :any,                 sonoma:         "40d390aab5bc396eb3efa0ae00987efd8c9eb8049239f709f486a879577a41ef"
     sha256 cellar: :any,                 ventura:        "b3d5cfa490fb61890dceb4b49510171783ab0e4dfc6f64f2f5f8ee1cecc08013"
     sha256 cellar: :any,                 monterey:       "1b8828d26eeaccc1f3cefdbc41bd55551045d1ae55a18a1c96f4d27bd214df17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "162732cc2ffcd48bfb68353fc4b454e6fbd5c2316b15eb6d98cbe8926f3ecb25"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "db5d2754722a81e5a842a66236aeebe889ebae26b08329dbd506007b9e63339c"
   end
 

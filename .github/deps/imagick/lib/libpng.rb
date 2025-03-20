@@ -17,6 +17,7 @@ class Libpng < Formula
     sha256 cellar: :any,                 arm64_ventura: "df1cb9573402b54fc2734ef48a046c9dcfe5dad5e13299882b2e8ce1f926b0e9"
     sha256 cellar: :any,                 sonoma:        "d5f62a5676999c7ad51c469dee4135b4760dec9170b6c44cbb64493617b7b090"
     sha256 cellar: :any,                 ventura:       "45d50d4bd1acb8e6a3e3e072ec38679fd97dd81f8e950ed983c24c5452b45ab3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "210937c159f310c0949443bfdc630093bea9565b96760947628bff4d616a894b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8593cf808ca5ac81c78627bec4bae8f761fdd4f773a82ff441875efcc2b1fb0c"
   end
 

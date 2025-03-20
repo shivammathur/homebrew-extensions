@@ -24,6 +24,7 @@ class Libidn2 < Formula
     sha256 arm64_ventura: "d0d933dad3ab921d09acd3fe3efa952ee8859f3d9d03aa0210490aca25e0c544"
     sha256 sonoma:        "ef2c85790a55f54f58fceb849e1ee46f2b06ebe516c83043e68c979e47934e6f"
     sha256 ventura:       "96fdb47b24345178dae4b88855adafb51efbca9797d6de046f117b26e7674d74"
+    sha256 arm64_linux:   "25d5d1e8d6893f66f15c0f94f88be9618d47e5cd65d6391d938478d3cf75c7b0"
     sha256 x86_64_linux:  "9e8c065bb543ee967667db82c00185419a108555ecbd965b2e6cebe202472e7f"
   end
 

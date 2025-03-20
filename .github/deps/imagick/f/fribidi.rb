@@ -11,6 +11,7 @@ class Fribidi < Formula
     sha256 cellar: :any,                 arm64_ventura: "334c412359217397f5e5c5ad082540ac3d5d494ef543d81c01f4e482b36b699b"
     sha256 cellar: :any,                 sonoma:        "abda3f3925574ac53d9fa5a7629102dda29132a64cf1a9f756eedc3258d1e855"
     sha256 cellar: :any,                 ventura:       "70e46d9ac5dafc34d891f6d4e1fea8416e23383c30a3ef7b52250295a9643643"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f77859595dfecda802be39353e61b545c1cf1c67e9630f9441be68010f555d00"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "da83ac3be7e395ab2444c0968fb3dce389161f10c2b481ddd4b18a9056bc2d60"
   end
 

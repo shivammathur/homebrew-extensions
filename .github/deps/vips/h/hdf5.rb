@@ -20,6 +20,7 @@ class Hdf5 < Formula
     sha256 cellar: :any,                 arm64_ventura: "3bbb75b9bb29386801e650f2406ecde85ec9d73460b0b1bd2629d457a7ba1672"
     sha256 cellar: :any,                 sonoma:        "13a628da9dbe2b7528532731dabe50715bf0487ce069f040fac75f9eadd8b3b5"
     sha256 cellar: :any,                 ventura:       "ee3258e58082872fac217ece616a82a76c945ba9f38362c710b77df833adbceb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a5ab8ac6290a03e1e69dda1ff8363c8f2dfdfed2e7491e8d04d95987a3f98fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "526dee09cdfb1857f883931aa914cab567df80cf2cc95dfaa899d6fbee9f6619"
   end
 

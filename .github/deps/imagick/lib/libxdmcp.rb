@@ -13,6 +13,7 @@ class Libxdmcp < Formula
     sha256 cellar: :any,                 sonoma:         "b43d28c50f25ee0775a1bd4269e236d00e352ac060522bfc9186b35165095c56"
     sha256 cellar: :any,                 ventura:        "f553988c10f628a28ef1f4d8d3ace5d5ffcc147a3ef6958acd679943a2300668"
     sha256 cellar: :any,                 monterey:       "3d062d168fde07ebb9b7e7100ca830bdf2ea498fbb1c572f8584e314bb96054b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a19ed1302e0632f8f6e8276824bb189a4384d007707bfa891d64925af4e6d4f1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8b9dc2969e85e26c6d426d8865244e1416d73f7f408c9f5404a2a614a62e7d4"
   end
 

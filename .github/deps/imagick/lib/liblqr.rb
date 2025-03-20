@@ -23,6 +23,7 @@ class Liblqr < Formula
     sha256 cellar: :any,                 sonoma:         "28335247f3e95ffe590d0e7f23ab6ce32bf70963da671336627a024d344cef10"
     sha256 cellar: :any,                 ventura:        "e8644cf78f7d1b496536ccbe8287ce7d67f61a8f53eda230df5e221d004e4ed1"
     sha256 cellar: :any,                 monterey:       "f39b2894ef45355efebbcb7a8277892a1d71a00caa1309ad11caa2d5a97d0426"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d2b6dff54f55b70b04004cf3bb64045a3b455cd9c9c12bf068c3ebc89ec079f5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "df9a20d9afa1541e259edeadd06e3ec8501a9a5b75a5a973e61f321521c37c80"
   end
 

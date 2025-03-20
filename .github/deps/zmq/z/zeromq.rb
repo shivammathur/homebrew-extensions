@@ -19,6 +19,7 @@ class Zeromq < Formula
     sha256 cellar: :any,                 sonoma:         "986910eab9519ca92f167b545cde5992124a963b56d1346f2f917368e9a7eb43"
     sha256 cellar: :any,                 ventura:        "25344444cf8c0583f65b1f36fdf11edc40ce2fe637fa04e34fe28c730573dadc"
     sha256 cellar: :any,                 monterey:       "c8c1cafdffdc020cf504bc59888d61a016df6cdfc12650d89a43a846edb77ef2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1bec0b28dfb3b515f6095d00e4fdb0b4ec458e02b4fbecac8a53a0c18cf7ea01"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "904b3146ea9aab3b4fdb584c74be1fa762145d3435eef653becc38ce0600c1bc"
   end
 

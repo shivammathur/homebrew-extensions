@@ -16,6 +16,7 @@ class Pixman < Formula
     sha256 cellar: :any,                 arm64_ventura: "9ba0bb20e92ef367e72978e2d73f4fe15567d5ce5624ddc095f1fc7774dcfce4"
     sha256 cellar: :any,                 sonoma:        "d5cad71f43737f7c3d0dbfa3658c315f59253f965d69a32c308ae6e4ed601852"
     sha256 cellar: :any,                 ventura:       "b705fc0334ba602eef3ed78f672b00b95f9564bdfb387c9d1b519e8a7a1cb560"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f4f787e267696d6900a9ccdb7319df66b8279d3f36c410a87b7234a89a74108"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6825da7bb96ac0019357cc7425c98ec6e578642c06c48e8c6bf89877181e8805"
   end
 

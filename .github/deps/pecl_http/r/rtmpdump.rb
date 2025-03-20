@@ -24,6 +24,7 @@ class Rtmpdump < Formula
     sha256 cellar: :any,                 ventura:        "b27c24194ded10a47b93a379efae8ead4b04a6d3e8e34bc3a70942380b1ed68b"
     sha256 cellar: :any,                 monterey:       "b942d0dee2c95a00b3fd080c50d1f0d715448ae3147bbb18cf5adb758cb63798"
     sha256 cellar: :any,                 big_sur:        "794073edbf7402af7750b21fbcb44c5df038d6d3606450bd6a453dc92b6b3b09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d3f2a6eb1d6c8409c69a89db67cb545acf7c6c568f0a57f6df7d7108cce87df8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ab7f054fd0b01975be1893437235c61e2761ed9fb54e7880a854ca37809d57e"
   end
 

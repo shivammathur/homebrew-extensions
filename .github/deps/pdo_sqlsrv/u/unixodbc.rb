@@ -21,6 +21,7 @@ class Unixodbc < Formula
     sha256 ventura:        "362a801fa9dec4ee99daab0d9d6926fee4ca2ad7191677dbee1b564852964ddd"
     sha256 monterey:       "947aa88dde2ed452e05e9ef37aca672aea40165cd6d748cc8839609f9d7d4141"
     sha256 big_sur:        "704e008bba860d3baecd0ad178c82b8c59e0eb9b05161d908154723eabbd420d"
+    sha256 arm64_linux:    "f79be5986def99810fdeda97b3422992b4b6134310165e79a43a5dfaa1e5bdb9"
     sha256 x86_64_linux:   "7f8a5881a0827b6381d3619d681849d72471bd8f9ad9e836793d3216bee77fe4"
   end
 

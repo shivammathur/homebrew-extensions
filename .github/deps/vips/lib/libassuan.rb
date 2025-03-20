@@ -23,6 +23,7 @@ class Libassuan < Formula
     sha256 cellar: :any,                 arm64_ventura: "2c97f2188ef55d1de16938e270797b3ecc59315cd09f03ca347a533c6e57efd4"
     sha256 cellar: :any,                 sonoma:        "0ec4ad2607107d27bb8b0acb1f7fb3a81c8bea66ed17b69afbd6bec70a9a5b98"
     sha256 cellar: :any,                 ventura:       "be83f28dfef1934dd05a2a2f1523398bf9a6927b0b80c42447f4b18583e6dc25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1cc44ec4ce43e405be679fbee9a434a7bdbf86f267ac946cb4a8642cdf89df7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "620108c517ecfeb00c843bd34f86b75bf84c1bd92be9b554c86424fad3b99f08"
   end
 

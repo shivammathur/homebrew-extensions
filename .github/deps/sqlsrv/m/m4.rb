@@ -19,6 +19,7 @@ class M4 < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "b22472f659112cf12163bba770d891618b3ada5aaf5baa01516d80fef6214617"
     sha256 cellar: :any_skip_relocation, catalina:       "e0fec6a49fd80cc7279c71f319d70d01ed49e894b53cd91e39f170288232fa93"
     sha256 cellar: :any_skip_relocation, mojave:         "0cf53207764a2311db75b19628e2395ac6655ea1f7fdac97a33a0de34f315018"
+    sha256                               arm64_linux:    "c26b282ce0d99dcfa4aa0946ffcce44f2a18ec9c0e1fd1bcc4986d698f4e0ec1"
     sha256                               x86_64_linux:   "f6d1087a51e0ff2e582b3043a25a51b67971b2246cf65167ef3abf1230160f04"
   end
 

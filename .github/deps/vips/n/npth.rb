@@ -17,6 +17,7 @@ class Npth < Formula
     sha256 cellar: :any,                 arm64_ventura: "7178f348dbdf184206e70c7aa62711c53c900f888bdffd1391ad709497ec456d"
     sha256 cellar: :any,                 sonoma:        "6532f31787befd9082aa4902e75bf6a0ba26b4423029b7b9c1f1117ff0d0df7d"
     sha256 cellar: :any,                 ventura:       "669a65d8a32cfd4d30a79d606702c982b474586ad23283d7ad3e1f6e40712076"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae6de43d79405ea955e4f8ea018bd0660da87bb0a40c39a1f9b7759915316006"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfe2b3f4f5fb1b8e05b3ddbc5dddbf44d3b03b95ca9712ff4fc33cbd045368b4"
   end
 

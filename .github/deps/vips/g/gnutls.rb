@@ -19,6 +19,7 @@ class Gnutls < Formula
     sha256 sonoma:         "7136ceb68e1bf94ad28db2990cc10da909b742390be65963b78e8b115f97b51d"
     sha256 ventura:        "08b8fc7ded2a17510ab505965c754bccf3cf21ae690d76af744f96d800223de2"
     sha256 monterey:       "80f7875ba4d2409f85851a3c61bf8c178415e863528357bc587578e8d0536c10"
+    sha256 arm64_linux:    "3e80e41323baff837dce16bb7ec6a7f5af07df02ddee324eefcdf2c55542a6fa"
     sha256 x86_64_linux:   "9bedb5b302e02e32c64bf75c488216dd644bc205d9e99d2b26edfdf7f3d81b93"
   end
 

@@ -12,6 +12,7 @@ class Nettle < Formula
     sha256 cellar: :any,                 arm64_ventura: "10243a9374699001a49008a6856904821a75e9a644ab49b9c2ac66c22ac31aa5"
     sha256 cellar: :any,                 sonoma:        "6e502038a53a443864edeb85e3423986ec5c383c0fd8c3061ba95af71d369744"
     sha256 cellar: :any,                 ventura:       "7d924af8b68729fbd75a279173b03da71219ee53c8c660198360dd4c8c0cde59"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56925c4200b245efa3e7587be30ef3f4881a5d8ad789e1d1d6edf810bb793d40"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8aeaad58a40d92dc7e23b80d7b1663ece6d7a46d9b919a52c4553cbed9a9e214"
   end
 

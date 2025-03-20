@@ -37,6 +37,7 @@ class Pcre < Formula
     sha256 cellar: :any,                 big_sur:        "fb2fefbe1232706a603a6b385fc37253e5aafaf3536cb68b828ad1940b95e601"
     sha256 cellar: :any,                 catalina:       "180d88dc2230e98162685b86d00436903db4349aac701f9769997d61adb78418"
     sha256 cellar: :any,                 mojave:         "a42b79956773d18c4ac337868cfc15fadadf5e779d65c12ffd6f8fd379b5514c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "93ad822f02719de5e91b97213d71703f9322780cc4f04c002f2f53e45fb58025"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "296026b6d5430399e40fb4f8074045a9a27d5374d83f2f6d4659c2647959f36d"
   end
 

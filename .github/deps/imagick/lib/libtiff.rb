@@ -18,6 +18,7 @@ class Libtiff < Formula
     sha256 cellar: :any,                 arm64_ventura: "b8952fb7bfabe979c42b9742cd959e5ba33bab2f8e44c536b9f5f6346190c33a"
     sha256 cellar: :any,                 sonoma:        "5610196cb9396c468513adc5bc7c4834a3f475ff6f3ebd98f77e3f8b2123da3e"
     sha256 cellar: :any,                 ventura:       "93fdbce17863cff383485295a955eae308f3bfc0f6b83d311645c5830a9964ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "befd41fd96bb263a78cdead93f8eff8320f911467bc4022add19150ec0b9d876"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e873d7ab4e4159cd3ee973a2ec9cf7530fa3679abb8968832269dd206dea6859"
   end
 

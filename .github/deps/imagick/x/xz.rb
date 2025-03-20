@@ -12,14 +12,15 @@ class Xz < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b49f3559f9425b0a8c8de8806b2162d757196c06d4043e65c6654e88cdac15e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "928cd470a16d10f9c8d444336314101e7b524f9aa5aeaa108569982c2bd83a63"
-    sha256 cellar: :any,                 arm64_ventura: "47bd10fdb1173d54ce37deea250eef4a1a05f45420422d824bf43efea13c28f6"
-    sha256 cellar: :any,                 sequoia:       "6ad8909a81ad8f4d8e6f9e08c2bba861ca213293184f37246d1687afe554cc40"
-    sha256 cellar: :any,                 sonoma:        "5d81f474f98ede15215878db75db8359b154ae17a4710c1d0dd1534c5fda451c"
-    sha256 cellar: :any,                 ventura:       "6e91c631057824a93598109c8fed9eae289ea8118db9c4204d5c334647982892"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6a5f3534b52321097340f28de382dcaed24d6e50bae293634ddbe9c61a27095"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c40857ccdacee0eaf8a19a2851f9e4389443da7c10cd6cf50e9c1ef56872c59c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "51c0ca6cfcb507fa9b45136c49d204316a387671753f2b8de1392461b18a44ba"
+    sha256 cellar: :any,                 arm64_sonoma:  "6206718ef4a56b67651a96d220688deada5727ac67e5e9c23012acc99e0bc4a8"
+    sha256 cellar: :any,                 arm64_ventura: "1693b66ae6c6f48618443bd9d512d06f2ec5681970b2a168484d99a9cd2bc2d6"
+    sha256 cellar: :any,                 sequoia:       "e26b9b870c54ffc8ef21503ce0209265e23dbf2f89ea5b539d463169426b0b33"
+    sha256 cellar: :any,                 sonoma:        "887964ef0fbc415c0d96288072f2d5dc62800b3c10c177b673c7136b51830a9b"
+    sha256 cellar: :any,                 ventura:       "6d366675f1db2034ed30fa9cb2edebf7ca8c52a5ef5e067bff5394ca7b1514b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e84ab04b837b01fc24f489cbb90731911840f37df55df2938c90200fa24d5b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d26feb517c927f362970b7aead6b0e7756119a0ebfd1ed1201a7fa193fa96b18"
   end
 
   deny_network_access! [:build, :postinstall]

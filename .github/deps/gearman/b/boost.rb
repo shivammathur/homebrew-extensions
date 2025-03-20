@@ -21,6 +21,7 @@ class Boost < Formula
     sha256                               arm64_ventura: "6e81371cb46da9ec042933efb7425a8582c32fb67cd31e137611ff91351497d5"
     sha256 cellar: :any,                 sonoma:        "7f8992a5964f0400a706d39a81b58dd3698c2256476a7234c36dfe8b9d358606"
     sha256 cellar: :any,                 ventura:       "d2db29b27b0c7cd1e2ebd7119cad88973131406c6cce0345968be949a2f934a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bd986ae47cc1c408766cddf0b1dc583070844d7bc2f7a4af8ee46602062c17f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a85d38911f532a83fba3707729b080f5d6ba29ffe366bd792d07f1413ac6954a"
   end
 

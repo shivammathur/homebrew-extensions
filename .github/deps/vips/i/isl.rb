@@ -25,6 +25,7 @@ class Isl < Formula
     sha256 cellar: :any,                 sonoma:         "23be453b3fbe9ab4a1baeb8a99eea31a6362825f03f74a1c7015bb0bda9ad4d8"
     sha256 cellar: :any,                 ventura:        "df3c2c3161184a8cea83dfda47bbf31f81e3527951c2dc72bdeb2ac1638e2709"
     sha256 cellar: :any,                 monterey:       "fea18e3734c269de46cb70dc7a263e5784e0e67d16e59598aaea22618c6a4650"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "58237313da104ff5b3f16289cea5fccd51465e4ef88f977ea7f91a2a578be1d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "25c8bf618d4e3c68c27eed634bd7695104ff5daa37246253aabce80d7c1ac7f5"
   end
 

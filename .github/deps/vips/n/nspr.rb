@@ -16,6 +16,7 @@ class Nspr < Formula
     sha256 cellar: :any,                 arm64_ventura: "8dfb7cfb064a45c9b0d271ceebb4763c18870bc315a24edf2dfccc0cd2317356"
     sha256 cellar: :any,                 sonoma:        "4872910fad9fa87badb31ca4e531e859524c0e70fbdecdf7cb4a5b0486a062e2"
     sha256 cellar: :any,                 ventura:       "4c66879d6672278c32c08a858337dd3d430e216140afa53ffc88d85f3c47f3e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a9fbf463d239e77fb99cbb51f5eb3b918ad7d0afe1992a6f25e9c06fe439935"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf40b06a4583043f75d1d4b47a27d097b412c938ba316c84749db59af7ded134"
   end
 

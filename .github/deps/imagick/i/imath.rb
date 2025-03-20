@@ -13,6 +13,7 @@ class Imath < Formula
     sha256 cellar: :any,                 sonoma:         "6f6d2633c7443723f64753ceac0bd2d69c5954f615fb9d843944f03fc6a9cf32"
     sha256 cellar: :any,                 ventura:        "93b1c78e9e628d1c6897d738ec717e50b1451f84ef5a97d3109d7ba26dc42bc9"
     sha256 cellar: :any,                 monterey:       "b83b7496444abd2a7d69c208f77aa788ce65326cb9b34561a1cd467083104e32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "eab26c27cf6c5e2a45da4bada3075547eedeb60e5fad75f7f9285e0737cb1074"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bd454621cf393aee0d5448b8ac4e6e1d6cd3fd0ee88b4596be0fec333d11130"
   end
 

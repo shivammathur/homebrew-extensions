@@ -33,6 +33,7 @@ class Libxml2 < Formula
     sha256                               arm64_ventura: "f52ef9fe5284f43672911d133b9fbb0e8b6f320a884f859df8a607a928e732f2"
     sha256                               sonoma:        "47fc0fcaf1ea2b1979efbec0668613b3945fc56fd9a6b3d51215dc86b45e1892"
     sha256                               ventura:       "c0d736a8dcbe532c843d604c503cf44a7c29be803ae3533c7588b96b7cef58ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "671e23441aa348a1050ed35c58af3e1071fdd71910867c9b437d27c8e5a75370"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "891911ca6d5116f17ad419581a45cc29d6679326902e986926015e6751783c00"
   end
 

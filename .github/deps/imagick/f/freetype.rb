@@ -19,6 +19,7 @@ class Freetype < Formula
     sha256 cellar: :any,                 sonoma:         "e79e0ffb36311b2abbd0cd44abcf5e938768b2d63d6268e68d5eaa4d34d9323e"
     sha256 cellar: :any,                 ventura:        "495efbb088b72c7a2881133bcd53375dd99925124d2bf1f0e0882a3c1a332b10"
     sha256 cellar: :any,                 monterey:       "eb6099180cefba47b4e31f9680494fa8a1a60e50f190232b281f6beed53874a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b5d9d793c5dc7b6a1187e1266a133a39854d2ac32e77c2d1baab90882006fdc6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d847168ffbda85c4470d7599436263b0fd8623687863e26ee434db56cd5dde9"
   end
 

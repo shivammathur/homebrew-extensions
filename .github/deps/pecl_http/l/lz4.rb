@@ -23,6 +23,7 @@ class Lz4 < Formula
     sha256 cellar: :any,                 sonoma:         "96c1ed07b013308a9c205a56c0232e45ae7da70e28200c9adb03ec78b294bffd"
     sha256 cellar: :any,                 ventura:        "c7bd3ba214fd8713268012f5bd71a95dee9623de0e373a38dc3426ea8b9293c3"
     sha256 cellar: :any,                 monterey:       "f78cc448808d04a0c31b108d7da962020e062179e29c7d0a2303db7866d8e449"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e1d4b1bd9069ee0a313d2813d59b3e9217a893aba519707da2ba0b848bc1f727"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8082c2e40dc6d63850f43ea8fa095e55adf18fb0f25ec66bcaee2c4b4438205"
   end
 

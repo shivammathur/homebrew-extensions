@@ -17,6 +17,7 @@ class Libuv < Formula
     sha256 cellar: :any,                 arm64_ventura: "7675ba03df1cef221fc81024c4f2efe38cc08b23903e60ee60ecb99f917323b6"
     sha256 cellar: :any,                 sonoma:        "50124229722199f08735d93a315c1a8678e19635eb31099331e608856870dd54"
     sha256 cellar: :any,                 ventura:       "112d27659fbb30ed6b607846c4ff7754526f39fe9b227a851738347f113aa65b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6411aaa044da7134c5724375ed447f42a919fd4cd0598e4a197940fd04917e80"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "06e43cd87e374d2056468b681e66243b6da9088013ab49f9838e4cd44ddfc96d"
   end
 

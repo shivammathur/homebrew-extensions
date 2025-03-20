@@ -15,6 +15,7 @@ class Brotli < Formula
     sha256 cellar: :any,                 arm64_ventura: "531d7745ef045b6fe35a32f852d377a9bed6ea8a2c26828d8e18ce8388c1346e"
     sha256 cellar: :any,                 sonoma:        "8934e84777d1c6f63d6e4c07213731c9af1b7a66d5f0a6b3ef0bb6d56bb63a86"
     sha256 cellar: :any,                 ventura:       "59cbd7977b1e037c70d43e339dec2a8631d1360ceb4aa1f4a7780e2c4fef3540"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72028690302ef20e9dcf10cd6405a8d8b736688ebd4ad7203078ee57be0f92fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1502cc6efe4e7b2835b1a8cb34536acee19d3c48ea3a440b57d88e5cab2ca81"
   end
 

@@ -11,6 +11,7 @@ class Cgif < Formula
     sha256 cellar: :any,                 arm64_ventura: "a7a100fb46e624b13b2a12e7258c34b3b58168be2e225dde9bd5e81cb32a1da9"
     sha256 cellar: :any,                 sonoma:        "8be64e82ba90c5d7cb752718025686e5278b2c1c6b1288271470cc14bfe72573"
     sha256 cellar: :any,                 ventura:       "c0d7610317c79caa96c7f7723648a3b18b3bf84f9cb155c60508fae6dac84570"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e060a0a26f4df895af8ea1f707162a95865c156967340e7a7a853719577cb074"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9873a9a54823b42865b83a5cd468edd8b5864768b990b05445814c0a623befda"
   end
 

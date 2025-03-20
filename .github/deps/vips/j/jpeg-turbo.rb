@@ -21,6 +21,7 @@ class JpegTurbo < Formula
     sha256 cellar: :any,                 arm64_ventura: "a9b6c86773453e3973ce817c15357acd3d16c6d839dd2b4b27b8ecd46efd5ac9"
     sha256 cellar: :any,                 sonoma:        "71334a8545e4e669f06c88c11e9b0adddce19a797f088dcc3db5d6513d0861bb"
     sha256 cellar: :any,                 ventura:       "9bd429d9b147fb9f042b70e907c50f5287572282c1f29bb243082c7a13e24ff4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0583a5c8c9f128982bebc437fc1e3f9dbab4b62c6f4ef0479b71f3cb04615cba"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "87e49b8d9e91e96ab8a404ab29746f5705c204001ff745d2aa2c93e55b2798d8"
   end
 

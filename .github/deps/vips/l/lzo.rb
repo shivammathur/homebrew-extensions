@@ -25,6 +25,7 @@ class Lzo < Formula
     sha256 cellar: :any,                 high_sierra:    "2420aac02d4765ecfd5e9b4d05402f42416c438e8bbaa43dca19e03ecff2a670"
     sha256 cellar: :any,                 sierra:         "26969f416ec79374e074f8434d6b7eece891fcbc8bee386e9bbd6d418149bc52"
     sha256 cellar: :any,                 el_capitan:     "77abd933fd899707c99b88731a743d5289cc6826bd4ff854a30e088fbbc61222"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d090d9756c7eb1a5371f8eff88273c0301b0102c8bf6f47d9fad7d876a466902"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8413f94bb69f337f7e1837e7f525e703cac105d27ceeb29de5c08c7bbfa77b29"
   end
 

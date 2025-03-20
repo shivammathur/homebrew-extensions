@@ -17,6 +17,7 @@ class Jasper < Formula
     sha256 cellar: :any,                 arm64_ventura: "26a590dd28ce14c8c8d21daae5c40f2315596dff9da3a8f062b3c7f68c6f4884"
     sha256 cellar: :any,                 sonoma:        "f7fa9f0518f18c0e2856b21b53a9608942fe76a406ba1d22645d73b76a873fc0"
     sha256 cellar: :any,                 ventura:       "cd0eff6cd64657baaeab5db4cb40d91976c1774a11a65602c511f8e83c223bce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a137f7c12e63c150776633d465aada25d7578a6c08085c086b00c85b0ebcde55"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cef68cee21420fe8cba6a74bf82a0fddc67b6ff1f96b5d0e6901fa0039ab2ef"
   end
 

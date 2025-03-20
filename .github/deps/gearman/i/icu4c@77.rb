@@ -23,6 +23,7 @@ class Icu4cAT77 < Formula
     sha256 cellar: :any,                 arm64_ventura: "425a38eb7a7a1bb54dd25ac58194ef89d79caf1777a01fb244ed37487c1f7d80"
     sha256 cellar: :any,                 sonoma:        "54d609febedd08e8a4a825435d85f6d4db045f586523edb8965434e8e9c93fa6"
     sha256 cellar: :any,                 ventura:       "6f04d1757707495212ff68722bab629766329874ef7d0531e756903dff5022cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d633e676a17c418e7e1e6e58d41a7c61856f06cf198a3efa97e4a5489ab0196"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f82d4ca07fbdcf99cb5553ae9cf298bbff475a465f13e1c5d934dcbcb1e14741"
   end
 

@@ -14,6 +14,7 @@ class P11Kit < Formula
     sha256 sonoma:         "38423db237bdda5e2485a28e5f30c106f324c440d64a4e10bffb5fc997d91aa6"
     sha256 ventura:        "ab67e4c145d61683447ef09ec9315bd22cc95efa699bbac9e2fc476104a579c0"
     sha256 monterey:       "25fc56254568c72ad22c39c2768ca249992df53a9da2cbeee55ac221f67e1ae3"
+    sha256 arm64_linux:    "630a4eaece70b3e7d8d0330018e955ea2ffa3fb84263a48aec0056cef5c2e1cf"
     sha256 x86_64_linux:   "65efc1a95ab97b86e0eb36f2e8782d3f6140d795f3bc33cb6e20267d5fee45f0"
   end
 

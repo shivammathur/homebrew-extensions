@@ -18,6 +18,7 @@ class Libssh2 < Formula
     sha256 cellar: :any,                 arm64_ventura: "f1a9194b318669ded3d72a045c1cc30b4ce53dcb23a0b5953910f6dcd341522b"
     sha256 cellar: :any,                 sonoma:        "092a33680301532d2ba966e85b3316198d65891a0aa6211d616575cc82bbd09f"
     sha256 cellar: :any,                 ventura:       "b34913dfb88d186400ec06e9beff6d81824c082c5920c88737df980ca9b602b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "583976433ceba6667dec4452c6533fe4c10d0343b082ac683cd1b8407cbf76fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a307208b03d0761f7ea8c53a322ea09b0a60db96e3ef8688df6adec92b45ca5b"
   end
 

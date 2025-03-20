@@ -26,6 +26,7 @@ class Popt < Formula
     sha256 cellar: :any,                 monterey:       "7d6cc173811a3aa97adae35f9c0a759acec73e0bc2c948fdb012f2691b4aef3d"
     sha256 cellar: :any,                 big_sur:        "92d031d6010ce339beb5d179471ac14b76e887cba2d8cd7699c41aa1d76bcee5"
     sha256 cellar: :any,                 catalina:       "bab861fc16b94cf46a1a438503ea5e7a602a2c750be14706210e83f63f4abaaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5b137c17f2231710bf51430cb36d013b38bfa8ddef947adcf7a000d7ece9660c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaf6aef4cf756e5ad7d75b04d51efb181e673be05bbc40053123b7e8f975db76"
   end
 

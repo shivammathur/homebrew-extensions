@@ -16,6 +16,7 @@ class Cfitsio < Formula
     sha256 cellar: :any,                 arm64_ventura: "6518ed062c9fbdad59543f94dfc3e0075c408f9630f70f43c09ec49c5a3a2648"
     sha256 cellar: :any,                 sonoma:        "5dfcb63aace71db6811b9ef614bc4e96e739f09c6359addaa2f357097c9c7035"
     sha256 cellar: :any,                 ventura:       "e49c70a730a4e19450da1d7f370ea5f016acb3274544332b54195fa9d7c2a4b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5678b462c9945c96b60dd7359e2bdf4e9c74aecdc17d5f85cb96f56af0dbe3f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "76ab7cd815f1ef133e79644620f101acc45e236a6e2d9857f6af1a00518af6e2"
   end
 

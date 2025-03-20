@@ -14,6 +14,7 @@ class Highway < Formula
     sha256 cellar: :any,                 sonoma:         "dd94650f29c85c1e1ed4343d1b3689161671586d2c19d14a42409c383ff0f456"
     sha256 cellar: :any,                 ventura:        "30ed68093b0816c5f0de2e504c299fb0981004b165dc75cae08a669f7cecfbbe"
     sha256 cellar: :any,                 monterey:       "4f27b99b7df6a54abf3aad7e2636f8947001518a057f385920f5d3c26b742e00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2396e123e8890890de1977e2991632fead58fd6bbd427aa27d343755f24417c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dfee6723c0915e37b9253347c24bca7a2e37f0823a2e2883449c58a77ff32b6"
   end
 

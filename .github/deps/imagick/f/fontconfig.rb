@@ -16,6 +16,7 @@ class Fontconfig < Formula
     sha256 arm64_ventura: "9af1bb1acad87514d53aa77cab95e15200794466c4618e9f96446b2113aa6dba"
     sha256 sonoma:        "37befec606c968bf0e3664d53a0cef5fbc013aa851f1c3d534b8f5f7a5af1de1"
     sha256 ventura:       "e09a65225015698a10e7c185d5de1d5b0976a672d57d5e8d65096b2bd03bb9fd"
+    sha256 arm64_linux:   "a976210901014cc178e600d4e80df3f4d4c3bf86b67aabeacbe5fe27b8363d92"
     sha256 x86_64_linux:  "040b8c1ce9fd3d3022f26e1400b19b757cfd993da9e819c5c0956d3a38f42f00"
   end
 

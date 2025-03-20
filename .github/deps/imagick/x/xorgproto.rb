@@ -18,6 +18,7 @@ class Xorgproto < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "3307601f0a03f6c51b640fb11064ef2c2264cc9c20de0604a255370edee3f7f4"
     sha256 cellar: :any_skip_relocation, ventura:        "3307601f0a03f6c51b640fb11064ef2c2264cc9c20de0604a255370edee3f7f4"
     sha256 cellar: :any_skip_relocation, monterey:       "3307601f0a03f6c51b640fb11064ef2c2264cc9c20de0604a255370edee3f7f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6e87b7448405526b6fdb83a082b5cf4696f4042f7cf5c2c2195f94f8faa04e67"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc1ef8db0fe244a7a47541fe8494131a281814a4110d3af41d76226274601df7"
   end
 

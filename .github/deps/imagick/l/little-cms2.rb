@@ -23,6 +23,7 @@ class LittleCms2 < Formula
     sha256 cellar: :any,                 arm64_ventura: "a4edffc61a638164f92c20dbb084eb00a82ce81cb2e58aa18ad5f1d73c843c5e"
     sha256 cellar: :any,                 sonoma:        "6f3a75284dcdd815c90822ac2d7ca5da326f9b1caa429b57bc95bc1f49d76881"
     sha256 cellar: :any,                 ventura:       "0d73b47c0c2bc4974127934587472e9a6a7dc1c54ef6eaa409f64c99568c2edc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ec5e7088ce3f220f3607200e7e9fb111359569de78eaf4c2ac2b7f5dbb9d9bd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "667006576a5da32e7984c0c310cba11d63970e9f4f501200ef949ab9b0559709"
   end
 

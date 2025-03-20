@@ -21,6 +21,7 @@ class Libevent < Formula
     sha256 cellar: :any,                 ventura:        "79a1036d3428c6ad8325803912e9ff0f74b8a8202908ae8594959c27e998c90b"
     sha256 cellar: :any,                 monterey:       "d0557018f19021fb4675a20d9cefda5e13646558c276ab7b4f01f96144b432f8"
     sha256 cellar: :any,                 big_sur:        "042923957c025a4298465d320a63db6127414644fde58fcdc0d29e8c28fd2993"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2ebd43e299f937313fc4dc17c21a7446b53d5a46d7dad29922a763df1761acac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "83ef4ce689a91f6fca013d6b4b0b2fcda3706080f8e0cccd056a3d94d6bc0f17"
   end
 

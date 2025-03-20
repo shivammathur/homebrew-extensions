@@ -16,6 +16,7 @@ class TclTkAT8 < Formula
     sha256 arm64_ventura: "72de6c290a2095906aea8dc034af2b81f88c5efc162adf642c90486c74ef0ab5"
     sha256 sonoma:        "2d568cf0322e7bd4151c7bc1fd714c017a8c037fb238ea0d2f9aed7ac8cb22dd"
     sha256 ventura:       "5cd357c52827c17fc0c648f7134f4cf0bb11f3621a65f2b2a58f2ddd86db2c62"
+    sha256 arm64_linux:   "c7af04cbdb5930ea4c7cfdc132f007f1d50e321f11e755226ce72cda01e0cb71"
     sha256 x86_64_linux:  "1208ceb8fe4df5fde9596567c11a8f2e956dacec3af26f6148eee9f6a93d7294"
   end
 

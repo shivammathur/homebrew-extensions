@@ -22,6 +22,7 @@ class Curl < Formula
     sha256 cellar: :any,                 arm64_ventura: "f6eb860f4682ca3b7a179900c4dfc26d478a8d6e034037cbff6e720f32868fc1"
     sha256 cellar: :any,                 sonoma:        "548929dc8ff10764399f0395a68ac7093988e3db91d7a8a489cb14d2190ac550"
     sha256 cellar: :any,                 ventura:       "bdf9ac1b882c1f1ede2fbd95ed66b6b96b6292b71ae44c758ee94edfbfe2dbdf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54ec51183da94719359b83ba3c362658d79253401f7e98508a14df8f0a9bec82"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "000fcb36884bef88b07da1e2ae01370215b746a02d345a9c83d83e203fb2c569"
   end
 

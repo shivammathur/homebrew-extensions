@@ -16,6 +16,7 @@ class Libgcrypt < Formula
     sha256 cellar: :any,                 arm64_ventura: "53cba38f74d4eedbd8c74935b4b35f567f8f68455b8df38d66e5244f155c2ac8"
     sha256 cellar: :any,                 sonoma:        "0b9a2f6ca55e36d113b8d3c2c6098fb0e66709624bf5d84aca682e26fb4da696"
     sha256 cellar: :any,                 ventura:       "a2e2f896a1d89c8e7cecde7ba2a7f9a7e7470700b5b2ae88db5d4e26e18b14a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9236852d8de37e61b114bb6085a94e2adfda926a41774682513435c898195fc5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "45ca7345d0a07b08c6802ff2d536235e5c8aa49592321faa4950611bb9ef8f87"
   end
 

@@ -18,6 +18,7 @@ class Krb5 < Formula
     sha256 sonoma:         "2ceff13b1041a0c1fe479069725c95cc0297cb221a616b4e4be107a745660d46"
     sha256 ventura:        "af7bd61f35af7725018817b4625b664f61efd4370d3fa6e0171bb49b968ab0b9"
     sha256 monterey:       "625e89432d8dc4a6571ae3db24cdd793f0bd058cff43c09eb565b41c7012ca9e"
+    sha256 arm64_linux:    "e81ba4d9e5a7aea638f48dde6a7bc678dfc324771b6a58dc23d441e0ec80de27"
     sha256 x86_64_linux:   "f5b4cafedb315e92a31a0a5d87e33f7826952bcc5c093ba65817c61247799601"
   end
 

@@ -15,6 +15,7 @@ class Jbig2dec < Formula
     sha256 cellar: :any,                 ventura:        "daab35fae8429496d00b301717837f656c4e166a3f384d8ccc0a2e1ae69f6c30"
     sha256 cellar: :any,                 monterey:       "907cf171d3bf5816be1036330bd09b93df351fde2ea414f99c388668e2637222"
     sha256 cellar: :any,                 big_sur:        "e2a6dc6113dda3fb85111dcc72c6f89fbac0800260cf4110956b3c984f74530e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "43fda0fa722603abe04fe456472b593fcbcfb933ebab2bedea48e2cc77e5cbfa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb3732eb4744293f9354ab856ea2f9b350897fa5408ae9c07330ba454f3ec95c"
   end
 

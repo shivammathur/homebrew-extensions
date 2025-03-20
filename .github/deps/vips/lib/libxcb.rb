@@ -12,6 +12,7 @@ class Libxcb < Formula
     sha256 cellar: :any,                 arm64_ventura: "3de506a3b5fd61bdd3f1cd5a244b82ea34b696894c8c3124e844a37ff6afd8c7"
     sha256 cellar: :any,                 sonoma:        "d7cbef805f6d1aab547a65a931972df59a768bb48ff845ecdcbf7b404f64cfa6"
     sha256 cellar: :any,                 ventura:       "b0bd40b6aba450db00c38a98d4a1e3b8cf3335f4df18e4044e60e1b0ad7fb481"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ab6cbc2dd873785c24e669f1749dc1e694740b9de496eef4289be27f389c79d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ccb2f6e9f4feb73b3dbc56248554bc8ce30cb34771ed987eec1bd956f8563e2"
   end
 

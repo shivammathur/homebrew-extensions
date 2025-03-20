@@ -21,6 +21,7 @@ class SharedMimeInfo < Formula
     sha256 cellar: :any, arm64_ventura: "887f26165f0917b9ff0e72f0fe15facb37402df8209d98433358d631a482e7ec"
     sha256 cellar: :any, sonoma:        "6ac3353108a294266ac4769c90c06f28f73ad1bee527869fbb5a96414ffe136f"
     sha256 cellar: :any, ventura:       "a58ae3ada921d8b224fd9c0c0ca992ea6c71cfadb99c1d87dd21a94aa26580c7"
+    sha256               arm64_linux:   "8785de2e5e75756fba7ad4d6c686ed6cdc43047124f7f63c373cdd5a131853c4"
     sha256               x86_64_linux:  "d657dadf099a3aea5f7fbdb74310d7f973f551ac62555a8f5699cd6a02642ce7"
   end
 

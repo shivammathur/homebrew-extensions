@@ -19,6 +19,7 @@ class Graphite2 < Formula
     sha256 cellar: :any,                 catalina:       "0831f474c920b66bbeab3f93a91fa019b82bfffcdd40e369fdab76372700e980"
     sha256 cellar: :any,                 mojave:         "2f3abb971be03141e9eea54b87c6861d72865bd76fde73ae3161d64c40d51cd9"
     sha256 cellar: :any,                 high_sierra:    "62e39dce0ae0440ac164edaab6e1351520bc5414ad509fc0b8d5c890500785bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "06da87293745fa5229be472b70052a947e0ab3323c47782662a6fbbf2cd920c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e811b079268bc99d1b6253fc0c979e76325e91e294fd0596349dd0285e847b9"
   end
 

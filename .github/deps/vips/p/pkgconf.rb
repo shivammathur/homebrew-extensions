@@ -12,13 +12,14 @@ class Pkgconf < Formula
   end
 
   bottle do
+    rebuild 1
     sha256 arm64_sequoia: "3feba2e952500e4ab9261ac59a19e07c310d1147e31496f62b591e4b21b68683"
     sha256 arm64_sonoma:  "24e921aaf87bc253adf250761cb4bf717d14dec995d2f6302cf966f30f28fe59"
     sha256 arm64_ventura: "2df66bd11baf8300451fb850f365c93e0a9cc47677887d1d0f2f575c148e4b52"
     sha256 sequoia:       "60803149fa486b8da14591ce5c016e37c9388c1ded2a88d9167a84926cc74957"
     sha256 sonoma:        "9f5e12ea8ab25db6afc5c09543d6840d72f6556b894d167ac79007e8f187feb0"
     sha256 ventura:       "3d7bbea2ca2d4d611c55dcd2d890628b2c4f45451fef6e39755f30acf1c4aeea"
-    sha256 arm64_linux:   "8567cde138762100268d29acf7c66c0d1a87b62456964fc7ce012383339f5c73"
+    sha256 arm64_linux:   "6d8ad2faadd3f05fabbc70b12cf2cda9a4543fe7cb6d62bf6288db842461c57d"
     sha256 x86_64_linux:  "9177b7f842d88798bfd86929360ac3a412d3d7e0133f0e9b0dca0d5306c46dc1"
   end
 

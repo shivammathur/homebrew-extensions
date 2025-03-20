@@ -11,6 +11,7 @@ class Openexr < Formula
     sha256 cellar: :any,                 arm64_ventura: "af8d8617924061ea03870e15c819d6517d7af6560eb4636b99bdd30c34eb96e2"
     sha256 cellar: :any,                 sonoma:        "94a0453a5ec9b940438dd111a56e762275915851d61ea5d5eb43e510172b1e08"
     sha256 cellar: :any,                 ventura:       "575cdfa90c04906376aa9083f75f0405c38ffb5b033164f140244a3e572d854d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9952cc9d79c64e2af2a9e5a731bcb792a61cfa6baaca400221928f30c7b6c0e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "544108614f9156fde192de0bb340669a48a175b1d1c8e4a549b7ea14011f59c7"
   end
 

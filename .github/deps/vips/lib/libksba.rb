@@ -18,6 +18,7 @@ class Libksba < Formula
     sha256 cellar: :any,                 sonoma:         "7fb376fb9a021c347e3ffa9a2b91abf42763bcac15457238b0dfb2dfbf6b309b"
     sha256 cellar: :any,                 ventura:        "c296bd13b1b83cba89ab5cf481de5d8b00f1396008daf98cb5724924b19627e9"
     sha256 cellar: :any,                 monterey:       "926a6f72ba9c7ba6701e93ecc4849f13661e558f82b95f5c86b2786f3b46c4f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3930363cc2716c7c0d487b518cfdd2955e72671af0ad494d40f7075ca32303d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2110f07bc9d32f299877e050db0b52a138b8c28f8fac2502585dfa5698e783dc"
   end
 
