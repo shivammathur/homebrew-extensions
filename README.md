@@ -279,6 +279,7 @@ This project is also generously supported by many other users and organisations 
 - [openssl](https://formulae.brew.sh/formula/openssl@3 "openssl")
 - [ossp-uuid](https://formulae.brew.sh/formula/ossp-uuid "ossp-uuid")
 - [pcre](https://formulae.brew.sh/formula/pcre "pcre")
+- [protobuf-c](https://formulae.brew.sh/formula/protobuf-c "protobuf-c")
 - [rabbitmq-c](https://formulae.brew.sh/formula/rabbitmq-c "rabbitmq")
 - [snappy](https://formulae.brew.sh/formula/snappy "snappy")
 - [vips](https://formulae.brew.sh/formula/vips "vips")
