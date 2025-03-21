@@ -17,6 +17,7 @@ class Fftw < Formula
     sha256 cellar: :any,                 arm64_ventura: "32a67cfa0e6452c6a8cba5ab8f0cf337ef1f3cb1f55125443332b930c7a307d7"
     sha256 cellar: :any,                 sonoma:        "8b8af4f154be3b186932fd0050840760227958399093cee5241455194faf7505"
     sha256 cellar: :any,                 ventura:       "70d0f25e977df25d22f29010ccfb0c4be49438f0b35f525acff56fa7f29c15dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd7685235ce26f62a06f3b227658415d0ec0899885a05e1e4bd827262907b2bb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d30800e3ad1513ceb764c62303bb2011a04256a0080b13f9e7803cfc1a4fa43"
   end
 

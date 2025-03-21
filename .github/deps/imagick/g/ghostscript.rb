@@ -20,6 +20,7 @@ class Ghostscript < Formula
     sha256 arm64_ventura: "65fbdd6a025bc88dfaad552606243b63e82e05a864b8f8224c8aa1c0474bf7c8"
     sha256 sonoma:        "acf301528aa9c3102fbdd9315fb24478289a4f3f2b80636ff83b9826369cbf67"
     sha256 ventura:       "5c85945496b69b7153f68d9595d52bb74af1c5eec58c24d640bcbfc10bfa01f3"
+    sha256 arm64_linux:   "66ee2c5c40ce97724d2e674d558f5a2790128687eabc3bf22bd59d5cade26f7b"
     sha256 x86_64_linux:  "db4dee3837f02b8703b68b8753a347a9191b8811f4803a90b90a511e68fdffeb"
   end
 

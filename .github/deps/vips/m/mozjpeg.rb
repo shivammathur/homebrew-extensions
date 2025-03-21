@@ -18,6 +18,7 @@ class Mozjpeg < Formula
     sha256 cellar: :any,                 sonoma:         "fcb0583588eeba6f707aea5899ad93dd5eb49d2982019a4836d817ae0dfbb8bf"
     sha256 cellar: :any,                 ventura:        "db38b13c7efa289ddc6248e3068d3eade4c2314f795650d70bebd6c38d4cca3e"
     sha256 cellar: :any,                 monterey:       "6fddd7081db83c75d0098e0e681c4553b1e6d53fbb88cc744a766552f1f796ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b2ecf43cea49223d6fd0bd8e781ed50e2104eb3fe7e5b4a6ec9ca30cbd87ca94"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e69f9e76bf590d31a85839acdc52bbee9b1c4ccef0370f82f5a80e9d21c69298"
   end
 

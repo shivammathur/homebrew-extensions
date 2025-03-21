@@ -14,12 +14,14 @@ class Nss < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b478d21a9015b22d000c2b1c63a9ea73fcba94cc23845743ec0b68681ad00118"
-    sha256 cellar: :any,                 arm64_sonoma:  "f46e6052c58e4407c78a61b545e851e7b81c153c69a17672959df3f26627dbb3"
-    sha256 cellar: :any,                 arm64_ventura: "839645c865fc721ec618fc3f4d1f7c41b851c5204e3ff95a30e245c2b1f66d7b"
-    sha256 cellar: :any,                 sonoma:        "1f6ff419e3e6ba90bae75de7c8cc73740fa891163b40ad82f565cddc15551a69"
-    sha256 cellar: :any,                 ventura:       "6c53c7b61fb28fcc200538ba237d3279e48b50139202bfa5c798b42123ddc3f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd80182c04091a5b45fdaa187545fb9b92db5267e4d08ee25c735939fa319951"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "623fd40a0bf1efb3513bed0fb85c1283e38edace04793518129d0b7562af54bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "682f8edc0f8b1bff04265c3327ced6a00c8cd542e56b82dd9617af85c699b337"
+    sha256 cellar: :any,                 arm64_ventura: "09c23066854ad4e2c93500118e3d77690904b52685d4206e6fce869f60d54086"
+    sha256 cellar: :any,                 sonoma:        "ee11312d02d4ed7c52cc96073b7310c2e1dabd634f2c726023203a81fead7b13"
+    sha256 cellar: :any,                 ventura:       "cbdf4edbbe84c41220606e8129eeed0c260ab75fd771af6a4fd37f14f1fb025d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6664087aac0055b7e1dcf9dc1a540c2b3e98aee73276baaa1f34a99c8476da6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "092632ee6aa47aa477f8fd2ee9daa1ef728c2915e30d9be7f2435d5de64ed766"
   end
 
   depends_on "nspr"
@@ -31,6 +33,9 @@ class Nss < Formula
   conflicts_with "resty", because: "both install `pp` binaries"
 
   def install
+    # Fails on arm64 macOS for some reason with:
+    #   aes-armv8.c:14:2: error: "Compiler option is invalid"
+    ENV.runtime_cpu_detection if OS.linux? || Hardware::CPU.intel?
     ENV.deparallelize
     cd "nss"
 

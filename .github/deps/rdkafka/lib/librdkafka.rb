@@ -17,6 +17,7 @@ class Librdkafka < Formula
     sha256 cellar: :any,                 arm64_ventura: "6ff97c4cee0975f0e417b3859a9a68d40257a307e5a27bda9c1ba0e71da5b474"
     sha256 cellar: :any,                 sonoma:        "fede523f0f20d45fe3ccfd79753624b6888c8dd0511d468efeba3e2aff6b3eda"
     sha256 cellar: :any,                 ventura:       "260a29da8ec4683ade9e070f4b7e842aca3be797125a6e4aa81bea6ac4e1e030"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e20d9c1f69bafa7809bd1b1bce3513c1c31d5499cda18fae293704fb1247659"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "27648379472cd652b18307460773699f6b93896dc9b5f48d44ca75923f07beaf"
   end
 

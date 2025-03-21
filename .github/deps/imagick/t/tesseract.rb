@@ -18,6 +18,7 @@ class Tesseract < Formula
     sha256               arm64_ventura: "45c101cb9aa70fd7276bce49946043f14cb63210428cbdfc3bc6080f8c467f6f"
     sha256 cellar: :any, sonoma:        "95b9ae7365584cdf4baaec48419138c8d35ccf207693b9eb1c3e026abc399d8e"
     sha256 cellar: :any, ventura:       "ed5ba31f7c1f7b4f6645cf37cb7a18a37a543eb60c3c0199cb50a69d85507fe2"
+    sha256               arm64_linux:   "b5edabda5572cce8b05cebb28ec4f3b33d5f4aa3e712156fa8e5f4ac74396bc6"
     sha256               x86_64_linux:  "3b17fc1d99ecf8ba3d829c90561c9198b36c78f9d8277cb0e95e41351cf90e40"
   end
 

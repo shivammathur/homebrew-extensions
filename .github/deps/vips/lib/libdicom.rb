@@ -13,6 +13,7 @@ class Libdicom < Formula
     sha256 cellar: :any,                 sonoma:         "9a0b6ddb37db98584843c42e5542f24b9d8e8ec6cbb431cc9c972578b4acb2be"
     sha256 cellar: :any,                 ventura:        "211edda989f53885f744b7dfdd930277a2197819ceca052a3f03a281c10d7f55"
     sha256 cellar: :any,                 monterey:       "7bf20b6f29eff5ba9c9cf2dc33a447775af8d84eedb1a6405a856b882f7099d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f3a4c504aa7eacab5ff0aecbb563b651776584e37222ca7199d6618a104541c3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "12aeb51a6477d922ae32934b31abfd489853b8a40833f78ba2bf9c00d82b631c"
   end
 
