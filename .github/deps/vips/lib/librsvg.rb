@@ -19,6 +19,7 @@ class Librsvg < Formula
     sha256 cellar: :any, arm64_ventura: "d6603d7add86e0cc825872bf044e7d9dc19693090ee93ef5248825299f7bef01"
     sha256 cellar: :any, sonoma:        "634f5d94e39ccf7eff754510cd12db72ce3cbc797161227a1f7b8e3a910438df"
     sha256 cellar: :any, ventura:       "5c3d74c400bf0cfc86010f98dba262c10c39f66f743509a3127b9246cb4e3111"
+    sha256               arm64_linux:   "97199cca04e0499e5084ce8ccf043d3d48a3dde4744b9273d7d9021e393f2b36"
     sha256               x86_64_linux:  "c3fb7a85f3c84f3c3edd0740dd5c8fd2cc7371cebf1088be130423255eb8514f"
   end
 

@@ -12,6 +12,7 @@ class Aom < Formula
     sha256 cellar: :any,                 arm64_ventura: "baedc04e1b6dc35c2941b2f577d4f84042ec4a5f7510bbc2a71bef69db93ba36"
     sha256 cellar: :any,                 sonoma:        "9ad194193f6572efa27c18e0b0d302efb9fe8483d83bafc6a281f761c2f13496"
     sha256 cellar: :any,                 ventura:       "447e838844f34977fa4dff5935dcdbb68233c893f7e9428bdcb25842bb61c9b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1e5512d5c3915007133926afe44ee21a948532ffd89fe8de5c57fd05b9078fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1362797ccb23ecee16db63c90f4753612af93f6950dc1e48c08faf38433bff42"
   end
 

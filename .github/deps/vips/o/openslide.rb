@@ -13,6 +13,7 @@ class Openslide < Formula
     sha256 cellar: :any, sonoma:         "24268fa9a0759d1ee9997ca8b4f34d8fbd24ad5f0b5b5cbdbf7a4eea8f447324"
     sha256 cellar: :any, ventura:        "954bbde8c99630dd94c6486021674eed997475307f248d4957767e4a018b0739"
     sha256 cellar: :any, monterey:       "05788d5b3c3101ce73c9080c0d0c360d151cf2460a68b7dfe0bd3effb2c20460"
+    sha256               arm64_linux:    "7912c26023d19f9f9394046ab56ef53929c9c3c59e3a725f2472ebece1f0f9a0"
     sha256               x86_64_linux:   "d67053c017a5e1e57189a2d774cac9d8bbe2c655240183ce65247a0a8650c917"
   end
 
