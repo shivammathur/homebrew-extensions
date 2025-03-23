@@ -20,6 +20,7 @@ class Pinentry < Formula
     sha256 cellar: :any,                 sonoma:         "6eb6f95ae8513f179cb658043457e39dbed3b95bbf1a7bb8aece3158d2fd4299"
     sha256 cellar: :any,                 ventura:        "1a750d73932b1c874887b38e186ad2017a36f230f3306983575bfa8b35c25e0d"
     sha256 cellar: :any,                 monterey:       "4bed735f12804f39955128939408210a31a8d0fd0b7d61f309779daa66053692"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ccf9f241e021929831e1da0c43206b87f99d1886d46e77ea8294f671ceb06c4b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3e303a0b8099dedac66bbc95a0fdc3cfda679e594e60972d99eb3025c6f79fb"
   end
 

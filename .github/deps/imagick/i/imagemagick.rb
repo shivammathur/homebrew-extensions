@@ -17,6 +17,7 @@ class Imagemagick < Formula
     sha256 arm64_ventura: "f6ace53e109d965b191adb4fbbe09100348c3e98ce9a35d9a7c356e7eadc16d5"
     sha256 sonoma:        "d696b674441357182524d8f64f2a08398bb093653d6f7474685370cdb7e150c4"
     sha256 ventura:       "f32b967ce2f2829cf3015ed8673cb47d14556c0a862631e2824a3489b2eb2cca"
+    sha256 arm64_linux:   "83e2b39794196be56deebe7bcbf8d49b7020ac13d67433ffffafafe6a94be3c8"
     sha256 x86_64_linux:  "e6bca27edaa9037180a230bed7ff0ef84b82fa909402714f21f2e96513b9cc70"
   end
 

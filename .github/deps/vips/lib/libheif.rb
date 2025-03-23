@@ -11,6 +11,7 @@ class Libheif < Formula
     sha256 cellar: :any,                 arm64_ventura: "bd4e27af3a4bcab55291ccb64b5837988ff053a9a4f9e3a5e855f099a3edf759"
     sha256 cellar: :any,                 sonoma:        "7b0171ccd79095f52a6c16bde48c370d7b5ac047f0c0265dc0aa3e7cd59519f0"
     sha256 cellar: :any,                 ventura:       "c093278679c0869f9f711c95e6b65b145d3e888de96608e1a5fe1f4734e3a2b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75ceb8a6629880dac1f9213373d61b57cc94c1a0f71a7d008ef44391b7ab5b29"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f95e3f3388b36bf3a81c226356158d7c045ba320d1d84a839c89e40d25a7d3eb"
   end
 

@@ -1,8 +1,8 @@
 class Libusb < Formula
   desc "Library for USB device access"
   homepage "https://libusb.info/"
-  url "https://github.com/libusb/libusb/releases/download/v1.0.27/libusb-1.0.27.tar.bz2"
-  sha256 "ffaa41d741a8a3bee244ac8e54a72ea05bf2879663c098c82fc5757853441575"
+  url "https://github.com/libusb/libusb/releases/download/v1.0.28/libusb-1.0.28.tar.bz2"
+  sha256 "966bb0d231f94a474eaae2e67da5ec844d3527a1f386456394ff432580634b29"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Libusb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "872182eebb566f32d577fa82b126260c383c6a8f8d02e9fc232eadda9184060b"
-    sha256 cellar: :any,                 arm64_sonoma:   "fff3e66328455513a887dd4e8043a13a1213035f7e4a757d4fdf93f9815ffd1d"
-    sha256 cellar: :any,                 arm64_ventura:  "5d14898869c8bb7d12f6a8091b16c2db76909293b579d10b0ee846248451a765"
-    sha256 cellar: :any,                 arm64_monterey: "05c5363ff9f8a4aeaf65eb3f95fba3a4fc7f665d35a627a2d212c43fb7ad5838"
-    sha256 cellar: :any,                 sonoma:         "e49b076581da7311e8a724c409fa12a76a948e1e6805022d4e3cbca6af2c946a"
-    sha256 cellar: :any,                 ventura:        "4f8f2015115cc18610ff65a9f0f34589ebd9596b929066867bbbcac18977b689"
-    sha256 cellar: :any,                 monterey:       "e02e54902348f1918adf758a6b2f4c5d113570f4c98e9f0a38b8d3b24c50c942"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8a4b5075fbdaf5dca99d33fc5d1f21bf45832dcb3a98267737ebc3cd9e55515"
+    sha256 cellar: :any,                 arm64_sequoia: "fb9ed6ef1610e649e3b95f2eb2945f7329fc5695bcb2521c4dca924b61b3ff31"
+    sha256 cellar: :any,                 arm64_sonoma:  "d6490cbec98bc45587edff71af6bc6c7807d120c8a938d5135120dfcde0ede95"
+    sha256 cellar: :any,                 arm64_ventura: "81ee03b903ccaadf6624b56b94da8660b7530ff2ca1c91c0f3b9970c0aca9a43"
+    sha256 cellar: :any,                 sonoma:        "161e0741fa3b4cd8efb5c750c1dd277214f57637320c1bd699f8a1f0a4ac1c2a"
+    sha256 cellar: :any,                 ventura:       "d71077cf63c1b8903735656f3d7558d5e4a63588fe5ef5f9d612908e1dc848a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5473c8faecc7be9a9ea04d712906ca4970fdf9abc1fc8713502a4eb4f8ca4d71"
   end
 
   head do
