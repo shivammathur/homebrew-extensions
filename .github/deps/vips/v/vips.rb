@@ -16,6 +16,7 @@ class Vips < Formula
     sha256 arm64_ventura: "47dc847d95d38abea41706e81d7009d57d176fa02b0c231513a032dcd3a23e16"
     sha256 sonoma:        "362496337c54b8cce1b87f2835436ecbf328334ff7953417cf95b348123ac26f"
     sha256 ventura:       "bbb669b3daf640b0e18306f6df0cdc3d27beb7fd7c20821d35cf2f09ac8579da"
+    sha256 arm64_linux:   "be574b0fe541e799244a7e34b1e5070c43d18f19ebc87f435eb4ca04ea772736"
     sha256 x86_64_linux:  "5baeeb91cc40682eec26c3f06ba91a09e7c529e03ea2ff2314450791beb9f9fe"
   end
 

@@ -6,9 +6,27 @@ class Gnutls < Formula
   sha256 "69e113d802d1670c4d5ac1b99040b1f2d5c7c05daec5003813c049b5184820ed"
   license all_of: ["LGPL-2.1-or-later", "GPL-3.0-only"]
 
+  # The download page links to the directory listing pages for the "Next" and
+  # "Current stable" versions. We use the "Next" version in the formula, so we
+  # match versions from the tarball links on that directory listing page.
   livecheck do
-    url "https://www.gnutls.org/news.html"
-    regex(/>\s*GnuTLS\s*v?(\d+(?:\.\d+)+)\s*</i)
+    url "https://www.gnutls.org/download.html"
+    regex(/href=.*?gnutls[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    strategy :page_match do |page, regex|
+      # Find the higher version from the directory listing page URLs
+      highest_version = page.scan(%r{href=.*?/gnutls/v?(\d+(?:\.\d+)+)/?["' >]}i)
+                            .map { |match| match[0] }
+                            .max_by { |v| Version.new(v) }
+      next unless highest_version
+
+      # Fetch the related directory listing page
+      files_page = Homebrew::Livecheck::Strategy.page_content(
+        "https://www.gnupg.org/ftp/gcrypt/gnutls/v#{highest_version}",
+      )
+      next if (files_page_content = files_page[:content]).blank?
+
+      files_page_content.scan(regex).map { |match| match[0] }
+    end
   end
 
   bottle do

@@ -17,6 +17,7 @@ class Poppler < Formula
     sha256 arm64_ventura: "8bdb09637f614b4f7653bb289fd69316f7c2cc04353f3582022455d622ca8ed4"
     sha256 sonoma:        "f2b20e757f893aeac67526e09c2023bfd87164f9345222c655b0c8023ee6fec5"
     sha256 ventura:       "8913f80245f015b971370fea0c36e23cfbf85b2d4d556872f78b3dd4afcd82e9"
+    sha256 arm64_linux:   "1e2861e553c43f6560a54ca22f1416528a1f4289e032d8356a463e07eaa7b273"
     sha256 x86_64_linux:  "bf716ebaafb88daa03149c1ac8e9b5e35d74f912e8de74ed2ce94c8ba0d7152e"
   end
 
