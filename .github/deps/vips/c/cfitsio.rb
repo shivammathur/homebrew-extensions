@@ -4,6 +4,7 @@ class Cfitsio < Formula
   url "https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.6.0.tar.gz"
   sha256 "7c372fdb4e6cf530fc12294ae0b7f1fdd0ed85062790277a60aea56c97b0d3e7"
   license "CFITSIO"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,21 +12,33 @@ class Cfitsio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0a2282e52cea1554ded11bf20b8ccb08c4797b841cbd2cab36a630060039d384"
-    sha256 cellar: :any,                 arm64_sonoma:  "a34fdd4b5953b49582eaaf3096640c9b1125fa5efc7654996d8c0efddb6c4089"
-    sha256 cellar: :any,                 arm64_ventura: "6518ed062c9fbdad59543f94dfc3e0075c408f9630f70f43c09ec49c5a3a2648"
-    sha256 cellar: :any,                 sonoma:        "5dfcb63aace71db6811b9ef614bc4e96e739f09c6359addaa2f357097c9c7035"
-    sha256 cellar: :any,                 ventura:       "e49c70a730a4e19450da1d7f370ea5f016acb3274544332b54195fa9d7c2a4b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5678b462c9945c96b60dd7359e2bdf4e9c74aecdc17d5f85cb96f56af0dbe3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76ab7cd815f1ef133e79644620f101acc45e236a6e2d9857f6af1a00518af6e2"
+    sha256 cellar: :any,                 arm64_sequoia: "b4840688dc91e1514e9bba00d75ad9e088cc476012d049b05dcea30d7bf2581f"
+    sha256 cellar: :any,                 arm64_sonoma:  "1c7bf77712a66f86836db494facd0cb55e83b594ace4a4d388f299dfbfae748a"
+    sha256 cellar: :any,                 arm64_ventura: "0fa68eef595ebf1ea0eae32355e5cae294871dad772bff5195e0b5442cd70941"
+    sha256 cellar: :any,                 sonoma:        "a465c14b5ea65fca7768f799cc69498cbc31804e399042e9cd240dfd360606bc"
+    sha256 cellar: :any,                 ventura:       "39745c769ea7b54bbddc7295d1f0d5ea02cb1fd91c8c1115eac57cdc9166e9c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b96aa1cfd42ccbaef7d954af47fd13975599d7a44fc672094357d5fe834f9839"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95ac322ee873ba55a36b861712b04728f450a9395444969e0cf5f6ec12d2df27"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :test
   uses_from_macos "zlib"
 
   def install
+    # Incorporates upstream commits:
+    #   https://github.com/HEASARC/cfitsio/commit/8ea4846049ba89e5ace4cc03d7118e8b86490a7e
+    #   https://github.com/HEASARC/cfitsio/commit/6aee9403917f8564d733938a6baa21b9695da442
+    # Review for removal in next release
+    inreplace "cfitsio.pc.cmake" do |f|
+      f.sub!(/exec_prefix=.*/, "exec_prefix=${prefix}")
+      f.sub!(/libdir=.*/, "libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@")
+      f.sub!(/includedir=.*/, "includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@")
+    end
+
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_INCLUDEDIR=include
       -DUSE_PTHREADS=ON
       -DTESTS=OFF
     ]
@@ -38,8 +51,8 @@ class Cfitsio < Formula
 
   test do
     cp Dir["#{pkgshare}/testprog/testprog*"], testpath
-    system ENV.cc, "testprog.c", "-o", "testprog", "-I#{include}",
-                   "-L#{lib}", "-lcfitsio"
+    flags = shell_output("pkg-config --cflags --libs #{name}").split
+    system ENV.cc, "testprog.c", "-o", "testprog", *flags
     system "./testprog > testprog.lis"
     cmp "testprog.lis", "testprog.out"
     cmp "testprog.fit", "testprog.std"
