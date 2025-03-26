@@ -8,8 +8,8 @@ class ProtobufAT81 < AbstractPhpExtension
   init
   desc "Protobuf PHP extension"
   homepage "https://github.com/protocolbuffers/protobuf"
-  url "https://pecl.php.net/get/protobuf-4.30.1.tgz"
-  sha256 "89778b4c1f723f5378a6fbde45e0433292ae8d9a214a7447515bb519e983d6a9"
+  url "https://pecl.php.net/get/protobuf-4.30.2.tgz"
+  sha256 "a73856143393f138f0cfde15ce4047f3ec86afd2c9835ac9dc676150afe416aa"
   head "https://github.com/protocolbuffers/protobuf.git"
   license "BSD-3-Clause"
 
