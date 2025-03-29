@@ -6,16 +6,16 @@ class Glib < Formula
   url "https://download.gnome.org/sources/glib/2.84/glib-2.84.0.tar.xz"
   sha256 "f8823600cb85425e2815cfad82ea20fdaa538482ab74e7293d58b3f64a5aff6a"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "420f2762df64908e59b6052c41580bd03ed980eabbc6b6203c3b4eaa6658ade6"
-    sha256 arm64_sonoma:  "cb1ba6ea1a2e751508329e84a0c6a5787611c02c346c4f0a0e5f58f72e173c1b"
-    sha256 arm64_ventura: "67780cccb994a6864c561eb2e7a4f4744d48ffdf3b48731668ab35a02c871469"
-    sha256 sonoma:        "a4f443dd989b7ea9d7a6bc3ed45e77e904a5e753025094350130168f2407e685"
-    sha256 ventura:       "4647e5269bb706b3c22ddc1123fa007ee232981ebbe0d9d74f8ce88756bbfe7f"
-    sha256 arm64_linux:   "c3bd9c297f485ff3ef08a6cca72b6c847b5c7802f7d46e2ba4dc44974562e54b"
-    sha256 x86_64_linux:  "6ecc4ef1d72d1f6bc3a5635452f30ae30483928b834ae1b906d1b793004d2c3f"
+    sha256 arm64_sequoia: "c21897f3736205f1d1bf063c4c23693605ae1e50d1b3a386e929f695dc6b2956"
+    sha256 arm64_sonoma:  "6f23c9f2dbd9ccf843619cd349b7eba6d6c77bd0bf06c34535af9f252553a77f"
+    sha256 arm64_ventura: "2b6c1ee1a3747f31ef5658f3f09af0ef4e0872188c585c28ee483cd2f69625b1"
+    sha256 sonoma:        "8a76be953615aea9f5ce5ce1af01bffbf00f3ffb9f11dbcde272e62661966233"
+    sha256 ventura:       "d66891c657ad45a7b71eaa8a57c07a8233b923cc1e2c4f5b475fd0b739cc0412"
+    sha256 arm64_linux:   "e9d64f3141f8b24dc32ee531ee988c7af268f25aa10e2c660a6b48cdff2702f9"
+    sha256 x86_64_linux:  "d767f3f13d8b1d2381da356e79011302f226bad112e7e03333a3d13069f849b6"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -51,8 +51,12 @@ class Glib < Formula
                  "share/gir-1.0/GObject-2.0.gir", "share/gir-1.0/Gio-2.0.gir"
 
   resource "gobject-introspection" do
-    url "https://download.gnome.org/sources/gobject-introspection/1.82/gobject-introspection-1.82.0.tar.xz"
-    sha256 "0f5a4c1908424bf26bc41e9361168c363685080fbdb87a196c891c8401ca2f09"
+    url "https://download.gnome.org/sources/gobject-introspection/1.84/gobject-introspection-1.84.0.tar.xz"
+    sha256 "945b57da7ec262e5c266b89e091d14be800cc424277d82a02872b7d794a84779"
+
+    livecheck do
+      formula "gobject-introspection"
+    end
   end
 
   # replace several hardcoded paths with homebrew counterparts
