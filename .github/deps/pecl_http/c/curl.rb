@@ -3,11 +3,11 @@ class Curl < Formula
   homepage "https://curl.se"
   # Don't forget to update both instances of the version in the GitHub mirror URL.
   # `url` goes below this comment when the `stable` block is removed.
-  url "https://curl.se/download/curl-8.12.1.tar.bz2"
-  mirror "https://github.com/curl/curl/releases/download/curl-8_12_1/curl-8.12.1.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/curl-8.12.1.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/legacy/curl-8.12.1.tar.bz2"
-  sha256 "18681d84e2791183e0e5e4650ccb2a080c1f3a4e57ed2fbc2457228579d68269"
+  url "https://curl.se/download/curl-8.13.0.tar.bz2"
+  mirror "https://github.com/curl/curl/releases/download/curl-8_13_0/curl-8.13.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/curl-8.13.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/legacy/curl-8.13.0.tar.bz2"
+  sha256 "e0d20499260760f9865cb6308928223f4e5128910310c025112f592a168e1473"
   license "curl"
 
   livecheck do
@@ -16,14 +16,13 @@ class Curl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "75de4d84a396868c3d3d54e46241fb40d7875ef9fc09ad35e718a666167505df"
-    sha256 cellar: :any,                 arm64_sonoma:  "e503e72b7abf7710b3ba4e9b7d7e157e88d3d64291d9cb2b8a3048976a6cd9b7"
-    sha256 cellar: :any,                 arm64_ventura: "f6eb860f4682ca3b7a179900c4dfc26d478a8d6e034037cbff6e720f32868fc1"
-    sha256 cellar: :any,                 sonoma:        "548929dc8ff10764399f0395a68ac7093988e3db91d7a8a489cb14d2190ac550"
-    sha256 cellar: :any,                 ventura:       "bdf9ac1b882c1f1ede2fbd95ed66b6b96b6292b71ae44c758ee94edfbfe2dbdf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54ec51183da94719359b83ba3c362658d79253401f7e98508a14df8f0a9bec82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "000fcb36884bef88b07da1e2ae01370215b746a02d345a9c83d83e203fb2c569"
+    sha256 cellar: :any,                 arm64_sequoia: "5629dc2ddfe44e07dc15aa725796a8aad62b5785979b91d19b856060f2bc6e21"
+    sha256 cellar: :any,                 arm64_sonoma:  "acc8f8a0ea285d1f6d664f4cc8c8f598efb3503ba5a7c4ac4bbd71f42425f0d2"
+    sha256 cellar: :any,                 arm64_ventura: "5556e95c7b91201cd03c7b02e4110e4b706ee551038ad4720d6526c3f69c172d"
+    sha256 cellar: :any,                 sonoma:        "bc44f5d463aeb83665feb028968e43fec2aa2731244b79a2c350e01e514a8493"
+    sha256 cellar: :any,                 ventura:       "210a0e1e334cac9c2398c6938f9f8337e4f86e1685c8f604a5c024e6baba7cec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18bb0c7ef38940a4c030e8258cce21e0948a7800d208c7e67f125dc4df72fddb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e29f1bd12fffb9b651022b74f2d1772797093185fb192f051b2a39f549acc469"
   end
 
   head do
