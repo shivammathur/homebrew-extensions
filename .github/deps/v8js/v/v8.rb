@@ -29,6 +29,7 @@ class V8 < Formula
     sha256 cellar: :any,                 arm64_ventura: "9d424966acb2e88b34d0b27bef9032dc0d789deff4b298cb6ad2d43321227de7"
     sha256 cellar: :any,                 sonoma:        "9e25c1646f1f395ec8f9466d96fd5bd2bf3ca6f770ebf69905a43fdbaa80169e"
     sha256 cellar: :any,                 ventura:       "c66e6c688dd73c1a6182461e765231385f2bebcafeabf64234b1c5f6d6d26576"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ecb114d91a7473d870fa935b34b9c45588ef16313a34027208bf1098656a6d8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "17f7942f13ff8b10fb467c44c6af7d33c0b0f1d26c6bb4522b9d8e2164cfe19f"
   end
 
