@@ -20,16 +20,11 @@ class GnupgAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 4
-    sha256 cellar: :any,                 arm64_sequoia:  "153ae630364c534e57c8eb3faa2a619e8582bcfabf4e3a60b8d3314f65e1681f"
-    sha256 cellar: :any,                 arm64_ventura:  "23db356556cb20acdcd7e3e05ffeae393ff2649a80cb5270fe72102f9899e038"
-    sha256 cellar: :any,                 arm64_monterey: "be5184ee59c71b2c682b70b8eac14c9da337cc064a3312e2f128a21cd2d6d817"
-    sha256 cellar: :any,                 arm64_big_sur:  "3237337f33d23cbaff0cbf28a1f65a15cefebf6c5f702248ae0b86b7bffffe97"
-    sha256 cellar: :any,                 ventura:        "9954aee85ab26b7566d37e8b198b1b573a8b436a61af0ff5da0e3b00234c77fe"
-    sha256 cellar: :any,                 monterey:       "4d54504497ea855366cf1d864e0f293c8b7b11b6842270f351bdc9e4fcd052be"
-    sha256 cellar: :any,                 big_sur:        "4dd8a169f40032735f58b0a6a0979cc4bb3b6aee9fba3a2a0136d8f1e29f95de"
-    sha256 cellar: :any,                 catalina:       "b799646a353b84065f1b8a42097c8ad85a94248e764cc61dfc3883a40f758ea7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df59c12e2ab5a62bed558ceae4b2a9c9aa3c1cccc09b212634453212c1720dee"
+    sha256 cellar: :any,                 arm64_sequoia: "a0ee682522124e0696270b723eef957da0cc421f421f33206060cbf6a2cfb4d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "d6c981ffb7dcbb12970d3bd2cc7ae1026a4d9de5e026968fd48251f2c4eec082"
+    sha256 cellar: :any,                 arm64_ventura: "743e9ea0952325f6a9b6b050a8c672d280e08a278e4b1438e1158c1a8db8c435"
+    sha256 cellar: :any,                 ventura:       "c0a0ec2aaf0f465095e987d190dfca20c9754648f44abb2475c02e25df208fcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4555a2c6ad6bf5102ecee7ce32d98de3c64ca9ce385492560f71f34f45ac2e16"
   end
 
   depends_on "gpgme"
