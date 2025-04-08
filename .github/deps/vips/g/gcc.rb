@@ -16,6 +16,12 @@ class Gcc < Formula
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/f30c309442a60cfb926e780eae5d70571f8ab2cb/gcc/gcc-14.2.0-r2.diff"
       sha256 "6c0a4708f35ccf2275e6401197a491e3ad77f9f0f9ef5761860768fa6da14d3d"
     end
+
+    # Fix for macOS 15.4 SDK issue https://gcc.gnu.org/bugzilla/show_bug.cgi?id=119590
+    patch do
+      url "https://github.com/iains/gcc-14-branch/commit/efb88ebe0a6886f816c0d037df33df6556544ad6.patch?full_index=1"
+      sha256 "4077af416eaf40a968e4b9d382aeb6470c2b79f09a52da2dd6aa91ace7af5c87"
+    end
   end
 
   livecheck do
@@ -24,14 +30,15 @@ class Gcc < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "96d8bf02f621cfa180cfe6c466fe0aff2cf3f48eab52ea5a5232cdd2a5cc30c4"
-    sha256                               arm64_sonoma:  "4d94c81d3aea48d77d6e7d7d359d05b48024bac44ade59e08dc3fe0f62539a17"
-    sha256                               arm64_ventura: "2869b13880fbe3d3d9d074e3b5f2dbf3bd0593f826d11b8b10165fd489b94deb"
-    sha256                               sequoia:       "548e5453b0cbf88fe86d63aeef2dacfa7eacc030ccdf037113add3040d64db50"
-    sha256                               sonoma:        "901263863f3f4e8b99f9ffb1cccdb00e5fe74fd1013ac79d37af7ce07f600123"
-    sha256                               ventura:       "7832d72cd4f578e244d5b920f2523e77b8f30328229440a569afa5a88df353fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30f36e423478a258611d19828af3f9a330a2bbe4272c1391262f69ca36837e1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0902085b2185b224dd20c2ee5f12d83284cdbb68d0dab1e2edbd4c6603545de6"
+    rebuild 1
+    sha256                               arm64_sequoia: "e04488b59b3afe623479c0c4e441ab99ccb19572afe2a747c1eb7cafcc7d4b13"
+    sha256                               arm64_sonoma:  "c388179ae92170cc5c9f2b6551811e8fe0d14973f0e47c56b0791f4a183a4291"
+    sha256                               arm64_ventura: "4ab59503fbc6052d7c52efeda1fb154db76ee75b8a0ce838e4965a05afd1e5b5"
+    sha256                               sequoia:       "8cb26a29ab7f79355bfef8b78c0516cee00c626d04865b89c4126356196f14da"
+    sha256                               sonoma:        "c754dd6a5aad2690149af073da2673fef2dc65e885b8e8b44a3f74597d9862cf"
+    sha256                               ventura:       "dca116f0acc98c0fa67fdbdb5e8186881d8ef9ba960265147e6c035ca2aeff16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8dd3b0e31b994ece19e8ee04d3f514966ab337f912a84de9830565bbcf05d61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5523977c68741759a1e346b3e5fb1a4b67aa1e1e3aec1106dbe2d7d5b011e155"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
