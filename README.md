@@ -91,9 +91,9 @@
 | Operating System | Architecture      |
 |------------------|-------------------|
 | Linux            | `x86_64`          |
-| macOS Monterey   | `x86_64`, `arm64` |
-| macOS Ventura    | `x86_64`, `arm64` |
+| macOS Sequoia    | `x86_64`, `arm64` |
 | macOS Sonoma     | `x86_64`, `arm64` |
+| macOS Ventura    | `x86_64`, `arm64` |
 
 ## Usage
 
