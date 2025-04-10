@@ -14,7 +14,7 @@ class Mongodb1AT84 < AbstractPhpExtension
 
   livecheck do
     url "https://pecl.php.net/rest/r/mongodb/allreleases.xml"
-    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+    regex(/<v>(1\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
   end
 
   bottle do

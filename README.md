@@ -17,7 +17,7 @@
       <img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg?logo=open%20source%20initiative&logoColor=white&labelColor=555555">
     </a>
     <a href="https://github.com/shivammathur/homebrew-extensions/tree/master/Formula" title="Formulae for PHP extensions">
-      <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.4-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
+      <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.5-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
     </a>
 </p>
 <p align="center">
@@ -26,7 +26,7 @@
     </a>
     <a href="https://github.com/shivammathur/homebrew-extensions#os-support" title="Apple Intel x86_64 supported">
       <img alt="macOS architectures supported" src="https://img.shields.io/badge/macOS-Intel%20x86__64%20-007DC3?logo=apple&logoColor=555555&labelColor=ffffff">
-    </a>  
+    </a>
     <a href="https://github.com/shivammathur/homebrew-extensions#os-support" title="Apple arm64 supported">
       <img alt="macOS architectures supported" src="https://img.shields.io/badge/macOS-Apple%20arm64%20-c0476d?logo=apple&logoColor=555555&labelColor=ffffff">
     </a>
@@ -36,53 +36,55 @@
 
 | Extension       | PHP Version            |
 |-----------------|------------------------|
-| `amqp`          | `PHP 5.6` to `PHP 8.4` |
-| `apcu`          | `PHP 5.6` to `PHP 8.4` |
-| `ast`           | `PHP 7.0` to `PHP 8.4` |
-| `couchbase`     | `PHP 5.6` to `PHP 8.4` |
-| `ds`            | `PHP 7.0` to `PHP 8.4` |
-| `event`         | `PHP 5.6` to `PHP 8.4` |
-| `expect`        | `PHP 5.6` to `PHP 8.4` |
-| `gearman`       | `PHP 5.6` to `PHP 8.4` |
-| `gnupg`         | `PHP 5.6` to `PHP 8.4` |
-| `grpc`          | `PHP 5.6` to `PHP 8.4` |
-| `igbinary`      | `PHP 5.6` to `PHP 8.4` |
-| `imagick`       | `PHP 5.6` to `PHP 8.4` |
-| `imap`          | `PHP 5.6` to `PHP 8.4` |
+| `amqp`          | `PHP 5.6` to `PHP 8.5` |
+| `apcu`          | `PHP 5.6` to `PHP 8.5` |
+| `ast`           | `PHP 7.0` to `PHP 8.5` |
+| `couchbase`     | `PHP 5.6` to `PHP 8.5` |
+| `ds`            | `PHP 7.0` to `PHP 8.5` |
+| `event`         | `PHP 5.6` to `PHP 8.5` |
+| `expect`        | `PHP 5.6` to `PHP 8.5` |
+| `gearman`       | `PHP 5.6` to `PHP 8.5` |
+| `gnupg`         | `PHP 5.6` to `PHP 8.5` |
+| `grpc`          | `PHP 5.6` to `PHP 8.5` |
+| `igbinary`      | `PHP 5.6` to `PHP 8.5` |
+| `imagick`       | `PHP 5.6` to `PHP 8.5` |
+| `imap`          | `PHP 5.6` to `PHP 8.5` |
 | `lua`           | `PHP 5.6` to `PHP 7.4` |
-| `mailparse`     | `PHP 5.6` to `PHP 8.4` |
-| `mcrypt`        | `PHP 5.6` to `PHP 8.4` |
-| `memcache`      | `PHP 5.6` to `PHP 8.4` |
-| `memcached`     | `PHP 5.6` to `PHP 8.4` |
-| `mongodb`       | `PHP 5.6` to `PHP 8.4` |
-| `msgpack`       | `PHP 5.6` to `PHP 8.4` |
+| `mailparse`     | `PHP 5.6` to `PHP 8.5` |
+| `mcrypt`        | `PHP 5.6` to `PHP 8.5` |
+| `memcache`      | `PHP 5.6` to `PHP 8.5` |
+| `memcached`     | `PHP 5.6` to `PHP 8.5` |
+| `mongodb1`      | `PHP 8.1` to `PHP 8.5` |
+| `mongodb`       | `PHP 5.6` to `PHP 8.5` |
+| `msgpack`       | `PHP 5.6` to `PHP 8.5` |
 | `newrelic`      | `PHP 7.4` to `PHP 8.4` |
-| `opentelemetry` | `PHP 8.0` to `PHP 8.4` |
-| `pcov`          | `PHP 7.1` to `PHP 8.4` |
-| `pdo_sqlsrv`    | `PHP 7.0` to `PHP 8.4` |
-| `pecl_http`     | `PHP 5.6` to `PHP 8.4` |
+| `opentelemetry` | `PHP 8.0` to `PHP 8.5` |
+| `pcov`          | `PHP 7.1` to `PHP 8.5` |
+| `pdo_sqlsrv`    | `PHP 7.0` to `PHP 8.5` |
+| `pecl_http`     | `PHP 5.6` to `PHP 8.5` |
 | `phalcon3`      | `PHP 5.6` to `PHP 7.3` |
 | `phalcon4`      | `PHP 7.2` to `PHP 7.4` |
-| `phalcon5`      | `PHP 7.4` to `PHP 8.3` |
+| `phalcon5`      | `PHP 7.4` to `PHP 8.5` |
 | `propro`        | `PHP 5.6` to `PHP 7.4` |
-| `protobuf`      | `PHP 5.6` to `PHP 8.4` |
-| `psr`           | `PHP 5.6` to `PHP 8.4` |
-| `raphf`         | `PHP 5.6` to `PHP 8.4` |
-| `rdkafka`       | `PHP 5.6` to `PHP 8.4` |
-| `redis`         | `PHP 5.6` to `PHP 8.4` |
-| `snmp`          | `PHP 5.6` to `PHP 8.4` |
-| `sqlsrv`        | `PHP 7.0` to `PHP 8.4` |
-| `ssh2`          | `PHP 5.6` to `PHP 8.4` |
+| `protobuf`      | `PHP 5.6` to `PHP 8.5` |
+| `psr`           | `PHP 5.6` to `PHP 8.5` |
+| `raphf`         | `PHP 5.6` to `PHP 8.5` |
+| `rdkafka`       | `PHP 5.6` to `PHP 8.5` |
+| `redis`         | `PHP 5.6` to `PHP 8.5` |
+| `snmp`          | `PHP 5.6` to `PHP 8.5` |
+| `sqlsrv`        | `PHP 7.0` to `PHP 8.5` |
+| `ssh2`          | `PHP 5.6` to `PHP 8.5` |
 | `swoole`        | `PHP 5.6` to `PHP 8.4` |
-| `uuid`          | `PHP 5.6` to `PHP 8.4` |
+| `uuid`          | `PHP 5.6` to `PHP 8.5` |
 | `v8js`          | `PHP 7.0` to `PHP 8.3` |
-| `vips`          | `PHP 7.0` to `PHP 8.4` |
+| `vips`          | `PHP 7.0` to `PHP 8.5` |
 | `vld`           | `PHP 5.6` to `PHP 8.3` |
-| `xdebug`        | `PHP 5.6` to `PHP 8.4` |
+| `xdebug`        | `PHP 5.6` to `PHP 8.5` |
 | `xdebug2`       | `PHP 7.2` to `PHP 7.4` |
-| `xlswriter`     | `PHP 7.0` to `PHP 8.4` |
-| `yaml`          | `PHP 5.6` to `PHP 8.4` |
-| `zmq`           | `PHP 5.6` to `PHP 8.4` |
+| `xlswriter`     | `PHP 7.0` to `PHP 8.5` |
+| `yaml`          | `PHP 5.6` to `PHP 8.5` |
+| `zmq`           | `PHP 5.6` to `PHP 8.5` |
+| `zstd`          | `PHP 7.0` to `PHP 8.5` |
 
 ## OS Support
 
