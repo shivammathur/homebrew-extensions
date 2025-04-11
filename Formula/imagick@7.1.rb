@@ -28,6 +28,7 @@ class ImagickAT71 < AbstractPhpExtension
   end
 
   depends_on "imagemagick"
+  depends_on "libomp"
 
   def install
     args = %W[
