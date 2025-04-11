@@ -31,10 +31,13 @@ class ImagickAT84 < AbstractPhpExtension
   depends_on "imagemagick"
 
   def install
+    args = %W[
+      --with-imagick=#{Formula["imagemagick"].opt_prefix}
+    ]
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     Dir.chdir "imagick-#{version}"
     safe_phpize
-    system "./configure"
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file
