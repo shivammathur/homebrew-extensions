@@ -12,19 +12,19 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "17dc01edff23efc0180b38e0cc567778216240eb9b57f321894022abecd44a2f"
-    sha256 arm64_sonoma:  "bce3619782675469ef11edc6b2f40a8529a72edffd090decb6fb87df1a23e1ca"
-    sha256 arm64_ventura: "341a5112100873c7298ae95dd869251cc489663d311009b34c7adca4ef64791f"
-    sha256 sonoma:        "6a4bece70e04010ea0c8cd3a79b5550805417ec8ef806bbf3aafac9c2eb7c378"
-    sha256 ventura:       "c217d0c45807dc5fc76bafe90966ff981240b754545f6cdf8ffc26d9daa390bf"
-    sha256 arm64_linux:   "0a40588706b93670e4a5e1a0512534ef8056d4b675004647299a5c62cce3f7e8"
-    sha256 x86_64_linux:  "3215ff618340ad769fc4b2a164636cc8767c0d0bab37a05fdac74e5908fedf1c"
+    rebuild 1
+    sha256 arm64_sequoia: "3d7b63545a505aa12f4b9919c03499765b9ae91bb22c171503e00ef1403d447a"
+    sha256 arm64_sonoma:  "34e1150a01678d185c30df5f2274d07c4f06236f92b3fb707c3027e346f83610"
+    sha256 arm64_ventura: "81ba67cc61546e29607ff63e792dcaa078453c66300e62c48dd805c76b2b469e"
+    sha256 sonoma:        "4392321a4b1027b2b005046cc4da9695daabcf10fd7855f438757525a937dadb"
+    sha256 ventura:       "a4d5765e945c356571764b833bd1b884d93f4befe9dcc1b62c4213daa8f687b1"
+    sha256 arm64_linux:   "adfcf4acb6cb5c630fa7ed04cde51b2567bee8bced1bd9694c3f9e25df6f9721"
+    sha256 x86_64_linux:  "cd94eab74e5550506589f0b8b8f1e401e38f1a57d714c1005cdd61095c2cb6fd"
   end
 
   depends_on "pkgconf" => :build
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "ghostscript"
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "libheif"
@@ -77,7 +77,7 @@ class Imagemagick < Formula
       "--with-webp=yes",
       "--with-heic=yes",
       "--with-raw=yes",
-      "--with-gslib",
+      "--without-gslib",
       "--with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts",
       "--with-lqr",
       "--without-djvu",
@@ -100,6 +100,13 @@ class Imagemagick < Formula
     system "make", "install"
   end
 
+  def caveats
+    <<~EOS
+      Ghostscript is not installed by default as a dependency.
+      If you need PS or PDF support, ImageMagick will still use the ghostscript formula if installed directly.
+    EOS
+  end
+
   test do
     assert_match "PNG", shell_output("#{bin}/identify #{test_fixtures("test.png")}")
 
@@ -114,6 +121,5 @@ class Imagemagick < Formula
     ["AVIF  HEIC      rw+", "ARW  DNG       r--", "DNG  DNG       r--"].each do |format|
       assert_match format, formats
     end
-    assert_match "Helvetica", shell_output("#{bin}/magick -list font")
   end
 end

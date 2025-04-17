@@ -22,6 +22,16 @@ class X265 < Formula
     depends_on "nasm" => :build
   end
 
+  # cmake 4 workaround, remove in next release
+  patch do
+    url "https://bitbucket.org/multicoreware/x265_git/commits/b354c009a60bcd6d7fc04014e200a1ee9c45c167/raw"
+    sha256 "cc24fae87d3af05af3a5ab57041cabc4fb4dc93a6d575d69dd23831fe0856204"
+  end
+  patch do
+    url "https://bitbucket.org/multicoreware/x265_git/commits/51ae8e922bcc4586ad4710812072289af91492a8/raw"
+    sha256 "4ee41ef60ce1f992b4d23f2f76e2113fb8eac936429d4905507370d345a403bd"
+  end
+
   def install
     ENV.runtime_cpu_detection
     # Build based off the script at ./build/linux/multilib.sh
@@ -33,11 +43,13 @@ class X265 < Formula
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
     args << "-DENABLE_SVE2=OFF" if OS.linux? && Hardware::CPU.arm?
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" # FIXME: Workaround for CMake 4.
     high_bit_depth_args = %w[
       -DHIGH_BIT_DEPTH=ON -DEXPORT_C_API=OFF
       -DENABLE_SHARED=OFF -DENABLE_CLI=OFF
     ]
     high_bit_depth_args << "-DENABLE_SVE2=OFF" if OS.linux? && Hardware::CPU.arm?
+    high_bit_depth_args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" # FIXME: Workaround for CMake 4.
 
     (buildpath/"8bit").mkpath
     system "cmake", "-S", buildpath/"source", "-B", "10bit",
