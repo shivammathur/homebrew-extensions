@@ -20,11 +20,11 @@ class Phalcon5AT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7362153fc66ec71175c3bc42c402cbd752d00000dd05fb802f568d62474db73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2111b8b8022eabdf226a1262adc49b8ea3085a62efff3b23f871781aa3f3c35a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7486ae80f04b4823d44f005a3bef36e67675a12f72a859bc4c05aee45983468a"
-    sha256 cellar: :any_skip_relocation, ventura:       "074d3081ca5ac5214f13cdaa4c43cfcedd9d038a365d45cde759a886a378f18e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2687cbef504673cb4c80f44f41fd53a6dca8b3f88b92668d1883b29fd3161fe9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be23c9d946ea9f1dfb1e838305f4dea81fb2ece838d4d0b5f906c9da5843641d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b30591f26218755d0d5298525e1426e690f6287d4fdb85c178941020b750d18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b56dfb00eb61937931b5e816f1d7a75994468bd73528ff73d6d29637ea0740c"
+    sha256 cellar: :any_skip_relocation, ventura:       "9bb02797c19c052feb8fe92e5226078584d98f79b6a2b1bf87c1d48fbb891099"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0f7dc25601cd062c08b91e7aeb902272a7931426e3fa9e54c61c1539c425c02"
   end
 
   depends_on "pcre"
