@@ -104,7 +104,11 @@ class AbstractPhpExtension < Formula
 
     def parse_extension(matches)
       @extension = matches[1].downcase if matches
-      @extension.gsub("pecl", "").gsub("pdo", "pdo_").gsub("xdebug2", "xdebug").gsub(/phalcon\d+/, "phalcon")
+      @extension.gsub("pecl", "")
+                .gsub("pdo", "pdo_")
+                .gsub("xdebug2", "xdebug")
+                .gsub(/phalcon\d+/, "phalcon")
+                .gsub("mongodb1", "mongodb")
     end
 
     def init
