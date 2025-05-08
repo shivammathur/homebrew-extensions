@@ -12,7 +12,7 @@ title="$(tr '[:lower:]' '[:upper:]' <<< "${extension:0:1}")${extension:1}"
 for version in "${versions[@]}"; do
   echo "------ $version ------"
   file=./Formula/"$extension@$version.rb"
-  sudo cp .github/formula_templates/extension.rb "$file"
+  sudo cp .github/formula_templates/extension.rb.stub "$file"
   sed -i "s/Extension_TitleAT/${title}AT/" "$file"
   sed -i "s/NODOT/${version/./}/g" "$file"
   sed -i "s/Extension_Title PHP extension/$title PHP extension/" "$file"
