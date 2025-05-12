@@ -8,8 +8,8 @@ class UuidAT84 < AbstractPhpExtension
   init
   desc "Uuid PHP extension"
   homepage "https://github.com/php/pecl-networking-uuid"
-  url "https://pecl.php.net/get/uuid-1.2.1.tgz"
-  sha256 "2235c8584ca8911ce5512ebf791e5bb1d849c323640ad3e0be507b00156481c7"
+  url "https://pecl.php.net/get/uuid-1.3.0.tgz"
+  sha256 "b7af055e2c409622f8c5e6242d1c526c00e011a93c39b10ca28040b908da3f37"
   head "https://github.com/php/pecl-networking-uuid.git", branch: "master"
   license "LGPL-2.1-only"
 
