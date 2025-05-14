@@ -19,11 +19,11 @@ class OpentelemetryAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc41f290120d46be4c0e537cfc89d6b52f86c89fbe7a96dbedaa16cf3b690db2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5026f4cecf6efd92ea6ad24c6a0927c686b5164ccfa45785a7dc76ba747228b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aeb843d42f50e6387dd8f56010fa0005088a8a63b37452d88896d7ab4825858b"
-    sha256 cellar: :any_skip_relocation, ventura:       "5a52aab3458c679d4541beeedd0f74de5864f8e5763269d8b83f1c42a4c2055a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b95ac9a7bb1177bc832c3fe8f83257d114c0e52389f01916a207a7e8ded7f84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87ffcd02733583e8df661deb24d58add240e8a2e2a6e76016b523b87cac4902c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25bcd82972faa9ce3360f33893c9f8945781597399f9eac5cefabd4e0664bd8c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ac6855cd21af2aaa154e2de17c2aac8208647daee2c6de38d8d60b83ebfc42d5"
+    sha256 cellar: :any_skip_relocation, ventura:       "9d2e8ebd38fa45aa33acde8809f93deb5b8862fb46a30e05ceac200d162a66c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78548254c1f3efbc711d5b4276a6bafce0309b31b8695ffd1bca76cc00d71773"
   end
 
   def install
