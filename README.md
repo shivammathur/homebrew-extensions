@@ -64,7 +64,7 @@
 | `pecl_http`     | `PHP 5.6` to `PHP 8.5` |
 | `phalcon3`      | `PHP 5.6` to `PHP 7.3` |
 | `phalcon4`      | `PHP 7.2` to `PHP 7.4` |
-| `phalcon5`      | `PHP 7.4` to `PHP 8.5` |
+| `phalcon5`      | `PHP 7.4` to `PHP 8.4` |
 | `propro`        | `PHP 5.6` to `PHP 7.4` |
 | `protobuf`      | `PHP 5.6` to `PHP 8.5` |
 | `psr`           | `PHP 5.6` to `PHP 8.5` |
