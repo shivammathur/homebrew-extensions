@@ -24,6 +24,7 @@ class MsgpackAT72 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2a956b58474344bc031f23c21767f48c797f7781e62f8592d3d5b68881eb813"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "11990ab41816b52c7a2754f33e3a7976a586fded883b9e9382dbf2a71a7baf8b"
     sha256 cellar: :any_skip_relocation, ventura:       "c58b4385da1f5e79e46d5ddf0010814545d29c7a4da4dbabc68928ae4de28f4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f669764f56d4e7f4bffc9498a2d3ee6cd418c0b3cea51246ccca0b19234f56b1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa17988870a2920ae929a0803a78d058aeccea88e915573a2d5561d11fdb1db2"
   end
 
