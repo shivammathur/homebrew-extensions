@@ -22,6 +22,7 @@ class Phalcon4AT72 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, monterey:       "391d69f873abf6341e8c91e18c54db18803b7aaffe85d3f7b004aee899a16f52"
     sha256 cellar: :any_skip_relocation, big_sur:        "6bc3df6426aa7380bddb5a06ff97e43693321446d4e10b65efeeaaa086e8cdef"
     sha256 cellar: :any_skip_relocation, catalina:       "48118ae7b6a7e0f35384462142c4469471b4b03c260297ae260883b5abf3c82b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "819a8a7fcd862082fe07fed1ee8fc58403afb4e8aa6e1452ca7dc26c6c3d0709"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "422259f1e293a2a5b60ef14b1f8dec927e2400ae6c9657c0d0586f3946d51a17"
   end
 
