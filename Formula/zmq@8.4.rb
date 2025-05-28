@@ -35,6 +35,7 @@ class ZmqAT84 < AbstractPhpExtension
     ENV.append "PKG_CONFIG_PATH", "#{Formula["libsodium"].opt_prefix}/lib/pkgconfig"
     args = %W[
       prefix=#{prefix}
+      --with-zmq=#{Formula["zeromq"].opt_prefix}
     ]
     on_macos do
       args << "--with-czmq=#{Formula["czmq"].opt_prefix}"
