@@ -24,6 +24,7 @@ class GnupgAT82 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "d6c981ffb7dcbb12970d3bd2cc7ae1026a4d9de5e026968fd48251f2c4eec082"
     sha256 cellar: :any,                 arm64_ventura: "743e9ea0952325f6a9b6b050a8c672d280e08a278e4b1438e1158c1a8db8c435"
     sha256 cellar: :any,                 ventura:       "c0a0ec2aaf0f465095e987d190dfca20c9754648f44abb2475c02e25df208fcf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63fd687e66b8a10c9af0f82a8a2e7864790bf988f67a95ac544b3da4a9c9e0df"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4555a2c6ad6bf5102ecee7ce32d98de3c64ca9ce385492560f71f34f45ac2e16"
   end
 
