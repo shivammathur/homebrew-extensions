@@ -30,6 +30,7 @@ class ProproAT70 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, ventura:        "867f5d81d1244fdd81b0e009bf0b24697ca80abf4eef309cc579f21c2760b8f9"
     sha256 cellar: :any_skip_relocation, monterey:       "97efe61fba56c705dea36908cd06ad25e519b5215207566544b7b39c3306f318"
     sha256 cellar: :any_skip_relocation, big_sur:        "2fc7721b01075968e6d39443b9d755d83e91aeffec338d6769fa92bf336bf646"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "56ee558ee22ea38bbece4bf20c8e8d59c6d1c061196557c5d8652c0dd0f01c87"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c530f72f4fc589c8500929126f62fbb1708d73b5cb69451812022b241b802949"
   end
 
