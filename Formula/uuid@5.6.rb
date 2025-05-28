@@ -22,6 +22,7 @@ class UuidAT56 < AbstractPhpExtension
     sha256 cellar: :any,                 ventura:        "ec6e80ef18b683b2e8053c7913c65d585d26a44758467088fc895e6214e7edba"
     sha256 cellar: :any,                 monterey:       "51bac70303e9639a0586e8022e638fe91e1c392d243fbf29b9ebaa106a07931d"
     sha256 cellar: :any,                 big_sur:        "40c4bf9e704f9bec958334b562e909cb0d297dc3570649811eafdd13e72768a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b8ef52dd57aa1ef6b19ce0cc5d3540e300f4258871ab0e5bf0a7ce8a87aa6647"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "046eed04ced266750613dbe22c0df1eca13a50625e7b91997cc12a28d634337b"
   end
 
