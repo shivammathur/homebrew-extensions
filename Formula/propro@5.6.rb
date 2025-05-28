@@ -25,6 +25,7 @@ class ProproAT56 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, ventura:        "ffd3460ba740192c23dd8ea7811e09a027c16a67e6b4f85b8ac9ce8a8638d125"
     sha256 cellar: :any_skip_relocation, monterey:       "ba4bd081bb948b15721b0ce378123bfe500fa649b733e012f6f46c2b5088104e"
     sha256 cellar: :any_skip_relocation, big_sur:        "4ca7d96f03bfff66e14264a9c9e4a2dcf5be440731d0800991847805305799cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1083d71013d0b829d381db733975c83a4a3d736951c084e06c0c01c5c144b30e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd0d3a3e52a4c1af46f3d5719c30b9654ff84937cad2648650586ea7e4104798"
   end
 
