@@ -24,6 +24,7 @@ class SqlsrvAT72 < AbstractPhpExtension
     sha256 cellar: :any,                 monterey:       "81259ea8536efc8a608d8e89ae0ce8d70354ac7cdeef90aed15cf3701513f556"
     sha256 cellar: :any,                 big_sur:        "0a0bfcf787a2307d5330aa530c544e2a0d1419f2757e004f76f6be65a253dd00"
     sha256 cellar: :any,                 catalina:       "da41006ca751d497869f1f7f3f31ec5100cbc10667bde3b1164403f74341a8f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "949b61bcd913ad2f9662231e8c190be3573fcf4438c4c33267221f45fd6d174c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e33382550dcf535513ab0cc7b61e90438b0e7f1129ee0f83a84d8e436cbb852d"
   end
 
