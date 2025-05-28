@@ -23,6 +23,7 @@ class OpentelemetryAT83 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "597105d1214bcd4f06adf06f388dc44991e5860e28e4277a71853f63e95c5e56"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ba7058e34ee9f268f55883313d0d433c7e370bd628aa75757600d8d5982c92aa"
     sha256 cellar: :any_skip_relocation, ventura:       "404245f184992a91825f0df263023b8e646f9a0c5e4ed3c535025682f2fd5bf9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9c5aee3526c52246baabff7339da6fe626a4a10a6e0f4836c38345708464fbd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "27d783c37a96ad58d7770b9ff14f97d917ef7a877c2253b9330b4a0abb696cba"
   end
 
