@@ -21,6 +21,7 @@ class VldAT56 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "eaba70f16a47142357ca6b6e8d75953c9001aae05620278ee0b57208bd451f72"
     sha256 cellar: :any_skip_relocation, ventura:        "b3c792f51e2b71a84e8bea95035ee18b505aeb9e3cab24121dbb8279fc924ff1"
     sha256 cellar: :any_skip_relocation, monterey:       "f011740576fc112db94178632e0df679a6f44378f66ccb7a4c7177ea0bfaa78c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "590af75ff6c7d9fe1c1c6ed1e2f9e43a8594e0bb4f6feeedcdbd876c25c91fd8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a605fbb16d76825372e6e3cf499ff6b2941f46c392b8d4616986e53ec29bf31"
   end
 
