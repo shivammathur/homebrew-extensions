@@ -24,6 +24,7 @@ class DsAT72 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, monterey:       "e82fe3259c7cb7547ffe08106208fecf540bfdef290d1e4e4dc5d2824e82531a"
     sha256 cellar: :any_skip_relocation, big_sur:        "017fc0d462734fb6830474bee8023fad330e4bbc9c90fbccb3c09f40d87ec663"
     sha256 cellar: :any_skip_relocation, catalina:       "55c6d408822cb019436637d1d3a27979e8e704b8c91c51792948ea6723d9bfaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6517507dc151886f5ba91cfc84a0f1e6833a44ef3828d44f66d9adbdf945a9a9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8208feae2417069788f14a863fa025a1f7f38958f38c5f1462a70d8bb4e03ac"
   end
 
