@@ -26,6 +26,7 @@ class Ssh2AT73 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_monterey: "bb6c255ac7951020c0545725ba721247ac3b20ee794fbf408ebfc8a8ec950792"
     sha256 cellar: :any,                 ventura:        "40535022297db56388ca78a327be15a7784efcd17c64569d53429066e8944c77"
     sha256 cellar: :any,                 monterey:       "508f03909d37cd25eb29eaa8f577d58922c7cbf92fdbc406a21050f070a602f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4114e81aaf597333c138a2bb8fc91d46543f970291818f3d28159436328a1ece"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "459dc6b0274292700857459aa39aa63407ab98d940ee8cc6c60036502b429a31"
   end
 
