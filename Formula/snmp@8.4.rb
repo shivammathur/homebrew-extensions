@@ -24,6 +24,7 @@ class SnmpAT84 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "8348660a31aac9dd9b9351ceb4fc33f0e9e2b8d1c62821b41e1912b34f439235"
     sha256 cellar: :any,                 arm64_ventura: "ef007b539e3e80aa6b2fb47943d153693dacd1f406d7fa4b91d23590192ce6c9"
     sha256 cellar: :any,                 ventura:       "cece161d6de0bcf0b2d8a00eea531fdf6a36049e1cf950055bd6c0daf3827107"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "386fdd22a564b14b60b884eedc3fa5c143d281236994e121ecba8a0e46c3164c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2da6335e7123a197353966f14b7285a1eb9d7912b213749a96eecb53d007cb5"
   end
 
