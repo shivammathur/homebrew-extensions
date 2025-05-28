@@ -20,6 +20,7 @@ class MongodbAT71 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "513203b10862c6de1c5d812584b735c43ede481033ccbece70ce3bbef82c211c"
     sha256 cellar: :any,                 arm64_ventura: "69706e51c41bd9144361e0d61b8822c8eb4d1da5b67e1188135925d33f4e0c52"
     sha256 cellar: :any,                 ventura:       "a69823fe1d16aca4dd4e6ab8e50ddf2c3461bae41cf0902926ac9288db174351"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57088d0f33f65441504b5df94eff51cc834705f3d5764fbcce3602409cd0a3c2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4d7b738aa9fbc4c24da32e00ddb1d4b893c0a5e162ff936cc781e66594ca83e"
   end
 
