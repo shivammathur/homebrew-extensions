@@ -26,6 +26,7 @@ class EventAT80 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_monterey: "680dbf934e6b72900e551fe3d295dd475954ee7b201c7358fd815669b43d66ba"
     sha256 cellar: :any,                 ventura:        "85843970b8f1b0cb967c0be516eaa3c687d4253b253a2b7446bc509eec1c2ff8"
     sha256 cellar: :any,                 monterey:       "d50cd1a124f708edd74db3265801fd8ba8d147c7130968baf0c20ce855272c14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "172c872879173a5ffe29f8601a6cae6740d49e7fb62096bb68f9914b80b53945"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a1f496eea17254e918eb313f5f62e15e2aea4247951a5ec1d4e12477ea26979"
   end
 
