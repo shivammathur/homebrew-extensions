@@ -24,6 +24,7 @@ class MemcachedAT74 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "f779f420a8b28cfa923be9d82d4a41ac92a51606dfe9ec962caf2f012deb424a"
     sha256 cellar: :any,                 arm64_ventura: "ac614d36dccb1ebe93ab3df79bbea94dcc677ead47960ae252ab600dcfbc5878"
     sha256 cellar: :any,                 ventura:       "e3e5ee6f511cf555ce744a9fa6fe9f0bbf082f8cd3a5a49506a32fc74b7c6bba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ded0250a7eefa696e14c14bbed97a5b42177b71e85507a4fcab27df54cc4f66"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1c46b71ed5964dd22a57482a7de3f0606c2b650f22120e23ada83fdb2448952"
   end
 
