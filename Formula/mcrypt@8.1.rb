@@ -26,6 +26,7 @@ class McryptAT81 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_monterey: "b14e2bc24c09e6dc4cf93a08942c6c54197b6f4ecaa7b13e67e253cb3fc00d99"
     sha256 cellar: :any,                 ventura:        "18a61163d7e35c620eb26dec2e62202e62c7bfb198eedc9ecf87d4b39e2c7a3c"
     sha256 cellar: :any,                 monterey:       "5ff62bacf6bf46d1a1ee90a64553c56cd344e3f90f9d021e161e46dd5d601903"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e9a579fd7447fa123419cf9d710a023c484cce100ff7a06905d3956c93466965"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "968f05ecfafb7820bd2c42f2c016f9594dbed9fd374bfab4b7e04a88f57e9edc"
   end
 
