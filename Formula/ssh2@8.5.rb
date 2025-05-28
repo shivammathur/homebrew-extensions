@@ -24,6 +24,7 @@ class Ssh2AT85 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "15cfa52dab69cd1b912d0d61e27e5b57e7f9ef01a284285e01d18d7c9ed99b58"
     sha256 cellar: :any,                 arm64_ventura: "326ddcccd5810d572df4b036d07bb6456a69a8a9fee2b48b9e45c0527ba0af71"
     sha256 cellar: :any,                 ventura:       "7ab4f7fa05f21cb6ee9e65e01c07159f6e06081ef44d9d9e62827ea1741e4730"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d219813086a2237ad8af316cf4597b916f2cc71427722f1beeeb4be4a356f9e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e02ea99c1a5799ffd78f83fa4464e0e30265483f614ebe51aff81a358966e818"
   end
 
