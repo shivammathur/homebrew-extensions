@@ -24,6 +24,7 @@ class ZstdAT83 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "b6647ade875fe2b31c7c3da30bc4182315cc0448372e0c425d293113d1afb0d6"
     sha256 cellar: :any,                 arm64_ventura: "1762119b6e9e45674b1f9ad20458847d22e3e699fbbfee4186ae4d6a112d6da4"
     sha256 cellar: :any,                 ventura:       "fefb8aa4c61f1325d6761e816969a2f09378539f32862b25e875d6476c586699"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "557d0bcf64a4974a06daaccbac9f2661ba9733da767916cb99fd85b86de66a87"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "27b2a916df269bf2f0490966739f30daac8954fa6a687d034c4df4c15b6abc3c"
   end
 
