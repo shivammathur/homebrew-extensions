@@ -34,10 +34,9 @@ class ZmqAT80 < AbstractPhpExtension
 
   def install
     ENV["PKG_CONFIG"] = "#{HOMEBREW_PREFIX}/bin/pkg-config"
-    ENV.append "PKG_CONFIG_PATH", "#{Formula["libsodium"].opt_prefix}/lib/pkgconfig"
+    ENV.append "PKG_CONFIG_PATH", "#{Formula["zeromq"].opt_prefix}/lib/pkgconfig"
     args = %W[
       prefix=#{prefix}
-      --with-zmq=#{Formula["zeromq"].opt_prefix}
     ]
     on_macos do
       args << "--with-czmq=#{Formula["czmq"].opt_prefix}"
