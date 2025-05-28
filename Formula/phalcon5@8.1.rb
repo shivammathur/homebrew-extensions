@@ -24,6 +24,7 @@ class Phalcon5AT81 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b30591f26218755d0d5298525e1426e690f6287d4fdb85c178941020b750d18"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8b56dfb00eb61937931b5e816f1d7a75994468bd73528ff73d6d29637ea0740c"
     sha256 cellar: :any_skip_relocation, ventura:       "9bb02797c19c052feb8fe92e5226078584d98f79b6a2b1bf87c1d48fbb891099"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3df6d68fd0b891ee54b5c396cbaa665e082e21e4bee3c0b8f095b10511d8286e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0f7dc25601cd062c08b91e7aeb902272a7931426e3fa9e54c61c1539c425c02"
   end
 
