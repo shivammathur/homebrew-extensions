@@ -29,6 +29,7 @@ env:
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_FROM_API: 1
   HOMEBREW_RELOCATE_RPATHS: 1
+  HOMEBREW_ARM64_TESTING: 1
 
 jobs:
   bottle:
@@ -40,6 +41,11 @@ jobs:
           - runner: 'macos-14'
           - runner: 'macos-13'
           - runner: 'ubuntu-22.04'
+            container:
+              image:   "ghcr.io/homebrew/ubuntu22.04:master"
+              options: "--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"
+            workdir: /github/home
+          - runner: 'ubuntu-22.04-arm'
             container:
               image:   "ghcr.io/homebrew/ubuntu22.04:master"
               options: "--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"
