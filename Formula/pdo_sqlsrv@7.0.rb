@@ -24,6 +24,7 @@ class PdoSqlsrvAT70 < AbstractPhpExtension
     sha256 cellar: :any,                 monterey:       "a537061077a50f28545deadf00a4bf561afb13da8bbd81571f9ca10100b61918"
     sha256 cellar: :any,                 big_sur:        "77b502f55313ae023a436fa3a3a461ba44e9a7be9973a0b9df9ce3c866d4f550"
     sha256 cellar: :any,                 catalina:       "b226fd4f69ae34d67bae719b614c0b7912bb30e5443acffa59482bdcb957710c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d928d74244f6221bf0a9f99a56858f679bea6158dc2d7cbdc5ca0a2add61fee7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eeaef2aab8f40f050c15134cf64c66dec0a59e50882a3d83db6213b6df002eee"
   end
 
