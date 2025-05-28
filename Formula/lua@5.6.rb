@@ -24,6 +24,7 @@ class LuaAT56 < AbstractPhpExtension
     sha256 cellar: :any,                 monterey:       "747231da3701488fbfd2c76b677ef844cd8d27ece5f74911b7a06ffcd9919901"
     sha256 cellar: :any,                 big_sur:        "e6486c2994e03dd53572424d0d3491107181dbdce6e4ee3346c970b4ca00844d"
     sha256 cellar: :any,                 catalina:       "2570c15eeae41baebb14b3c3440b9e05711fe945532b3b1ef9ac76d0bec20114"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8b899b575214dba11a52a93529bb2e8ab6d7beeb67b7bdc4726489ed64cef02f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "de4073a01b0276adcc44d1a774ea8bd8b8b5345920541de6df00e327742abb53"
   end
 
