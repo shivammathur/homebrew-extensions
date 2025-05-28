@@ -25,6 +25,7 @@ class ExpectAT73 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "9cbe9cfec5cf5a4bba07f0a87922f0247f1ff4980308a191717b4ed56022e381"
     sha256 cellar: :any,                 arm64_ventura: "0c956862f7384de18f4bd62dab3f97c0e2c325c20b528113ed4c2af5f04c9b9d"
     sha256 cellar: :any,                 ventura:       "4c79dda2969a3e45a80739b4b872c24d8f7be94eb651ee512731a359d9c47c42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fedf8db3c5db56065c92e8f0fd6d450dfee09d5cb8673ec9cf80ac6a5aebb52e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e40969a63a9cc71bf4e49bd32040dd4a4c98c02a982398b632acec987881c958"
   end
 
