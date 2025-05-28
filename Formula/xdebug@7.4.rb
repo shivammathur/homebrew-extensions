@@ -23,6 +23,7 @@ class XdebugAT74 < AbstractPhpExtension
     sha256 monterey:       "8db8eb07582f265df2044db5251f75d03acfffc87dfff32e63bd1d37ac7611e5"
     sha256 big_sur:        "b83e210c171ab66180684a86c13beceefd9a472284a005024665cc3020dd39dd"
     sha256 catalina:       "6ab0c95388ab54af02f6fdd731eec06f3cc61c7b4bf590eb1782716537e6b39a"
+    sha256 arm64_linux:    "4028ecfaaca4bcf81bf03cc3f86e512d9594016d414a91d98711671652500abb"
     sha256 x86_64_linux:   "e0f9e52312d052a041620c4ddbdbe68b16acc70c145a6ed5a351de903bb78bf1"
   end
 
