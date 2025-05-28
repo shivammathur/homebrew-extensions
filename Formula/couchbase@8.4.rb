@@ -24,6 +24,7 @@ class CouchbaseAT84 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "a4eac8255568afbc817b87eb7658895bca31e3382037bf80f166dd4edd55fd23"
     sha256 cellar: :any,                 arm64_ventura: "f3f90165b6c67121fddf97cb2cfe9dcc6115297243ccad2c780bfba80cc484b8"
     sha256 cellar: :any,                 ventura:       "b1f4c37c02c964d6a76fe789734bb9a541b169f47608495cc43dad8d8b996a48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e8212e86efd31cf5bf268b13fc092c605f9e32931c80fb8fc40ef612347405c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c5aa82eaf731c3fd2bab4774da570fdd99bdb6ba779706b7733283985b9febe"
   end
 
