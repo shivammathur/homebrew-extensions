@@ -24,6 +24,7 @@ class MailparseAT73 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7121e71870df0b1694d11acf4633d83fe7f07fdba5a8baef3454562e88724d46"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f297fbebe8263a85d576837992d107c7bf29c3eab2d1724dcdb86170ba3a0214"
     sha256 cellar: :any_skip_relocation, ventura:       "a4c08c49ee71e8a2d6a27aef84ca62b521318e2caa45396aa8617e8743f45e4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f654e34775b1e963579d093eba8311db4574ac3da8c98c4e8db147eca77d7f9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "126a0725d7b0e4763ed8a33a0a778b3cef170f711ba1012d380a8714c223dea1"
   end
 
