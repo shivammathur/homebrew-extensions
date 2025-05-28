@@ -22,6 +22,7 @@ class CouchbaseAT70 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_monterey: "e232f584620c0e2934903bf89399f8a57b670a7e88490aa14a33f288a23e5735"
     sha256 cellar: :any,                 ventura:        "2ab39f16e258b1fce97fcf7ade87ba31737a65988109f6ffa089cfdc475d616d"
     sha256 cellar: :any,                 monterey:       "77faae50659e73b595b05670a51a9dc3e32e5a0f1e0f1f0491698d19e216f6b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "30081fa006d5ff20797a9f37b4f041e4abacd7a096ced47e069e96ecf19469af"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b154e2bca7a105d35f8dd882a44f9f271bc1d733c883181776d8cb817b14336"
   end
 
