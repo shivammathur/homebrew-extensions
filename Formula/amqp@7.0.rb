@@ -22,6 +22,7 @@ class AmqpAT70 < AbstractPhpExtension
     sha256 cellar: :any,                 ventura:        "93a09802aabe59e8f7f60338b3cc8da19d10d0e2c12b75a9f33a976ed2c56d19"
     sha256 cellar: :any,                 big_sur:        "f04fc1becc03867499f7966dd74368796e4d5f47c6ca91a917c3fb059b31b5d0"
     sha256 cellar: :any,                 catalina:       "4be6f8e37bb39f8121f6e577cda4bc1e2548564a5f38047f15797ddb32b36400"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "28fe0d66b112cf73619d51d97e27d75f84c7b843e46a012828b90450aa9b83d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "34fa4bfc67d8ea8acae340ef2062c94973fc5d8a97bc79ffd17297dde14c6c42"
   end
 
