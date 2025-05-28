@@ -22,6 +22,7 @@ class MemcacheAT70 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, ventura:        "257ca93a5a940b7ec6fbd528462076acfd8c7995fa9b3f7b1983af6dcdabc832"
     sha256 cellar: :any_skip_relocation, big_sur:        "9d532ac5a58e4b5841ce66c2c241b5aa7d6efcf1668f96a694e084751ce07bfb"
     sha256 cellar: :any_skip_relocation, catalina:       "be807879f7b332829e6e4a7c1c995f30b9e6867b2853638cd0e7818a140eefe4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3958f592901430e456a3c2fb950dc5fac1dc03391a1ef625f8d0533749387262"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cde95ce57b5b4063af5c6a0a13710d84a07a2c4f387c87f91d3852d96eb7c355"
   end
 
