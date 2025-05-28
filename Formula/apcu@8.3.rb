@@ -24,6 +24,7 @@ class ApcuAT83 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bc9160df47315484b2355a2946ffc828476ab747ee4ed49520dc031cdc1eda4"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cb36c245f65538dd202266393267f83a3741433d7f9c381900e40124a196d147"
     sha256 cellar: :any_skip_relocation, ventura:       "72f36a833500fcddadc8d44a4888c400987273e909172e649485b44bc008a727"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b324a843e90dfcd7be0cdd0f7cc17f60f3a1b6da6426ba54a301b70479ec11b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "133bf45c270c316d9e3f8d4b57eecdecadf6ef24ecc18955b27d63ac7810ff8e"
   end
 
