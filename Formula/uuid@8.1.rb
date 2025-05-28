@@ -24,6 +24,7 @@ class UuidAT81 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "a10b367b0a78656ff231863ab963dae2ab86fc66c30456d81307069f9d59a762"
     sha256 cellar: :any,                 arm64_ventura: "a59120593f023cda8c881c17746d989ea211f0de81981c6c5313928a16f0bfbc"
     sha256 cellar: :any,                 ventura:       "9693b71f5ee36de41924bad3e09798d45c3033321edd3ac80002b8c0b700c8ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f6013954ea8309814cf155be01dccdee74aac68497e27dfb9f5b4253cdb7b3b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2768852e2df23934d6c9b3f6a7e842806f7ee5e7935919508a1cd07c7007c1f"
   end
 
