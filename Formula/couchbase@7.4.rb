@@ -43,13 +43,13 @@ class CouchbaseAT74 < AbstractPhpExtension
       ENV["CXXFLAGS"] = "-std=c++17"
     end
     Dir.chdir "couchbase-#{version}"
+    inreplace "config.m4",
+     '-DCMAKE_C_COMPILER="${CC}"',
+     '-DCMAKE_C_COMPILER="$(CC)" -DCMAKE_POLICY_VERSION_MINIMUM=3.5'
     safe_phpize
     inreplace "configure",
       "EXTENSION_DIR=`$PHP_CONFIG --extension-dir 2>/dev/null`",
       "EXTENSION_DIR=#{prefix}"
-    inreplace "config.m4",
-     '-DCMAKE_C_COMPILER="${CC}"',
-     '-DCMAKE_C_COMPILER="$(CC)" -DCMAKE_POLICY_VERSION_MINIMUM=3.5'
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-couchbase"
     system "make"
     system "make", "phpincludedir=#{include}/php", "install"
