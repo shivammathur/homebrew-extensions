@@ -24,6 +24,7 @@ class RedisAT81 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "7442ff9591e36c871277fb81e9a53823d39ddb267c1444df126ca43da66d2b2d"
     sha256 cellar: :any,                 arm64_ventura: "142eda9e962d0110933811177553908e77d8533fbba8967e116171bf3e000be0"
     sha256 cellar: :any,                 ventura:       "d10707256af014f639d764aa05d0c58c128a9e99ee8dac4823c62f9227d421e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55946c94b7641d56d9051b1e97c19a3cac68caf7aef9056726e8858dc767a89b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "86ec0f12e4e3ca9d67ba5876125d391eab2545a94469581e35b7be8748136186"
   end
 
