@@ -45,6 +45,9 @@ class CouchbaseAT84 < AbstractPhpExtension
     inreplace "configure",
       "EXTENSION_DIR=$($PHP_CONFIG --extension-dir 2>/dev/null)",
       "EXTENSION_DIR=#{prefix}"
+    inreplace "Makefile.frag",
+     '-DCMAKE_C_COMPILER="$(CC)"',
+     '-DCMAKE_C_COMPILER="$(CC)" -DCMAKE_POLICY_VERSION_MINIMUM=3.5'
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-couchbase"
     system "make"
     system "make", "phpincludedir=#{include}/php", "install"
