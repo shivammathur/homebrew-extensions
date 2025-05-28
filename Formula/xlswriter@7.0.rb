@@ -24,6 +24,7 @@ class XlswriterAT70 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bec8b068289b3894af10eed8edea828207dc6ab8c8c5238e0dbf33b0f25e209"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "35cc57cb6d28b33629cb51dcccd79a0ff687a9f281a1112c360dad59dea5d155"
     sha256 cellar: :any_skip_relocation, ventura:       "c0975423161546c768ac9bb46237bbb04ff4f1cc45434a5a0703d095047a9a3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "539d09edf464dd1b993ebca30bacae35a843f725bdccb926a03d4faa7138123f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e991fe6d3c87943027230adf715ab901d7e493ae7d188a2ae87c2bc91816a10"
   end
 
