@@ -21,6 +21,7 @@ class ImapAT71 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "60f7aad0ca2b175e1eaee2d7e4a00b7d07e93c891ee05b6c7542afc874459fb9"
     sha256 cellar: :any,                 arm64_ventura: "05ec13be6181ccd8e9ec5d1d58d892f3ea0708a6c6376502e101f955ff4233be"
     sha256 cellar: :any,                 ventura:       "67085e3928cf5c524ea5c130e959ad32561177a86b82b1563e2f03dcd7709951"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7491adc2eaedcc61c0269055d6a5d35bebe61c474272b27dca51ea3bfba93cb4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "198d88f45401daf42737a387543f5ac5420584f38b912f622a93d6b9c2362812"
   end
 
