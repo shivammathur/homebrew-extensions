@@ -23,6 +23,7 @@ class SwooleAT73 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_monterey: "453cf4f29f014597ea735f77304f7a3d630bf52704422b6c118c529b896034fe"
     sha256 cellar: :any,                 ventura:        "ebf90cee20c92e4aec3fb8a99642569b720de5cb00494c0c8774c50a898de9ec"
     sha256 cellar: :any,                 monterey:       "feb5e7d208e8d30b2e9acc7ff7b1681463aecea87c9dcabd060f9caae8c3a9ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5c39a2cf7fe7fae3ef870b39552c717f13b57ab5d088cbdc3903679bdd4d202d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7640a29019ce9242104cdb1b761551b5b4a66f1c7b14c5934762f3f57ca390de"
   end
 
