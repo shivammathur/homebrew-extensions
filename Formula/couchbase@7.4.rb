@@ -23,6 +23,7 @@ class CouchbaseAT74 < AbstractPhpExtension
     sha256 ventura:        "fb817259d4cdbb1663cc37a20df789c819d0a08340290d891f40ac8f6b6d2030"
     sha256 monterey:       "6b4c33936d1e6f95c8de7e737cac74ef013e5976843403e50a026eeec8defec8"
     sha256 big_sur:        "09e1604b9f14471c4268c27f0a2b5a3d0cfdfd20271b94afd20b8eb9c1b931de"
+    sha256 arm64_linux:    "1a7efb96269768ff675e0504b26aa3e6737400fcb389eed40c119c5e3bc00041"
     sha256 x86_64_linux:   "f54a63c34b672ef1f5ebee15e57600453a032730fbd5ca88f7e7a9f314ea4dfe"
   end
 
