@@ -24,6 +24,7 @@ class RedisAT82 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "a87082f5cd7fe24889c2e509bbb327720c3de46cd60a2a6fd93f715d41512fb1"
     sha256 cellar: :any,                 arm64_ventura: "777c718496911bd56ef8eb5ba4c77650c902ca4a47913edc5092c2e9bb5b91b4"
     sha256 cellar: :any,                 ventura:       "c408de20687f264f96d85cd320c28887ed496529d84cc23ab56c479874cf4052"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "541bf8b76c3e1d01ab00bc90e4bb71bb3ba6b20c963b9c12d0e0d75cbb73f418"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1664f9aa1adc797ca52c427c2839b2b3147d1678c2f68b30f87928fcfa43704c"
   end
 
