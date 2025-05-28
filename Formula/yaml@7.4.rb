@@ -24,6 +24,7 @@ class YamlAT74 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:  "f021c7fc7a941d011124f5ff9379fdce82ac0d76a1212917b90d566a2ac467f4"
     sha256 cellar: :any,                 arm64_ventura: "f3e28c7eb84e96bf92a3215e2621156105d07102483222db7934f11005ea3032"
     sha256 cellar: :any,                 ventura:       "5f6c0a791aae61b44981355e31615d3d9f81334a6b197348288666974c04bac7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c024ca1707efa05e82530d3fab827be0de9d8aa3883e1b3dcd8a7832306b153"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dd055a721442043bbe63fec3c28cf6ee02b5d759aaeae4edef2bcc5538f2b41"
   end
 
