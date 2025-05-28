@@ -24,6 +24,7 @@ class ProtobufAT85 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eeb3142bd7fee43935f370f0648cdfb0058b936314b9507f888eb85d48ab95b9"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "45161e53125c17e8d4db47921c2992bfb56b4b8adb38b393a99849311f49a6fa"
     sha256 cellar: :any_skip_relocation, ventura:       "19848a93bb53241eab2db07dca825c074e293526b57f8123bea8d8f07d48015d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bde79f2e2e88355c59a8af9fc55c4dc481659fb1133493b70397bf67cdf62c9f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bdece57df4316718b1455473eb6e5a3b4092cfd2622f3c8c5481c389dc73eff"
   end
 
