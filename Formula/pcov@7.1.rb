@@ -24,6 +24,7 @@ class PcovAT71 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "804adea08e59e1aa4afee34e530ebe1495be669a3d4a5eb81d0afca6fe9daa75"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "54f739eb8efe3057f691cd1c4738266979c1721caab1e63512107922dea6e820"
     sha256 cellar: :any_skip_relocation, ventura:       "ac17945920e212455ffcff6a0d32df9f80654a1fb8ef44f7f812b0b917b3291b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de9171c6c8be67e6bb4f9c86b532cfaa6af1e20d56cdaa24cac6186d385ef3c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "85abab2ee823f1e96473e8bfa92c8b086fa3b1074ac517ea6e307914b08b825a"
   end
 
