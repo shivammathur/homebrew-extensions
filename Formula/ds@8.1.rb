@@ -24,6 +24,7 @@ class DsAT81 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42367db2b0d953e2c8c8202d01f4210adcf08a3a7e7a023ded36dd9526832883"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b2dfa69470498be11e7b376717a41da80549e0649475dcaf943982fc214f5bca"
     sha256 cellar: :any_skip_relocation, ventura:       "9cb6713d744c4eaac1ecc4c88bf42ab7ba0803d591ffbd03ff2b45488a6e8312"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0b8aa955c89c77fc35eff92acb25d052f71b0a9918ba2622fe3a61e9007e913"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4d9492184cc96d4ef4020aa8a6a384d24f0ec28ecae8311cdae495046c1f74c"
   end
 
