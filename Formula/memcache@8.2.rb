@@ -27,6 +27,7 @@ class MemcacheAT82 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, ventura:        "9672ce71d7a23fbb2bbd72ce4d48bd5f2eaacbc48049663a76ac1cada8e4da03"
     sha256 cellar: :any_skip_relocation, monterey:       "63bf2c48ce0de19591ac24eb6d10057e5bd05101a12a103300c59550ca3fa048"
     sha256 cellar: :any_skip_relocation, big_sur:        "8730adcd0c325ad0d0a829cc2b94f1f7bd48ccc7ed78acce35c5915372488033"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "40622a8f70f1aa764dc1f5928b925dda29acd0fa5979698796577b5cac00fa8b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "12461dff9d7ed4bef6d78678d1557a3000171f4b4b13c74b1bbaf2904fc89aa2"
   end
 
