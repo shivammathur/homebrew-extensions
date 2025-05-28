@@ -24,6 +24,7 @@ class GrpcAT70 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce3499859763be917d5c3db07bf9a3a31b14f08c32bab0a61e108e455319de39"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1e8923b3aac6ac796a7fb381472b3e84e4a662d073b6f6c81851a7467b873f56"
     sha256 cellar: :any_skip_relocation, ventura:       "8f452d32617a7ae52af39af2f826e2d312ee81d0187ec6703f22664bb4005fdd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53d03d67d4345f07d505d06764217dba91887658d08ccdea2336f734b4cd27d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ca9272424bcd1d8b97b736df61582f1f9683bf2a0b1a79c0f64867c158a2545"
   end
 
