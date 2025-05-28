@@ -28,6 +28,7 @@ class PsrAT83 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, ventura:        "1a4d03b1d3cb4279993997308ddec21da38855f34b8f7f93626816b2f4d8dd16"
     sha256 cellar: :any_skip_relocation, monterey:       "6223662a0d52b30168b9ef20050f57a4a8a64b72497f322e4cfdace9fda387c8"
     sha256 cellar: :any_skip_relocation, big_sur:        "49a29e4b3d093d895b2ee17080c2d6f3a409622c465d3c17f85cc823e5295f99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a64aaa0ef714802160d106595ece5c6831a801aa4007d3270fdc827982601e60"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7879fa2614f3f0f27bd934bb49f1d742bc78895aca684103b312b7ce3a7e1df4"
   end
 
