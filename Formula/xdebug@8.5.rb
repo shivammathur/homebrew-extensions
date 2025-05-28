@@ -21,6 +21,7 @@ class XdebugAT85 < AbstractPhpExtension
     sha256 arm64_sonoma:  "339b7b8a204e2163a2fe54a582f1bd0e62f9504fe349bc514d9ec404eefcbe1c"
     sha256 arm64_ventura: "445cea0a4d4566314d50d61efea2580994d4ec7312bc6e22add38b2734232e8d"
     sha256 ventura:       "1869d44d4e400220da8596ac4e1afa8214d395a8fe472b14c32cde6b7061888d"
+    sha256 arm64_linux:   "be3b193afdfd8b352d7108b8b60e233f36a4b4a0984b5e079ddb04535b8f4e1e"
     sha256 x86_64_linux:  "0fbbf7b3720fa942b9664e675fbc167d733b3612acd360c957fedb646fcbe7d1"
   end
 
