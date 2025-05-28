@@ -34,7 +34,6 @@ class ZmqAT70 < AbstractPhpExtension
 
   def install
     ENV["PKG_CONFIG"] = "#{HOMEBREW_PREFIX}/bin/pkg-config"
-    ENV.append "PKG_CONFIG_PATH", "#{Formula["zeromq"].opt_prefix}/lib/pkgconfig"
     args = %W[
       prefix=#{prefix}
     ]
