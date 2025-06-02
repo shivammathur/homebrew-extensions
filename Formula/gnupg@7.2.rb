@@ -8,8 +8,8 @@ class GnupgAT72 < AbstractPhpExtension
   init
   desc "Gnupg PHP extension"
   homepage "https://github.com/php-gnupg/php-gnupg"
-  url "https://pecl.php.net/get/gnupg-1.5.2.tgz"
-  sha256 "ad57aa23b3aef550fa4deddd003ff5322b886d55a67d1b020f5682ab829809fd"
+  url "https://pecl.php.net/get/gnupg-1.5.3.tgz"
+  sha256 "c1555e0c86a7f6d95141530761c1ecf3fe8dbf76e14727e6f885cd7e034bdfd2"
   head "https://github.com/php-gnupg/php-gnupg.git"
   license "BSD-2-Clause"
 
