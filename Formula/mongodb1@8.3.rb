@@ -11,7 +11,6 @@ class Mongodb1AT83 < AbstractPhpExtension
   url "https://pecl.php.net/get/mongodb-1.21.1.tgz"
   sha256 "357e1f4f6b9f6f6970789f5186467da1960dff2db2a8d6474f69ad51a37b5f72"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://pecl.php.net/rest/r/mongodb/allreleases.xml"
