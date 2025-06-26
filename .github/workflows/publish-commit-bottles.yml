@@ -83,3 +83,5 @@ jobs:
 
       - name: Sync branches
         run: gh workflow run sync-default-branches.yml
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
