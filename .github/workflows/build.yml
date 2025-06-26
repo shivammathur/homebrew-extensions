@@ -2,7 +2,7 @@ name: Update and Build Formulae
 on:
   push:
     branches:
-     - master
+     - main
   schedule:
     - cron: '0 4 * * 4'
   repository_dispatch:
@@ -21,7 +21,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'skip-build')"
     runs-on: ubuntu-22.04
     container:
-      image: ghcr.io/homebrew/ubuntu22.04:master
+      image: ghcr.io/homebrew/ubuntu22.04:main
     env:
       HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
     outputs:
@@ -99,7 +99,7 @@ jobs:
         env:
           EXTENSION: ${{ matrix.extension }}
           GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
-          GITHUB_DEFAULT_BRANCH: master
+          GITHUB_DEFAULT_BRANCH: main
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}

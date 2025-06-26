@@ -42,12 +42,12 @@ jobs:
           - runner: 'macos-13'
           - runner: 'ubuntu-22.04'
             container:
-              image:   "ghcr.io/homebrew/ubuntu22.04:master"
+              image:   "ghcr.io/homebrew/ubuntu22.04:main"
               options: "--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"
             workdir: /github/home
           - runner: 'ubuntu-22.04-arm'
             container:
-              image:   "ghcr.io/homebrew/ubuntu22.04:master"
+              image:   "ghcr.io/homebrew/ubuntu22.04:main"
               options: "--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"
             workdir: /github/home
       fail-fast: ${{fromJson(github.event.inputs.fail-fast)}}
@@ -98,7 +98,7 @@ jobs:
     needs: bottle
     if: inputs.upload
     container:
-      image: ghcr.io/homebrew/ubuntu22.04:master
+      image: ghcr.io/homebrew/ubuntu22.04:main
     defaults:
       run:
         shell: bash

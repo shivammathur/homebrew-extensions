@@ -5,7 +5,7 @@ git config --local pull.rebase true
 
 brew tap shivammathur/php
 
-trunk=https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula
+trunk=https://raw.githubusercontent.com/Homebrew/homebrew-core/main/Formula
 IFS=' ' read -r -a extensions <<<"$(find ./Formula -maxdepth 1 -name '*@*.rb' -print0 | xargs -0 basename -a | sed 's/@.*//' | sort | uniq | tr '\n' ' ')"
 for extension in "${extensions[@]}"; do
   formula_file=./Formula/"$extension"@7.2.rb
@@ -37,9 +37,9 @@ sudo git status
 sudo git add .
 if [ "$(git status --porcelain=v1 2>/dev/null | wc -l)" != "0" ]; then
   sudo git stash
-  sudo git pull -f https://"$GITHUB_REPOSITORY_OWNER":"$GITHUB_TOKEN"@github.com/"$GITHUB_REPOSITORY".git master
+  sudo git pull -f https://"$GITHUB_REPOSITORY_OWNER":"$GITHUB_TOKEN"@github.com/"$GITHUB_REPOSITORY".git main
   sudo git stash apply
   sudo git add .
   sudo git commit -m "Update extension dependencies"
-  sudo git push -f https://"$GITHUB_REPOSITORY_OWNER":"$GITHUB_TOKEN"@github.com/"$GITHUB_REPOSITORY".git master || true
+  sudo git push -f https://"$GITHUB_REPOSITORY_OWNER":"$GITHUB_TOKEN"@github.com/"$GITHUB_REPOSITORY".git main || true
 fi

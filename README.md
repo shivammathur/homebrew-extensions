@@ -13,10 +13,10 @@
     <a href="https://github.com/shivammathur/homebrew-extensions" title="Homebrew tap for PHP extensions">
       <img alt="Build status" src="https://github.com/shivammathur/homebrew-extensions/workflows/Test%20Formulae/badge.svg">
     </a>
-    <a href="https://github.com/shivammathur/homebrew-extensions/blob/master/LICENSE" title="license">
+    <a href="https://github.com/shivammathur/homebrew-extensions/blob/main/LICENSE" title="license">
       <img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg?logo=open%20source%20initiative&logoColor=white&labelColor=555555">
     </a>
-    <a href="https://github.com/shivammathur/homebrew-extensions/tree/master/Formula" title="Formulae for PHP extensions">
+    <a href="https://github.com/shivammathur/homebrew-extensions/tree/main/Formula" title="Formulae for PHP extensions">
       <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.5-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
     </a>
 </p>
