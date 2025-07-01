@@ -20,14 +20,12 @@ class VldAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "aca253d9c0ee9f042a8e32b9f4f49027b893a24710600540fa05baee417946da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aaaf4190e1435a473faf34d5152819ad0c0ca8cac85afcb294b0ba5c804a0415"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19f49458578ba6a3e47f4ec7d89fe16928469bebfd59896d2c32303c7e4a30ed"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ddd275bfaec04edadcaf3a3df502e6c685555e92ccb9f6d6182cb1279e502dd7"
-    sha256 cellar: :any_skip_relocation, ventura:        "775f4e108e60c0df29963cbf447ef85dfe6e9f5a1e04fb8dffe81103f11f36c5"
-    sha256 cellar: :any_skip_relocation, monterey:       "d05ef32abc9e7cefe60a013edf03e301e126b1ce3fa8d5f2dbb673b710f2776d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "cc1ae0d7934eb63e732ec28288c97fc9ba31d1828d2a3cdcf7d6072addf7a703"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51a4082816a74cca0c9e75f30576cc02dc2db5908c858e0a8aadf365a3bbf3f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6aee88d6d7128d9d1fb2a0a6e6e563415523c2cbc3ddfb9e93c1552f4c47f8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7177a6217c1130ab286013241b46344596bb57a8e216470ed937a65c9bc56d14"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b605471ffe0c1e094ea54dc3374eb8fb2abcc87ee5874f6640af6395e86032d5"
+    sha256 cellar: :any_skip_relocation, ventura:       "55fb575ff44fac33edc1a195507b7b7caedd230c5d347acb43d94ebb8b113f05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a45fd719c407e3293d638ddeea798df8ebe44d4622df1d8cbf210aada8973f50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a85fbea3816a3289938b6450cf126cf4037fbfdb992940d2e8d06c420d81628"
   end
 
   def install
