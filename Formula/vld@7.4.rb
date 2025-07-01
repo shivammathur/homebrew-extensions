@@ -8,8 +8,8 @@ class VldAT74 < AbstractPhpExtension
   init
   desc "Vld PHP extension"
   homepage "https://github.com/derickr/vld"
-  url "https://github.com/derickr/vld/archive/0.18.0.tar.gz"
-  sha256 "b6cd6165014bd8c1ddd8b473fc2e232a722c88226a52368c32555cc9cbfa71ed"
+  url "https://github.com/derickr/vld/archive/0.19.0.tar.gz"
+  sha256 "4f591dc042540d1d6a7cf3438e4e70d001c2b981acd51b87ab87a286f26e282d"
   head "https://github.com/derickr/vld.git", branch: "master"
   license "BSD-2-Clause"
 
