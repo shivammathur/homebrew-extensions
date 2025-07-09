@@ -8,8 +8,8 @@ class OpentelemetryAT80 < AbstractPhpExtension
   init
   desc "OpenTelemetry PHP extension"
   homepage "https://github.com/open-telemetry/opentelemetry-php-instrumentation"
-  url "https://pecl.php.net/get/opentelemetry-1.1.3.tgz"
-  sha256 "8371225bbc4dbd6ba3e966b1588c22c81c6a87fcbece64cd2b3294cc03b2885d"
+  url "https://pecl.php.net/get/opentelemetry-1.2.0.tgz"
+  sha256 "50cd327c7494b5f436631434c8a5f0554aec129e6d499ba61359131ebf1b6757"
   head "https://github.com/open-telemetry/opentelemetry-php-instrumentation.git", branch: "main"
   license "BSD-2-Clause"
 
