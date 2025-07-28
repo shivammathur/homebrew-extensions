@@ -35,6 +35,7 @@ class GearmanAT85 < AbstractPhpExtension
       --with-gearman=#{Formula["gearman"].opt_prefix}
     ]
     Dir.chdir "gearman-#{version}"
+    inreplace "php_gearman.c", "zend_exception_get_default()", "zend_ce_exception"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
