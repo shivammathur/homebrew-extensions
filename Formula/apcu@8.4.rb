@@ -8,8 +8,8 @@ class ApcuAT84 < AbstractPhpExtension
   init
   desc "Apcu PHP extension"
   homepage "https://github.com/krakjoe/apcu"
-  url "https://pecl.php.net/get/apcu-5.1.25.tgz"
-  sha256 "c4e7bae1cc2b9f68857889c022c7ea8cbc38b830c07273a2226cc44dc6de3048"
+  url "https://pecl.php.net/get/apcu-5.1.26.tgz"
+  sha256 "aed8d359d98c33723b65e4ba58e5422e5cf794c54fbd2241be31f83a49b44dde"
   head "https://github.com/krakjoe/apcu.git", branch: "master"
   license "PHP-3.01"
 
