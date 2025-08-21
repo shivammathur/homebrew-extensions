@@ -40,6 +40,7 @@
 | `apcu`          | `PHP 5.6` to `PHP 8.5` |
 | `ast`           | `PHP 7.0` to `PHP 8.5` |
 | `couchbase`     | `PHP 5.6` to `PHP 8.5` |
+| `decimal`       | `PHP 7.0` to `PHP 8.5` |
 | `ds`            | `PHP 7.0` to `PHP 8.5` |
 | `event`         | `PHP 5.6` to `PHP 8.5` |
 | `expect`        | `PHP 5.6` to `PHP 8.5` |
@@ -228,6 +229,7 @@ This project is also generously supported by many other users and organisations 
 - [osmanov/pecl-event](https://bitbucket.org/osmanov/pecl-event "Event")
 - [phalcon/cphalcon](https://github.com/phalcon/cphalcon "Phalcon")
 - [php-amqp/php-amqp](https://github.com/php-amqp/php-amqp "amqp")
+- [php-decimal/ext-decimal](https://github.com/php-decimal/ext-decimal "decimal")
 - [php-gnupg/php-gnupg](https://github.com/php-gnupg/php-gnupg "gnupg")
 - [php-memcached-dev/php-memcached](https://github.com/php-memcached-dev/php-memcached "Memcached")
 - [php/pecl-file_formats-yaml](https://github.com/php/pecl-file_formats-yaml "PHP YAML")
@@ -277,6 +279,7 @@ This project is also generously supported by many other users and organisations 
 - [libssh2](https://formulae.brew.sh/formula/libssh2 "libssh2")
 - [libyaml](https://formulae.brew.sh/formula/libyaml "libyaml")
 - [lz4](https://formulae.brew.sh/formula/lz4 "lz4")
+- [mpdecimal](https://formulae.brew.sh/formula/mpdecimal "mpdecimal")
 - [net-snmp](https://formulae.brew.sh/formula/net-snmp "net-snmp")
 - [openssl](https://formulae.brew.sh/formula/openssl@3 "openssl")
 - [ossp-uuid](https://formulae.brew.sh/formula/ossp-uuid "ossp-uuid")
