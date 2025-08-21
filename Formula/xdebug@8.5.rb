@@ -16,12 +16,13 @@ class XdebugAT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256                               arm64_sequoia: "4f5cab666931a4be04f493ee76aeef8708d6779a94d4823a04a39c5b2a398766"
-    sha256                               arm64_sonoma:  "5817f3f9f87d385329c2e08b6fc253bb9194893ea0537ade375d33dda5e17591"
-    sha256                               arm64_ventura: "a1b744ae29bf8175c4084855329d1bd3b8c984ef0be9bdebb7be7e75395ad4b4"
-    sha256 cellar: :any_skip_relocation, ventura:       "991d0e53caebb90ee68082957c48a4f049b3c3a33b9b1c2bed1adf9659b75797"
-    sha256                               arm64_linux:   "91614d2e34a0e1a03edd09635c2b2f68c69f2d16bf1058041f5a88350ca5d254"
-    sha256                               x86_64_linux:  "c9b4ddc81c14795400ef88ecf01cfa947f0c61cca3f47f6545ad2789a79569a1"
+    rebuild 1
+    sha256                               arm64_sequoia: "69a3beaddd8c02000ca29f5651479ed2172d4db66832b73c474ef5a5382b2fa1"
+    sha256                               arm64_sonoma:  "39e9a0b1c5aa991b5573580d31afa03823e0a2cc4e803f5111dc827ab636e73f"
+    sha256                               arm64_ventura: "7c08625ae792576f8c86e8c2fec4dc46149caf94dfbdea1bf90b32cd9ad6e04f"
+    sha256 cellar: :any_skip_relocation, ventura:       "c4b321974b5b60235db3013c2819ff9582295a0cc126a042509221d9182fd7aa"
+    sha256                               arm64_linux:   "2c0c6283345a4cfa21bef4fe5b34fe1f897c9e4fa05849fd4c5c1f42449907b1"
+    sha256                               x86_64_linux:  "e95c7fabd5eb8bda91065905a274b9de723e4d07e3ec1af73055cf2172ece4ae"
   end
 
   uses_from_macos "zlib"
