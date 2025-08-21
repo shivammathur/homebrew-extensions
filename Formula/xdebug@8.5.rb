@@ -27,6 +27,7 @@ class XdebugAT85 < AbstractPhpExtension
   uses_from_macos "zlib"
 
   def install
+    inreplace "src/lib/compat.c", "samesite_s,", "samesite_s, 0,"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
