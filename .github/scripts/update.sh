@@ -32,18 +32,18 @@ get_head_commit() {
 patch_pecl_tag() {
   local tag=$1
   local extension=$2
-  sed -i "s/^  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
+  sed -i.bak "s/^  url .*/  url \"https\:\/\/pecl.php.net\/get\/$extension-$tag.tgz\"/g" ./Formula/"$version".rb
 }
 
 patch_github_tag() {
   local tag=$1
   local repo=$2
-  sed -i "s|^  url .*|  url \"$repo/archive/$tag.tar.gz\"|g" ./Formula/"$version".rb
+  sed -i.bak "s|^  url .*|  url \"$repo/archive/$tag.tar.gz\"|g" ./Formula/"$version".rb
 }
 
 patch_php_url() {
   local php_url=$1
-  sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$version".rb
+  sed -i.bak "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$version".rb
 }
 
 extension=$1
@@ -52,9 +52,10 @@ repo=$3
 case $extension in
   amqp|apcu|ast|couchbase|ds|expect|event|gearman|gnupg|grpc|imagick|lua|msgpack|protobuf|propro|psr|raphf|rdkafka|redis|mailparse|memcache|memcached|mongodb|ssh2|sqlsrv|pdo_sqlsrv|uuid|vips|xlswriter|yaml)
     tag=$(get_latest_pecl_tag "$extension")
+    echo $tag;
     patch_pecl_tag "$tag" "$extension"
     ;;
-  igbinary|pcov|swoole|vld)
+  decimal|igbinary|pcov|swoole|vld)
     tag="$(get_latest_remote_git_tag "$repo")"
     patch_github_tag "$tag" "$repo"
     ;;
@@ -97,3 +98,4 @@ case $extension in
         patch_pecl_tag "$tag" "$extension"
     esac
 esac
+find ./Formula -name '*.bak' -delete
