@@ -10,7 +10,7 @@ class ApcuAT56 < AbstractPhpExtension
   homepage "https://github.com/krakjoe/apcu"
   url "https://pecl.php.net/get/apcu-4.0.11.tgz"
   sha256 "454f302ec13a6047ca4c39e081217ce5a61bbea815aec9c1091fb849e70b4d00"
-  head "https://github.com/krakjoe/apcu.git"
+  head "https://github.com/krakjoe/apcu.git", branch: "master"
   license "PHP-3.01"
 
   bottle do

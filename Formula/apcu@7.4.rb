@@ -10,7 +10,7 @@ class ApcuAT74 < AbstractPhpExtension
   homepage "https://github.com/krakjoe/apcu"
   url "https://pecl.php.net/get/apcu-5.1.26.tgz"
   sha256 "aed8d359d98c33723b65e4ba58e5422e5cf794c54fbd2241be31f83a49b44dde"
-  head "https://github.com/krakjoe/apcu.git"
+  head "https://github.com/krakjoe/apcu.git", branch: "master"
   license "PHP-3.01"
 
   livecheck do
