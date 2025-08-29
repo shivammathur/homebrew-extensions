@@ -8,11 +8,10 @@ class RaphfAT73 < AbstractPhpExtension
   init
   desc "Raphf PHP extension"
   homepage "https://github.com/m6w6/ext-raphf"
-  url "https://pecl.php.net/get/raphf-2.0.1.tgz"
-  sha256 "da3566db17422e5ef08b7ff144162952aabc14cb22407cc6b1d2a2d095812bd0"
-  head "https://github.com/m6w6/ext-raphf.git"
+  url "https://pecl.php.net/get/raphf-2.0.2.tgz"
+  sha256 "7e782fbe7b7de2b5f1c43f49d9eb8c427649b547573564c78baaf2b8f8160ef4"
+  head "https://github.com/m6w6/ext-raphf.git", branch: "master"
   license "BSD-2-Clause"
-  revision 1
 
   livecheck do
     url "https://pecl.php.net/rest/r/raphf/allreleases.xml"
