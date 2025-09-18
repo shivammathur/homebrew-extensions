@@ -36,10 +36,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - runner: 'macos-13-arm64'
+          - runner: 'macos-26'
           - runner: 'macos-15'
           - runner: 'macos-14'
-          - runner: 'macos-13'
+          - runner: 'macos-14-x86_64'
           - runner: 'ubuntu-22.04'
             container:
               image:   "ghcr.io/homebrew/ubuntu22.04:main"
