@@ -12,6 +12,7 @@ class LibcouchbaseAT2 < Formula
     sha256 cellar: :any,                 arm64_sonoma:   "1f934247cd79b9f5e3b079a06ef6145c5fd02c51de8afab62dabbd9d3bd2a352"
     sha256 cellar: :any,                 arm64_ventura:  "799566d704fb9e8d7277c1f19ffc664cb5442741710ec88aa66ac3d56a9bd1ef"
     sha256 cellar: :any,                 arm64_monterey: "ae6fdeb94c99edb5c3c50382156b09797f66532c2ea8013c46f93eaa2c1b5873"
+    sha256 cellar: :any,                 sonoma:         "a79648f3de690cccfc5921452bffe24665a25e6efcf67c7b4bd77bec047b144c"
     sha256 cellar: :any,                 ventura:        "506f65dc0a5fbba7bf525246e35c85ac1ed0e3247e3d583745998bf20bda345d"
     sha256 cellar: :any,                 monterey:       "a985878bc9d2cc015b6396c12415aaf95a0b01304c7c8df3d787457a2cfb2f7b"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e3dc2799128204f2d3d22ff73cfe7a3355dd5c440b8a99345548f63added8a59"
