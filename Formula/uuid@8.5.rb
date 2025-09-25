@@ -10,6 +10,7 @@ class UuidAT85 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-networking-uuid"
   url "https://pecl.php.net/get/uuid-1.3.0.tgz"
   sha256 "b7af055e2c409622f8c5e6242d1c526c00e011a93c39b10ca28040b908da3f37"
+  revision 1
   head "https://github.com/php/pecl-networking-uuid.git", branch: "master"
   license "LGPL-2.1-only"
 
