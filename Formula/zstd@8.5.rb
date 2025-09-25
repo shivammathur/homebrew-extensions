@@ -10,6 +10,7 @@ class ZstdAT85 < AbstractPhpExtension
   homepage "https://github.com/kjdev/php-ext-zstd"
   url "https://pecl.php.net/get/zstd-0.15.2.tgz"
   sha256 "fd8d3fbf7344854feb169cf3f1e6698ed22825d35a3a5229fe320c8053306eaf"
+  revision 1
   head "https://github.com/kjdev/php-ext-zstd.git", branch: "master"
   license "MIT"
 
