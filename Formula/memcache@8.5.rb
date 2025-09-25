@@ -10,6 +10,7 @@ class MemcacheAT85 < AbstractPhpExtension
   homepage "https://github.com/websupport-sk/pecl-memcache"
   url "https://pecl.php.net/get/memcache-8.2.tgz"
   sha256 "b3f0640eacdeb9046c6c86a1546d7fb8a4e9f219e5d9a36a287e59b2dd8208e5"
+  revision 1
   head "https://github.com/websupport-sk/pecl-memcache.git", branch: "main"
   license "PHP-3.0"
 
@@ -36,6 +37,13 @@ class MemcacheAT85 < AbstractPhpExtension
       --with-zlib-dir=#{Formula["zlib"].opt_prefix}
     ]
     Dir.chdir "memcache-#{version}"
+    inreplace %w[
+      src/memcache_ascii_protocol.c
+      src/memcache_binary_protocol.c
+      src/memcache_pool.c
+      src/memcache_session.c
+    ], "ext/standard/php_smart_string.h", "Zend/zend_smart_string.h"
+    inreplace "src/memcache_pool.h", "ext/standard/php_smart_string_public.h", "Zend/zend_smart_string.h"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
