@@ -10,6 +10,7 @@ class VipsAT85 < AbstractPhpExtension
   homepage "https://github.com/libvips/php-vips-ext"
   url "https://pecl.php.net/get/vips-1.0.13.tgz"
   sha256 "4e655843e5ee8150c927c10853dfa0d2a3b924bc2453ed8fb5e5a2a90e686f8f"
+  revision 1
   head "https://github.com/libvips/php-vips-ext.git", branch: "master"
   license "MIT"
 
