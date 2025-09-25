@@ -8,9 +8,9 @@ class SnmpAT85 < AbstractPhpExtension
   init
   desc "Snmp PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/php/php-src/archive/6e1b1900f00f2529c1330c03c5cb87e6f3cfa905.tar.gz?commit=6e1b1900f00f2529c1330c03c5cb87e6f3cfa905"
+  url "https://github.com/php/php-src/archive/0202124fe29ac8e03c2fd73668c603cca5202287.tar.gz?commit=0202124fe29ac8e03c2fd73668c603cca5202287"
   version "8.5.0"
-  sha256 "5a6b164f91b55d8fae998383b790c20e73b9a72d6dfdaec829150b28a9fcb788"
+  sha256 "60e23f5b3f75fb9280d0a1a3a923841397e0ae921d4ea39ee0a51944a14a9251"
   revision 1
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
