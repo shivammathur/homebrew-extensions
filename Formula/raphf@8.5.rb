@@ -10,6 +10,7 @@ class RaphfAT85 < AbstractPhpExtension
   homepage "https://github.com/m6w6/ext-raphf"
   url "https://pecl.php.net/get/raphf-2.0.2.tgz"
   sha256 "7e782fbe7b7de2b5f1c43f49d9eb8c427649b547573564c78baaf2b8f8160ef4"
+  revision 1
   head "https://github.com/m6w6/ext-raphf.git", branch: "master"
   license "BSD-2-Clause"
 
