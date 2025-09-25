@@ -11,6 +11,7 @@ class ImapAT85 < AbstractPhpExtension
   url "https://pecl.php.net/get/imap-1.0.3.tgz"
   sha256 "0c2c0b1f94f299004be996b85a424e3d11ff65ac0a3c980db3213289a4a3faaf"
   license "PHP-3.01"
+  revision 1
 
   livecheck do
     url "https://pecl.php.net/rest/r/imap/allreleases.xml"
