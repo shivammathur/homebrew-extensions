@@ -10,6 +10,7 @@ class ApcuAT85 < AbstractPhpExtension
   homepage "https://github.com/krakjoe/apcu"
   url "https://pecl.php.net/get/apcu-5.1.27.tgz"
   sha256 "1a2c37fcad2ae2a1aea779cd6ca9353d8b38d4e27dde2327c52ff3892dfadb3f"
+  revision 1
   head "https://github.com/krakjoe/apcu.git", branch: "master"
   license "PHP-3.01"
 
