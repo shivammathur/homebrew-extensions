@@ -10,6 +10,7 @@ class MemcachedAT85 < AbstractPhpExtension
   homepage "https://github.com/php-memcached-dev/php-memcached"
   url "https://pecl.php.net/get/memcached-3.3.0.tgz"
   sha256 "2b85bf6699497170801fb4d06eb9c9a06bfc551cdead04101dd75c980be9eebf"
+  revision 1
   head "https://github.com/php-memcached-dev/php-memcached.git", branch: "master"
   license "PHP-3.01"
 
@@ -41,6 +42,8 @@ class MemcachedAT85 < AbstractPhpExtension
       headers = Dir["#{Formula["#{e}@8.5"].opt_include}/**/*.h"]
       (buildpath/"memcached-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
+    inreplace "php_memcached_private.h", "ext/standard/php_smart_string.h", "Zend/zend_smart_string.h"
+    inreplace "php_memcached.c", "zend_exception_get_default()", "zend_ce_exception"
   end
 
   priority "30"
