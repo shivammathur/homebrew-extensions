@@ -10,6 +10,7 @@ class AstAT85 < AbstractPhpExtension
   homepage "https://github.com/nikic/php-ast"
   url "https://pecl.php.net/get/ast-1.1.3.tgz"
   sha256 "528b54aabcfce6bf0e94b5940a73cca357d4a52fad9fef4cd4dc025abc1a9fbd"
+  revision 1
   head "https://github.com/nikic/php-ast.git", branch: "master"
   license "BSD-3-Clause"
 
