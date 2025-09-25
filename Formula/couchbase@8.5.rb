@@ -10,6 +10,7 @@ class CouchbaseAT85 < AbstractPhpExtension
   homepage "https://github.com/couchbase/couchbase-php-client"
   url "https://pecl.php.net/get/couchbase-4.3.0.tgz"
   sha256 "7a82e55384c1a27fcfb46802164ff60bf61f7199dc42719bc0ce6a5ccf9922c9"
+  revision 1
   head "https://github.com/couchbase/couchbase-php-client.git", branch: "main"
   license "Apache-2.0"
 
