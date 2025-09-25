@@ -10,6 +10,7 @@ class ProtobufAT85 < AbstractPhpExtension
   homepage "https://github.com/protocolbuffers/protobuf"
   url "https://pecl.php.net/get/protobuf-4.32.1.tgz"
   sha256 "cf434ae501ed65c7fa079ac882b0e0044978ceace5a3781e6780d547a559c776"
+  revision 1
   head "https://github.com/protocolbuffers/protobuf.git", branch: "main"
   license "BSD-3-Clause"
 
