@@ -10,7 +10,7 @@ class ImagickAT85 < AbstractPhpExtension
   homepage "https://github.com/Imagick/imagick"
   url "https://pecl.php.net/get/imagick-3.8.0.tgz"
   sha256 "bda67461c854f20d6105782b769c524fc37388b75d4481d951644d2167ffeec6"
-  revision 1
+  revision 2
   head "https://github.com/Imagick/imagick.git", branch: "master"
   license "PHP-3.01"
 
@@ -38,6 +38,7 @@ class ImagickAT85 < AbstractPhpExtension
     ]
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     Dir.chdir "imagick-#{version}"
+    inreplace "imagick.c", "ext/standard/php_smart_string.h", "Zend/zend_smart_string.h"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
