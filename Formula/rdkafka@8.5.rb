@@ -10,6 +10,7 @@ class RdkafkaAT85 < AbstractPhpExtension
   homepage "https://github.com/arnaud-lb/php-rdkafka"
   url "https://pecl.php.net/get/rdkafka-6.0.5.tgz"
   sha256 "0af6b665c963c8c7d1109cec738034378d9c8863cbf612c0bd3235e519a708f1"
+  revision 1
   head "https://github.com/arnaud-lb/php-rdkafka.git", branch: "6.x"
   license "MIT"
 
