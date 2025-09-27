@@ -28,6 +28,9 @@ class XdebugAT86 < AbstractPhpExtension
 
   def install
     inreplace "config.m4", "80600", "80700"
+    inreplace "src/profiler/profiler.c", \
+              "ZSTR_INIT_LITERAL(tmp_name, false)", \
+              "zend_string_init(tmp_name, strlen(tmp_name), false)"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
