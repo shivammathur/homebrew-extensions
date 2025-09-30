@@ -20,12 +20,12 @@ class MailparseAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9d1e03d590f9ae15358b42381809697987b3a950faf294bb4dd02ffa8f3b782"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49b3eba75904abd78aaf7e14201bacc578b658eabb158e71cb33ad1abe358dbe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "79c5fe896acac27f929287c1e792250eb81ed6c10a8c8643d3ff236acf364241"
-    sha256 cellar: :any_skip_relocation, ventura:       "e7a0d453f257bf8180c0753afa17723af166456d61cfb33d53a5fdff0dd59ae4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ea38bf7b69a2e6635e2d0348b8f9891876f3a7f433fa24eb10c1cbdbd382fa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b76f96f7db9d7e8a00064c6561682ebb7444ab4b18490f523de6b43614e49076"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fbd9fcc6a5b063feefe7b362fd790692694b169588381806931c9ce442707fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8a7d9b0f974e73af445917c42ef1c4b54ae00df05ef76c6b1406603c49080e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ab8018c8a803aac9c74675ca09e51918fe2f2a277cdf4dfe4d50a5fdddb3837"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c373ff9f85e2d1615b1b51cc446b0deafd98728fa9b0f6fea905be372fabf40d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d55bd8e3427a771b734fce12975e9d10910874adec3b0778dfb5bbc964a347d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "accd19b672fee2dc5efbdea65426b34b46ce52c6fe2857933ace7859de151a41"
   end
 
   def install
