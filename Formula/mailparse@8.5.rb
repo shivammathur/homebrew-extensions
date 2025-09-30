@@ -8,9 +8,8 @@ class MailparseAT85 < AbstractPhpExtension
   init
   desc "Mailparse PHP extension"
   homepage "https://github.com/php/pecl-mail-mailparse"
-  url "https://pecl.php.net/get/mailparse-3.1.8.tgz"
-  sha256 "59beab4ef851770c495ba7a0726ab40e098135469a11d9c8e665b089c96efc2f"
-  revision 1
+  url "https://pecl.php.net/get/mailparse-3.1.9.tgz"
+  sha256 "ecb3d3c9dc9f7ce034182d478b724ac3cb02098efc69a39c03534f0b1920922b"
   head "https://github.com/php/pecl-mail-mailparse.git", branch: "master"
   license "PHP-3.01"
 
@@ -34,13 +33,6 @@ class MailparseAT85 < AbstractPhpExtension
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
 
     Dir.chdir "mailparse-#{version}"
-    %w[
-      php_mailparse_mime.h
-      php_mailparse_rfc822.c
-      php_mailparse_rfc822.re
-    ].each do |file|
-      inreplace file, "ext/standard/php_smart_string.h", "Zend/zend_smart_string.h"
-    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mailparse"
     system "make"
