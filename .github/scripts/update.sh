@@ -72,7 +72,7 @@ case $extension in
     patch_pecl_tag "$tag" "phalcon"
     ;;
   "xdebug")
-    if [ "$version" = "xdebug@8.5" ]; then
+    if [[ "$version" = "xdebug@8.5" || "$version" = "xdebug@8.6" ]]; then
       branch="$(get_formula_branch "$version")"
       tag="$(get_head_commit "$branch" "$repo")"
     else
