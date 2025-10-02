@@ -40,7 +40,6 @@ class MongodbAT86 < AbstractPhpExtension
     ENV.append "CXX", "-std=c++17"
     ENV.libcxx if ENV.compiler == :clang
     Dir.chdir "mongodb-#{version}"
-    inreplace "src/contrib/php_array_api.h", "IS_INTERNED", "ZSTR_IS_INTERNED"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mongodb"
     system "make"
