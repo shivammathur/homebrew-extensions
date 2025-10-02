@@ -33,7 +33,7 @@ class AmqpAT85 < AbstractPhpExtension
 
   patch do
     url "https://patch-diff.githubusercontent.com/raw/php-amqp/php-amqp/pull/595.patch?full_index=1"
-    sha256 "8bc0eccc30770211ccb9b6413afbdebe2f93c43550d6e02c105143416736f6d1"
+    sha256 "0e7876fb89ddbcaf470836df38cf010d38555ba0d50050f912c7d0f226602938"
   end
 
   def install
