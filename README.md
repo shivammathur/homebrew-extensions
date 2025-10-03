@@ -81,7 +81,7 @@
 | `vld`           | `PHP 5.6` to `PHP 8.3` |
 | `xdebug`        | `PHP 5.6` to `PHP 8.5` |
 | `xdebug2`       | `PHP 7.2` to `PHP 7.4` |
-| `xhprof`        | `PHP 7.2` to `PHP 8.4` |
+| `xhprof`        | `PHP 7.0` to `PHP 8.5` |
 | `xlswriter`     | `PHP 7.0` to `PHP 8.5` |
 | `yaml`          | `PHP 5.6` to `PHP 8.5` |
 | `zmq`           | `PHP 5.6` to `PHP 8.5` |

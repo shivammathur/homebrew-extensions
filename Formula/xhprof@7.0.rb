@@ -3,7 +3,7 @@
 
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
-class XhprofAT73 < AbstractPhpExtension
+class XhprofAT70 < AbstractPhpExtension
   init
   desc "Hierarchical Profiler for PHP"
   homepage "https://github.com/longxinH/xhprof"
