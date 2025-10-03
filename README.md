@@ -81,6 +81,7 @@
 | `vld`           | `PHP 5.6` to `PHP 8.3` |
 | `xdebug`        | `PHP 5.6` to `PHP 8.5` |
 | `xdebug2`       | `PHP 7.2` to `PHP 7.4` |
+| `xhprof`        | `PHP 7.2` to `PHP 8.4` |
 | `xlswriter`     | `PHP 7.0` to `PHP 8.5` |
 | `yaml`          | `PHP 5.6` to `PHP 8.5` |
 | `zmq`           | `PHP 5.6` to `PHP 8.5` |
@@ -243,6 +244,7 @@ This project is also generously supported by many other users and organisations 
 - [swoole/swoole-src](https://github.com/swoole/swoole-src "Swoole")
 - [websupport-sk/pecl-memcache](https://github.com/websupport-sk/pecl-memcache "Memcache")
 - [xdebug/xdebug](https://github.com/xdebug/xdebug "Xdebug")
+- [longxinH/xhprof](https://github.com/longxinH/xhprof "xhprof")
 - [xlswriter](https://github.com/viest/php-ext-xlswriter.git "xlswriter")
 - [zeromq/php-zmq](https://github.com/zeromq/php-zmq "ZMQ")
 - [newrelic/newrelic-php-agent](https://github.com/newrelic/newrelic-php-agent "newrelic")
