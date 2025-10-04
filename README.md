@@ -74,6 +74,7 @@
 | `snmp`          | `PHP 5.6` to `PHP 8.6` |
 | `sqlsrv`        | `PHP 7.0` to `PHP 8.6` |
 | `ssh2`          | `PHP 5.6` to `PHP 8.6` |
+| `spx`           | `PHP 5.6` to `PHP 8.5` |
 | `swoole`        | `PHP 5.6` to `PHP 8.4` |
 | `uuid`          | `PHP 5.6` to `PHP 8.6` |
 | `v8js`          | `PHP 7.0` to `PHP 8.3` |
@@ -245,6 +246,7 @@ This project is also generously supported by many other users and organisations 
 - [websupport-sk/pecl-memcache](https://github.com/websupport-sk/pecl-memcache "Memcache")
 - [xdebug/xdebug](https://github.com/xdebug/xdebug "Xdebug")
 - [longxinH/xhprof](https://github.com/longxinH/xhprof "xhprof")
+- [NoiseByNorthwest/spx](https://github.com/NoiseByNorthwest/php-spx "spx")
 - [xlswriter](https://github.com/viest/php-ext-xlswriter.git "xlswriter")
 - [zeromq/php-zmq](https://github.com/zeromq/php-zmq "ZMQ")
 - [newrelic/newrelic-php-agent](https://github.com/newrelic/newrelic-php-agent "newrelic")
