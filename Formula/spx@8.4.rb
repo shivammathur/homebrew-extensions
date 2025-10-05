@@ -10,7 +10,7 @@ class SpxAT84 < AbstractPhpExtension
   url "https://github.com/NoiseByNorthwest/php-spx/archive/refs/tags/v0.4.20.tar.gz"
   sha256 "8de7f8e6137667dbe7e92ba552ccb3b3b3745664efb9af88ece8bda0f58fc94f"
   head "https://github.com/NoiseByNorthwest/php-spx.git", branch: "master"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
