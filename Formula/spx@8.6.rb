@@ -3,7 +3,7 @@
 
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
-class SpxAT70 < AbstractPhpExtension
+class SpxAT86 < AbstractPhpExtension
   init
   desc "SPX is a simple & straight-forward PHP profiler"
   homepage "https://github.com/NoiseByNorthwest/php-spx"
@@ -24,6 +24,7 @@ class SpxAT70 < AbstractPhpExtension
       --enable-spx
       --with-zlib-dir=#{Formula["zlib"].opt_prefix}
     ]
+    inreplace "src/php_spx.h", /ZEND_MODULE_API_NO.*/, "0"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

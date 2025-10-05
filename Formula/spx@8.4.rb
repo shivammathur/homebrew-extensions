@@ -12,15 +12,22 @@ class SpxAT84 < AbstractPhpExtension
   head "https://github.com/NoiseByNorthwest/php-spx.git", branch: "master"
   license "GPL-3.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   depends_on "zlib"
 
   def install
-    Dir.chdir "spx-#{version}" do
-      safe_phpize
-      system "./configure", "--prefix=#{prefix}", phpconfig
-      system "make"
-      prefix.install "modules/#{extension}.so"
-      write_config_file
-    end
+    args = %W[
+      --enable-spx
+      --with-zlib-dir=#{Formula["zlib"].opt_prefix}
+    ]
+    safe_phpize
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
+    system "make"
+    prefix.install "modules/#{extension}.so"
+    write_config_file
   end
 end
