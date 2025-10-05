@@ -17,6 +17,16 @@ class SpxAT82 < AbstractPhpExtension
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1529469c38b3fe8c0d8a7572fb7ed40120576fab707b43b24ab9555c8074a387"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9c084327b812f96e46f08309b241e8baa5e24d55634192c442cafb7e6358164"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c8c9721c33e8680344895d9f4747059353f2283343113f558a70902b6def7d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93da923f559a790c10789a4ce0a82b70996b3cf2709f8b55be527310fb0b4437"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90e27eb6655816d29227a43efe3ab34325d1d64fdb3ba78fd505f5fc2525637e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88194b4be35b6df0fc0c48747b8ca66b51d8d3a7428cd6125370b3a75ebd4254"
+  end
+
   depends_on "zlib"
 
   def install
