@@ -8,8 +8,8 @@ class Mongodb1AT85 < AbstractPhpExtension
   init
   desc "Mongodb PHP extension"
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://pecl.php.net/get/mongodb-1.21.1.tgz"
-  sha256 "357e1f4f6b9f6f6970789f5186467da1960dff2db2a8d6474f69ad51a37b5f72"
+  url "https://pecl.php.net/get/mongodb-1.21.2.tgz"
+  sha256 "68547dcfb05d424c5bcb82d20fa4c41a5672aacf9953e6f301c89a4830f78db2"
   license "Apache-2.0"
 
   livecheck do
@@ -27,6 +27,7 @@ class Mongodb1AT85 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "af844090d17bb21849c85818a63a8411137f432f97c63d4b577a303401481f92"
   end
 
+  depends_on "cyrus-sasl"
   depends_on "icu4c@77"
   depends_on "openssl@3"
   depends_on "snappy"
@@ -38,6 +39,7 @@ class Mongodb1AT85 < AbstractPhpExtension
     ENV.append "CXX", "-std=c++17"
     ENV.libcxx if ENV.compiler == :clang
     Dir.chdir "mongodb-#{version}"
+    inreplace "src/contrib/php_array_api.h", "IS_INTERNED", "ZSTR_IS_INTERNED"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mongodb"
     system "make"
