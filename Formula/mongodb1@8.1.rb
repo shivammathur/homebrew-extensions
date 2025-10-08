@@ -8,8 +8,8 @@ class Mongodb1AT81 < AbstractPhpExtension
   init
   desc "Mongodb PHP extension"
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://pecl.php.net/get/mongodb-1.21.1.tgz"
-  sha256 "357e1f4f6b9f6f6970789f5186467da1960dff2db2a8d6474f69ad51a37b5f72"
+  url "https://pecl.php.net/get/mongodb-1.21.2.tgz"
+  sha256 "68547dcfb05d424c5bcb82d20fa4c41a5672aacf9953e6f301c89a4830f78db2"
   license "Apache-2.0"
 
   livecheck do
@@ -27,6 +27,7 @@ class Mongodb1AT81 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a10ecb4fcb2dc209e99a39b7b9846ccd1700337ecebe604fa532056aae64137d"
   end
 
+  depends_on "cyrus-sasl"
   depends_on "icu4c@77"
   depends_on "openssl@3"
   depends_on "snappy"
