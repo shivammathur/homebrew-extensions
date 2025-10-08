@@ -187,6 +187,11 @@ memcached@8.3
 memcached@8.4
 memcached@8.5
 memcached@8.6
+mongodb1@8.1
+mongodb1@8.2
+mongodb1@8.3
+mongodb1@8.4
+mongodb1@8.5
 mongodb@8.1
 mongodb@8.2
 mongodb@8.3
