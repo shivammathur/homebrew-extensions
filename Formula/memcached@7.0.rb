@@ -22,6 +22,7 @@ class MemcachedAT70 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "852a705b3103f1471c18f39447e67dfc117b1472a3adc3716d7c2113c4586b1d"
     sha256 cellar: :any,                 arm64_sonoma:  "be2e3f8dd0fb9d88d2dd24f66ca292efddc9e100df40f85877e3c82b10794981"
+    sha256 cellar: :any,                 sonoma:        "ffb3739fb5c093c2cc4035f4c448bd6bc008feeea0b72ac8c067681f45d08f94"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "77496ffd7e26ffbf3112ed7c94ba363be499d50d7be3c7612a0030f72c1d146b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "189874ce45baef602a71abee9b8ccc5e2cb0e282492d3dd3c4f277731a0ab56a"
   end
