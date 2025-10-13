@@ -22,6 +22,7 @@ class GrpcAT84 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "984b8a45823c97daf404707fff01d28b1c746517e025960b86877f0ff9927053"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f98f840dba5ff953e5db170a5a66926cf7e875d0017a7933a9e214e0dbfc36c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7da81a5f117c9e9e5f637515074662e8d426a85c5fff02b2c3e2dc95fefa47b0"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "fff35f8929fe4293474da48a7521c4529dae6c944b9586a8c5ac29828eeed84f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "12a7a9316eb1deefafda1587031534e6650612c7d393477338eba508840ad75c"
   end
