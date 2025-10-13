@@ -16,6 +16,7 @@ class IgbinaryAT56 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "ee83c892e3205795f27e3faa8d3855d96851459328f7bd0c5e42b18a725b0238"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "915704a7c6df2ae48ec8be8976c2d2a433ccdf927438fb8cbb22ab24c88e95eb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ec13c2182c3ee056a84a746a748ae4f0c786918069496f49b04bda9ca70ad18"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a03052a599937f6d9f924f7d3f2a2b775e8a4bdc032726fab0396135ccdcc235"
