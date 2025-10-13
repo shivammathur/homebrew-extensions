@@ -19,6 +19,7 @@ class PeclHttpAT56 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sequoia: "d8f536f36e947caa0195486262fbe3b4570c614066ebedcf451ef4e50de82c28"
     sha256 cellar: :any,                 arm64_sonoma:  "0cefca7b503f52de8107c8e0b03796022ec510c938ed1ff9bb842022527a3fa5"
     sha256 cellar: :any,                 arm64_ventura: "5631a1eded5c2c000f6973a469ba92186d931903df16997c6be3b21bd7ffeea2"
+    sha256 cellar: :any,                 sonoma:        "930b3cbfbd0781103280ed51492b1dd85ac6b0678a1642f3e4374ff16758ae2a"
     sha256 cellar: :any,                 ventura:       "ff263c1fad6daf940d084c37d59d17fc4018ea9bdfa28a9a22072263244a8246"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "bcccba4ced50933ba03fb2ac1d37f05062c89233f7571665177242d3fd2cb832"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bc72894f1928cfa90fbcc6e54350802b127e21beef34d26b9343bfc9f204c8c"
