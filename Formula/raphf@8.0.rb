@@ -24,6 +24,7 @@ class RaphfAT80 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f87d7b781c6eefd011fc7c89c8a24d1f11e3a6ef8d03c7ef00d34437409a6dde"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "208d21d6c2301cf9932229b35691a45069b8fc9a67066c542ad428c5fce0db0d"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "538cf877b8ed78dcd6184d076b80f0cecbdf8ebe8ff3922f953f832690458dab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0722c1c6f19577d03e9b87464cd74cf0b19233bfa06a75aafd161113227244a1"
     sha256 cellar: :any_skip_relocation, ventura:       "1bf75eb05a99345b6efd9458f130151cadaa978aca780dc062186ce309e5a97c"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "1696cf8b67697f0b9bb839ee03554ae37b8325b52e951b6a3a1d13e676c678d1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa5e9df7c504fbc9afc3b8a3f698a64c18507b9bc586e3edd99252e938d052fd"
