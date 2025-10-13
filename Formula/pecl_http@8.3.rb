@@ -22,6 +22,7 @@ class PeclHttpAT83 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "92c956e249efe0985598f10c0dc6e3e6a43b9f07c1a3255db81ac24b2550d9c6"
     sha256 cellar: :any,                 arm64_sonoma:  "01591ffccfb1d319a97851519d9f0890b950ff8e659a31a2433d0b9ef78b0eb7"
+    sha256 cellar: :any,                 sonoma:        "6d40f0156c45540e7f5af75e6df353554a4ac6df870e3689dd068486dd1088cf"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "432e622cfb72bb4340183ddaa786bddc240eb531848b92d9a4d9b0ba2f95d2d8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "16c481243f4fee0f3db2f45b3007450a06981e679fc92cb8c7005a77860bcaee"
   end
