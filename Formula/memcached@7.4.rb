@@ -20,12 +20,10 @@ class MemcachedAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "74e21bb4a9dcf29ea25611b82a6c5be9282cb76f4fde661ba247e6c7e996f347"
-    sha256 cellar: :any,                 arm64_sonoma:  "f779f420a8b28cfa923be9d82d4a41ac92a51606dfe9ec962caf2f012deb424a"
-    sha256 cellar: :any,                 arm64_ventura: "ac614d36dccb1ebe93ab3df79bbea94dcc677ead47960ae252ab600dcfbc5878"
-    sha256 cellar: :any,                 ventura:       "e3e5ee6f511cf555ce744a9fa6fe9f0bbf082f8cd3a5a49506a32fc74b7c6bba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ded0250a7eefa696e14c14bbed97a5b42177b71e85507a4fcab27df54cc4f66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1c46b71ed5964dd22a57482a7de3f0606c2b650f22120e23ada83fdb2448952"
+    sha256 cellar: :any,                 arm64_sequoia: "6bcc3f5081e8d2a725472d275a707a1f60d593d1ed7e6a34cf5f691c64aa3517"
+    sha256 cellar: :any,                 arm64_sonoma:  "1d59fd477dd83067664af95c4822f74b62a9c096696e6a989508b239495c8dd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae81b7b1335d5b93003ef83fcc6b7e245da00663ebbe9e6394ce378a5660f027"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b15676c5a347dc5fd91e693d05d14199fab261f985644b88e5b125bb5831a23"
   end
 
   depends_on "libevent"
