@@ -28,6 +28,7 @@ class IgbinaryAT81 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "afa2bb892522e1dc369cdc0ef146374b570bd983b523de1d7746bb8addaf2084"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "47d11af9357c8dbe43fdde8befac7a36a91d1b4737cee4f83805f3858451f7e0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aa56af192f585bffcd78fd1cab02a18039ba09006c83369cd70e10ccb9a706e9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2718737b74a503fa54a61213ca78017e268e3b0a36f3c300f32f821c111d2532"
     sha256 cellar: :any_skip_relocation, ventura:        "1cdaec5ea009f2018c245ac04ccc80f3d3b16c065c892f65993296d65e85062b"
     sha256 cellar: :any_skip_relocation, monterey:       "0ed9851f65a8ea8965f623a2205aca32bcceee78a6400eafc3da15cbfdcdf7ca"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "3ba05f2a97146e008ee4f389e75d807c72271d960f08369ee91c51bc0447d440"
