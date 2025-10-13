@@ -23,6 +23,7 @@ class IgbinaryAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "5ad4cceb48ee434857855efd3aa08aa6531f950a3ca5c15c207a7ece834e30a2"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4f1d292aa8be965083ac635583abe99029fe0e860ab8a5541e4bd066aa11e115"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc02db9cc813ae6c3b6a341b29f7d087f2761d42af8ede17db8c8e9cf43573cc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "642586bbb7e530312e6373ca267665f16ab89405f1f472db97d2d59d411ce4f3"
