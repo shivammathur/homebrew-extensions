@@ -8,9 +8,9 @@ class MemcachedAT73 < AbstractPhpExtension
   init
   desc "Memcached PHP extension"
   homepage "https://github.com/php-memcached-dev/php-memcached"
-  url "https://pecl.php.net/get/memcached-3.3.0.tgz"
-  sha256 "2b85bf6699497170801fb4d06eb9c9a06bfc551cdead04101dd75c980be9eebf"
-  head "https://github.com/php-memcached-dev/php-memcached.git"
+  url "https://pecl.php.net/get/memcached-3.4.0.tgz"
+  sha256 "c163434eb0da97c8f45c7ad41d979d381f8b81c49402b1b90b063987fb37972e"
+  head "https://github.com/php-memcached-dev/php-memcached.git", branch: "master"
   license "PHP-3.01"
 
   livecheck do
