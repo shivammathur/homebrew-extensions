@@ -23,6 +23,7 @@ class GearmanAT74 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sequoia: "800e0ab341fc32d9e76db3dba466f9cfa97ddffeb48bf78f0528144016dd1f57"
     sha256 cellar: :any,                 arm64_sonoma:  "093fb8f64036c5578ab67dc380eee95e0eaad97a53aae0491c641a9be12cca54"
     sha256 cellar: :any,                 arm64_ventura: "430d9a664680c1f4b40a51ec267d55912b2901c454cc3dc61970d1c663c16dbb"
+    sha256 cellar: :any,                 sonoma:        "7b8b02760bc53c99eb877451af773c44ec0afdab0a28bdeb0695e2636aaae234"
     sha256 cellar: :any,                 ventura:       "a43d15739ecaf0b28a014585cdc5b24de329dd881efe2df14c66900c551ee433"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "9b0052af5c03bff1ae9b17dbb63fcec578110e849a2f885468f1c5f0fe8017c8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b28bb0084c639c34a9a15c83fa578a7f39ee1255938699760f9fb5d3afc7f674"
