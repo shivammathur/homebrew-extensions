@@ -24,6 +24,7 @@ class EventAT71 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:   "59ab3fbaf16c6194eeb4a9f07e083bc21a371bf80f8cf6e2e25163326f182f45"
     sha256 cellar: :any,                 arm64_ventura:  "01ad859735dea35dca0a237e843e82862a4e3df5035efccee22a9c8c8404543e"
     sha256 cellar: :any,                 arm64_monterey: "a3da2ae0d2b12478d7b636070fe45545d4692421cadc674b1e7fe89d6851f08f"
+    sha256 cellar: :any,                 sonoma:         "fdfabf9f58142be3359df29e0ad49e40730ee2977868afb648d3f844bd807878"
     sha256 cellar: :any,                 ventura:        "b56b3cc49885e4ef5e08101e6a0e9e84b7b5d41fd6b38d0c16543d2198819691"
     sha256 cellar: :any,                 monterey:       "ceaeab09b1244439c9507c33078a836158045cbfce397f663a6c1c60b69ccd50"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "50b7d4304946844be0ac4998d2952f9624fc4dfc51196557ff7eda31c877d656"
