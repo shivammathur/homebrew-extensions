@@ -23,6 +23,7 @@ class DecimalAT80 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sequoia: "ef91312b74f85714e9ab1a2eef712983f92ecb51fbbce564cb2d575c0e0e07ba"
     sha256 cellar: :any,                 arm64_sonoma:  "a727bf693d8941064b149afbae11e3e1ab96fe8b20645a3199a805cf7953fdfa"
     sha256 cellar: :any,                 arm64_ventura: "7a87ea23e74bc15c2766351adf5f982b3eef595ab5a0c638710d0e31d43a1aab"
+    sha256 cellar: :any,                 sonoma:        "79e5358d6cb5fc78a31c6891f597532a0bf7d3468d270629f7514d99ba6d1495"
     sha256 cellar: :any,                 ventura:       "aeb5e17886452828aea6a5b5e7ee7b5356f760cdb68639d2d2c8918ae54e2928"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "cf2f82c36d9f91dce10e1c1d3c6ab8bd74f4caf4b736385a646788e8e2dff022"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc4799f2909bfc52c55e68ac3b60aa1d385f6fbb87bad1799aeb0b50ff1bd94d"
