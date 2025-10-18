@@ -10,6 +10,7 @@ class Mongodb1AT82 < AbstractPhpExtension
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://pecl.php.net/get/mongodb-1.21.2.tgz"
   sha256 "68547dcfb05d424c5bcb82d20fa4c41a5672aacf9953e6f301c89a4830f78db2"
+  head "https://github.com/mongodb/mongo-php-driver.git", branch: "v1.21"
   license "Apache-2.0"
 
   livecheck do

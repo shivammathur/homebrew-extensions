@@ -11,7 +11,7 @@ class ZmqAT82 < AbstractPhpExtension
   url "https://github.com/zeromq/php-zmq/archive/43464c42a6a47efdf8b7cab03c62f1622fb5d3c6.tar.gz"
   sha256 "cbf1d005cea35b9215e2830a0e673b2edd8b526203f731de7a7bf8f590a60298"
   version "1.1.3"
-  head "https://github.com/zeromq/php-zmq.git"
+  head "https://github.com/zeromq/php-zmq.git", branch: "master"
   license "BSD-3-Clause"
 
   bottle do

@@ -10,7 +10,7 @@ class Phalcon5AT81 < AbstractPhpExtension
   homepage "https://github.com/phalcon/cphalcon"
   url "https://pecl.php.net/get/phalcon-5.9.3.tgz"
   sha256 "2b1983f09b56fc2779509a8ac1df776c368782538a7ef6601c0d4aef9892fe83"
-  head "https://github.com/phalcon/cphalcon.git"
+  head "https://github.com/phalcon/cphalcon.git", branch: "master"
   license "BSD-3-Clause"
 
   livecheck do

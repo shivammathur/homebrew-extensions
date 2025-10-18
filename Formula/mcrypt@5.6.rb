@@ -11,6 +11,7 @@ class McryptAT56 < AbstractPhpExtension
   url "https://github.com/shivammathur/php-src-backports/archive/2caa81b25793a7c1878530ed80a289b070cfa44f.tar.gz"
   version "5.6.40"
   sha256 "b3397170680a3fe9f1ba36298794af232f76c1eb6d647cd0fe5581a5f233ffc3"
+  head "https://github.com/shivammathur/php-src-backports.git", branch: "PHP-5.6-security-backports-openssl11"
   license "PHP-3.01"
 
   bottle do

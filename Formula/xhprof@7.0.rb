@@ -9,6 +9,7 @@ class XhprofAT70 < AbstractPhpExtension
   homepage "https://github.com/longxinH/xhprof"
   url "https://pecl.php.net/get/xhprof-2.3.10.tgz"
   sha256 "251aee99c2726ebc6126e1ff0bb2db6e2d5fd22056aa335e84db9f1055d59d95"
+  head "https://github.com/longxinH/xhprof.git", branch: "master"
   license "Apache-2.0"
 
   livecheck do

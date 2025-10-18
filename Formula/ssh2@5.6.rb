@@ -10,7 +10,7 @@ class Ssh2AT56 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-networking-ssh2"
   url "https://pecl.php.net/get/ssh2-0.13.tgz"
   sha256 "cb2cb8ab840b5b36bcd8a8df06ea4a970a61e4cb3980f3c0ac5c913522e6c1be"
-  head "https://github.com/php/pecl-networking-ssh2.git"
+  head "https://github.com/php/pecl-networking-ssh2.git", branch: "master"
   license "PHP-3.01"
 
   bottle do

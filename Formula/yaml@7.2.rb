@@ -10,7 +10,7 @@ class YamlAT72 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-file_formats-yaml"
   url "https://pecl.php.net/get/yaml-2.2.5.tgz"
   sha256 "0c751b489749fbf02071d5b0c6bfeb26c4b863c668ef89711ecf9507391bdf71"
-  head "https://github.com/php/pecl-file_formats-yaml.git"
+  head "https://github.com/php/pecl-file_formats-yaml.git", branch: "php7"
   license "PHP-3.01"
 
   livecheck do

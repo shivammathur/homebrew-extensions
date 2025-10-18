@@ -9,7 +9,7 @@ class Phalcon4AT73 < AbstractPhpExtension
   homepage "https://phalcon.io/en-us"
   url "https://github.com/phalcon/cphalcon/archive/v4.1.3.tar.gz"
   sha256 "d6f157e033c7ebfd428190b7fe4c5db73b3cd77e8b8c291cf36d687e666a6533"
-  head "https://github.com/phalcon/cphalcon.git"
+  head "https://github.com/phalcon/cphalcon.git", branch: "4.2.x"
   license "BSD-3-Clause"
 
   bottle do

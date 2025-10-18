@@ -10,7 +10,7 @@ class SqlsrvAT73 < AbstractPhpExtension
   homepage "https://github.com/Microsoft/msphpsql"
   url "https://pecl.php.net/get/sqlsrv-5.11.0.tgz"
   sha256 "6e437af4db730ab995c597f960e98bac060fc220a8d51ee24877eb7f39090a09"
-  head "https://github.com/Microsoft/msphpsql.git"
+  head "https://github.com/Microsoft/msphpsql.git", branch: "dev"
   license "MIT"
 
   bottle do

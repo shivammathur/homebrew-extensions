@@ -10,7 +10,7 @@ class GnupgAT82 < AbstractPhpExtension
   homepage "https://github.com/php-gnupg/php-gnupg"
   url "https://pecl.php.net/get/gnupg-1.5.4.tgz"
   sha256 "4d4a0980759bf259e4129ef02cb592bbeb103b4005e7b4bb6945d79488951a50"
-  head "https://github.com/php-gnupg/php-gnupg.git"
+  head "https://github.com/php-gnupg/php-gnupg.git", branch: "master"
   license "BSD-2-Clause"
 
   livecheck do

@@ -10,7 +10,7 @@ class AmqpAT82 < AbstractPhpExtension
   homepage "https://github.com/php-amqp/php-amqp"
   url "https://pecl.php.net/get/amqp-2.1.2.tgz"
   sha256 "0cb16d63752a0055de55a22062a6c1744908696d92268d76181284669025d993"
-  head "https://github.com/php-amqp/php-amqp"
+  head "https://github.com/php-amqp/php-amqp.git", branch: "latest"
   license "PHP-3.01"
 
   livecheck do

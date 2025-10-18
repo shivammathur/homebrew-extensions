@@ -10,6 +10,7 @@ class ImapAT81 < AbstractPhpExtension
   homepage "https://github.com/php/php-src"
   url "https://www.php.net/distributions/php-8.1.33.tar.xz"
   sha256 "9db83bf4590375562bc1a10b353cccbcf9fcfc56c58b7c8fb814e6865bb928d1"
+  head "https://github.com/php/php-src.git", branch: "PHP-8.1"
   license "PHP-3.01"
 
   livecheck do

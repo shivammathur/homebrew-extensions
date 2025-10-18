@@ -10,7 +10,7 @@ class RdkafkaAT56 < AbstractPhpExtension
   homepage "https://github.com/arnaud-lb/php-rdkafka"
   url "https://pecl.php.net/get/rdkafka-4.1.2.tgz"
   sha256 "8ae04c240ce810bc08c07ea09f90daf9df72f0dde220df460985945a3ceec7fc"
-  head "https://github.com/arnaud-lb/php-rdkafka.git"
+  head "https://github.com/arnaud-lb/php-rdkafka.git", branch: "4.1.x"
   license "MIT"
 
   bottle do

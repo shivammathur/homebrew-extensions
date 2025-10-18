@@ -10,7 +10,7 @@ class PeclHttpAT56 < AbstractPhpExtension
   homepage "https://github.com/m6w6/ext-http"
   url "https://pecl.php.net/get/pecl_http-2.6.0.tgz"
   sha256 "ddbf3eea3d1c7004a7dd83b5864aee5f87b1b6032bc281c08ccc62f83b9931ed"
-  head "https://github.com/m6w6/ext-http.git"
+  head "https://github.com/m6w6/ext-http.git", branch: "master"
   license "BSD-2-Clause"
   revision 3
 

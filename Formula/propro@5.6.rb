@@ -10,7 +10,7 @@ class ProproAT56 < AbstractPhpExtension
   homepage "https://github.com/m6w6/ext-propro"
   url "https://pecl.php.net/get/propro-1.0.2.tgz"
   sha256 "6b4e785adcc8378148c7ad06aa82e71e1d45c7ea5dbebea9ea9a38fee14e62e7"
-  head "https://github.com/m6w6/ext-propro.git"
+  head "https://github.com/m6w6/ext-propro.git", branch: "master"
   license "BSD-2-Clause"
   revision 1
 

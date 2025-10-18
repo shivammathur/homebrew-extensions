@@ -10,7 +10,7 @@ class YamlAT56 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-file_formats-yaml"
   url "https://pecl.php.net/get/yaml-1.3.1.tgz"
   sha256 "18c9455e731f33770106ce971e7d4af4b95c53078a29b93669809a669f7e75b9"
-  head "https://github.com/php/pecl-file_formats-yaml.git"
+  head "https://github.com/php/pecl-file_formats-yaml.git", branch: "php7"
   license "PHP-3.01"
 
   bottle do

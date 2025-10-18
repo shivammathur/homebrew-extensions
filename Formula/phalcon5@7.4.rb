@@ -10,7 +10,7 @@ class Phalcon5AT74 < AbstractPhpExtension
   homepage "https://github.com/phalcon/cphalcon"
   url "https://pecl.php.net/get/phalcon-5.4.0.tgz"
   sha256 "47810a0aaa20c1a3cf0a2d7babccfa1870fa0fc78d30cefd45ed808f89d47619"
-  head "https://github.com/phalcon/cphalcon.git"
+  head "https://github.com/phalcon/cphalcon.git", branch: "master"
   license "BSD-3-Clause"
 
   bottle do

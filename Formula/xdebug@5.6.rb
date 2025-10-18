@@ -10,7 +10,7 @@ class XdebugAT56 < AbstractPhpExtension
   homepage "https://github.com/xdebug/xdebug"
   url "https://pecl.php.net/get/xdebug-2.5.5.tgz"
   sha256 "72108bf2bc514ee7198e10466a0fedcac3df9bbc5bd26ce2ec2dafab990bf1a4"
-  head "https://github.com/xdebug/xdebug.git"
+  head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
 
   bottle do

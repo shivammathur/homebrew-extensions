@@ -10,7 +10,7 @@ class ProtobufAT56 < AbstractPhpExtension
   homepage "https://github.com/protocolbuffers/protobuf"
   url "https://pecl.php.net/get/protobuf-3.12.4.tgz"
   sha256 "b8826b730355fd0d30bdc9b698f7297a9db13f8d217361882b3db150bdf43681"
-  head "https://github.com/protocolbuffers/protobuf.git"
+  head "https://github.com/protocolbuffers/protobuf.git", branch: "main"
   license "BSD-3-Clause"
 
   bottle do

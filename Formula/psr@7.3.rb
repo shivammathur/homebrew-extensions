@@ -9,7 +9,7 @@ class PsrAT73 < AbstractPhpExtension
   homepage "https://github.com/jbboehr/php-psr"
   url "https://pecl.php.net/get/psr-1.2.0.tgz"
   sha256 "9c3d2a0d9770916d86e2bc18dfe6513ad9b2bfe00f0d03c1531ef403bee38ebe"
-  head "https://github.com/jbboehr/php-psr.git"
+  head "https://github.com/jbboehr/php-psr.git", branch: "master"
   license "BSD-2-Clause"
 
   livecheck do

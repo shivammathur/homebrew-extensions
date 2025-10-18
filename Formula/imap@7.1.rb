@@ -11,6 +11,7 @@ class ImapAT71 < AbstractPhpExtension
   url "https://github.com/shivammathur/php-src-backports/archive/dc8d6277d12d445642139b8a7c104898a5a80f80.tar.gz"
   version "7.1.33"
   sha256 "3e7a3342f58ca8698635631993a91541d88e7ddf3335e15194d23dafd5bae409"
+  head "https://github.com/shivammathur/php-src-backports.git", branch: "PHP-7.1-security-backports"
   license "PHP-3.01"
   revision 1
 

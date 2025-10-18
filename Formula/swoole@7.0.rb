@@ -10,7 +10,7 @@ class SwooleAT70 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src/archive/v4.3.5.tar.gz"
   sha256 "fad1f7129e54ffae8fce34c75912953f3afdea40945e2b4bf925be163faf7cfc"
-  head "https://github.com/swoole/swoole-src.git"
+  head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
   bottle do

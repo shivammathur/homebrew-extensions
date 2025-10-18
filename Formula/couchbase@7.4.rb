@@ -11,7 +11,7 @@ class CouchbaseAT74 < AbstractPhpExtension
   url "https://pecl.php.net/get/couchbase-4.1.4.tgz"
   sha256 "80ba7dbabb7f7a275907507186ecb27b559e64082a22ba1ad39cdd129d383ce5"
   revision 1
-  head "https://github.com/couchbase/couchbase-php-client.git"
+  head "https://github.com/couchbase/couchbase-php-client.git", branch: "main"
   license "Apache-2.0"
 
   bottle do

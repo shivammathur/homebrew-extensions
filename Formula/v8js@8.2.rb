@@ -11,7 +11,7 @@ class V8jsAT82 < AbstractPhpExtension
   url "https://github.com/phpv8/v8js/archive/7c40690ec0bb6df72a2ff7eaa510afc7f0adb8a7.tar.gz"
   version "2.1.2"
   sha256 "389cd0810f4330b7e503510892a00902ca3a481dc74423802e06decff966881f"
-  head "https://github.com/phpv8/v8js.git"
+  head "https://github.com/phpv8/v8js.git", branch: "php8"
   license "MIT"
 
   bottle do

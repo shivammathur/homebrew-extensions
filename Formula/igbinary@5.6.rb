@@ -10,7 +10,7 @@ class IgbinaryAT56 < AbstractPhpExtension
   homepage "https://github.com/igbinary/igbinary"
   url "https://github.com/igbinary/igbinary/archive/2.0.8.tar.gz"
   sha256 "96d2ff56db2b307b03f848028decb780cb2ae7c75fa922871f5f3063c7a66cb2"
-  head "https://github.com/igbinary/igbinary.git"
+  head "https://github.com/igbinary/igbinary.git", branch: "master"
   license "BSD-3-Clause"
 
   bottle do

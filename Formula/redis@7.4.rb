@@ -10,7 +10,7 @@ class RedisAT74 < AbstractPhpExtension
   homepage "https://github.com/phpredis/phpredis"
   url "https://pecl.php.net/get/redis-6.2.0.tgz"
   sha256 "5069c13dd22bd9e494bb246891052cb6cc0fc9a1b45c6a572a8be61773101363"
-  head "https://github.com/phpredis/phpredis.git"
+  head "https://github.com/phpredis/phpredis.git", branch: "develop"
   license "PHP-3.01"
 
   livecheck do

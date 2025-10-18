@@ -10,7 +10,7 @@ class XlswriterAT73 < AbstractPhpExtension
   homepage "https://github.com/viest/php-ext-xlswriter"
   url "https://pecl.php.net/get/xlswriter-1.5.8.tgz"
   sha256 "202ab46a0fd6d66d21cf5e58bda67e58f05ff95109fd955ed67941466d1c833e"
-  head "https://github.com/viest/php-ext-xlswriter.git"
+  head "https://github.com/viest/php-ext-xlswriter.git", branch: "master"
   license "BSD-2-Clause"
 
   livecheck do

@@ -10,7 +10,7 @@ class IgbinaryAT70 < AbstractPhpExtension
   homepage "https://github.com/igbinary/igbinary"
   url "https://github.com/igbinary/igbinary/archive/3.2.16.tar.gz"
   sha256 "941f1cf2ccbecdc1c221dbfae9213439d334be5d490a2f3da2be31e8a00b0cdb"
-  head "https://github.com/igbinary/igbinary.git"
+  head "https://github.com/igbinary/igbinary.git", branch: "master"
   license "BSD-3-Clause"
 
   livecheck do

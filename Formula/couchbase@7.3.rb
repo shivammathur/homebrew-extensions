@@ -10,7 +10,7 @@ class CouchbaseAT73 < AbstractPhpExtension
   homepage "https://github.com/couchbase/php-couchbase"
   url "https://pecl.php.net/get/couchbase-3.2.2.tgz"
   sha256 "d8bd785ccce818e0beb9694cd02ab01ed26e0cf9b19217d2bc2e92b38b21c9c1"
-  head "https://github.com/couchbase/php-couchbase.git"
+  head "https://github.com/couchbase/php-couchbase.git", branch: "master"
   license "Apache-2.0"
 
   bottle do

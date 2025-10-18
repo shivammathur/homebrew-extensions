@@ -10,7 +10,7 @@ class ExpectAT56 < AbstractPhpExtension
   homepage "https://github.com/sibaz/pecl-expect"
   url "https://pecl.php.net/get/expect-0.4.0.tgz"
   sha256 "032ff2f92a9f95a2cb91d9e1c1b711c696e562ea57cdec8459954d8b0601d442"
-  head "https://github.com/sibaz/pecl-expect.git"
+  head "https://github.com/sibaz/pecl-expect.git", branch: "master"
   license "PHP-3.01"
 
   livecheck do

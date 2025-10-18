@@ -10,7 +10,7 @@ class McryptAT82 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-encryption-mcrypt"
   url "https://pecl.php.net/get/mcrypt-1.0.9.tgz"
   sha256 "2a9ef0817d3bf677f6d7baf8e325629a2758974735d8abad6566384788d424a5"
-  head "https://github.com/php/pecl-encryption-mcrypt.git"
+  head "https://github.com/php/pecl-encryption-mcrypt.git", branch: "master"
   license "PHP-3.01"
 
   livecheck do

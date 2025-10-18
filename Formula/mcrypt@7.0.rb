@@ -11,6 +11,7 @@ class McryptAT70 < AbstractPhpExtension
   url "https://github.com/shivammathur/php-src-backports/archive/d91f3b4e4ff74ed2432010dca9ae9ce5de781670.tar.gz"
   version "7.0.33"
   sha256 "2d80d4186c14aa7e75cca38105359eda808a512a57824462e84e96d5b1be6b5c"
+  head "https://github.com/shivammathur/php-src-backports.git", branch: "PHP-7.0-security-backports"
   license "PHP-3.01"
 
   bottle do

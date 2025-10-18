@@ -10,7 +10,7 @@ class LuaAT56 < AbstractPhpExtension
   homepage "https://github.com/laruence/php-lua"
   url "https://pecl.php.net/get/lua-1.1.0.tgz"
   sha256 "f063fb8e8ba5cfe5e120d179b84db77ea3344ce08288b48864ccb883a9826554"
-  head "https://github.com/laruence/php-lua.git"
+  head "https://github.com/laruence/php-lua.git", branch: "master"
   license "PHP-3.01"
 
   bottle do
