@@ -23,6 +23,7 @@ class RdkafkaAT84 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sequoia: "5190ddacfa1509a96ce3ac8f7db90452667f30a20efcbaee56b23a86070af067"
     sha256 cellar: :any,                 arm64_sonoma:  "65b277d70bde98c93b16c1381055eb48d2b0329d7806df9b8b5897ec395e1e62"
     sha256 cellar: :any,                 arm64_ventura: "531bfc9eefd52ce60ca9b07e79d62fec8a5fc0cca5bc27137f3a560269a80717"
+    sha256 cellar: :any,                 sonoma:        "e4b5d80f5f327f527c19be4d6a8f1e86583174f61684d5945cbca1c4cea46695"
     sha256 cellar: :any,                 ventura:       "151104090d6d114c5f580dd7d8fc63655777272a45f39c8c3c799872851d6b15"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "9c04333fa0defbde391525dd3a5f6d2bdda7c46f6ed267437e9ab820ce02a2cd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c29e5a6fb315855f08ba9e55acd9e307d8d3010a366eeca1bdf79a4e8d22d38c"
