@@ -4,25 +4,18 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for V8js Extension
-class V8jsAT73 < AbstractPhpExtension
+class V8jsAT85 < AbstractPhpExtension
   init
   desc "V8js PHP extension"
-  homepage "https://github.com/shivammathur/v8js"
-  url "https://github.com/shivammathur/v8js/archive/1777ce3d774747075432672977ca4e034813575a.tar.gz"
+  homepage "https://github.com/phpv8/v8js"
+  url "https://github.com/phpv8/v8js/archive/dde1c5a87bf702a6e43a432cd6295abd9867af2b.tar.gz"
   version "2.1.2"
-  sha256 "1064d6ec32c5e8699928f541607f709e3bf1da959ec0cd8bedb62b4a87dca8b7"
-  head "https://github.com/shivammathur/v8js.git", branch: "php7"
+  sha256 "aa392706a4b5672954a1efb4ef8c13136253043257b575abe472a3eb848a7446"
+  head "https://github.com/phpv8/v8js.git", branch: "php8"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 5
-    sha256 arm64_sonoma:   "4f7e2f83c3eabae8ff1ea9e5af1e595e7707d045a51d8d07c18a73460f7d2545"
-    sha256 arm64_ventura:  "553dc263bc6266a7aca0f4f80c4155d7786207035d08aa6b23796ab8234b92ec"
-    sha256 arm64_monterey: "c67b3186fdec524fb53f2cd14d9889a37810c5bb5a707ca22daa9935db570dc8"
-    sha256 ventura:        "41e1db1dfde743e687ef1fda806b9c4f74d267744b4bb9ff7f2e1996b701d2bc"
-    sha256 monterey:       "41d718378285f457455e43a41b93e17ebbbb5ff62e58173a5b276013523ef02f"
-    sha256 x86_64_linux:   "a61b57b57be554729bdb3ac3d1fbad25f5a0d9e2fb7faf6f763755bc82012809"
   end
 
   depends_on "v8"
@@ -37,7 +30,10 @@ class V8jsAT73 < AbstractPhpExtension
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
     inreplace "config.m4", "c++17", "c++20"
+    inreplace "v8js_exceptions.cc", "zend_exception_get_default()", "zend_ce_exception"
     inreplace "v8js_object_export.cc", "info.Holder()", "info.This()"
+    inreplace "v8js_v8object_class.cc", "static int v8js_v8object_get" \
+                                      , "static zend_result v8js_v8object_get"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

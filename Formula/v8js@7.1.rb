@@ -7,11 +7,11 @@ require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 class V8jsAT71 < AbstractPhpExtension
   init
   desc "V8js PHP extension"
-  homepage "https://github.com/phpv8/v8js"
-  url "https://github.com/phpv8/v8js/archive/9afd1a941eb65c02a076550fa7fa4648c6087b03.tar.gz"
+  homepage "https://github.com/shivammathur/v8js"
+  url "https://github.com/shivammathur/v8js/archive/1777ce3d774747075432672977ca4e034813575a.tar.gz"
   version "2.1.2"
-  sha256 "505416bc7db6fed9d52ff5e6ca0cafe613a86b4a73c4630d777ae7e89db59250"
-  head "https://github.com/phpv8/v8js.git", branch: "php7"
+  sha256 "1064d6ec32c5e8699928f541607f709e3bf1da959ec0cd8bedb62b4a87dca8b7"
+  head "https://github.com/shivammathur/v8js.git", branch: "php7"
   license "MIT"
 
   bottle do
@@ -36,7 +36,8 @@ class V8jsAT71 < AbstractPhpExtension
     ENV.append "CXXFLAGS", "-Wno-c++11-narrowing"
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
-    inreplace "v8js_variables.cc", ", v8::PROHIBITS_OVERWRITING, v8::ReadOnly", ""
+    inreplace "config.m4", "c++17", "c++20"
+    inreplace "v8js_object_export.cc", "info.Holder()", "info.This()"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
