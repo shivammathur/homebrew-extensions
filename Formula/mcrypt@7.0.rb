@@ -20,6 +20,7 @@ class McryptAT70 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sequoia: "d5606305dd81a3abc40bc99a804d44d7579c7db861590307e981a218b247a889"
     sha256 cellar: :any,                 arm64_sonoma:  "6b7c5964738778048b2c3658ea32f5d49f5bed4b900a4974a2801b818c5e5ba4"
     sha256 cellar: :any,                 arm64_ventura: "444a90a9fb9b605d41c4b85930974077f147587738797b695827abf3e0235757"
+    sha256 cellar: :any,                 sonoma:        "68825194b64e9b7b0395f539ef3065cf17616c4f41cd0f476562816ae6113c0f"
     sha256 cellar: :any,                 ventura:       "14d2937f0e3ff93c19541d4f429c0cec2acdaa77613ce8fc01cbb7cb61514340"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "b5e21b1ddc10da342c81f7155dd6cf1426ad36df6e64c72fde371a91c927b788"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3be4696502ce1a519d6c65811e7def06e0b94bf7d5f676cc14886ce6009cd5f1"
