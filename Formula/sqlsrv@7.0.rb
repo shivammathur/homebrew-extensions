@@ -20,6 +20,7 @@ class SqlsrvAT70 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_ventura:  "8dcbee87ec947da9d1612908a5899bc19089ca462ac236ba8f6343507e5c2f58"
     sha256 cellar: :any,                 arm64_monterey: "6fe55a0946635a7befe7102c29c988cd50b7ab851152d85dcfdba70265bb6102"
     sha256 cellar: :any,                 arm64_big_sur:  "c78e51788cb3871aa1d488ac8b75ff100f09f122fee202057aea09f9d0a836b2"
+    sha256 cellar: :any,                 sonoma:         "b5d3668890f02a6f5e514f25e1fef422e1666c14b66949c80cb04f0ccaccea17"
     sha256 cellar: :any,                 ventura:        "4a568f361a9bab1f71f307e4ec83e5cfc0a71b013530ccc65c85175eb7cc9235"
     sha256 cellar: :any,                 monterey:       "838a322938257fca94725db4acce1f0a1e7aa6d84bbc4b4150337833524cdb1b"
     sha256 cellar: :any,                 big_sur:        "3ce07897920891245223542b9897354a7e20f8eb28614a677cc381f387b972fe"
