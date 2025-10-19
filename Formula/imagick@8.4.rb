@@ -24,6 +24,7 @@ class ImagickAT84 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sequoia: "3037f4c0ac9915bf3e98ce155e87967d9b77316c7b368940f7557ba45048e475"
     sha256 cellar: :any,                 arm64_sonoma:  "8302367f315e809b23d6329817f1b3fd77facfad5b4c8113545cb6e99a965540"
     sha256 cellar: :any,                 arm64_ventura: "641229aa2379f2fd0a128b6d5d0d2c6be84826350873a2f8fcd5aaae774061c1"
+    sha256 cellar: :any,                 sonoma:        "3d90c2c69937cdce0edc02945c4e4daad54d1207d5ad17d8c9bd7b11525548f2"
     sha256 cellar: :any,                 ventura:       "0fa6531b13581ec1a3350ac853509eac1a272d8b766ae58e42d5e7cf44e04ed1"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "8adba4ad8874a22a0ffbccec4db84874873e3dec811d6e93cfa192ea0bbcbdf1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9c3b90ad0a146a9d74a422c59fdec03a18851cf633f80ac8951caeab2b7000f"
