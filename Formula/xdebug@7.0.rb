@@ -20,6 +20,7 @@ class XdebugAT70 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0df135fd5b12bc811b6cb594d1e0152799b48365d36a72c71f2f955ba038dd0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "91b8f8640ced0ebb291e73d8fb04020ab37fb3f22684e07cdc476d285e123538"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1138c70d767e83766fa2dd3228435be4eaa4a16aee724d0d87bfc6ddfc16c564"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5c1f519eff862bb873dd9894dc34b4fd18efd144ea2b04a6794e19d32e6e7b35"
     sha256 cellar: :any_skip_relocation, ventura:        "775a21714729a2631e2e6a87066b7ab43be00b05fd814fb54abfc5591de7725e"
     sha256 cellar: :any_skip_relocation, monterey:       "9a6a6c1542c7b2b1c51861c2f49ba0d9b3de28b0b2f4058b61e10542282d1b6c"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "b64556b29bc1d6a48c998bda44ebbbc5f4a869dfeae6759a3f3669630b1db4ff"
