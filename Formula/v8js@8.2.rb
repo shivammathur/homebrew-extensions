@@ -8,9 +8,9 @@ class V8jsAT82 < AbstractPhpExtension
   init
   desc "V8js PHP extension"
   homepage "https://github.com/phpv8/v8js"
-  url "https://github.com/phpv8/v8js/archive/7c40690ec0bb6df72a2ff7eaa510afc7f0adb8a7.tar.gz"
+  url "https://github.com/phpv8/v8js/archive/dde1c5a87bf702a6e43a432cd6295abd9867af2b.tar.gz"
   version "2.1.2"
-  sha256 "389cd0810f4330b7e503510892a00902ca3a481dc74423802e06decff966881f"
+  sha256 "aa392706a4b5672954a1efb4ef8c13136253043257b575abe472a3eb848a7446"
   head "https://github.com/phpv8/v8js.git", branch: "php8"
   license "MIT"
 
@@ -36,7 +36,8 @@ class V8jsAT82 < AbstractPhpExtension
     ENV.append "CXXFLAGS", "-Wno-c++11-narrowing"
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
-    inreplace "v8js_variables.cc", ", v8::PROHIBITS_OVERWRITING, v8::ReadOnly", ""
+    inreplace "config.m4", "c++17", "c++20"
+    inreplace "v8js_object_export.cc", "info.Holder()", "info.This()"
     inreplace "v8js_v8object_class.cc", "static int v8js_v8object_get" \
                                       , "static zend_result v8js_v8object_get"
     safe_phpize
