@@ -23,6 +23,7 @@ class VldAT81 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ae51388d54e9d305d8d288605413819c81917854a6f94dff4ae8ded6f88deda"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec1624d910d502f1a0dbff7b0530fd2044ac1dcc3a13ee474b78a170318ef369"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "94592ae178396066180dc10d23b33581fe03aa6a12f0c355e12d548b58e57232"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49878138e52928c42f455d329161b965b4cdd225dedfd13906a7d0c6fc4b5614"
     sha256 cellar: :any_skip_relocation, ventura:       "c0bce14259dc64c738a8a17d8c4ab0c25f709b3e4500d0c3526574f2a5ad50a1"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "6f699b693a7517b6e9da783628d049a2c779e5c798589899dd86a3c3d18bd7e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2a15a87d598a3137712a56e11f572319e1134cfc73ba26adcb2b8e668bc9b68"
