@@ -77,7 +77,7 @@
 | `spx`           | `PHP 5.6` to `PHP 8.6` |
 | `swoole`        | `PHP 5.6` to `PHP 8.4` |
 | `uuid`          | `PHP 5.6` to `PHP 8.6` |
-| `v8js`          | `PHP 7.0` to `PHP 8.3` |
+| `v8js`          | `PHP 7.0` to `PHP 8.6` |
 | `vips`          | `PHP 7.0` to `PHP 8.6` |
 | `vld`           | `PHP 5.6` to `PHP 8.3` |
 | `xdebug`        | `PHP 5.6` to `PHP 8.6` |
