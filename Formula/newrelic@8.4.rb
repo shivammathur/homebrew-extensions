@@ -58,8 +58,8 @@ class NewrelicAT84 < AbstractPhpExtension
   def install
     inreplace "agent/config.m4", "-l:libprotobuf-c.a", "-lprotobuf-c"
     inreplace "axiom/Makefile", "AXIOM_CFLAGS += -Wimplicit-fallthrough", "#AXIOM_CFLAGS += -Wimplicit-fallthrough"
-    system "make", "daemon"
-    system "make", "agent"
+    inreplace "daemon/go.mod", /toolchain go.*/, "toolchain go#{Formula["go"].version}"
+    system "make", "all"
     prefix.install "agent/modules/#{extension}.so"
     prefix.install "bin/daemon"
     write_config_file
