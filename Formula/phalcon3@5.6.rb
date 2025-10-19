@@ -18,6 +18,7 @@ class Phalcon3AT56 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3bac87d5d9bf3ed056328db142650c003b52a550c6c3e0183e9446909f4d0c8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "87b765a6df7cd98736e6374d123e19c255e9b954b6458e53b6ce81f132cb5844"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2994a241d54910c57632c23c4f9692399db9e9856205743ec50d22b044231f28"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a3b14120d68133b947a3787cc875b21b021b0cec1a1f1d47556af9cf1c27bf00"
     sha256 cellar: :any_skip_relocation, ventura:        "8bf8cc4a9e9a4dbd988551bfbae559be1684a0386c3f58c892e95488ea45c149"
     sha256 cellar: :any_skip_relocation, big_sur:        "7baabf661cd9d619a32a4a3ffc6935220d54fcba56d6cb289589440a2816c1cc"
     sha256 cellar: :any_skip_relocation, catalina:       "27609b942a6e61bac3369616ddf18375623b60eb4ed81403385ca2cc91671499"
