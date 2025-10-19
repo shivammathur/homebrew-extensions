@@ -23,6 +23,7 @@ class NewrelicAT82 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sequoia: "9152e5dacf081b6d15ff313f93cc02da4c5b2ec46ad8d32bceefdef704f80a49"
     sha256 cellar: :any,                 arm64_sonoma:  "832f1a26a1ff9c55e161191721fff23829b8ced3d69dc0a2b24b4472c9de0b91"
     sha256 cellar: :any,                 arm64_ventura: "0f0d338f373be2f8b96d6462e22734c95b3580e2127a45d285cdc60c0a78b585"
+    sha256 cellar: :any,                 sonoma:        "7195937e5dac2979ee9d649b216cf2324cc23c47bc76a7a96c8db07fb024ebbc"
     sha256 cellar: :any,                 ventura:       "7b990ee773e8e7acafd21e4f44eb40a050e9d4363511cb5de13c4ef2c122a802"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "7917c28b55e1d611d7103e41054a2e4db9e60e8ce8f75203ee84a28601435ce2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9589f600df42f5ea4d77e3c0040b9d42d5ac942d5e750500128d3ecdb94bb203"
