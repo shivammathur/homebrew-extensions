@@ -19,6 +19,7 @@ class XdebugAT56 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "edc7d841bf561cddcbd861d519845b6c7fd655054b4f8e4bbc4c373d793b89a2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9af4b364d4bfc44502cacc96e832b15416590077d0db510feafcd10b0eee05bb"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "41becc4471bec61058f9684636e5b7b5eca8e8b7ae7c2aa4d6427c69ac7b8985"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b7ebe7aa285a629074fe451e9e944059302579229ee4b457f6c53719c822b4ee"
     sha256 cellar: :any_skip_relocation, ventura:        "aa93a72086aca1726d101fb7b95920cc4e9b01b77ebc68988f26a0e055e645f2"
     sha256 cellar: :any_skip_relocation, big_sur:        "cf4e988a3805069c2fc0ff876cbda1ef84ea1474971a3b358122bf7109956b40"
     sha256 cellar: :any_skip_relocation, catalina:       "ddc7ec2f15a6615f8b1c07da9819e06419801d74c5b0a2be0f3b44ec1a08699f"
