@@ -21,6 +21,7 @@ class ImapAT73 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sequoia: "a096409ba54c967874b4234544adce9a94f1a670c419a2fbd481520376f89bf1"
     sha256 cellar: :any,                 arm64_sonoma:  "e7e7a253d69450b1e43b0ca3e6481401e02ce5d7b20a27c3d2ac507967376815"
     sha256 cellar: :any,                 arm64_ventura: "d70ebde39246c840509902d5c38c9edfe22832bbac2c12fa4ed9b2b982537438"
+    sha256 cellar: :any,                 sonoma:        "0aff9629b2e75c74fce9234d8bd6995a317b02bd23ac31abae9f313c10520606"
     sha256 cellar: :any,                 ventura:       "63b42eb72b09459843a93a2d5275a5e61d7266f9b4018ffd09a50bfbf8f423b6"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "a8b23a2320e8eee745684dc05e46fb69d3b64719d86091d8aac0d889d76accde"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f2fb12bc908123c3875e5f6e79ae2a4e7c0d48e0c717fcd898ac1e2f0ed190e"
