@@ -24,6 +24,7 @@ class VipsAT72 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sequoia: "6ff02997c2f122603c5051a09ddda3ea75fde0cf8e3a288c2ea1aa21e852779d"
     sha256 cellar: :any,                 arm64_sonoma:  "fc670a9a4481119faffe8bd848cd88142575c70a8d29e9c132361f9081843634"
     sha256 cellar: :any,                 arm64_ventura: "1b7706d7595648f4a2290a6d55e375f3684746286e79cf77b0b7472445b4875d"
+    sha256 cellar: :any,                 sonoma:        "699871314706ad355a514e7b876d882c0e5575d28c0d5460fac40da81e4304f4"
     sha256 cellar: :any,                 ventura:       "65779257feb400e0d9ea14c014a48e74ef03202e61fcd88eecacbc4f572aa233"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "981dee6285c661f5b6b54357c65420aabd5635c30c8e72d72762e3b820642354"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "65efb7b172504e4bf490228241c38191be2a1087eef2d35b86249296d2e9b093"
