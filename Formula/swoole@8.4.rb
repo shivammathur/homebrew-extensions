@@ -23,6 +23,7 @@ class SwooleAT84 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sequoia: "a179e9a7ae34d1dd207b14c1975832deb188c8dbc83e1b8768c5d712012f2aae"
     sha256 cellar: :any,                 arm64_sonoma:  "92d9b3525e19cfc6d50fa2c69993142ac2095fef731df3363a5954211f6cfaf1"
     sha256 cellar: :any,                 arm64_ventura: "d1ce12658f6358ddc27722c1109e307abb2bb0c6ab86e492718d8c0ff39b1ba7"
+    sha256 cellar: :any,                 sonoma:        "28e89e80446817b153960dd561b0b1d212774616a67006d15e7fe00e32cfe4f6"
     sha256 cellar: :any,                 ventura:       "8476893cfa92da2cfe5591b05ab948ad21e99b139dd2477c6c33dccffb560b0b"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "03527c0bf8d95888270212c2d72a09dc1cb1a88df44bd97f021c91299bfccead"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f321e2a0f00d8f7175f7ff6811e0169290b05623dc4c7fe95ed606fba82e68c"
