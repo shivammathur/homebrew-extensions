@@ -16,13 +16,13 @@ class V8jsAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 5
-    sha256 arm64_sonoma:   "9ca6ce241cee0ae51884a1c029f0b954d55676c217b236a92efcc07a0da8db73"
-    sha256 arm64_ventura:  "6428553062b0b4a1fc3267030951c4a3bd5678a928edb1d3ff3e3f77676e61fc"
-    sha256 arm64_monterey: "9b42e0ea6cf29b52a5b8965611bd4fcb4f8e9f10b03a28a0e1d0ba22e54789d0"
-    sha256 ventura:        "c0679921e7234bb572221105a820794d79b0c19b0041bec20745f9699a665dc9"
-    sha256 monterey:       "a13bd8d4726431e16eb73d9e09017b2c51e7bcff8ca741eeb76fe0734ee4d436"
-    sha256 x86_64_linux:   "79bbab59a609978cb0c5fee04b27582b7f1a3e4cfc49777e058b0d3936add597"
+    rebuild 6
+    sha256 arm64_tahoe:   "23104b5453fe4f885c84e5292c15001b928a76317edde262cfaeaf1c01cb9fa7"
+    sha256 arm64_sequoia: "f2d25cca26336c23c0b2ed96e3cee178aa3552cef6e744e7349b7421b7594cf8"
+    sha256 arm64_sonoma:  "5b9a1d56bdf2815ab25b8db30e32c7adf352ebf4efb987ce7b3712e88eafb334"
+    sha256 sonoma:        "a9e050441999728cd6a1c54c576f2939b69678072a93832d1b3f367093a012f8"
+    sha256 arm64_linux:   "a2230c52d880c0117ac845368da3ce91c3e7637e1d43aa4724f4811c6fce3890"
+    sha256 x86_64_linux:  "4eec72bce9275f15235c0a0c06a6d814e75b7dea779e786981ea6855fd657884"
   end
 
   depends_on "v8"
