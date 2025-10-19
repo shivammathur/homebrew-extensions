@@ -23,6 +23,7 @@ class VldAT80 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "466adf14acb5d3dc0fe7a0ad9029f55e623e20edaf07b7c72e756145771ca5a4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cd72b9e05cd2c557f8bb9f44c3f01a80e11a26cc508a9e4b6dc8a6a21e56fed"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ba238a50d054aabe6e85b647860836bf633a104f3973e61607558dcca300a59e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19bbbde2e373fc4ebf113e85fe81310062f5eb68bcb0da461c7dc5a5dbd1be50"
     sha256 cellar: :any_skip_relocation, ventura:       "137a7a408a497aa2d24e3a9fe88fbb0b5e5e4bfe5540609d371759872fe28ca0"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "d078ed3629d031c0e8622a1c15d26998b7dcf8a8d111dbbe9f03b3dbbdd3b296"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9186500a3bcf7b3e5ee1f3c736d549766816d21b25667a3498683b92da0eed1"
