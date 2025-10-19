@@ -15,6 +15,7 @@ class SwooleAT71 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 sonoma:       "0d434995b9841921b203ff641b18f17d9e3dee5fce1331ca71e245a2ddf718c1"
     sha256 cellar: :any,                 ventura:      "4fd2be586a50fb2a9f29bea1df0a7caec708f8777b8f03955ecde848a792bb4f"
     sha256 cellar: :any,                 big_sur:      "84fb4776677b790a593a9e2982ad443591c38586b5b25ab8aec70a33161bdde5"
     sha256 cellar: :any,                 catalina:     "6be59933ca33aeb7986e4ee12edc3fae3a4516e53dfd633aa47d24ef16a87e01"
