@@ -21,6 +21,7 @@ class ZmqAT73 < AbstractPhpExtension
     sha256 cellar: :any,                 arm64_sonoma:   "f54e5a7f52057ffe1205e97462de97844744de7ef259edac278211c4ab94ddcb"
     sha256 cellar: :any,                 arm64_ventura:  "42e5a8f6499b450bcf181d725be362dda1bc4965ac1fc95de7667f148f594c87"
     sha256 cellar: :any,                 arm64_monterey: "a3b1333f99f412658db97f1e6dea285953f7249f86bc6e551af4ffbe9dcb434b"
+    sha256 cellar: :any,                 sonoma:         "e217c8d5fb8a8c5d044e35015f0675b6861d41e8521d2748ec84eca72d6e50b3"
     sha256 cellar: :any,                 ventura:        "338f89388c486810076aa2f1f190dab8f7316d1fe83aa89e8bc0c136579e200e"
     sha256 cellar: :any,                 monterey:       "e6f83ab443057f83d900a2ae1bd4f0f2ee72e36bc2bd0350f2ca53eced82b81f"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "a0219eef3898bc5bb3e19b1ffa254db2541dbb85aed2a30bcaad6d4ff1a7a359"
