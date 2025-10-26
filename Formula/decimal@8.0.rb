@@ -14,8 +14,9 @@ class DecimalAT80 < AbstractPhpExtension
   license "MIT"
 
   livecheck do
-    url "https://pecl.php.net/rest/r/decimal/allreleases.xml"
-    regex(/<v>(1\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+    url :stable    
+    strategy :github_releases
+    regex(/^v(\d+\.\d+\.\d+$)/i)
   end
 
   bottle do
