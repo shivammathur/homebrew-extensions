@@ -19,12 +19,12 @@ class SpxAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7874a4d0db4212b13cf3b3735e4eb78d9cceb083aeb1dd9320c80a11e37fe39"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "641aa7a78c29591196f7c96b0e1cb0c2cff5548fc93fda12c281c17c8c348f49"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b3b8f3c7b75b0fb7f775a823a1d0bfc9ef7e030210853f1d52fc27e51f27834"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9bf6a7aa4e2ba48735e06ab78744ebcd34a2f4ea4ec9807ec0201f7dbe22f494"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "881f7414b550ec94a1577978e70b948f829d830b981bb00584806378b31fe0aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7484879b3a41d2915c414df7019c00a757cb388e1f48d8061925957c03c0f29f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a2071812eb5826b10291665d3bc11a4a53e42656aad24d76ada5887d7949894"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdfdb9b13271cd2cbcf2cd9c5d12d05a172f9f44cd0bd8042f3f697ff2533a00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1688f22a22d06d18c5a4eb2261f1ee3c3ac04002353eb5f0b37b3bcde2e7d653"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a321505d8dd724771a55092f2b4aa8d8e1bb2819af6a0835bcf68b295ef14da5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7affae01067840e94ffd42d44f8e6aff43d1405b1e29097fd40068146e996a12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d84409b306bf57a8173867b2ad676749815614871c02a64d2918ddde2cad8516"
   end
 
   depends_on "zlib"
