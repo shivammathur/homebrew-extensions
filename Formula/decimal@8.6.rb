@@ -14,7 +14,7 @@ class DecimalAT86 < AbstractPhpExtension
   license "MIT"
 
   livecheck do
-    url :stable    
+    url :stable
     strategy :github_releases
     regex(/^v(\d+\.\d+\.\d+$)/i)
   end
