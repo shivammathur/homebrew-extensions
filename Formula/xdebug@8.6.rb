@@ -8,9 +8,9 @@ class XdebugAT86 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/57486fa8dad31de41c2d9c35d711c7f2e8970abd.tar.gz"
-  sha256 "2b2160df79f7abe002730150fefb224c9d6a55471a34c080fa83c5e8dd530620"
-  version "3.4.5"
+  url "https://github.com/xdebug/xdebug/archive/bd9f063cc6a5c42bbd7f41fdbe5cad7b6f5f8fde.tar.gz"
+  sha256 "145049882b6f190a603d902ef87e18ae3b004ee1ce7110f246364aa4e2e356ad"
+  version "3.4.7"
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
 
@@ -32,6 +32,11 @@ class XdebugAT86 < AbstractPhpExtension
     inreplace "src/profiler/profiler.c", \
               "ZSTR_INIT_LITERAL(tmp_name, false)", \
               "zend_string_init(tmp_name, strlen(tmp_name), false)"
+    inreplace %w[
+      src/debugger/debugger.c
+      src/debugger/handler_dbgp.c
+      src/base/base.c
+    ], "zval_dtor", "zval_ptr_dtor_nogc"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
