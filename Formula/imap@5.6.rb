@@ -34,10 +34,10 @@ class ImapAT56 < AbstractPhpExtension
     Dir.chdir "ext/#{extension}"
     safe_phpize
     system "./configure",
-           "--prefix=#{prefix}", \
+           "--prefix=#{prefix}",
            phpconfig,
-           "--with-imap=shared, #{Formula["imap-uw"].opt_prefix}", \
-           "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}", \
+           "--with-imap=shared, #{Formula["imap-uw"].opt_prefix}",
+           "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}",
            "--with-kerberos"
     system "make"
     prefix.install "modules/#{extension}.so"

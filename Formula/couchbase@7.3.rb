@@ -36,7 +36,7 @@ class CouchbaseAT73 < AbstractPhpExtension
     Dir.chdir "couchbase-#{version}"
     safe_phpize
     system "./configure",
-           "--prefix=#{prefix}", \
+           "--prefix=#{prefix}",
            phpconfig,
            "--with-couchbase=#{Formula["libcouchbase"].opt_prefix}"
     system "make"

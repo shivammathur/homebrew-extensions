@@ -56,7 +56,7 @@ class McryptAT56 < AbstractPhpExtension
     Dir.chdir "ext/#{extension}"
     safe_phpize
     system "./configure",
-           "--prefix=#{prefix}", \
+           "--prefix=#{prefix}",
            phpconfig,
            "--with-mcrypt=#{prefix}"
     system "make"
