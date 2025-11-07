@@ -16,16 +16,12 @@ class PhpredisAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "6d135192a248326e5187aae756d5fdfedf26b03651623c6c5cec96bfc6f93de7"
-    sha256 cellar: :any,                 arm64_sonoma:   "e0fad37d60c48237b055a79f89fa5fe6e4f04ec3969decc014d1f2dd1dc984aa"
-    sha256 cellar: :any,                 arm64_ventura:  "2f83a6edebf27742fe2212ae5af323f568fa1501bf9bf203c0cdd40e9416273b"
-    sha256 cellar: :any,                 arm64_monterey: "c79572d42d668a2e08c13658a96ad52d186fa6cab073b85874be52b41787fbfc"
-    sha256 cellar: :any,                 sonoma:         "74c94a4cbd2c4115afdef28665b26a99d305fccd3a20d4da09fcdaff22e05ae3"
-    sha256 cellar: :any,                 ventura:        "442c0c87c1315faceb63791837ed4ff6cb54d8c86e42d23da3a2afc2370839ad"
-    sha256 cellar: :any,                 monterey:       "e39c38e94fdf86e1e927f3f2bdb2614bd4f19b79fd47c7cc5956c59f29764a2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b4c8e95e89bc834346b39769af39f1c799ffe58e19ea030bc381d2b454bbe7ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccbcbd97b13d70868a1606e5747332b0e1b2a70f0e65b256c661086e14522c90"
+    sha256 cellar: :any,                 arm64_tahoe:   "8c083313fdf62b11f583a9463bb7230c7a109239b550ba928f928000a5547afa"
+    sha256 cellar: :any,                 arm64_sequoia: "10d631fe83209eb82c85dae4341dcf028535f98b252d6082572af43f4a8c25d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "875d82fc1e8f29538dc1873bd109bd3700a83210b28243125703d4f31c8a7ef0"
+    sha256 cellar: :any,                 sonoma:        "90c1f266110a6556bb511be89a0e9aa168121f8a5af1f29fa0ae18068bdb5205"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7970b811106637adea16cd827e3be60ffecced97a193a6f68fd18372b732bf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f63d99747a400f65bad5476cb66ee267a6c8ab2bec2a1a8fa7e40eaa3ad29e3"
   end
 
   depends_on "liblzf"
