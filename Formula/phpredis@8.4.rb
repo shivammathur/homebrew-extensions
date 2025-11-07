@@ -4,36 +4,40 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Redis Extension
-class RedisAT73 < AbstractPhpExtension
+class PhpredisAT84 < AbstractPhpExtension
   init
   desc "Redis PHP extension"
   homepage "https://github.com/phpredis/phpredis"
-  url "https://pecl.php.net/get/redis-6.1.0.tgz"
-  sha256 "f10405f639fe415e9ed4ec99538e72c90694d8dbd62868edcfcd6a453466b48c"
+  url "https://pecl.php.net/get/redis-6.3.0.tgz"
+  sha256 "0d5141f634bd1db6c1ddcda053d25ecf2c4fc1c395430d534fd3f8d51dd7f0b5"
   head "https://github.com/phpredis/phpredis.git", branch: "develop"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://pecl.php.net/rest/r/redis/allreleases.xml"
+    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "4c9be76439412f552669679c8a6fd956854ff892c2193c3077ba08191f219d6d"
-    sha256 cellar: :any,                 arm64_sonoma:  "3dba5e9c8f3abb733ac0ae43218590dc71fa22084ec7c465a359a6f35ab4ffa7"
-    sha256 cellar: :any,                 arm64_ventura: "50eaa83e55704336f4f75f363e65963206aec7cbe416dc5bc6262aa78ed985db"
-    sha256 cellar: :any,                 sonoma:        "9a647ce5c0cb56948b488488b4510bef4622825231314b4a4674fc304da1d43f"
-    sha256 cellar: :any,                 ventura:       "fa17df50d6e693e78c73631f8b255d63c065c66a6af94112ff74c41ae898829c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6322fa49d728c3724fe3c7aed6498c921fc62522dbc02c8cdb519219a8949072"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "245bf8e2e04283148d0d21ee8b224e94d412c22e24f6da64f9ea57ee0fbb786b"
+    sha256 cellar: :any,                 arm64_tahoe:   "464468dba64d5f204be31fe74b10f6f2ec322d527a35176d4e5918ff2f36c222"
+    sha256 cellar: :any,                 arm64_sequoia: "dff2223bece10a3dbed8425ebf82c7407c729271165aa5d14d58175312b2b40e"
+    sha256 cellar: :any,                 arm64_sonoma:  "014358db722b3edd14cdb265f8e2ac50743f076215cee52870451a862a0a3b2a"
+    sha256 cellar: :any,                 sonoma:        "3822f0deae1699fa769dec317b2aa8c3a91cc59ae97521250b117b0c5d763444"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ad13840be2374ede4b9b0118346c90d32a3521c7e6090b7ecd5223e1a39991b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bcb642ae241aa893536fecb6d54b73f41e4731bdaf3e171a053e73a5d6d4fed"
   end
 
   depends_on "liblzf"
   depends_on "lz4"
-  depends_on "shivammathur/extensions/igbinary@7.3"
-  depends_on "shivammathur/extensions/msgpack@7.3"
+  depends_on "shivammathur/extensions/igbinary@8.4"
+  depends_on "shivammathur/extensions/msgpack@8.4"
   depends_on "zstd"
 
   def patch_redis
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
-      headers = Dir["#{Formula["#{e}@7.3"].opt_include}/**/*.h"]
+      headers = Dir["#{Formula["#{e}@8.4"].opt_include}/**/*.h"]
       (buildpath/"redis-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
   end
@@ -53,9 +57,9 @@ class RedisAT73 < AbstractPhpExtension
     on_macos do
       args << "--with-liblzf=#{Formula["liblzf"].opt_prefix}"
     end
-
     Dir.chdir "redis-#{version}"
     patch_redis
+    patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

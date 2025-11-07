@@ -4,7 +4,7 @@
 require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Redis Extension
-class RedisAT83 < AbstractPhpExtension
+class PhpredisAT82 < AbstractPhpExtension
   init
   desc "Redis PHP extension"
   homepage "https://github.com/phpredis/phpredis"
@@ -20,24 +20,24 @@ class RedisAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_tahoe:   "99a9774f6fcf76b93f229301283ca2c265d27bd924cb007c8a87dcc8b6d41c41"
-    sha256 cellar: :any,                 arm64_sequoia: "7333e3168ae124bf25560681452861d6bb5e707af66e48b3dd2a18e260e029b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "b56bb9203a0ddcfa7cdccae2177b52c0cd637bf809bbc5463ab5f5b3c50712d8"
-    sha256 cellar: :any,                 sonoma:        "f43ec3972a87e1702347e1efbb914ba58bf825bce607d82e7160b57f6b5cb226"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4de71218929be96e27cc18b5edc4eb0b60caf5bc0567123784af19623091adda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf67f558ce755c4606d5479206f847ef047ceb70dd05bee67429429487440ac8"
+    sha256 cellar: :any,                 arm64_sequoia: "c1858c6c3f54bb5c1beaae313cde3e1b6f59a8d2ba2d66bde619ca39574a2bd8"
+    sha256 cellar: :any,                 arm64_sonoma:  "a87082f5cd7fe24889c2e509bbb327720c3de46cd60a2a6fd93f715d41512fb1"
+    sha256 cellar: :any,                 arm64_ventura: "777c718496911bd56ef8eb5ba4c77650c902ca4a47913edc5092c2e9bb5b91b4"
+    sha256 cellar: :any,                 ventura:       "c408de20687f264f96d85cd320c28887ed496529d84cc23ab56c479874cf4052"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "541bf8b76c3e1d01ab00bc90e4bb71bb3ba6b20c963b9c12d0e0d75cbb73f418"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1664f9aa1adc797ca52c427c2839b2b3147d1678c2f68b30f87928fcfa43704c"
   end
 
   depends_on "liblzf"
   depends_on "lz4"
-  depends_on "shivammathur/extensions/igbinary@8.3"
-  depends_on "shivammathur/extensions/msgpack@8.3"
+  depends_on "shivammathur/extensions/igbinary@8.2"
+  depends_on "shivammathur/extensions/msgpack@8.2"
   depends_on "zstd"
 
   def patch_redis
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
-      headers = Dir["#{Formula["#{e}@8.3"].opt_include}/**/*.h"]
+      headers = Dir["#{Formula["#{e}@8.2"].opt_include}/**/*.h"]
       (buildpath/"redis-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
   end
