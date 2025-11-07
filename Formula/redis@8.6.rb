@@ -8,8 +8,8 @@ class RedisAT86 < AbstractPhpExtension
   init
   desc "Redis PHP extension"
   homepage "https://github.com/phpredis/phpredis"
-  url "https://pecl.php.net/get/redis-6.2.0.tgz"
-  sha256 "5069c13dd22bd9e494bb246891052cb6cc0fc9a1b45c6a572a8be61773101363"
+  url "https://pecl.php.net/get/redis-6.3.0.tgz"
+  sha256 "0d5141f634bd1db6c1ddcda053d25ecf2c4fc1c395430d534fd3f8d51dd7f0b5"
   head "https://github.com/phpredis/phpredis.git", branch: "develop"
   license "PHP-3.01"
 
@@ -40,7 +40,25 @@ class RedisAT86 < AbstractPhpExtension
       headers = Dir["#{Formula["#{e}@8.6"].opt_include}/**/*.h"]
       (buildpath/"redis-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
-    inreplace "common.h", "ext/standard/php_smart_string.h", "Zend/zend_smart_string.h"
+    %w[
+      redis_array_impl.c
+      redis_array.c
+      redis_commands.c
+      redis_cluster.c
+      cluster_library.c
+      library.c
+      redis.c
+      redis_session.c
+    ].each do |f|
+      inreplace f, "zval_dtor", "zval_ptr_dtor_nogc"
+    end
+    %w[
+      library.c
+      redis_commands.c
+      cluster_library.c
+    ].each do |f|
+      inreplace f, "zval_is_true", "zend_is_true"
+    end
   end
 
   def install
