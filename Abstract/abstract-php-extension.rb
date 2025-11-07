@@ -109,6 +109,7 @@ class AbstractPhpExtension < Formula
                 .gsub("xdebug2", "xdebug")
                 .gsub(/phalcon\d+/, "phalcon")
                 .gsub("mongodb1", "mongodb")
+                .gsub("phpredis", "redis")
     end
 
     def init
