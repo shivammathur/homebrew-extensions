@@ -20,13 +20,12 @@ class YamlAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "f0a089f25157ce68706ec3f562618613aadb94a3cd16b1e490d34c4decc519e5"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c351462ce58a8d10c02aeec9bb9101d2f3d726c469679907d622b471e58f70b"
-    sha256 cellar: :any,                 arm64_ventura: "273134752feab44ef7128b9373dc9acfa35a586fafc7e9f198449fb88b9d9208"
-    sha256 cellar: :any,                 sonoma:        "e60d2b0dec3bfcc8e18d448092aff4dea4ad7fb7950648033ebd3337d7b5de08"
-    sha256 cellar: :any,                 ventura:       "96f15fa3cf897ae294ccea8ec41b707aec5364b2b6497c18ed50dabe1a42d221"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "353c18a5628d306bd2d7ae0f22bfc389d82eb18a48869ad62ef8750c8f2afca6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff64452850cb4834060806ee7aa2a34607d0ab899e5ceb97a663c524f4e0eeed"
+    sha256 cellar: :any,                 arm64_tahoe:   "6bdfaef124a5f5290b9caae9f84c72ae5559d8f148a0f411161bbb70dcc28db1"
+    sha256 cellar: :any,                 arm64_sequoia: "482672eee01bc967f976615a44526c314d7aa040e5bc1a88e8074aa73c78824c"
+    sha256 cellar: :any,                 arm64_sonoma:  "d5ae86862f2e5b67eccccaa626b92b36c3ea9f4c00a0875c16e25cfafde56ef3"
+    sha256 cellar: :any,                 sonoma:        "36eaa1e26548e0b30f9c583b529ec11315e9e86ec5b432c87188c37da320f1f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4841474589833aacfe7989bbb478a708c8fae29a72f7fd510c3ade5f682f2908"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "130b13af88be6ec7db89a03816fcb790e37c4d2f3cf91c905001a8cc5719e88c"
   end
 
   depends_on "libyaml"
