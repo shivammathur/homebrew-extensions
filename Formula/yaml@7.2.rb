@@ -8,8 +8,8 @@ class YamlAT72 < AbstractPhpExtension
   init
   desc "Yaml PHP extension"
   homepage "https://github.com/php/pecl-file_formats-yaml"
-  url "https://pecl.php.net/get/yaml-2.2.5.tgz"
-  sha256 "0c751b489749fbf02071d5b0c6bfeb26c4b863c668ef89711ecf9507391bdf71"
+  url "https://pecl.php.net/get/yaml-2.3.0.tgz"
+  sha256 "bc8404807a3a4dc896b310af21a7f8063aa238424ff77f27eb6ffa88b5874b8a"
   head "https://github.com/php/pecl-file_formats-yaml.git", branch: "php7"
   license "PHP-3.01"
 
