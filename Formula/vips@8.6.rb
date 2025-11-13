@@ -37,6 +37,8 @@ class VipsAT86 < AbstractPhpExtension
       --with-vips=#{Formula["vips"].opt_prefix}
     ]
     Dir.chdir "vips-#{version}"
+    inreplace "vips.c", "zval_dtor", "zval_ptr_dtor_nogc"
+    inreplace "vips.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

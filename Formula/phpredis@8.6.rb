@@ -59,6 +59,13 @@ class PhpredisAT86 < AbstractPhpExtension
     ].each do |f|
       inreplace f, "zval_is_true", "zend_is_true"
     end
+    %w[
+      redis.c
+      redis_cluster.c
+    ].each do |f|
+      inreplace f, "ZEND_WRONG_PARAM_COUNT()", "zend_wrong_param_count(); RETURN_THROWS();"
+    end
+    inreplace "redis_cluster.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
   end
 
   def install

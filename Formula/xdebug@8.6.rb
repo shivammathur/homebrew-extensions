@@ -36,6 +36,7 @@ class XdebugAT86 < AbstractPhpExtension
       src/debugger/handler_dbgp.c
       src/base/base.c
     ], "zval_dtor", "zval_ptr_dtor_nogc"
+    inreplace "src/develop/php_functions.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"

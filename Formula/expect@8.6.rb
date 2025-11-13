@@ -56,6 +56,8 @@ class ExpectAT86 < AbstractPhpExtension
       s.gsub! " TSRMLS_CC", ""
       s.gsub! "ulong", "zend_ulong"
     end
+    inreplace "expect.c", "zval_dtor", "zval_ptr_dtor_nogc"
+    inreplace "expect.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

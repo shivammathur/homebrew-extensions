@@ -43,6 +43,13 @@ class MemcacheAT86 < AbstractPhpExtension
       src/memcache_session.c
     ], "ext/standard/php_smart_string.h", "Zend/zend_smart_string.h"
     inreplace "src/memcache_pool.h", "ext/standard/php_smart_string_public.h", "Zend/zend_smart_string.h"
+    inreplace %w[
+      src/memcache.c
+      src/memcache_binary_protocol.c
+      src/memcache_pool.c
+      src/memcache_session.c
+    ], "zval_dtor", "zval_ptr_dtor_nogc"
+    inreplace "src/memcache.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
