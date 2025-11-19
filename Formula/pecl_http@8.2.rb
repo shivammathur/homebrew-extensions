@@ -10,6 +10,7 @@ class PeclHttpAT82 < AbstractPhpExtension
   homepage "https://github.com/m6w6/ext-http"
   url "https://pecl.php.net/get/pecl_http-4.3.1.tgz"
   sha256 "1512dc02fea2356c4df50113e00943b0b7fc99bb22d34d9f624b4662f1dad263"
+  revision 1
   head "https://github.com/m6w6/ext-http.git", branch: "master"
   license "BSD-2-Clause"
 
@@ -29,7 +30,7 @@ class PeclHttpAT82 < AbstractPhpExtension
 
   depends_on "brotli"
   depends_on "curl"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libevent"
   depends_on "libidn2"
   depends_on "shivammathur/extensions/raphf@8.2"
