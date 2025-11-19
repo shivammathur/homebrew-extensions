@@ -10,7 +10,7 @@ class MongodbAT71 < AbstractPhpExtension
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://pecl.php.net/get/mongodb-1.11.1.tgz"
   sha256 "838a5050de50d51f959026bd8cec7349d8af37058c0fe07295a0bc960a82d7ef"
-  revision 3
+  revision 4
   head "https://github.com/mongodb/mongo-php-driver.git", branch: "v1.11"
   license "Apache-2.0"
 
@@ -25,7 +25,8 @@ class MongodbAT71 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4d7b738aa9fbc4c24da32e00ddb1d4b893c0a5e162ff936cc781e66594ca83e"
   end
 
-  depends_on "icu4c@77"
+  depends_on "cyrus-sasl"
+  depends_on "icu4c@78"
   depends_on "openssl@3"
   depends_on "snappy"
   depends_on "zstd"
