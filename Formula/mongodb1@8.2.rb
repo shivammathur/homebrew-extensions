@@ -21,12 +21,12 @@ class Mongodb1AT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_tahoe:   "c060f1cf50aa9961866c99ce80301939ced3f4923c220e0b1e3bec1b988505ad"
-    sha256 cellar: :any,                 arm64_sequoia: "73513af03acd44a11c6536bf07ed287e951a3381aeb355b41da543756677856f"
-    sha256 cellar: :any,                 arm64_sonoma:  "2584e2588c7ca0579e9a9d3f2aec4d9291d88e2b87ccd297fbf949720a1dd2ed"
-    sha256 cellar: :any,                 sonoma:        "8ef9827b796508bfcd42956c750edd386ab2d605b21e4e99d78ff3ac8859b74e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f62c337fc74e485b034b0bec4b328fe2bb40493702fe3ed38842863adcb4b2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62354eb4015c69c3cb959032b20b765b024cabc74964e11f7981c4df26a31c74"
+    sha256 cellar: :any,                 arm64_tahoe:   "4d0859c70dccd7fb4e33f784af634af20fcec804cc519708747df0bdb873e1dc"
+    sha256 cellar: :any,                 arm64_sequoia: "05d68740efe2dd856740be689062834e64119434697b5337b35ed49c1a9b0a99"
+    sha256 cellar: :any,                 arm64_sonoma:  "52f57416922f24a284c264f4e4930a65e48b30ef7fae1b589698ec998f6349c9"
+    sha256 cellar: :any,                 sonoma:        "be46d21b8a9ba1aca12b15ccd20ccf0bb32901c7cceac242dc9a32d021fb1a22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7986dfc20bfac754dd20514ed3c83d25b20f2e61d7b4d22c22d92b78fb16008c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "483a1686e2333f2730aa1878b488b9cf97a486759076e9ade3559bbae5688709"
   end
 
   depends_on "cyrus-sasl"
