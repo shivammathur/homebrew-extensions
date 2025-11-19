@@ -12,7 +12,7 @@ class PeclHttpAT56 < AbstractPhpExtension
   sha256 "ddbf3eea3d1c7004a7dd83b5864aee5f87b1b6032bc281c08ccc62f83b9931ed"
   head "https://github.com/m6w6/ext-http.git", branch: "master"
   license "BSD-2-Clause"
-  revision 3
+  revision 4
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
@@ -27,7 +27,7 @@ class PeclHttpAT56 < AbstractPhpExtension
 
   depends_on "brotli"
   depends_on "curl"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libevent"
   depends_on "libidn2"
   depends_on "shivammathur/extensions/propro@5.6"
