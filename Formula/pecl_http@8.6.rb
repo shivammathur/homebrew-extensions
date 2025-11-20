@@ -10,6 +10,7 @@ class PeclHttpAT86 < AbstractPhpExtension
   homepage "https://github.com/m6w6/ext-http"
   url "https://pecl.php.net/get/pecl_http-4.3.1.tgz"
   sha256 "1512dc02fea2356c4df50113e00943b0b7fc99bb22d34d9f624b4662f1dad263"
+  revision 1
   head "https://github.com/m6w6/ext-http.git", branch: "master"
   license "BSD-2-Clause"
 
@@ -30,7 +31,7 @@ class PeclHttpAT86 < AbstractPhpExtension
 
   depends_on "brotli"
   depends_on "curl"
-  depends_on "icu4c@77"
+  depends_on "icu4c@78"
   depends_on "libevent"
   depends_on "libidn2"
   depends_on "shivammathur/extensions/raphf@8.6"
@@ -55,6 +56,21 @@ class PeclHttpAT86 < AbstractPhpExtension
     inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.6"
     inreplace "src/php_http_message_body.c", "standard/php_lcg.h", "random/php_random.h"
     inreplace "src/php_http_misc.c", "standard/php_lcg.h", "random/php_random.h"
+    inreplace %w[
+      src/php_http_negotiate.c
+      src/php_http_header_parser.c
+      src/php_http_env.c
+      src/php_http_encoding.c
+      src/php_http_client_request.c
+      src/php_http_env_request.c
+      src/php_http_params.c
+      src/php_http_header.c
+      src/php_http_message_parser.c
+      src/php_http_url.c
+      src/php_http_env_response.c
+      src/php_http_message.c
+      src/php_http_querystring.c
+    ], "zval_dtor", "zval_ptr_dtor_nogc"
     patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
