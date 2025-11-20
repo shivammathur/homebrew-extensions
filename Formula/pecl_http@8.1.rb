@@ -21,11 +21,12 @@ class PeclHttpAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "bc4ebe9bb548b5d55345d70e957e8abb64f3a8437b8396a844b3c11d58a67811"
-    sha256 cellar: :any,                 arm64_sonoma:  "014d2fadccdccf53bc8b7704586216fda0625b6832a932b52e6d88292c712429"
-    sha256 cellar: :any,                 sonoma:        "2375357c0fe526b82073597cae3aeb8276165c3e4dd15197b59a1c24a8709151"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88115a33b57d9f4d7f8dfbe0c2bde057e409cad63143e9cea32edde2a7f0ea25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19d6b31a1f03baf3d81e145952c5171cd04dcfa4f5cc62d88dc93442fffa02b6"
+    sha256 cellar: :any,                 arm64_tahoe:   "27de6b241896961f410721a073beda13b573a84162574cb4f6510bdb91ea5a88"
+    sha256 cellar: :any,                 arm64_sequoia: "4a5a8f840031e9d5f366767a1e93f2e50d2e89f0e29b45f1d4e5e89b24d576f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "c9760357e3c88e3fca8638c4a9abf7f0b8bf5b81d9685ad8c6c266f12faf9929"
+    sha256 cellar: :any,                 sonoma:        "0af3da620a6f6b61db6232967154f62013d93571c970dbd399c46a589c7d5dce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9472705c4c1c206cc5d40fe11ee7156c75f5f1e59525f8550275d2fbd8b99bb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25e8b94c6f4f6570f0be440a10944e3b38154f1ecb739a95cbe7426a3e7a89fa"
   end
 
   depends_on "brotli"
