@@ -33,6 +33,8 @@ jobs:
             extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, yaml, xlswriter, zmq, pcov
           - php: '8.4'
             extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, ssh2, swoole, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
+          - php: '8.5'
+            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, ssh2, swoole, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
           - php: '7.2'
             extensions: xdebug2
           - php: '7.3'
