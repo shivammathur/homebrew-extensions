@@ -8,16 +8,13 @@ class XdebugAT85 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/65e43ec5e11adc05f306663b5dc511ccf9001121.tar.gz"
-  sha256 "fc14a0307989695f787796073954b87d0bc4aff89c6f0e89e2195d84ea4957da"
-  version "3.4.5"
-  revision 1
+  url "https://github.com/xdebug/xdebug/archive/3.5.0.tar.gz"
+  sha256 "b10d27bc09f242004474f4cdb3736a27b0dae3f41a9bc92259493fc019f97d10"
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 7
     sha256                               arm64_tahoe:   "f081cde6a5d2da435c482ee8eddfe2c803757e483a00b1e7ab6aad880a907383"
     sha256                               arm64_sequoia: "ee4ff196b1a839b601c5dd2fee3212dd225d6363a7047068a282edbe0784f501"
     sha256                               arm64_sonoma:  "4f7993b3f21ad25ceb29c91e2d34aaa57047d590b21c0a173eafaf44c37566f9"
@@ -29,7 +26,6 @@ class XdebugAT85 < AbstractPhpExtension
   uses_from_macos "zlib"
 
   def install
-    inreplace "src/lib/maps/maps_private.c", "xdebug_str *result_path", ";xdebug_str *result_path"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
