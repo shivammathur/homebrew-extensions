@@ -8,8 +8,8 @@ class XdebugAT86 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/e8d89debe67d008b94ba9e27a8c3905461e57dde.tar.gz"
-  sha256 "1af44386ac8f58e10f6f2e3ccce6fb8c3a40b460f8d7515be09355d2debbdc81"
+  url "https://github.com/xdebug/xdebug/archive/4a470b324eda3288c2fb3b9f5a08ceef599dc12b.tar.gz"
+  sha256 "a3373ff5943746c20692e105afc98c962d87de3b711560dcf411db67de5591e0"
   version "3.5.0"
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
@@ -27,16 +27,6 @@ class XdebugAT86 < AbstractPhpExtension
   uses_from_macos "zlib"
 
   def install
-    inreplace "config.m4", "80600", "80700"
-    inreplace "src/profiler/profiler.c",
-              "ZSTR_INIT_LITERAL(tmp_name, false)",
-              "zend_string_init(tmp_name, strlen(tmp_name), false)"
-    inreplace %w[
-      src/debugger/debugger.c
-      src/debugger/handler_dbgp.c
-      src/base/base.c
-    ], "zval_dtor", "zval_ptr_dtor_nogc"
-    inreplace "src/develop/php_functions.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
