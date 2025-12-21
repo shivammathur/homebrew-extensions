@@ -349,7 +349,6 @@ swoole@8.1
 swoole@8.2
 swoole@8.3
 swoole@8.4
-swoole@8.5
 uuid@7.0
 uuid@7.1
 uuid@7.2
