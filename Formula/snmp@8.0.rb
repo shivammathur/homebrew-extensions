@@ -11,6 +11,7 @@ class SnmpAT80 < AbstractPhpExtension
   url "https://github.com/shivammathur/php-src-backports/archive/c56202b2b1f37a474c0f779253487420311f2f42.tar.gz"
   sha256 "091e70a151ec18206aa15a69d774ea661b0d43d4ba3fbbb3f794a5e81773ffce"
   version "8.0.30"
+  revision 1
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
