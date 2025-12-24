@@ -11,7 +11,7 @@ class SnmpAT73 < AbstractPhpExtension
   url "https://github.com/shivammathur/php-src-backports/archive/2c97539020cfaadf6998f23fd301cb5158464fbc.tar.gz"
   version "7.3.33"
   sha256 "c9bc90d6c3d7b2d3a9e17581d36382f4db3e20e3e43225db5437c52e2f2de7bf"
-  revision 1
+  revision 2
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
