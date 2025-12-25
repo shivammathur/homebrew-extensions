@@ -27,6 +27,11 @@ class XdebugAT86 < AbstractPhpExtension
 
   uses_from_macos "zlib"
 
+  patch do
+    url "https://github.com/shivammathur/xdebug/commit/13264e7ca3608026f710fb83c5f2314bdcc610e6.patch?full_index=1"
+    sha256 "2c0ed06d8adcbdd534132bf4a30a8497a236b576d3dff4c92f1375ec0436f98b"
+  end
+
   def install
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
