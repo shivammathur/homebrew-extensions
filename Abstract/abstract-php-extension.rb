@@ -106,6 +106,7 @@ class AbstractPhpExtension < Formula
       @extension = matches[1].downcase if matches
       @extension.gsub("pecl", "")
                 .gsub("pdo", "pdo_")
+                .gsub("scalar", "scalar_")
                 .gsub("xdebug2", "xdebug")
                 .gsub(/phalcon\d+/, "phalcon")
                 .gsub("mongodb1", "mongodb")
