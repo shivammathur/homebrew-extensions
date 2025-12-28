@@ -18,6 +18,9 @@ class ImagickAT83 < AbstractPhpExtension
     regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
   end
 
+  conflicts_with "gmagick@8.3",
+because: "both provide PHP image processing extensions and should not be loaded together"
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_tahoe:   "8af59fc6a696aadd0a27d09a828b02c58927d747932e8baf38aba4d84adc4ca1"

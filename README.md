@@ -44,6 +44,7 @@
 | `event`         | `PHP 5.6` to `PHP 8.6` |
 | `expect`        | `PHP 5.6` to `PHP 8.6` |
 | `gearman`       | `PHP 5.6` to `PHP 8.6` |
+| `gmagick`       | `PHP 5.6` to `PHP 8.6` |
 | `gnupg`         | `PHP 5.6` to `PHP 8.6` |
 | `grpc`          | `PHP 5.6` to `PHP 8.6` |
 | `igbinary`      | `PHP 5.6` to `PHP 8.6` |
@@ -266,6 +267,7 @@ This project is also generously supported by many other users and organisations 
 - [czmq](https://formulae.brew.sh/formula/czmq "czmq")
 - [expect](https://formulae.brew.sh/formula/expect "expect")
 - [gpgme](https://formulae.brew.sh/formula/gpgme "gpgme")
+- [graphicsmagick](https://formulae.brew.sh/formula/graphicsmagick "graphicsmagick")
 - [grpc](https://formulae.brew.sh/formula/grpc "grpc")
 - [icu4c](https://formulae.brew.sh/formula/icu4c "icu4c")
 - [imagemagick](https://formulae.brew.sh/formula/imagemagick "imagemagick")
