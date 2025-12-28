@@ -23,12 +23,13 @@ because: "both provide PHP image processing extensions and should not be loaded 
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_tahoe:   "66fb0f98050645e151276ff5d3b6c4f6c6e9a7299475aef0e51a5fddd636f4db"
-    sha256 cellar: :any,                 arm64_sequoia: "a01204a72483ef6ce2638c24cf8b0684b81234b66691e04a6b05fb2c7ef29713"
-    sha256 cellar: :any,                 arm64_sonoma:  "b01e3b4f0f2eee2038bb56b18a72c058d27761b5ca4c0df3715120e2e3630e87"
-    sha256 cellar: :any,                 sonoma:        "2bfbc25f6874fcb4a490e7df29bbab601e44113fc77a9d357d89ddd04320c941"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84f99b8b10dbffa46151a8f8e950d17bcdbe5044d65d34ec7457ed4634ff075c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "278b772e5c21ad87eb7d14a242e1418855033fe27bff1e841ab6cd55878e6bf1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "aeace6b95a7cd194492200f275f555392d7c7171a49fe4cc34d437e1383b38cd"
+    sha256 cellar: :any,                 arm64_sequoia: "11a359271a29c1cc1b730c18c8aa66b081b35e67b44d3a8444ca1fc132e43ec4"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a0ba5001a8b9afec2d7fd9989df422b307ac664fdf69f132a15addedb3bc82f"
+    sha256 cellar: :any,                 sonoma:        "4d2a8ddac355cd3f87aa06d7175d26a423747069f4c427643152143cdffa4221"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3732a977ead9f256d22c68645f1776698514a814efd85466c70f01292c94a509"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9df0228e284723b12b654119cc4f593b403c53a8b457fe5ec11775546583ddba"
   end
 
   depends_on "imagemagick"
