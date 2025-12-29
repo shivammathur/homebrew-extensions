@@ -10,6 +10,7 @@ class SwooleAT56 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src/archive/v2.0.10-stable.tar.gz"
   sha256 "ea1c8cfdef0e43f2b34460f88f4aaa5c1ca5408126008d332ae4316e1c9549ff"
+  revision 1
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -27,11 +28,23 @@ class SwooleAT56 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed628f339319b4cd58eec7654358fc0206fa6550b6bdc6450e75dc6b46f51430"
   end
 
+  depends_on "brotli"
+  depends_on "nghttp2"
+  depends_on "openssl@3"
+
   uses_from_macos "zlib"
 
   def install
+    args = %W[
+      --enable-http2
+      --enable-mysqlnd
+      --enable-openssl
+      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --enable-sockets
+      --enable-swoole
+    ]
     safe_phpize
-    system "./configure"
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file
