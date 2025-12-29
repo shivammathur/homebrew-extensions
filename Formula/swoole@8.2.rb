@@ -33,7 +33,9 @@ class SwooleAT82 < AbstractPhpExtension
   depends_on "c-ares"
   depends_on "curl"
   depends_on "libpq"
+  depends_on "sqlite"
   depends_on "openssl@3"
+  depends_on "zstd"
 
   uses_from_macos "zlib"
 

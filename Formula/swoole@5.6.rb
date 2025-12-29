@@ -25,7 +25,7 @@ class SwooleAT56 < AbstractPhpExtension
   end
 
   depends_on "brotli"
-  depends_on "nghttp2"
+  depends_on "libnghttp2"
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
