@@ -20,6 +20,12 @@ class ScalarObjectsAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ed974be0f73a995203ae98cdd8fba4e5411c99699b79f3e8bbfc99d9db18553"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99a981158f936c20d0002d593a1b4b56e91ec0b98ca9cd867ef7affff22d7b0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81904083d9299bbbb3ef441451588cf405e02710393905ee4fb0a8a7aaf02012"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e6b82412496fe4f88c96a3e91d1c6bf700f49c8c7783abe37b275238e4023bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d642f0389cf6883980d3e5e9f7c5945d1f693e7a4583cf56fa36f3fa71bb914"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77b6ae9ec667dba69db2fa7136a2bbaab1529c264ba0f2478660cfe74394a1cc"
   end
 
   def install
