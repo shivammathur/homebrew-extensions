@@ -72,6 +72,7 @@
 | `raphf`         | `PHP 5.6` to `PHP 8.6` |
 | `rdkafka`       | `PHP 5.6` to `PHP 8.6` |
 | `redis`         | `PHP 5.6` to `PHP 8.6` |
+| `scalar_objects`| `PHP 7.0` to `PHP 8.6` |
 | `snmp`          | `PHP 5.6` to `PHP 8.3` |
 | `sqlsrv`        | `PHP 7.0` to `PHP 8.6` |
 | `ssh2`          | `PHP 5.6` to `PHP 8.6` |

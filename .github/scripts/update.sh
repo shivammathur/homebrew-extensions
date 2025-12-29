@@ -71,6 +71,11 @@ case $extension in
     tag=$(get_latest_pecl_tag "phalcon")
     patch_pecl_tag "$tag" "phalcon"
     ;;
+  "scalar_objects")
+    branch="$(get_formula_branch "$version")"
+    tag="$(get_head_commit "$branch" "$repo")"
+    patch_github_tag "$tag" "$repo"
+    ;;  
   "xdebug")
     if [[ "$version" = "xdebug@8.6" ]]; then
       branch="$(get_formula_branch "$version")"
