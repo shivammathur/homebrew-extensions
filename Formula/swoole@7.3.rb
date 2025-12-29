@@ -16,16 +16,12 @@ class SwooleAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "7c5347791f637de1cc239cbfe0169d70dfbbc8bce2bb81b56c96cb390ccc7ffd"
-    sha256 cellar: :any,                 arm64_sonoma:   "cd4952ea2406a6aa990d1029dded4e1d987185b23eb4c159a5f029312104e36a"
-    sha256 cellar: :any,                 arm64_ventura:  "a8c671f8794c3221c9c81b0b56573d166db38cee15cb0c3240f8c32b4176ff16"
-    sha256 cellar: :any,                 arm64_monterey: "453cf4f29f014597ea735f77304f7a3d630bf52704422b6c118c529b896034fe"
-    sha256 cellar: :any,                 sonoma:         "149610c9ec2d0e8386b10d27e546b8a9138ed431366596e0300078af14160d1d"
-    sha256 cellar: :any,                 ventura:        "ebf90cee20c92e4aec3fb8a99642569b720de5cb00494c0c8774c50a898de9ec"
-    sha256 cellar: :any,                 monterey:       "feb5e7d208e8d30b2e9acc7ff7b1681463aecea87c9dcabd060f9caae8c3a9ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "5c39a2cf7fe7fae3ef870b39552c717f13b57ab5d088cbdc3903679bdd4d202d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7640a29019ce9242104cdb1b761551b5b4a66f1c7b14c5934762f3f57ca390de"
+    sha256 cellar: :any,                 arm64_tahoe:   "bbef14c63ca80cb969696d4faec6c0e88476056b7267457a10859288b1aa3d34"
+    sha256 cellar: :any,                 arm64_sequoia: "867e7197663e9c43d9d3b4fa5c93ff0617da92c0fd895114e3558670c46ea519"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f2dec7bd02d409fa47ce1a8d4d035a250ffaf1a00d0f5e53048b98229c7327d"
+    sha256 cellar: :any,                 sonoma:        "134a0aedfea4cc9966d914bd14b17d97abe7fdd4bd7793368f3a2a5f1760ca87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7aa6c1c1af336577fe46b3670068ed42beb9c991f744ed7b42e6905e65d6f031"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eff1c18cad71161b387dca7772694cbd309f849d3562e61002996a96b6c2f4b1"
   end
 
   depends_on "brotli"
