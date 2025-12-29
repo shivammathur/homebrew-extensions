@@ -16,16 +16,12 @@ class SwooleAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "86cd87dee2eab602e0125ca51b1090b9e498a6a0b8b20a483a8e34524b768e6d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7efac42ccecb2c7a79051c93adb0a82bf2479ca58752cb0d0ec8556811c099b1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "65a35ecbfeac7085c57e2648a6a532678f8a5c628f0dcfa189d81fbb95b5f2b5"
-    sha256 cellar: :any,                 arm64_big_sur:  "f28428b883330b4244a7f89185afdcd7f08b5409e95441ee8c11438c3b2ea823"
-    sha256 cellar: :any_skip_relocation, sonoma:         "534c6a2cc2aa6829a2bf2376b468c737799edf8073ff3c3a3d1b1860db04d22d"
-    sha256 cellar: :any_skip_relocation, ventura:        "1bfe4ff7f78159cffc6c4c605807817cc4f07d85f5550b7802da08398f938cd6"
-    sha256 cellar: :any,                 big_sur:        "d362d6909b98f39ec895c6674187f4b87b47a221655f842237b9c6d89b1b4650"
-    sha256 cellar: :any,                 catalina:       "ccbb598f8294da5e874c080bbbfbee8c470ef3dd12c7d4c599ccc94c0290c243"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "01fc8395c9497b0b55693fc6435c091af4d152d1954715c4c0b6393bf6daea9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed628f339319b4cd58eec7654358fc0206fa6550b6bdc6450e75dc6b46f51430"
+    sha256 cellar: :any,                 arm64_tahoe:   "65491ce0883d49f8d366c841ae69da35b22d4d0ce4498fc8bb97dae64478f0d1"
+    sha256 cellar: :any,                 arm64_sequoia: "c40a0bf24e28dce48b0620cabb9dd9a527e161f668c622f87cfe53e7aa988e1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "8b8a0da16d3f9cb099e7a6951eb375751ee31330e6fde88b573ff76e954895b5"
+    sha256 cellar: :any,                 sonoma:        "4b381a57f0e107e24db75302deee53797062e681fbad9d64be78d4ec0242a201"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2c8bd4a64e4b724dec9c83f83d3c4594ea738f8618302d25aade87e9aba430e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18a091b7e17eba28ae73665b133b51f6e27c92bdeaaf7b7fb21874f082dcbc28"
   end
 
   depends_on "brotli"
