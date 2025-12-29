@@ -10,6 +10,7 @@ class SwooleAT70 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src/archive/v4.3.5.tar.gz"
   sha256 "fad1f7129e54ffae8fce34c75912953f3afdea40945e2b4bf925be163faf7cfc"
+  revision 1
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -24,12 +25,24 @@ class SwooleAT70 < AbstractPhpExtension
   end
 
   depends_on "brotli"
+  depends_on "libpq"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
   def install
+    args = %W[
+      --enable-http2
+      --enable-mysqlnd
+      --enable-openssl
+      --with-libpq-dir==#{Formula["libpq"].opt_prefix}
+      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --enable-sockets
+      --enable-swoole
+      --enable-swoole-json
+    ]
     safe_phpize
-    system "./configure"
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file
