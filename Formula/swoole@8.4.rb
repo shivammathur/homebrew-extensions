@@ -10,7 +10,7 @@ class SwooleAT84 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src/archive/v6.1.6.tar.gz"
   sha256 "7f022cf6fa2f273915fd09f94ef019c50efa06b0be01eaadcb4b289d5622d77b"
-  revision 1
+  revision 2
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -36,6 +36,8 @@ class SwooleAT84 < AbstractPhpExtension
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
+
+  conflicts_with "swow@8.4", because: "both provide coroutine networking extensions"
 
   def install
     args = %W[
