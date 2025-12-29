@@ -63,6 +63,7 @@
 | `pcov`          | `PHP 7.1` to `PHP 8.6` |
 | `pdo_sqlsrv`    | `PHP 7.0` to `PHP 8.6` |
 | `pecl_http`     | `PHP 5.6` to `PHP 8.6` |
+| `pinba`         | `PHP 7.0` to `PHP 8.6` |
 | `phalcon3`      | `PHP 5.6` to `PHP 7.3` |
 | `phalcon4`      | `PHP 7.2` to `PHP 7.4` |
 | `phalcon5`      | `PHP 7.4` to `PHP 8.4` |
@@ -78,6 +79,7 @@
 | `ssh2`          | `PHP 5.6` to `PHP 8.6` |
 | `spx`           | `PHP 5.6` to `PHP 8.6` |
 | `swoole`        | `PHP 5.6` to `PHP 8.5` |
+| `swow`          | `PHP 8.0` to `PHP 8.5` |
 | `uuid`          | `PHP 5.6` to `PHP 8.6` |
 | `v8js`          | `PHP 7.0` to `PHP 8.6` |
 | `vips`          | `PHP 7.0` to `PHP 8.6` |
@@ -243,8 +245,10 @@ This project is also generously supported by many other users and organisations 
 - [phpredis/phpredis](https://github.com/phpredis/phpredis "Redis")
 - [protocolbuffers/protobuf](https://github.com/protocolbuffers/protobuf "protocolbuffers")
 - [nikic/php-ast](https://github.com/nikic/php-ast "PHP AST")
+- [tony2001/pinba_extension](https://github.com/tony2001/pinba_extension "Pinba")
 - [sibaz/pecl-expect](https://github.com/sibaz/pecl-expect "expect")
 - [swoole/swoole-src](https://github.com/swoole/swoole-src "Swoole")
+- [swow/swow](https://github.com/swow/swow "Swow")
 - [websupport-sk/pecl-memcache](https://github.com/websupport-sk/pecl-memcache "Memcache")
 - [xdebug/xdebug](https://github.com/xdebug/xdebug "Xdebug")
 - [longxinH/xhprof](https://github.com/longxinH/xhprof "xhprof")
