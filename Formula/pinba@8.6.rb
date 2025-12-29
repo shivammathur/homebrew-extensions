@@ -13,6 +13,16 @@ class PinbaAT86 < AbstractPhpExtension
   head "https://github.com/tony2001/pinba_extension.git", branch: "master"
   license "LGPL-2.1-only"
 
+  bottle do
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_tahoe:   "6c35cade470c7b50d9bff974ebe302efe7c60b7e1edec26825da444368dc9898"
+    sha256 cellar: :any,                 arm64_sequoia: "e075727e89a59eb76f84851343031b68f344ce787dc31b1010e35324a1f652a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "6da69a316f6e20c79549040e3f0bcae6ae8d0d3e4280ee5a4e0afc3114ff070e"
+    sha256 cellar: :any,                 sonoma:        "0011ebf73d61c6a8b7cb31c03112f7075303bcf5e678f2c604cb1e1bec692716"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93835a008af77c2f5ae86f41abab593ec494fac1d56872cb30b5801fd9d3403f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2abebeb72a88e2b29b452244b200f31742f8f57427124a2b51daad56bc6f8fda"
+  end
+
   depends_on "protobuf-c"
 
   livecheck do
