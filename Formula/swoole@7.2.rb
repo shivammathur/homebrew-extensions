@@ -10,7 +10,7 @@ class SwooleAT72 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src/archive/v4.8.11.tar.gz"
   sha256 "b81c682e4b865d6e3839b8b83640242f54127f669550111f5e99fae80ef1e142"
-  revision 1
+  revision 2
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -29,6 +29,9 @@ class SwooleAT72 < AbstractPhpExtension
   end
 
   depends_on "brotli"
+  depends_on "c-ares"
+  depends_on "curl"
+  depends_on "libpq"
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
@@ -36,12 +39,18 @@ class SwooleAT72 < AbstractPhpExtension
   def install
     args = %W[
       --enable-brotli
+      --enable-cares
+      --enable-http2
+      --enable-mysqlnd
       --enable-openssl
+      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --enable-sockets
       --enable-swoole
       --enable-swoole-curl
-      --enable-http2
-      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
-      --with-brotli-dir=#{Formula["brotli"].opt_prefix}
+      --enable-swoole-pgsql
+      --enable-swoole-odbc=unixodbc
+      --enable-swoole-sqlite
+      --enable-zstd
     ]
     inreplace "config.m4", "PHP_ADD_LIBRARY(atomic", ": #"
     safe_phpize
