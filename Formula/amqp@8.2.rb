@@ -8,8 +8,8 @@ class AmqpAT82 < AbstractPhpExtension
   init
   desc "Amqp PHP extension"
   homepage "https://github.com/php-amqp/php-amqp"
-  url "https://pecl.php.net/get/amqp-2.1.2.tgz"
-  sha256 "0cb16d63752a0055de55a22062a6c1744908696d92268d76181284669025d993"
+  url "https://pecl.php.net/get/amqp-2.2.0.tgz"
+  sha256 "5ae624bd785e299523f6132c204bd562cc73066dd33a10a12aa96389f55a4de7"
   head "https://github.com/php-amqp/php-amqp.git", branch: "latest"
   license "PHP-3.01"
 
