@@ -8,8 +8,8 @@ class AmqpAT86 < AbstractPhpExtension
   init
   desc "Amqp PHP extension"
   homepage "https://github.com/php-amqp/php-amqp"
-  url "https://github.com/php-amqp/php-amqp/archive/refs/tags/v2.1.2.tar.gz"
-  sha256 "5eebe1d0414af8e4c1e1b5040be68168a533704f09f6f66e4d48ab78edd1d8d2"
+  url "https://github.com/php-amqp/php-amqp/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "0fc9a23b54010a9ba475a1988d590b578942dbdf14c19508fd47dd09e852ab0f"
   head "https://github.com/php-amqp/php-amqp.git", branch: "latest"
   license "PHP-3.01"
 
@@ -29,11 +29,6 @@ class AmqpAT86 < AbstractPhpExtension
   end
 
   depends_on "rabbitmq-c"
-
-  patch do
-    url "https://patch-diff.githubusercontent.com/raw/php-amqp/php-amqp/pull/595.patch?full_index=1"
-    sha256 "8bc0eccc30770211ccb9b6413afbdebe2f93c43550d6e02c105143416736f6d1"
-  end
 
   def install
     args = %W[
