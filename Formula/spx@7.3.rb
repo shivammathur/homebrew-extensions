@@ -19,12 +19,13 @@ class SpxAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81a2decc972adb15e81b7ca7fe340296455ab8686568d30e84900cbfcb72e9ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72fbf937f3bc0bb302bb650ddb2f4b8c14e866035ef5aeee5a530ad3b0d24bc4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7909479232fdbd4bed1ceba4a1a98205f422e89864d5ed54473ea39e6164a664"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28e85280e65f9da832c8a9e09c96dc6da53802f19221b06bd18c387b4922d834"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc014f52739599b629f0cf062d6d03866bdd0cb3a93c37b20cc075e4455f3cf5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f4acef7df9f2f30ee6be3cf84f097fe678f62dfc41e8f728850666a301e4f7d"
+    rebuild 1
+    sha256 arm64_tahoe:   "a79f0c6f18a91e111be57929b9809507a7085ebaf907bf21d3e62f94221fb37c"
+    sha256 arm64_sequoia: "fe6a46e4821f9f328e8c0c3e5af68fc1e2a0ee0edf58511f310a12601775eb2c"
+    sha256 arm64_sonoma:  "0efc052f52100867764584450f02e3beb5d6ed6ac1c2e6ca6a4986f48053addb"
+    sha256 sonoma:        "963bde60ec62105ad82632af840863e06342b123c58025a905129db187a8c582"
+    sha256 arm64_linux:   "b9b3754728507821c8bce8beb9630170b512de4d6dec54a8300b7ff7d1c2e046"
+    sha256 x86_64_linux:  "9811a74303900664bc2f709c51211b07e829de0c9c339e27f728e67c366024db"
   end
 
   depends_on "zlib"
