@@ -33,11 +33,13 @@ class SpxAT85 < AbstractPhpExtension
     args = %W[
       --enable-spx
       --with-zlib-dir=#{Formula["zlib"].opt_prefix}
+      --with-spx-assets-dir=#{pkgshare}
     ]
     inreplace "src/php_spx.h", /ZEND_MODULE_API_NO.*/, "0"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
+    system "make", "install-spx-ui-assets"
     prefix.install "modules/#{extension}.so"
     write_config_file
   end

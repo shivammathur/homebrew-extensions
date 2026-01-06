@@ -33,10 +33,12 @@ class SpxAT70 < AbstractPhpExtension
     args = %W[
       --enable-spx
       --with-zlib-dir=#{Formula["zlib"].opt_prefix}
+      --with-spx-assets-dir=#{pkgshare}
     ]
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
+    system "make", "install-spx-ui-assets"
     prefix.install "modules/#{extension}.so"
     write_config_file
   end
