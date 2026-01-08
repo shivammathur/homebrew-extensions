@@ -8,10 +8,9 @@ class SwooleAT85 < AbstractPhpExtension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
-  url "https://github.com/swoole/swoole-src/archive/3944e51fb4d9a9878298b48cc6ca23bd790013b2.tar.gz"
-  sha256 "7963db0a9a2e470f1aa162f6fb13209f0c823a34cd08525c441e53e6c60c04c6"
-  version "6.1.4"
-  revision 2
+  url "https://github.com/swoole/swoole-src/archive/794f30965a130a2a1ae94a2b42750306a2035b1c.tar.gz"
+  sha256 "d48e6e3514c137c2e8ea68ab2f4fe14b7aa21191ab989f159af9d82e1af59f66"
+  version "6.1.6"
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -58,7 +57,6 @@ class SwooleAT85 < AbstractPhpExtension
       --enable-swoole-sqlite
       --enable-zstd
     ]
-    inreplace "ext-src/php_swoole_private.h", "80500", "80600"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
