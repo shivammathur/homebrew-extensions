@@ -16,13 +16,13 @@ class XdebugAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 4
-    sha256                               arm64_tahoe:   "cd869df330c2e773d191035d95b1947746f8b75e0c85f03498d8ec00ba8747bb"
-    sha256                               arm64_sequoia: "f9f23bcf8c38b5fd8ff68bc7ad5b9e87332819210d8183e64cab2c80584235a2"
-    sha256                               arm64_sonoma:  "0fab5484f179867c94b8cd3ef9c97ca9704a47849d33d9e7a444e9bdd428aa88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ee1ced57551efe0a792427f1b9dd07814366575c0924ef8e5dbd59f1e1060d8b"
-    sha256                               arm64_linux:   "9ecbade90b7e3add21d5c20debd298f1fef24d56aea51ea76c95588cd1687b13"
-    sha256                               x86_64_linux:  "0a35214079cb096e7bc7e5f8678fd8a0a2edd0d411ff32d31d2cf2581387d94e"
+    rebuild 5
+    sha256                               arm64_tahoe:   "6a53815fa860ab6aecd6124ceb1e881ce1f88771340737b0357f8f47c873788c"
+    sha256                               arm64_sequoia: "e9d3427e978090f1796215183574287f4aa91bc1956eb515fbd505ad482f6417"
+    sha256                               arm64_sonoma:  "ef864d3930e9c902a675159d4898005897cff815878bde6c43ec8a5e01da1541"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26eda53cabedc2fb9d0b91a8044e84dc476962920e10f3b6d41a7f87ceac389d"
+    sha256                               arm64_linux:   "895319c53b76d1061a5658aa6de6cd416bd886e9310a33ea337d27c3fd7aaf5f"
+    sha256                               x86_64_linux:  "62c0aec31106e677480671e0a23504da82f5d48dd1bac9a784796d7a0578f906"
   end
 
   uses_from_macos "zlib"
