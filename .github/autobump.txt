@@ -28,7 +28,6 @@ ast@8.3
 ast@8.4
 ast@8.5
 ast@8.6
-brotli@5.6
 brotli@7.0
 brotli@7.1
 brotli@7.2
