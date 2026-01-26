@@ -18,6 +18,16 @@ class BrotliAT73 < AbstractPhpExtension
     regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_tahoe:   "e5014cec81c96c5d383a7603dad2b6519981e78b01bb869834e680850f3b9d1e"
+    sha256 cellar: :any,                 arm64_sequoia: "3d666fe492c26f6f2fa01cc5b2a125c57e72d4cd293a6ca22287d668a460776f"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c9c0530e41b98d1c9b4a65fd91541ddfb65cce66dbb5c691a373313cd22d751"
+    sha256 cellar: :any,                 sonoma:        "d25df9045a7df7c02d4479a54e5f776633549d8072516677251c8d6cdf39e60a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12d0ccf937bfae0322eb15a82bcd065dd0076816e3f0b8f3fa75bebf264b48bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da7404577b1cbb651008218a9425b0e85cc70315308b5a6a377614c2428a1dac"
+  end
+
   depends_on "brotli"
 
   def install
