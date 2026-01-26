@@ -15,26 +15,26 @@ jobs:
       fail-fast: false
       matrix:
         php: ['7.2', '7.3', '7.4']
-        extensions: ['amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro']
+        extensions: ['amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro']
         include:
           - php: '5.6'
-            extensions: amqp, apcu, couchbase, event, expect, gnupg, gearman, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, snmp, ssh2, swoole, uuid, vld, xdebug, yaml, zmq, propro
+            extensions: amqp, apcu, brotli, couchbase, event, expect, gnupg, gearman, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, snmp, ssh2, swoole, uuid, vld, xdebug, yaml, zmq, propro
           - php: '7.0'
-            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, propro
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, propro
           - php: '7.1'
-            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro
           - php: '8.0'
-            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.1'
-            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.2'
-            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.3'
-            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, yaml, xlswriter, zmq, pcov
           - php: '8.4'
-            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, ssh2, swoole, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, ssh2, swoole, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
           - php: '8.5'
-            extensions: amqp, apcu, ast, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, ssh2, swoole, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, ssh2, swoole, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
           - php: '7.2'
             extensions: xdebug2
           - php: '7.3'
@@ -76,6 +76,7 @@ jobs:
           php -r "if(phpversion()<8.3 && ! extension_loaded('xdebug')) {throw new Exception('xdebug not found');}"
           php -r "if(! extension_loaded('amqp')) {throw new Exception('amqp not found');}"
           php -r "if(! extension_loaded('apcu')) {throw new Exception('apcu not found');}"
+          php -r "if(! extension_loaded('brotli')) {throw new Exception('brotli not found');}"
           php -r "if(! extension_loaded('couchbase')) {throw new Exception('couchbase not found');}"
           php -r "if(! extension_loaded('expect')) {throw new Exception('expect not found');}"
           php -r "if(! extension_loaded('gnupg')) {throw new Exception('gnupg not found');}"

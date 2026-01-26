@@ -39,6 +39,7 @@
 | `amqp`          | `PHP 5.6` to `PHP 8.6` |
 | `apcu`          | `PHP 5.6` to `PHP 8.6` |
 | `ast`           | `PHP 7.0` to `PHP 8.6` |
+| `brotli`.       | `PHP 5.6` to `PHP 8.6` |
 | `couchbase`     | `PHP 5.6` to `PHP 8.6` |
 | `ds`            | `PHP 7.0` to `PHP 8.6` |
 | `event`         | `PHP 5.6` to `PHP 8.6` |
@@ -222,6 +223,7 @@ This project is also generously supported by many other users and organisations 
 - [igbinary/igbinary](https://github.com/igbinary/igbinary "igbinary")
 - [Imagick/imagick](https://github.com/Imagick/imagick "Imagick")
 - [jbboehr/php-psr](https://github.com/jbboehr/php-psr "Psr")
+- [kjdev/php-ext-brotli](https://github.com/kjdev/php-ext-brotli "brotli")
 - [krakjoe/apcu](https://github.com/krakjoe/apcu "APCu")
 - [krakjoe/pcov](https://github.com/krakjoe/pcov "PCOV")
 - [libvips/php-vips-ext](https://github.com/libvips/php-vips-ext "Vips")
