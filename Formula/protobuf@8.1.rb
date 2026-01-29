@@ -20,12 +20,12 @@ class ProtobufAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d505b030158c48c703fa1781c1f4303455ccba73edec54e78047ae6a32def003"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96a152e64f4a3aec6766da458e38931a00f0e0a924ffce1776e08ff8deae54cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7e10103e617166dcd3f1f2790021e7a964bbf30ae95d74b4ec8f7b7a6762a11"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9362acb53dc4ef82badb228f47b328ec8335bd6073acbb834d23de33d2f553b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd04dfd7e45c43f6a0f4e5cc6fcfa78ad825f5fbe718624fcb8a4d0a62537b82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9554c54beae4c718e1d8dc05ddf54635b01b611e930566a365be927c457da293"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bd08b0196f0364767a91a76b5c05beb02d88805466dcba06d8fc76721523d4c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4baad4191d140f072bada9bf12da3d0ca5440aca650d63de2f10927be8495c2b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b29ead1889735e1e384db82568cb6e439cd5208c5f06ae2b95d539f803762272"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a39d21c29359517ce6091bb34c0b911513cda7262558678ab86acd0fb36859a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89b3c1946396f4e592fc7726fa65238165122bdcc3805cb1049fe9387c3ea8bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00f88bc9643d5ad543ee47b068586a118e80e7e50b5ffc66737b50fb258a8d98"
   end
 
   def install
