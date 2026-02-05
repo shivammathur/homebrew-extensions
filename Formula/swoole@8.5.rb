@@ -8,8 +8,8 @@ class SwooleAT85 < AbstractPhpExtension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
-  url "https://github.com/swoole/swoole-src/archive/88fc55029c3fefce6678477c35a26f3e3cd857c2.tar.gz"
-  sha256 "8054ca88e45ef3fe24244d8185e96fa7a8374e1dcc11b4fb7f4aa913d9dd92f7"
+  url "https://github.com/swoole/swoole-src/archive/2fd8ea4c07899ef8bac028c9d7b18fb1cd0092d2.tar.gz"
+  sha256 "bd3eb3486fae5484e59f61e96f1448b90ec47527befc7d558baad50e285576d6"
   version "6.1.6"
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
@@ -34,9 +34,14 @@ class SwooleAT85 < AbstractPhpExtension
   depends_on "c-ares"
   depends_on "curl"
   depends_on "libpq"
+  depends_on "libssh2"
   depends_on "sqlite"
   depends_on "openssl@3"
   depends_on "zstd"
+
+  on_linux do
+    depends_on "liburing"
+  end
 
   uses_from_macos "zlib"
 
@@ -48,16 +53,22 @@ class SwooleAT85 < AbstractPhpExtension
       --enable-cares
       --enable-http2
       --enable-mysqlnd
-      --enable-openssl
-      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
       --enable-sockets
       --enable-swoole
       --enable-swoole-curl
+      --enable-swoole-ftp
       --enable-swoole-pgsql
       --enable-swoole-odbc=unixodbc
       --enable-swoole-sqlite
       --enable-zstd
+      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --with-swoole-ssh2=#{Formula["libssh2"].opt_prefix}
     ]
+    on_linux do
+      args << "--enable-iouring"
+      args << "--enable-uring-socket"
+      args << "--with-liburing-dir=#{Formula["liburing"].opt_prefix}"
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
