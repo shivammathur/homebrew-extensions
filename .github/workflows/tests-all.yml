@@ -15,26 +15,26 @@ jobs:
       fail-fast: false
       matrix:
         php: ['7.2', '7.3', '7.4']
-        extensions: ['amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro']
+        extensions: ['amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro']
         include:
           - php: '5.6'
-            extensions: amqp, apcu, brotli, couchbase, event, expect, gnupg, gearman, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pecl_http, protobuf, psr, raphf, rdkafka, redis, snmp, ssh2, swoole, uuid, vld, xdebug, yaml, zmq, propro
+            extensions: amqp, apcu, brotli, couchbase, event, expect, gnupg, gearman, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, snmp, ssh2, swoole, uopz, uploadprogress, uuid, vld, xdebug, yaml, zmq, propro
           - php: '7.0'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, propro
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, uopz, uploadprogress, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, propro
           - php: '7.1'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, uopz, uploadprogress, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro
           - php: '8.0'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.1'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.2'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.3'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, snmp, ssh2, swoole, v8js, uuid, vips, vld, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, yaml, xlswriter, zmq, pcov
           - php: '8.4'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, ssh2, swoole, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
           - php: '8.5'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mcrypt, memcache, memcached, mongodb, msgpack, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, sqlsrv, ssh2, swoole, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
           - php: '7.2'
             extensions: xdebug2
           - php: '7.3'
@@ -78,6 +78,7 @@ jobs:
           php -r "if(! extension_loaded('apcu')) {throw new Exception('apcu not found');}"
           php -r "if(! extension_loaded('brotli')) {throw new Exception('brotli not found');}"
           php -r "if(! extension_loaded('couchbase')) {throw new Exception('couchbase not found');}"
+          php -r "if(phpversion()>=7.1 && ! extension_loaded('excimer')) {throw new Exception('excimer not found');}"
           php -r "if(! extension_loaded('expect')) {throw new Exception('expect not found');}"
           php -r "if(! extension_loaded('gnupg')) {throw new Exception('gnupg not found');}"
           php -r "if(! extension_loaded('grpc')) {throw new Exception('grpc not found');}"
@@ -85,19 +86,24 @@ jobs:
           php -r "if(! extension_loaded('igbinary')) {throw new Exception('igbinary not found');}"
           php -r "if(! extension_loaded('imagick')) {throw new Exception('imagick not found');}"
           php -r "if(! extension_loaded('imap')) {throw new Exception('imap not found');}"          
+          php -r "if(phpversion()>=7.2 && ! extension_loaded('maxminddb')) {throw new Exception('maxminddb not found');}"
           php -r "if(! extension_loaded('mcrypt')) {throw new Exception('mcrypt not found');}"
           php -r "if(! extension_loaded('memcache')) {throw new Exception('memcache not found');}"
           php -r "if(! extension_loaded('memcached')) {throw new Exception('memcached not found');}"
           php -r "if(! extension_loaded('mongodb')) {throw new Exception('mongodb not found');}"
           php -r "if(! extension_loaded('msgpack')) {throw new Exception('msgpack not found');}"
+          php -r "if(! extension_loaded('oauth')) {throw new Exception('oauth not found');}"
           php -r "if(! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
           php -r "if(! extension_loaded('raphf')) {throw new Exception('raphf not found');}"
           php -r "if(! extension_loaded('rdkafka')) {throw new Exception('rdkafka not found');}"
           php -r "if(! extension_loaded('redis')) {throw new Exception('redis not found');}"
+          php -r "if(! extension_loaded('seaslog')) {throw new Exception('seaslog not found');}"
           php -r "if(! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
           php -r "if(! extension_loaded('psr')) {throw new Exception('psr not found');}"
           php -r "if(! extension_loaded('snmp')) {throw new Exception('snmp not found');}"
           php -r "if(! extension_loaded('ssh2')) {throw new Exception('ssh2 not found');}"
+          php -r "if(! extension_loaded('uopz')) {throw new Exception('uopz not found');}"
+          php -r "if(! extension_loaded('uploadprogress')) {throw new Exception('uploadprogress not found');}"
           php -r "if(! extension_loaded('uuid')) {throw new Exception('uuid not found');}"
           php -r "if(! extension_loaded('yaml')) {throw new Exception('yaml not found');}"
           php -r "if(! extension_loaded('zmq')) {throw new Exception('zmq not found');}"

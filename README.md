@@ -43,6 +43,7 @@
 | `couchbase`     | `PHP 5.6` to `PHP 8.6` |
 | `ds`            | `PHP 7.0` to `PHP 8.6` |
 | `event`         | `PHP 5.6` to `PHP 8.6` |
+| `excimer`       | `PHP 7.1` to `PHP 8.6` |
 | `expect`        | `PHP 5.6` to `PHP 8.6` |
 | `gearman`       | `PHP 5.6` to `PHP 8.6` |
 | `gmagick`       | `PHP 5.6` to `PHP 8.6` |
@@ -53,6 +54,7 @@
 | `imap`          | `PHP 5.6` to `PHP 8.6` |
 | `lua`           | `PHP 5.6` to `PHP 7.4` |
 | `mailparse`     | `PHP 5.6` to `PHP 8.6` |
+| `maxminddb`     | `PHP 7.2` to `PHP 8.6` |
 | `mcrypt`        | `PHP 5.6` to `PHP 8.6` |
 | `memcache`      | `PHP 5.6` to `PHP 8.6` |
 | `memcached`     | `PHP 5.6` to `PHP 8.6` |
@@ -60,6 +62,7 @@
 | `mongodb`       | `PHP 5.6` to `PHP 8.6` |
 | `msgpack`       | `PHP 5.6` to `PHP 8.6` |
 | `newrelic`      | `PHP 7.4` to `PHP 8.4` |
+| `oauth`         | `PHP 5.6` to `PHP 8.6` |
 | `opentelemetry` | `PHP 8.0` to `PHP 8.6` |
 | `pcov`          | `PHP 7.1` to `PHP 8.6` |
 | `pdo_sqlsrv`    | `PHP 7.0` to `PHP 8.6` |
@@ -74,6 +77,7 @@
 | `raphf`         | `PHP 5.6` to `PHP 8.6` |
 | `rdkafka`       | `PHP 5.6` to `PHP 8.6` |
 | `redis`         | `PHP 5.6` to `PHP 8.6` |
+| `seaslog`       | `PHP 5.6` to `PHP 8.6` |
 | `scalar_objects`| `PHP 7.0` to `PHP 8.6` |
 | `snmp`          | `PHP 5.6` to `PHP 8.3` |
 | `sqlsrv`        | `PHP 7.0` to `PHP 8.6` |
@@ -81,6 +85,8 @@
 | `spx`           | `PHP 5.6` to `PHP 8.6` |
 | `swoole`        | `PHP 5.6` to `PHP 8.5` |
 | `swow`          | `PHP 8.0` to `PHP 8.5` |
+| `uopz`          | `PHP 5.6` to `PHP 8.6` |
+| `uploadprogress`| `PHP 5.6` to `PHP 8.6` |
 | `uuid`          | `PHP 5.6` to `PHP 8.6` |
 | `v8js`          | `PHP 7.0` to `PHP 8.6` |
 | `vips`          | `PHP 7.0` to `PHP 8.6` |
