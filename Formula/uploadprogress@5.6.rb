@@ -20,6 +20,12 @@ class UploadprogressAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "face8eba2de6d201867f25ff450f45566695c2fa27e0079f72bf1e77b85b4503"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44ef4d2e3e2d49925b61f6cb4b76d82c777226b1624fe670116a0e08e0295b7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08e81547ca0c63891a5e60a7f32deb6a669364cbc10ec45dc0316139fb712f2f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a8f0d24e21880d010f8712c9e3db906d044a477d326254170a01e1e60b18d7e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b51310598763faabb28e573d1b6aae6f56c9e78a6ad58a2addd79b34be81e39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8e672b8da7f0248212d87736472743b326c46025cf9ff402cb40908ca5badb8"
   end
 
   def install
