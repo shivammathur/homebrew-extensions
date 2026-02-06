@@ -20,6 +20,12 @@ class SeaslogAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "766fda8ef4766bb23be48e392bfac0ddd2ed4be2216f13a966d153c57ce8987f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "493e686d8f7fb212e4365cf0c2d5124b2984257599c9667d511a388209802ba6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12bd127c45fafe054b9662c270bde72e2ff54c21b915c060183112ce77fdce87"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24bff7dae30f4da0e70cafb805383ac1fcebbfe0c563b6edffd916ac898f13a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d91ac3ad667dc1d0a2c8154138da54aeb80b01fe08d49bb65baaa33303225a32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ac12894a5fdcf39da2deb3b22bab4e63afaab53f68d0bee8866c8b86a571d37"
   end
 
   def install
