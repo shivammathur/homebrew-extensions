@@ -25,6 +25,12 @@ class UopzAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40f582784c3a71fb565adf9d47cf7b7743d7444cc4a6914556f178eabf120b72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78cd88a63c4fed4d9b44877ba5f283d2e1f5cd908dc5d0c775d553a6a3143b2c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ef9aec80b5eaf33e535ffbac468f119b2a9d3c9859a1cc8eaf67e5a9ea67210"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c4fc01ab264a71543a4057dc9210d8f0f27c4bda9365f7077e56ed1270b34d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "abcd65978216543de76131fee3d937c0bc812e4d733bdd2361e09e53c83e8b96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56a94bc1b1f9332babd76ac3f5a428e861ebd5a62b6a046b38e6f407894272c4"
   end
 
   def install
