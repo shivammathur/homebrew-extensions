@@ -20,6 +20,12 @@ class MaxminddbAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_tahoe:   "269b5e3da3382c406a98f8345e43446ac6c2b163a9432c576ec99af86a7c9811"
+    sha256 cellar: :any,                 arm64_sequoia: "89461e5b3df70a187791d5d425c70b35bce45e32ccc9ea95382f3582b5aba347"
+    sha256 cellar: :any,                 arm64_sonoma:  "130423730e742a188aeffcef063099fe7709863c09a66175a54dd0e3ad19cf67"
+    sha256 cellar: :any,                 sonoma:        "b94609120b497a504518531ef12ab1317d6f0f7432bedbbd04bcd6cc218f3708"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "837b3587dc99e5a5e56ae702c8835f6e7ae1cc1938da644c696ef036d2efbeae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b9b12abf865305a35e4dca38d90858ac2490d6e320686571f299054a3a80dd2"
   end
 
   depends_on "libmaxminddb"
