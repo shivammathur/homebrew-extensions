@@ -27,6 +27,8 @@ class XdebugAT56 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7737abdf69947420d8d523e32e482e1c6c42a60ff44fd8c324917c30decc0b12"
   end
 
+  conflicts_with "uopz@5.6", because: "uopz for PHP 5.6 conflicts with Xdebug."
+
   def install
     Dir.chdir "xdebug-#{version}"
     safe_phpize
