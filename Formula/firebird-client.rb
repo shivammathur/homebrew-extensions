@@ -12,6 +12,16 @@ class FirebirdClient < Formula
   # 1. https://firebirdsql.org/en/interbase-public-license
   # 2. https://www.firebirdsql.org/en/initial-developer-s-public-license-version-1-0/
   license "Interbase-1.0"
+
+  bottle do
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any, arm64_tahoe:   "993d65bbf0338044fa88db1060bcd528595f35a93a1ca094d719be908d7b4f88"
+    sha256 cellar: :any, arm64_sequoia: "da144605bb3c01fac214d64618a9c59e77bd6055d20dca769f45507da2271e1e"
+    sha256 cellar: :any, arm64_sonoma:  "58489f4ed19002f691d13dea11550e2b88bf11ff7b104a33616a8ed09a437394"
+    sha256 cellar: :any, sonoma:        "3708b9a2342b7baa28192e0439d65ab582a15b8395580755e1784977ffbf57b8"
+    sha256               arm64_linux:   "5abaec660be75f7b0c75e84f588e8f6b669fee447e305699c8618b714f066835"
+    sha256               x86_64_linux:  "e31242d85dab7ea43bc42d3b73c743269ab4d2a5f610bdecd4525aecae130317"
+  end
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
