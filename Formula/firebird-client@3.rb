@@ -12,6 +12,16 @@ class FirebirdClientAT3 < Formula
   # 1. https://firebirdsql.org/en/interbase-public-license
   # 2. https://www.firebirdsql.org/en/initial-developer-s-public-license-version-1-0/
   license "Interbase-1.0"
+
+  bottle do
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any, arm64_tahoe:   "93df4677841694469eb477aec878a4934ba1286642831f561505a0c5b5d80236"
+    sha256 cellar: :any, arm64_sequoia: "5b8b28d9637a460ed52bb1b78223176f203b60f3f42b2f3a926a4f65885962d7"
+    sha256 cellar: :any, arm64_sonoma:  "44466a7d8bd8c689dadf5a04545abc196418733248d809d8781ba051b02d0ef3"
+    sha256 cellar: :any, sonoma:        "8d9ea6a989637f52a8af766bb2055fb65c2d6f517e3d1056909df258f7cf5604"
+    sha256               arm64_linux:   "4a4e0025ea9270c68bfb28fd09aaa59d0f61429d0070caa7a97d911a999537db"
+    sha256               x86_64_linux:  "ed1d34d535e7120a625db3f5238d0bc1c64d24807d19d6e5869ca4b972cd5392"
+  end
   keg_only :versioned_formula
 
   depends_on "autoconf" => :build
