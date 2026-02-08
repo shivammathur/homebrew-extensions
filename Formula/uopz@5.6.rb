@@ -30,6 +30,8 @@ class UopzAT56 < AbstractPhpExtension
 
   conflicts_with "xdebug@5.6", because: "uopz requires Xdebug 2.9.4+"
 
+  priority "10"
+
   def install
     Dir.chdir "uopz-#{version}"
     safe_phpize
