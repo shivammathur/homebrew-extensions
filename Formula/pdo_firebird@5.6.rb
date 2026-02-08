@@ -6,6 +6,16 @@ require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 # Class for Pdo Firebird Extension
 class PdoFirebirdAT56 < AbstractPhpExtension
   env :std
+
+  bottle do
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_tahoe:   "31da852f27a4ebc1319dcc3f36c7b5e0a6ba90c0772e4d528e2402185acffbdc"
+    sha256 cellar: :any,                 arm64_sequoia: "39020cd9aa317e031f3a71e281de81478ddb268dcc2f31518694feabca9970ba"
+    sha256 cellar: :any,                 arm64_sonoma:  "aebabbe14850c68ad68441cf8797772b27d04e68d1e6793a90d252426e5e9c74"
+    sha256 cellar: :any,                 sonoma:        "f1faad2abeda8ef41106dbff969fa88b7bdfca263f9cf744d3e5edc2431e7ea7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84c3ca2a4e977b31bf77e4129c446f21e16a5ca43719216e4752ea3e05f26c59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0458be32e825e562dfbba7f0bbd5b9b88546d9c017ff9d3897f197d40dce873"
+  end
   init
   desc "PDO Firebird PHP extension"
   homepage "https://github.com/php/php-src"
