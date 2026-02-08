@@ -28,6 +28,8 @@ class UopzAT70 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2526b06b1b656b8d6a86cb41b54549e449c1cc3690358ebdc8f7a8648187898"
   end
 
+  priority "10"
+
   def install
     Dir.chdir "uopz-#{version}"
     inreplace "src/function.c", "static inline uopz_try_addref(zval *z)",
