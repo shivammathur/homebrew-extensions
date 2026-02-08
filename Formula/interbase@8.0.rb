@@ -23,6 +23,11 @@ class InterbaseAT80 < AbstractPhpExtension
   sha256 "019300f18b118cca7da01c72ac167f2a5d6c3f93702168da3902071bde2238f9"
   license "PHP-3.01"
 
+  livecheck do
+    url "https://github.com/FirebirdSQL/php-firebird/tags"
+    regex(/^v?(3(?:\.\d+)+(?:[-._][A-Za-z0-9._-]+)?)$/i)
+  end
+
   depends_on "shivammathur/extensions/firebird-client"
 
   def install

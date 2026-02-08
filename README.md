@@ -52,6 +52,7 @@
 | `igbinary`      | `PHP 5.6` to `PHP 8.6` |
 | `imagick`       | `PHP 5.6` to `PHP 8.6` |
 | `imap`          | `PHP 5.6` to `PHP 8.6` |
+| `interbase`     | `PHP 5.6` to `PHP 8.6` |
 | `lua`           | `PHP 5.6` to `PHP 7.4` |
 | `mailparse`     | `PHP 5.6` to `PHP 8.6` |
 | `maxminddb`     | `PHP 7.2` to `PHP 8.6` |
@@ -65,6 +66,7 @@
 | `oauth`         | `PHP 5.6` to `PHP 8.6` |
 | `opentelemetry` | `PHP 8.0` to `PHP 8.6` |
 | `pcov`          | `PHP 7.1` to `PHP 8.6` |
+| `pdo_firebird`  | `PHP 7.0` to `PHP 8.6` |
 | `pdo_sqlsrv`    | `PHP 7.0` to `PHP 8.6` |
 | `pecl_http`     | `PHP 5.6` to `PHP 8.6` |
 | `pinba`         | `PHP 7.0` to `PHP 8.6` |
@@ -225,6 +227,7 @@ This project is also generously supported by many other users and organisations 
 
 - [arnaud-lb/php-rdkafka](https://github.com/arnaud-lb/php-rdkafka "rdkafka")
 - [couchbase/couchbase-php-client](https://github.com/couchbase/couchbase-php-client "couchbase")
+- [FirebirdSQL/php-firebird](https://github.com/FirebirdSQL/php-firebird "firebird/interbase")
 - [grpc/grpc](https://github.com/grpc/grpc "gRPC")
 - [igbinary/igbinary](https://github.com/igbinary/igbinary "igbinary")
 - [Imagick/imagick](https://github.com/Imagick/imagick "Imagick")

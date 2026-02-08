@@ -15,26 +15,26 @@ jobs:
       fail-fast: false
       matrix:
         php: ['7.2', '7.3', '7.4']
-        extensions: ['amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro']
+        extensions: ['amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, lua, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro']
         include:
           - php: '5.6'
-            extensions: amqp, apcu, brotli, couchbase, event, expect, gnupg, gearman, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, snmp, ssh2, swoole, uopz, uploadprogress, uuid, vld, xdebug, yaml, zmq, propro
+            extensions: amqp, apcu, brotli, couchbase, event, expect, gnupg, gearman, grpc, igbinary, imagick, imap, interbase, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, snmp, ssh2, swoole, uopz, uploadprogress, uuid, vld, xdebug, yaml, zmq, propro
           - php: '7.0'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, uopz, uploadprogress, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, propro
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, uopz, uploadprogress, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, propro
           - php: '7.1'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, uopz, uploadprogress, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, lua, mailparse, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, uopz, uploadprogress, uuid, v8js, vips, vld, xdebug, yaml, xlswriter, zmq, pcov, propro
           - php: '8.0'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.1'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.2'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, mailparse, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, xdebug, yaml, xlswriter, zmq, pcov
           - php: '8.3'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, snmp, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, vld, yaml, xlswriter, zmq, pcov
           - php: '8.4'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
           - php: '8.5'
-            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
+            extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, ssh2, swoole, uopz, uploadprogress, v8js, uuid, vips, yaml, xlswriter, zmq, pcov
           - php: '7.2'
             extensions: xdebug2
           - php: '7.3'
@@ -85,7 +85,8 @@ jobs:
           php -r "if(! extension_loaded('http')) {throw new Exception('http not found');}"
           php -r "if(! extension_loaded('igbinary')) {throw new Exception('igbinary not found');}"
           php -r "if(! extension_loaded('imagick')) {throw new Exception('imagick not found');}"
-          php -r "if(! extension_loaded('imap')) {throw new Exception('imap not found');}"          
+          php -r "if(! extension_loaded('imap')) {throw new Exception('imap not found');}"
+          php -r "if(! extension_loaded('interbase')) {throw new Exception('interbase not found');}"
           php -r "if(phpversion()>=7.2 && ! extension_loaded('maxminddb')) {throw new Exception('maxminddb not found');}"
           php -r "if(! extension_loaded('mcrypt')) {throw new Exception('mcrypt not found');}"
           php -r "if(! extension_loaded('memcache')) {throw new Exception('memcache not found');}"
@@ -93,6 +94,7 @@ jobs:
           php -r "if(! extension_loaded('mongodb')) {throw new Exception('mongodb not found');}"
           php -r "if(! extension_loaded('msgpack')) {throw new Exception('msgpack not found');}"
           php -r "if(! extension_loaded('oauth')) {throw new Exception('oauth not found');}"
+          php -r "if(! extension_loaded('pdo_firebird')) {throw new Exception('pdo_firebird not found');}"
           php -r "if(! extension_loaded('protobuf')) {throw new Exception('protobuf not found');}"
           php -r "if(! extension_loaded('raphf')) {throw new Exception('raphf not found');}"
           php -r "if(! extension_loaded('rdkafka')) {throw new Exception('rdkafka not found');}"

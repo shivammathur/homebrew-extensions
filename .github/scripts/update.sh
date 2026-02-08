@@ -58,8 +58,8 @@ case $extension in
     tag="$(get_latest_remote_git_tag "$repo")"
     patch_github_tag "$tag" "$repo"
     ;;
-  imap|snmp)
-    if [[ $extension = "snmp" || "$version" =~ imap@(5.6|7.[0-4]|8.[0-3]) ]]; then
+  imap|snmp|pdo_firebird|interbase)
+    if [[ $extension = "snmp" || $extension = "interbase" || $extension = "pdo_firebird" || "$version" =~ imap@(5.6|7.[0-4]|8.[0-3]) ]]; then
       php_url=$(get_php_url)
       patch_php_url "$php_url"
     else

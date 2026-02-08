@@ -191,6 +191,15 @@ imap@8.3
 imap@8.4
 imap@8.5
 imap@8.6
+interbase@7.3
+interbase@7.4
+interbase@8.0
+interbase@8.1
+interbase@8.2
+interbase@8.3
+interbase@8.4
+interbase@8.5
+interbase@8.6
 lua@7.0
 lua@7.1
 lua@7.2
