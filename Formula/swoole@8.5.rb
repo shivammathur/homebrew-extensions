@@ -34,16 +34,14 @@ class SwooleAT85 < AbstractPhpExtension
   depends_on "c-ares"
   depends_on "curl"
   depends_on "libpq"
-  depends_on "libssh2"
   depends_on "sqlite"
   depends_on "openssl@3"
   depends_on "zstd"
 
   on_linux do
     depends_on "liburing"
+    depends_on "zlib-ng-compat"
   end
-
-  uses_from_macos "zlib"
 
   conflicts_with "swow@8.5", because: "both provide coroutine networking extensions"
 
@@ -56,13 +54,11 @@ class SwooleAT85 < AbstractPhpExtension
       --enable-sockets
       --enable-swoole
       --enable-swoole-curl
-      --enable-swoole-ftp
       --enable-swoole-pgsql
       --enable-swoole-odbc=unixodbc
       --enable-swoole-sqlite
       --enable-zstd
       --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
-      --with-swoole-ssh2=#{Formula["libssh2"].opt_prefix}
     ]
     on_linux do
       args << "--enable-iouring"
