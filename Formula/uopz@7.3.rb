@@ -28,6 +28,8 @@ class UopzAT73 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd5384c09bb4f76d74abf7cf138ba329e4ca91516a2aaaf42e0fbaaf37b8c08c"
   end
 
+  priority "10"
+
   def install
     Dir.chdir "uopz-#{version}"
     safe_phpize
