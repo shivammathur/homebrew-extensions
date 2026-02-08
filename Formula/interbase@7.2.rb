@@ -6,6 +6,16 @@ require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 # Class for Interbase Extension
 class InterbaseAT72 < AbstractPhpExtension
   env :std
+
+  bottle do
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any,                 arm64_tahoe:   "a6206708ab539e56c26dd780231107fbc7406f25ede0fad83bc3417ac532643c"
+    sha256 cellar: :any,                 arm64_sequoia: "8eddbb73ede6ec061740a7fe07212060e56f1927ac7aaab74f9e2b22801f6677"
+    sha256 cellar: :any,                 arm64_sonoma:  "bf9dc52c40faba62dd7d2b18dcb8195637ff44e7bad5b50facbdb8f07313bc16"
+    sha256 cellar: :any,                 sonoma:        "9c1cc3c51004a66f2a4b1e63d707964778138fd2c155f9bba3119539feb7ebad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2a823522cc5f8c71290b74129a8791edf8a3f796161d60988831c3d0104ee0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca33f559ea2c5a0ffb7bf3457e16a871893575ec2a39881ddf464b5fdf0ebe37"
+  end
   init
   desc "Interbase (Firebird) PHP extension"
   homepage "https://github.com/php/php-src"
