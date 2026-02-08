@@ -33,6 +33,8 @@ class UopzAT84 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "181301c02ad37865774abf6a3d950b94cba7f798dda491ddb47f42d2c7dac2b6"
   end
 
+  priority "10"
+
   def install
     Dir.chdir "uopz-#{version}"
     patch_data = File.read(resource("uopz_pr_185_patch").cached_download)
