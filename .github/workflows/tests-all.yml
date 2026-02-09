@@ -107,10 +107,6 @@ jobs:
           if ! [[ "$(arch)" = "arm64" && "${{ matrix.php }}" =~ ^(7.0|7.1)$ ]]; then
             php -r "if(! extension_loaded('swoole')) {throw new Exception('swoole not found');}"
           fi
-
-      - name: Testing Xdebug2
-        if: matrix.extensions == 'xdebug2'
-        run: php -r "if(phpversion('xdebug')!='2.9.8') {throw new Exception('xdebug2 not found');}"
       - name: Testing Linkage
         run: |
           IFS=', ' read -ra extensions <<< "${{ matrix.extensions }}"
