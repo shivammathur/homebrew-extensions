@@ -29,7 +29,9 @@ class MongodbAT56 < AbstractPhpExtension
   depends_on "openssl@3"
   depends_on "snappy"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Work around to support `icu4c` 75, which needs C++17.

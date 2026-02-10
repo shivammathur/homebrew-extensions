@@ -28,7 +28,9 @@ class XdebugAT81 < AbstractPhpExtension
     sha256                               x86_64_linux:  "84129c474bf11cfb7a2c283a87892cf51e9b1ab191907609ccde065e8cfd6fa8"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     patch_spl_symbols

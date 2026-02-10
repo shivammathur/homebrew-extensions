@@ -25,7 +25,9 @@ class XdebugAT86 < AbstractPhpExtension
     sha256                               x86_64_linux:  "7f2cc477b95ab595bf68da1fea0cdeecc3b9e84d687066f6de5e78753194db86"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   patch do
     url "https://github.com/shivammathur/xdebug/commit/13264e7ca3608026f710fb83c5f2314bdcc610e6.patch?full_index=1"

@@ -37,7 +37,9 @@ class SwooleAT82 < AbstractPhpExtension
   depends_on "openssl@3"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "swow@8.2", because: "both provide coroutine networking extensions"
 

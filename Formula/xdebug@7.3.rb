@@ -28,7 +28,9 @@ class XdebugAT73 < AbstractPhpExtension
     sha256                               x86_64_linux:   "344d3bd4c5667187108bd490488c1624bcbb00acece665207b19f6dbd5313895"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     safe_phpize

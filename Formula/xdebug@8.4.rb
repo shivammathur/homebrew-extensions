@@ -28,7 +28,9 @@ class XdebugAT84 < AbstractPhpExtension
     sha256                               x86_64_linux:  "4b32ee3b98a5f75025e5837c64a48e6c6bdd664c92fc6496ef7d3ad3edea698b"
   end
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     inreplace "src/lib/usefulstuff.c", "ext/standard/php_lcg.h", "ext/random/php_random.h"
