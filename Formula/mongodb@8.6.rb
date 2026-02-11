@@ -8,8 +8,8 @@ class MongodbAT86 < AbstractPhpExtension
   init
   desc "Mongodb PHP extension"
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://pecl.php.net/get/mongodb-2.1.8.tgz"
-  sha256 "fd0d34b4c530bad6dc4e0be61e23c118a3cc851ad879e088d6afca25b574916b"
+  url "https://pecl.php.net/get/mongodb-2.2.0.tgz"
+  sha256 "02b0fc089176a1cc2133b5e12aba72bff103154d2ead4789749a99c1b47f8223"
   head "https://github.com/mongodb/mongo-php-driver.git", branch: "v2.x"
   license "Apache-2.0"
 
@@ -40,9 +40,6 @@ class MongodbAT86 < AbstractPhpExtension
     ENV.append "CXX", "-std=c++17"
     ENV.libcxx if ENV.compiler == :clang
     Dir.chdir "mongodb-#{version}"
-    inreplace "src/MongoDB/ServerApi.c", "ZVAL_IS_NULL", "Z_ISNULL_P"
-    inreplace "src/MongoDB/ServerApi.c", "zval_is_true", "zend_is_true"
-    inreplace "src/MongoDB/Cursor.c", "zval_dtor", "zval_ptr_dtor_nogc"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mongodb"
     system "make"
