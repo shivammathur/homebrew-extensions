@@ -50,6 +50,11 @@ class MemcacheAT86 < AbstractPhpExtension
       src/memcache_pool.c
       src/memcache_session.c
     ], "zval_dtor", "zval_ptr_dtor_nogc"
+    inreplace "src/memcache_session.c", "ZEND_EXTERN_MODULE_GLOBALS(memcache)", <<~EOS
+      ZEND_EXTERN_MODULE_GLOBALS(memcache)
+      #define ps_create_sid_memcache php_session_create_id
+      #define ps_validate_sid_memcache php_session_validate_sid
+    EOS
     inreplace "src/memcache.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
