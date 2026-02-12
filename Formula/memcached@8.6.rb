@@ -40,6 +40,13 @@ class MemcachedAT86 < AbstractPhpExtension
       headers = Dir["#{Formula["#{e}@8.6"].opt_include}/**/*.h"]
       (buildpath/"memcached-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
+    inreplace "php_memcached.c", "zval_dtor", "zval_ptr_dtor_nogc"
+    inreplace "php_memcached_session.c", "if (strstr(save_path, \"PERSISTENT=\"))",
+"if (strstr(ZSTR_VAL(save_path), \"PERSISTENT=\"))"
+    inreplace "php_memcached_session.c", "servers = memcached_servers_parse(save_path);",
+"servers = memcached_servers_parse(ZSTR_VAL(save_path));"
+    inreplace "php_memcached_session.c", "plist_key_len = spprintf(&plist_key, 0, \"memc-session:%s\", save_path);",
+"plist_key_len = spprintf(&plist_key, 0, \"memc-session:%s\", ZSTR_VAL(save_path));"
   end
 
   priority "30"
