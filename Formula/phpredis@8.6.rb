@@ -67,6 +67,12 @@ class PhpredisAT86 < AbstractPhpExtension
       inreplace f, "ZEND_WRONG_PARAM_COUNT()", "zend_wrong_param_count(); RETURN_THROWS();"
     end
     inreplace "redis_cluster.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
+    inreplace "redis_session.c" do |s|
+      s.gsub! "strlen(save_path)", "ZSTR_LEN(save_path)"
+      s.gsub! "save_path[", "ZSTR_VAL(save_path)["
+      s.gsub! "save_path+i", "ZSTR_VAL(save_path)+i"
+      s.gsub! "estrdup(save_path)", "estrdup(ZSTR_VAL(save_path))"
+    end
   end
 
   def install
