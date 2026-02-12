@@ -55,6 +55,7 @@ class MemcacheAT86 < AbstractPhpExtension
       #define ps_create_sid_memcache php_session_create_id
       #define ps_validate_sid_memcache php_session_validate_sid
     EOS
+    inreplace "src/memcache_session.c", "path = save_path;", "path = ZSTR_VAL(save_path);"
     inreplace "src/memcache.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
