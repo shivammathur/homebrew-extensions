@@ -9,12 +9,12 @@ class PdoFirebirdAT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_tahoe:   "1b3d3e0f83c72d51444f3d5b1473cdd56f5e2a4dd3929ff980c5a040597ad6ca"
-    sha256 cellar: :any,                 arm64_sequoia: "2d5ad9efd81bb4863a9bb59f19b621e96f4d1d85550ea21d2b1125e0cbb21466"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc7c9410185cc7e948604807a8260cf2cb982dc0838070e4ccdbabe1371b6e12"
-    sha256 cellar: :any,                 sonoma:        "fda9da3c5e959c10a4656ad73e249010f965765ce5c0dcc005770f91db968d5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a6c4eee2ea52b0345d71fcb06d9b641cf94660519d8700706e2f693722284e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abe63c5f2568ded609e36477335265c7287116b30c5dc1ee47d5c779ed12eddb"
+    sha256 cellar: :any,                 arm64_tahoe:   "02bb7cfb57a63d845e7f9944e49c48aa8830b99d088921ee0c8b5b088195dc6e"
+    sha256 cellar: :any,                 arm64_sequoia: "3b804e0879273e8726277b39e9de4bdea6762259e8b0a830a8e1c020eecb9b19"
+    sha256 cellar: :any,                 arm64_sonoma:  "0288b0f99538c55a15877de884a18c588c8bf0adc1c445f7a6e724a76a9184bd"
+    sha256 cellar: :any,                 sonoma:        "dd4f744f1e0726772c243f61ab03a875f11d013eb676c76daa0a6e6fa19dfb9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e299bb1d31f88c776865de10550c815b58494979338eb06d10cd11d6d87a406"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9335c834088c4c3c44b3d747d872fad7bd408ebc7a5a7f98bacf62f334670a40"
   end
   init
   desc "PDO Firebird PHP extension"
