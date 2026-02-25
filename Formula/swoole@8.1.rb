@@ -8,9 +8,8 @@ class SwooleAT81 < AbstractPhpExtension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
-  url "https://github.com/swoole/swoole-src/archive/v6.1.6.tar.gz"
-  sha256 "7f022cf6fa2f273915fd09f94ef019c50efa06b0be01eaadcb4b289d5622d77b"
-  revision 2
+  url "https://github.com/swoole/swoole-src/archive/v6.1.7.tar.gz"
+  sha256 "46c8d9bcd1c972fe71a7aead3e43e1bcecde2d8390b393413d139f0a7486b8e9"
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
