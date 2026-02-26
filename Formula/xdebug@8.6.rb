@@ -8,8 +8,8 @@ class XdebugAT86 < AbstractPhpExtension
   init
   desc "Xdebug PHP extension"
   homepage "https://github.com/xdebug/xdebug"
-  url "https://github.com/xdebug/xdebug/archive/c705e8a1c4e7033849a79667d924811b9102ff5f.tar.gz"
-  sha256 "b2a897ed5d43c458f6f6ab2169d2289d2d2195ac9f698645b022aeb22d1ee597"
+  url "https://github.com/xdebug/xdebug/archive/9f1bf000563a2be6b5318e86793e4a1024fa470e.tar.gz"
+  sha256 "3b5fa0e68d229bf3fd04aa9132c9e7b8260910942ce5fd506c0bd5c3308af449"
   version "3.5.0"
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
@@ -27,11 +27,6 @@ class XdebugAT86 < AbstractPhpExtension
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  patch do
-    url "https://github.com/shivammathur/xdebug/commit/13264e7ca3608026f710fb83c5f2314bdcc610e6.patch?full_index=1"
-    sha256 "2c0ed06d8adcbdd534132bf4a30a8497a236b576d3dff4c92f1375ec0436f98b"
   end
 
   def install
