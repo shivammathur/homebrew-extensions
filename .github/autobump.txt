@@ -339,8 +339,6 @@ propro@7.1
 propro@7.2
 propro@7.3
 propro@7.4
-protobuf@8.0
-protobuf@8.1
 protobuf@8.2
 protobuf@8.3
 protobuf@8.4
