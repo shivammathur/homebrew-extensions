@@ -8,8 +8,8 @@ class PdoSqlsrvAT81 < AbstractPhpExtension
   init
   desc "pdo_sqlsrv PHP extension"
   homepage "https://github.com/Microsoft/msphpsql"
-  url "https://pecl.php.net/get/pdo_sqlsrv-5.12.0.tgz"
-  sha256 "22f0cb17b45f0deccd0bba072ee0085ff4094cd6ee2acc26f7f924975ef652c6"
+  url "https://pecl.php.net/get/pdo_sqlsrv-5.13.0.tgz"
+  sha256 "efa859bcc48d97f25268dbdebf1db25f25610d7fa36b3ee91073c1c99411e24c"
   head "https://github.com/Microsoft/msphpsql.git", branch: "dev"
   license "MIT"
 
