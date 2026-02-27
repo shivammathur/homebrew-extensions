@@ -8,9 +8,8 @@ class PdoSqlsrvAT85 < AbstractPhpExtension
   init
   desc "pdo_sqlsrv PHP extension"
   homepage "https://github.com/Microsoft/msphpsql"
-  url "https://pecl.php.net/get/pdo_sqlsrv-5.12.0.tgz"
-  sha256 "22f0cb17b45f0deccd0bba072ee0085ff4094cd6ee2acc26f7f924975ef652c6"
-  revision 1
+  url "https://pecl.php.net/get/pdo_sqlsrv-5.13.0.tgz"
+  sha256 "efa859bcc48d97f25268dbdebf1db25f25610d7fa36b3ee91073c1c99411e24c"
   head "https://github.com/Microsoft/msphpsql.git", branch: "dev"
   license "MIT"
 
@@ -33,11 +32,6 @@ class PdoSqlsrvAT85 < AbstractPhpExtension
 
   def install
     Dir.chdir "pdo_sqlsrv-#{version}"
-    inreplace "php_pdo_sqlsrv_int.h",
-              "zval_ptr_dtor( &dbh->query_stmt_zval );",
-              "OBJ_RELEASE(dbh->query_stmt_obj);" \
-              "dbh->query_stmt_obj = NULL;"
-    inreplace "pdo_dbh.cpp", "pdo_error_mode prev_err_mode", "uint8_t prev_err_mode"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-pdo_sqlsrv"
     system "make"
