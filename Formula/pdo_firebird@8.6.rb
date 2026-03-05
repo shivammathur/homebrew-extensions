@@ -20,9 +20,9 @@ class PdoFirebirdAT86 < AbstractPhpExtension
   init
   desc "PDO Firebird PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/php/php-src/archive/5fc9d9d9a74522116aa855c33e8de97a3a115c50.tar.gz?commit=5fc9d9d9a74522116aa855c33e8de97a3a115c50"
+  url "https://github.com/php/php-src/archive/11a95749b1c10ef9ef2ff19a2f27739673ca9883.tar.gz?commit=11a95749b1c10ef9ef2ff19a2f27739673ca9883"
   version "8.6.0"
-  sha256 "059772a5998319f79967331d89a5a8f0f109fe017d9d7d2dc0079f8ca87b852d"
+  sha256 "58b132b37a12089a981102d1717b2f9afc594e13f35e6d646adb2e57692737bd"
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
   depends_on "shivammathur/extensions/firebird-client"
