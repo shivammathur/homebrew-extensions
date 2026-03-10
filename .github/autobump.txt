@@ -433,7 +433,6 @@ ssh2@8.3
 ssh2@8.4
 ssh2@8.5
 ssh2@8.6
-swoole@8.1
 swoole@8.2
 swoole@8.3
 swoole@8.4
