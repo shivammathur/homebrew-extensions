@@ -3,7 +3,8 @@ fetch() {
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
   if [[ "$EXTENSION" =~ event|expect|gnupg|imagick|imap|mcrypt|pcov|snmp|pdo_firebird ]] ||
      [[ "$VERSION" =~ (amqp)@(7.4|8.[0-4]) ]] ||
-     [[ "$VERSION" =~ (couchbase|phalcon5|swoole|mongodb)@(8.[1-6]) ]] ||
+     [[ "$VERSION" =~ (couchbase|phalcon5|protobuf|mongodb)@(8.[1-6]) ]] ||
+     [[ "$VERSION" =~ (swoole)@(8.[2-6]) ]] ||
      [[ "$VERSION" =~ (interbase)@(5.6|7.[0-2]) ]] ||
      [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
      [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.[0-6]) ]] ||
@@ -13,7 +14,7 @@ fetch() {
      [[ "$VERSION" =~ (redis)@(7.4|8.[0-6]) ]] ||
      [[ "$VERSION" =~ (ast|mcrypt)@(7.[2-4]|8.[0-6]) ]] ||
      [[ "$VERSION" =~ (ds|mailparse|psr)@(7.[3-4]|8.[0-6]) ]] ||
-     [[ "$VERSION" =~ (memcache|protobuf|sqlsrv|pdo_sqlsrv|xdebug)@(8.[0-6]) ]]; then
+     [[ "$VERSION" =~ (memcache|sqlsrv|pdo_sqlsrv|xdebug)@(8.[0-6]) ]]; then
     sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION" "$REPO"
     url=$(grep '^  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
     checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
