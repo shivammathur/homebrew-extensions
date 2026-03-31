@@ -8,8 +8,8 @@ class NewrelicAT84 < AbstractPhpExtension
   init
   desc "Newrelic PHP extension"
   homepage "https://github.com/newrelic/newrelic-php-agent"
-  url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v12.5.0.30.tar.gz"
-  sha256 "b860c84b67e4515f2afd31c0dee410c57d231d5ca443abf4d1c827492230ebc1"
+  url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v12.6.0.34.tar.gz"
+  sha256 "45143e55f99a615163ba9281e7c7b8e8b27589d891dfa9ee77ccaba2a3f97583"
   head "https://github.com/newrelic/newrelic-php-agent.git", branch: "main"
   license "Apache-2.0"
 
@@ -59,6 +59,10 @@ class NewrelicAT84 < AbstractPhpExtension
     inreplace "agent/config.m4", "-l:libprotobuf-c.a", "-lprotobuf-c"
     inreplace "axiom/Makefile", "AXIOM_CFLAGS += -Wimplicit-fallthrough", "#AXIOM_CFLAGS += -Wimplicit-fallthrough"
     inreplace "daemon/go.mod", /toolchain go.*/, "toolchain go#{Formula["go"].version}"
+    inreplace "agent/php_txn_private.h",
+              "nr_php_txn_get_supported_security_policy_settings();",
+              "nr_php_txn_get_supported_security_policy_settings(nrtxnopt_t* opts);"
+    system "make", "-C", "axiom", "v1.pb-c.c"
     system "make", "all"
     prefix.install "agent/modules/#{extension}.so"
     prefix.install "bin/daemon"
