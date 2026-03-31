@@ -32,6 +32,11 @@ class PcovAT86 < AbstractPhpExtension
     patch_spl_symbols
     safe_phpize
     inreplace "pcov.c", "0, 0, 0, 0", "0, 0, 0"
+    inreplace "pcov.c" do |s|
+      s.gsub! "INI_BOOL(", "zend_ini_bool_literal("
+      s.gsub! "INI_INT(", "zend_ini_long_literal("
+      s.gsub! "INI_STR(", "zend_ini_string_literal("
+    end
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-pcov"
     system "make"
     prefix.install "modules/#{extension}.so"
