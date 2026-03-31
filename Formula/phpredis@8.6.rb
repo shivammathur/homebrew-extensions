@@ -67,6 +67,12 @@ class PhpredisAT86 < AbstractPhpExtension
       inreplace f, "ZEND_WRONG_PARAM_COUNT()", "zend_wrong_param_count(); RETURN_THROWS();"
     end
     inreplace "redis_cluster.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
+    %w[redis_session.c library.c cluster_library.h].each do |f|
+      inreplace f, "INI_INT(", "zend_ini_long_literal("
+    end
+    %w[redis_session.c library.c redis_array_impl.c redis_cluster.c].each do |f|
+      inreplace f, "INI_STR(", "zend_ini_string_literal("
+    end
     inreplace "redis_session.c" do |s|
       s.gsub! "strlen(save_path)", "ZSTR_LEN(save_path)"
       s.gsub! "save_path[", "ZSTR_VAL(save_path)["
