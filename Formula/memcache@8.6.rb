@@ -57,6 +57,7 @@ class MemcacheAT86 < AbstractPhpExtension
     EOS
     inreplace "src/memcache_session.c", "path = save_path;", "path = ZSTR_VAL(save_path);"
     inreplace "src/memcache.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
+    inreplace "src/memcache_session.c", "INI_INT(", "zend_ini_long_literal("
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
