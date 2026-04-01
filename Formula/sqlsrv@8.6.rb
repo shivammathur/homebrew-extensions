@@ -32,6 +32,13 @@ class SqlsrvAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "sqlsrv-#{version}"
+    inreplace "init.cpp" do |s|
+      s.gsub! "INI_BOOL( warnings_as_errors )", "zend_ini_bool_literal(INI_PREFIX INI_WARNINGS_RETURN_AS_ERRORS)"
+      s.gsub! "INI_INT( severity )", "zend_ini_long_literal(INI_PREFIX INI_LOG_SEVERITY)"
+      s.gsub! "INI_INT( subsystems )", "zend_ini_long_literal(INI_PREFIX INI_LOG_SUBSYSTEMS)"
+      s.gsub! "INI_INT( buffered_limit )", "zend_ini_long_literal(INI_PREFIX INI_BUFFERED_QUERY_LIMIT)"
+      s.gsub! "INI_INT(set_locale_info)", "zend_ini_long_literal(INI_PREFIX INI_SET_LOCALE_INFO)"
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig
     system "make"
