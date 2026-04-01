@@ -30,6 +30,9 @@ class XdebugAT86 < AbstractPhpExtension
   end
 
   def install
+    inreplace "src/develop/stack.c" do |s|
+      s.gsub! "INI_STR((char*) ", "zend_ini_string_literal("
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
