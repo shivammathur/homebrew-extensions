@@ -8,8 +8,8 @@ class CouchbaseAT83 < AbstractPhpExtension
   init
   desc "Couchbase PHP extension"
   homepage "https://github.com/couchbase/couchbase-php-client"
-  url "https://pecl.php.net/get/couchbase-4.4.0.tgz"
-  sha256 "328d57e1054a3f073d5ed2c29507871c0fcc5e0c9398e7f1d8227833c054e689"
+  url "https://pecl.php.net/get/couchbase-4.5.0.tgz"
+  sha256 "f31385068fc197516012eed85baf732eb58186a95a1d6da09ca03859f0b71747"
   head "https://github.com/couchbase/couchbase-php-client.git", branch: "main"
   license "Apache-2.0"
 
@@ -46,8 +46,8 @@ class CouchbaseAT83 < AbstractPhpExtension
       "EXTENSION_DIR=`$PHP_CONFIG --extension-dir 2>/dev/null`",
       "EXTENSION_DIR=#{prefix}"
     inreplace "Makefile.frag",
-     '-DCMAKE_C_COMPILER="$(CC)"',
-     '-DCMAKE_C_COMPILER="$(CC)" -DCMAKE_POLICY_VERSION_MINIMUM=3.5'
+      '-DCMAKE_C_COMPILER="$(CC_PATH)"',
+      '-DCMAKE_C_COMPILER="$(CC_PATH)" -DCMAKE_POLICY_VERSION_MINIMUM=3.5'
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-couchbase"
     system "make"
     system "make", "phpincludedir=#{include}/php", "install"
