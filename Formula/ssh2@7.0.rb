@@ -8,8 +8,8 @@ class Ssh2AT70 < AbstractPhpExtension
   init
   desc "Ssh2 PHP extension"
   homepage "https://github.com/php/pecl-networking-ssh2"
-  url "https://pecl.php.net/get/ssh2-1.4.1.tgz"
-  sha256 "7bca5b23f731db9d8ed0aea5db9bb15da8ff133b0fbba96102b82e95da4d8764"
+  url "https://pecl.php.net/get/ssh2-1.5.0.tgz"
+  sha256 "a943427fae39a5503c813179018ae6c500323c8c9fb434e1a9a665fb32a4d7b4"
   head "https://github.com/php/pecl-networking-ssh2.git", branch: "master"
   license "PHP-3.01"
 
@@ -38,6 +38,9 @@ class Ssh2AT70 < AbstractPhpExtension
       --with-ssh2=shared,#{Formula["libssh2"].opt_prefix}
     ]
     Dir.chdir "ssh2-#{version}"
+    inreplace "ssh2_fopen_wrappers.c",
+              "const char *path_in_original = strstr(path, ZSTR_VAL(resource->path));",
+              "const char *path_in_original = strstr(path, SSH2_URL_STR(resource->path));"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
