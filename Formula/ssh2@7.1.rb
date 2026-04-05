@@ -20,15 +20,12 @@ class Ssh2AT71 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia:  "c91ee8358b38cec4a1f5274f0b95b0ebf365e178ffe00cd3fcf7860501fb6510"
-    sha256 cellar: :any,                 arm64_sonoma:   "6e88bd260b9d4e7d6a6d0a564a0454b6ca7707b4b9fe03d128f4ae7a07d168b9"
-    sha256 cellar: :any,                 arm64_ventura:  "808fb1850e640f18c5f408e2be007c0e0bf847900405b29b6e380f45967e5a65"
-    sha256 cellar: :any,                 arm64_monterey: "496c9c3550e1eabcbe525635503f2714ae7e669dbc96f29410e862395ab14b6b"
-    sha256 cellar: :any,                 sonoma:         "cc71867ebf608fc3e9a74662666b141ef2424cc0b3df6dcee6a06aabcede9278"
-    sha256 cellar: :any,                 ventura:        "ca5329e5d63340452a19f64fa8f4bf5731d45ec854a13ab41d1e72a696ee669e"
-    sha256 cellar: :any,                 monterey:       "423a763162ea240398435b8078d8c38dce6e9686ec81ac4ec788cd61161695b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "09939ee32e9d1400dd1084bcab1a01693dd2106c9299531a5743677b3e86da0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f621349678b3c159743e47bb71618d6974c7ec18c4b1d6d71dc3d2fbb3921a2"
+    sha256 cellar: :any,                 arm64_tahoe:   "33c48d9e5d96c804208b291da0606be2b5bde5eda5e6efbec0951597577793cb"
+    sha256 cellar: :any,                 arm64_sequoia: "d130a3356bc80b143c9b516e2c3510ba2836b12696e5254018465f82d6073c51"
+    sha256 cellar: :any,                 arm64_sonoma:  "1cc2c9f5dfdc428418bb1447c11722870b669fc972fafde459aedc49e2e3a3d6"
+    sha256 cellar: :any,                 sonoma:        "311154c289c39c9f962c496c3c28085482c9815100877fe45448a247d2879d47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f65c9e308151970cc65b84827eacd3c88ba57ee3f005dbec9ef00f6400c668df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46fd6caf29aa5e6c5b6d7b3373b7a29d11ac37b66b4c042a06b014113be2c978"
   end
 
   depends_on "libssh2"
