@@ -20,12 +20,12 @@ class GearmanAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_tahoe:   "5e38aabe9b40ce4ba5be5b26722bfee8deee539a111f7c6a70f40d66b825a59c"
-    sha256 cellar: :any,                 arm64_sequoia: "095a2911604c93fc3a9a6c0bf904a00491e784ec57f09c973d4d92e2b2dfc3b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "f65300dddda1616c6fab90171484ca826805bb5a638211e53be559653ed9b984"
-    sha256 cellar: :any,                 sonoma:        "7e1712d1b73c9107859241a664face8128f042455a5fe6928c9969ff32dd15dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "724654e14efd777a27ea0a922db49908fe19ec8d1bd6990029c92fc77ae5bcde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a8cd30b88265c1abaa8917d6a57f7446e6bad251db7ad50d4650ad09bd6f827"
+    sha256 cellar: :any,                 arm64_tahoe:   "092f6ee847453e528502a460329bbca6655ca3295b4029c8cd1b609e240cf885"
+    sha256 cellar: :any,                 arm64_sequoia: "a6603debd7378ed175fe4bad0b7addbdaaafcf81a3c99431d84c5fba70bfcb0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b22d89374bfb73f75ea9946db7c1983649deba88d8d4fb0a25d542817cec4a0"
+    sha256 cellar: :any,                 sonoma:        "942adb5bbdf4b2e6dc7ee8e84785b44e709d754ed951ada6284dba9cac8d7a0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5db33e07cf311e94a9a63d618c7b2d00a735ce6d290bf30f839e5ce69f1bf04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "903e3f3c09d69ab902dc66a704bdbbad634d7ed4ce5bd05f36135e6f6f4647d5"
   end
 
   depends_on "gearman"
