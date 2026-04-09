@@ -79,6 +79,7 @@ class PhpredisAT86 < AbstractPhpExtension
       s.gsub! "save_path+i", "ZSTR_VAL(save_path)+i"
       s.gsub! "estrdup(save_path)", "estrdup(ZSTR_VAL(save_path))"
     end
+    inreplace "library.c", "EMPTY_SWITCH_DEFAULT_CASE()", "default: ZEND_UNREACHABLE();"
   end
 
   def install
