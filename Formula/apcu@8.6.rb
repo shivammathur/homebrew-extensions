@@ -30,6 +30,7 @@ class ApcuAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "apcu-#{version}"
+    inreplace "apc_persist.c", "EMPTY_SWITCH_DEFAULT_CASE()", "default: ZEND_UNREACHABLE();"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-apcu"
     system "make"
