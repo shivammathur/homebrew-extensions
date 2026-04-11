@@ -54,9 +54,6 @@ decimal@8.3
 decimal@8.4
 decimal@8.5
 decimal@8.6
-ds@7.3
-ds@7.4
-ds@8.0
 ds@8.1
 ds@8.2
 ds@8.3
