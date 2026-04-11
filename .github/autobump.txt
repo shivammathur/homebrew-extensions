@@ -46,10 +46,6 @@ couchbase@8.3
 couchbase@8.4
 couchbase@8.5
 couchbase@8.6
-decimal@7.0
-decimal@7.1
-decimal@7.2
-decimal@7.3
 decimal@7.4
 decimal@8.0
 decimal@8.1

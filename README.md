@@ -34,72 +34,73 @@
 
 ## Extensions
 
-| Extension       | PHP Version            |
-|-----------------|------------------------|
-| `amqp`          | `PHP 5.6` to `PHP 8.6` |
-| `apcu`          | `PHP 5.6` to `PHP 8.6` |
-| `ast`           | `PHP 7.0` to `PHP 8.6` |
-| `brotli`.       | `PHP 5.6` to `PHP 8.6` |
-| `couchbase`     | `PHP 5.6` to `PHP 8.6` |
-| `ds`            | `PHP 7.0` to `PHP 8.6` |
-| `event`         | `PHP 5.6` to `PHP 8.6` |
-| `excimer`       | `PHP 7.1` to `PHP 8.6` |
-| `expect`        | `PHP 5.6` to `PHP 8.6` |
-| `gearman`       | `PHP 5.6` to `PHP 8.6` |
-| `gmagick`       | `PHP 5.6` to `PHP 8.6` |
-| `gnupg`         | `PHP 5.6` to `PHP 8.6` |
-| `grpc`          | `PHP 5.6` to `PHP 8.6` |
-| `igbinary`      | `PHP 5.6` to `PHP 8.6` |
-| `imagick`       | `PHP 5.6` to `PHP 8.6` |
-| `imap`          | `PHP 5.6` to `PHP 8.6` |
-| `interbase`     | `PHP 5.6` to `PHP 8.6` |
-| `lua`           | `PHP 5.6` to `PHP 7.4` |
-| `mailparse`     | `PHP 5.6` to `PHP 8.6` |
-| `maxminddb`     | `PHP 7.2` to `PHP 8.6` |
-| `mcrypt`        | `PHP 5.6` to `PHP 8.6` |
-| `memcache`      | `PHP 5.6` to `PHP 8.6` |
-| `memcached`     | `PHP 5.6` to `PHP 8.6` |
-| `mongodb1`      | `PHP 8.1` to `PHP 8.6` |
-| `mongodb`       | `PHP 5.6` to `PHP 8.6` |
-| `msgpack`       | `PHP 5.6` to `PHP 8.6` |
-| `newrelic`      | `PHP 7.4` to `PHP 8.4` |
-| `oauth`         | `PHP 5.6` to `PHP 8.6` |
-| `opentelemetry` | `PHP 8.0` to `PHP 8.6` |
-| `pcov`          | `PHP 7.1` to `PHP 8.6` |
-| `pdo_firebird`  | `PHP 7.0` to `PHP 8.6` |
-| `pdo_sqlsrv`    | `PHP 7.0` to `PHP 8.6` |
-| `pecl_http`     | `PHP 5.6` to `PHP 8.6` |
-| `pinba`         | `PHP 7.0` to `PHP 8.6` |
-| `phalcon3`      | `PHP 5.6` to `PHP 7.3` |
-| `phalcon4`      | `PHP 7.2` to `PHP 7.4` |
-| `phalcon5`      | `PHP 7.4` to `PHP 8.4` |
-| `propro`        | `PHP 5.6` to `PHP 7.4` |
-| `protobuf`      | `PHP 5.6` to `PHP 8.6` |
-| `psr`           | `PHP 5.6` to `PHP 8.6` |
-| `raphf`         | `PHP 5.6` to `PHP 8.6` |
-| `rdkafka`       | `PHP 5.6` to `PHP 8.6` |
-| `redis`         | `PHP 5.6` to `PHP 8.6` |
-| `seaslog`       | `PHP 5.6` to `PHP 8.6` |
-| `scalar_objects`| `PHP 7.0` to `PHP 8.6` |
-| `snmp`          | `PHP 5.6` to `PHP 8.3` |
-| `sqlsrv`        | `PHP 7.0` to `PHP 8.6` |
-| `ssh2`          | `PHP 5.6` to `PHP 8.6` |
-| `spx`           | `PHP 5.6` to `PHP 8.6` |
-| `swoole`        | `PHP 5.6` to `PHP 8.5` |
-| `swow`          | `PHP 8.0` to `PHP 8.5` |
-| `uopz`          | `PHP 5.6` to `PHP 8.6` |
-| `uploadprogress`| `PHP 5.6` to `PHP 8.6` |
-| `uuid`          | `PHP 5.6` to `PHP 8.6` |
-| `v8js`          | `PHP 7.0` to `PHP 8.6` |
-| `vips`          | `PHP 7.0` to `PHP 8.6` |
-| `vld`           | `PHP 5.6` to `PHP 8.3` |
-| `xdebug`        | `PHP 5.6` to `PHP 8.6` |
-| `xdebug2`       | `PHP 7.2` to `PHP 7.4` |
-| `xhprof`        | `PHP 7.0` to `PHP 8.6` |
-| `xlswriter`     | `PHP 7.0` to `PHP 8.6` |
-| `yaml`          | `PHP 5.6` to `PHP 8.6` |
-| `zmq`           | `PHP 5.6` to `PHP 8.6` |
-| `zstd`          | `PHP 7.0` to `PHP 8.6` |
+| Extension         | PHP Version            |
+|-------------------|------------------------|
+| `amqp`            | `PHP 5.6` to `PHP 8.6` |
+| `apcu`            | `PHP 5.6` to `PHP 8.6` |
+| `ast`             | `PHP 7.0` to `PHP 8.6` |
+| `brotli`          | `PHP 5.6` to `PHP 8.6` |
+| `couchbase`       | `PHP 5.6` to `PHP 8.6` |
+| `decimal`         | `PHP 7.0` to `PHP 8.6` |
+| `ds`              | `PHP 7.0` to `PHP 8.6` |
+| `event`           | `PHP 5.6` to `PHP 8.6` |
+| `excimer`         | `PHP 7.1` to `PHP 8.6` |
+| `expect`          | `PHP 5.6` to `PHP 8.6` |
+| `gearman`         | `PHP 5.6` to `PHP 8.6` |
+| `gmagick`         | `PHP 5.6` to `PHP 8.6` |
+| `gnupg`           | `PHP 5.6` to `PHP 8.6` |
+| `grpc`            | `PHP 5.6` to `PHP 8.6` |
+| `igbinary`        | `PHP 5.6` to `PHP 8.6` |
+| `imagick`         | `PHP 5.6` to `PHP 8.6` |
+| `imap`            | `PHP 5.6` to `PHP 8.6` |
+| `interbase`       | `PHP 5.6` to `PHP 8.6` |
+| `lua`             | `PHP 5.6` to `PHP 7.4` |
+| `mailparse`       | `PHP 5.6` to `PHP 8.6` |
+| `maxminddb`       | `PHP 7.2` to `PHP 8.6` |
+| `mcrypt`          | `PHP 5.6` to `PHP 8.6` |
+| `memcache`        | `PHP 5.6` to `PHP 8.6` |
+| `memcached`       | `PHP 5.6` to `PHP 8.6` |
+| `mongodb1`        | `PHP 8.1` to `PHP 8.6` |
+| `mongodb`         | `PHP 5.6` to `PHP 8.6` |
+| `msgpack`         | `PHP 5.6` to `PHP 8.6` |
+| `newrelic`        | `PHP 7.4` to `PHP 8.4` |
+| `oauth`           | `PHP 5.6` to `PHP 8.6` |
+| `opentelemetry`   | `PHP 8.0` to `PHP 8.6` |
+| `pcov`            | `PHP 7.1` to `PHP 8.6` |
+| `pdo_firebird`    | `PHP 7.0` to `PHP 8.6` |
+| `pdo_sqlsrv`      | `PHP 7.0` to `PHP 8.6` |
+| `pecl_http`       | `PHP 5.6` to `PHP 8.6` |
+| `pinba`           | `PHP 7.0` to `PHP 8.6` |
+| `phalcon3`        | `PHP 5.6` to `PHP 7.3` |
+| `phalcon4`        | `PHP 7.2` to `PHP 7.4` |
+| `phalcon5`        | `PHP 7.4` to `PHP 8.4` |
+| `propro`          | `PHP 5.6` to `PHP 7.4` |
+| `protobuf`        | `PHP 5.6` to `PHP 8.6` |
+| `psr`             | `PHP 5.6` to `PHP 8.6` |
+| `raphf`           | `PHP 5.6` to `PHP 8.6` |
+| `rdkafka`         | `PHP 5.6` to `PHP 8.6` |
+| `redis`           | `PHP 5.6` to `PHP 8.6` |
+| `seaslog`         | `PHP 5.6` to `PHP 8.6` |
+| `scalar_objects`  | `PHP 7.0` to `PHP 8.6` |
+| `snmp`            | `PHP 5.6` to `PHP 8.3` |
+| `sqlsrv`          | `PHP 7.0` to `PHP 8.6` |
+| `ssh2`            | `PHP 5.6` to `PHP 8.6` |
+| `spx`             | `PHP 5.6` to `PHP 8.6` |
+| `swoole`          | `PHP 5.6` to `PHP 8.5` |
+| `swow`            | `PHP 8.0` to `PHP 8.5` |
+| `uopz`            | `PHP 5.6` to `PHP 8.6` |
+| `uploadprogress`  | `PHP 5.6` to `PHP 8.6` |
+| `uuid`            | `PHP 5.6` to `PHP 8.6` |
+| `v8js`            | `PHP 7.0` to `PHP 8.6` |
+| `vips`            | `PHP 7.0` to `PHP 8.6` |
+| `vld`             | `PHP 5.6` to `PHP 8.3` |
+| `xdebug`          | `PHP 5.6` to `PHP 8.6` |
+| `xdebug2`         | `PHP 7.2` to `PHP 7.4` |
+| `xhprof`          | `PHP 7.0` to `PHP 8.6` |
+| `xlswriter`       | `PHP 7.0` to `PHP 8.6` |
+| `yaml`            | `PHP 5.6` to `PHP 8.6` |
+| `zmq`             | `PHP 5.6` to `PHP 8.6` |
+| `zstd`            | `PHP 7.0` to `PHP 8.6` |
 
 ## OS Support
 
@@ -299,6 +300,7 @@ This project is also generously supported by many other users and organisations 
 - [libssh2](https://formulae.brew.sh/formula/libssh2 "libssh2")
 - [libyaml](https://formulae.brew.sh/formula/libyaml "libyaml")
 - [lz4](https://formulae.brew.sh/formula/lz4 "lz4")
+- [mpdecimal](https://formulae.brew.sh/formula/mpdecimal "mpdecimal")
 - [net-snmp](https://formulae.brew.sh/formula/net-snmp "net-snmp")
 - [openssl](https://formulae.brew.sh/formula/openssl@3 "openssl")
 - [ossp-uuid](https://formulae.brew.sh/formula/ossp-uuid "ossp-uuid")
