@@ -8,16 +8,10 @@ class DecimalAT71 < AbstractPhpExtension
   init
   desc "Decimal PHP extension"
   homepage "https://github.com/php-decimal/ext-decimal"
-  url "https://github.com/php-decimal/ext-decimal/archive/v1.5.0.tar.gz"
-  sha256 "f00455a058aa22a9c9e7e5c409ee75980068bc9b8f03b17fad39d2bca2138d5d"
+  url "https://pecl.php.net/get/decimal-1.5.1.tgz"
+  sha256 "8a103404e8df889f3c9626aa2668354ef1b46362071440e764765fb311b621c8"
   head "https://github.com/php-decimal/ext-decimal.git", branch: "master"
   license "MIT"
-
-  livecheck do
-    url :stable
-    strategy :github_releases
-    regex(/^v(\d+\.\d+\.\d+$)/i)
-  end
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
@@ -38,11 +32,11 @@ class DecimalAT71 < AbstractPhpExtension
       --with-libmpdec-path=#{Formula["mpdecimal"].opt_prefix}
     ]
     ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
+    Dir.chdir "decimal-#{version}"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file
-    add_include_files
   end
 end
