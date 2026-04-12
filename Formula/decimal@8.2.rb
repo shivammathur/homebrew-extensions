@@ -8,8 +8,8 @@ class DecimalAT82 < AbstractPhpExtension
   init
   desc "Decimal PHP extension"
   homepage "https://github.com/php-decimal/ext-decimal"
-  url "https://pecl.php.net/get/decimal-1.5.3.tgz"
-  sha256 "168bdcc445e1557b889df5e46313825f2abc77c5d7cfb7a4215063d2f7ca4a97"
+  url "https://pecl.php.net/get/decimal-2.0.1.tgz"
+  sha256 "026e30f71016d25f267f9b38ab80a94bed4779e05e9ff5f48d9b08bf1c18d204"
   head "https://github.com/php-decimal/ext-decimal.git", branch: "master"
   license "MIT"
 
