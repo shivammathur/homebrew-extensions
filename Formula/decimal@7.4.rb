@@ -15,7 +15,7 @@ class DecimalAT74 < AbstractPhpExtension
 
   livecheck do
     url "https://pecl.php.net/rest/r/decimal/stable.txt"
-    regex(/^(\d+\.\d+\.\d+)$/i)
+    regex(/^(1\.\d+\.\d+)$/i)
   end
 
   bottle do
