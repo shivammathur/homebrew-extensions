@@ -8,8 +8,8 @@ class DsAT85 < AbstractPhpExtension
   init
   desc "Ds PHP extension"
   homepage "https://github.com/php-ds/ext-ds"
-  url "https://pecl.php.net/get/ds-1.8.0.tgz"
-  sha256 "19abac84376399017590e11c08297e6784e332ec7eb26665a55f8818333d73c0"
+  url "https://pecl.php.net/get/ds-2.0.0.tgz"
+  sha256 "52dfed624fbca90ad9e426f7f91a0929db3575a1b8ff6ea0cf2606b7edbc3940"
   head "https://github.com/php-ds/ext-ds.git", branch: "master"
   license "MIT"
 
@@ -32,7 +32,6 @@ class DsAT85 < AbstractPhpExtension
 
   def install
     Dir.chdir "ds-#{version}"
-    inreplace "src/common.h", "fast_add_function", "add_function"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-ds"
     system "make"
