@@ -15,7 +15,7 @@ class DsAT81 < AbstractPhpExtension
 
   livecheck do
     url "https://pecl.php.net/rest/r/ds/allreleases.xml"
-    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
+    regex(/<v>(1\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
   end
 
   bottle do
