@@ -42,6 +42,7 @@ class ZmqAT86 < AbstractPhpExtension
     inreplace "php-zmq.spec", "@PACKAGE_VERSION@", version.to_s
     inreplace "php_zmq.h", "@PACKAGE_VERSION@", version.to_s
     inreplace "zmq.c", "zend_exception_get_default()", "zend_ce_exception"
+    inreplace %w[zmq.c zmq_pollset.c], "zval_dtor", "zval_ptr_dtor_nogc"
     patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
