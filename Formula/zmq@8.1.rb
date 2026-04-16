@@ -8,8 +8,8 @@ class ZmqAT81 < AbstractPhpExtension
   init
   desc "Zmq PHP extension"
   homepage "https://github.com/zeromq/php-zmq"
-  url "https://github.com/zeromq/php-zmq/archive/43464c42a6a47efdf8b7cab03c62f1622fb5d3c6.tar.gz"
-  sha256 "cbf1d005cea35b9215e2830a0e673b2edd8b526203f731de7a7bf8f590a60298"
+  url "https://github.com/zeromq/php-zmq/archive/616b6c64ffd3866ed038615494306dd464ab53fc.tar.gz"
+  sha256 "5cb6e5857623cb173ad89fa600529e71328361906127604297b6c4ffd1349f88"
   version "1.1.3"
   head "https://github.com/zeromq/php-zmq.git", branch: "master"
   license "BSD-3-Clause"
