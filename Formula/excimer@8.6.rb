@@ -29,6 +29,7 @@ class ExcimerAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "excimer-#{version}"
+    inreplace "excimer.c", "INI_INT(", "zend_ini_long_literal("
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-excimer"
     system "make"
