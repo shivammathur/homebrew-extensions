@@ -16,16 +16,13 @@ class ZmqAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 14
-    sha256 cellar: :any,                 arm64_sequoia:  "175bef87e7b3f3fef8fa1fafe2298de980d2ce8dfc26c3a3d12526b17006ee9c"
-    sha256 cellar: :any,                 arm64_sonoma:   "caaa6436ea3321587cc7988bb93ed1a15fac530c201153a9a0037cb8821440a0"
-    sha256 cellar: :any,                 arm64_ventura:  "7a26b637dad37046d9125a466b8b5c473cd62d4af45f8d53a8289b394dbf7700"
-    sha256 cellar: :any,                 arm64_monterey: "d24b4167bc59f5e11120764ecb2751f81422dcbce27d0d81885c27d7af89471c"
-    sha256 cellar: :any,                 sonoma:         "70a5f3ac2b16763be486d3c26b70312818551a31e298bb801b17c18dfbb7c8f1"
-    sha256 cellar: :any,                 ventura:        "e7b1b71e41c980dc8919e2e9967bc2c1b38cf9bca3d8628a2eb31e19a476aa15"
-    sha256 cellar: :any,                 monterey:       "e2e7426614855b263c48eb309a68ec6ebb0fd7d916d230a3ce07988f336af366"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "33c8c5a9227a12272af266667aeae350d88565293e14ced7c7e5b73ba810886f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c33d070bfe3db68a68cade95c3c2f8c4a33c535505ede1def69248ac5a784953"
+    rebuild 15
+    sha256 cellar: :any,                 arm64_tahoe:   "46c7d2c0169d5b93dbaa2a4fd7004cd66aee904909ea223b3bfd25d814d1be34"
+    sha256 cellar: :any,                 arm64_sequoia: "e42b4ee60d55d915ed469f136e8921629f48189040bffac17f96c2a740d95c98"
+    sha256 cellar: :any,                 arm64_sonoma:  "026872a652e24ec5ca8db9a1f20ff76703040b71589c7d2afe3461480c3ac6a8"
+    sha256 cellar: :any,                 sonoma:        "9b1842352e2c7d70455d358153993cb02eb9824496165dd0e5a15e4849b7f41e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c54c80495cb2058f9a385d42154a7afcb3b6280a50081b748f4013cccfee2de8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "795f6666d1620f17000746b1f134edbcdad3046387ffd84c1c6abe912b07007b"
   end
 
   depends_on "zeromq"
