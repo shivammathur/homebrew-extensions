@@ -1,20 +1,25 @@
+needs_commit_update() {
+  case "$VERSION" in
+    imap@5.6|imap@7.[0-4]|imap@8.0|\
+    interbase@5.6|interbase@7.[0-2]|\
+    mcrypt@5.6|mcrypt@7.[0-1]|\
+    pdo_firebird@5.6|pdo_firebird@7.[0-4]|pdo_firebird@8.0|pdo_firebird@8.6|\
+    scalar_objects@7.[0-4]|scalar_objects@8.[0-6]|\
+    snmp@5.6|snmp@7.[0-4]|snmp@8.0|\
+    v8js@7.[0-4]|v8js@8.[0-6]|\
+    xdebug@8.6|\
+    zmq@5.6|zmq@7.[0-4]|zmq@8.[0-6])
+      return 0
+      ;;
+  esac
+
+  return 1
+}
+
 fetch() {
   REPO="$(grep '^  homepage' < ./Formula/"$VERSION".rb | cut -d\" -f 2)"
   sudo cp "Formula/$VERSION.rb" "/tmp/$VERSION.rb"
-  if [[ "$EXTENSION" =~ event|expect|gnupg|imagick|imap|mcrypt|pcov|snmp|pdo_firebird ]] ||
-     [[ "$VERSION" =~ (amqp)@(7.4|8.[0-4]) ]] ||
-     [[ "$VERSION" =~ (couchbase|phalcon5|protobuf|mongodb)@(8.[1-6]) ]] ||
-     [[ "$VERSION" =~ (swoole)@(8.[2-6]) ]] ||
-     [[ "$VERSION" =~ (interbase)@(5.6|7.[0-2]) ]] ||
-     [[ "$VERSION" =~ (propro)@7.[0-4] ]] ||
-     [[ "$VERSION" =~ (msgpack)@(7.[0-4]|8.[0-6]) ]] ||
-     [[ "$VERSION" =~ (memcached|scalar_objects|vld|xhprof)@(7.[0-4]|8.[0-6]) ]] ||
-     [[ "$VERSION" =~ (apcu|grpc|igbinary|gearman|lua|pecl_http|raphf|rdkafka|ssh2|uuid|vips|xlswriter)@(7.[0-4]|8.[0-6]) ]] ||
-     [[ "$VERSION" =~ (yaml)@(7.[1-4]|8.[0-6]) ]] ||
-     [[ "$VERSION" =~ (redis)@(7.4|8.[0-6]) ]] ||
-     [[ "$VERSION" =~ (ast|mcrypt)@(7.[2-4]|8.[0-6]) ]] ||
-     [[ "$VERSION" =~ (ds|mailparse|psr)@(7.[3-4]|8.[0-6]) ]] ||
-     [[ "$VERSION" =~ (memcache|sqlsrv|pdo_sqlsrv|xdebug)@(8.[0-6]) ]]; then
+  if needs_commit_update; then
     sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION" "$REPO"
     url=$(grep '^  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
     checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
