@@ -13,6 +13,11 @@ class FirebirdClient < Formula
   # 2. https://www.firebirdsql.org/en/initial-developer-s-public-license-version-1-0/
   license "Interbase-1.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any, arm64_tahoe:   "993d65bbf0338044fa88db1060bcd528595f35a93a1ca094d719be908d7b4f88"
