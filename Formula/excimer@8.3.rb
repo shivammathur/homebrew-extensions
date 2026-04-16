@@ -8,8 +8,8 @@ class ExcimerAT83 < AbstractPhpExtension
   init
   desc "Excimer PHP extension"
   homepage "https://www.mediawiki.org/wiki/Excimer"
-  url "https://pecl.php.net/get/excimer-1.2.5.tgz"
-  sha256 "cf49acd81a918ea80af7be4c8085746b4b17ffe30df3421edd191f0919a46d1d"
+  url "https://pecl.php.net/get/excimer-1.2.6.tgz"
+  sha256 "7b5fe1f68f2b1a62bd0394d4bf165eafe6b7ceb3fc20ab885e733d356db0d034"
   license "Apache-2.0"
 
   livecheck do
