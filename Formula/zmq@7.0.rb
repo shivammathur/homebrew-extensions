@@ -16,16 +16,13 @@ class ZmqAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "5d11e66f4c4f8667a21e14e7bec54ea1f124db0100d6cf54cccec68cd66ba032"
-    sha256 cellar: :any,                 arm64_sonoma:   "e0461c8cd61189724d1b0e58ec960ccb38046b23296b22caa002e5c9bfda879c"
-    sha256 cellar: :any,                 arm64_ventura:  "9be5bf3bde61ac4a81a3202e5cb1c3bd0e20b8e83bfa8dc0f16b80583191c8ec"
-    sha256 cellar: :any,                 arm64_monterey: "4725c4fc4158bcbe976870e7352199a24fb58333272550649784853fa6f1f881"
-    sha256 cellar: :any,                 sonoma:         "c854a7c479052aff120ff73d04a8ab8df91e4951e39de9a9783e3cefdf5ed2c3"
-    sha256 cellar: :any,                 ventura:        "9efd5336f20f59f500ae8b63a30b124f7b82a747d66373d5029d93584a7763e1"
-    sha256 cellar: :any,                 monterey:       "306d59c106c62e7785d40bbbf5d5fd1d25230c77a8ccc3c0b56bc5da950aa39c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "d97ff891b3ec9e776e3717cdc95ba8ffdf901b096e577c135f212d1a9ba651c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d74fa650126d46dbdcd1fc716afe4b537e62e0d18cb778d0bc46630026e6fc57"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "ed91186813270004ef992ac86922ddf68788bad1afe5e7ab506e1762d8d16638"
+    sha256 cellar: :any,                 arm64_sequoia: "dc13d065d3a64b3521679ee98e00ef0913b00799e1f6666b048c6b8ef0dfd1e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "a502576fa31479f059731c40304f7c882107a1e291a6462f1a7d0fc62bf78d63"
+    sha256 cellar: :any,                 sonoma:        "5f1e2380eaf82ce59fb9b87dde3f3ed6a57b5f72c6e53023a34f9df0e0f55a1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a04c8827b74ecfee7078de94c5c53646d76d2df4a2beb74b336260abc259af7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0de651f524480d89999a40f04d2ab4f964eb8260c97f2fe87e68ed9fcdfe3dff"
   end
 
   depends_on "zeromq"
