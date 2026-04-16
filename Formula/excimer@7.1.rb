@@ -19,12 +19,12 @@ class ExcimerAT71 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b0aab9d26bbc27495f49e0791f854a6a5dce788d0eec40a943d3212221e2912"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f1bd19d033dd262caca78b5394e3583b3d076e16ceb404f4bf4a3c9165976c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0cc408c626f78377abea4f6373e2f07309d7035e9aba025a6d47a5f3caae6f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90b1f2b4f5860825d10df5e25524bfc043893611b38e5ab9c45c5510911a66e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10ecf13624292fdee77ae582d96a826879022ab75ce7fc4938d47d4b2fcb2ea0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "703f4d397bc5469bec621a1bb3661260493fb494de1dd4dbf8b7c5ed7e0c96a3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4d5a31b6c2b68740a68b1e39834e6ca516b1c31e64a25fbe6b1f99b53ff8807"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c2a4e090dd7bd1dface808b9b9b3e41cf29579e4cb001d9e0b87ce7cbf0dc79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd9fd3a48889a4ff4a567a19b5e8a09e907d536813ba67a5847d6fdaaacbca89"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d1627619923192afab225b163c8a5f5f3e8d263e0e516ad8a3eb76762af11781"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "187cab23c6f00a8139028fa559a2eba70275053b61dd1d837d375dccb156d77d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "692aba8dcfb584b0f02310778d1972305814e769e45f51d5a878d322ad69dc64"
   end
 
   def install
