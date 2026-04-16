@@ -13,11 +13,6 @@ class SnmpAT82 < AbstractPhpExtension
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
-  livecheck do
-    url "https://www.php.net/downloads"
-    regex(/href=.*?php-(8.2.\d+)\.t/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_tahoe:   "19dc18123968ba5df82928e3ec79ab81b0488f78d646dca6bd05814c363a74f7"

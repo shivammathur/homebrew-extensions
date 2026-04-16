@@ -13,11 +13,6 @@ class BrotliAT56 < AbstractPhpExtension
   head "https://github.com/kjdev/php-ext-brotli.git", branch: "master"
   license "MIT"
 
-  livecheck do
-    url "https://pecl.php.net/rest/r/brotli/allreleases.xml"
-    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_tahoe:   "ef3784dee0c546864d8fb2cae81252b3b4979fb382654e6612c16c6950213167"

@@ -13,11 +13,6 @@ class OauthAT56 < AbstractPhpExtension
   head "https://github.com/php/pecl-web_services-oauth.git", branch: "master"
   license "BSD-3-Clause"
 
-  livecheck do
-    url "https://pecl.php.net/rest/r/oauth/allreleases.xml"
-    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c86b84bd6bb13ca95d33ad5634a46a6a1f69a65a2fd430a64550c6358e609881"

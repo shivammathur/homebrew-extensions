@@ -13,11 +13,6 @@ class DecimalAT74 < AbstractPhpExtension
   head "https://github.com/php-decimal/ext-decimal.git", branch: "master"
   license "MIT"
 
-  livecheck do
-    url "https://pecl.php.net/rest/r/decimal/stable.txt"
-    regex(/^(1\.\d+\.\d+)$/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1

@@ -13,11 +13,6 @@ class UopzAT56 < AbstractPhpExtension
   head "https://github.com/krakjoe/uopz.git", branch: "master"
   license "PHP-3.01"
 
-  livecheck do
-    url "https://pecl.php.net/rest/r/uopz/allreleases.xml"
-    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1

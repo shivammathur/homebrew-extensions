@@ -14,11 +14,6 @@ class PeclHttpAT74 < AbstractPhpExtension
   license "BSD-2-Clause"
   revision 3
 
-  livecheck do
-    url "https://pecl.php.net/rest/r/pecl_http/allreleases.xml"
-    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "4febff0b2f25c8206e5e289b1f758816af24a6dd1bd7fa9b50604d09badae09c"

@@ -22,12 +22,14 @@ patch_github_commit() {
   if grep -q "\\?commit=" ./Formula/"$version".rb; then
     suffix="?commit=$commit"
   fi
-  sed -i "s|^  url .*|  url \"$repo/archive/$commit.tar.gz$suffix\"|g" ./Formula/"$version".rb
+  sed -i.bak "s|^  url .*|  url \"$repo/archive/$commit.tar.gz$suffix\"|g" ./Formula/"$version".rb
+  rm -f ./Formula/"$version".rb.bak
 }
 
 patch_php_url() {
   local php_url=$1
-  sed -i "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$version".rb
+  sed -i.bak "s|^  url.*|  url \"$php_url\"|g" ./Formula/"$version".rb
+  rm -f ./Formula/"$version".rb.bak
 }
 
 extension=$1

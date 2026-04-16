@@ -13,11 +13,6 @@ class UploadprogressAT70 < AbstractPhpExtension
   head "https://github.com/php/pecl-php-uploadprogress.git", branch: "master"
   license "PHP-3.01"
 
-  livecheck do
-    url "https://pecl.php.net/rest/r/uploadprogress/allreleases.xml"
-    regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b3bdfe760ae9331092dfee4ccae37181ed1ce80c6f16842db3ccb61cc832f2a"

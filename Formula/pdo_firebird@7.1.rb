@@ -5,7 +5,13 @@ require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Pdo Firebird Extension
 class PdoFirebirdAT71 < AbstractPhpExtension
-  env :std
+  init
+  desc "PDO Firebird PHP extension"
+  homepage "https://github.com/php/php-src"
+  url "https://github.com/shivammathur/php-src-backports/archive/45db7daedb330abded7576b9c4dadf5ed13e2f0b.tar.gz"
+  version "7.1.33"
+  sha256 "c83694b44f2c2fedad3617f86d384d05e04c605fa61a005f5d51dfffaba39772"
+  license "PHP-3.01"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
@@ -16,13 +22,7 @@ class PdoFirebirdAT71 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_linux:   "ebba90553b06e6c51d69660400b45fc78c70316ec12146529db93f72208cf8d1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9dbca91ec92e567f07e3646f45ddd90f04788b613cf2ec1ad1bdf9ff34d42d2"
   end
-  init
-  desc "PDO Firebird PHP extension"
-  homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/45db7daedb330abded7576b9c4dadf5ed13e2f0b.tar.gz"
-  version "7.1.33"
-  sha256 "c83694b44f2c2fedad3617f86d384d05e04c605fa61a005f5d51dfffaba39772"
-  license "PHP-3.01"
+
   depends_on "shivammathur/extensions/firebird-client@3"
 
   def install

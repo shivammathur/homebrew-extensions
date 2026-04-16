@@ -13,11 +13,6 @@ class ImapAT82 < AbstractPhpExtension
   head "https://github.com/php/php-src.git", branch: "PHP-8.2"
   license "PHP-3.01"
 
-  livecheck do
-    url "https://www.php.net/downloads"
-    regex(/href=.*?php-(8.2.\d+)\.t/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_sequoia: "80f3ca75b44e3f4194b12a46e4c4c885d564f0a4d5bc7403b8f2db2f7967aad3"

@@ -5,7 +5,18 @@ require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 
 # Class for Pdo Firebird Extension
 class PdoFirebirdAT83 < AbstractPhpExtension
-  env :std
+  init
+  desc "PDO Firebird PHP extension"
+  homepage "https://github.com/php/php-src"
+  url "https://www.php.net/distributions/php-8.3.30.tar.xz"
+  sha256 "67f084d36852daab6809561a7c8023d130ca07fc6af8fb040684dd1414934d48"
+  head "https://github.com/php/php-src.git", branch: "PHP-8.3"
+  license "PHP-3.01"
+
+  livecheck do
+    url "https://www.php.net/downloads?source=Y"
+    regex(/href=.*?php[._-]v?(8\.3(?:\.\d+)*)\.t/i)
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
@@ -16,18 +27,7 @@ class PdoFirebirdAT83 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, arm64_linux:   "cb674389b24cd2ec23667fdd0e587ccd0d2442cc340a13c8af1ae0b488325e22"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ab47699e00be4eeadea66758971987d20e6e50fccc909709fe178c4d31477ea"
   end
-  init
-  desc "PDO Firebird PHP extension"
-  homepage "https://github.com/php/php-src"
-  url "https://www.php.net/distributions/php-8.3.30.tar.xz"
-  sha256 "67f084d36852daab6809561a7c8023d130ca07fc6af8fb040684dd1414934d48"
-  head "https://github.com/php/php-src.git", branch: "PHP-8.3"
-  license "PHP-3.01"
 
-  livecheck do
-    url "https://www.php.net/downloads"
-    regex(/href=.*?php-(8.3.\d+)\.t/i)
-  end
   depends_on "shivammathur/extensions/firebird-client@3"
 
   def install

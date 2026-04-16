@@ -23,7 +23,8 @@ fetch() {
     sudo chmod a+x .github/scripts/update.sh && bash .github/scripts/update.sh "$EXTENSION" "$VERSION" "$REPO"
     url=$(grep '^  url' < ./Formula/"$VERSION".rb | cut -d\" -f 2)
     checksum=$(curl -sSL "$url" | shasum -a 256 | cut -d' ' -f 1)
-    sed -i "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
+    sed -i.bak "s/^  sha256.*/  sha256 \"$checksum\"/g" ./Formula/"$VERSION".rb
+    rm -f ./Formula/"$VERSION".rb.bak
   fi
 }
 
@@ -37,9 +38,11 @@ check_changes() {
   echo "new_checksum: $new_checksum"
   echo "old_checksum: $old_checksum"
   if [[ "$GITHUB_MESSAGE" =~ .*--init.* ]]; then
-    sed -Ei 's/\?init=true//' ./Formula/"$VERSION".rb || true
+    sed -E -i.bak 's/\?init=true//' ./Formula/"$VERSION".rb || true
+    rm -f ./Formula/"$VERSION".rb.bak
   elif [[ "$GITHUB_MESSAGE" =~ .*--rebuild.* ]]; then
-    sed -Ei '/  revision.*/d' ./Formula/"$VERSION".rb || true
+    sed -E -i.bak '/  revision.*/d' ./Formula/"$VERSION".rb || true
+    rm -f ./Formula/"$VERSION".rb.bak
   elif [[ -z "$new_url" ]] || [[ "$new_url" = "$old_url" && "$new_checksum" = "$old_checksum" ]]; then
     sudo cp /tmp/"$VERSION".rb Formula/"$VERSION".rb
   fi

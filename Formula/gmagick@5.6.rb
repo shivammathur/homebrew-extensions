@@ -13,11 +13,6 @@ class GmagickAT56 < AbstractPhpExtension
   head "https://github.com/vitoc/gmagick.git", branch: "master"
   license "PHP-3.01"
 
-  livecheck do
-    url "https://pecl.php.net/rest/r/gmagick/allreleases.xml"
-    regex(/<v>(\d+\.\d+(?:\.\d+)?(?:RC\d+)?)(?=<)/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any,                 arm64_tahoe:   "91ef08878b40286aee514cf2a5edd8f778ef7eac1533e0c01dfbd7638506f9d3"
