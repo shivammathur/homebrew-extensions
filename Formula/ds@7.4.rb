@@ -8,8 +8,8 @@ class DsAT74 < AbstractPhpExtension
   init
   desc "Ds PHP extension"
   homepage "https://github.com/php-ds/ext-ds"
-  url "https://pecl.php.net/get/ds-1.6.0.tgz"
-  sha256 "7c5eaa693e49f43962fa8afa863c51000dc620048dcf9442453c27ca151e291e"
+  url "https://pecl.php.net/get/ds-2.0.0.tgz"
+  sha256 "52dfed624fbca90ad9e426f7f91a0929db3575a1b8ff6ea0cf2606b7edbc3940"
   head "https://github.com/php-ds/ext-ds.git", branch: "master"
   license "MIT"
 
