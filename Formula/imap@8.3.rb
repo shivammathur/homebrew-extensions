@@ -14,8 +14,8 @@ class ImapAT83 < AbstractPhpExtension
   license "PHP-3.01"
 
   livecheck do
-    url "https://www.php.net/downloads"
-    regex(/href=.*?php-(8.3.\d+)\.t/i)
+    url "https://www.php.net/downloads?source=Y"
+    regex(/href=.*?php[._-]v?(8\.3(?:\.\d+)*)\.t/i)
   end
 
   bottle do
