@@ -54,6 +54,19 @@ class FirebirdClient < Formula
     inreplace "configure.ac", "VCPKG_TRIPLET=fb-arm64-osx", "VCPKG_TRIPLET="
     inreplace "configure.ac", "VCPKG_TRIPLET=fb-x64-osx", "VCPKG_TRIPLET="
     inreplace "autogen.sh", "LIBTOOLIZE=libtoolize", "LIBTOOLIZE=glibtoolize" if OS.mac?
+    if OS.mac?
+      icu_major = Dir["#{icu_prefix}/lib/libicuuc*.dylib"]
+                    .filter_map { |path| File.basename(path)[/^libicuuc\.(\d+)(?:\.\d+)?\.dylib$/, 1] }
+                    .max_by(&:to_i)
+      odie "Unable to determine ICU major version from #{icu_prefix}/lib" if icu_major.nil?
+
+      inreplace "configure.ac" do |config|
+        config.gsub!(/@rpath\/libicudata\.\d+\.dylib/, "@rpath/libicudata.#{icu_major}.dylib")
+        config.gsub!(/@rpath\/libicuuc\.\d+\.dylib/, "@rpath/libicuuc.#{icu_major}.dylib")
+        config.gsub!(/libicuuc\.\d+\.dylib/, "libicuuc.#{icu_major}.dylib")
+        config.gsub!(/libicui18n\.\d+\.dylib/, "libicui18n.#{icu_major}.dylib")
+      end
+    end
 
     args = [
       "--prefix=#{prefix}",
