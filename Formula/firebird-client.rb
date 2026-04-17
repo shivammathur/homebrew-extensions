@@ -54,6 +54,14 @@ class FirebirdClient < Formula
     inreplace "configure.ac", "VCPKG_TRIPLET=fb-arm64-osx", "VCPKG_TRIPLET="
     inreplace "configure.ac", "VCPKG_TRIPLET=fb-x64-osx", "VCPKG_TRIPLET="
     inreplace "autogen.sh", "LIBTOOLIZE=libtoolize", "LIBTOOLIZE=glibtoolize" if OS.mac?
+    inreplace "src/common/classes/alloc.h",
+              "using is_always_equal = typename Alloc::is_always_equal;",
+              <<~EOS
+                using is_always_equal = typename Alloc::is_always_equal;
+                using propagate_on_container_copy_assignment = std::false_type;
+                using propagate_on_container_move_assignment = std::false_type;
+                using propagate_on_container_swap = std::false_type;
+              EOS
     if OS.mac?
       icu_versions = Dir["#{icu_prefix}/lib/libicuuc*.dylib"].filter_map do |path|
         File.basename(path)[/^libicuuc\.(\d+)(?:\.\d+)?\.dylib$/, 1]
