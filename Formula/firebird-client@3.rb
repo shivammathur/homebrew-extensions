@@ -61,6 +61,18 @@ class FirebirdClientAT3 < Formula
 "VCPKG_TRIPLET="
       end
     end
+
+    # Firebird's POSIX make rules incorrectly compile root-level C++ sources
+    # (like examples/udr/*.cpp) with CC/WCFLAGS. Modern Homebrew superenv adds
+    # C-only flags such as -std=gnu23 to CC, which breaks those C++ objects.
+    make_rules = buildpath/"builds/posix/make.rules"
+    if make_rules.exist?
+      content = make_rules.read
+      content.gsub!(%r{(\$\(OBJ\)/%\.o: \$\(ROOT\)/%\.cpp\n)\t\$\(CC\) \$\(WCFLAGS\)},
+                    "\\1\t$(CXX) $(WCXXFLAGS)")
+      make_rules.atomic_write(content)
+    end
+
     if OS.mac?
       src_darwin_defaults = buildpath/"builds/posix/darwin.defaults"
       if src_darwin_defaults.exist?
