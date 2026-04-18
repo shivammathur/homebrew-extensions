@@ -13,6 +13,11 @@ class FirebirdClientAT3 < Formula
   # 2. https://www.firebirdsql.org/en/initial-developer-s-public-license-version-1-0/
   license "Interbase-1.0"
 
+  livecheck do
+    url "https://github.com/FirebirdSQL/firebird/tags"
+    regex(/^v?(3\.0\.\d+)$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     sha256 cellar: :any, arm64_tahoe:   "93df4677841694469eb477aec878a4934ba1286642831f561505a0c5b5d80236"

@@ -94,6 +94,7 @@ expect@8.4
 expect@8.5
 expect@8.6
 firebird-client
+firebird-client@3
 gearman@7.0
 gearman@7.1
 gearman@7.2
