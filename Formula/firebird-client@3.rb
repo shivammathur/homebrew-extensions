@@ -6,8 +6,8 @@ class FirebirdClientAT3 < Formula
   env :std if OS.linux?
   desc "Client libraries and headers for Firebird database"
   homepage "https://firebirdsql.org"
-  url "https://github.com/FirebirdSQL/firebird/archive/refs/tags/v3.0.13.tar.gz"
-  sha256 "7a5e378d4b65f1b4cb03a8da539b72ddc5033f566f6cb2f72184ea1498746b30"
+  url "https://github.com/FirebirdSQL/firebird/archive/refs/tags/v3.0.14.tar.gz"
+  sha256 "cd56ccb5801be0d26e62cd7bbbe161c9852a7c181e72ead4036ed75467135b9a"
   # License references:
   # 1. https://firebirdsql.org/en/interbase-public-license
   # 2. https://www.firebirdsql.org/en/initial-developer-s-public-license-version-1-0/
