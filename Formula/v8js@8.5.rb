@@ -8,9 +8,9 @@ class V8jsAT85 < AbstractPhpExtension
   init
   desc "V8js PHP extension"
   homepage "https://github.com/phpv8/v8js"
-  url "https://github.com/phpv8/v8js/archive/dde1c5a87bf702a6e43a432cd6295abd9867af2b.tar.gz"
+  url "https://github.com/phpv8/v8js/archive/8a39efa3cf3b275e402ddf3c4f6b611a5f69a499.tar.gz"
   version "2.1.2"
-  sha256 "aa392706a4b5672954a1efb4ef8c13136253043257b575abe472a3eb848a7446"
+  sha256 "0a03e4b4ccb5755aaa0c9d65afb5906827395826641f2bad1c19291fce65ed2f"
   head "https://github.com/phpv8/v8js.git", branch: "php8"
   license "MIT"
 
@@ -36,10 +36,56 @@ class V8jsAT85 < AbstractPhpExtension
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
     inreplace "config.m4", "c++17", "c++20"
-    inreplace "v8js_exceptions.cc", "zend_exception_get_default()", "zend_ce_exception"
-    inreplace "v8js_object_export.cc", "info.Holder()", "info.This()"
     inreplace "v8js_v8object_class.cc", "static int v8js_v8object_get" \
                                       , "static zend_result v8js_v8object_get"
+    inreplace "v8js_array_access.cc", "info.This()", "info.HolderV2()"
+    inreplace "v8js_array_access.cc", "arr->GetPrototype()", "arr->GetPrototypeV2()"
+    inreplace "v8js_object_export.cc",
+              "self = info.This();\n\tv8::Local<v8::Array> result",
+              "self = info.HolderV2();\n\tv8::Local<v8::Array> result"
+    %w[GETTER SETTER QUERY DELETER].each do |prop|
+      inreplace "v8js_object_export.cc",
+                "info.This(), property, V8JS_PROP_#{prop}",
+                "info.HolderV2(), property, V8JS_PROP_#{prop}"
+    end
+    inreplace "v8js_object_export.cc",
+              "v8::GenericNamedPropertyEnumeratorCallback",
+              "v8::NamedPropertyEnumeratorCallback"
+    %w[
+      v8js_array_access.cc
+      v8js_convert.cc
+      v8js_exceptions.cc
+      v8js_object_export.cc
+      v8js_v8.cc
+    ].each do |file|
+      inreplace file,
+                "GetAlignedPointerFromInternalField(1)",
+                "GetAlignedPointerFromInternalField(" \
+                "1, v8::kEmbedderDataTypeTagDefault)"
+    end
+    inreplace "v8js_object_export.cc",
+              "GetAlignedPointerFromInternalField(0)",
+              "GetAlignedPointerFromInternalField(" \
+              "0, v8::kEmbedderDataTypeTagDefault)"
+    inreplace "v8js_class.cc",
+              "SetAlignedPointerInInternalField(1, Z_OBJ_P(getThis()))",
+              "SetAlignedPointerInInternalField(" \
+              "1, Z_OBJ_P(getThis()), v8::kEmbedderDataTypeTagDefault)"
+    inreplace "v8js_object_export.cc",
+              "SetAlignedPointerInInternalField(0, ext_tmpl->Value())",
+              "SetAlignedPointerInInternalField(" \
+              "0, ext_tmpl->Value(), v8::kEmbedderDataTypeTagDefault)"
+    inreplace "v8js_object_export.cc",
+              "SetAlignedPointerInInternalField(1, object)",
+              "SetAlignedPointerInInternalField(" \
+              "1, object, v8::kEmbedderDataTypeTagDefault)"
+    inreplace "v8js_object_export.cc",
+              "SetAlignedPointerInInternalField(1, Z_OBJ(value))",
+              "SetAlignedPointerInInternalField(" \
+              "1, Z_OBJ(value), v8::kEmbedderDataTypeTagDefault)"
+    inreplace "v8js_v8object_class.cc",
+              "str->Write(isolate, &c, 0, 1)",
+              "str->WriteV2(isolate, 0, 1, &c)"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
