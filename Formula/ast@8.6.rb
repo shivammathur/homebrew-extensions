@@ -34,6 +34,8 @@ class AstAT86 < AbstractPhpExtension
     %w[ast.c ast_data.c].each do |f|
       inreplace f, "ZEND_AST_METHOD_REFERENCE", "ZEND_AST_TRAIT_METHOD_REFERENCE"
     end
+    inreplace "ast.c", "zend_parse_parameters_throw", "zend_parse_parameters"
+    inreplace "ast.c", "ZEND_PARSE_PARAMS_THROW", "0"
     inreplace "ast.c", "EMPTY_SWITCH_DEFAULT_CASE()", "default: ZEND_UNREACHABLE();"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-ast"
