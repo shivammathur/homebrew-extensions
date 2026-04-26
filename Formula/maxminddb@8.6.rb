@@ -10,6 +10,7 @@ class MaxminddbAT86 < AbstractPhpExtension
   homepage "https://github.com/maxmind/MaxMind-DB-Reader-php-ext"
   url "https://pecl.php.net/get/maxminddb-1.13.1.tgz"
   sha256 "362839e6a0a50f6253d46ae11b3cae80520582e2b5528423aed9644577a3a93d"
+  revision 1
   head "https://github.com/maxmind/MaxMind-DB-Reader-php-ext.git", branch: "main"
   license "Apache-2.0"
 
