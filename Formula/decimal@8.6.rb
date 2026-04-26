@@ -10,6 +10,7 @@ class DecimalAT86 < AbstractPhpExtension
   homepage "https://github.com/php-decimal/ext-decimal"
   url "https://pecl.php.net/get/decimal-2.0.1.tgz"
   sha256 "026e30f71016d25f267f9b38ab80a94bed4779e05e9ff5f48d9b08bf1c18d204"
+  revision 1
   head "https://github.com/php-decimal/ext-decimal.git", branch: "master"
   license "MIT"
 
@@ -39,6 +40,7 @@ class DecimalAT86 < AbstractPhpExtension
     inreplace "php_decimal.c" do |s|
       s.gsub! 'INI_INT("opcache.optimization_level")', 'zend_ini_long_literal("opcache.optimization_level")'
     end
+    inreplace "src/params.h", "ZEND_PARSE_PARAMS_THROW", "0"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
