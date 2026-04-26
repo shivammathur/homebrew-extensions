@@ -21,6 +21,7 @@ class InterbaseAT86 < AbstractPhpExtension
   homepage "https://github.com/FirebirdSQL/php-firebird"
   url "https://github.com/FirebirdSQL/php-firebird/archive/refs/tags/v6.1.1-RC.2.tar.gz"
   sha256 "ed1ef8a722e26e1c7123079af7b60d19475ba7bd7f2c8f02f8ae2a31c83828e8"
+  revision 1
   license "PHP-3.01"
 
   livecheck do
@@ -33,6 +34,8 @@ class InterbaseAT86 < AbstractPhpExtension
   def install
     inreplace "ibase_events.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
     inreplace "ibase_blobs.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
+    inreplace %w[interbase.c ibase_query.c], "INI_STR(", "zend_ini_string_literal("
+    inreplace %w[interbase.c ibase_query.c], "INI_INT(", "zend_ini_long_literal("
     fb_prefix = Formula["shivammathur/extensions/firebird-client"].opt_prefix
     args = %W[
       --with-interbase=shared,#{fb_prefix}
