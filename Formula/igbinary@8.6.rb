@@ -10,6 +10,7 @@ class IgbinaryAT86 < AbstractPhpExtension
   homepage "https://github.com/igbinary/igbinary"
   url "https://github.com/igbinary/igbinary/archive/3.2.16.tar.gz"
   sha256 "941f1cf2ccbecdc1c221dbfae9213439d334be5d490a2f3da2be31e8a00b0cdb"
+  revision 1
   head "https://github.com/igbinary/igbinary.git", branch: "master"
   license "BSD-3-Clause"
 
@@ -35,6 +36,7 @@ class IgbinaryAT86 < AbstractPhpExtension
     patch_spl_symbols
     safe_phpize
     inreplace "src/php7/php_igbinary.h", "ext/standard/php_smart_string.h", "Zend/zend_smart_string.h"
+    inreplace "src/php7/igbinary.c", "zval_dtor", "zval_ptr_dtor_nogc"
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-igbinary"
     system "make"
     prefix.install "modules/#{extension}.so"
