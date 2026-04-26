@@ -21,13 +21,12 @@ class PcovAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90652bead4e1b40e63e3c3fc4d034d75d388e944f627e60934859538171ed2d8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e321d2b327e956c9534a313ce48f5c545abd1e2e93b0e92225e006f05fd41c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6be4545b7f31c5c558b56309276647636ad208c52f6bb9f312cc20f8059b8399"
-    sha256 cellar: :any_skip_relocation, sonoma:        "63fb6be2037c26dc2758549941ef71b796492c91bf158c93ebf371d6cdaa3cbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4160112e925f917854b2744f3dacde0e86836df38fec91bf8fa8e0b4ccb1e5ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd35c62a64415457d8d5ebf5ebe6f94bee6520507ff617e908b5c9adc4f91346"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "969e783bc812f78b3c1b5601f536ef7af296e6fc63722dfe1c60f7475ac04e0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbba800e77e3d07f6442f3426f9f7fe2ba0dadd10b1fccff9c8922b2687de2bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9d1ed490e14cb62971ca6ebc0e2c4d870785e0e9c6f4cff05931a2367990cb6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fb4a8f0521f106973b33909ce35e563bf9071de47022610759183b8ef606ba79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23f2b2b79bb7bd25928aa112e4ec701d39aad414d52bd208a8fac83ea294200c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "425da1ce5e4f7bade3e43902fe8f737fc7ad4ffe008357efb8d70c3a3c53cff6"
   end
 
   def install
