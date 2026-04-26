@@ -10,6 +10,7 @@ class GearmanAT86 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-networking-gearman"
   url "https://pecl.php.net/get/gearman-2.2.1.tgz"
   sha256 "b9f826c90c87e6abd74cc3a73132c025c03e4bd2ae4360c4edc822ff651d694d"
+  revision 1
   head "https://github.com/php/pecl-networking-gearman.git", branch: "master"
   license "PHP-3.01"
 
