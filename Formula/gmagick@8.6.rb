@@ -10,6 +10,7 @@ class GmagickAT86 < AbstractPhpExtension
   homepage "https://github.com/vitoc/gmagick"
   url "https://pecl.php.net/get/gmagick-2.0.6RC1.tgz"
   sha256 "350cb71a4fbd58e037c7182cafa14e6f6df952126869205918fcc9ec5798e2fa"
+  revision 1
   head "https://github.com/vitoc/gmagick.git", branch: "master"
   license "PHP-3.01"
 
@@ -31,7 +32,10 @@ class GmagickAT86 < AbstractPhpExtension
   conflicts_with "imagick@8.6",
 because: "both provide PHP image processing extensions and should not be loaded together"
 
+  depends_on "freetype"
   depends_on "graphicsmagick"
+  depends_on "libtool"
+  depends_on "little-cms2"
 
   def install
     args = %W[
