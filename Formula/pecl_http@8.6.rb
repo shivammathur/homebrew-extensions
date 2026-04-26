@@ -10,7 +10,7 @@ class PeclHttpAT86 < AbstractPhpExtension
   homepage "https://github.com/m6w6/ext-http"
   url "https://pecl.php.net/get/pecl_http-4.3.1.tgz"
   sha256 "1512dc02fea2356c4df50113e00943b0b7fc99bb22d34d9f624b4662f1dad263"
-  revision 1
+  revision 2
   head "https://github.com/m6w6/ext-http.git", branch: "master"
   license "BSD-2-Clause"
 
@@ -34,6 +34,7 @@ class PeclHttpAT86 < AbstractPhpExtension
   depends_on "icu4c@78"
   depends_on "libevent"
   depends_on "libidn2"
+  depends_on "openssl@3"
   depends_on "shivammathur/extensions/raphf@8.6"
   depends_on "zlib"
 
@@ -54,6 +55,28 @@ class PeclHttpAT86 < AbstractPhpExtension
     ENV["EXTRA_INCLUDES"] = extra_includes * " "
     Dir.chdir "pecl_http-#{version}"
     inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@8.6"
+    inreplace Dir["src/**/*.{c,h}"].select { |f| File.read(f).include?("ZEND_RESULT_CODE") },
+              "ZEND_RESULT_CODE", "zend_result"
+    inreplace "src/php_http_filter.c" do |s|
+      s.gsub! "PHP_HTTP_FILTER_FUNC(chunked_decode),\n\tPHP_HTTP_FILTER_DTOR(chunked_decode),",
+              "PHP_HTTP_FILTER_FUNC(chunked_decode),\n\tNULL,\n\tPHP_HTTP_FILTER_DTOR(chunked_decode),"
+      s.gsub! "PHP_HTTP_FILTER_FUNC(chunked_encode),\n\tNULL,\n\t\"http.chunked_encode\"",
+              "PHP_HTTP_FILTER_FUNC(chunked_encode),\n\tNULL,\n\tNULL,\n\t\"http.chunked_encode\""
+      %w[deflate inflate brotli_encode brotli_decode].each do |filter|
+        s.gsub! "PHP_HTTP_FILTER_FUNC(stream),\n\tPHP_HTTP_FILTER_DTOR(stream),\n\t\"http.#{filter}\"",
+                "PHP_HTTP_FILTER_FUNC(stream),\n\tNULL,\n\tPHP_HTTP_FILTER_DTOR(stream),\n\t\"http.#{filter}\""
+      end
+      s.gsub! "static php_stream_filter *http_filter_create(const char *name, zval *params, uint8_t p)",
+              "static php_stream_filter *http_filter_create(const char *name, zval *params, bool p)"
+      s.gsub! "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(chunked_decode), b, p)",
+              "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(chunked_decode), b, p, PSFS_SEEKABLE_NEVER)"
+      s.gsub! "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(chunked_encode), NULL, p)",
+              "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(chunked_encode), NULL, p, PSFS_SEEKABLE_NEVER)"
+      %w[inflate deflate brotli_encode brotli_decode].each do |filter|
+        s.gsub! "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(#{filter}), b, p)",
+                "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(#{filter}), b, p, PSFS_SEEKABLE_NEVER)"
+      end
+    end
     inreplace "src/php_http_message_body.c", "standard/php_lcg.h", "random/php_random.h"
     inreplace "src/php_http_misc.c", "standard/php_lcg.h", "random/php_random.h"
     inreplace %w[
