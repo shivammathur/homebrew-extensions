@@ -21,12 +21,12 @@ class SeaslogAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20bc9e79bd4ba34fb256a3368049f7eaa749024ec3ca536020991d86baf3fad3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1df05f603eeb037effdd4cda15f415d46182bd53524d69b5af3a00105a78b8b1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85d03a59f2e2f505d05963cf71e2309ef74c4e3960c6552d7c871e6ff3b7e8bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "839366b7389491fc89dca076a12f9d25407b2adaf752704e684b812907706adc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dc2ef85f46c95d7c4e3465814ce23085c5e301e1e72538fb69de8d4af0c0071"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "198f49851f4b0e9ccfa85a71dac321c4a8678d05f402144c104a70a2f57522ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b085cd2c6aff1fa0f6bff9f4678024bc072df20bb8ea880ebe2d6ebf88bcef00"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fd80b7c1dc5cff21562be5828447f6c08d531388ec38efd25423bcc295e6936"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "658f219d9b4a54d09cd8a0f64dc7cc802e8374ee0da02595297e5b4d4875e8d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16a20deb8d32d64c825fcf9449d8f1d06e1c7154d6e6fdb4b0504f6556a847fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edda4ae01857be05df5b15c630c6e82c2b30844d87229615f31fee5b6a2876cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82c22fb88b82bbd63f640101c418af49de00e9d0dfb425ab0bad727935a18e7d"
   end
 
   def install
