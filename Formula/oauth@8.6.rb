@@ -10,6 +10,7 @@ class OauthAT86 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-web_services-oauth"
   url "https://pecl.php.net/get/oauth-2.0.10.tgz"
   sha256 "1fd5e074dacf5149603493c454b476d69850bec0a71d7ea69a36a00db728a0fb"
+  revision 1
   head "https://github.com/php/pecl-web_services-oauth.git", branch: "master"
   license "BSD-3-Clause"
 
