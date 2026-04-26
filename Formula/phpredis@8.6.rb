@@ -10,6 +10,7 @@ class PhpredisAT86 < AbstractPhpExtension
   homepage "https://github.com/phpredis/phpredis"
   url "https://pecl.php.net/get/redis-6.3.0.tgz"
   sha256 "0d5141f634bd1db6c1ddcda053d25ecf2c4fc1c395430d534fd3f8d51dd7f0b5"
+  revision 1
   head "https://github.com/phpredis/phpredis.git", branch: "develop"
   license "PHP-3.01"
 
