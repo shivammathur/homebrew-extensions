@@ -11,6 +11,7 @@ class XdebugAT86 < AbstractPhpExtension
   url "https://github.com/xdebug/xdebug/archive/b6003ea5a22c07ad4dcac9c9ca578caf2251c31c.tar.gz"
   sha256 "02403df10b7d04d4806f31133c8acec973224487be4ac78d52e2642cfe912a71"
   version "3.5.0"
+  revision 1
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
 
