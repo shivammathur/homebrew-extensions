@@ -10,6 +10,7 @@ class SeaslogAT86 < AbstractPhpExtension
   homepage "https://github.com/SeasX/SeasLog"
   url "https://pecl.php.net/get/SeasLog-2.2.0.tgz"
   sha256 "e40a1067075b1e0bcdfd5ff98647b9f83f502eb6b2a3d89e67b067704ea127da"
+  revision 1
   head "https://github.com/SeasX/SeasLog.git", branch: "master"
   license "PHP-3.01"
 
