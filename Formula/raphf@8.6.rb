@@ -10,6 +10,7 @@ class RaphfAT86 < AbstractPhpExtension
   homepage "https://github.com/m6w6/ext-raphf"
   url "https://pecl.php.net/get/raphf-2.0.2.tgz"
   sha256 "7e782fbe7b7de2b5f1c43f49d9eb8c427649b547573564c78baaf2b8f8160ef4"
+  revision 1
   head "https://github.com/m6w6/ext-raphf.git", branch: "master"
   license "BSD-2-Clause"
 
@@ -31,6 +32,8 @@ class RaphfAT86 < AbstractPhpExtension
   def install
     Dir.chdir "raphf-#{version}"
     patch_spl_symbols
+    inreplace %w[src/php_raphf_api.h src/php_raphf_api.c], "ZEND_RESULT_CODE", "zend_result"
+    inreplace "src/php_raphf_api.c", "zval_dtor", "zval_ptr_dtor_nogc"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-raphf"
     system "make"
