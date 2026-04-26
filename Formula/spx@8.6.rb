@@ -9,6 +9,7 @@ class SpxAT86 < AbstractPhpExtension
   homepage "https://github.com/NoiseByNorthwest/php-spx"
   url "https://github.com/NoiseByNorthwest/php-spx/archive/refs/tags/v0.4.22.tar.gz"
   sha256 "6f89addd100d3d71168c094612eb8e1c06fd8062da6ee4d9df5b31bdfc4de160"
+  revision 1
   head "https://github.com/NoiseByNorthwest/php-spx.git", branch: "master"
   license "GPL-3.0-or-later"
 
