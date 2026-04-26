@@ -11,6 +11,7 @@ class V8jsAT86 < AbstractPhpExtension
   url "https://github.com/phpv8/v8js/archive/8a39efa3cf3b275e402ddf3c4f6b611a5f69a499.tar.gz"
   version "2.1.2"
   sha256 "0a03e4b4ccb5755aaa0c9d65afb5906827395826641f2bad1c19291fce65ed2f"
+  revision 1
   head "https://github.com/phpv8/v8js.git", branch: "php8"
   license "MIT"
 
