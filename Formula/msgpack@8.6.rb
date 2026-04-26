@@ -10,6 +10,7 @@ class MsgpackAT86 < AbstractPhpExtension
   homepage "https://github.com/msgpack/msgpack-php"
   url "https://pecl.php.net/get/msgpack-3.0.0.tgz"
   sha256 "55306a84797d399c6b269181ec484634f18bea1330bbd9d7405043c597de69cd"
+  revision 1
   head "https://github.com/msgpack/msgpack-php.git", branch: "master"
   license "BSD-3-Clause"
 
@@ -31,6 +32,7 @@ class MsgpackAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "msgpack-#{version}"
+    inreplace %w[msgpack.c msgpack_unpack.c], "zval_dtor", "zval_ptr_dtor_nogc"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-msgpack"
     system "make"
