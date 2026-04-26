@@ -10,6 +10,7 @@ class UploadprogressAT86 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-php-uploadprogress"
   url "https://pecl.php.net/get/uploadprogress-2.0.2.tgz"
   sha256 "2c63ce727340121044365f0fd83babd60dfa785fa5979fae2520b25dad814226"
+  revision 1
   head "https://github.com/php/pecl-php-uploadprogress.git", branch: "master"
   license "PHP-3.01"
 
@@ -30,6 +31,8 @@ class UploadprogressAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "uploadprogress-#{version}"
+    inreplace "uploadprogress.c", "INI_BOOL(", "zend_ini_bool_literal("
+    inreplace "uploadprogress.c", "INI_STR(", "zend_ini_string_literal("
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-uploadprogress"
     system "make"
