@@ -11,6 +11,7 @@ class ZmqAT86 < AbstractPhpExtension
   url "https://github.com/zeromq/php-zmq/archive/616b6c64ffd3866ed038615494306dd464ab53fc.tar.gz"
   sha256 "5cb6e5857623cb173ad89fa600529e71328361906127604297b6c4ffd1349f88"
   version "1.1.3"
+  revision 1
   head "https://github.com/zeromq/php-zmq.git", branch: "master"
   license "BSD-3-Clause"
 
