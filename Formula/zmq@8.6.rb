@@ -44,20 +44,9 @@ class ZmqAT86 < AbstractPhpExtension
     inreplace "php-zmq.spec", "@PACKAGE_VERSION@", version.to_s
     inreplace "php_zmq.h", "@PACKAGE_VERSION@", version.to_s
     inreplace "zmq.c", "zend_exception_get_default()", "zend_ce_exception"
-    inreplace %w[zmq.c zmq_pollset.c], "zval_dtor", "zval_ptr_dtor_nogc"
+    inreplace %w[php5/zmq.c php5/zmq_pollset.c zmq.c zmq_pollset.c], "zval_dtor", "zval_ptr_dtor_nogc"
     inreplace "zmq_device.c", "zval_is_true", "zend_is_true"
-    Dir["**/*.{c,h}"].each do |f|
-      contents = File.read(f)
-      next if contents.exclude?("XtOffsetOf") && contents.exclude?("zval_dtor")
-
-      needs_stddef = contents.include?("XtOffsetOf")
-
-      inreplace f do |s|
-        s.gsub! "XtOffsetOf", "offsetof" if needs_stddef
-        s.gsub! "zval_dtor", "zval_ptr_dtor_nogc" if contents.include?("zval_dtor")
-        s.sub!(/\A/, "#include <stddef.h>\n") if needs_stddef
-      end
-    end
+    inreplace %w[zmq.c zmq_object_access.c], "XtOffsetOf", "offsetof"
     patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
