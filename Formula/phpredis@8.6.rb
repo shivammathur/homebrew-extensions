@@ -53,6 +53,18 @@ class PhpredisAT86 < AbstractPhpExtension
     ].each do |f|
       inreplace f, "zval_dtor", "zval_ptr_dtor_nogc"
     end
+    inreplace "library.c", "#include <sys/types.h>", "#include <errno.h>\n#include <sys/types.h>"
+    inreplace "library.c", "ext/standard/php_rand.h", "ext/random/php_random.h"
+    inreplace "backoff.c" do |s|
+      s.gsub! "ext/standard/php_rand.h", "ext/random/php_random.h"
+      if File.read("backoff.c").include?("#include <ext/standard/php_mt_rand.h>")
+        s.gsub! "#include <ext/standard/php_mt_rand.h>\n", ""
+      end
+    end
+    inreplace "redis.c", "standard/php_random.h", "ext/random/php_random.h"
+    if File.read("common.h").include?("ext/standard/php_smart_string.h")
+      inreplace("common.h") { |s| s.gsub! "ext/standard/php_smart_string.h", "zend_smart_string.h" }
+    end
     %w[
       library.c
       redis_commands.c
@@ -67,11 +79,11 @@ class PhpredisAT86 < AbstractPhpExtension
       inreplace f, "ZEND_WRONG_PARAM_COUNT()", "zend_wrong_param_count(); RETURN_THROWS();"
     end
     inreplace "redis_cluster.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
-    %w[redis_session.c library.c cluster_library.h].each do |f|
-      inreplace f, "INI_INT(", "zend_ini_long_literal("
+    %w[redis_session.c library.c redis_array_impl.c cluster_library.h redis_cluster.c].each do |f|
+      inreplace f, "INI_INT(", "zend_ini_long_literal(" if File.read(f).include?("INI_INT(")
     end
     %w[redis_session.c library.c redis_array_impl.c redis_cluster.c].each do |f|
-      inreplace f, "INI_STR(", "zend_ini_string_literal("
+      inreplace f, "INI_STR(", "zend_ini_string_literal(" if File.read(f).include?("INI_STR(")
     end
     inreplace "redis_session.c" do |s|
       s.gsub! "strlen(save_path)", "ZSTR_LEN(save_path)"
@@ -80,6 +92,14 @@ class PhpredisAT86 < AbstractPhpExtension
       s.gsub! "estrdup(save_path)", "estrdup(ZSTR_VAL(save_path))"
     end
     inreplace "library.c", "EMPTY_SWITCH_DEFAULT_CASE()", "default: ZEND_UNREACHABLE();"
+    Dir["**/*.{c,h}"].each do |f|
+      next unless File.read(f).include?("XtOffsetOf")
+
+      inreplace f, "XtOffsetOf", "offsetof"
+    end
+    inreplace "common.h" do |s|
+      s.sub!(/\A/, "#include <stddef.h>\n")
+    end
   end
 
   def install
