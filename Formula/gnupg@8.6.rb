@@ -35,6 +35,14 @@ class GnupgAT86 < AbstractPhpExtension
       --with-gnupg=#{Formula["gpgme"].opt_prefix}
     ]
     Dir.chdir "gnupg-#{version}"
+    Dir["**/*.{c,h}"].each do |f|
+      next unless File.read(f).include?("XtOffsetOf")
+
+      inreplace f do |s|
+        s.gsub! "XtOffsetOf", "offsetof"
+        s.sub!(/\A/, "#include <stddef.h>\n")
+      end
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
