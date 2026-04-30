@@ -57,6 +57,22 @@ class McryptAT86 < AbstractPhpExtension
 
     Dir.chdir "mcrypt-#{version}"
     inreplace "mcrypt.c", "ext/standard/php_rand.h", "ext/random/php_random.h"
+    inreplace "mcrypt_filter.c" do |s|
+      old_filter_create = "static php_stream_filter *php_mcrypt_filter_create(const char *filtername, " \
+                          "zval *filterparams, uint8_t persistent)"
+      new_filter_create = "static php_stream_filter *php_mcrypt_filter_create(const char *filtername, " \
+                          "zval *filterparams, bool persistent)"
+      s.sub! "#include \"php.h\"", <<~C
+        #include "php.h"
+        #ifndef INI_STR
+        #define INI_STR(name) zend_ini_string((name), strlen(name), 0)
+        #endif
+      C
+      s.sub! "php_mcrypt_filter,\n", "php_mcrypt_filter,\n    NULL,\n"
+      s.gsub! old_filter_create, new_filter_create
+      s.gsub! "php_stream_filter_alloc(&php_mcrypt_filter_ops, data, persistent)",
+              "php_stream_filter_alloc(&php_mcrypt_filter_ops, data, persistent, PSFS_SEEKABLE_NEVER)"
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-mcrypt=#{prefix}"
     system "make"
