@@ -98,18 +98,16 @@ class PeclHttpAT86 < AbstractPhpExtension
     inreplace "src/php_http_client_curl_user.c",
               "ctx->closure.internal_function.arg_info = (zend_internal_arg_info *) &ai_user_handler[1];",
               "ctx->closure.internal_function.arg_info = (zend_arg_info *) &ai_user_handler[1];"
-    Dir["src/**/*.{c,h}"].each do |f|
-      contents = File.read(f)
-      next if contents.exclude?("XtOffsetOf") && contents.exclude?("zval_dtor")
-
-      needs_stddef = contents.include?("XtOffsetOf")
-
-      inreplace f do |s|
-        s.gsub! "XtOffsetOf", "offsetof" if needs_stddef
-        s.gsub! "zval_dtor", "zval_ptr_dtor_nogc" if contents.include?("zval_dtor")
-        s.sub!(/\A/, "#include <stddef.h>\n") if needs_stddef
-      end
-    end
+    inreplace %w[
+      src/php_http_client.c
+      src/php_http_cookie.c
+      src/php_http_encoding.c
+      src/php_http_header_parser.c
+      src/php_http_message.c
+      src/php_http_message_body.c
+      src/php_http_message_parser.c
+      src/php_http_object.c
+    ], "XtOffsetOf", "offsetof"
     patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
