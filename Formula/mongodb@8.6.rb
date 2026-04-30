@@ -40,6 +40,24 @@ class MongodbAT86 < AbstractPhpExtension
     ENV.append "CXX", "-std=c++17"
     ENV.libcxx if ENV.compiler == :clang
     Dir.chdir "mongodb-#{version}"
+    server_api = "src/MongoDB/ServerApi.c"
+    if File.read(server_api).include?("ZVAL_IS_NULL") || File.read(server_api).include?("zval_is_true")
+      inreplace server_api do |s|
+        s.gsub! "ZVAL_IS_NULL", "Z_ISNULL_P" if File.read(server_api).include?("ZVAL_IS_NULL")
+        s.gsub! "zval_is_true", "zend_is_true" if File.read(server_api).include?("zval_is_true")
+      end
+    end
+    if File.read("src/MongoDB/Cursor.c").include?("zval_dtor")
+      inreplace "src/MongoDB/Cursor.c", "zval_dtor", "zval_ptr_dtor_nogc"
+    end
+    Dir["src/**/*.{c,h}"].each do |f|
+      next unless File.read(f).include?("XtOffsetOf")
+
+      inreplace f, "XtOffsetOf", "offsetof"
+    end
+    inreplace "src/phongo_classes.h" do |s|
+      s.sub!(/\A/, "#include <stddef.h>\n")
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mongodb"
     system "make"
