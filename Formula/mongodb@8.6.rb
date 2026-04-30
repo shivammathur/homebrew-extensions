@@ -51,14 +51,42 @@ class MongodbAT86 < AbstractPhpExtension
     if File.read("src/MongoDB/Cursor.c").include?("zval_dtor")
       inreplace "src/MongoDB/Cursor.c", "zval_dtor", "zval_ptr_dtor_nogc"
     end
-    Dir["src/**/*.{c,h}"].each do |f|
-      next unless File.read(f).include?("XtOffsetOf")
-
-      inreplace f, "XtOffsetOf", "offsetof"
-    end
-    inreplace "src/phongo_classes.h" do |s|
-      s.sub!(/\A/, "#include <stddef.h>\n")
-    end
+    inreplace %w[
+      src/BSON/Binary.c
+      src/BSON/DBPointer.c
+      src/BSON/Decimal128.c
+      src/BSON/Document.c
+      src/BSON/Int64.c
+      src/BSON/Iterator.c
+      src/BSON/Javascript.c
+      src/BSON/ObjectId.c
+      src/BSON/PackedArray.c
+      src/BSON/Regex.c
+      src/BSON/Symbol.c
+      src/BSON/Timestamp.c
+      src/BSON/UTCDateTime.c
+      src/BSON/Undefined.c
+      src/MongoDB/BulkWrite.c
+      src/MongoDB/BulkWriteCommand.c
+      src/MongoDB/BulkWriteCommandResult.c
+      src/MongoDB/ClientEncryption.c
+      src/MongoDB/Command.c
+      src/MongoDB/Cursor.c
+      src/MongoDB/Manager.c
+      src/MongoDB/Monitoring/ServerChangedEvent.c
+      src/MongoDB/Monitoring/TopologyChangedEvent.c
+      src/MongoDB/Query.c
+      src/MongoDB/ReadConcern.c
+      src/MongoDB/ReadPreference.c
+      src/MongoDB/Server.c
+      src/MongoDB/ServerApi.c
+      src/MongoDB/ServerDescription.c
+      src/MongoDB/Session.c
+      src/MongoDB/TopologyDescription.c
+      src/MongoDB/WriteConcern.c
+      src/MongoDB/WriteResult.c
+      src/phongo_classes.h
+    ], "XtOffsetOf", "offsetof"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-mongodb"
     system "make"
