@@ -36,12 +36,7 @@ class ApcuAT86 < AbstractPhpExtension
     if File.read("apc_cache.c").include?("zval_dtor")
       inreplace("apc_cache.c") { |s| s.gsub! "zval_dtor", "zval_ptr_dtor_nogc" }
     end
-    %w[apc_cache.h apc_iterator.c apc_iterator.h].each do |f|
-      inreplace f do |s|
-        s.gsub! "XtOffsetOf", "offsetof"
-        s.sub!(/\A/, "#include <stddef.h>\n")
-      end
-    end
+    inreplace %w[apc_cache.h apc_iterator.c apc_iterator.h], "XtOffsetOf", "offsetof"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-apcu"
     system "make"
