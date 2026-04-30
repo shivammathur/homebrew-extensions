@@ -34,6 +34,29 @@ class GrpcAT86 < AbstractPhpExtension
     Dir.chdir "grpc-#{version}"
     patch_spl_symbols
     inreplace "src/php/ext/grpc/call.c", "zend_exception_get_default(TSRMLS_C)", "zend_ce_exception"
+    promise_factory = "src/core/lib/promise/detail/promise_factory.h"
+    if File.read(promise_factory).include?("GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION\n    absl::enable_if_t")
+      inreplace promise_factory do |s|
+        s.gsub! "GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION\n    absl::enable_if_t",
+                "GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION inline\n    absl::enable_if_t"
+      end
+    end
+    inreplace "src/core/lib/promise/try_seq.h" do |s|
+      s.gsub! "GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION auto TrySeq",
+              "GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION inline auto TrySeq"
+    end
+    loop_h = "src/core/lib/promise/loop.h"
+    if File.read(loop_h).include?("GPR_NO_UNIQUE_ADDRESS union {")
+      inreplace loop_h, "GPR_NO_UNIQUE_ADDRESS union {", "union {"
+    end
+    Dir["**/*.{c,h,cc,cpp,hpp}"].each do |f|
+      next unless File.read(f).include?("XtOffsetOf")
+
+      inreplace f do |s|
+        s.gsub! "XtOffsetOf", "offsetof"
+        s.sub!(/\A/, "#include <stddef.h>\n")
+      end
+    end
     safe_phpize
     system "./configure", "--enable-grpc"
     system "make"
