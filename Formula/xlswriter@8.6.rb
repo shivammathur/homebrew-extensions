@@ -20,13 +20,13 @@ class XlswriterAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ac64802a24d1722f74812a15417df962383a415ec37df59f977edec289eef8b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09bb35059a267f3e7b9a5c2f38905fc1442a6bd3a0d8ce64c8b536c1c9e4b0c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90f34a8b29d3a06ac2692a049c695fad5c536218a4194a816c18396a0ace96dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad96000ae3a6f72f7e7b70ad6c2dd9de8300a5044cd4201182775c728443a827"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a62ad6d73cce7e8b2ff32d18425b01ef0c4e83b8c5669a42fe17ef3ed5050c0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a99ed7e1a746e69676e182d451133690366919f7c875270b8263d73b61d7ad3d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8ae97f266677054b534193f5f1892a39862969735b3dbebce1c8dbce1314465"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8786ae098336f1b00688340ece10bc7162c129e1aedd2f07227a1f6c4ae7bfac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89a3177bfb7a91c67d205859c2ca980225fd3a8b6a792a9815d060737d058891"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39eb818f06b7cb231b967e872b12fedf9a9f1c46c030b0983f1324c6a23505c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3971afb3c5d992f74788d77182f8534450776925eb3d504a3b9bb44feddc276d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a30f5e588b6812e1df1c5c9b1660f0b777f0a56dafcf5d197cf79ba5a0de72a"
   end
 
   def install
