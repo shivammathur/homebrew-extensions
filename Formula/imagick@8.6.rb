@@ -47,14 +47,7 @@ because: "both provide PHP image processing extensions and should not be loaded 
     inreplace "imagick.c", "ext/standard/php_smart_string.h", "Zend/zend_smart_string.h"
     inreplace "imagick.c", "zend_exception_get_default(TSRMLS_C)", "zend_ce_exception"
     inreplace %w[imagick.c imagick_helpers.c], "zval_dtor", "zval_ptr_dtor_nogc"
-    Dir["*.{c,h}"].each do |f|
-      next unless File.read(f).include?("XtOffsetOf")
-
-      inreplace f do |s|
-        s.gsub! "XtOffsetOf", "offsetof"
-        s.sub!(/\A/, "#include <stddef.h>\n")
-      end
-    end
+    inreplace %w[imagick.c php_imagick_defs.h], "XtOffsetOf", "offsetof"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
