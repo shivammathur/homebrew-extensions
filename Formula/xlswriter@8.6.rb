@@ -33,7 +33,22 @@ class XlswriterAT86 < AbstractPhpExtension
       --with-xlswriter
       --enable-reader
     ]
+    ENV.append "CFLAGS", "-std=gnu17"
     Dir.chdir "xlswriter-#{version}"
+    %w[include kernel].each do |dir|
+      Dir["#{dir}/**/*.{c,h}"].each do |f|
+        contents = File.read(f)
+        next if contents.exclude?("XtOffsetOf") && contents.exclude?("zval_dtor")
+
+        needs_stddef = contents.include?("XtOffsetOf")
+
+        inreplace f do |s|
+          s.gsub! "XtOffsetOf", "offsetof" if needs_stddef
+          s.gsub! "zval_dtor", "zval_ptr_dtor_nogc" if contents.include?("zval_dtor")
+          s.sub!(/\A/, "#include <stddef.h>\n") if needs_stddef
+        end
+      end
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
