@@ -35,7 +35,11 @@ class ImapAT86 < AbstractPhpExtension
   def install
     Dir.chdir "imap-#{version}"
     inreplace "php_imap.c", "0, Z_L(0)", "Z_L(0)"
-    inreplace "php_imap.c", "INI_STR(", "zend_ini_string_literal("
+    inreplace "php_imap.c" do |s|
+      s.gsub! "INI_STR(", "zend_ini_string_literal("
+      s.gsub! "XtOffsetOf", "offsetof"
+      s.sub!(/\A/, "#include <stddef.h>\n")
+    end
     safe_phpize
     system "./configure",
            "--prefix=#{prefix}",
