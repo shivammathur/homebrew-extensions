@@ -34,14 +34,12 @@ class OauthAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "oauth-#{version}"
-    Dir["**/*.{c,h}"].each do |f|
-      next unless File.read(f).include?("XtOffsetOf")
-
-      inreplace f do |s|
-        s.gsub! "XtOffsetOf", "offsetof"
-        s.sub!(/\A/, "#include <stddef.h>\n")
-      end
-    end
+    inreplace %w[
+      oauth.c
+      php_oauth.h
+      provider.c
+      provider.h
+    ], "XtOffsetOf", "offsetof"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-oauth"
     system "make"
