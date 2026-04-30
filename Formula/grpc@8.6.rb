@@ -50,14 +50,16 @@ class GrpcAT86 < AbstractPhpExtension
     if File.read(loop_h).include?("GPR_NO_UNIQUE_ADDRESS union {")
       inreplace loop_h, "GPR_NO_UNIQUE_ADDRESS union {", "union {"
     end
-    Dir["**/*.{c,h,cc,cpp,hpp}"].each do |f|
-      next unless File.read(f).include?("XtOffsetOf")
-
-      inreplace f do |s|
-        s.gsub! "XtOffsetOf", "offsetof"
-        s.sub!(/\A/, "#include <stddef.h>\n")
-      end
-    end
+    inreplace %w[
+      src/php/ext/grpc/call.h
+      src/php/ext/grpc/call_credentials.h
+      src/php/ext/grpc/channel.h
+      src/php/ext/grpc/channel_credentials.h
+      src/php/ext/grpc/php7_wrapper.h
+      src/php/ext/grpc/server.h
+      src/php/ext/grpc/server_credentials.h
+      src/php/ext/grpc/timeval.h
+    ], "XtOffsetOf", "offsetof"
     safe_phpize
     system "./configure", "--enable-grpc"
     system "make"
