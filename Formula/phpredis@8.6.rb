@@ -93,14 +93,13 @@ class PhpredisAT86 < AbstractPhpExtension
       s.gsub! "estrdup(save_path)", "estrdup(ZSTR_VAL(save_path))"
     end
     inreplace "library.c", "EMPTY_SWITCH_DEFAULT_CASE()", "default: ZEND_UNREACHABLE();"
-    Dir["**/*.{c,h}"].each do |f|
-      next unless File.read(f).include?("XtOffsetOf")
-
-      inreplace f, "XtOffsetOf", "offsetof"
-    end
-    inreplace "common.h" do |s|
-      s.sub!(/\A/, "#include <stddef.h>\n")
-    end
+    inreplace %w[
+      common.h
+      redis.c
+      redis_array.c
+      redis_cluster.c
+      sentinel_library.c
+    ], "XtOffsetOf", "offsetof"
   end
 
   def install
