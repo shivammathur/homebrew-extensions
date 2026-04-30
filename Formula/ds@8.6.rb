@@ -33,14 +33,17 @@ class DsAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "ds-#{version}"
-    Dir["src/php/**/*.{c,h}"].each do |f|
-      next unless File.read(f).include?("XtOffsetOf")
-
-      inreplace f do |s|
-        s.gsub! "XtOffsetOf", "offsetof"
-        s.sub!(/\A/, "#include <stddef.h>\n")
-      end
-    end
+    inreplace %w[
+      src/php/handlers/php_heap_handlers.c
+      src/php/handlers/php_map_handlers.c
+      src/php/handlers/php_pair_handlers.c
+      src/php/handlers/php_seq_handlers.c
+      src/php/handlers/php_set_handlers.c
+      src/php/objects/php_heap.h
+      src/php/objects/php_map.h
+      src/php/objects/php_seq.h
+      src/php/objects/php_set.h
+    ], "XtOffsetOf", "offsetof"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-ds"
     system "make"
