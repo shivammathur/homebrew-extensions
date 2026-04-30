@@ -32,6 +32,14 @@ class ZstdAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "zstd-#{version}"
+    Dir["**/*.{c,h}"].each do |f|
+      next unless File.read(f).include?("XtOffsetOf")
+
+      inreplace f do |s|
+        s.gsub! "XtOffsetOf", "offsetof"
+        s.sub!(/\A/, "#include <stddef.h>\n")
+      end
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", "--with-libzstd", phpconfig
     system "make"
