@@ -36,6 +36,21 @@ class GearmanAT86 < AbstractPhpExtension
       --with-gearman=#{Formula["gearman"].opt_prefix}
     ]
     Dir.chdir "gearman-#{version}"
+    if File.read("php_gearman.c").include?("zend_exception_get_default()")
+      inreplace("php_gearman.c") { |s| s.gsub! "zend_exception_get_default()", "zend_ce_exception" }
+    end
+    Dir["**/*.{c,h}"].each do |f|
+      contents = File.read(f)
+      next if contents.exclude?("XtOffsetOf") && contents.exclude?("zval_dtor")
+
+      needs_stddef = contents.include?("XtOffsetOf")
+
+      inreplace f do |s|
+        s.gsub! "XtOffsetOf", "offsetof" if needs_stddef
+        s.gsub! "zval_dtor", "zval_ptr_dtor_nogc" if contents.include?("zval_dtor")
+        s.sub!(/\A/, "#include <stddef.h>\n") if needs_stddef
+      end
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
