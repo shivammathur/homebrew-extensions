@@ -32,6 +32,14 @@ class MsgpackAT86 < AbstractPhpExtension
   def install
     Dir.chdir "msgpack-#{version}"
     inreplace %w[msgpack.c msgpack_unpack.c], "zval_dtor", "zval_ptr_dtor_nogc"
+    Dir["**/*.{c,h}"].each do |f|
+      next unless File.read(f).include?("XtOffsetOf")
+
+      inreplace f do |s|
+        s.gsub! "XtOffsetOf", "offsetof"
+        s.sub!(/\A/, "#include <stddef.h>\n")
+      end
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-msgpack"
     system "make"
