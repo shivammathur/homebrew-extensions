@@ -32,8 +32,11 @@ because: "both provide PHP image processing extensions and should not be loaded 
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4d1a52c11f0aeb32038d17a7cae52ffbc64969fdfd6f103ca1576d6e753e380"
   end
 
+  depends_on "freetype"
   depends_on "imagemagick"
   depends_on "libomp"
+  depends_on "libtool"
+  depends_on "little-cms2"
 
   def install
     args = %W[
@@ -42,6 +45,16 @@ because: "both provide PHP image processing extensions and should not be loaded 
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     Dir.chdir "imagick-#{version}"
     inreplace "imagick.c", "ext/standard/php_smart_string.h", "Zend/zend_smart_string.h"
+    inreplace "imagick.c", "zend_exception_get_default(TSRMLS_C)", "zend_ce_exception"
+    inreplace %w[imagick.c imagick_helpers.c], "zval_dtor", "zval_ptr_dtor_nogc"
+    Dir["*.{c,h}"].each do |f|
+      next unless File.read(f).include?("XtOffsetOf")
+
+      inreplace f do |s|
+        s.gsub! "XtOffsetOf", "offsetof"
+        s.sub!(/\A/, "#include <stddef.h>\n")
+      end
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
