@@ -35,6 +35,22 @@ class AmqpAT86 < AbstractPhpExtension
       --with-amqp=shared
       --with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}
     ]
+    Dir["**/*.{c,h}"].each do |f|
+      next unless File.read(f).include?("XtOffsetOf")
+
+      inreplace f do |s|
+        s.gsub! "XtOffsetOf", "offsetof"
+        s.sub!(/\A/, "#include <stddef.h>\n")
+      end
+    end
+    %w[amqp_channel.c amqp_connection.c amqp_queue.c].each do |f|
+      contents = File.read(f)
+      inreplace f do |s|
+        s.gsub! "INI_FLT(", "zend_ini_double_literal(" if contents.include?("INI_FLT(")
+        s.gsub! "INI_INT(", "zend_ini_long_literal(" if contents.include?("INI_INT(")
+        s.gsub! "INI_STR(", "zend_ini_string_literal(" if contents.include?("INI_STR(")
+      end
+    end
     patch_spl_symbols
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
