@@ -34,18 +34,26 @@ class RdkafkaAT86 < AbstractPhpExtension
   def install
     Dir.chdir "rdkafka-#{version}"
     patch_spl_symbols
-    Dir["**/*.{c,h}"].each do |f|
-      contents = File.read(f)
-      next if contents.exclude?("XtOffsetOf") && contents.exclude?("zval_dtor")
-
-      needs_stddef = contents.include?("XtOffsetOf")
-
-      inreplace f do |s|
-        s.gsub! "XtOffsetOf", "offsetof" if needs_stddef
-        s.gsub! "zval_dtor", "zval_ptr_dtor_nogc" if contents.include?("zval_dtor")
-        s.sub!(/\A/, "#include <stddef.h>\n") if needs_stddef
-      end
-    end
+    inreplace %w[
+      conf.c
+      kafka_consumer.c
+      metadata.c
+      metadata_broker.c
+      metadata_collection.c
+      metadata_partition.c
+      metadata_topic.c
+      php_rdkafka_priv.h
+      queue.c
+      rdkafka.c
+      topic.c
+      topic_partition.c
+    ], "XtOffsetOf", "offsetof"
+    inreplace %w[
+      metadata_broker.c
+      metadata_collection.c
+      metadata_partition.c
+      metadata_topic.c
+    ], "zval_dtor", "zval_ptr_dtor_nogc"
     inreplace "rdkafka.c", "EMPTY_SWITCH_DEFAULT_CASE()", "default: ZEND_UNREACHABLE()"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-rdkafka=#{Formula["librdkafka"].opt_prefix}"
