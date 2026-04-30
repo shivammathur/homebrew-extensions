@@ -30,6 +30,26 @@ class OpentelemetryAT86 < AbstractPhpExtension
   def install
     Dir.chdir "opentelemetry-#{version}"
     patch_spl_symbols
+    contents = File.read("otel_observer.c")
+    inreplace "otel_observer.c" do |s|
+      if contents.include?("zend_internal_arg_info *arg_info =")
+        s.gsub! "zend_internal_arg_info *arg_info =", "zend_arg_info *arg_info ="
+      end
+      s.gsub! "    size_t len = strlen(arg_info->name);\n", "" if contents.include?("strlen(arg_info->name)")
+      if contents.include?("if (len == ZSTR_LEN(arg_name) &&")
+        old_arg_match = "if (len == ZSTR_LEN(arg_name) &&\n                " \
+                        "!memcmp(arg_info->name, ZSTR_VAL(arg_name), len)) {"
+        s.gsub! old_arg_match, "if (arg_info->name && zend_string_equals(arg_name, arg_info->name)) {"
+      end
+      if contents.include?("save_state->prev_exception = EG(prev_exception);")
+        s.gsub! "save_state->prev_exception = EG(prev_exception);", "save_state->prev_exception = NULL;"
+      end
+      s.gsub! "EG(prev_exception) = NULL;\n", "" if contents.include?("EG(prev_exception) = NULL;")
+      if contents.include?("EG(prev_exception) = save_state->prev_exception;")
+        s.gsub! "EG(prev_exception) = save_state->prev_exception;\n", ""
+      end
+      s.gsub! "zval_dtor", "zval_ptr_dtor_nogc" if contents.include?("zval_dtor")
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig
     system "make"
