@@ -19,18 +19,24 @@ class InterbaseAT85 < AbstractPhpExtension
   init
   desc "Interbase (Firebird) PHP extension"
   homepage "https://github.com/FirebirdSQL/php-firebird"
-  url "https://github.com/FirebirdSQL/php-firebird/archive/refs/tags/v6.1.1-RC.2.tar.gz"
-  sha256 "ed1ef8a722e26e1c7123079af7b60d19475ba7bd7f2c8f02f8ae2a31c83828e8"
+  url "https://github.com/FirebirdSQL/php-firebird/archive/refs/tags/5.0.2.tar.gz"
+  sha256 "ca07a144d0ccb8f1a2773ad667de96c15882d42e4139397a028278112805fc00"
   license "PHP-3.01"
 
   livecheck do
     url "https://github.com/FirebirdSQL/php-firebird/tags"
-    regex(/^v?(\d+(?:\.\d+)+(?:[-._][A-Za-z0-9._-]+)?)$/i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   depends_on "shivammathur/extensions/firebird-client"
 
   def install
+    inreplace "ibase_query.c",
+      "case SQL_TIMESTAMP_TZ:\n\t\t\tchar timeZoneBuffer[40] = {0};",
+      "case SQL_TIMESTAMP_TZ: {\n\t\t\tchar timeZoneBuffer[40] = {0};"
+    inreplace "ibase_query.c",
+      "\t\t\tbreak;\n#endif\n\t\tcase SQL_DATE:",
+      "\t\t\tbreak;\n\t\t}\n#endif\n\t\tcase SQL_DATE:"
     fb_prefix = Formula["shivammathur/extensions/firebird-client"].opt_prefix
 
     args = %W[
