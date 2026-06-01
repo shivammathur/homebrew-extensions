@@ -8,8 +8,8 @@ class GrpcAT81 < AbstractPhpExtension
   init
   desc "gRPC PHP extension"
   homepage "https://github.com/grpc/grpc"
-  url "https://pecl.php.net/get/grpc-1.80.0.tgz"
-  sha256 "75e553f2b5c3f7dde99aa984a9601dce6db240bc3c85d7fe09298b5bd8c5d53f"
+  url "https://pecl.php.net/get/grpc-1.81.0.tgz"
+  sha256 "3eae67ce7c8f5e861a9b5472542c541e094bf964f3651f4ef015487640afcdca"
   head "https://github.com/grpc/grpc.git", branch: "master"
   license "Apache-2.0"
 
