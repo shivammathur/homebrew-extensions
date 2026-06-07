@@ -7,6 +7,10 @@ on:
         required: true
   schedule:
     - cron: '30 5 * * *'
+
+permissions:
+  contents: read
+
 jobs:
   tests:
     if: "!contains(github.event.head_commit.message, 'skip-test')"
@@ -37,7 +41,9 @@ jobs:
             extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, ssh2, swoole, uploadprogress, v8js, uuid, vips, yaml, xlswriter, zmq, pcov, uopz
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
       - name: Setup cache environment
         uses: shivammathur/cache-extensions@develop
         env:
@@ -52,7 +58,7 @@ jobs:
           php-version: ${{ matrix.php }}
           extensions: ${{ matrix.extensions }}
         env:
-          update: true    
+          update: true
       - name: Testing PHP version
         run: |
           php -v

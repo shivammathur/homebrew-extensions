@@ -23,7 +23,16 @@ on:
       message:
         description: "Message to include when autosquashing revision bumps, deletions, and rebuilds (requires autosquash)"
         required: false
+
+permissions:
+  actions: write
+  contents: write
+  packages: write
+  pull-requests: write
+
 env:
+  PR: ${{inputs.pull_request}}
+  INPUT_MESSAGE: ${{ inputs.message }}
   HOMEBREW_DEVELOPER: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_FROM_API: 1
@@ -55,22 +64,34 @@ jobs:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
           HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.repository_owner }}
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          AUTOSQUASH: ${{inputs.autosquash}}
+          WARN_ON_UPLOAD_FAILURE_FLAG: ${{inputs.warn_on_upload_failure && '--warn-on-upload-failure' || ''}}
+          MESSAGE: ${{inputs.message}}
         run: |
           sudo sed -i 's/Closes ##{pr}/[skip ci]/g' "$(brew --repository)"/Library/Homebrew/dev-cmd/pr-pull.rb
-          # Don't quote arguments that might be empty; this causes errors.
-          brew pr-pull \
-            --debug \
-            --workflows=build.yml \
-            --tap=${{ github.repository_owner }}/extensions \
-            --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/extensions" \
-            '${{inputs.autosquash && '--autosquash' || '--clean'}}' \
-            ${{inputs.warn_on_upload_failure && '--warn-on-upload-failure' || ''}} \
-            ${{inputs.message && format('--message="{0}"', inputs.message) || ''}} \
-            '${{github.event.inputs.pull_request}}'
+          args=(
+            --debug
+            --workflows=build.yml
+            "--tap=${GITHUB_REPOSITORY_OWNER}/extensions"
+            "--root-url=https://ghcr.io/v2/${GITHUB_REPOSITORY_OWNER}/extensions"
+          )
+          if [[ "${AUTOSQUASH}" == "true" ]]; then
+            args+=(--autosquash)
+          else
+            args+=(--clean)
+          fi
+          if [[ -n "${WARN_ON_UPLOAD_FAILURE_FLAG}" ]]; then
+            args+=("${WARN_ON_UPLOAD_FAILURE_FLAG}")
+          fi
+          if [[ -n "${MESSAGE}" ]]; then
+            args+=("--message=${MESSAGE}")
+          fi
+          args+=("${PR}")
+          brew pr-pull "${args[@]}"
 
       - name: Merge PR branch
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
-        run: bash .github/scripts/retry.sh 50 10 gh pr merge ${{github.event.inputs.pull_request}} --admin --delete-branch --rebase
+        run: bash .github/scripts/retry.sh 50 10 gh pr merge "$PR" --admin --delete-branch --rebase
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 

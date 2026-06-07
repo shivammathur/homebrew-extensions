@@ -16,9 +16,12 @@ env:
   HOMEBREW_RELOCATE_RPATHS: 1
   HOMEBREW_ARM64_TESTING: 1
 
+permissions:
+  contents: read
+
 jobs:
   tap-syntax:
-    if: "!contains(github.event.head_commit.message, 'skip-build')"
+    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, 'skip-build')
     runs-on: ubuntu-22.04
     container:
       image: ghcr.io/homebrew/brew:main
@@ -43,14 +46,16 @@ jobs:
         id: formulae-detect
 
   get-matrix:
-    if: github.event_name != 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
+    if: github.actor != 'dependabot[bot]' && github.event_name != 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
     needs: tap-syntax
     runs-on: ubuntu-22.04
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
 
       - name: Get matrix
         id: set-matrix
@@ -76,14 +81,16 @@ jobs:
           echo "matrix={\"include\":[$json_array]}" >> "$GITHUB_OUTPUT"
 
   create-pr:
-    if: github.event_name != 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
+    if: github.actor != 'dependabot[bot]' && github.event_name != 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
     needs: get-matrix
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix: ${{fromJson(needs.get-matrix.outputs.matrix)}}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
 
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -105,13 +112,14 @@ jobs:
         run: bash ./.github/scripts/pr.sh
 
   set-environment:
-    if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
+    if: github.actor != 'dependabot[bot]' && github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
     runs-on: ubuntu-22.04
     needs: tap-syntax
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
       linux-runner: ${{ steps.check-labels.outputs.linux-runner }}
       linux-arm64-runner: ${{ steps.check-labels.outputs.linux-arm64-runner }}
+      runners: ${{ steps.check-labels.outputs.runners }}
       fail-fast: ${{ steps.check-labels.outputs.fail-fast }}
       test-dependents: ${{ steps.check-labels.outputs.test-dependents }}
       timeout-minutes: ${{ steps.check-labels.outputs.timeout-minutes }}
@@ -119,21 +127,26 @@ jobs:
       test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
       test-bot-dependents-args: ${{ steps.check-labels.outputs.test-bot-dependents-args }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
       - name: Check for CI labels
         id: check-labels
-        uses: actions/github-script@v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
           SCRIPTS_PATH: .github/scripts
+          TESTING_FORMULAE: ${{ needs.tap-syntax.outputs.testing_formulae }}
+          ADDED_FORMULAE: ${{ needs.tap-syntax.outputs.added_formulae }}
+          DELETED_FORMULAE: ${{ needs.tap-syntax.outputs.deleted_formulae }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const path = require('path')
             const script = require(path.resolve(`${process.env.SCRIPTS_PATH}/environment.js`))
             const formula_detect = {
-              testing_formulae: '${{needs.tap-syntax.outputs.testing_formulae}}',
-              added_formulae: '${{needs.tap-syntax.outputs.added_formulae}}',
-              deleted_formulae: '${{needs.tap-syntax.outputs.deleted_formulae}}'
+              testing_formulae: process.env.TESTING_FORMULAE || '',
+              added_formulae: process.env.ADDED_FORMULAE || '',
+              deleted_formulae: process.env.DELETED_FORMULAE || ''
             }
             try {
               await script({github, context, core}, formula_detect)
@@ -143,28 +156,10 @@ jobs:
 
   build-formula:
     needs: set-environment
-    if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
+    if: github.actor != 'dependabot[bot]' && github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build')
     strategy:
       matrix:
-        include:
-          - runner: 'macos-26'
-            cleanup: true
-          - runner: 'macos-15'
-            cleanup: true
-          - runner: 'macos-14'
-            cleanup: true
-          - runner: 'macos-14-x86_64'
-            cleanup: true
-          - runner: ${{needs.set-environment.outputs.linux-runner}}
-            container: ${{fromJson(needs.set-environment.outputs.container)}}
-            workdir: /github/home
-            cleanup: false
-            timeout: 4320
-          - runner: ${{needs.set-environment.outputs.linux-arm64-runner}}
-            container: ${{fromJson(needs.set-environment.outputs.container)}}
-            workdir: /github/home
-            cleanup: false
-            timeout: 4320
+        include: ${{fromJson(needs.set-environment.outputs.runners)}}
       fail-fast: ${{fromJson(needs.set-environment.outputs.fail-fast)}}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
@@ -188,7 +183,9 @@ jobs:
         id: brew-test-bot-formulae
         working-directory: ${{ env.BOTTLES_DIR }}
         run: |
-          brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
+          brew test-bot ${TEST_BOT_FORMULAE_ARGS}
+        env:
+          TEST_BOT_FORMULAE_ARGS: ${{ needs.set-environment.outputs.test-bot-formulae-args }}
 
       - name: Post-build steps
         if: always()
@@ -201,11 +198,16 @@ jobs:
 
   add-label:
     needs: build-formula
-    if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build') && github.event.pull_request.user.login == github.repository_owner
+    if: github.actor != 'dependabot[bot]' && github.event_name == 'pull_request' && !contains(github.event.head_commit.message, 'skip-build') && github.event.pull_request.user.login == github.repository_owner
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
       - name: Add Label
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

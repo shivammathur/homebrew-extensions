@@ -41,6 +41,14 @@ module.exports = async ({github, context, core}, formula_detect) => {
     container.image = 'ghcr.io/homebrew/brew:main'
     container.options = '--user=linuxbrew'
     core.setOutput('container', JSON.stringify(container))
+    core.setOutput('runners', JSON.stringify([
+        {runner: 'macos-26', cleanup: true},
+        {runner: 'macos-15', cleanup: true},
+        {runner: 'macos-14', cleanup: true},
+        {runner: 'macos-14-x86_64', cleanup: true},
+        {runner: 'ubuntu-latest', container, workdir: '/github/home', cleanup: false, timeout: 4320},
+        {runner: 'ubuntu-22.04-arm', container, workdir: '/github/home', cleanup: false, timeout: 4320},
+    ]))
 
     const test_bot_formulae_args = ["--only-formulae", "--junit", "--only-json-tab", "--skip-dependents"]
     test_bot_formulae_args.push('--root-url="https://ghcr.io/v2/shivammathur/extensions"')

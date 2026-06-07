@@ -11,25 +11,39 @@ on:
       upload:
         description: Whether to upload built bottles or not
         required: false
+
+permissions:
+  contents: read
+
+env:
+  DISPATCH_REBOTTLE_SENDER: ${{ github.event.sender.login }}
+  DISPATCH_REBOTTLE_FORMULA: ${{ github.event.inputs.extension }}
+  DISPATCH_REBOTTLE_ISSUE: ${{ github.event.inputs.issue }}
+  DISPATCH_REBOTTLE_UPLOAD: ${{ github.event.inputs.upload }}
+
 jobs:
   dispatch:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
 
       - name: ${{github.event.inputs.extension}}
         id: print_details
         run: |
-          echo sender=${{github.event.sender.login}}
-          echo extension=${{github.event.inputs.extension}}
-          echo issue=${{github.event.inputs.issue}}
-          echo upload=${{github.event.inputs.upload}}
+          echo "sender=${DISPATCH_REBOTTLE_SENDER}"
+          echo "formula=${DISPATCH_REBOTTLE_FORMULA}"
+          echo "issue=${DISPATCH_REBOTTLE_ISSUE}"
+          echo "upload=${DISPATCH_REBOTTLE_UPLOAD}"
 
       - name: Dispatch
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         run: |
-          extension=${{github.event.inputs.extension}}
+          extension="${DISPATCH_REBOTTLE_FORMULA}"
           for formula in "./Formula/$extension"@*.rb; do
-            json="{\"formula\": \"$(basename "${formula%.*}")\", \"issue\":\"${{github.event.inputs.issue}}\", \"upload\":\"${{github.event.inputs.upload}}\"}"
-            echo "$json" | GITHUB_TOKEN="${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}" gh workflow run dispatch-rebottle.yml --json
+            json="{\"formula\": \"$(basename "${formula%.*}")\", \"issue\":\"${DISPATCH_REBOTTLE_ISSUE}\", \"upload\":\"${DISPATCH_REBOTTLE_UPLOAD}\"}"
+            echo "$json" | GITHUB_TOKEN="${HOMEBREW_GITHUB_API_TOKEN}" gh workflow run dispatch-rebottle.yml --json
           done

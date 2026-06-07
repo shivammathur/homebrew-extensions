@@ -8,6 +8,10 @@ on:
       extension:
         description: Extension name
         required: true
+
+permissions:
+  contents: read
+
 jobs:
   get-matrix:
     runs-on: ubuntu-22.04
@@ -15,12 +19,16 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
       - name: Get matrix
         id: set-matrix
+        env:
+          HOMEBREW_DISPATCHED_FORMULA: ${{ github.event.inputs.extension }}
         run: |
           json_array=()
-          extension="${{ github.event.inputs.extension }}"
+          extension="${HOMEBREW_DISPATCHED_FORMULA}"
           for formula in "./Formula/$extension"@*.rb; do
             php_version=$(echo "$formula" | grep -Eo '[0-9]+\.[0-9]+')
             json_array+=("{\"php\": \"$php_version\", \"extension\": \"$extension\"}")
@@ -37,7 +45,9 @@ jobs:
       matrix: ${{ fromJson(needs.get-matrix.outputs.matrix )}}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
       - name: Setup cache environment
         uses: shivammathur/cache-extensions@develop
         env:
