@@ -83,6 +83,11 @@ jobs:
         with:
           bottles-directory: ${{ env.BOTTLES_DIR }}
 
+      - name: Trust dependency taps
+        run: |
+          brew tap shivammathur/php
+          brew trust shivammathur/php
+
       - name: Run brew test-bot --only-formulae --only-json-tab --skip-online-checks --skip-dependents
         working-directory: ${{ env.BOTTLES_DIR }}
         env:

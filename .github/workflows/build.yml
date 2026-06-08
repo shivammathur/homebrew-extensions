@@ -179,6 +179,11 @@ jobs:
           bottles-directory: ${{ env.BOTTLES_DIR }}
           cleanup: ${{ matrix.cleanup }}
 
+      - name: Trust dependency taps
+        run: |
+          brew tap shivammathur/php
+          brew trust shivammathur/php
+
       - name: Run brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
         id: brew-test-bot-formulae
         working-directory: ${{ env.BOTTLES_DIR }}
