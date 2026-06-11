@@ -138,10 +138,11 @@ Refer to [shivammathur/php](https://github.com/shivammathur/homebrew-php) tap fo
 
 ### Install PHP Extensions
 
-- Add Tap `shivammathur/extensions`:
+- Fetch the formulae in this tap and mark the tap trusted:
 
 ```zsh
 brew tap shivammathur/extensions
+brew trust shivammathur/extensions
 ```
 
 - Then install the required extension. See [Formula](Formula) directory for available formulae.
