@@ -35,17 +35,6 @@ class XlswriterAT86 < AbstractPhpExtension
     ]
     ENV.append "CFLAGS", "-std=gnu17"
     Dir.chdir "xlswriter-#{version}"
-    inreplace %w[
-      include/xlswriter.h
-      kernel/chart.c
-      kernel/conditional_format.c
-      kernel/excel.c
-      kernel/format.c
-      kernel/rich_string.c
-      kernel/table.c
-      kernel/validation.c
-    ], "XtOffsetOf", "offsetof"
-    inreplace "kernel/csv.c", "zval_dtor", "zval_ptr_dtor_nogc"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
