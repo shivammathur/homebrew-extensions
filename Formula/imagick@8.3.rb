@@ -10,6 +10,7 @@ class ImagickAT83 < AbstractPhpExtension
   homepage "https://github.com/Imagick/imagick"
   url "https://pecl.php.net/get/imagick-3.8.1.tgz"
   sha256 "3a3587c0a524c17d0dad9673a160b90cd776e836838474e173b549ed864352ee"
+  revision 1
   head "https://github.com/Imagick/imagick.git", branch: "master"
   license "PHP-3.01"
 
