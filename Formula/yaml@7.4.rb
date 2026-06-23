@@ -32,7 +32,7 @@ class YamlAT74 < AbstractPhpExtension
 
   def install
     args = %W[
-      --with-yaml=#{Formula["libyaml"].opt_prefix}
+      --with-yaml=#{Utils::Path.formula_opt_prefix("libyaml")}
     ]
     Dir.chdir "yaml-#{version}"
     safe_phpize

@@ -34,7 +34,7 @@ class GearmanAT86 < AbstractPhpExtension
 
   def install
     args = %W[
-      --with-gearman=#{Formula["gearman"].opt_prefix}
+      --with-gearman=#{Utils::Path.formula_opt_prefix("gearman")}
     ]
     Dir.chdir "gearman-#{version}"
     if File.read("php_gearman.c").include?("zend_exception_get_default()")

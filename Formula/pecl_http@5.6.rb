@@ -38,7 +38,7 @@ class PeclHttpAT56 < AbstractPhpExtension
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     args = %W[
       --with-http
-      --with-http-zlib-dir=#{Formula["zlib"].opt_prefix}
+      --with-http-zlib-dir=#{Utils::Path.formula_opt_prefix("zlib")}
     ]
     extra_includes = %W[
       -I#{Formula["shivammathur/extensions/propro@5.6"].opt_include}/php

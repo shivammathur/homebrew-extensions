@@ -32,7 +32,7 @@ class GearmanAT73 < AbstractPhpExtension
 
   def install
     args = %W[
-      --with-gearman=#{Formula["gearman"].opt_prefix}
+      --with-gearman=#{Utils::Path.formula_opt_prefix("gearman")}
     ]
     Dir.chdir "gearman-#{version}"
     safe_phpize

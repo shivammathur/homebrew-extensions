@@ -34,8 +34,8 @@ class SwooleAT70 < AbstractPhpExtension
       --enable-http2
       --enable-mysqlnd
       --enable-openssl
-      --with-libpq-dir==#{Formula["libpq"].opt_prefix}
-      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --with-libpq-dir==#{Utils::Path.formula_opt_prefix("libpq")}
+      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
       --enable-sockets
       --enable-swoole
       --enable-swoole-json

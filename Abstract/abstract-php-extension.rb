@@ -21,7 +21,7 @@ class AbstractPhpExtension < Formula
   end
 
   test do
-    output = shell_output("#{Formula[php_formula].opt_bin}/php -m").downcase
+    output = shell_output("#{formula_opt_bin(php_formula)}/php -m").downcase
     assert_match(/#{extension.downcase}/, output, "failed to find extension in php -m output")
   end
 
@@ -36,7 +36,7 @@ class AbstractPhpExtension < Formula
   end
 
   def phpconfig
-    "--with-php-config=#{Formula[php_formula].opt_bin}/php-config"
+    "--with-php-config=#{formula_opt_bin(php_formula)}/php-config"
   end
 
   def extension_type
@@ -69,9 +69,9 @@ class AbstractPhpExtension < Formula
   end
 
   def safe_phpize
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-    system "#{Formula[php_formula].opt_bin}/phpize"
+    ENV["PHP_AUTOCONF"] = "#{formula_opt_bin("autoconf")}/autoconf"
+    ENV["PHP_AUTOHEADER"] = "#{formula_opt_bin("autoconf")}/autoheader"
+    system "#{formula_opt_bin(php_formula)}/phpize"
   end
 
   def write_config_file

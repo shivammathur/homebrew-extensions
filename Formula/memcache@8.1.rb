@@ -37,7 +37,7 @@ class MemcacheAT81 < AbstractPhpExtension
   def install
     args = %W[
       --enable-memcache
-      --with-zlib-dir=#{Formula["zlib"].opt_prefix}
+      --with-zlib-dir=#{Utils::Path.formula_opt_prefix("zlib")}
     ]
     Dir.chdir "memcache-#{version}"
     safe_phpize

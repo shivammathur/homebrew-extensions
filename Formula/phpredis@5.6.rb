@@ -40,7 +40,7 @@ class PhpredisAT56 < AbstractPhpExtension
     ]
 
     on_macos do
-      args << "--with-liblzf=#{Formula["liblzf"].opt_prefix}"
+      args << "--with-liblzf=#{Utils::Path.formula_opt_prefix("liblzf")}"
     end
 
     Dir.chdir "redis-#{version}"

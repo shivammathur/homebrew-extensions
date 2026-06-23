@@ -28,8 +28,8 @@ class SnmpAT82 < AbstractPhpExtension
 
   def install
     args = %W[
-      --with-snmp=#{Formula["net-snmp"].opt_prefix}
-      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --with-snmp=#{Utils::Path.formula_opt_prefix("net-snmp")}
+      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
     ]
     Dir.chdir "ext/#{extension}"
     safe_phpize

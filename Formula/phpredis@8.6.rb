@@ -110,12 +110,12 @@ class PhpredisAT86 < AbstractPhpExtension
       --enable-redis-lzf
       --enable-redis-msgpack
       --enable-redis-zstd
-      --with-liblz4=#{Formula["lz4"].opt_prefix}
-      --with-libzstd=#{Formula["zstd"].opt_prefix}
+      --with-liblz4=#{Utils::Path.formula_opt_prefix("lz4")}
+      --with-libzstd=#{Utils::Path.formula_opt_prefix("zstd")}
     ]
 
     on_macos do
-      args << "--with-liblzf=#{Formula["liblzf"].opt_prefix}"
+      args << "--with-liblzf=#{Utils::Path.formula_opt_prefix("liblzf")}"
     end
 
     Dir.chdir "redis-#{version}"

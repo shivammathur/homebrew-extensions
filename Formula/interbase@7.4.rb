@@ -26,7 +26,7 @@ class InterbaseAT74 < AbstractPhpExtension
   depends_on "shivammathur/extensions/firebird-client"
 
   def install
-    fb_prefix = Formula["shivammathur/extensions/firebird-client"].opt_prefix
+    fb_prefix = Utils::Path.formula_opt_prefix("shivammathur/extensions/firebird-client")
     args = %W[
       --with-interbase=shared,#{fb_prefix}
     ]

@@ -37,7 +37,7 @@ because: "both provide PHP image processing extensions and should not be loaded 
 
   def install
     args = %W[
-      --with-imagick=#{Formula["imagemagick"].opt_prefix}
+      --with-imagick=#{Utils::Path.formula_opt_prefix("imagemagick")}
     ]
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     Dir.chdir "imagick-#{version}"

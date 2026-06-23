@@ -28,7 +28,7 @@ class BrotliAT56 < AbstractPhpExtension
   def install
     args = %W[
       --enable-brotli
-      --with-libbrotli=#{Formula["brotli"].opt_prefix}
+      --with-libbrotli=#{Utils::Path.formula_opt_prefix("brotli")}
     ]
     Dir.chdir "brotli-#{version}"
     safe_phpize

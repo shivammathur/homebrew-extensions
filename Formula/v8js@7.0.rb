@@ -29,7 +29,7 @@ class V8jsAT70 < AbstractPhpExtension
 
   def install
     args = %W[
-      --with-v8js=#{Formula["v8"].opt_prefix}
+      --with-v8js=#{Utils::Path.formula_opt_prefix("v8")}
     ]
     ENV.append "CPPFLAGS", "-DV8_COMPRESS_POINTERS"
     ENV.append "CPPFLAGS", "-DV8_ENABLE_SANDBOX"

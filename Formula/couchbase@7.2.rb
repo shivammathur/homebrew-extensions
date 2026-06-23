@@ -38,7 +38,7 @@ class CouchbaseAT72 < AbstractPhpExtension
     system "./configure",
            "--prefix=#{prefix}",
            phpconfig,
-           "--with-couchbase=#{Formula["libcouchbase"].opt_prefix}"
+           "--with-couchbase=#{Utils::Path.formula_opt_prefix("libcouchbase")}"
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file

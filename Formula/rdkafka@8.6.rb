@@ -56,7 +56,7 @@ class RdkafkaAT86 < AbstractPhpExtension
     ], "zval_dtor", "zval_ptr_dtor_nogc"
     inreplace "rdkafka.c", "EMPTY_SWITCH_DEFAULT_CASE()", "default: ZEND_UNREACHABLE()"
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", phpconfig, "--with-rdkafka=#{Formula["librdkafka"].opt_prefix}"
+    system "./configure", "--prefix=#{prefix}", phpconfig, "--with-rdkafka=#{Utils::Path.formula_opt_prefix("librdkafka")}"
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file

@@ -29,7 +29,7 @@ class DecimalAT74 < AbstractPhpExtension
   def install
     args = %W[
       --enable-decimal
-      --with-libmpdec-path=#{Formula["mpdecimal"].opt_prefix}
+      --with-libmpdec-path=#{Utils::Path.formula_opt_prefix("mpdecimal")}
     ]
     Dir.chdir "decimal-#{version}"
     safe_phpize

@@ -51,8 +51,8 @@ class MemcachedAT81 < AbstractPhpExtension
       --enable-memcached-msgpack
       --disable-memcached-sasl
       --enable-memcached-session
-      --with-libmemcached-dir=#{Formula["libmemcached"].opt_prefix}
-      --with-zlib-dir=#{Formula["zlib"].opt_prefix}
+      --with-libmemcached-dir=#{Utils::Path.formula_opt_prefix("libmemcached")}
+      --with-zlib-dir=#{Utils::Path.formula_opt_prefix("zlib")}
     ]
     Dir.chdir "memcached-#{version}"
     patch_memcached

@@ -45,7 +45,7 @@ class SwooleAT80 < AbstractPhpExtension
       --enable-http2
       --enable-mysqlnd
       --enable-openssl
-      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
       --enable-sockets
       --enable-swoole
       --enable-swoole-curl

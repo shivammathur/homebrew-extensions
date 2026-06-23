@@ -33,7 +33,7 @@ class PinbaAT71 < AbstractPhpExtension
 
   def install
     args = %W[
-      --enable-pinba=#{Formula["protobuf-c"].opt_prefix}
+      --enable-pinba=#{Utils::Path.formula_opt_prefix("protobuf-c")}
     ]
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args

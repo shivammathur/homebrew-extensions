@@ -34,7 +34,7 @@ class AmqpAT86 < AbstractPhpExtension
   def install
     args = %W[
       --with-amqp=shared
-      --with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}
+      --with-librabbitmq-dir=#{Utils::Path.formula_opt_prefix("rabbitmq-c")}
     ]
     inreplace %w[
       amqp_channel.c

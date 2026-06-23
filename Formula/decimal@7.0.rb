@@ -28,7 +28,7 @@ class DecimalAT70 < AbstractPhpExtension
   def install
     args = %W[
       --enable-decimal
-      --with-libmpdec-path=#{Formula["mpdecimal"].opt_prefix}
+      --with-libmpdec-path=#{Utils::Path.formula_opt_prefix("mpdecimal")}
     ]
     ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
     Dir.chdir "decimal-#{version}"

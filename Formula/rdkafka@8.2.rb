@@ -35,7 +35,7 @@ class RdkafkaAT82 < AbstractPhpExtension
     Dir.chdir "rdkafka-#{version}"
     patch_spl_symbols
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", phpconfig, "--with-rdkafka=#{Formula["librdkafka"].opt_prefix}"
+    system "./configure", "--prefix=#{prefix}", phpconfig, "--with-rdkafka=#{Utils::Path.formula_opt_prefix("librdkafka")}"
     system "make"
     prefix.install "modules/#{extension}.so"
     write_config_file

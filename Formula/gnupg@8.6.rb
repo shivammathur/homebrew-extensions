@@ -33,7 +33,7 @@ class GnupgAT86 < AbstractPhpExtension
 
   def install
     args = %W[
-      --with-gnupg=#{Formula["gpgme"].opt_prefix}
+      --with-gnupg=#{Utils::Path.formula_opt_prefix("gpgme")}
     ]
     Dir.chdir "gnupg-#{version}"
     inreplace "phpc/phpc.h", "XtOffsetOf", "offsetof"

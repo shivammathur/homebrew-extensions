@@ -33,7 +33,7 @@ class AmqpAT85 < AbstractPhpExtension
   def install
     args = %W[
       --with-amqp=shared
-      --with-librabbitmq-dir=#{Formula["rabbitmq-c"].opt_prefix}
+      --with-librabbitmq-dir=#{Utils::Path.formula_opt_prefix("rabbitmq-c")}
     ]
     patch_spl_symbols
     safe_phpize

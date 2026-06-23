@@ -56,12 +56,12 @@ class SwooleAT85 < AbstractPhpExtension
       --enable-swoole-odbc=unixodbc
       --enable-swoole-sqlite
       --enable-zstd
-      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
     ]
     on_linux do
       args << "--enable-iouring"
       args << "--enable-uring-socket"
-      args << "--with-liburing-dir=#{Formula["liburing"].opt_prefix}"
+      args << "--with-liburing-dir=#{Utils::Path.formula_opt_prefix("liburing")}"
     end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args

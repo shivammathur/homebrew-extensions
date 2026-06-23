@@ -35,7 +35,7 @@ class VipsAT86 < AbstractPhpExtension
 
   def install
     args = %W[
-      --with-vips=#{Formula["vips"].opt_prefix}
+      --with-vips=#{Utils::Path.formula_opt_prefix("vips")}
     ]
     Dir.chdir "vips-#{version}"
     inreplace "vips.c", "zval_dtor", "zval_ptr_dtor_nogc"

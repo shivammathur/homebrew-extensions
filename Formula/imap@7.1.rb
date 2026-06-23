@@ -35,8 +35,8 @@ class ImapAT71 < AbstractPhpExtension
     system "./configure",
            "--prefix=#{prefix}",
            phpconfig,
-           "--with-imap=shared, #{Formula["imap-uw"].opt_prefix}",
-           "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}",
+           "--with-imap=shared, #{Utils::Path.formula_opt_prefix("imap-uw")}",
+           "--with-imap-ssl=#{Utils::Path.formula_opt_prefix("openssl@3")}",
            "--with-kerberos"
     system "make"
     prefix.install "modules/#{extension}.so"

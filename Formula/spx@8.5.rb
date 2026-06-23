@@ -33,7 +33,7 @@ class SpxAT85 < AbstractPhpExtension
   def install
     args = %W[
       --enable-spx
-      --with-zlib-dir=#{Formula["zlib"].opt_prefix}
+      --with-zlib-dir=#{Utils::Path.formula_opt_prefix("zlib")}
       --with-spx-assets-dir=#{pkgshare}
     ]
     inreplace "src/php_spx.h", /ZEND_MODULE_API_NO.*/, "0"

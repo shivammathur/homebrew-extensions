@@ -35,7 +35,7 @@ because: "both provide PHP image processing extensions and should not be loaded 
 
   def install
     args = %W[
-      --with-gmagick=#{Formula["graphicsmagick"].opt_prefix}
+      --with-gmagick=#{Utils::Path.formula_opt_prefix("graphicsmagick")}
     ]
     Dir.chdir "gmagick-#{version}"
     inreplace "gmagick.c", "zend_exception_get_default()", "zend_ce_exception"

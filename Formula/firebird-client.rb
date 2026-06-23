@@ -39,9 +39,9 @@ class FirebirdClient < Formula
   depends_on "libtommath"
 
   def install
-    icu_prefix = Formula["icu4c@78"].opt_prefix
-    tommath_prefix = Formula["libtommath"].opt_prefix
-    tomcrypt_prefix = Formula["libtomcrypt"].opt_prefix
+    icu_prefix = formula_opt_prefix("icu4c@78")
+    tommath_prefix = formula_opt_prefix("libtommath")
+    tomcrypt_prefix = formula_opt_prefix("libtomcrypt")
     fb_build_lib = buildpath/"gen/Release/firebird/lib"
     fb_build_lib.mkpath
     icu_glob = OS.mac? ? "libicu*.dylib" : "libicu*.so*"

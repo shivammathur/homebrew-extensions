@@ -41,7 +41,7 @@ class InterbaseAT86 < AbstractPhpExtension
     inreplace "ibase_blobs.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
     inreplace %w[interbase.c ibase_query.c], "INI_STR(", "zend_ini_string_literal("
     inreplace %w[interbase.c ibase_query.c], "INI_INT(", "zend_ini_long_literal("
-    fb_prefix = Formula["shivammathur/extensions/firebird-client"].opt_prefix
+    fb_prefix = Utils::Path.formula_opt_prefix("shivammathur/extensions/firebird-client")
     args = %W[
       --with-interbase=shared,#{fb_prefix}
     ]

@@ -47,7 +47,7 @@ class UuidAT72 < AbstractPhpExtension
 
   def install
     args = %W[
-      --with-uuid=#{Formula[uuid_dependency].opt_prefix}
+      --with-uuid=#{Utils::Path.formula_opt_prefix(uuid_dependency)}
     ]
     Dir.chdir "uuid-#{version}"
     safe_phpize

@@ -32,7 +32,7 @@ class Ssh2AT56 < AbstractPhpExtension
 
   def install
     args = %W[
-      --with-ssh2=shared,#{Formula["libssh2"].opt_prefix}
+      --with-ssh2=shared,#{Utils::Path.formula_opt_prefix("libssh2")}
     ]
     Dir.chdir "ssh2-#{version}"
     ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"

@@ -42,8 +42,8 @@ class PeclHttpAT85 < AbstractPhpExtension
   def install
     args = %W[
       --with-http
-      --with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}
-      --with-http-zlib-dir=#{Formula["zlib"].opt_prefix}
+      --with-http-libicu-dir=#{Utils::Path.formula_opt_prefix("icu4c")}
+      --with-http-zlib-dir=#{Utils::Path.formula_opt_prefix("zlib")}
     ]
     extra_includes = %W[
       -I#{Formula["shivammathur/extensions/raphf@8.5"].opt_include}/php

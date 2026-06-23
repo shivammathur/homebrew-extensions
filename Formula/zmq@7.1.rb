@@ -37,7 +37,7 @@ class ZmqAT71 < AbstractPhpExtension
       prefix=#{prefix}
     ]
     on_macos do
-      args << "--with-czmq=#{Formula["czmq"].opt_prefix}"
+      args << "--with-czmq=#{Utils::Path.formula_opt_prefix("czmq")}"
     end
     inreplace "package.xml", "@PACKAGE_VERSION@", version.to_s
     inreplace "php-zmq.spec", "@PACKAGE_VERSION@", version.to_s

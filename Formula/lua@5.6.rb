@@ -33,7 +33,7 @@ class LuaAT56 < AbstractPhpExtension
 
   def install
     args = %W[
-      --with-lua=#{Formula["lua"].opt_prefix}
+      --with-lua=#{Utils::Path.formula_opt_prefix("lua")}
     ]
     Dir.chdir "lua-#{version}"
     inreplace "config.m4", "include/lua.h", "include/lua/lua.h"

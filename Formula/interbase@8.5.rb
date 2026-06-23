@@ -37,7 +37,7 @@ class InterbaseAT85 < AbstractPhpExtension
     inreplace "ibase_query.c",
       "\t\t\tbreak;\n#endif\n\t\tcase SQL_DATE:",
       "\t\t\tbreak;\n\t\t}\n#endif\n\t\tcase SQL_DATE:"
-    fb_prefix = Formula["shivammathur/extensions/firebird-client"].opt_prefix
+    fb_prefix = Utils::Path.formula_opt_prefix("shivammathur/extensions/firebird-client")
 
     args = %W[
       --with-interbase=shared,#{fb_prefix}

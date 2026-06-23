@@ -31,7 +31,7 @@ class PdoFirebirdAT82 < AbstractPhpExtension
   depends_on "shivammathur/extensions/firebird-client@3"
 
   def install
-    fb_prefix = Formula["shivammathur/extensions/firebird-client@3"].opt_prefix
+    fb_prefix = Utils::Path.formula_opt_prefix("shivammathur/extensions/firebird-client@3")
     args = %W[
       --with-pdo-firebird=shared,#{fb_prefix}
     ]

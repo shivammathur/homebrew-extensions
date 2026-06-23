@@ -40,8 +40,8 @@ class EventAT70 < AbstractPhpExtension
       --with-event-extra
       --with-event-openssl
       --enable-event-sockets
-      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
-      --with-event-libevent-dir=#{Formula["libevent"].opt_prefix}
+      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
+      --with-event-libevent-dir=#{Utils::Path.formula_opt_prefix("libevent")}
     ]
     Dir.chdir "event-#{version}"
     safe_phpize
