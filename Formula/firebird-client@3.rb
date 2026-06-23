@@ -12,6 +12,7 @@ class FirebirdClientAT3 < Formula
   # 1. https://firebirdsql.org/en/interbase-public-license
   # 2. https://www.firebirdsql.org/en/initial-developer-s-public-license-version-1-0/
   license "Interbase-1.0"
+  compatibility_version 1
 
   livecheck do
     url "https://github.com/FirebirdSQL/firebird/tags"

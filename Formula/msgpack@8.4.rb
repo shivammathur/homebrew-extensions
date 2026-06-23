@@ -10,6 +10,7 @@ class MsgpackAT84 < AbstractPhpExtension
   homepage "https://github.com/msgpack/msgpack-php"
   url "https://pecl.php.net/get/msgpack-3.0.1.tgz"
   sha256 "e30be355ab79aaea4568692fbd6073fd7c7f50ea8d3cf12edce40fc0c921d868"
+  compatibility_version 1
   head "https://github.com/msgpack/msgpack-php.git", branch: "master"
   license "BSD-3-Clause"
 
