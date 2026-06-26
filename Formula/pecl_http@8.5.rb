@@ -46,7 +46,7 @@ class PeclHttpAT85 < AbstractPhpExtension
       --with-http-zlib-dir=#{Utils::Path.formula_opt_prefix("zlib")}
     ]
     extra_includes = %W[
-      -I#{Formula["shivammathur/extensions/raphf@8.5"].opt_include}/php
+      -I#{Utils::Path.formula_opt_include("shivammathur/extensions/raphf@8.5")}/php
     ]
     # Work around to support `icu4c` 75, which needs C++17.
     ENV.append "CXX", "-std=c++17"

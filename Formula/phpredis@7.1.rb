@@ -32,7 +32,7 @@ class PhpredisAT71 < AbstractPhpExtension
   def patch_redis
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
-      headers = Dir["#{Formula["#{e}@7.1"].opt_include}/**/*.h"]
+      headers = Dir["#{Utils::Path.formula_opt_include("#{e}@7.1")}/**/*.h"]
       (buildpath/"redis-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
   end

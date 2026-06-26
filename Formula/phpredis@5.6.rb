@@ -28,7 +28,7 @@ class PhpredisAT56 < AbstractPhpExtension
 
   def patch_redis
     mkdir_p "include/php/ext/igbinary"
-    headers = Dir["#{Formula["igbinary@5.6"].opt_include}/**/*.h"]
+    headers = Dir["#{Utils::Path.formula_opt_include("igbinary@5.6")}/**/*.h"]
     (buildpath/"redis-#{version}/include/php/ext/igbinary").install_symlink headers unless headers.empty?
   end
 

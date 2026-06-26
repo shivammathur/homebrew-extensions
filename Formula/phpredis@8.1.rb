@@ -37,7 +37,7 @@ class PhpredisAT81 < AbstractPhpExtension
   def patch_redis
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
-      headers = Dir["#{Formula["#{e}@8.1"].opt_include}/**/*.h"]
+      headers = Dir["#{Utils::Path.formula_opt_include("#{e}@8.1")}/**/*.h"]
       (buildpath/"redis-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
   end

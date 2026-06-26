@@ -36,7 +36,7 @@ class MemcachedAT84 < AbstractPhpExtension
   def patch_memcached
     %w[igbinary msgpack].each do |e|
       mkdir_p "include/php/ext/#{e}"
-      headers = Dir["#{Formula["#{e}@8.4"].opt_include}/**/*.h"]
+      headers = Dir["#{Utils::Path.formula_opt_include("#{e}@8.4")}/**/*.h"]
       (buildpath/"memcached-#{version}/include/php/ext/#{e}").install_symlink headers unless headers.empty?
     end
   end

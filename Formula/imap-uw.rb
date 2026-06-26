@@ -113,7 +113,7 @@ class ImapUw < Formula
 
     inreplace "Makefile" do |s|
       s.gsub! "SSLINCLUDE=/usr/include/openssl",
-              "SSLINCLUDE=#{Formula["openssl@3"].opt_include}/openssl"
+              "SSLINCLUDE=#{formula_opt_include("openssl@3")}/openssl"
       s.gsub! "SSLLIB=/usr/lib",
               "SSLLIB=#{formula_opt_lib("openssl@3")}"
       s.gsub! "-DMAC_OSX_KLUDGE=1", ""
