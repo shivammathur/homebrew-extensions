@@ -8,8 +8,8 @@ class BrotliAT80 < AbstractPhpExtension
   init
   desc "Brotli PHP extension"
   homepage "https://github.com/kjdev/php-ext-brotli"
-  url "https://pecl.php.net/get/brotli-0.19.0.tgz"
-  sha256 "27d406ba894015352e305c8b557812ffd70b3899b6a519ab874c99e42675cd3a"
+  url "https://pecl.php.net/get/brotli-0.20.0.tgz"
+  sha256 "e8d303afa3df0afc4e1362496482e3d20052b3bb478027b597073c8114d1f2ea"
   head "https://github.com/kjdev/php-ext-brotli.git", branch: "master"
   license "MIT"
 
