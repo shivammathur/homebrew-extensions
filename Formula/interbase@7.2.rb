@@ -9,13 +9,13 @@ class InterbaseAT72 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "f3ef1164188c874b52ccfa7f64a1552691d0db0673d3ade2002a54db6dcf57e0"
-    sha256 cellar: :any, arm64_sequoia: "b939bde1c434b9b92f2b45d0a7fd7ddb6c140eeec6f1e05322f4fd994b3f22dd"
-    sha256 cellar: :any, arm64_sonoma:  "2025df28ba19b84ae70615dc8f2c4df56a8b6a6a3797c32a79c6d8f6834ebf86"
-    sha256 cellar: :any, sonoma:        "5609d735bea1a06aabb2e634c0e4caf585eecdfe11c53511d66bf9929d97dea2"
-    sha256 cellar: :any, arm64_linux:   "71b095bdc71e982492855eb32e113b93421e0cc051a084ec2b0a3b9a12ed966f"
-    sha256 cellar: :any, x86_64_linux:  "6c15c84770f60573d2492eadf082327f5f9245270150ce0ce1ca4f7568c1ef5c"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "4e771f7f6884185fb243b8a71641e07cbfd929b4eff2b8e808b6cf20d859ded3"
+    sha256 cellar: :any, arm64_sequoia: "03b6203a2e6aef9ebde3668604423f28bfc1218c7955fb8137d0b86766ca2c3b"
+    sha256 cellar: :any, arm64_sonoma:  "4e1f9d769f28684a42f091471ee92564db8b0d68cd1b5f9e588fb2c84b10b21e"
+    sha256 cellar: :any, sonoma:        "28fac14f1b43f9396d92787eb795e29ad4362af40fef9a0d85a6df038f0cf046"
+    sha256 cellar: :any, arm64_linux:   "d42b40dd374ff5a6ffaf5d677a83f82a068000f9fcb95cbe5b75b08fed1acca8"
+    sha256 cellar: :any, x86_64_linux:  "f8e661ef33d9228371703a2ed04601ec49d37eba4fd317f1922eb3801314ecc1"
   end
   init
   desc "Interbase (Firebird) PHP extension"
