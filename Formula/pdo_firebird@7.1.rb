@@ -15,13 +15,13 @@ class PdoFirebirdAT71 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "a3d62f43d056095200b86648f3afd6ed3a8fdf5b86a69f0fd95b48df41ef5aa5"
-    sha256 cellar: :any, arm64_sequoia: "a5cf09dd5838a7937a2db0d93af54d6c6b20be9192e4d3d73a8035e5d7cbca1e"
-    sha256 cellar: :any, arm64_sonoma:  "311bd9e929083c3bac83b42f8e77de3823da584052ea6acd5878702b743592e3"
-    sha256 cellar: :any, sonoma:        "fed75328daab3b668d8fc23f726ae93764ec93d68eb6b4deeab971a3434009e2"
-    sha256 cellar: :any, arm64_linux:   "8dff3610890743273c7edc3d439f3c29d8534c2bf82c9782c448239ddc41311f"
-    sha256 cellar: :any, x86_64_linux:  "4bd760c3fba2a43d10c887f6d70265eb8bf8fd5d7022872fc95b8c45435dd9f0"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "9ad510010d21b9b19f770dbcce0cd18086e58c2edd5a69cfb0128157bc9024a2"
+    sha256 cellar: :any, arm64_sequoia: "c0f44370a18ea325d0b6efcb02c4afe711f9d864de1757a3fc92d70fccdea22a"
+    sha256 cellar: :any, arm64_sonoma:  "2dc2e1b3028fff63c99b82409a4b52c6b4044a574180ee504dc57ea35cc6d7eb"
+    sha256 cellar: :any, sonoma:        "260f7fde7668d05087826b6d859e44eaaaaaeda99a8d08a0c74964c7060b71d9"
+    sha256 cellar: :any, arm64_linux:   "a154b1ea7cd2cadc8459637d59e84546757da523e3198b098de3e8ea876bd0ba"
+    sha256 cellar: :any, x86_64_linux:  "fb289cc85751f77892c23dcde0f84e2da45a503ce506715d898cd933ee6d3688"
   end
 
   depends_on "shivammathur/extensions/firebird-client@3"
