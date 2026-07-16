@@ -20,15 +20,12 @@ class EventAT72 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia:  "c4f2deb4af928427477c13bd6eb142aa05fe27db6fbd2d6fb5c04744b89fd3ce"
-    sha256 cellar: :any,                 arm64_sonoma:   "b9c3f2d4903725e8f5317aa776dd389e34a438e492dd41d5e75608c8b5658803"
-    sha256 cellar: :any,                 arm64_ventura:  "81202f296dbb39e974053f57f1a053c244caade96278d5acecba65422ec7139b"
-    sha256 cellar: :any,                 arm64_monterey: "60fbace595ee0ff518891366038f319f1ce62a55e7e0d8a7f28adaf363fb884a"
-    sha256 cellar: :any,                 sonoma:         "db7db0bb23850df731aefba12a50dd6aaf94aa09cfa4b4580a9d84801bdcfdad"
-    sha256 cellar: :any,                 ventura:        "05807708e0090e365de76e6bb47ec49ca5bdaca7e0a2a3c740eb4fb21edeac82"
-    sha256 cellar: :any,                 monterey:       "95a7df1af49d79ee2b868de6ed09bea27c9a685e645d96701d182c38d2194c09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "dc682275da8862a2219a91a3c56759ab4e76d2939f3eac00ab91d7be089a1115"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42de87261736956f5c6850b168f3e874597484af07ec7090457e377f4c256ba5"
+    sha256 cellar: :any, arm64_tahoe:   "8e7c919a29ab9c587d480e000230de2990da6362c65da08b3a3ef882c1881ff6"
+    sha256 cellar: :any, arm64_sequoia: "f68340546fe4f9e80ad476c7d764c554d00c456bd41c830c59188fa28def74aa"
+    sha256 cellar: :any, arm64_sonoma:  "47a1338eb50967fb1f70254f3e6c8a9dbf9c62d51037742282497677dee3caf1"
+    sha256 cellar: :any, sonoma:        "63e14075c1d04552c157eb5d0129f3de60229b3f6df5fd3818b93efb9b366025"
+    sha256 cellar: :any, arm64_linux:   "41b75abea7a74aa15144093876ea818618d197e12ffa329dd12ae288953dac2f"
+    sha256 cellar: :any, x86_64_linux:  "a3424625dea433254d4ba7cfd33beed45cc27ed5e27804aa1f1cb8ed4754ff0c"
   end
 
   depends_on "libevent"
