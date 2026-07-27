@@ -20,12 +20,12 @@ class NewrelicAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_tahoe:   "3db8726f58c40adbfc765fb283a2612651c5df2a12a6f3cc261f717a6e648666"
-    sha256 cellar: :any, arm64_sequoia: "083517d1e8c3b5c0f1dfdcc13e9f4e03120cecb4c71e9918e997cdda01f92deb"
-    sha256 cellar: :any, arm64_sonoma:  "7a2c761a90c98c5f028ae0b2b3046908ed8442c121abc1f718dfd68f0f340c75"
-    sha256 cellar: :any, sonoma:        "f6d3612c341f05650559b05b2df63fa12e254ded916e0c1283dfd4fbcba6a1a7"
-    sha256 cellar: :any, arm64_linux:   "b04d7ae847410035c61dcad76077a27e1da15916349035165cfc909b1070d833"
-    sha256 cellar: :any, x86_64_linux:  "3214d3f62013b7df90f6ef2a93dd5ca032c25c854313591034522e6d6669302c"
+    sha256 cellar: :any, arm64_tahoe:   "49bb1113aa795faf3e821c847b860f6824d872b3d1bc8a5e18f7a5401dc47755"
+    sha256 cellar: :any, arm64_sequoia: "53142057cb4c0d8c6b4440f09e1ac737d7f6a1d9f92c4b506add5dfe1805e948"
+    sha256 cellar: :any, arm64_sonoma:  "6de5f1c06541b4b845175316f372fe359146f7a6253c65dd5f781a3b81e246de"
+    sha256 cellar: :any, sonoma:        "f512721f2d269aad4e88d43b3102237dcf3e95c3e76558124a3dd6d22e8fa987"
+    sha256 cellar: :any, arm64_linux:   "f942549a24042957578efd95dbb56dfe98e80245ed1d17b45885287edaae0214"
+    sha256 cellar: :any, x86_64_linux:  "6458e185c6897b61b7c020728315e14e237598dc2a7e773d9709be9e0eb09474"
   end
 
   # for pcre_compile
