@@ -41,7 +41,7 @@ jobs:
             extensions: amqp, apcu, ast, brotli, couchbase, ds, event, excimer, expect, gearman, gnupg, grpc, igbinary, imagick, imap, interbase, maxminddb, mcrypt, memcache, memcached, mongodb, msgpack, oauth, pdo_firebird, pdo_sqlsrv, pecl_http, protobuf, psr, raphf, rdkafka, redis, seaslog, sqlsrv, ssh2, swoole, uploadprogress, v8js, uuid, vips, yaml, xlswriter, zmq, pcov, uopz
     steps:
       - name: Checkout
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - name: Setup cache environment
