@@ -32,6 +32,11 @@ class PdoSqlsrvAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "pdo_sqlsrv-#{version}"
+    inreplace "shared/core_stream.cpp" do |s|
+      s.gsub! "php_stream_context* STREAMS_DC", "php_stream_context* context STREAMS_DC"
+      s.gsub! "php_stream_wrapper_log_error(wrapper, options,",
+              "php_stream_wrapper_log_warn(wrapper, context, options, InvalidParam,"
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-pdo_sqlsrv"
     system "make"
