@@ -8,8 +8,8 @@ class SqlsrvAT81 < AbstractPhpExtension
   init
   desc "Sqlsrv PHP extension"
   homepage "https://github.com/Microsoft/msphpsql"
-  url "https://pecl.php.net/get/sqlsrv-5.13.1.tgz"
-  sha256 "7c4ea8f25ebbc8999084239e7e0ef75315097e013df0e290fcef76c3d977b9d8"
+  url "https://pecl.php.net/get/sqlsrv-5.13.2.tgz"
+  sha256 "be82e726b06899a8a8a456bf940484963d7cf424ae43149b183ab52c43adb0ad"
   head "https://github.com/Microsoft/msphpsql.git", branch: "dev"
   license "MIT"
 
