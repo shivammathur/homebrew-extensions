@@ -32,6 +32,11 @@ class SqlsrvAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "sqlsrv-#{version}"
+    inreplace "shared/core_stream.cpp" do |s|
+      s.gsub! "php_stream_context* STREAMS_DC", "php_stream_context* context STREAMS_DC"
+      s.gsub! "php_stream_wrapper_log_error(wrapper, options,",
+              "php_stream_wrapper_log_warn(wrapper, context, options, InvalidParam,"
+    end
     inreplace "init.cpp" do |s|
       s.gsub! "INI_BOOL( warnings_as_errors )", "zend_ini_bool_literal(INI_PREFIX INI_WARNINGS_RETURN_AS_ERRORS)"
       s.gsub! "INI_INT( severity )", "zend_ini_long_literal(INI_PREFIX INI_LOG_SEVERITY)"
