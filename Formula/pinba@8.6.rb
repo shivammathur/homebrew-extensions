@@ -32,6 +32,9 @@ class PinbaAT86 < AbstractPhpExtension
   patch :DATA
 
   def install
+    system formula_opt_bin("protobuf-c")/"protoc-c", "--c_out=.", "pinba.proto"
+    mv "pinba.pb-c.c", "pinba-pb-c.c"
+    inreplace "pinba.c", "XtOffsetOf", "offsetof"
     args = %W[
       --enable-pinba=#{Utils::Path.formula_opt_prefix("protobuf-c")}
     ]
