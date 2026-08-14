@@ -20,12 +20,12 @@ class BrotliAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_tahoe:   "8931ff14aca335df03f71c5d98cce1b7db0d3de04c5081abde4beca8c1374985"
-    sha256 cellar: :any, arm64_sequoia: "54a00ab861f5ca6a465c468f0f1f83af3de20229fcdf42a71f8ee8475fc85829"
-    sha256 cellar: :any, arm64_sonoma:  "d8acf7b004291949ce140cb5cdc3088334d4c95eaf02dd397df0cbc107739ca2"
-    sha256 cellar: :any, sonoma:        "47ca5ff43b50139030df5a5fa1ddacc661ed6b254e51f813ae71402f9f9eaaf2"
-    sha256 cellar: :any, arm64_linux:   "9ce4405f67950c30feb6a636171faf6cce9da0e7ed90600be39681542eb9f570"
-    sha256 cellar: :any, x86_64_linux:  "1ec802d482c410bd3411f82cc6b1c7db60d2ef0bb75e973bc496c9287e5703e2"
+    sha256 cellar: :any, arm64_tahoe:   "63589af70808fad72ff84df7781e9398398d749b3e84e17f07c6e66d8c2f3e34"
+    sha256 cellar: :any, arm64_sequoia: "b815ff30e5b40acda5d35eb29be1ece083805e42f42cf70dbb010b9e3af35043"
+    sha256 cellar: :any, arm64_sonoma:  "9e00c58d82eb96bd68a6d0f6d05418b47db50c77fc696abfc9e08093d3486e42"
+    sha256 cellar: :any, sonoma:        "f043ce033c3702091d381a9c2c1273d8d5fca5b4657f5f487c9ce5523c1db6d8"
+    sha256 cellar: :any, arm64_linux:   "4d2c5901997586dc2bec0959df3f8606b4aaf134311dbd78c455fbcb8251b7d7"
+    sha256 cellar: :any, x86_64_linux:  "6ffdc82665fcf2582c47eed410cfe7a329c51a17cee47f4973bd09cb3d0b003c"
   end
 
   depends_on "brotli"
