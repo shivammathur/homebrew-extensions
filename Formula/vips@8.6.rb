@@ -38,8 +38,18 @@ class VipsAT86 < AbstractPhpExtension
       --with-vips=#{Utils::Path.formula_opt_prefix("vips")}
     ]
     Dir.chdir "vips-#{version}"
-    inreplace "vips.c", "zval_dtor", "zval_ptr_dtor_nogc"
-    inreplace "vips.c", "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
+    inreplace "vips.c" do |s|
+      s.gsub! "zval_dtor", "zval_ptr_dtor_nogc"
+      s.gsub! "WRONG_PARAM_COUNT;", "zend_wrong_param_count(); RETURN_THROWS();"
+      s.gsub! "zend_parse_parameter(0, call->argc - 1, &call->argv[call->argc - 1],\n" \
+              "\t\t\t\"a\", &call->options) == FAILURE",
+              "!zend_parse_arg_array(&call->argv[call->argc - 1], &call->options, false, false)"
+      s.gsub! "zend_parse_parameter(0, 0, &argv[0], \n" \
+              "\t\t\"s\", &operation_name, &operation_name_len) == FAILURE",
+              "!zend_parse_arg_string(&argv[0], &operation_name, &operation_name_len, false, 0)"
+      s.gsub! 'zend_parse_parameter(0, 1, &argv[1], "r!", &instance) == FAILURE',
+              "!zend_parse_arg_resource(&argv[1], &instance, true)"
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
