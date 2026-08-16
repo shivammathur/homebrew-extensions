@@ -70,15 +70,20 @@ class PeclHttpAT86 < AbstractPhpExtension
       s.gsub! "static php_stream_filter *http_filter_create(const char *name, zval *params, uint8_t p)",
               "static php_stream_filter *http_filter_create(const char *name, zval *params, bool p)"
       s.gsub! "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(chunked_decode), b, p)",
-              "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(chunked_decode), b, p, PSFS_SEEKABLE_NEVER)"
+              "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(chunked_decode), b, p, " \
+              "PSFS_SEEKABLE_NEVER, PSFS_SEEKABLE_NEVER)"
       s.gsub! "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(chunked_encode), NULL, p)",
-              "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(chunked_encode), NULL, p, PSFS_SEEKABLE_NEVER)"
+              "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(chunked_encode), NULL, p, " \
+              "PSFS_SEEKABLE_NEVER, PSFS_SEEKABLE_NEVER)"
       %w[inflate deflate brotli_encode brotli_decode].each do |filter|
         s.gsub! "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(#{filter}), b, p)",
-                "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(#{filter}), b, p, PSFS_SEEKABLE_NEVER)"
+                "php_stream_filter_alloc(&PHP_HTTP_FILTER_OP(#{filter}), b, p, " \
+                "PSFS_SEEKABLE_NEVER, PSFS_SEEKABLE_NEVER)"
       end
     end
+    inreplace "src/php_http_message.c", "_php_stream_write", "php_stream_write"
     inreplace "src/php_http_message_body.c", "standard/php_lcg.h", "random/php_random.h"
+    inreplace "src/php_http_message_body.c", "_php_stream_read", "php_stream_read"
     inreplace "src/php_http_misc.c", "standard/php_lcg.h", "random/php_random.h"
     inreplace %w[
       src/php_http_negotiate.c
