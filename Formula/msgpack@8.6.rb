@@ -31,6 +31,13 @@ class MsgpackAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "msgpack-#{version}"
+    inreplace "msgpack_unpack.c" do |s|
+      s.gsub! "(PG(unserialize_callback_func) == NULL) ||\n            " \
+              "(PG(unserialize_callback_func)[0] == '\\0')",
+              "PG(unserialize_callback_func) == NULL"
+      s.gsub! "ZVAL_STRING(&user_func, PG(unserialize_callback_func))",
+              "ZVAL_STR_COPY(&user_func, PG(unserialize_callback_func))"
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-msgpack"
     system "make"
