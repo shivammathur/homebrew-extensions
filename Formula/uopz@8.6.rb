@@ -93,6 +93,9 @@ class UopzAT86 < AbstractPhpExtension
              "\n\t\tuopz_callers_shutdown();\n\t\tUOPZ(active) = 0;\n\t}")
     end
     inreplace "src/constant.c", "zval_dtor", "zval_ptr_dtor_nogc"
+    inreplace %w[src/hook.c src/return.c],
+              "Z_OBJ(EX(This)) ? &EX(This) : NULL",
+              "(ZEND_CALL_INFO(execute_data) & ZEND_CALL_HAS_THIS) ? Z_OBJ(EX(This)) : NULL"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-uopz"
     system "make"
