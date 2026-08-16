@@ -35,6 +35,19 @@ class XlswriterAT86 < AbstractPhpExtension
     ]
     ENV.append "CFLAGS", "-std=gnu17"
     Dir.chdir "xlswriter-#{version}"
+    inreplace "kernel/common.c", "lxlsx_datetime timestamp_to_datetime", <<~C
+      #if PHP_VERSION_ID >= 80600
+      static int xlswriter_php_idate(char format, time_t ts, bool localtime)
+      {
+          int result = 0;
+          php_idate(format, ts, localtime, &result);
+          return result;
+      }
+      #define php_idate(format, ts, localtime) xlswriter_php_idate(format, ts, localtime)
+      #endif
+
+      lxlsx_datetime timestamp_to_datetime
+    C
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
