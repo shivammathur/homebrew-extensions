@@ -44,6 +44,9 @@ class DsAT86 < AbstractPhpExtension
       src/php/objects/php_seq.h
       src/php/objects/php_set.h
     ], "XtOffsetOf", "offsetof"
+    inreplace "src/php/handlers/php_seq_handlers.c",
+              'if (zend_parse_parameter(ZEND_PARSE_PARAMS_QUIET, 1, offset, "l", &index) == FAILURE) {',
+              "bool failed = false; index = zval_try_get_long(offset, &failed); if (failed) {"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-ds"
     system "make"
