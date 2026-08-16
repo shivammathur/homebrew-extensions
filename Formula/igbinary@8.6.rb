@@ -37,7 +37,13 @@ class IgbinaryAT86 < AbstractPhpExtension
     patch_spl_symbols
     safe_phpize
     inreplace "src/php7/php_igbinary.h", "ext/standard/php_smart_string.h", "Zend/zend_smart_string.h"
-    inreplace "src/php7/igbinary.c", "zval_dtor", "zval_ptr_dtor_nogc"
+    inreplace "src/php7/igbinary.c" do |s|
+      s.gsub! "zval_dtor", "zval_ptr_dtor_nogc"
+      s.gsub! "const char* user_func_name;", "zend_string *user_func_name;"
+      s.gsub! "(user_func_name == NULL) || (user_func_name[0] == '\\0')", "user_func_name == NULL"
+      s.gsub! "ZVAL_STRING(&user_func, user_func_name)", "ZVAL_STR_COPY(&user_func, user_func_name)"
+      s.gsub! "PG(unserialize_callback_func));", "ZSTR_VAL(PG(unserialize_callback_func)));"
+    end
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-igbinary"
     system "make"
     prefix.install "modules/#{extension}.so"
