@@ -32,6 +32,8 @@ class ApcuAT86 < AbstractPhpExtension
 
   def install
     Dir.chdir "apcu-#{version}"
+    inreplace "apc.c", 'php_verror(NULL, "", verbosity, format, args);',
+                       "php_verror(NULL, verbosity, format, args);"
     inreplace "apc_persist.c", "EMPTY_SWITCH_DEFAULT_CASE()", "default: ZEND_UNREACHABLE();"
     if File.read("apc_cache.c").include?("zval_dtor")
       inreplace("apc_cache.c") { |s| s.gsub! "zval_dtor", "zval_ptr_dtor_nogc" }
