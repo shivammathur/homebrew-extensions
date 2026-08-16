@@ -42,6 +42,7 @@ class CouchbaseAT86 < AbstractPhpExtension
     ENV["OPENSSL_ROOT_DIR"] = "#{Formula["openssl@3"]}.opt_prefix"
     ENV["CURL_SSL_BACKEND"] = "SecureTransport"
     Dir.chdir "couchbase-#{version}"
+    inreplace "src/php_couchbase.cxx", "zend_parse_parameters_none_throw", "zend_parse_parameters_none"
     safe_phpize
     inreplace "configure",
       "EXTENSION_DIR=$($PHP_CONFIG --extension-dir 2>/dev/null)",
