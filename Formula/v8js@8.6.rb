@@ -32,13 +32,18 @@ class V8jsAT86 < AbstractPhpExtension
       --with-v8js=#{Utils::Path.formula_opt_prefix("v8")}
     ]
     ENV.append "CPPFLAGS", "-DV8_COMPRESS_POINTERS"
-    ENV.append "CPPFLAGS", "-DV8_ENABLE_SANDBOX"
     ENV.append "CXXFLAGS", "-Wno-c++11-narrowing"
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
     inreplace "config.m4", "c++17", "c++20"
     inreplace "v8js_v8object_class.cc", "static int v8js_v8object_get" \
                                       , "static zend_result v8js_v8object_get"
+    inreplace %w[
+      v8js_class.cc
+      v8js_class.h
+      v8js_v8object_class.cc
+      v8js_v8object_class.h
+    ], "XtOffsetOf", "offsetof"
     inreplace "v8js_array_access.cc", "info.This()", "info.HolderV2()"
     inreplace "v8js_array_access.cc", "arr->GetPrototype()", "arr->GetPrototypeV2()"
     inreplace "v8js_array_access.cc", "zval_dtor(&fci.function_name);", "zval_ptr_dtor(&fci.function_name);"
@@ -54,6 +59,34 @@ class V8jsAT86 < AbstractPhpExtension
     inreplace "v8js_object_export.cc",
               "v8::GenericNamedPropertyEnumeratorCallback",
               "v8::NamedPropertyEnumeratorCallback"
+    inreplace "v8js_object_export.cc" do |s|
+      s.gsub! "v8::External::New((isolate), mptr)",
+              "v8::External::New((isolate), mptr, v8::kExternalPointerTypeTagDefault)"
+      s.gsub! "v8::External::New((isolate), method_ptr)",
+              "v8::External::New((isolate), method_ptr, v8::kExternalPointerTypeTagDefault)"
+      s.gsub! "v8::External::New(isolate, persist_tpl_)",
+              "v8::External::New(isolate, persist_tpl_, v8::kExternalPointerTypeTagDefault)"
+      s.gsub! "v8::External::New(isolate, ce)",
+              "v8::External::New(isolate, ce, v8::kExternalPointerTypeTagDefault)"
+      s.gsub! "v8::External::New(isolate, Z_OBJ_P(value))",
+              "v8::External::New(isolate, Z_OBJ_P(value), v8::kExternalPointerTypeTagDefault)"
+      s.gsub! "v8::External::New((isolate), jsonserialize_method_ptr)",
+              "v8::External::New((isolate), jsonserialize_method_ptr, v8::kExternalPointerTypeTagDefault)"
+      s.gsub! "v8::External::Cast(*info.Data())->Value()",
+              "v8::External::Cast(*info.Data())->Value(v8::kExternalPointerTypeTagDefault)"
+      s.gsub! "php_object->Value()", "php_object->Value(v8::kExternalPointerTypeTagDefault)"
+      s.gsub! "ext_tmpl->Value()", "ext_tmpl->Value(v8::kExternalPointerTypeTagDefault)"
+      s.gsub! "ext_ce->Value()", "ext_ce->Value(v8::kExternalPointerTypeTagDefault)"
+    end
+    inreplace "v8js_class.cc",
+              "v8::External::New((isolate), method_ptr)",
+              "v8::External::New((isolate), method_ptr, v8::kExternalPointerTypeTagDefault)"
+    inreplace "v8js_variables.cc" do |s|
+      s.gsub! "v8js_fetch_php_variable, NULL,", "v8js_fetch_php_variable, nullptr,"
+      s.gsub! "data->Value()", "data->Value(v8::kExternalPointerTypeTagDefault)"
+      s.gsub! "v8::External::New(isolate, ctx)",
+              "v8::External::New(isolate, ctx, v8::kExternalPointerTypeTagDefault)"
+    end
     %w[
       v8js_array_access.cc
       v8js_convert.cc
@@ -75,9 +108,10 @@ class V8jsAT86 < AbstractPhpExtension
               "SetAlignedPointerInInternalField(" \
               "1, Z_OBJ_P(getThis()), v8::kEmbedderDataTypeTagDefault)"
     inreplace "v8js_object_export.cc",
-              "SetAlignedPointerInInternalField(0, ext_tmpl->Value())",
               "SetAlignedPointerInInternalField(" \
-              "0, ext_tmpl->Value(), v8::kEmbedderDataTypeTagDefault)"
+              "0, ext_tmpl->Value(v8::kExternalPointerTypeTagDefault))",
+              "SetAlignedPointerInInternalField(" \
+              "0, ext_tmpl->Value(v8::kExternalPointerTypeTagDefault), v8::kEmbedderDataTypeTagDefault)"
     inreplace "v8js_object_export.cc",
               "SetAlignedPointerInInternalField(1, object)",
               "SetAlignedPointerInInternalField(" \
