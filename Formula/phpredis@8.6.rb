@@ -63,6 +63,7 @@ class PhpredisAT86 < AbstractPhpExtension
       end
     end
     inreplace "redis.c", "standard/php_random.h", "ext/random/php_random.h"
+    inreplace %w[library.c redis.c], "php_hash_bin2hex", "zend_bin2hex"
     if File.read("common.h").include?("ext/standard/php_smart_string.h")
       inreplace("common.h") { |s| s.gsub! "ext/standard/php_smart_string.h", "zend_smart_string.h" }
     end
