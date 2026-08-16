@@ -73,7 +73,8 @@ fn
       s.sub! "php_mcrypt_filter,\n", "php_mcrypt_filter,\n    NULL,\n"
       s.gsub! old_filter_create, new_filter_create
       s.gsub! "php_stream_filter_alloc(&php_mcrypt_filter_ops, data, persistent)",
-              "php_stream_filter_alloc(&php_mcrypt_filter_ops, data, persistent, PSFS_SEEKABLE_NEVER)"
+              "php_stream_filter_alloc(&php_mcrypt_filter_ops, data, persistent, " \
+              "PSFS_SEEKABLE_NEVER, PSFS_SEEKABLE_NEVER)"
     end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--with-mcrypt=#{prefix}"
