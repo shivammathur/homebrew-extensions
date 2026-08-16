@@ -42,6 +42,7 @@ because: "both provide PHP image processing extensions and should not be loaded 
       --with-gmagick=#{Utils::Path.formula_opt_prefix("graphicsmagick")}
     ]
     Dir.chdir "gmagick-#{version}"
+    inreplace %w[gmagick.c php_gmagick_macros.h], "XtOffsetOf", "offsetof"
     safe_phpize
     inreplace "gmagick.c", "zend_exception_get_default()", "zend_ce_exception"
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
