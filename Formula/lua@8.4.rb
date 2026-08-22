@@ -20,6 +20,12 @@ class LuaAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any, arm64_tahoe:   "978e06e538c6932c25e816c8b3e9f125cbac437f81fe6f7e0a7f4d9c64ecbce5"
+    sha256 cellar: :any, arm64_sequoia: "3198eb42f628caf0cdc3119dda09514d61a1701627d94b2ac552ae4b42bc7cb4"
+    sha256 cellar: :any, arm64_sonoma:  "4128c269e6e33ab03319e7a86415ace1aad1159b5247b06eaa68c2269b3c3ac2"
+    sha256 cellar: :any, sonoma:        "5444131208fb98dc73fea8145839ae7cced5e5e3dac2c3b86fc114f447a75a41"
+    sha256 cellar: :any, arm64_linux:   "02cdbdf8f0d1eb0b7b4b197fd26552f0ff214806a55fb5600f64b8dfc2a7b171"
+    sha256 cellar: :any, x86_64_linux:  "68f0de17d4cc038275a6ecdde293a4ace72ac51074866fbb5a31a47b8a965877"
   end
 
   depends_on "lua"
