@@ -54,7 +54,7 @@
 | `imagick`         | `PHP 5.6` to `PHP 8.6` |
 | `imap`            | `PHP 5.6` to `PHP 8.6` |
 | `interbase`       | `PHP 5.6` to `PHP 8.6` |
-| `lua`             | `PHP 5.6` to `PHP 7.4` |
+| `lua`             | `PHP 5.6` to `PHP 8.6` |
 | `mailparse`       | `PHP 5.6` to `PHP 8.6` |
 | `maxminddb`       | `PHP 7.2` to `PHP 8.6` |
 | `mcrypt`          | `PHP 5.6` to `PHP 8.6` |

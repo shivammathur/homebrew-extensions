@@ -188,6 +188,13 @@ lua@7.1
 lua@7.2
 lua@7.3
 lua@7.4
+lua@8.0
+lua@8.1
+lua@8.2
+lua@8.3
+lua@8.4
+lua@8.5
+lua@8.6
 mailparse@7.3
 mailparse@7.4
 mailparse@8.0
