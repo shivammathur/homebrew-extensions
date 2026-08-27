@@ -8,8 +8,8 @@ class MongodbAT82 < AbstractPhpExtension
   init
   desc "Mongodb PHP extension"
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://pecl.php.net/get/mongodb-2.4.0.tgz"
-  sha256 "08d0d298f0e4c6190a4f8c1f1e23cfbf5d64a1063370b35368bd53012025afa8"
+  url "https://pecl.php.net/get/mongodb-2.4.1.tgz"
+  sha256 "a57dc6bd18938ac2396086d9eec44bc82e7d17c399844923b04fe4cdff895ac0"
   head "https://github.com/mongodb/mongo-php-driver.git", branch: "v2.x"
   license "Apache-2.0"
 
