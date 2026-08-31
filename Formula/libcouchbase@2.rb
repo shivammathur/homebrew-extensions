@@ -35,12 +35,12 @@ class LibcouchbaseAT2 < Formula
               "#define LIBUV_COMPAT_H",
               "#define LIBUV_COMPAT_H\n#ifndef EUNATCH\n#define EUNATCH EAI_FAIL\n#endif"
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args,
-                            "-DLCB_NO_TESTS=1",
-                            "-DLCB_BUILD_LIBEVENT=ON",
-                            "-DLCB_BUILD_LIBEV=ON",
-                            "-DLCB_BUILD_LIBUV=ON",
-                            "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+      system "cmake", "-S", "..", "-B", ".", *std_cmake_args,
+                                                   "-DLCB_NO_TESTS=1",
+                                                   "-DLCB_BUILD_LIBEVENT=ON",
+                                                   "-DLCB_BUILD_LIBEV=ON",
+                                                   "-DLCB_BUILD_LIBUV=ON",
+                                                   "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
       system "make", "install"
     end
   end
