@@ -59,6 +59,9 @@ class NewrelicAT84 < AbstractPhpExtension
     inreplace "agent/config.m4", "-l:libprotobuf-c.a", "-lprotobuf-c"
     inreplace "axiom/Makefile", "AXIOM_CFLAGS += -Wimplicit-fallthrough", "#AXIOM_CFLAGS += -Wimplicit-fallthrough"
     inreplace "daemon/go.mod", /toolchain go.*/, "toolchain go#{Formula["go"].version}"
+    inreplace "agent/php_txn.h",
+              "nr_php_txn_get_supported_security_policy_settings();",
+              "nr_php_txn_get_supported_security_policy_settings(nrtxnopt_t* opts);"
     inreplace "agent/php_txn_private.h",
               "nr_php_txn_get_supported_security_policy_settings();",
               "nr_php_txn_get_supported_security_policy_settings(nrtxnopt_t* opts);"
