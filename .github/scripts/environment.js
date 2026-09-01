@@ -45,7 +45,6 @@ module.exports = async ({github, context, core}, formula_detect) => {
         {runner: 'macos-26', cleanup: true},
         {runner: 'macos-15', cleanup: true},
         {runner: 'macos-14', cleanup: true},
-        {runner: 'macos-14-x86_64', cleanup: true},
         {runner: 'ubuntu-latest', container, workdir: '/github/home', cleanup: false, timeout: 4320},
         {runner: 'ubuntu-22.04-arm', container, workdir: '/github/home', cleanup: false, timeout: 4320},
     ]))
