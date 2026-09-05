@@ -59,6 +59,21 @@ jobs:
           extensions: ${{ matrix.extensions }}
         env:
           update: true
+      - name: Install formulae supplied by the PHP cache
+        run: |
+          extension_dir="$(php-config --extension-dir)"
+          IFS=', ' read -ra extensions <<< "${{ matrix.extensions }}"
+          for extension in "${extensions[@]}"; do
+            formula="shivammathur/extensions/$extension@${{ matrix.php }}"
+            if brew list --versions "$formula" >/dev/null 2>&1; then
+              continue
+            fi
+            brew install --skip-link "$formula"
+            formula_prefix="$(brew --prefix "$formula")"
+            modules=("$formula_prefix"/*.so)
+            [ -f "${modules[0]}" ]
+            sudo cp "${modules[@]}" "$extension_dir/"
+          done
       - name: Testing PHP version
         run: |
           php -v
