@@ -15,7 +15,8 @@ class XdebugAT83 < AbstractPhpExtension
 
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^(\d+\.\d+\.\d+)$/)
+    strategy :git
   end
 
   bottle do
