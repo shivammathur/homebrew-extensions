@@ -17,12 +17,12 @@ class XdebugAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 12
-    sha256 arm64_tahoe:   "caabc3d1d5401c8006b2de596d871c93ff59d6685c82b69455073430e385aa58"
-    sha256 arm64_sequoia: "453d3d095fe21361486cc70678cad59c7d56ed49ef1fd95966cd5aed12f53386"
-    sha256 arm64_sonoma:  "8cb940bf41088c23aee49aca763b6b522256156ea268e3f028203d712041a16d"
-    sha256 arm64_linux:   "7813e2fc6a7f174993a3c44e154479902453e8260b0872620f0fba19986b4a86"
-    sha256 x86_64_linux:  "d8f8072d15429015a0a67346fbad6febe835e3830a56d09a466e86314be94d35"
+    rebuild 13
+    sha256 arm64_tahoe:   "0a45dfdfde2a00b84ec639e5bb007215e367600a165b4bcbc8bf3e73fb992a04"
+    sha256 arm64_sequoia: "984a2f956c3c69dd836adf23fb0c080bf7aff9efc948274a6d8ba155662ff50e"
+    sha256 arm64_sonoma:  "e12bea03f23c99f0ce97a2d99f7827d0b251192271e2a172a0c45b4493379fbb"
+    sha256 arm64_linux:   "1c40f6727018c2c1a7935b1bff306b0f7c978412fcec15785c3e422f289e2c78"
+    sha256 x86_64_linux:  "f6a8a65ece6a018005ee2f6a24fe0d44fa7cb7c1ca285c685cd03687bc17e619"
   end
 
   on_linux do
