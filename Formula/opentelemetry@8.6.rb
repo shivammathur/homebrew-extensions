@@ -19,13 +19,11 @@ class OpentelemetryAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "689e3594368c39fc3f4a504c3d1240891c14dda8fdb955802ab924a18e8e40a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ca54a99542e4d5823927ac7749156a09ef928ac9cd7016232a7fa1b077bbff7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e14aa9c93ad2252b980748d92f4bca9aee182d94e4560547f0e6ca46468c659c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "251c8f94ea668b4478d7d24f6655828b79a3e2eef64ee783d401dfc511494cfd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a935c7c114795fdc3e36051fe239ca2ff805948dd90d5f105efe782b5d5c1603"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d3a2865e7c0bfa2c29416ff085df99525d14d36ac8857f95a9847050b170cc4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29b10db40ae175d0b784cdfbb84c09aa434be7f4e35ed4b353c9b9d2786455e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51feb860475ba3333d3be70a8396097a06a5168639baae3f057d372f830f13ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb27b5fc653f30fa3ee548eadb249427aab2c8797fe163c404413c437aec03f9"
+    sha256 cellar: :any,                 arm64_linux:   "c85562ea7d7b01c303f36d049c9b750563dcdaa14af602c190b0af3fc47eea18"
+    sha256 cellar: :any,                 x86_64_linux:  "7f9134603935e2b6a5fc51cbba30c0715f167524fab8b8afe8bfce21c5b3f684"
   end
 
   def install
