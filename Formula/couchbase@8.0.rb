@@ -15,13 +15,14 @@ class CouchbaseAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "e4721ff76600423398809bb54318bf6f55b6d6a368b86352d887e2fe4a426dc8"
-    sha256 cellar: :any,                 arm64_sonoma:  "ebc583dbf7406e71820d653e2cf62b6133912e808aa5f86b1972aa94c2825ff6"
-    sha256 cellar: :any,                 arm64_ventura: "7bd50bfd5cb22921c55f7f2bb56ef99e2eb0c522153aea3dcdcaa69ff6b30fb7"
-    sha256 cellar: :any,                 sonoma:        "09cbadcf66abb90dd6e6ac157a36909e81473fc06cad412bc2ba223f9c2aefbb"
-    sha256 cellar: :any,                 ventura:       "94447579e17284ba803549f739d3549cea78ecc0afa7a608effa73961c69a5a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6095e0f6892e39c9bc8c2ad2940c95d95b54221fb26d9bf45d8d150668faa1cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de593aac837cae391e5fb3b729df9628fad21170ae13c3d8c46ffe7b2c0be4a9"
+    sha256 cellar: :any,                 arm64_golden_gate: "1f281af0db03a1a6a09586a17cc3313e9e7e50183a0df3e8c2d67ad9c99682df"
+    sha256 cellar: :any,                 arm64_sequoia:     "e4721ff76600423398809bb54318bf6f55b6d6a368b86352d887e2fe4a426dc8"
+    sha256 cellar: :any,                 arm64_sonoma:      "ebc583dbf7406e71820d653e2cf62b6133912e808aa5f86b1972aa94c2825ff6"
+    sha256 cellar: :any,                 arm64_ventura:     "7bd50bfd5cb22921c55f7f2bb56ef99e2eb0c522153aea3dcdcaa69ff6b30fb7"
+    sha256 cellar: :any,                 sonoma:            "09cbadcf66abb90dd6e6ac157a36909e81473fc06cad412bc2ba223f9c2aefbb"
+    sha256 cellar: :any,                 ventura:           "94447579e17284ba803549f739d3549cea78ecc0afa7a608effa73961c69a5a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6095e0f6892e39c9bc8c2ad2940c95d95b54221fb26d9bf45d8d150668faa1cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "de593aac837cae391e5fb3b729df9628fad21170ae13c3d8c46ffe7b2c0be4a9"
   end
 
   depends_on "cmake" => :build
