@@ -15,16 +15,17 @@ class PdoSqlsrvAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia:  "ad0794a1c8877370ced64bab0f4e230b4229a42ad4ba91700a558a469e94fbf5"
-    sha256 cellar: :any,                 arm64_ventura:  "fe382396012cb7fb404ef734275e20b32d1f581ec9580baedf2c07dde5563194"
-    sha256 cellar: :any,                 arm64_monterey: "71c43543cdb559da211f357b71cc1e9750b344cd5dfec019bddcef8e51487b2b"
-    sha256 cellar: :any,                 arm64_big_sur:  "46fa783462e6a240495e75d632ccec0b00926776ac9c5ead38d2d5c86b110397"
-    sha256 cellar: :any,                 sonoma:         "a6a396143ca1039beaf56acf239c52126621582d1c2ac95893f16ba4e4f13c93"
-    sha256 cellar: :any,                 ventura:        "ff57937ef68fc1c33413eaf22bf4061bff315d210ec1ebbf75ca4fadad0573b0"
-    sha256 cellar: :any,                 monterey:       "37629eebe8867b536779e603057e462bea58b75c11b1b77613ac291a74863c58"
-    sha256 cellar: :any,                 big_sur:        "8c2c4d730c440170150092f4add431ff352c1c496f10b2a444d57c99a7eb9bcc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "45283611bd4c2c2f75863012e6287019a290fa6ed632df06b3873c049113d899"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3851f2c3769e3f36708a6721a5d5a4bf682699ca12929371a0f75e99a3cd5eaa"
+    sha256 cellar: :any,                 arm64_golden_gate: "605e7844e14f0d3cebca27fed2d5f9e970bd7ff1e453835d01231c8fa8930536"
+    sha256 cellar: :any,                 arm64_sequoia:     "ad0794a1c8877370ced64bab0f4e230b4229a42ad4ba91700a558a469e94fbf5"
+    sha256 cellar: :any,                 arm64_ventura:     "fe382396012cb7fb404ef734275e20b32d1f581ec9580baedf2c07dde5563194"
+    sha256 cellar: :any,                 arm64_monterey:    "71c43543cdb559da211f357b71cc1e9750b344cd5dfec019bddcef8e51487b2b"
+    sha256 cellar: :any,                 arm64_big_sur:     "46fa783462e6a240495e75d632ccec0b00926776ac9c5ead38d2d5c86b110397"
+    sha256 cellar: :any,                 sonoma:            "a6a396143ca1039beaf56acf239c52126621582d1c2ac95893f16ba4e4f13c93"
+    sha256 cellar: :any,                 ventura:           "ff57937ef68fc1c33413eaf22bf4061bff315d210ec1ebbf75ca4fadad0573b0"
+    sha256 cellar: :any,                 monterey:          "37629eebe8867b536779e603057e462bea58b75c11b1b77613ac291a74863c58"
+    sha256 cellar: :any,                 big_sur:           "8c2c4d730c440170150092f4add431ff352c1c496f10b2a444d57c99a7eb9bcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "45283611bd4c2c2f75863012e6287019a290fa6ed632df06b3873c049113d899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3851f2c3769e3f36708a6721a5d5a4bf682699ca12929371a0f75e99a3cd5eaa"
   end
 
   depends_on "unixodbc"
