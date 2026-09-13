@@ -7,7 +7,7 @@ class FirebirdClient < Formula
   desc "Client libraries and headers for Firebird database"
   homepage "https://firebirdsql.org"
   url "https://github.com/FirebirdSQL/firebird/archive/refs/tags/v5.0.4.tar.gz"
-  sha256 "7f09ec81a24aea1bc6b02b5d8bd3b8a204fe850eabf66ab97b35d94960bef18d"
+  sha256 "5e5f77592713ac77f12ba24284530e2855c400d9062333b351c677a509cfb0a3"
   # License references:
   # 1. https://firebirdsql.org/en/interbase-public-license
   # 2. https://www.firebirdsql.org/en/initial-developer-s-public-license-version-1-0/
