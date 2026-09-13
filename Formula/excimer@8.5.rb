@@ -19,12 +19,13 @@ class ExcimerAT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74f8bfece7c7b2dd3d901a25841aa8d449304f9232f1d158dc96882fa9dbdfd8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51f1a0eb773b3252aa78bfd00018117534d038bc563600f7bb928fa0a0143da7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4dc1d5939868b8db8967895102b5f308b8774bba0dc7e6da439a9dba7e44e67"
-    sha256 cellar: :any_skip_relocation, sonoma:        "92fba3bfc67e48a364c729779b198515066a7303da87f8337965360005ef872d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2c3785ef1553a63c77675bf1e72f36aa344be70ebf9e0104a73470b83419c44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b64501b2ae69bae28de0de0b6e878e3bcddda69031666879efb8b7b902ada99"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3cfc7922a45acb38eadac8bdd1042a10026104b65df1556feaa8b0d67c8eace0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "74f8bfece7c7b2dd3d901a25841aa8d449304f9232f1d158dc96882fa9dbdfd8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "51f1a0eb773b3252aa78bfd00018117534d038bc563600f7bb928fa0a0143da7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f4dc1d5939868b8db8967895102b5f308b8774bba0dc7e6da439a9dba7e44e67"
+    sha256 cellar: :any_skip_relocation, sonoma:            "92fba3bfc67e48a364c729779b198515066a7303da87f8337965360005ef872d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b2c3785ef1553a63c77675bf1e72f36aa344be70ebf9e0104a73470b83419c44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6b64501b2ae69bae28de0de0b6e878e3bcddda69031666879efb8b7b902ada99"
   end
 
   def install
