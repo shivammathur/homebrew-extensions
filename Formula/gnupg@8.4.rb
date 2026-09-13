@@ -20,13 +20,14 @@ class GnupgAT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "61301e184edc323e527b7af77d315ad0a2264d8242b6f423b09c2192d7888855"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d77e80916be117bb7017e4e85066d6f2c16964c205d46f0559cc88c32a1107a"
-    sha256 cellar: :any,                 arm64_ventura: "89f007f97b0564fa3843320016c75c3c0276ffbe3d52e127745124d3d4d6244a"
-    sha256 cellar: :any,                 sonoma:        "1ee015451153b1c77294d64030256dbd777d50f0217355d1a796d64ffe5b9de2"
-    sha256 cellar: :any,                 ventura:       "523e9929cfcee12a48f11af65f8cffa0801f037582666e920107287950ef66f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01621ef1873af38c7e87b693d4f28e8db7dbe55116737f1876054c8fc4de7bf5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45945d6d410ab48ef8a8c70caf4cf6def8138633bcd65d33a0882a5083501fe9"
+    sha256 cellar: :any,                 arm64_golden_gate: "5dfde3542bdd18b34abae7aca24c0d3f6f11d8a6160b7aa62ed8b49295071ce2"
+    sha256 cellar: :any,                 arm64_sequoia:     "61301e184edc323e527b7af77d315ad0a2264d8242b6f423b09c2192d7888855"
+    sha256 cellar: :any,                 arm64_sonoma:      "3d77e80916be117bb7017e4e85066d6f2c16964c205d46f0559cc88c32a1107a"
+    sha256 cellar: :any,                 arm64_ventura:     "89f007f97b0564fa3843320016c75c3c0276ffbe3d52e127745124d3d4d6244a"
+    sha256 cellar: :any,                 sonoma:            "1ee015451153b1c77294d64030256dbd777d50f0217355d1a796d64ffe5b9de2"
+    sha256 cellar: :any,                 ventura:           "523e9929cfcee12a48f11af65f8cffa0801f037582666e920107287950ef66f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "01621ef1873af38c7e87b693d4f28e8db7dbe55116737f1876054c8fc4de7bf5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "45945d6d410ab48ef8a8c70caf4cf6def8138633bcd65d33a0882a5083501fe9"
   end
 
   depends_on "gpgme"
