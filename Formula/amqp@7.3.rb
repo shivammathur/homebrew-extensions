@@ -15,16 +15,17 @@ class AmqpAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia:  "2e72b1e77e503947f6cdc364df2e9020f723d24604a48bbe15eba02dcec51940"
-    sha256 cellar: :any,                 arm64_ventura:  "01f69ec25c76c0a0eb93f3842ff3bcd8cafa9de85ed08ba2ba0fcc3fc0c1150f"
-    sha256 cellar: :any,                 arm64_monterey: "c16fbf7aa06700ec67b23294ccb3a46fac8139b4fd0acd0393937cf82ad57d8b"
-    sha256 cellar: :any,                 arm64_big_sur:  "30b27717f0562784be0aa8aecaeb1f6b73497ed50dfc9c61a863baabcbf7ad48"
-    sha256 cellar: :any,                 sonoma:         "b3e3639e175cbb48c86ab6078f492959107d9c0c225a17431bcccbd6d605f8e5"
-    sha256 cellar: :any,                 ventura:        "dec315a303c520cf92498cc3ea0eabb462442dfb623effa8d16331aef8ceb6b2"
-    sha256 cellar: :any,                 big_sur:        "38f49ed23c14ad73ca38cbe6d3963b300814d66e9cb785e04f41a4350b43804c"
-    sha256 cellar: :any,                 catalina:       "314bf7de613f2a3bf4ca1fdbb3aa407c73a6f82de2bf665168607b3a9957dbcf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "22b23edd2a370dd3d9a48c3438224afb530997912190be9c09c086049817d2c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3f8b4d3dde1e5b9dcc6dd2788c414e1ef401d8afe40706961dc40dd1e1fee3f"
+    sha256 cellar: :any,                 arm64_golden_gate: "f6642f3148fe075174e667a027d70885f1738377203ad09f6b232845bf5e33da"
+    sha256 cellar: :any,                 arm64_sequoia:     "2e72b1e77e503947f6cdc364df2e9020f723d24604a48bbe15eba02dcec51940"
+    sha256 cellar: :any,                 arm64_ventura:     "01f69ec25c76c0a0eb93f3842ff3bcd8cafa9de85ed08ba2ba0fcc3fc0c1150f"
+    sha256 cellar: :any,                 arm64_monterey:    "c16fbf7aa06700ec67b23294ccb3a46fac8139b4fd0acd0393937cf82ad57d8b"
+    sha256 cellar: :any,                 arm64_big_sur:     "30b27717f0562784be0aa8aecaeb1f6b73497ed50dfc9c61a863baabcbf7ad48"
+    sha256 cellar: :any,                 sonoma:            "b3e3639e175cbb48c86ab6078f492959107d9c0c225a17431bcccbd6d605f8e5"
+    sha256 cellar: :any,                 ventura:           "dec315a303c520cf92498cc3ea0eabb462442dfb623effa8d16331aef8ceb6b2"
+    sha256 cellar: :any,                 big_sur:           "38f49ed23c14ad73ca38cbe6d3963b300814d66e9cb785e04f41a4350b43804c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "22b23edd2a370dd3d9a48c3438224afb530997912190be9c09c086049817d2c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a3f8b4d3dde1e5b9dcc6dd2788c414e1ef401d8afe40706961dc40dd1e1fee3f"
+    sha256 cellar: :any,                 x86_64_catalina:   "314bf7de613f2a3bf4ca1fdbb3aa407c73a6f82de2bf665168607b3a9957dbcf"
   end
 
   depends_on "rabbitmq-c"
