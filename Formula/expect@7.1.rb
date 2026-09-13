@@ -21,13 +21,14 @@ class ExpectAT71 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 3
-    sha256 cellar: :any,                 arm64_sequoia: "62d45a84fb18b240bc4c3d706f82d3793e980e1a58b409246b2365f8f18f5b93"
-    sha256 cellar: :any,                 arm64_sonoma:  "f59bc242814e50dcd0e9e8468959d1586bc0d39730bfc8fa13cff7ef2fa0e455"
-    sha256 cellar: :any,                 arm64_ventura: "427c37398145d69d447f5e1d937ce164812f56a8d6fde631c959d9cf6720e63f"
-    sha256 cellar: :any,                 sonoma:        "e5a1e079c9f4e2919322c9d1daf297982781a19cf4041d23b241b5505c270a70"
-    sha256 cellar: :any,                 ventura:       "98dbf37393340a4099b2c1736e89b8cf1c81dff76ba1ef1189b1c82a95d6f613"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55e2668c7060af9b9f7434d861e31bc139137af217ceabbea4ec04f98e5f9ec1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c29f069547d7cea31bbaa83bf0b077de9e8f5e9046cf0d97bd444db16550fbc"
+    sha256 cellar: :any,                 arm64_golden_gate: "57fe9c87876e14a61d0a071ef34f6ace32ff5cddaa15c169dce70d9741ea543f"
+    sha256 cellar: :any,                 arm64_sequoia:     "62d45a84fb18b240bc4c3d706f82d3793e980e1a58b409246b2365f8f18f5b93"
+    sha256 cellar: :any,                 arm64_sonoma:      "f59bc242814e50dcd0e9e8468959d1586bc0d39730bfc8fa13cff7ef2fa0e455"
+    sha256 cellar: :any,                 arm64_ventura:     "427c37398145d69d447f5e1d937ce164812f56a8d6fde631c959d9cf6720e63f"
+    sha256 cellar: :any,                 sonoma:            "e5a1e079c9f4e2919322c9d1daf297982781a19cf4041d23b241b5505c270a70"
+    sha256 cellar: :any,                 ventura:           "98dbf37393340a4099b2c1736e89b8cf1c81dff76ba1ef1189b1c82a95d6f613"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "55e2668c7060af9b9f7434d861e31bc139137af217ceabbea4ec04f98e5f9ec1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1c29f069547d7cea31bbaa83bf0b077de9e8f5e9046cf0d97bd444db16550fbc"
   end
 
   depends_on "expect"
