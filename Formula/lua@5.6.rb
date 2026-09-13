@@ -40,6 +40,13 @@ class LuaAT56 < AbstractPhpExtension
     inreplace "php_lua.h", "include \"l", "include \"lua/l"
     inreplace "lua_closure.c", "include \"l", "include \"lua/l"
     inreplace "lua.c", /.*LUA_ERRGCMM.*/, ""
+    inreplace "lua.c", "L = lua_newstate(php_lua_alloc_function, NULL);", <<~EOS
+      #if LUA_VERSION_NUM >= 505
+        L = lua_newstate(php_lua_alloc_function, NULL, luaL_makeseed(NULL));
+      #else
+        L = lua_newstate(php_lua_alloc_function, NULL);
+      #endif
+    EOS
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
