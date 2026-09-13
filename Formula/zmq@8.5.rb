@@ -18,12 +18,13 @@ class ZmqAT85 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "008be2b3181c1354d9b4e69afe2a3633a0e2d1997f0478d916e83f1e73497800"
-    sha256 cellar: :any,                 arm64_sequoia: "d90764abc8a43201630b7f33cfeab506550add548f214a31333d8b85cbdb54f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "2fdaa72d374b4e11f69ed8500f1097d88341c0890277ce9b1ca681e976f29362"
-    sha256 cellar: :any,                 sonoma:        "3872f967bbe2b99b05572b289fc8a4b157ce679b824f7b7b3813bc787cb622d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b045d131cf46a1320840a332b80e5c71d642636fec63cba6b3994d0638a36989"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b48024eadd94ddb199d42857e71e6b174fd4050930b7a8ab8b288bc8bda115d"
+    sha256 cellar: :any,                 arm64_golden_gate: "18591072185f6e45e3399ad2035d2b149b73c22d280566937ae732e623152464"
+    sha256 cellar: :any,                 arm64_tahoe:       "008be2b3181c1354d9b4e69afe2a3633a0e2d1997f0478d916e83f1e73497800"
+    sha256 cellar: :any,                 arm64_sequoia:     "d90764abc8a43201630b7f33cfeab506550add548f214a31333d8b85cbdb54f8"
+    sha256 cellar: :any,                 arm64_sonoma:      "2fdaa72d374b4e11f69ed8500f1097d88341c0890277ce9b1ca681e976f29362"
+    sha256 cellar: :any,                 sonoma:            "3872f967bbe2b99b05572b289fc8a4b157ce679b824f7b7b3813bc787cb622d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b045d131cf46a1320840a332b80e5c71d642636fec63cba6b3994d0638a36989"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3b48024eadd94ddb199d42857e71e6b174fd4050930b7a8ab8b288bc8bda115d"
   end
 
   depends_on "zeromq"
