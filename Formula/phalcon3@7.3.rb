@@ -14,16 +14,17 @@ class Phalcon3AT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "afec3762fdf6ad6e657e895100f5f2ad90c5337e93d2396a01ef00245014e196"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b22ef05017228225c30f0cc2322f6b70b6fe558f5638136a4a095cc968ae933"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "69474b879b0126dc8412d91baec153ff9862c753284a13e009a1a4cb8aaffc9f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8b71f9583bf4b304ca9068e537541a8bd4444f227360359d6a9dc6bf0a8b315"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d1d6564771a956a0bd3db78037024f9547645dd4d4605fc4edc1265794b521e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "df7f0c863ca6c6473b8b64392aafac19d268e698003c566aa362627a6d9d8e3a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9e65dd0130de5776faaacf4cfb706bd9b3ac99d4ce56ae6536b438d1d7790a89"
-    sha256 cellar: :any_skip_relocation, catalina:       "90ffa28c83344eb16333970eb73e574eda758390abe232eda9517b0fef06e547"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "fc73948a4e679547b6f3334817ad5ea1c64c848340c22a1ed469e2e318ab7587"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e21f5aa6adc402f8abee6095231379edccd4c388e6f144ddcc9c474ac181ff6f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2ebccc775332b7ca16975d0ca3fab40277261f0908684574c53ff2c7d6848838"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "afec3762fdf6ad6e657e895100f5f2ad90c5337e93d2396a01ef00245014e196"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "0b22ef05017228225c30f0cc2322f6b70b6fe558f5638136a4a095cc968ae933"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "69474b879b0126dc8412d91baec153ff9862c753284a13e009a1a4cb8aaffc9f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "e8b71f9583bf4b304ca9068e537541a8bd4444f227360359d6a9dc6bf0a8b315"
+    sha256 cellar: :any_skip_relocation, sonoma:            "d1d6564771a956a0bd3db78037024f9547645dd4d4605fc4edc1265794b521e0"
+    sha256 cellar: :any_skip_relocation, ventura:           "df7f0c863ca6c6473b8b64392aafac19d268e698003c566aa362627a6d9d8e3a"
+    sha256 cellar: :any_skip_relocation, big_sur:           "9e65dd0130de5776faaacf4cfb706bd9b3ac99d4ce56ae6536b438d1d7790a89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "fc73948a4e679547b6f3334817ad5ea1c64c848340c22a1ed469e2e318ab7587"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e21f5aa6adc402f8abee6095231379edccd4c388e6f144ddcc9c474ac181ff6f"
+    sha256 cellar: :any_skip_relocation, x86_64_catalina:   "90ffa28c83344eb16333970eb73e574eda758390abe232eda9517b0fef06e547"
   end
 
   depends_on "pcre"
