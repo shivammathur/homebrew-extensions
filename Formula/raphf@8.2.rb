@@ -21,14 +21,15 @@ class RaphfAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c855ea03d6bc683a0528752efd5d6abca03cf0867534036146470a084ceed5e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d20c041211d4de71f91e725908f124e675c46e86c6826fb9cc7fe65ed285dd15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e8a7181f36a67393923a475735915f4e74383e2fd230307bcd8e6fa887f20a9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1a8b793b29c5dac53f97186d4b17398646a9452ac2673847fc3b39c1b025fafb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de58c40877988962f31b5f29fd7544d6d06053d8d1a7ab90412f25fa05365d36"
-    sha256 cellar: :any_skip_relocation, ventura:       "8fd834f63890f10d16d92732cf6dc03a0ef3ebee539346ec37c2c4e57fc23af7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "760f8d6c6e4966d780ecbf2231f9bd4c4c7d908a4589b0a9d9431ecb0348f609"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f24a53dfd1cfb4bdec9aaaf98cef399dbc4e306c1405071f16685ec278128b2f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b3fdfae23b59fbf49c1f70b93b6397675209dcbfa8236cb6c90fb3d42e4500a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5c855ea03d6bc683a0528752efd5d6abca03cf0867534036146470a084ceed5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d20c041211d4de71f91e725908f124e675c46e86c6826fb9cc7fe65ed285dd15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8e8a7181f36a67393923a475735915f4e74383e2fd230307bcd8e6fa887f20a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "1a8b793b29c5dac53f97186d4b17398646a9452ac2673847fc3b39c1b025fafb"
+    sha256 cellar: :any_skip_relocation, sonoma:            "de58c40877988962f31b5f29fd7544d6d06053d8d1a7ab90412f25fa05365d36"
+    sha256 cellar: :any_skip_relocation, ventura:           "8fd834f63890f10d16d92732cf6dc03a0ef3ebee539346ec37c2c4e57fc23af7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "760f8d6c6e4966d780ecbf2231f9bd4c4c7d908a4589b0a9d9431ecb0348f609"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f24a53dfd1cfb4bdec9aaaf98cef399dbc4e306c1405071f16685ec278128b2f"
   end
 
   def install
