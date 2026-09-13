@@ -15,16 +15,17 @@ class MemcacheAT72 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0241782ea7f91ef9aa315439617db8eb27365c6f7b2bc627a565dd4fd39851fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bffce610faa353a481c72c23527206981586d7ea53d17b464c22c0b2a9b72b7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8ca40c91ec709c206fd41a2fbdc72be699baa235969b425b3aa1d62aa04d5e6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b47e577a71ec37a02000a5df1fcbeda5cf9bce28633daeff6acbde7d147fd7dc"
-    sha256 cellar: :any,                 sonoma:         "abc863f3734cd33c83d6bc6d8ee317b4c81b9b841d73f8a3203b4205c57d5696"
-    sha256 cellar: :any_skip_relocation, ventura:        "1da95a1a8e73dc192c442ec449c1b852cb88b5654819b008c82ae921d05111de"
-    sha256 cellar: :any_skip_relocation, big_sur:        "42e093cdcfb1b52bcb97b9b56c8eeddb7d0851d391c26ec921b2024fc3184e97"
-    sha256 cellar: :any_skip_relocation, catalina:       "a71ae5bd6aa1211c1cfcdeb69dfb6c7a254735d01660efdb56587e43ba7c89ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "9480e6d7701389a4905b0df9d6f881076dd3543c76d937fe3d6c816dd2ef14d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da595555c4038d5cdcd80d6a8f4b3cc76019d42662d44181decec1e534902c23"
+    sha256 cellar: :any,                 arm64_golden_gate: "9da59b4f4ca9e28dcf069c7cdaf1cd06c01e65ebc4775a9a15dbc8bc190f4a6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0241782ea7f91ef9aa315439617db8eb27365c6f7b2bc627a565dd4fd39851fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "0bffce610faa353a481c72c23527206981586d7ea53d17b464c22c0b2a9b72b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "a8ca40c91ec709c206fd41a2fbdc72be699baa235969b425b3aa1d62aa04d5e6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "b47e577a71ec37a02000a5df1fcbeda5cf9bce28633daeff6acbde7d147fd7dc"
+    sha256 cellar: :any,                 sonoma:            "abc863f3734cd33c83d6bc6d8ee317b4c81b9b841d73f8a3203b4205c57d5696"
+    sha256 cellar: :any_skip_relocation, ventura:           "1da95a1a8e73dc192c442ec449c1b852cb88b5654819b008c82ae921d05111de"
+    sha256 cellar: :any_skip_relocation, big_sur:           "42e093cdcfb1b52bcb97b9b56c8eeddb7d0851d391c26ec921b2024fc3184e97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9480e6d7701389a4905b0df9d6f881076dd3543c76d937fe3d6c816dd2ef14d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "da595555c4038d5cdcd80d6a8f4b3cc76019d42662d44181decec1e534902c23"
+    sha256 cellar: :any_skip_relocation, x86_64_catalina:   "a71ae5bd6aa1211c1cfcdeb69dfb6c7a254735d01660efdb56587e43ba7c89ca"
   end
 
   depends_on "zlib"
