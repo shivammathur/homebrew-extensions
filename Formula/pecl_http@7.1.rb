@@ -28,6 +28,7 @@ class PeclHttpAT71 < AbstractPhpExtension
   depends_on "icu4c@78"
   depends_on "libevent"
   depends_on "libidn2"
+  depends_on "openssl@3"
   depends_on "shivammathur/extensions/propro@7.1"
   depends_on "shivammathur/extensions/raphf@7.1"
   depends_on "zlib"
@@ -51,6 +52,10 @@ class PeclHttpAT71 < AbstractPhpExtension
     Dir.chdir "pecl_http-#{version}"
     inreplace "src/php_http_api.h", "ext/raphf", "ext/raphf@7.1"
     inreplace "src/php_http_api.h", "ext/propro", "ext/propro@7.1"
+    inreplace "src/php_http_client_curl.h", "void *(*init)();",
+              "void *(*init)(php_http_client_t *client, void *user_data);"
+    inreplace "src/php_http_client_curl_event.c", "php_http_client_curl_event_init(php_http_client_t *client)",
+              "php_http_client_curl_event_init(php_http_client_t *client, void *user_data)"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

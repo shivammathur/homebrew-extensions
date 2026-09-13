@@ -34,6 +34,7 @@ class PeclHttpAT84 < AbstractPhpExtension
   depends_on "icu4c@78"
   depends_on "libevent"
   depends_on "libidn2"
+  depends_on "openssl@3"
   depends_on "shivammathur/extensions/raphf@8.4"
   depends_on "zlib"
 
