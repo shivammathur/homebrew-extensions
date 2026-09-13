@@ -20,11 +20,12 @@ class MaxminddbAT72 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_tahoe:   "73430a0edcf5fce139534708635d3fd7f6181566ce78365b407f554a5117c741"
-    sha256 cellar: :any, arm64_sequoia: "a136c1694753c1fd9aa33b5b9c8a3b9890dc83e3d771c07a4f666be965f63297"
-    sha256 cellar: :any, arm64_sonoma:  "ab1132e693b3ed90a33b5578c9b16de7aeab17fad0d08805ba947881eb73e59d"
-    sha256 cellar: :any, arm64_linux:   "a79d89a341a2c2e0fee255654e79854eee30c8e426c306ed2029e0db17ad5f66"
-    sha256 cellar: :any, x86_64_linux:  "4abdb9102e4b9022729717bd035a567895be268b9ecb2d74867255a0dfee64e6"
+    sha256 cellar: :any, arm64_golden_gate: "cdd1de7d8fbc69f5c79543137f1f75eaea4fc1974dd716b079b19a1a94e987c8"
+    sha256 cellar: :any, arm64_tahoe:       "73430a0edcf5fce139534708635d3fd7f6181566ce78365b407f554a5117c741"
+    sha256 cellar: :any, arm64_sequoia:     "a136c1694753c1fd9aa33b5b9c8a3b9890dc83e3d771c07a4f666be965f63297"
+    sha256 cellar: :any, arm64_sonoma:      "ab1132e693b3ed90a33b5578c9b16de7aeab17fad0d08805ba947881eb73e59d"
+    sha256 cellar: :any, arm64_linux:       "a79d89a341a2c2e0fee255654e79854eee30c8e426c306ed2029e0db17ad5f66"
+    sha256 cellar: :any, x86_64_linux:      "4abdb9102e4b9022729717bd035a567895be268b9ecb2d74867255a0dfee64e6"
   end
 
   depends_on "libmaxminddb"
