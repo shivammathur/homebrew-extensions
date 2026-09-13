@@ -45,17 +45,16 @@ class V8jsAT86 < AbstractPhpExtension
       v8js_v8object_class.cc
       v8js_v8object_class.h
     ], "XtOffsetOf", "offsetof"
-    inreplace "v8js_array_access.cc", "info.This()", "info.HolderV2()"
-    inreplace "v8js_array_access.cc", "arr->GetPrototype()", "arr->GetPrototypeV2()"
+    inreplace "v8js_array_access.cc", "info.This()", "info.Holder()"
     inreplace "v8js_array_access.cc", "zval_dtor(&fci.function_name);", "zval_ptr_dtor(&fci.function_name);"
     inreplace "v8js_convert.cc", "zval_dtor(&dtval);", "zval_ptr_dtor(&dtval);"
     inreplace "v8js_object_export.cc",
               "self = info.This();\n\tv8::Local<v8::Array> result",
-              "self = info.HolderV2();\n\tv8::Local<v8::Array> result"
+              "self = info.Holder();\n\tv8::Local<v8::Array> result"
     %w[GETTER SETTER QUERY DELETER].each do |prop|
       inreplace "v8js_object_export.cc",
                 "info.This(), property, V8JS_PROP_#{prop}",
-                "info.HolderV2(), property, V8JS_PROP_#{prop}"
+                "info.Holder(), property, V8JS_PROP_#{prop}"
     end
     inreplace "v8js_object_export.cc",
               "v8::GenericNamedPropertyEnumeratorCallback",
@@ -124,6 +123,9 @@ class V8jsAT86 < AbstractPhpExtension
     inreplace "v8js_v8object_class.cc",
               "str->Write(isolate, &c, 0, 1)",
               "str->WriteV2(isolate, 0, 1, &c)"
+    inreplace "v8js_class.cc", "SetAlignedPointerInEmbedderData(1, c)",
+              "SetAlignedPointerInEmbedderData(1, c, v8::kEmbedderDataTypeTagDefault)"
+    inreplace "v8js_v8.h", "v8::PropertyCallbackInfo<void>", "v8::PropertyCallbackInfo<v8::Boolean>"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

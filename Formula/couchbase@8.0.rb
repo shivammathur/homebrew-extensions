@@ -43,7 +43,9 @@ class CouchbaseAT80 < AbstractPhpExtension
       "EXTENSION_DIR=#{prefix}"
     inreplace "Makefile.frag",
      '-DCMAKE_C_COMPILER="$(CC)"',
-     '-DCMAKE_C_COMPILER="$(CC)" -DCMAKE_POLICY_VERSION_MINIMUM=3.5'
+     '-DCMAKE_C_COMPILER="$(firstword $(CC))" -DCMAKE_POLICY_VERSION_MINIMUM=3.5'
+    inreplace "Makefile.frag", '-DCMAKE_C_FLAGS="$(COMMON_FLAGS)"',
+              '-DCMAKE_C_FLAGS="$(filter-out $(firstword $(CC)),$(CC)) $(COMMON_FLAGS)"'
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-couchbase"
     system "make"
     system "make", "phpincludedir=#{include}/php", "install"

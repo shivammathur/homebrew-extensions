@@ -32,12 +32,45 @@ class V8jsAT72 < AbstractPhpExtension
       --with-v8js=#{Utils::Path.formula_opt_prefix("v8")}
     ]
     ENV.append "CPPFLAGS", "-DV8_COMPRESS_POINTERS"
-    ENV.append "CPPFLAGS", "-DV8_ENABLE_SANDBOX"
     ENV.append "CXXFLAGS", "-Wno-c++11-narrowing"
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
     inreplace "config.m4", "c++17", "c++20"
-    inreplace "v8js_object_export.cc", "info.Holder()", "info.This()"
+    inreplace "v8js_object_export.cc", "v8::GenericNamedPropertyEnumeratorCallback",
+              "v8::NamedPropertyEnumeratorCallback"
+    inreplace %w[v8js_array_access.cc v8js_convert.cc v8js_exceptions.cc v8js_object_export.cc v8js_v8.cc],
+              "GetAlignedPointerFromInternalField(1)",
+              "GetAlignedPointerFromInternalField(1, v8::kEmbedderDataTypeTagDefault)"
+    inreplace "v8js_object_export.cc", "GetAlignedPointerFromInternalField(0)",
+              "GetAlignedPointerFromInternalField(0, v8::kEmbedderDataTypeTagDefault)"
+    inreplace "v8js_class.cc", "SetAlignedPointerInInternalField(1, Z_OBJ_P(getThis()))",
+              "SetAlignedPointerInInternalField(1, Z_OBJ_P(getThis()), v8::kEmbedderDataTypeTagDefault)"
+    inreplace "v8js_object_export.cc" do |s|
+      s.gsub! "SetAlignedPointerInInternalField(0, ext_tmpl->Value())",
+              "SetAlignedPointerInInternalField(0, ext_tmpl->Value(), v8::kEmbedderDataTypeTagDefault)"
+      s.gsub! "SetAlignedPointerInInternalField(1, object)",
+              "SetAlignedPointerInInternalField(1, object, v8::kEmbedderDataTypeTagDefault)"
+      s.gsub! "SetAlignedPointerInInternalField(1, Z_OBJ(value))",
+              "SetAlignedPointerInInternalField(1, Z_OBJ(value), v8::kEmbedderDataTypeTagDefault)"
+    end
+    inreplace "v8js_v8object_class.cc", "str->Write(isolate, &c, 0, 1)", "str->WriteV2(isolate, 0, 1, &c)"
+    inreplace "v8js_class.cc", "SetAlignedPointerInEmbedderData(1, c)",
+              "SetAlignedPointerInEmbedderData(1, c, v8::kEmbedderDataTypeTagDefault)"
+    inreplace %w[v8js_class.cc v8js_object_export.cc v8js_variables.cc],
+              /(v8::External::New\(\(?isolate\)?, (?:Z_OBJ_P\(value\)|\w+))\)/,
+              '\1, v8::kExternalPointerTypeTagDefault)'
+    inreplace %w[v8js_object_export.cc v8js_variables.cc],
+              /((?:data|php_object|ext_tmpl|ext_ce|v8::External::Cast\(\*info\.Data\(\)\))->Value)\(\)/,
+              '\1(v8::kExternalPointerTypeTagDefault)'
+    inreplace "v8js_variables.cc", "v8js_fetch_php_variable, NULL,", "v8js_fetch_php_variable, nullptr,"
+    inreplace "v8js_object_export.cc" do |s|
+      s.gsub! "return_value = info.Holder();", "return_value = info.This();"
+      s.gsub! "self = info.Holder();", "self = info.This();"
+      s.gsub! "self = info.This();\n\tv8::Local<v8::Array> result",
+              "self = info.Holder();\n\tv8::Local<v8::Array> result"
+    end
+    inreplace %w[v8js_array_access.cc v8js_array_access.h v8js_object_export.cc],
+              "v8::PropertyCallbackInfo<void>", "v8::PropertyCallbackInfo<v8::Boolean>"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

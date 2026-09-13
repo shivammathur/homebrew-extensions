@@ -33,6 +33,7 @@ class XdebugAT73 < AbstractPhpExtension
   end
 
   def install
+    inreplace "src/develop/develop.h", "xdebug_develop_minit()", "xdebug_develop_minit(INIT_FUNC_ARGS)"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"

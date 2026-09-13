@@ -38,6 +38,7 @@ class SwooleAT71 < AbstractPhpExtension
       --enable-swoole
       --enable-swoole-json
     ]
+    inreplace "config.m4", 'SW_CPU="arm"', 'SW_CPU="arm64"' if OS.mac? && Hardware::CPU.arm?
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"

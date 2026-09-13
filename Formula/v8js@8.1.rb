@@ -32,20 +32,18 @@ class V8jsAT81 < AbstractPhpExtension
       --with-v8js=#{Utils::Path.formula_opt_prefix("v8")}
     ]
     ENV.append "CPPFLAGS", "-DV8_COMPRESS_POINTERS"
-    ENV.append "CPPFLAGS", "-DV8_ENABLE_SANDBOX"
     ENV.append "CXXFLAGS", "-Wno-c++11-narrowing"
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
     inreplace "config.m4", "c++17", "c++20"
-    inreplace "v8js_array_access.cc", "info.This()", "info.HolderV2()"
-    inreplace "v8js_array_access.cc", "arr->GetPrototype()", "arr->GetPrototypeV2()"
+    inreplace "v8js_array_access.cc", "info.This()", "info.Holder()"
     inreplace "v8js_object_export.cc",
               "self = info.This();\n\tv8::Local<v8::Array> result",
-              "self = info.HolderV2();\n\tv8::Local<v8::Array> result"
+              "self = info.Holder();\n\tv8::Local<v8::Array> result"
     %w[GETTER SETTER QUERY DELETER].each do |prop|
       inreplace "v8js_object_export.cc",
                 "info.This(), property, V8JS_PROP_#{prop}",
-                "info.HolderV2(), property, V8JS_PROP_#{prop}"
+                "info.Holder(), property, V8JS_PROP_#{prop}"
     end
     inreplace "v8js_object_export.cc",
               "v8::GenericNamedPropertyEnumeratorCallback",
@@ -85,6 +83,16 @@ class V8jsAT81 < AbstractPhpExtension
     inreplace "v8js_v8object_class.cc",
               "str->Write(isolate, &c, 0, 1)",
               "str->WriteV2(isolate, 0, 1, &c)"
+    inreplace "v8js_class.cc", "SetAlignedPointerInEmbedderData(1, c)",
+              "SetAlignedPointerInEmbedderData(1, c, v8::kEmbedderDataTypeTagDefault)"
+    inreplace %w[v8js_class.cc v8js_object_export.cc v8js_variables.cc],
+              /(v8::External::New\(\(?isolate\)?, (?:Z_OBJ_P\(value\)|\w+))\)/,
+              '\1, v8::kExternalPointerTypeTagDefault)'
+    inreplace %w[v8js_object_export.cc v8js_variables.cc],
+              /((?:data|php_object|ext_tmpl|ext_ce|v8::External::Cast\(\*info\.Data\(\)\))->Value)\(\)/,
+              '\1(v8::kExternalPointerTypeTagDefault)'
+    inreplace "v8js_variables.cc", "v8js_fetch_php_variable, NULL,", "v8js_fetch_php_variable, nullptr,"
+    inreplace "v8js_v8.h", "v8::PropertyCallbackInfo<void>", "v8::PropertyCallbackInfo<v8::Boolean>"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
