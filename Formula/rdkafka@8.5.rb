@@ -21,12 +21,13 @@ class RdkafkaAT85 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_tahoe:   "60fa25cf3db499275ce312343b0b804c0f465c382a5c467ddb3c7a2098993365"
-    sha256 cellar: :any,                 arm64_sequoia: "c52f97b04494c9de3bfb2de8189525f7507df1af165161c3e688088e78ed7d4c"
-    sha256 cellar: :any,                 arm64_sonoma:  "e8e94d3c2609584b20d4a225410a27969a5ba1be0a0bf77baccbde9c5a9f1273"
-    sha256 cellar: :any,                 sonoma:        "4c9a5f0caae780c4c78c7d7dde4967e132bdb32598647019d88b816c46012cac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4c44160693318f4f8c3a063aee1f412f780e66a2612ca0bb2f70bda2ddc0d10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e6994b260400dd7d2f954b59d12cb29712263af8beede2941975c7cdd9655c0"
+    sha256 cellar: :any,                 arm64_golden_gate: "1c83f38848ce5d86776c515b2835813d78bad99716eefca6c0f2dd21e8688fd8"
+    sha256 cellar: :any,                 arm64_tahoe:       "60fa25cf3db499275ce312343b0b804c0f465c382a5c467ddb3c7a2098993365"
+    sha256 cellar: :any,                 arm64_sequoia:     "c52f97b04494c9de3bfb2de8189525f7507df1af165161c3e688088e78ed7d4c"
+    sha256 cellar: :any,                 arm64_sonoma:      "e8e94d3c2609584b20d4a225410a27969a5ba1be0a0bf77baccbde9c5a9f1273"
+    sha256 cellar: :any,                 sonoma:            "4c9a5f0caae780c4c78c7d7dde4967e132bdb32598647019d88b816c46012cac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d4c44160693318f4f8c3a063aee1f412f780e66a2612ca0bb2f70bda2ddc0d10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0e6994b260400dd7d2f954b59d12cb29712263af8beede2941975c7cdd9655c0"
   end
 
   depends_on "librdkafka"
