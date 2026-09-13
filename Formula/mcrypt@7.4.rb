@@ -20,13 +20,14 @@ class McryptAT74 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_sequoia: "a03734f67127116f5acb99874dae1f4ace5daea76ec3c46ccf3063b35aca31ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "295d11a14020fc5246efaa7b073e36c97b0a00b055ad79114f8944c6b42c382a"
-    sha256 cellar: :any,                 arm64_ventura: "dd44ff4de69cfe02070a3a83b14a08117ae2a80b350416e5c46059a3d2a2d418"
-    sha256 cellar: :any,                 sonoma:        "18127bdd20c18d33997655dd7d961f57898809c91b322b2636b99b42ff46f47c"
-    sha256 cellar: :any,                 ventura:       "383d2dd5c9d75bbd164c22f2bc0e7c10b2392573f28563d5aa16b75403a41d94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "101b26e9252933a7307f454543cd470cad5042b456237e3357bcf5d85602aa34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8d64b3d9bec5b39c2aef47f9b0959eaed97bfeb37149104ed3031de1abe26a4"
+    sha256 cellar: :any,                 arm64_golden_gate: "ea0cd62fa15029c62ed6b3664be04ce629c721b6121b7662580d47c5f3e1f913"
+    sha256 cellar: :any,                 arm64_sequoia:     "a03734f67127116f5acb99874dae1f4ace5daea76ec3c46ccf3063b35aca31ea"
+    sha256 cellar: :any,                 arm64_sonoma:      "295d11a14020fc5246efaa7b073e36c97b0a00b055ad79114f8944c6b42c382a"
+    sha256 cellar: :any,                 arm64_ventura:     "dd44ff4de69cfe02070a3a83b14a08117ae2a80b350416e5c46059a3d2a2d418"
+    sha256 cellar: :any,                 sonoma:            "18127bdd20c18d33997655dd7d961f57898809c91b322b2636b99b42ff46f47c"
+    sha256 cellar: :any,                 ventura:           "383d2dd5c9d75bbd164c22f2bc0e7c10b2392573f28563d5aa16b75403a41d94"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "101b26e9252933a7307f454543cd470cad5042b456237e3357bcf5d85602aa34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d8d64b3d9bec5b39c2aef47f9b0959eaed97bfeb37149104ed3031de1abe26a4"
   end
 
   depends_on "automake" => :build
