@@ -24,16 +24,17 @@ class IgbinaryAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "00084218fe490655a2ffb5ed55732bb84387f6f01647978911204003a6f5bff3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a76d624afc2f877d193f13ec982196800002f961fc83cb8dd89716770450562d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50748df9fbbb468d18e03ae978bf28e3e07263b015869896114463fccab76e28"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c48b4ebf30ae850157896eb8707122aca4840935e519c8c2bbea6b8f30cdb1c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c8410015492d88e9ef0d363e0f960e5dd073bf3664c3769337cf7e822812ff2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a0c667cc42b1f68c688ea3d41c4a6bb0c6da2152f05ddbe30528da9961b4be0d"
-    sha256 cellar: :any_skip_relocation, ventura:        "00b806105ce9a98741dedb8fac82c4e26cbb66ce403ecda5ee2291034b2946b4"
-    sha256 cellar: :any_skip_relocation, monterey:       "7adb14929f9d73459cea5c16ca063a193f57664411e2d8e46c9bf24c48cbf804"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "800bdb1a29ef68c59b6ad1ac9055290f166402b3785cc5fdd858fbebf2d6177e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf7c188a2f1c62b5cbd1e61f010a34287047c5eb39a18929de5051c5ff836929"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8164b39c958b3cab59650e46a56c1885cc2cea99f130b23e1c9229a1a292443d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "00084218fe490655a2ffb5ed55732bb84387f6f01647978911204003a6f5bff3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a76d624afc2f877d193f13ec982196800002f961fc83cb8dd89716770450562d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "50748df9fbbb468d18e03ae978bf28e3e07263b015869896114463fccab76e28"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "3c48b4ebf30ae850157896eb8707122aca4840935e519c8c2bbea6b8f30cdb1c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "2c8410015492d88e9ef0d363e0f960e5dd073bf3664c3769337cf7e822812ff2"
+    sha256 cellar: :any_skip_relocation, sonoma:            "a0c667cc42b1f68c688ea3d41c4a6bb0c6da2152f05ddbe30528da9961b4be0d"
+    sha256 cellar: :any_skip_relocation, ventura:           "00b806105ce9a98741dedb8fac82c4e26cbb66ce403ecda5ee2291034b2946b4"
+    sha256 cellar: :any_skip_relocation, monterey:          "7adb14929f9d73459cea5c16ca063a193f57664411e2d8e46c9bf24c48cbf804"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "800bdb1a29ef68c59b6ad1ac9055290f166402b3785cc5fdd858fbebf2d6177e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bf7c188a2f1c62b5cbd1e61f010a34287047c5eb39a18929de5051c5ff836929"
   end
 
   def install
