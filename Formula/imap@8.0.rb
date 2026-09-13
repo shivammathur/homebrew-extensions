@@ -17,11 +17,12 @@ class ImapAT80 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 11
-    sha256 cellar: :any, arm64_sequoia: "9dd5a19c406a85183921fdf061e104c7813dbb536488155d9bf522319a98eee3"
-    sha256 cellar: :any, arm64_sonoma:  "7dcfdd367319fb648d24f3485759026d7e25b3eb0c0d0cb0a73f7e19d3dfaa7b"
-    sha256 cellar: :any, sonoma:        "cc253b755395b75ab0e78c69c19e3ce8edd3b2fe467a49ee3e4732a084a1182e"
-    sha256 cellar: :any, arm64_linux:   "e37b14977f423c24b754770336b02059308f59ff5add3687a7a878c3f6de864b"
-    sha256 cellar: :any, x86_64_linux:  "fa237778a25c370afd1d59f5927f7f40ce3d83c7c1755a8c55daf7185d62c0b7"
+    sha256 cellar: :any, arm64_golden_gate: "6e70689dc4c59119bf7fcb79b3518a95633548ae3870e30225fe0473579b5610"
+    sha256 cellar: :any, arm64_sequoia:     "9dd5a19c406a85183921fdf061e104c7813dbb536488155d9bf522319a98eee3"
+    sha256 cellar: :any, arm64_sonoma:      "7dcfdd367319fb648d24f3485759026d7e25b3eb0c0d0cb0a73f7e19d3dfaa7b"
+    sha256 cellar: :any, sonoma:            "cc253b755395b75ab0e78c69c19e3ce8edd3b2fe467a49ee3e4732a084a1182e"
+    sha256 cellar: :any, arm64_linux:       "e37b14977f423c24b754770336b02059308f59ff5add3687a7a878c3f6de864b"
+    sha256 cellar: :any, x86_64_linux:      "fa237778a25c370afd1d59f5927f7f40ce3d83c7c1755a8c55daf7185d62c0b7"
   end
 
   depends_on "krb5"
