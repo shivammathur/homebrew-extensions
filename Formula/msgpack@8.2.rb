@@ -21,12 +21,13 @@ class MsgpackAT82 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6906ca8fc622d1e452552bb86b8b6c33e675ccf887ce0e13e35d8e404a84851f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95e944a2625348897bbb493d932584f847a8d3a8a84b3e0d8bf7c1dd803ace59"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1ded957b90b5933bfe74a97975f12c2b97a336aa790d9ec47aa8d3e295283eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2acc20eaf968ac25f2e36a68cdcdf4352d238b4580b241fdca835ea8d0815d5"
-    sha256 cellar: :any,                 arm64_linux:   "ce77639abc4a2f31aa662fe8c7b58af0ad979ce3150d605884dba64d2fa684c8"
-    sha256 cellar: :any,                 x86_64_linux:  "5ecd00e08bb0740931cb3b375c9f2ca688d32c0b600370961385147e0f113f59"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "145551db4dcf05b52e90e1e92b392a7750b9f85506b545f644d41165960ba0d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6906ca8fc622d1e452552bb86b8b6c33e675ccf887ce0e13e35d8e404a84851f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "95e944a2625348897bbb493d932584f847a8d3a8a84b3e0d8bf7c1dd803ace59"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d1ded957b90b5933bfe74a97975f12c2b97a336aa790d9ec47aa8d3e295283eb"
+    sha256 cellar: :any_skip_relocation, sonoma:            "e2acc20eaf968ac25f2e36a68cdcdf4352d238b4580b241fdca835ea8d0815d5"
+    sha256 cellar: :any,                 arm64_linux:       "ce77639abc4a2f31aa662fe8c7b58af0ad979ce3150d605884dba64d2fa684c8"
+    sha256 cellar: :any,                 x86_64_linux:      "5ecd00e08bb0740931cb3b375c9f2ca688d32c0b600370961385147e0f113f59"
   end
 
   def install
