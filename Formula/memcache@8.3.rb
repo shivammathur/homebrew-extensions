@@ -21,16 +21,17 @@ class MemcacheAT83 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d3491b0048860d2ba452060f64618e794ca7f987e1cb52ed17056f4de6053f94"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc754a8b1691d97196848a35fb8f754279eec6b66510acde01c33e7823da0793"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d345789340e493b61a83cb4dad80424aad14079e40e91f06f6b1e214545ce556"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b29e2227355e7c5e4c748d2b08d0b49061fffa8cb4b805da6adedab13869da00"
-    sha256 cellar: :any,                 sonoma:         "001988dcb11a65de6513d52d9bbe6850dfede0b043c7939fc513a386cf8855e9"
-    sha256 cellar: :any_skip_relocation, ventura:        "15e836bad900b6180d74ac4fce6282e72fc46dec90a86307ddb41d90fc05c637"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc4ab7aafd0edcf6fc3426d26512dd1203aa23bbad8cab09574d7dd74de5e5fd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8ef0830475e20c1e376d7fb68409d0a693fc74750eb99dee32390f138715b5e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "696bf1345789cd18a63e011862b3ddc871e683b715cdcf7e64bb441e73c19afe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c4e92d507dd78de9a8715e8889c9f60c05af3358a304438a7d5da67c171f61c"
+    sha256 cellar: :any,                 arm64_golden_gate: "51222e8cb92db3754422e90f4bd4a33b296b29af62fe5fd80d716bfcccd4099d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d3491b0048860d2ba452060f64618e794ca7f987e1cb52ed17056f4de6053f94"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "fc754a8b1691d97196848a35fb8f754279eec6b66510acde01c33e7823da0793"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "d345789340e493b61a83cb4dad80424aad14079e40e91f06f6b1e214545ce556"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:     "b29e2227355e7c5e4c748d2b08d0b49061fffa8cb4b805da6adedab13869da00"
+    sha256 cellar: :any,                 sonoma:            "001988dcb11a65de6513d52d9bbe6850dfede0b043c7939fc513a386cf8855e9"
+    sha256 cellar: :any_skip_relocation, ventura:           "15e836bad900b6180d74ac4fce6282e72fc46dec90a86307ddb41d90fc05c637"
+    sha256 cellar: :any_skip_relocation, monterey:          "fc4ab7aafd0edcf6fc3426d26512dd1203aa23bbad8cab09574d7dd74de5e5fd"
+    sha256 cellar: :any_skip_relocation, big_sur:           "8ef0830475e20c1e376d7fb68409d0a693fc74750eb99dee32390f138715b5e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "696bf1345789cd18a63e011862b3ddc871e683b715cdcf7e64bb441e73c19afe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1c4e92d507dd78de9a8715e8889c9f60c05af3358a304438a7d5da67c171f61c"
   end
 
   depends_on "zlib"
