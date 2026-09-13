@@ -21,12 +21,13 @@ class FirebirdClientAT3 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_tahoe:   "8f315f04098f199f3ba8fa380a555edc4d8fc76c7187a3a907b825fac4f771e0"
-    sha256 cellar: :any, arm64_sequoia: "7f2ff665e636714b8548119efa8c0f4048507f05b4cfd6c6d472888af58b415d"
-    sha256 cellar: :any, arm64_sonoma:  "041eff70ca6b81010338ac8020d18b120356236fbc6f291c92e6636158bbfc91"
-    sha256 cellar: :any, sonoma:        "936c22d554d42636192c96df9274969ec87656d4e683f92cdbec547c533a1f45"
-    sha256               arm64_linux:   "f282353a209e6017d1a6868aebbe874e0f63057f963fd902eb7212c1fb8e070c"
-    sha256               x86_64_linux:  "e71f39c8e632aa82151f446d62872605c50e82616df86b87367125c48c8bbaab"
+    sha256 cellar: :any, arm64_golden_gate: "1df490b3ef7614e313f0165e5f76152b9dbe2d26b54d06fd88698216fb6264be"
+    sha256 cellar: :any, arm64_tahoe:       "8f315f04098f199f3ba8fa380a555edc4d8fc76c7187a3a907b825fac4f771e0"
+    sha256 cellar: :any, arm64_sequoia:     "7f2ff665e636714b8548119efa8c0f4048507f05b4cfd6c6d472888af58b415d"
+    sha256 cellar: :any, arm64_sonoma:      "041eff70ca6b81010338ac8020d18b120356236fbc6f291c92e6636158bbfc91"
+    sha256 cellar: :any, sonoma:            "936c22d554d42636192c96df9274969ec87656d4e683f92cdbec547c533a1f45"
+    sha256               arm64_linux:       "f282353a209e6017d1a6868aebbe874e0f63057f963fd902eb7212c1fb8e070c"
+    sha256               x86_64_linux:      "e71f39c8e632aa82151f446d62872605c50e82616df86b87367125c48c8bbaab"
   end
   keg_only :versioned_formula
 
