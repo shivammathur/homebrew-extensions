@@ -16,16 +16,17 @@ class YamlAT56 < AbstractPhpExtension
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "a56dac181aa0e3ff2385c4b69d74366bab19bce630ef89d98a89ef9710ce4bce"
-    sha256 cellar: :any,                 arm64_ventura:  "92caaf105436e9b008dd173e2d1cf109d023cce61f915a8c077a51aa7855f816"
-    sha256 cellar: :any,                 arm64_monterey: "1e00f8601175282e4d79c289ba7aeff92019888247e57114e4707650cc78d916"
-    sha256 cellar: :any,                 arm64_big_sur:  "ac7f34327403380d0cb78bb0a0239666e8b5eb0436b15c6373fd6a626fde23b0"
-    sha256 cellar: :any,                 sonoma:         "ffc40ccd306eaa78d8c400e8b64f06e21d47a583fef71469372a46a784e0d3cc"
-    sha256 cellar: :any,                 ventura:        "18bd366b2b9614b4eedd3ab36ab489570b9bdaca5fe93643e6f295992191337e"
-    sha256 cellar: :any,                 big_sur:        "bf531f948ac7d928e1f3a73699fa65f2304e2460869956477db5bb10ca7d67b6"
-    sha256 cellar: :any,                 catalina:       "96ad38819072a1a90ade1da4da6ec021669481a2d4800d745e21c6329e837ad7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "8cb714842472dae63f6a8af8e35dcd031dd565b59e7326577610fb515be2f25f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "690d6fd1a2f77a310ee676c8d18a7082bd5d8acaadb9f0231d2add0600d4a5c9"
+    sha256 cellar: :any,                 arm64_golden_gate: "f23b9eb8f10bc1d7722785da52e1daf16a356b685c06bd11f06e922c7bf64cd3"
+    sha256 cellar: :any,                 arm64_sequoia:     "a56dac181aa0e3ff2385c4b69d74366bab19bce630ef89d98a89ef9710ce4bce"
+    sha256 cellar: :any,                 arm64_ventura:     "92caaf105436e9b008dd173e2d1cf109d023cce61f915a8c077a51aa7855f816"
+    sha256 cellar: :any,                 arm64_monterey:    "1e00f8601175282e4d79c289ba7aeff92019888247e57114e4707650cc78d916"
+    sha256 cellar: :any,                 arm64_big_sur:     "ac7f34327403380d0cb78bb0a0239666e8b5eb0436b15c6373fd6a626fde23b0"
+    sha256 cellar: :any,                 sonoma:            "ffc40ccd306eaa78d8c400e8b64f06e21d47a583fef71469372a46a784e0d3cc"
+    sha256 cellar: :any,                 ventura:           "18bd366b2b9614b4eedd3ab36ab489570b9bdaca5fe93643e6f295992191337e"
+    sha256 cellar: :any,                 big_sur:           "bf531f948ac7d928e1f3a73699fa65f2304e2460869956477db5bb10ca7d67b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8cb714842472dae63f6a8af8e35dcd031dd565b59e7326577610fb515be2f25f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "690d6fd1a2f77a310ee676c8d18a7082bd5d8acaadb9f0231d2add0600d4a5c9"
+    sha256 cellar: :any,                 x86_64_catalina:   "96ad38819072a1a90ade1da4da6ec021669481a2d4800d745e21c6329e837ad7"
   end
 
   depends_on "libyaml"
