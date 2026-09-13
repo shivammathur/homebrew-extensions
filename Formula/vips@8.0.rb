@@ -21,12 +21,13 @@ class VipsAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_tahoe:   "a1a7f499258c3dcc152491a7ffa27f2300efeae5bec09d6f1bb5f32f35986359"
-    sha256 cellar: :any, arm64_sequoia: "6497c9c5dff80cdaa901cac5a31d945775ca9d453260d34434c38965220c9a18"
-    sha256 cellar: :any, arm64_sonoma:  "e570caf269a2b7b30d55c76c2fd119a24191eb3c54f5847a44664f9ade0dd97e"
-    sha256 cellar: :any, sonoma:        "a31c33807fc8a97ebb87678d3721387071a84ff97bc8959eb711f6050df03eb9"
-    sha256 cellar: :any, arm64_linux:   "037cfabbf20863886761e73e8b4384f33c92c1ff1bcf99e5564dbcc560f71514"
-    sha256 cellar: :any, x86_64_linux:  "cab3ce3728d64c29a47434be09956e1ff02fae810dca0da11a574dff3c353c3d"
+    sha256 cellar: :any, arm64_golden_gate: "f721bf9c0e14d5ecc2d4bcb53dc3874b4c2e2b599004f7bcbfade7958703abff"
+    sha256 cellar: :any, arm64_tahoe:       "a1a7f499258c3dcc152491a7ffa27f2300efeae5bec09d6f1bb5f32f35986359"
+    sha256 cellar: :any, arm64_sequoia:     "6497c9c5dff80cdaa901cac5a31d945775ca9d453260d34434c38965220c9a18"
+    sha256 cellar: :any, arm64_sonoma:      "e570caf269a2b7b30d55c76c2fd119a24191eb3c54f5847a44664f9ade0dd97e"
+    sha256 cellar: :any, sonoma:            "a31c33807fc8a97ebb87678d3721387071a84ff97bc8959eb711f6050df03eb9"
+    sha256 cellar: :any, arm64_linux:       "037cfabbf20863886761e73e8b4384f33c92c1ff1bcf99e5564dbcc560f71514"
+    sha256 cellar: :any, x86_64_linux:      "cab3ce3728d64c29a47434be09956e1ff02fae810dca0da11a574dff3c353c3d"
   end
 
   depends_on "gettext"
