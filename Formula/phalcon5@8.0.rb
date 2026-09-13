@@ -15,15 +15,16 @@ class Phalcon5AT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cbc6cd34109f792e2e54ce3c45952fe9bdb7c27ba1ed1ee416a72cd2aa536fd1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f1b0b46cebf36e66f3d5d575507110bfc3b0251dee62f4530454f3fd1d44060"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0733621296076abcc8d7f6c77ebe8c3b0bfb54d1d9f4b9e40bff23f237550528"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2fefa6fb765ffd2b7eb732489b003a391eb9258bbf52dc9bf33256a1a23fee3a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8576e6d0993476eab7662d091b891661dbda111679e4eb923b64e31de05dca82"
-    sha256 cellar: :any_skip_relocation, ventura:        "95ea106017089b7281040c86c8caf1e5324eeb655aecf2d9c45c3cd8c644130e"
-    sha256 cellar: :any_skip_relocation, monterey:       "4582bdcea84a3458f97d24b86bef995a9d2a20e783ff86aa3cdd90f8de6ee1aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "e5ca99fb375badfa656e9db84e1e6c9c6b9e8c47df1b059bdc0c792216c701d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24382dfb372abbb3b9dddb66cb2cf5dbc0bd0bfd371cd044b039996d5e6c245f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ded7ae99aba34601d0f0c5a20dd41815d4ad7f27601d9a3a88d2de37e430d89b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cbc6cd34109f792e2e54ce3c45952fe9bdb7c27ba1ed1ee416a72cd2aa536fd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5f1b0b46cebf36e66f3d5d575507110bfc3b0251dee62f4530454f3fd1d44060"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:     "0733621296076abcc8d7f6c77ebe8c3b0bfb54d1d9f4b9e40bff23f237550528"
+    sha256 cellar: :any_skip_relocation, arm64_monterey:    "2fefa6fb765ffd2b7eb732489b003a391eb9258bbf52dc9bf33256a1a23fee3a"
+    sha256 cellar: :any_skip_relocation, sonoma:            "8576e6d0993476eab7662d091b891661dbda111679e4eb923b64e31de05dca82"
+    sha256 cellar: :any_skip_relocation, ventura:           "95ea106017089b7281040c86c8caf1e5324eeb655aecf2d9c45c3cd8c644130e"
+    sha256 cellar: :any_skip_relocation, monterey:          "4582bdcea84a3458f97d24b86bef995a9d2a20e783ff86aa3cdd90f8de6ee1aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e5ca99fb375badfa656e9db84e1e6c9c6b9e8c47df1b059bdc0c792216c701d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "24382dfb372abbb3b9dddb66cb2cf5dbc0bd0bfd371cd044b039996d5e6c245f"
   end
 
   depends_on "pcre"
