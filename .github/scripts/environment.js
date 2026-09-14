@@ -42,9 +42,9 @@ module.exports = async ({github, context, core}, formula_detect) => {
     container.options = '--user=linuxbrew'
     core.setOutput('container', JSON.stringify(container))
     core.setOutput('runners', JSON.stringify([
+        {runner: 'xcode-27', cleanup: true},
         {runner: 'macos-26', cleanup: true},
         {runner: 'macos-15', cleanup: true},
-        {runner: 'macos-14', cleanup: true},
         {runner: 'ubuntu-latest', container, workdir: '/github/home', cleanup: false, timeout: 4320},
         {runner: 'ubuntu-22.04-arm', container, workdir: '/github/home', cleanup: false, timeout: 4320},
     ]))

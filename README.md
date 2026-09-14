@@ -104,9 +104,9 @@
 | Operating System | Architecture      |
 |------------------|-------------------|
 | Linux            | `x86_64`          |
+| macOS Golden Gate | `arm64`           |
 | macOS Tahoe      | `arm64`           |
 | macOS Sequoia    | `arm64`           |
-| macOS Sonoma     | `arm64`           |
 
 macOS Intel is not supported.
 
