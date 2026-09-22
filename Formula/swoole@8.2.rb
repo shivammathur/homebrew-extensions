@@ -44,6 +44,7 @@ class SwooleAT82 < AbstractPhpExtension
   conflicts_with "swow@8.2", because: "both provide coroutine networking extensions"
 
   def install
+    inreplace "src/core/misc.cc", "sw_usleep(1000);", "usleep(1000);" if OS.mac?
     args = %W[
       --enable-brotli
       --enable-cares
