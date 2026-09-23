@@ -20,6 +20,11 @@ class MongodbAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any, arm64_golden_gate: "6f582e36eb24429305652df7ce8458ccccdcf06910db1526635ec0178c68a640"
+    sha256 cellar: :any, arm64_tahoe:       "c7af3f236c840af12129de99f554db301580ac5e28f981553d9a04adccd9b1a7"
+    sha256 cellar: :any, arm64_sequoia:     "430801cb76c06639f4296acfffceb23b73160d2c91768d763c7f34ef35e511cb"
+    sha256 cellar: :any, arm64_linux:       "8bf9e18c7712f14a1e85af0f3c727d289fc6c44ce0328dda721f660da3306810"
+    sha256 cellar: :any, x86_64_linux:      "c50a694dec6c45770ef1a252ea842069e26eb0a8c43b13bcfe67db7c6407a038"
   end
 
   depends_on "cyrus-sasl"
