@@ -20,6 +20,11 @@ class PhpredisAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any, arm64_golden_gate: "c9699b3483244c4e28d25d4cd00ada8cdb559b7be3d601f47fcba844cc574271"
+    sha256 cellar: :any, arm64_tahoe:       "36bca162e508332f2c747ec73118d75073aaadb17bc78278a1f3c0f50bf2b6a5"
+    sha256 cellar: :any, arm64_sequoia:     "72cf572121f4dc0bcb654fec54e3f1752225580819ed136d5fed9f2deeaf79f4"
+    sha256 cellar: :any, arm64_linux:       "cad36ace2dd31c47f2d669b2923860e03b01386072a5a2ce2a4e6acb6331615c"
+    sha256 cellar: :any, x86_64_linux:      "eccc72c8a5c5a0ccb55372120bc75ce6b20e2b6b6b81abdef2efd11cc5bedfb2"
   end
 
   depends_on "liblzf"
