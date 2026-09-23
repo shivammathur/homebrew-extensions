@@ -20,6 +20,11 @@ class CouchbaseAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any, arm64_golden_gate: "2d0cbdb26166ef47a8c9affa9cb152a51ef0d2cc02390ad6f0cdfea7a492cfe8"
+    sha256 cellar: :any, arm64_tahoe:       "6e3b5b797b16f41ae752d13f8b74fc21f6090919da8069b4266a4022e1079298"
+    sha256 cellar: :any, arm64_sequoia:     "58d50e280847b25755059394b37331bb99650a024ae2daf67f74f3ac2d0d2218"
+    sha256 cellar: :any, arm64_linux:       "addeebb953964ff2cde118fae8997f7b81f1edf779b631beb84dd15acdbf3cd4"
+    sha256 cellar: :any, x86_64_linux:      "87422bed831fb7bf33910344069e1a6a2d1fa496797910ed3b358f1a525fadf3"
   end
 
   depends_on "cmake" => :build
