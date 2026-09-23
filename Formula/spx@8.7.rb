@@ -19,6 +19,11 @@ class SpxAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 arm64_golden_gate: "feb5bf02cf4cac74b3e1c051cfae2625f6f84fc6930e9f74bc04700fb34bedbb"
+    sha256 arm64_tahoe:       "0b7c2aeabdcb508e9b494e9cdb41258854b2440f588ade5c579b20bfa3535ee9"
+    sha256 arm64_sequoia:     "c6e4356c1ce9a323ae9f77a9693667f0fb9900015176977e0428f4190cfcc188"
+    sha256 arm64_linux:       "252bf144a0b2943d222dd716e6fecbc1afd4c82e05d22104e95ae154b8c6c915"
+    sha256 x86_64_linux:      "5f653bea44211d211cfcf3b576458054a1bcab5828695d7b1ede7fdef7d99c20"
   end
 
   depends_on "zlib"
