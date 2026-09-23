@@ -20,6 +20,11 @@ class OauthAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "64542a61befef11c0fa54f3de6e89b74c19ac00827725d60ae06118bc02504df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7daf20d31662caaa59e7355a8ce2190b6b0958970ffe3ca5d5fe67305d0c4d95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "826074832bb7bf002e35f6e6df0925607fee60f5ce3e44dc52ebb43926523e4b"
+    sha256 cellar: :any,                 arm64_linux:       "8f71c45ba658584fc756b97368d4fd82366e9b2bc694168fd49dbdb97270d93f"
+    sha256 cellar: :any,                 x86_64_linux:      "4913175316733c1d20860e934ae56c0eeca99f42b138a95572c4fd239553b1ca"
   end
 
   depends_on "curl"
