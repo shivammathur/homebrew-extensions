@@ -25,6 +25,11 @@ class UopzAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5703751282cecbdf13ea705244ea9f5e4be881f084d37a027bc9de7271f5e817"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b3c50772bb8a2a5f52efa1fb222db9424366c7d87b3841ddb6948885533f2000"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2521efe13a01335ac009c6ad61a372945c077fadbe16a204a8f3e3455fb160f7"
+    sha256 cellar: :any,                 arm64_linux:       "42309e191c932f47dc61fb3b026659fc10d88460863aded2df910f15b70d311b"
+    sha256 cellar: :any,                 x86_64_linux:      "bc5a81d812562254bc382782eadcd6ebc040a6c705970316ba0937a3dd108518"
   end
 
   priority "10"
