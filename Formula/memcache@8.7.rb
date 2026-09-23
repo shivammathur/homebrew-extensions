@@ -20,6 +20,11 @@ class MemcacheAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any, arm64_golden_gate: "2312dc5acc7b786ddfb233aa8d857ee423237cf95f55ae0415f19d38d38470e3"
+    sha256 cellar: :any, arm64_tahoe:       "ec628579b9020263c270b43f598e730c95c5c2c4899d3f926d65f57923c1f3e5"
+    sha256 cellar: :any, arm64_sequoia:     "9679bea2c9045caff990949f029e3c97b40964f016ac2a79f16dd71b57c0b9dc"
+    sha256 cellar: :any, arm64_linux:       "87401db822c5204291cb6057f93f9ffd93bf5cdadccba2bcaa3382d8f9e19a91"
+    sha256 cellar: :any, x86_64_linux:      "c072c0fe3d2d1e65bb97e6432143689d66a3ce53450cf45b12ad5993376aaf1b"
   end
 
   depends_on "zlib"
