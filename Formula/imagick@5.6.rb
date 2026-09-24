@@ -41,6 +41,8 @@ because: "both provide PHP image processing extensions and should not be loaded 
       --with-imagick=#{Utils::Path.formula_opt_prefix("imagemagick")}
     ]
     Dir.chdir "imagick-#{version}"
+    inreplace "imagick_class.c", "php_imagick_exception_class_entry,\n\t\t\t\t0,",
+                               "php_imagick_exception_class_entry,\n\t\t\t\t0 TSRMLS_CC,"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
