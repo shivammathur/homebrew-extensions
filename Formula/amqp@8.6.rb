@@ -10,6 +10,7 @@ class AmqpAT86 < AbstractPhpExtension
   homepage "https://github.com/php-amqp/php-amqp"
   url "https://github.com/php-amqp/php-amqp/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "0fc9a23b54010a9ba475a1988d590b578942dbdf14c19508fd47dd09e852ab0f"
+  revision 1
   head "https://github.com/php-amqp/php-amqp.git", branch: "latest"
   license "PHP-3.01"
 
