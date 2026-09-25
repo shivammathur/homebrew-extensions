@@ -10,6 +10,7 @@ class VldAT86 < AbstractPhpExtension
   homepage "https://github.com/derickr/vld"
   url "https://github.com/derickr/vld/archive/0.19.1.tar.gz"
   sha256 "bfaf2ba7bdb11663bd9364096daa246fa4bfb1dec1eed9fa53ed9a8d5ed1f647"
+  revision 1
   head "https://github.com/derickr/vld.git", branch: "master"
   license "BSD-2-Clause"
 
