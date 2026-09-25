@@ -10,6 +10,7 @@ class MongodbAT86 < AbstractPhpExtension
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://pecl.php.net/get/mongodb-2.5.3.tgz"
   sha256 "5e5369cd01b47543fb3244917eff17fa4c8c357b0866828d59c899b4e53e6665"
+  revision 1
   head "https://github.com/mongodb/mongo-php-driver.git", branch: "v2.x"
   license "Apache-2.0"
 
