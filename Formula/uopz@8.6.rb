@@ -10,7 +10,7 @@ class UopzAT86 < AbstractPhpExtension
   homepage "https://github.com/krakjoe/uopz"
   url "https://pecl.php.net/get/uopz-7.1.1.tgz"
   sha256 "50fa50a5340c76fe3495727637937eaf05cfe20bf93af19400ebf5e9d052ece3"
-  revision 1
+  revision 2
   head "https://github.com/krakjoe/uopz.git", branch: "master"
   license "PHP-3.01"
 
