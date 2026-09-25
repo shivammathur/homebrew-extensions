@@ -10,6 +10,7 @@ class PinbaAT86 < AbstractPhpExtension
   homepage "https://github.com/tony2001/pinba_extension"
   url "https://github.com/tony2001/pinba_extension/archive/refs/tags/RELEASE_1_1_2.tar.gz"
   sha256 "7df27fb3e9de548459b56638394d824781c8f13395da1a0b7f94515f03e15ddc"
+  revision 1
   head "https://github.com/tony2001/pinba_extension.git", branch: "master"
   license "LGPL-2.1-only"
 
