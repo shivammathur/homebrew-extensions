@@ -10,7 +10,7 @@ class UploadprogressAT86 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-php-uploadprogress"
   url "https://pecl.php.net/get/uploadprogress-2.0.2.tgz"
   sha256 "2c63ce727340121044365f0fd83babd60dfa785fa5979fae2520b25dad814226"
-  revision 1
+  revision 2
   head "https://github.com/php/pecl-php-uploadprogress.git", branch: "master"
   license "PHP-3.01"
 
