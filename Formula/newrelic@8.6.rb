@@ -10,6 +10,7 @@ class NewrelicAT86 < AbstractPhpExtension
   homepage "https://github.com/newrelic/newrelic-php-agent"
   url "https://github.com/newrelic/newrelic-php-agent/archive/refs/tags/v12.11.0.40.tar.gz"
   sha256 "1d14f9b4e295d5d0dc3dd21f5d713359d1148dda72c0edb124f193ebe076fbc9"
+  revision 1
   head "https://github.com/newrelic/newrelic-php-agent.git", branch: "main"
   license "Apache-2.0"
 
