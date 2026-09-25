@@ -21,14 +21,11 @@ class GmagickAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "62093057d5612f13a53a89abb9b7665826ab392ac1bcbd6167bcac1a6fb65f44"
-    sha256 cellar: :any, arm64_tahoe:       "81835516a6e3cb9e9a251d7a2adc404cc76414ec12330268855a7b1ac8a5eef0"
-    sha256 cellar: :any, arm64_sequoia:     "f5979eabe0a1ceae59deece63fe027fe47c1b6869d1233ae82738ebaca8dba17"
-    sha256 cellar: :any, arm64_sonoma:      "4a653dc234c87723736e5347f7db4fd59b850dbea225c0f6915e768f3a0520fb"
-    sha256 cellar: :any, sonoma:            "9cdcd6844519bd70b3efb73b0c3dc69de9c6be76e52bb94c84f329912f3d710c"
-    sha256 cellar: :any, arm64_linux:       "2f2d2e373adf2e5236da977fc1c4aeeef7f16663b3948da91a078185d52d3740"
-    sha256 cellar: :any, x86_64_linux:      "283a9af89fc642c261c95c281a66480fa1b9d6316c36f66be1db8a58193f13db"
+    sha256 cellar: :any, arm64_golden_gate: "819af6a90cdacbfa66096603d711bf0051c3249e258285f165b0aa8e6ac0e366"
+    sha256 cellar: :any, arm64_tahoe:       "5de42169ca7aa989b4fa71ca7d82df1ef0ad55f534721e136af106fdb224202b"
+    sha256 cellar: :any, arm64_sequoia:     "f3c1d412e947054c9fb9cb6a7b100d014ebe6289f39c51dd36c4bf5c48b2a90b"
+    sha256 cellar: :any, arm64_linux:       "63046014de3a02bed19e71770d014551032639d9ae02913abb739afa3531a182"
+    sha256 cellar: :any, x86_64_linux:      "4d19b5b4010b85e97e18e0738d91bc4cf36491db6da42ccd3e43a90e697adf6b"
   end
 
   conflicts_with "imagick@8.6",
