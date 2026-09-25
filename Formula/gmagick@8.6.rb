@@ -10,7 +10,7 @@ class GmagickAT86 < AbstractPhpExtension
   homepage "https://github.com/vitoc/gmagick"
   url "https://pecl.php.net/get/gmagick-2.0.6RC1.tgz"
   sha256 "350cb71a4fbd58e037c7182cafa14e6f6df952126869205918fcc9ec5798e2fa"
-  revision 1
+  revision 2
   head "https://github.com/vitoc/gmagick.git", branch: "master"
   license "PHP-3.01"
 
