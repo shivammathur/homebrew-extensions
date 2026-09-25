@@ -11,7 +11,7 @@ class ScalarObjectsAT86 < AbstractPhpExtension
   url "https://github.com/nikic/scalar_objects/archive/86dbcc0c939732faac93e3c5ea233205df142bf0.tar.gz"
   sha256 "a0f621772b37a9d15326f40cc9a28051504d9432ba089a734c1803f8081b0b39"
   version "86dbcc0c939732faac93e3c5ea233205df142bf0"
-  revision 1
+  revision 2
   head "https://github.com/nikic/scalar_objects.git", branch: "master"
   license "MIT"
 
