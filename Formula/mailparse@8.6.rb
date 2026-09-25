@@ -10,6 +10,7 @@ class MailparseAT86 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-mail-mailparse"
   url "https://pecl.php.net/get/mailparse-3.2.0.tgz"
   sha256 "cc5111ae17bfa36efcc5ef23dcf75b6501593ac264c196aad3e39cd4ad765332"
+  revision 1
   head "https://github.com/php/pecl-mail-mailparse.git", branch: "master"
   license "PHP-3.01"
 
