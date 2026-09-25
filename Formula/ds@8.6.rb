@@ -10,6 +10,7 @@ class DsAT86 < AbstractPhpExtension
   homepage "https://github.com/php-ds/ext-ds"
   url "https://pecl.php.net/get/ds-2.0.0.tgz"
   sha256 "52dfed624fbca90ad9e426f7f91a0929db3575a1b8ff6ea0cf2606b7edbc3940"
+  revision 1
   head "https://github.com/php-ds/ext-ds.git", branch: "master"
   license "MIT"
 
