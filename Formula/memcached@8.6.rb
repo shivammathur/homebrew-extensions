@@ -10,6 +10,7 @@ class MemcachedAT86 < AbstractPhpExtension
   homepage "https://github.com/php-memcached-dev/php-memcached"
   url "https://pecl.php.net/get/memcached-3.4.0.tgz"
   sha256 "c163434eb0da97c8f45c7ad41d979d381f8b81c49402b1b90b063987fb37972e"
+  revision 1
   head "https://github.com/php-memcached-dev/php-memcached.git", branch: "master"
   license "PHP-3.01"
 
