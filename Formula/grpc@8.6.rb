@@ -10,6 +10,7 @@ class GrpcAT86 < AbstractPhpExtension
   homepage "https://github.com/grpc/grpc"
   url "https://pecl.php.net/get/grpc-1.84.0.tgz"
   sha256 "555716233a5cc9a6baa605719f87b7688a88fb8bfdd9b4493396276244d56625"
+  revision 1
   head "https://github.com/grpc/grpc.git", branch: "master"
   license "Apache-2.0"
 
