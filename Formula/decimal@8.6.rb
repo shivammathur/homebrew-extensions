@@ -10,7 +10,7 @@ class DecimalAT86 < AbstractPhpExtension
   homepage "https://github.com/php-decimal/ext-decimal"
   url "https://pecl.php.net/get/decimal-2.0.1.tgz"
   sha256 "026e30f71016d25f267f9b38ab80a94bed4779e05e9ff5f48d9b08bf1c18d204"
-  revision 1
+  revision 2
   head "https://github.com/php-decimal/ext-decimal.git", branch: "master"
   license "MIT"
 
