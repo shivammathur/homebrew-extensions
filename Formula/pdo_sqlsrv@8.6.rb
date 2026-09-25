@@ -10,6 +10,7 @@ class PdoSqlsrvAT86 < AbstractPhpExtension
   homepage "https://github.com/Microsoft/msphpsql"
   url "https://pecl.php.net/get/pdo_sqlsrv-5.13.3.tgz"
   sha256 "198a7b37da0658d36a93d158a0ec179b137b3a4d241c90a6650ae9ee8f91ec4a"
+  revision 1
   head "https://github.com/Microsoft/msphpsql.git", branch: "dev"
   license "MIT"
 
