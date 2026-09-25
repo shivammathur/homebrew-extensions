@@ -11,7 +11,7 @@ class PdoFirebirdAT86 < AbstractPhpExtension
   url "https://github.com/php/php-src/archive/eb3b5fc66dcf4cf340d649e63b577c416121e081.tar.gz?commit=eb3b5fc66dcf4cf340d649e63b577c416121e081"
   version "8.6.0"
   sha256 "96cf6bfbd5b89b75f21d81c507be02c63a7491c12267b727d924624e87678cb5"
-  revision 1
+  revision 2
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
