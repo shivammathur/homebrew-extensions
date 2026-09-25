@@ -22,6 +22,7 @@ class InterbaseAT86 < AbstractPhpExtension
   homepage "https://github.com/FirebirdSQL/php-firebird"
   url "https://github.com/FirebirdSQL/php-firebird/archive/refs/tags/5.0.2.tar.gz"
   sha256 "ca07a144d0ccb8f1a2773ad667de96c15882d42e4139397a028278112805fc00"
+  revision 1
   license "PHP-3.01"
 
   livecheck do
