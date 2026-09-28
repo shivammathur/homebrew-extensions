@@ -44,6 +44,7 @@
 | `excimer`         | `PHP 7.1` to `PHP 8.7` |
 | `expect`          | `PHP 5.6` to `PHP 8.7` |
 | `gearman`         | `PHP 5.6` to `PHP 8.7` |
+| `geos`            | `PHP 5.6` to `PHP 8.7` |
 | `gmagick`         | `PHP 5.6` to `PHP 8.7` |
 | `gnupg`           | `PHP 5.6` to `PHP 8.7` |
 | `grpc`            | `PHP 5.6` to `PHP 8.7` |
@@ -229,6 +230,7 @@ This project is also generously supported by many other users and organisations 
 - [arnaud-lb/php-rdkafka](https://github.com/arnaud-lb/php-rdkafka "rdkafka")
 - [couchbase/couchbase-php-client](https://github.com/couchbase/couchbase-php-client "couchbase")
 - [FirebirdSQL/php-firebird](https://github.com/FirebirdSQL/php-firebird "firebird/interbase")
+- [geos/php-geos](https://gitea.osgeo.org/geos/php-geos "GEOS")
 - [grpc/grpc](https://github.com/grpc/grpc "gRPC")
 - [igbinary/igbinary](https://github.com/igbinary/igbinary "igbinary")
 - [Imagick/imagick](https://github.com/Imagick/imagick "Imagick")

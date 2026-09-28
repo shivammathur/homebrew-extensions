@@ -37,6 +37,11 @@ version=$2
 repo=$3
 
 case $version in
+  geos@7.[0-4]|geos@8.[0-7])
+    branch="$(get_formula_branch "$version")"
+    commit=$(git ls-remote --exit-code "$repo.git" "refs/heads/$branch" | cut -f1)
+    [[ "$commit" =~ ^[0-9a-f]{40}$ ]] && patch_github_commit "$commit" "$repo"
+    ;;
   imap@5.6|imap@7.[0-4]|imap@8.0|\
   interbase@5.6|interbase@7.[0-2]|\
   mcrypt@5.6|mcrypt@7.[0-1]|\

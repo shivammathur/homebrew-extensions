@@ -1,5 +1,6 @@
 needs_commit_update() {
   case "$VERSION" in
+    geos@7.[0-4]|geos@8.[0-7]|\
     imap@5.6|imap@7.[0-4]|imap@8.0|\
     interbase@5.6|interbase@7.[0-2]|\
     mcrypt@5.6|mcrypt@7.[0-1]|\
@@ -45,6 +46,14 @@ check_changes() {
     rm -f ./Formula/"$VERSION".rb.bak
   elif [[ -z "$new_url" ]] || [[ "$new_url" = "$old_url" && "$new_checksum" = "$old_checksum" ]]; then
     sudo cp /tmp/"$VERSION".rb Formula/"$VERSION".rb
+  elif [[ "$VERSION" =~ ^geos@(7\.[0-4]|8\.[0-7])$ ]]; then
+    local revision
+    revision=$(sed -n 's/^  revision \([0-9][0-9]*\)$/\1/p' "Formula/$VERSION.rb")
+    revision=$(( ${revision:-0} + 1 ))
+    sed -i.bak "/^  revision /d; /^  version /a\\
+  revision $revision
+" "Formula/$VERSION.rb"
+    rm -f "Formula/$VERSION.rb.bak"
   fi
 }
 
