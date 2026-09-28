@@ -3,12 +3,12 @@ needs_commit_update() {
     imap@5.6|imap@7.[0-4]|imap@8.0|\
     interbase@5.6|interbase@7.[0-2]|\
     mcrypt@5.6|mcrypt@7.[0-1]|\
-    pdo_firebird@5.6|pdo_firebird@7.[0-4]|pdo_firebird@8.0|pdo_firebird@8.6|\
-    scalar_objects@7.[0-4]|scalar_objects@8.[0-6]|\
+    pdo_firebird@5.6|pdo_firebird@7.[0-4]|pdo_firebird@8.0|pdo_firebird@8.[67]|\
+    scalar_objects@7.[0-4]|scalar_objects@8.[0-7]|\
     snmp@5.6|snmp@7.[0-4]|snmp@8.0|\
-    v8js@7.[0-4]|v8js@8.[0-6]|\
-    xdebug@8.6|\
-    zmq@5.6|zmq@7.[0-4]|zmq@8.[0-6])
+    v8js@7.[0-4]|v8js@8.[0-7]|\
+    xdebug@8.[67]|\
+    zmq@5.6|zmq@7.[0-4]|zmq@8.[0-7])
       return 0
       ;;
   esac

@@ -6,6 +6,7 @@ amqp@8.3
 amqp@8.4
 amqp@8.5
 amqp@8.6
+amqp@8.7
 apcu@7.0
 apcu@7.1
 apcu@7.2
@@ -18,6 +19,7 @@ apcu@8.3
 apcu@8.4
 apcu@8.5
 apcu@8.6
+apcu@8.7
 ast@7.2
 ast@7.3
 ast@7.4
@@ -28,6 +30,7 @@ ast@8.3
 ast@8.4
 ast@8.5
 ast@8.6
+ast@8.7
 brotli@7.0
 brotli@7.1
 brotli@7.2
@@ -40,22 +43,26 @@ brotli@8.3
 brotli@8.4
 brotli@8.5
 brotli@8.6
+brotli@8.7
 couchbase@8.1
 couchbase@8.2
 couchbase@8.3
 couchbase@8.4
 couchbase@8.5
 couchbase@8.6
+couchbase@8.7
 decimal@8.2
 decimal@8.3
 decimal@8.4
 decimal@8.5
 decimal@8.6
+decimal@8.7
 ds@8.2
 ds@8.3
 ds@8.4
 ds@8.5
 ds@8.6
+ds@8.7
 event@5.6
 event@7.0
 event@7.1
@@ -69,6 +76,7 @@ event@8.3
 event@8.4
 event@8.5
 event@8.6
+event@8.7
 excimer@7.1
 excimer@7.2
 excimer@7.3
@@ -80,6 +88,7 @@ excimer@8.3
 excimer@8.4
 excimer@8.5
 excimer@8.6
+excimer@8.7
 expect@5.6
 expect@7.0
 expect@7.1
@@ -93,6 +102,7 @@ expect@8.3
 expect@8.4
 expect@8.5
 expect@8.6
+expect@8.7
 firebird-client
 firebird-client@3
 gearman@7.0
@@ -107,6 +117,7 @@ gearman@8.3
 gearman@8.4
 gearman@8.5
 gearman@8.6
+gearman@8.7
 gmagick@7.0
 gmagick@7.1
 gmagick@7.2
@@ -119,6 +130,7 @@ gmagick@8.3
 gmagick@8.4
 gmagick@8.5
 gmagick@8.6
+gmagick@8.7
 gnupg@5.6
 gnupg@7.0
 gnupg@7.1
@@ -132,6 +144,7 @@ gnupg@8.3
 gnupg@8.4
 gnupg@8.5
 gnupg@8.6
+gnupg@8.7
 grpc@7.0
 grpc@7.1
 grpc@7.2
@@ -144,6 +157,7 @@ grpc@8.3
 grpc@8.4
 grpc@8.5
 grpc@8.6
+grpc@8.7
 pecl_http@8.0
 pecl_http@8.1
 pecl_http@8.2
@@ -151,6 +165,7 @@ pecl_http@8.3
 pecl_http@8.4
 pecl_http@8.5
 pecl_http@8.6
+pecl_http@8.7
 igbinary@7.0
 igbinary@7.1
 igbinary@7.2
@@ -163,6 +178,7 @@ igbinary@8.3
 igbinary@8.4
 igbinary@8.5
 igbinary@8.6
+igbinary@8.7
 imagick@5.6
 imagick@7.0
 imagick@7.1
@@ -176,13 +192,16 @@ imagick@8.3
 imagick@8.4
 imagick@8.5
 imagick@8.6
+imagick@8.7
 imap@8.3
 imap@8.4
 imap@8.5
 imap@8.6
+imap@8.7
 interbase@8.4
 interbase@8.5
 interbase@8.6
+interbase@8.7
 lua@7.0
 lua@7.1
 lua@7.2
@@ -195,6 +214,7 @@ lua@8.3
 lua@8.4
 lua@8.5
 lua@8.6
+lua@8.7
 mailparse@7.3
 mailparse@7.4
 mailparse@8.0
@@ -204,6 +224,7 @@ mailparse@8.3
 mailparse@8.4
 mailparse@8.5
 mailparse@8.6
+mailparse@8.7
 maxminddb@7.2
 maxminddb@7.3
 maxminddb@7.4
@@ -214,6 +235,7 @@ maxminddb@8.3
 maxminddb@8.4
 maxminddb@8.5
 maxminddb@8.6
+maxminddb@8.7
 mcrypt@7.2
 mcrypt@7.3
 mcrypt@7.4
@@ -224,6 +246,7 @@ mcrypt@8.3
 mcrypt@8.4
 mcrypt@8.5
 mcrypt@8.6
+mcrypt@8.7
 memcache@8.0
 memcache@8.1
 memcache@8.2
@@ -231,6 +254,7 @@ memcache@8.3
 memcache@8.4
 memcache@8.5
 memcache@8.6
+memcache@8.7
 memcached@7.0
 memcached@7.1
 memcached@7.2
@@ -243,6 +267,7 @@ memcached@8.3
 memcached@8.4
 memcached@8.5
 memcached@8.6
+memcached@8.7
 mongodb1@8.1
 mongodb1@8.2
 mongodb1@8.3
@@ -254,6 +279,7 @@ mongodb@8.3
 mongodb@8.4
 mongodb@8.5
 mongodb@8.6
+mongodb@8.7
 msgpack@7.0
 msgpack@7.1
 msgpack@7.2
@@ -266,6 +292,7 @@ msgpack@8.3
 msgpack@8.4
 msgpack@8.5
 msgpack@8.6
+msgpack@8.7
 newrelic@7.4
 newrelic@8.0
 newrelic@8.1
@@ -283,6 +310,7 @@ oauth@8.3
 oauth@8.4
 oauth@8.5
 oauth@8.6
+oauth@8.7
 opentelemetry@8.0
 opentelemetry@8.1
 opentelemetry@8.2
@@ -290,6 +318,7 @@ opentelemetry@8.3
 opentelemetry@8.4
 opentelemetry@8.5
 opentelemetry@8.6
+opentelemetry@8.7
 pcov@7.1
 pcov@7.2
 pcov@7.3
@@ -301,6 +330,7 @@ pcov@8.3
 pcov@8.4
 pcov@8.5
 pcov@8.6
+pcov@8.7
 pdo_firebird@8.2
 pdo_firebird@8.3
 pdo_firebird@8.4
@@ -312,6 +342,7 @@ pdo_sqlsrv@8.3
 pdo_sqlsrv@8.4
 pdo_sqlsrv@8.5
 pdo_sqlsrv@8.6
+pdo_sqlsrv@8.7
 phalcon5@8.1
 phalcon5@8.2
 phalcon5@8.3
@@ -328,6 +359,7 @@ pinba@8.3
 pinba@8.4
 pinba@8.5
 pinba@8.6
+pinba@8.7
 propro@7.0
 propro@7.1
 propro@7.2
@@ -338,6 +370,7 @@ protobuf@8.3
 protobuf@8.4
 protobuf@8.5
 protobuf@8.6
+protobuf@8.7
 psr@7.3
 psr@7.4
 psr@8.0
@@ -347,6 +380,7 @@ psr@8.3
 psr@8.4
 psr@8.5
 psr@8.6
+psr@8.7
 raphf@7.0
 raphf@7.1
 raphf@7.2
@@ -359,6 +393,7 @@ raphf@8.3
 raphf@8.4
 raphf@8.5
 raphf@8.6
+raphf@8.7
 rdkafka@7.0
 rdkafka@7.1
 rdkafka@7.2
@@ -371,6 +406,7 @@ rdkafka@8.3
 rdkafka@8.4
 rdkafka@8.5
 rdkafka@8.6
+rdkafka@8.7
 phpredis@7.4
 phpredis@8.0
 phpredis@8.1
@@ -379,6 +415,7 @@ phpredis@8.3
 phpredis@8.4
 phpredis@8.5
 phpredis@8.6
+phpredis@8.7
 seaslog@5.6
 seaslog@7.0
 seaslog@7.1
@@ -392,6 +429,7 @@ seaslog@8.3
 seaslog@8.4
 seaslog@8.5
 seaslog@8.6
+seaslog@8.7
 snmp@8.3
 spx@5.6
 spx@7.0
@@ -406,6 +444,7 @@ spx@8.3
 spx@8.4
 spx@8.5
 spx@8.6
+spx@8.7
 sqlsrv@8.0
 sqlsrv@8.1
 sqlsrv@8.2
@@ -413,6 +452,7 @@ sqlsrv@8.3
 sqlsrv@8.4
 sqlsrv@8.5
 sqlsrv@8.6
+sqlsrv@8.7
 ssh2@7.0
 ssh2@7.1
 ssh2@7.2
@@ -425,6 +465,7 @@ ssh2@8.3
 ssh2@8.4
 ssh2@8.5
 ssh2@8.6
+ssh2@8.7
 swoole@8.2
 swoole@8.3
 swoole@8.4
@@ -442,6 +483,7 @@ uopz@8.3
 uopz@8.4
 uopz@8.5
 uopz@8.6
+uopz@8.7
 uploadprogress@7.2
 uploadprogress@7.3
 uploadprogress@7.4
@@ -452,6 +494,7 @@ uploadprogress@8.3
 uploadprogress@8.4
 uploadprogress@8.5
 uploadprogress@8.6
+uploadprogress@8.7
 uuid@7.0
 uuid@7.1
 uuid@7.2
@@ -464,6 +507,7 @@ uuid@8.3
 uuid@8.4
 uuid@8.5
 uuid@8.6
+uuid@8.7
 vips@7.0
 vips@7.1
 vips@7.2
@@ -476,6 +520,7 @@ vips@8.3
 vips@8.4
 vips@8.5
 vips@8.6
+vips@8.7
 vld@7.0
 vld@7.1
 vld@7.2
@@ -503,6 +548,7 @@ xhprof@8.3
 xhprof@8.4
 xhprof@8.5
 xhprof@8.6
+xhprof@8.7
 xlswriter@7.0
 xlswriter@7.1
 xlswriter@7.2
@@ -515,6 +561,7 @@ xlswriter@8.3
 xlswriter@8.4
 xlswriter@8.5
 xlswriter@8.6
+xlswriter@8.7
 yaml@7.1
 yaml@7.2
 yaml@7.3
@@ -526,6 +573,7 @@ yaml@8.3
 yaml@8.4
 yaml@8.5
 yaml@8.6
+yaml@8.7
 zstd@7.0
 zstd@7.1
 zstd@7.2
@@ -538,3 +586,4 @@ zstd@8.3
 zstd@8.4
 zstd@8.5
 zstd@8.6
+zstd@8.7

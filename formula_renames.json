@@ -11,5 +11,6 @@
   "redis@8.3": "phpredis@8.3",
   "redis@8.4": "phpredis@8.4",
   "redis@8.5": "phpredis@8.5",
-  "redis@8.6": "phpredis@8.6"
+  "redis@8.6": "phpredis@8.6",
+  "redis@8.7": "phpredis@8.7"
 }

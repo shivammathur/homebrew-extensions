@@ -45,11 +45,11 @@ case $version in
     php_url=$(get_php_url)
     patch_php_url "$php_url"
     ;;
-  pdo_firebird@8.6|\
-  scalar_objects@7.[0-4]|scalar_objects@8.[0-6]|\
-  v8js@7.[0-4]|v8js@8.[0-6]|\
-  xdebug@8.6|\
-  zmq@5.6|zmq@7.[0-4]|zmq@8.[0-6])
+  pdo_firebird@8.[67]|\
+  scalar_objects@7.[0-4]|scalar_objects@8.[0-7]|\
+  v8js@7.[0-4]|v8js@8.[0-7]|\
+  xdebug@8.[67]|\
+  zmq@5.6|zmq@7.[0-4]|zmq@8.[0-7])
     branch="$(get_formula_branch "$version")"
     commit="$(get_head_commit "$branch" "$repo")"
     patch_github_commit "$commit" "$repo"
