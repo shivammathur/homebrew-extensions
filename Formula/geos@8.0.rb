@@ -16,6 +16,11 @@ class GeosAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
+    sha256 cellar: :any, arm64_golden_gate: "256137be41249a74d64db1f2a9e1cb62e94bb298e38879d1c7dfbc2263fc1bd4"
+    sha256 cellar: :any, arm64_tahoe:       "a31cd0835ee35e674bf5211e202a8bd2ca8205cc3bbcf8e675b9a965bd6bc0aa"
+    sha256 cellar: :any, arm64_sequoia:     "44d73c64d2b9e0663f5b630a74a2cc3f94c91f402c7695d598eb97094e989a2d"
+    sha256 cellar: :any, arm64_linux:       "2005b6f3c704afefe966f9d1990569258918e7fedfa4bd8dcf9626e5fa1adad5"
+    sha256 cellar: :any, x86_64_linux:      "e73f7ccf1fc07ad4f9191d4a7a295cf65443b2c0c955933f6281f25bc6a5c238"
   end
 
   depends_on "geos"
