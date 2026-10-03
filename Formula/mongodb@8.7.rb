@@ -19,6 +19,16 @@ class MongodbAT87 < AbstractPhpExtension
     regex(/<v>(\d+\.\d+\.\d+(?:\.\d+)?)(?=<)/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/shivammathur/extensions"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "bf4d60abce9fe2322b1196ce945e7cd2a8a8cbb9c29dda8e8cbb611b251bffea"
+    sha256 cellar: :any, arm64_tahoe:       "4474eaba163f994acbfd5df66a09b2f608204e0c8e931882b69159c75e0264cb"
+    sha256 cellar: :any, arm64_sequoia:     "6db8457ef4ccbff9f23f8754d0448db4eeccf1aa2bd24857acf50644e0322f77"
+    sha256 cellar: :any, arm64_linux:       "c8f6e18ca160141d7180f5b72a01ad5fe16f44e4dedb5851359e0b591885b83c"
+    sha256 cellar: :any, x86_64_linux:      "f6831e78e219d767a71fdbdef29479f0cbd64782c940d2cc703fa77e1b47e7f5"
+  end
+
   depends_on "cyrus-sasl"
   depends_on "icu4c@78"
   depends_on "openssl@3"
