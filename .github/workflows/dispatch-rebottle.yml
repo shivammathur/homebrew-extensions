@@ -104,6 +104,7 @@ jobs:
 
   upload:
     permissions:
+      actions: write
       contents: write
       packages: write
     runs-on: ubuntu-22.04
