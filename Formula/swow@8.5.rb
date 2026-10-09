@@ -12,6 +12,7 @@ class SwowAT85 < AbstractPhpExtension
   sha256 "4939bb0390ad95861e7f98c279df41a7a00ca21fc94383be812a5163d63598e7"
   head "https://github.com/swow/swow.git", branch: "develop"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -29,8 +30,10 @@ class SwowAT85 < AbstractPhpExtension
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "9f5d3cccdd7eb3e272faaf45634847ff17fa26fc377b2b6ee69982b3d65dd383"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "libpq"
+
+  uses_from_macos "curl"
 
   conflicts_with "swoole@8.5", because: "both provide swoole-like coroutine functionality"
 
