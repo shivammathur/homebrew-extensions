@@ -12,6 +12,7 @@ class Mongodb1AT85 < AbstractPhpExtension
   sha256 "699671d3a36294851f9eb87a662dec226722f7375907727690d3e63bda6aa56c"
   head "https://github.com/mongodb/mongo-php-driver.git", branch: "v1.21"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://pecl.php.net/rest/r/mongodb/allreleases.xml"
@@ -29,7 +30,7 @@ class Mongodb1AT85 < AbstractPhpExtension
 
   depends_on "cyrus-sasl"
   depends_on "icu4c@78"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "snappy"
   depends_on "zlib"
   depends_on "zstd"
