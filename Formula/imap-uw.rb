@@ -1,6 +1,7 @@
 # typed: true
 # frozen_string_literal: true
 
+# Class for the University of Washington IMAP toolkit.
 class ImapUw < Formula
   # This is a fork of imap-uw formula as homebrew/core no longer accepts patches to it.
   desc "University of Washington IMAP toolkit"
@@ -9,7 +10,7 @@ class ImapUw < Formula
   mirror "https://fossies.org/linux/misc/old/imap-2007f.tar.gz"
   sha256 "53e15a2b5c1bc80161d42e9f69792a3fa18332b7b771910131004eb520004a28"
   license "Apache-2.0"
-  revision 1
+  revision 2
   compatibility_version 1
 
   livecheck do
@@ -34,7 +35,7 @@ class ImapUw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "813365e8328c8b7c047cec3b5d7f4aeeaa7ddadf66bec6310cbbde4dc00b9f28"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "krb5"
 
@@ -114,14 +115,18 @@ class ImapUw < Formula
 
     inreplace "Makefile" do |s|
       s.gsub! "SSLINCLUDE=/usr/include/openssl",
-              "SSLINCLUDE=#{formula_opt_include("openssl@3")}/openssl"
+              "SSLINCLUDE=#{formula_opt_include("openssl@4")}/openssl"
       s.gsub! "SSLLIB=/usr/lib",
-              "SSLLIB=#{formula_opt_lib("openssl@3")}"
+              "SSLLIB=#{formula_opt_lib("openssl@4")}"
       s.gsub! "-DMAC_OSX_KLUDGE=1", ""
     end
     inreplace "src/osdep/unix/Makefile", ".$(VERSION)", "" if OS.linux?
-    inreplace "src/osdep/unix/ssl_unix.c", "#include <x509v3.h>\n#include <ssl.h>",
-                                           "#include <ssl.h>\n#include <x509v3.h>"
+    inreplace "src/osdep/unix/ssl_unix.c" do |s|
+      s.gsub! "#include <x509v3.h>\n#include <ssl.h>", "#include <ssl.h>\n#include <x509v3.h>"
+      # OpenSSL 4 removed the protocol-specific TLS methods.
+      s.gsub! "TLSv1_client_method", "TLS_client_method"
+      s.gsub! "TLSv1_server_method", "TLS_server_method"
+    end
 
     # Skip IPv6 warning on Linux as libc should be IPv6 safe.
     touch "ip6"
