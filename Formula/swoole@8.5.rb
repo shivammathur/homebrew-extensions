@@ -12,6 +12,7 @@ class SwooleAT85 < AbstractPhpExtension
   sha256 "dde8d2a4a6b5c5cd418aedd8561760baad59767a2f8a963b2c0e9eb9c86f4c8d"
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -32,7 +33,7 @@ class SwooleAT85 < AbstractPhpExtension
   depends_on "curl"
   depends_on "libpq"
   depends_on "sqlite"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "zstd"
 
   on_linux do
@@ -44,7 +45,7 @@ class SwooleAT85 < AbstractPhpExtension
 
   def install
     inreplace "src/core/misc.cc", "sw_usleep(1000);", "usleep(1000);" if OS.mac?
-    args = %W[
+    args = %w[
       --enable-brotli
       --enable-cares
       --enable-http2
@@ -56,7 +57,6 @@ class SwooleAT85 < AbstractPhpExtension
       --enable-swoole-odbc=unixodbc
       --enable-swoole-sqlite
       --enable-zstd
-      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
     ]
     on_linux do
       args << "--enable-iouring"
