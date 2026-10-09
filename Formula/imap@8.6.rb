@@ -10,7 +10,7 @@ class ImapAT86 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-mail-imap"
   url "https://pecl.php.net/get/imap-1.0.3.tgz"
   sha256 "0c2c0b1f94f299004be996b85a424e3d11ff65ac0a3c980db3213289a4a3faaf"
-  revision 2
+  revision 3
   head "https://github.com/php/pecl-mail-imap.git", branch: "main"
   license "PHP-3.01"
 
@@ -28,7 +28,7 @@ class ImapAT86 < AbstractPhpExtension
   end
 
   depends_on "krb5"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "shivammathur/extensions/imap-uw"
 
   def install
@@ -41,7 +41,7 @@ class ImapAT86 < AbstractPhpExtension
            "--prefix=#{prefix}",
            phpconfig,
            "--with-imap=shared, #{Utils::Path.formula_opt_prefix("imap-uw")}",
-           "--with-imap-ssl=#{Utils::Path.formula_opt_prefix("openssl@3")}",
+           "--with-imap-ssl=#{Utils::Path.formula_opt_prefix("openssl@4")}",
            "--with-kerberos"
     system "make"
     prefix.install "modules/#{extension}.so"
