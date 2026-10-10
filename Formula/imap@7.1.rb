@@ -13,7 +13,7 @@ class ImapAT71 < AbstractPhpExtension
   sha256 "c16d623df64f5f4823b15880350923498ec0003af815a8c121a53b8755e14914"
   head "https://github.com/shivammathur/php-src-backports.git", branch: "PHP-7.1-security-backports"
   license "PHP-3.01"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
@@ -27,7 +27,7 @@ class ImapAT71 < AbstractPhpExtension
   end
 
   depends_on "krb5"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "shivammathur/extensions/imap-uw"
 
   def install
@@ -37,7 +37,7 @@ class ImapAT71 < AbstractPhpExtension
            "--prefix=#{prefix}",
            phpconfig,
            "--with-imap=shared, #{Utils::Path.formula_opt_prefix("imap-uw")}",
-           "--with-imap-ssl=#{Utils::Path.formula_opt_prefix("openssl@3")}",
+           "--with-imap-ssl=#{Utils::Path.formula_opt_prefix("openssl@4")}",
            "--with-kerberos"
     system "make"
     prefix.install "modules/#{extension}.so"
