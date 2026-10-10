@@ -16,19 +16,11 @@ class CouchbaseAT73 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "b26692565335e85780545303d031efd28206785cbdde389d8de009c46c272907"
-    sha256 cellar: :any,                 arm64_sequoia:     "2dd3278fd116839af96ef8a9862f9b39b95ff19f636aa1a68c8d6d76be362550"
-    sha256 cellar: :any,                 arm64_ventura:     "4e37cb1b05b0e60b82d04cf1023ae712bfea953beaa1fe93a46782ed05005eea"
-    sha256 cellar: :any,                 arm64_monterey:    "f4334d946fe5d8736c4f1758e960f08f5aa34fd780675e7ef7e5d7e36b8164fb"
-    sha256 cellar: :any,                 arm64_big_sur:     "d6dc416b3d0f3ae804df21d85ac426cb2277db6e32c8019d9db8d3ef4a766042"
-    sha256 cellar: :any,                 sonoma:            "4adef264b36e0955b12c39b5a07aaa4837afdf45c9ab19d911dd4763dfb1c29f"
-    sha256 cellar: :any,                 ventura:           "e8984b051c90153e1cd499b171c01284cd35573b13a01b24672aac5955517b9d"
-    sha256 cellar: :any,                 monterey:          "3466abd062360a2bd3ca69800aa47a1618ef518df4c846772687506220fd04ad"
-    sha256 cellar: :any,                 big_sur:           "24f2f40486fd6d9b7c350bad9f32687cbc039c98a6d5580cac8c4a48d4362d0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "465df304371089763b4d338cecf27d21141df5b29ae8fdc0bdab07092788e6db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a2db20fa6d0368f787a61e338b12306144d59a9171287d0bed528dff213e6410"
-    sha256 cellar: :any,                 x86_64_catalina:   "8c1d3b6adee7b56cd90eea0d8a4627175e16dbbc4d695a12773f813ca22e974e"
+    sha256 cellar: :any, arm64_golden_gate: "9fc7e15c06f7b6d322013121c8987129208179a6ad62f60cc0dcf9db2bb82456"
+    sha256 cellar: :any, arm64_tahoe:       "c98f4f1c9d7d415623f424b44a74d0dfff5e663661cf8386a0277337f5ffa2e6"
+    sha256 cellar: :any, arm64_sequoia:     "87940feeb7dfdda5770df3f5f991dde21f5ba30b6de3f3b3182309de5215f2e7"
+    sha256 cellar: :any, arm64_linux:       "fd868357560f91af48c4d830f4dbf98560155b56dfca7ca2444d8016b77db204"
+    sha256 cellar: :any, x86_64_linux:      "a7460b5b707c4e62fd8ec836624d7d5010f2808244072289a6c0564372bb4abc"
   end
 
   depends_on "libcouchbase"
