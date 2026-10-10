@@ -10,7 +10,7 @@ class MongodbAT70 < AbstractPhpExtension
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://pecl.php.net/get/mongodb-1.9.2.tgz"
   sha256 "95e832c5d48ae6e947bdc79f35a9f8f0bbd518f4aa00f1cef6c9eafbae02187d"
-  revision 4
+  revision 5
   head "https://github.com/mongodb/mongo-php-driver.git", branch: "v1.9"
   license "Apache-2.0"
 
@@ -27,9 +27,13 @@ class MongodbAT70 < AbstractPhpExtension
 
   depends_on "cyrus-sasl"
   depends_on "icu4c@78"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "snappy"
   depends_on "zstd"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Work around to support `icu4c` 75, which needs C++17.
