@@ -10,6 +10,7 @@ class SwooleAT81 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src/archive/v6.1.7.tar.gz"
   sha256 "46c8d9bcd1c972fe71a7aead3e43e1bcecde2d8390b393413d139f0a7486b8e9"
+  revision 1
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -29,7 +30,7 @@ class SwooleAT81 < AbstractPhpExtension
   depends_on "curl"
   depends_on "libpq"
   depends_on "sqlite"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "zstd"
 
   on_linux do
@@ -45,7 +46,7 @@ class SwooleAT81 < AbstractPhpExtension
       --enable-http2
       --enable-mysqlnd
       --enable-openssl
-      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
+      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@4")}
       --enable-sockets
       --enable-swoole
       --enable-swoole-curl
