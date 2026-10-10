@@ -11,7 +11,7 @@ class SnmpAT74 < AbstractPhpExtension
   url "https://github.com/shivammathur/php-src-backports/archive/5a576d8eb53e44aff3af9259cfd29e599f604471.tar.gz"
   version "7.4.33"
   sha256 "d82887f2166e8526ea9b1cfd8c5ecf5649718f0b6e341380d333eba8066429a4"
-  revision 2
+  revision 3
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
@@ -28,12 +28,12 @@ class SnmpAT74 < AbstractPhpExtension
   end
 
   depends_on "net-snmp"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     args = %W[
       --with-snmp=#{Utils::Path.formula_opt_prefix("net-snmp")}
-      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
+      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@4")}
     ]
     Dir.chdir "ext/#{extension}"
     safe_phpize
