@@ -10,6 +10,7 @@ class ImapAT81 < AbstractPhpExtension
   homepage "https://github.com/php/php-src"
   url "https://www.php.net/distributions/php-8.1.34.tar.xz"
   sha256 "ffa9e0982e82eeaea848f57687b425ed173aa278fe563001310ae2638db5c251"
+  revision 1
   head "https://github.com/php/php-src.git", branch: "PHP-8.1"
   license "PHP-3.01"
 
@@ -24,7 +25,7 @@ class ImapAT81 < AbstractPhpExtension
   end
 
   depends_on "krb5"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "shivammathur/extensions/imap-uw"
 
   def install
@@ -34,7 +35,7 @@ class ImapAT81 < AbstractPhpExtension
            "--prefix=#{prefix}",
            phpconfig,
            "--with-imap=shared, #{Utils::Path.formula_opt_prefix("imap-uw")}",
-           "--with-imap-ssl=#{Utils::Path.formula_opt_prefix("openssl@3")}",
+           "--with-imap-ssl=#{Utils::Path.formula_opt_prefix("openssl@4")}",
            "--with-kerberos"
     system "make"
     prefix.install "modules/#{extension}.so"
