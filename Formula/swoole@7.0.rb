@@ -10,7 +10,7 @@ class SwooleAT70 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src/archive/v4.3.5.tar.gz"
   sha256 "fad1f7129e54ffae8fce34c75912953f3afdea40945e2b4bf925be163faf7cfc"
-  revision 1
+  revision 2
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -24,7 +24,7 @@ class SwooleAT70 < AbstractPhpExtension
 
   depends_on "brotli"
   depends_on "libpq"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -36,12 +36,14 @@ class SwooleAT70 < AbstractPhpExtension
       --enable-mysqlnd
       --enable-openssl
       --with-libpq-dir==#{Utils::Path.formula_opt_prefix("libpq")}
-      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
+      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@4")}
       --enable-sockets
       --enable-swoole
       --enable-swoole-json
     ]
     inreplace "config.m4", 'SW_CPU="arm"', 'SW_CPU="arm64"' if OS.mac? && Hardware::CPU.arm?
+    inreplace "src/protocol/ssl.c", "#ifndef OPENSSL_NO_SSL3_METHOD",
+              "#if !defined(OPENSSL_NO_SSL3_METHOD) && OPENSSL_VERSION_NUMBER < 0x40000000L"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
