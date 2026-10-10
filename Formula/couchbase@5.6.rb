@@ -16,17 +16,11 @@ class CouchbaseAT56 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_golden_gate: "c15f70d9abc003b815febfe42c2bd88d6ca826389d5220ee042b4c3e88c9cb5f"
-    sha256 cellar: :any,                 arm64_sequoia:     "8621b8896455e5dc1438e19e19717e290f5de75e33f7da640f953e25103eabfb"
-    sha256 cellar: :any,                 arm64_sonoma:      "c1e6b4dd7bdc994f07241d9e2b9b38ab4c8aaf106c8a36694ab86275bf8c39d6"
-    sha256 cellar: :any,                 arm64_ventura:     "f81c4d9b9580aaa6e1aeaf7b59759e3dbff0c5e98c00b7ae231e37f2b9379d78"
-    sha256 cellar: :any,                 arm64_monterey:    "a2ee8cc72279d5272e62f9310662ab8c43fdcb38ad93ef4c4737d1b4f8fb7ea0"
-    sha256 cellar: :any,                 sonoma:            "3d078f3e7fba1646a4b2abd1f119c4d37aa0111aab05d2e4df4fc77313986ab2"
-    sha256 cellar: :any,                 ventura:           "cd7ae60d0200d590232745b2277f20264fd89f1de98c6df23c66791194bf9937"
-    sha256 cellar: :any,                 monterey:          "b96a303252cbcdc0a69f8aba8f317bb17b7248fad553718f5adc049503fd8cea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "80a9783d518cff83da9915513050afabcf6b80b1ff763c1d318f4ea21fbf167b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "258d370a714338fd4bd339bbe18490de6e338a0dfea33c4afced03c01555511d"
+    sha256 cellar: :any, arm64_golden_gate: "b1bd506730a40d55bdede83f5cc121c47b3c380f87e5f12753ff691a9e7d5655"
+    sha256 cellar: :any, arm64_tahoe:       "02b44d57569673b66cdcfbce84bfd643c45973149eb7e3e36cd49c7b6c4a6b6d"
+    sha256 cellar: :any, arm64_sequoia:     "e73b94be3bd13d53dd00b9d1a5e067c468c102f22d438c8c6a617b57281dea55"
+    sha256 cellar: :any, arm64_linux:       "be7d5a57db2f63aa8b0dd2579579799c5b5ec2f25e82a4cec4081bad8d1ff4e8"
+    sha256 cellar: :any, x86_64_linux:      "519583c6a01c33b7211cb6374bc385753e7758ff42cf76c929d71323830ff0b2"
   end
 
   depends_on "shivammathur/extensions/libcouchbase@2"
