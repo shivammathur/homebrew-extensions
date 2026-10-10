@@ -1,9 +1,13 @@
+# frozen_string_literal: true
+
+# Couchbase client library for legacy PHP extensions.
 class LibcouchbaseAT2 < Formula
   desc "C library for Couchbase"
   homepage "https://docs-archive.couchbase.com/c-sdk/2.10/start-using-sdk.html"
   url "https://packages.couchbase.com/clients/c/libcouchbase-2.10.9.tar.gz"
   sha256 "6f6450121e0208005c17f7f4cdd9258a571bb22183f0bc08f11d75c207d55d0a"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
 
   bottle do
@@ -29,7 +33,7 @@ class LibcouchbaseAT2 < Formula
   depends_on "libev"
   depends_on "libevent"
   depends_on "libuv"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     inreplace "plugins/io/libuv/libuv_compat.h",
@@ -37,17 +41,17 @@ class LibcouchbaseAT2 < Formula
               "#define LIBUV_COMPAT_H\n#ifndef EUNATCH\n#define EUNATCH EAI_FAIL\n#endif"
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *std_cmake_args,
-                                                   "-DLCB_NO_TESTS=1",
-                                                   "-DLCB_BUILD_LIBEVENT=ON",
-                                                   "-DLCB_BUILD_LIBEV=ON",
-                                                   "-DLCB_BUILD_LIBUV=ON",
-                                                   "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+             "-DLCB_NO_TESTS=1",
+             "-DLCB_BUILD_LIBEVENT=ON",
+             "-DLCB_BUILD_LIBEV=ON",
+             "-DLCB_BUILD_LIBUV=ON",
+             "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
       system "make", "install"
     end
   end
 
   test do
     assert_match "LCB_ECONNREFUSED",
-      shell_output("#{bin}/cbc cat document_id -U couchbase://localhost:1 2>&1", 1).strip
+                 shell_output("#{bin}/cbc cat document_id -U couchbase://localhost:1 2>&1", 1).strip
   end
 end
