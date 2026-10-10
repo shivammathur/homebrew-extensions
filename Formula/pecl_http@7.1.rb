@@ -12,7 +12,7 @@ class PeclHttpAT71 < AbstractPhpExtension
   sha256 "9194524be3997328b6788ef37e37485253e03eadc4bf51abd740358d03d2f536"
   head "https://github.com/m6w6/ext-http.git", branch: "master"
   license "BSD-2-Clause"
-  revision 3
+  revision 4
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
@@ -29,7 +29,7 @@ class PeclHttpAT71 < AbstractPhpExtension
   depends_on "icu4c@78"
   depends_on "libevent"
   depends_on "libidn2"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "shivammathur/extensions/propro@7.1"
   depends_on "shivammathur/extensions/raphf@7.1"
   depends_on "zlib"
