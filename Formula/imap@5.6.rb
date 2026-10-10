@@ -11,6 +11,7 @@ class ImapAT56 < AbstractPhpExtension
   url "https://github.com/shivammathur/php-src-backports/archive/241845d24ddbbccddc9be4006c103d9ddaf3b724.tar.gz"
   version "5.6.40"
   sha256 "836bc6985113313d2a9cfc14864f9506b0c752c24cc9bf0a66454e890921b9d5"
+  revision 1
   head "https://github.com/shivammathur/php-src-backports.git", branch: "PHP-5.6-security-backports-openssl11"
   license "PHP-3.01"
 
@@ -26,7 +27,7 @@ class ImapAT56 < AbstractPhpExtension
   end
 
   depends_on "krb5"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "shivammathur/extensions/imap-uw"
 
   def install
@@ -36,7 +37,7 @@ class ImapAT56 < AbstractPhpExtension
            "--prefix=#{prefix}",
            phpconfig,
            "--with-imap=shared, #{Utils::Path.formula_opt_prefix("imap-uw")}",
-           "--with-imap-ssl=#{Utils::Path.formula_opt_prefix("openssl@3")}",
+           "--with-imap-ssl=#{Utils::Path.formula_opt_prefix("openssl@4")}",
            "--with-kerberos"
     system "make"
     prefix.install "modules/#{extension}.so"
