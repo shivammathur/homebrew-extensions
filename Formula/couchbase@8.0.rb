@@ -10,6 +10,7 @@ class CouchbaseAT80 < AbstractPhpExtension
   homepage "https://github.com/couchbase/couchbase-php-client"
   url "https://pecl.php.net/get/couchbase-4.2.5.tgz"
   sha256 "5b5d830ce2eadb551a251070082b910ccaedd9fab9dc5c554a0bd98b7e50ca5f"
+  revision 1
   head "https://github.com/couchbase/couchbase-php-client.git", branch: "main"
   license "Apache-2.0"
 
@@ -26,7 +27,7 @@ class CouchbaseAT80 < AbstractPhpExtension
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "zlib"
 
   on_linux do
@@ -36,15 +37,15 @@ class CouchbaseAT80 < AbstractPhpExtension
   fails_with gcc: "7"
 
   def install
-    ENV["OPENSSL_ROOT_DIR"] = "#{Formula["openssl@3"]}.opt_prefix"
+    ENV["OPENSSL_ROOT_DIR"] = Utils::Path.formula_opt_prefix("openssl@4").to_s
     Dir.chdir "couchbase-#{version}"
     safe_phpize
     inreplace "configure",
-      "EXTENSION_DIR=`$PHP_CONFIG --extension-dir 2>/dev/null`",
-      "EXTENSION_DIR=#{prefix}"
+              "EXTENSION_DIR=`$PHP_CONFIG --extension-dir 2>/dev/null`",
+              "EXTENSION_DIR=#{prefix}"
     inreplace "Makefile.frag",
-     '-DCMAKE_C_COMPILER="$(CC)"',
-     '-DCMAKE_C_COMPILER="$(firstword $(CC))" -DCMAKE_POLICY_VERSION_MINIMUM=3.5'
+              '-DCMAKE_C_COMPILER="$(CC)"',
+              '-DCMAKE_C_COMPILER="$(firstword $(CC))" -DCMAKE_POLICY_VERSION_MINIMUM=3.5'
     inreplace "Makefile.frag", '-DCMAKE_C_FLAGS="$(COMMON_FLAGS)"',
               '-DCMAKE_C_FLAGS="$(filter-out $(firstword $(CC)),$(CC)) $(COMMON_FLAGS)"'
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-couchbase"
