@@ -16,13 +16,11 @@ class SwooleAT80 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any,                 arm64_golden_gate: "22ebbb00ddb97ee751460be9fa5cdd6c1f7e1d4f6b520e4197525c37f678b9dc"
-    sha256 cellar: :any,                 arm64_tahoe:       "c99310edc8f2d0b325c3cb335dc5cf5620838854a50b26a03c03f57f86a1293a"
-    sha256 cellar: :any,                 arm64_sequoia:     "7e2fc274117af936cd6ca880b705aa1487b75bb66b089bee823886b1694cd572"
-    sha256 cellar: :any,                 arm64_sonoma:      "0e0c4220a5e18e57607eabd5d3ec2761aa77925e0105a85983e61fbb720049fe"
-    sha256 cellar: :any,                 sonoma:            "c65e6443d118b23144e36dfedc58b8efd6251beb0a65ae3c8aea5874fba70977"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "65e313bf9092ad24c40b216a5218b83bb3db4f0e9b59b6345ea2f48c1e090299"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bdf387f770366e39070f47eae21d52b0be6591049df1ef032b42b8e2634127a7"
+    sha256 cellar: :any, arm64_golden_gate: "3fc449d3c464a375cd4c88289b1f3518636427d81964276fbbc841cd2969c601"
+    sha256 cellar: :any, arm64_tahoe:       "2999c21c37cb0ffe88d5312d8b465cd978b6d98bb0c1583cb19ba51602e99a52"
+    sha256 cellar: :any, arm64_sequoia:     "f7332c0191dd0459e98af30c9c2c0b7d61397bd146e76e46a1711ea91fe4b2f8"
+    sha256 cellar: :any, arm64_linux:       "9d9d78b0ac839b5496bbdd65795def9c0e12eb7de36dbe0c91a6d6f14579dcf2"
+    sha256 cellar: :any, x86_64_linux:      "f4f189bf2b473233514641a2b19155d9c7792f50f7d6a14c003e241adb720363"
   end
 
   depends_on "brotli"
