@@ -10,7 +10,7 @@ class SwooleAT71 < AbstractPhpExtension
   homepage "https://github.com/swoole/swoole-src"
   url "https://github.com/swoole/swoole-src/archive/v4.5.10.tar.gz"
   sha256 "164d1a712a908e3186fe855afbfcbc9ff7bbb1e958552b6ad1cc36a32a72b3ab"
-  revision 1
+  revision 2
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -23,7 +23,7 @@ class SwooleAT71 < AbstractPhpExtension
   end
 
   depends_on "brotli"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -34,7 +34,7 @@ class SwooleAT71 < AbstractPhpExtension
       --enable-http2
       --enable-mysqlnd
       --enable-openssl
-      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
+      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@4")}
       --enable-sockets
       --enable-swoole
       --enable-swoole-json
