@@ -21,13 +21,11 @@ class SwowAT81 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256                               arm64_golden_gate: "bb4129ad5288391b281a7e621a20adebf4f6216a670a29f2c43acf3a17731b4b"
-    sha256                               arm64_tahoe:       "fce7a6d2090cdc8d712b231b01fa86bb937938ceeeb04e26232cc4d15efd81d0"
-    sha256                               arm64_sequoia:     "901b15f79e52db66d76e2290f41cb802dd35cfc01a54559a1160dae6e8467f3c"
-    sha256                               arm64_sonoma:      "bfc532dcdd9e7ce1226a56e645841e796ed90ffd04ff52291f13b057d177ebbc"
-    sha256 cellar: :any,                 sonoma:            "d287aef0de8ca654852a7307da8b0728cab0629ec1f09f9801683a352b51c4ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "81cc9842ba192098a33fa58e0ec24dac2e94e2ae165a0bd0f3a7a1b3e6ca9f95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "bf5845740c876b768c7554fa2b8d416b5a48606176f5e3b50b9681fb8fbc509e"
+    sha256               arm64_golden_gate: "2a88cf1dbc04036085a0c847a2cec0c90be8a7d3dc137da93df39c1d17e8198d"
+    sha256               arm64_tahoe:       "e5fad652b58600b2687be83e87fcccca3d059943cfd6885499cc76d0bd6c0893"
+    sha256               arm64_sequoia:     "336546a223a4b43e8ce6f9fc4f87274aafedaa0341af770e0f62ee7ccc95a56c"
+    sha256 cellar: :any, arm64_linux:       "3e1f96b3241fc09559a5bb932a346ec709cd33734c6d3ba5717b3f27eba635f1"
+    sha256 cellar: :any, x86_64_linux:      "ab1de39258897eeef0c736db50f864cfe6cf474945314b60f7870d352308e469"
   end
 
   depends_on "openssl@4"
