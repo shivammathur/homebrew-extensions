@@ -11,7 +11,7 @@ class SnmpAT73 < AbstractPhpExtension
   url "https://github.com/shivammathur/php-src-backports/archive/64ca21fc4a956b8d2c151943dc22dbedb889f01d.tar.gz"
   version "7.3.33"
   sha256 "ffe700b4ddaf86b580bd5176bdbd2bfae785b9eb6786dde06afe6ce77e665ca7"
-  revision 2
+  revision 3
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
@@ -28,7 +28,7 @@ class SnmpAT73 < AbstractPhpExtension
   end
 
   depends_on "net-snmp"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     # Work around configure issues with Xcode 12
@@ -36,7 +36,7 @@ class SnmpAT73 < AbstractPhpExtension
 
     args = %W[
       --with-snmp=#{Utils::Path.formula_opt_prefix("net-snmp")}
-      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@3")}
+      --with-openssl-dir=#{Utils::Path.formula_opt_prefix("openssl@4")}
     ]
     Dir.chdir "ext/#{extension}"
     safe_phpize
