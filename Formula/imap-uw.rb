@@ -153,4 +153,9 @@ class ImapUw < Formula
     (include/"imap").install "c-client/osdep.h", "c-client/linkage.h"
     (include/"imap").install Dir["src/c-client/*.h", "src/osdep/unix/*.h"]
   end
+
+  test do
+    system bin/"mailutil", "create", "MAILBOX"
+    assert_match "No new messages, 0 total in MAILBOX", shell_output("#{bin}/mailutil check MAILBOX")
+  end
 end
