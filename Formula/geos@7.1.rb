@@ -8,9 +8,10 @@ class GeosAT71 < AbstractPhpExtension
   init
   desc "GEOS PHP extension"
   homepage "https://gitea.osgeo.org/geos/php-geos"
-  url "https://gitea.osgeo.org/geos/php-geos/archive/889e2b1d9aa6f82995db4dab6891f48c3bacfb59.tar.gz"
-  sha256 "fd6a8bb62f9e2c16a2476de87ac26dc069ab6ebfecc585928d2b8b59177c2afc"
+  url "https://gitea.osgeo.org/geos/php-geos/archive/1a1c6a95697359892886a2050570007754ce575e.tar.gz"
+  sha256 "750a321384960694a4e9ecb58cf7e216cde40b361dcfe055ed9f09a9b885052e"
   version "1.0.0"
+  revision 1
   head "https://gitea.osgeo.org/geos/php-geos.git", branch: "master"
   license all_of: ["LGPL-2.1-or-later", "MIT"]
 
