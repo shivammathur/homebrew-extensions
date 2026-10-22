@@ -19,9 +19,9 @@ class InterbaseAT71 < AbstractPhpExtension
   init
   desc "Interbase (Firebird) PHP extension"
   homepage "https://github.com/php/php-src"
-  url "https://github.com/shivammathur/php-src-backports/archive/5e62c706a462f60c85f5d81a21a38717014db0f0.tar.gz"
+  url "https://github.com/shivammathur/php-src-backports/archive/85accd17bbbe667724a4901e0b3eec4f5fabddaa.tar.gz"
   version "7.1.33"
-  sha256 "32f62131bef57d27b047b75fa83474557541a3bbf7d2b93a3b5c5e3525b08f6a"
+  sha256 "f5c5326b49a1b2c0fb6049ba6e237e7ad3df4a3f75885509f591b71c15232f44"
   license "PHP-3.01"
 
   depends_on "shivammathur/extensions/firebird-client@3"
