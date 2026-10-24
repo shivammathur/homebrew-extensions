@@ -24,6 +24,7 @@ class ProproAT72 < AbstractPhpExtension
     root_url "https://ghcr.io/v2/shivammathur/extensions"
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "82a539d913fcc67d46344d0c2e069616a3385bd93e9b70bcffc3630a6f1b269d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3ad00ab80ccddfa5be3889eb083fd887f823620137c3874f52a3503c2c61dcc3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3e2d0840e0132fbbe8fbd848e1b744209716da9d2b1b20aaf6736df1c187a013"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:      "929f65da27bc42d84848f37eec87229a67ef5b2018588ff91d5f653e85834437"
     sha256 cellar: :any_skip_relocation, arm64_ventura:     "b1af2bdc66511f29944a761b0cad9666778b90bee1e22933d5b3a541e012e7e8"
