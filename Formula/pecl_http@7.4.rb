@@ -12,7 +12,7 @@ class PeclHttpAT74 < AbstractPhpExtension
   sha256 "9194524be3997328b6788ef37e37485253e03eadc4bf51abd740358d03d2f536"
   head "https://github.com/m6w6/ext-http.git", branch: "master"
   license "BSD-2-Clause"
-  revision 4
+  revision 5
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
