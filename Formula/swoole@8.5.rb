@@ -12,7 +12,7 @@ class SwooleAT85 < AbstractPhpExtension
   sha256 "dde8d2a4a6b5c5cd418aedd8561760baad59767a2f8a963b2c0e9eb9c86f4c8d"
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
