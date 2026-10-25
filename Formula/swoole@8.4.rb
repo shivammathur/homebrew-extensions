@@ -8,9 +8,8 @@ class SwooleAT84 < AbstractPhpExtension
   init
   desc "Swoole PHP extension"
   homepage "https://github.com/swoole/swoole-src"
-  url "https://github.com/swoole/swoole-src/archive/v6.2.3.tar.gz"
-  sha256 "dde8d2a4a6b5c5cd418aedd8561760baad59767a2f8a963b2c0e9eb9c86f4c8d"
-  revision 2
+  url "https://github.com/swoole/swoole-src/archive/v6.2.4.tar.gz"
+  sha256 "92624681feb1b1311a4ee0fc40080e747b63fc5d0ed988f8e6aa148aac55987f"
   head "https://github.com/swoole/swoole-src.git", branch: "master"
   license "Apache-2.0"
 
@@ -43,7 +42,6 @@ class SwooleAT84 < AbstractPhpExtension
   conflicts_with "swow@8.4", because: "both provide coroutine networking extensions"
 
   def install
-    inreplace "src/core/misc.cc", "sw_usleep(1000);", "usleep(1000);" if OS.mac?
     args = %w[
       --enable-brotli
       --enable-cares
