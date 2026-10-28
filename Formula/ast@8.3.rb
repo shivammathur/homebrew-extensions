@@ -20,14 +20,11 @@ class AstAT83 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "432e3bdf738c7f29cf6221fc14d59c655e2227178959724a6aca785fe6af7c83"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5072400ae4095f121f201d39a7c4f02a401397cf5157057eb99826c94ff565b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9e1b5abcc63e8e23c6ebcdd0cc2805805e14607a67edd1a5dd4d5326adb18286"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "75a1ed037119afdfc74308f66a24fdb3f23c1ed0d71642e8d9e80ae9dd0984b3"
-    sha256 cellar: :any_skip_relocation, sonoma:            "88088df29b3fb64939ae60e6aa10b713c988eeadad4f1235930fa745f00dff16"
-    sha256 cellar: :any_skip_relocation, ventura:           "2d844822cd00b022683987318ced2b2fa822c27733e59ce6c4d9bf3f351643b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b70cf588445ea9bb351a43b35535f246c40350e10e8f35f8808c6b8ca1efea6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "01ecf7c48685bc84cefedd848e44174e2a6b564571426e0f2045157352c7b4e2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7b13f4d13506f983849d5284f1ccb885d7523e2ca0a6c9cf9fec0f8ca2e8addf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d64cf80a3af6acf32d35ba31fd94e71c843007b5d5e37397a6df39d4bc18fe3e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ddc02699932bef2710160ce3742a8fc15a7bbbae07c435a35f1ca452c108a436"
+    sha256 cellar: :any,                 arm64_linux:       "c4c8c9addce355c385833adc0e0aeb84dfd527510b0b0bab0982cdcf5401e90e"
+    sha256 cellar: :any,                 x86_64_linux:      "3fc76cb3aae7f896b3da5c2c6d5c2e80fab0bb056d8ba71e5ce588bd57838991"
   end
 
   def install
