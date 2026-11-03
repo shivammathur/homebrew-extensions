@@ -22,11 +22,11 @@ class MsgpackAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b47a721a1ddc57ec2c1eb1bb9b7b1981b1829589d454fac734ddf49e53a802b4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b7df2bb416af8b15b5d2b8b1c0baecdb82e1c437812aef232554ee501806cc79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "caa11474a5c6b4492432017536fb9755a4f5d847039ad6b094b1b45edee9b2f0"
-    sha256 cellar: :any,                 arm64_linux:       "672c3887bf39d7411fcf70dc2e207dee672aa7db3a231e228eabe8fcbadeb608"
-    sha256 cellar: :any,                 x86_64_linux:      "4e5de005a737658f4132eb04a4c5b526df246ef96b5b8d8ee868fb8582a9e272"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "539395b66c05c449fbf82098095afd0ef68b41337482c95f99915fd7601db852"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "603c510eac67083c0e4726f36f4bd6502e8b0b887c13a3892d72e692ce049a4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8931536196cf7e614909c88bf38e53bb7c896e35175c9daf994eabefc8783c74"
+    sha256 cellar: :any,                 arm64_linux:       "9a085432d1ae4c4c9064eebdee0748bdda3de99371f0cc5d1b504d9af9c25c95"
+    sha256 cellar: :any,                 x86_64_linux:      "958277b455cf83551c608637d8d3f4f7022611098cced1b9d69087e004597d38"
   end
 
   def install
