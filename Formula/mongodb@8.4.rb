@@ -34,6 +34,12 @@ class MongodbAT84 < AbstractPhpExtension
   depends_on "zlib"
   depends_on "zstd"
 
+  patch do
+    url "https://github.com/shivammathur/mongo-php-driver/commit/1e495320053a8be03e2fddf4bc3e23f28b1d1fac.patch?full_index=1"
+    sha256 "1b290628c19666be809cd3df0cf532904cf89964c501ae816f2fcdd5266402a4"
+    directory "mongodb-2.5.6"
+  end
+
   def install
     # Work around to support `icu4c` 75, which needs C++17.
     ENV.append "CXX", "-std=c++17"
