@@ -20,11 +20,11 @@ class Mongodb1AT84 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_golden_gate: "eee5c7c54027d38998ce763ec651b5d364d993573c64a4b232cbc49fd54d94c2"
-    sha256 cellar: :any, arm64_tahoe:       "7a7dbd1b68818030a10e2f0af36cc64b7dfdb877f150675ab2630cf7630c4d10"
-    sha256 cellar: :any, arm64_sequoia:     "e951be405182f66654e9f43140243d79d5224958185f48f1a678900cd710c747"
-    sha256 cellar: :any, arm64_linux:       "c7514abceca26bf287cda260419e140fe11c9be5b9c653a94a17f5961a9353df"
-    sha256 cellar: :any, x86_64_linux:      "e961787cbafcdfec4b1f8df09f28048167c43651fbf1169e50f8d3896a5e4650"
+    sha256 cellar: :any, arm64_golden_gate: "47068ef4ba3549b03fa6d559e9f7df813212f53d66d4d20bc272abdb1715d2f8"
+    sha256 cellar: :any, arm64_tahoe:       "a5e9eaa0db9c2c7b907b263a8efc303e030f33135e70ed2821e04beb60c22e97"
+    sha256 cellar: :any, arm64_sequoia:     "af4b4d7a98d8a2bf3c6b741ed2f3a50085f4835817028881c489c8fdb39683bd"
+    sha256 cellar: :any, arm64_linux:       "fde512b340f7f93f2af6b80c3652750c3fc2f649d8d7681b7200e7fe68356a77"
+    sha256 cellar: :any, x86_64_linux:      "7a12dac5d3ce969fc60978d839bf6b82503cbd8b45888e0ea392a64a6b6d4c36"
   end
 
   depends_on "cyrus-sasl"
