@@ -8,8 +8,8 @@ class MongodbAT81 < AbstractPhpExtension
   init
   desc "Mongodb PHP extension"
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://pecl.php.net/get/mongodb-2.5.6.tgz"
-  sha256 "05f0293fbaff1881ed2f25b227c324c3b778d3753e274a5d96e59c7e028b538a"
+  url "https://pecl.php.net/get/mongodb-2.5.7.tgz"
+  sha256 "078773856f4066b56738fc13950bb7ee16b5e66f727fb41d3fbec6043c78fd32"
   head "https://github.com/mongodb/mongo-php-driver.git", branch: "v2.x"
   license "Apache-2.0"
 
@@ -33,12 +33,6 @@ class MongodbAT81 < AbstractPhpExtension
   depends_on "snappy"
   depends_on "zlib"
   depends_on "zstd"
-
-  patch do
-    url "https://github.com/shivammathur/mongo-php-driver/commit/1e495320053a8be03e2fddf4bc3e23f28b1d1fac.patch?full_index=1"
-    sha256 "1b290628c19666be809cd3df0cf532904cf89964c501ae816f2fcdd5266402a4"
-    directory "mongodb-2.5.6"
-  end
 
   def install
     # Work around to support `icu4c` 75, which needs C++17.
