@@ -8,9 +8,8 @@ class CouchbaseAT87 < AbstractPhpExtension
   init
   desc "Couchbase PHP extension"
   homepage "https://github.com/couchbase/couchbase-php-client"
-  url "https://pecl.php.net/get/couchbase-4.5.0.tgz"
-  sha256 "f31385068fc197516012eed85baf732eb58186a95a1d6da09ca03859f0b71747"
-  revision 1
+  url "https://pecl.php.net/get/couchbase-4.6.0.tgz"
+  sha256 "75c692523b31201e4c6ebb753229f7b5b465eb87e42e2573e573b11225d9e2e4"
   head "https://github.com/couchbase/couchbase-php-client.git", branch: "main"
   license "Apache-2.0"
 
@@ -43,6 +42,7 @@ class CouchbaseAT87 < AbstractPhpExtension
     ENV["CURL_SSL_BACKEND"] = "SecureTransport"
     Dir.chdir "couchbase-#{version}"
     inreplace "src/php_couchbase.cxx", "zend_parse_parameters_none_throw", "zend_parse_parameters_none"
+    inreplace "src/wrapper/logger.cxx", "zend_atomic_bool_store_ex", "atomic_store"
     safe_phpize
     inreplace "configure",
               "EXTENSION_DIR=$($PHP_CONFIG --extension-dir 2>/dev/null)",
