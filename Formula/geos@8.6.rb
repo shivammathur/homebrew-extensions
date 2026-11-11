@@ -11,7 +11,7 @@ class GeosAT86 < AbstractPhpExtension
   url "https://gitea.osgeo.org/geos/php-geos/archive/1a1c6a95697359892886a2050570007754ce575e.tar.gz"
   sha256 "750a321384960694a4e9ecb58cf7e216cde40b361dcfe055ed9f09a9b885052e"
   version "1.0.0"
-  revision 1
+  revision 2
   head "https://gitea.osgeo.org/geos/php-geos.git", branch: "master"
   license all_of: ["LGPL-2.1-or-later", "MIT"]
 
