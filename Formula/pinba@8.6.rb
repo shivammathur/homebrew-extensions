@@ -16,11 +16,11 @@ class PinbaAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_golden_gate: "e5f0288d14eab5603e63473d37ad60248f03b9056359a273f05d34d4bad987e3"
-    sha256 cellar: :any, arm64_tahoe:       "4b1f368a236e5608ea91659f08a4f1bb4bf2f67aa8031028b2809dcbb39ddcee"
-    sha256 cellar: :any, arm64_sequoia:     "63b48b7e2aa100cbc88ca8960853f71d91f685591dfb047f85a752aaa1205da1"
-    sha256 cellar: :any, arm64_linux:       "f5160d6fb65cf6fc238daff57fb8427c973f627250a527be4e8544dfe4d11b3b"
-    sha256 cellar: :any, x86_64_linux:      "6e74498ef58c376052f83d804d088cce15cb17029a9bae64f084b187dd8c348e"
+    sha256 cellar: :any, arm64_golden_gate: "2e6b95ee533acbb780c254995f54c01391b8bdfa827e4b603b202c06991fc03a"
+    sha256 cellar: :any, arm64_tahoe:       "1adc0c1e3323fa8f0fd6945cabc6c0bb6f4fd8ccb446601c67d33ca2709b4b0d"
+    sha256 cellar: :any, arm64_sequoia:     "844fda2ac2a63853390070f2caa9ca96d4ff6ec39082d1d1f20cb5ec68a6bfeb"
+    sha256 cellar: :any, arm64_linux:       "3407bd8a1fed6c1771d43cde0cc15df58992b46b6dd5d6fd2f2352ac2d0fae9c"
+    sha256 cellar: :any, x86_64_linux:      "c2f0aac59fa66581e72a127895cba82f44dbca5c861e9fc549221661629be9ef"
   end
 
   depends_on "protobuf-c"
