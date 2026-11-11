@@ -10,6 +10,7 @@ class ProtobufAT87 < AbstractPhpExtension
   homepage "https://github.com/protocolbuffers/protobuf"
   url "https://pecl.php.net/get/protobuf-5.36.2.tgz"
   sha256 "f0a17c67de29df0fb0e5215a381df9b155125e1ace6252dd617bf16b4194dd5b"
+  revision 1
   head "https://github.com/protocolbuffers/protobuf.git", branch: "main"
   license "BSD-3-Clause"
 
@@ -34,6 +35,7 @@ class ProtobufAT87 < AbstractPhpExtension
       map.c
       message.c
     ], "zval_dtor", "zval_ptr_dtor_nogc"
+    inreplace "config.m4", "-std=gnu99", "-std=gnu11"
     safe_phpize
     system "./configure", "--enable-protobuf"
     system "make"
