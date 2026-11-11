@@ -10,6 +10,7 @@ class OpentelemetryAT86 < AbstractPhpExtension
   homepage "https://github.com/open-telemetry/opentelemetry-php-instrumentation"
   url "https://pecl.php.net/get/opentelemetry-1.5.0.tgz"
   sha256 "796676e071b2c6502c4dbdacccd1a2b29e12bf81d5d514b7ba85ce37de232073"
+  revision 1
   head "https://github.com/open-telemetry/opentelemetry-php-instrumentation.git", branch: "main"
 
   livecheck do
