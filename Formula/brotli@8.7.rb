@@ -10,6 +10,7 @@ class BrotliAT87 < AbstractPhpExtension
   homepage "https://github.com/kjdev/php-ext-brotli"
   url "https://pecl.php.net/get/brotli-0.21.1.tgz"
   sha256 "33574094e39a433ede3570ba6fcf15d356fc3489abbda396f8cdac472338e1ce"
+  revision 1
   head "https://github.com/kjdev/php-ext-brotli.git", branch: "master"
   license "MIT"
 
