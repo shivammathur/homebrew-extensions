@@ -11,6 +11,7 @@ class ExcimerAT87 < AbstractPhpExtension
   url "https://pecl.php.net/get/excimer-1.2.6.tgz"
   sha256 "7b5fe1f68f2b1a62bd0394d4bf165eafe6b7ceb3fc20ab885e733d356db0d034"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://pecl.php.net/rest/r/excimer/allreleases.xml"
@@ -30,6 +31,8 @@ class ExcimerAT87 < AbstractPhpExtension
     Dir.chdir "excimer-#{version}"
     inreplace "excimer.c", "INI_INT(", "zend_ini_long_literal("
     inreplace "excimer.c", "XtOffsetOf", "offsetof"
+    inreplace "excimer_timer.h", "zend_atomic_bool", "atomic_bool"
+    inreplace "excimer_timer.c", "zend_atomic_bool_store", "atomic_store"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-excimer"
     system "make"
