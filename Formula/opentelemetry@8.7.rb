@@ -20,11 +20,11 @@ class OpentelemetryAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "274be546760a0e1d6adcba27a75dc9812a02873f23071b6c1e2f5de91ddd9bab"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e77a5611eb34ca232c9d8674f9883b55ff2ec5f38ad548e1e1fd84d3b8bc807b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a4b831458a80ad54fde315242901fb8692f44fa8de7b336b9c4502a617daf9fa"
-    sha256 cellar: :any,                 arm64_linux:       "e5843cdb684eba20f2bee923c81f2dc30a96dd45006bae6aeafe9ff33afb0de1"
-    sha256 cellar: :any,                 x86_64_linux:      "3cb8b8e66644dc1ab3872b31420abea76b4e5c4cb01f4904beb9ceda6bcc8a2d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "534dbe89e5b4ec08111080fe9b025250c2d0cb4c575c5c5647e319ffe06f673b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a642f5be508fc53c2f365169c5e2ffd08ad133ffd37a0f00671850ab51cda42d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7fda1793827e1c9cd2e1c9869a08a6850706e7ac626a5d1cebf613a5e16ab2b1"
+    sha256 cellar: :any,                 arm64_linux:       "6b8c9f5fad8464fc2b52f2e0552084288f4b442cfa6431055cadbff071f445ab"
+    sha256 cellar: :any,                 x86_64_linux:      "56fc0d4737a81fafbe8c84e0c8bf530f5881bfe07cff9b35f01cba7146f8b48b"
   end
 
   def install
