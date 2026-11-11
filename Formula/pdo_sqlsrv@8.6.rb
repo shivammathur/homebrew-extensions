@@ -21,11 +21,11 @@ class PdoSqlsrvAT86 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_golden_gate: "1cef6ce492e7cc9fc35eb5b0a5c8bf98c0f349b0cd63fb3f1bf5f4c9e0cf47f8"
-    sha256 cellar: :any, arm64_tahoe:       "44d13bcde1427d5e3d9de7a678afeeca878a98b0a15c8b7f3b4537a0a693f9fd"
-    sha256 cellar: :any, arm64_sequoia:     "e976c8ead9dca60f33dafb2ef6a27e041477e79a8e7f9d7d49bfd5c733e1da4c"
-    sha256 cellar: :any, arm64_linux:       "b602bea74c1ce2542a0346661a4c78d2642393d6465712d9b11e9df695a769bb"
-    sha256 cellar: :any, x86_64_linux:      "859a656b9593a997b26945bc9a108a7340be139e4bbc05aeb94a0e1d05ac1edd"
+    sha256 cellar: :any, arm64_golden_gate: "cf9c025153acb1f2263cae5640787c02e9f2077edf7947dd721a4bb8ad6c816d"
+    sha256 cellar: :any, arm64_tahoe:       "78503ea65c79241fa4660ec2d998c3e27a628ff73e237a8337cac4fe0d8ba494"
+    sha256 cellar: :any, arm64_sequoia:     "ae61c5fc8f31523670ff42f7202335b6e6c805220a5a6817054d884010945bb5"
+    sha256 cellar: :any, arm64_linux:       "a4294d959c230b5d53b9e1250775f0ab19e997fb24de9f342d6721a8b4dd22c9"
+    sha256 cellar: :any, x86_64_linux:      "d2469fba9348f1f9e24324f4dc501954a6c3c84f464250e3d5f5571e131b34a3"
   end
 
   depends_on "unixodbc"
