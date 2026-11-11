@@ -21,11 +21,11 @@ class OauthAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "64542a61befef11c0fa54f3de6e89b74c19ac00827725d60ae06118bc02504df"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7daf20d31662caaa59e7355a8ce2190b6b0958970ffe3ca5d5fe67305d0c4d95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "826074832bb7bf002e35f6e6df0925607fee60f5ce3e44dc52ebb43926523e4b"
-    sha256 cellar: :any,                 arm64_linux:       "8f71c45ba658584fc756b97368d4fd82366e9b2bc694168fd49dbdb97270d93f"
-    sha256 cellar: :any,                 x86_64_linux:      "4913175316733c1d20860e934ae56c0eeca99f42b138a95572c4fd239553b1ca"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd4821c95eb464a7212fb1d225c2639b37828555253f5e5d0aaa860760c359d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8c476ddc79b2bc83752cabb0f44554345c76c3d0adf12a2e3537e42450b29aa3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "edd80c486026f238de41e41bf70db5b0903f402ddae7769c83cf9c82dfcc8078"
+    sha256 cellar: :any,                 arm64_linux:       "ca7d2d712c16923f39ac26eb09164287c356f524918a2582bc135b261fa577bc"
+    sha256 cellar: :any,                 x86_64_linux:      "537823dccd98a9d896e03cf3ec81ffdec7a11cb0655e1db7f7353483f9009ef1"
   end
 
   depends_on "curl"
