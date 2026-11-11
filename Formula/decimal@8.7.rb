@@ -21,11 +21,11 @@ class DecimalAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_golden_gate: "07fe28e4ee7a973e25641960d127f5306f73314d3b8447405444a4a1de9cdb48"
-    sha256 cellar: :any, arm64_tahoe:       "fb4b9750378256ec72e2dbc0f61516fc6a0c525b28cb3b577f72817b6e6d9f54"
-    sha256 cellar: :any, arm64_sequoia:     "c0b59b60501c088db071bee4164ca5af18edd44d77a6603da135dc8f6e314f3e"
-    sha256 cellar: :any, arm64_linux:       "bf7b4e71154a94d8e22a8d2362caffabfbd236961023156440a0bb053dd1ca4b"
-    sha256 cellar: :any, x86_64_linux:      "d25cf5fd103da0aece6bcae889e39f32ccc2993940faf0fdc6f9505a6c892f75"
+    sha256 cellar: :any, arm64_golden_gate: "c0d79ce498cd102808d4d05becbeb43cc5873758e1c7fb1849934eab1587af22"
+    sha256 cellar: :any, arm64_tahoe:       "6459e70832d1ad79e1d267285e320825ac9d541e5ed5f7070feba5448b48f846"
+    sha256 cellar: :any, arm64_sequoia:     "8230cb493b13fb61728ebd32db1518defc287183798469344ff3a125e8ed745c"
+    sha256 cellar: :any, arm64_linux:       "070c2472fa7af93ac730e4b2b66cefb491386f0c082e6eb5504fb0d200693d16"
+    sha256 cellar: :any, x86_64_linux:      "ef539a425df70b650a052cdc21909ffbb779e32848505336009ab8522d7f1b56"
   end
 
   depends_on "mpdecimal"
