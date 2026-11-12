@@ -8,8 +8,8 @@ class Ssh2AT71 < AbstractPhpExtension
   init
   desc "Ssh2 PHP extension"
   homepage "https://github.com/php/pecl-networking-ssh2"
-  url "https://pecl.php.net/get/ssh2-1.5.0.tgz"
-  sha256 "a943427fae39a5503c813179018ae6c500323c8c9fb434e1a9a665fb32a4d7b4"
+  url "https://pecl.php.net/get/ssh2-1.6.0.tgz"
+  sha256 "2342df367fb01a789a1b9f6c9c780f5221c51e9c00bf1cd1dd8a5c38b98d4cc5"
   head "https://github.com/php/pecl-networking-ssh2.git", branch: "master"
   license "PHP-3.01"
 
@@ -36,9 +36,12 @@ class Ssh2AT71 < AbstractPhpExtension
       --with-ssh2=shared,#{Utils::Path.formula_opt_prefix("libssh2")}
     ]
     Dir.chdir "ssh2-#{version}"
-    inreplace "ssh2_fopen_wrappers.c",
-              "const char *path_in_original = strstr(path, ZSTR_VAL(resource->path));",
-              "const char *path_in_original = strstr(path, SSH2_URL_STR(resource->path));"
+    inreplace "ssh2.c", "#include \"Zend/zend_attributes.h\"\n", ""
+    inreplace "ssh2_fopen_wrappers.c" do |s|
+      s.gsub! "ZSTR_VAL(resource->path)", "SSH2_URL_STR(resource->path)"
+      s.gsub! "zend_string_release(resource->path);", "efree(resource->path);"
+      s.gsub! "zend_string_init(path_in_original, strlen(path_in_original), 0)", "estrdup(path_in_original)"
+    end
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
