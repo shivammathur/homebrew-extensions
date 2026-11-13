@@ -20,11 +20,11 @@ class SpxAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 arm64_golden_gate: "25265eb12cccf539eb7dcc4974945a7c0bdfc108f803508665e3a4f653debbaf"
-    sha256 arm64_tahoe:       "c9e28230f72b1a5e800a9fdcdf2432cf259c46ad4d98c8013fd96e0d565a60bc"
-    sha256 arm64_sequoia:     "4af2366bfe9521fa770dfa9a99df4743fbdcc73b139a7cd52dcb1b2517212641"
-    sha256 arm64_linux:       "77748fc57f6b338b368e48bae883fbfabd27f167b078a81f5fb75d2c3e6448ed"
-    sha256 x86_64_linux:      "4ef9b3007dc3f9d3d6f620d0e25760fbf55200b3b8852a97453d5af296aac26f"
+    sha256 arm64_golden_gate: "497c74cbd9e503d2072aca91a9695c3dd02fc2933f7d7a14ebfd5951fad149a5"
+    sha256 arm64_tahoe:       "2ae13a8e928ff4926fc5ddba96156dbb772bac72c6d36a283d285aacd8551bcb"
+    sha256 arm64_sequoia:     "05aeeaf86d693b6dfd9e3abb5cc638e224dacd055217888b4baffea76937b66b"
+    sha256 arm64_linux:       "ecde4216315bc04d8fe383a9ae011c5e019e630b24ab9ea49a33e7b17e43ca6d"
+    sha256 x86_64_linux:      "aad60a7ff77ef926de41452ff84cab6ca2e60d9b813829188bd2fa2f72227e83"
   end
 
   depends_on "zlib"
