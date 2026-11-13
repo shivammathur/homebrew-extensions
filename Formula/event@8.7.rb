@@ -10,7 +10,7 @@ class EventAT87 < AbstractPhpExtension
   homepage "https://bitbucket.org/osmanov/pecl-event"
   url "https://pecl.php.net/get/event-3.2.0.tgz"
   sha256 "fb3d4e3c9fdc79125274f2b46461492923edec6b489ed7077973f7e65f41dc1c"
-  revision 1
+  revision 2
   head "https://bitbucket.org/osmanov/pecl-event.git", branch: "master"
   license "PHP-3.01"
 
