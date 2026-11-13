@@ -17,11 +17,11 @@ class GeosAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_golden_gate: "8bea67ac90e81c008ecb1d22fa56460d0668c6cbd8659a2f753f0ff43ba66a99"
-    sha256 cellar: :any, arm64_tahoe:       "4a88fe4260518b3f6f72c2c9f005c1ce4bea7a133c2c2fe1b58a099307a394a8"
-    sha256 cellar: :any, arm64_sequoia:     "753bd551e9ff5c6d7838d37e8ac1b9dc2287d8b9fa6ace1554607987f4a28e89"
-    sha256 cellar: :any, arm64_linux:       "68f6d1cc30c453614c8ffd32c64798013da0f5a8a1cf527570d4d6deccdc24e7"
-    sha256 cellar: :any, x86_64_linux:      "b6396d70d97121f6c90a81913efd50db40136065da4ddd7585548daf06c445e2"
+    sha256 cellar: :any, arm64_golden_gate: "235e4a19b5febcddc11aa4df5453f2de5d58766fd88135fba81996fb997d365c"
+    sha256 cellar: :any, arm64_tahoe:       "22ebc88d8f26ae515cd331d2557285c4d56cd699a588007f3a1ebae794eb6969"
+    sha256 cellar: :any, arm64_sequoia:     "f502dd88029cb5bfe839199fedb23b9e68a55366942a934863c59e287e53916d"
+    sha256 cellar: :any, arm64_linux:       "f731f1a456f23fc67cc586635a0bf73fb3bb1281b9e333c75fa64f6f5d190f7e"
+    sha256 cellar: :any, x86_64_linux:      "15759c65ca2f4f7a387f77cc6afb3d02e857c0e3df18c15f0dffee3c0c9dd823"
   end
 
   depends_on "geos"
