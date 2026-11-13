@@ -6,7 +6,7 @@ require File.expand_path("../Abstract/abstract-php-extension", __dir__)
 # Class for Interbase Extension
 class InterbaseAT87 < AbstractPhpExtension
   env :std
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
