@@ -11,7 +11,7 @@ class V8jsAT87 < AbstractPhpExtension
   url "https://github.com/phpv8/v8js/archive/8a39efa3cf3b275e402ddf3c4f6b611a5f69a499.tar.gz"
   version "2.1.2"
   sha256 "0a03e4b4ccb5755aaa0c9d65afb5906827395826641f2bad1c19291fce65ed2f"
-  revision 1
+  revision 2
   head "https://github.com/phpv8/v8js.git", branch: "php8"
   license "MIT"
 
@@ -35,6 +35,9 @@ class V8jsAT87 < AbstractPhpExtension
     ENV.append "LDFLAGS", "-lstdc++"
     inreplace "config.m4", "$PHP_LIBDIR", "libexec"
     inreplace "config.m4", "c++17", "c++20"
+    # Include child_init_func while keeping the C++20 module initializer positional.
+    inreplace "v8js_main.cc", "STANDARD_MODULE_PROPERTIES_EX",
+              "nullptr, 0, 0, nullptr, 0, ZEND_MODULE_BUILD_ID"
     inreplace "v8js_v8object_class.cc", "static int v8js_v8object_get" \
                                       , "static zend_result v8js_v8object_get"
     inreplace %w[
