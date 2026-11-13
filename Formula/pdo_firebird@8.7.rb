@@ -11,7 +11,7 @@ class PdoFirebirdAT87 < AbstractPhpExtension
   url "https://github.com/php/php-src/archive/5a8fda322b0bd0835b0fd0021358fa2309f6cea8.tar.gz?commit=5a8fda322b0bd0835b0fd0021358fa2309f6cea8"
   version "8.7.0"
   sha256 "f422cca206e773b8e1733d842e8e1a8676cb412f77b276ebb4613b6472be6f47"
-  revision 1
+  revision 2
   head "https://github.com/php/php-src.git", branch: "master"
   license "PHP-3.01"
 
