@@ -82,25 +82,6 @@ class ImapUw < Formula
     sha256 "9db45ba5462292acd04793ac9fa856e332b37506f1e0991960136dff170a2cd3"
   end
 
-  def add_headers
-    # Add missing headers to compile with Xcode 15
-    patch_files = Dir["src/c-client/*.h"] + Dir["src/mlock/*.c"]
-    header = "
-        #include <time.h>
-        #include <utime.h>
-        #include <unistd.h>
-        #include <ctype.h>
-        #include <stdio.h>
-
-    "
-    File.write("src/c-client/headers.h", header)
-    File.write("src/mlock/headers.h", header)
-
-    patch_files.each do |file|
-      system "sed -i '' '1s/^/#include \"headers.h\"\\n/' #{file}"
-    end
-  end
-
   def install
     ENV.deparallelize
 
@@ -129,7 +110,22 @@ class ImapUw < Formula
     extra_cflags << "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
     if OS.mac?
-      add_headers
+      # Add missing headers to compile with Xcode 15
+      patch_files = Dir["src/c-client/*.h"] + Dir["src/mlock/*.c"]
+      header = "
+        #include <time.h>
+        #include <utime.h>
+        #include <unistd.h>
+        #include <ctype.h>
+        #include <stdio.h>
+
+    "
+      File.write("src/c-client/headers.h", header)
+      File.write("src/mlock/headers.h", header)
+
+      patch_files.each do |file|
+        system "sed -i '' '1s/^/#include \"headers.h\"\\n/' #{file}"
+      end
       system "make", "oxp", "EXTRACFLAGS=#{extra_cflags.join(" ")}"
     else
       system "make", "ldbs", "EXTRACFLAGS=#{extra_cflags.join(" ")}"
