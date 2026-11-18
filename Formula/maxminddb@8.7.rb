@@ -8,9 +8,8 @@ class MaxminddbAT87 < AbstractPhpExtension
   init
   desc "MaxMind DB Reader PHP extension"
   homepage "https://github.com/maxmind/MaxMind-DB-Reader-php-ext"
-  url "https://pecl.php.net/get/maxminddb-1.14.0.tgz"
-  sha256 "c06351f1360bd651057ea73e0186d8fec744292839a4b49c71ce886072c4fff7"
-  revision 2
+  url "https://pecl.php.net/get/maxminddb-1.15.0.tgz"
+  sha256 "49412f02d31d28861f56c05f043ed21a1e8c444b53ac47292da502a4d1fdaa2b"
   head "https://github.com/maxmind/MaxMind-DB-Reader-php-ext.git", branch: "main"
   license "Apache-2.0"
 
