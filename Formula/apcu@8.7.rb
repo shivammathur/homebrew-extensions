@@ -10,7 +10,7 @@ class ApcuAT87 < AbstractPhpExtension
   homepage "https://github.com/krakjoe/apcu"
   url "https://pecl.php.net/get/apcu-5.1.28.tgz"
   sha256 "ca9c1820810a168786f8048a4c3f8c9e3fd941407ad1553259fb2e30b5f057bf"
-  revision 2
+  revision 3
   head "https://github.com/krakjoe/apcu.git", branch: "master"
   license "PHP-3.01"
 
@@ -37,6 +37,7 @@ class ApcuAT87 < AbstractPhpExtension
       inreplace("apc_cache.c") { |s| s.gsub! "zval_dtor", "zval_ptr_dtor_nogc" }
     end
     inreplace %w[apc_cache.h apc_iterator.c apc_iterator.h], "XtOffsetOf", "offsetof"
+    inreplace "php_apc.c", "ext/standard/flock_compat.h", "main/flock_compat.h"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-apcu"
     system "make"
