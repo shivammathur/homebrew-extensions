@@ -11,7 +11,7 @@ class XdebugAT87 < AbstractPhpExtension
   url "https://github.com/xdebug/xdebug/archive/5e19866c1766e38c527f9f94faa170370dc4209f.tar.gz"
   sha256 "a11d140cb67da8920df0a063c4d77b893b71b0195bb96f871c5f5915e0544ec8"
   version "3.5.0"
-  revision 2
+  revision 3
   head "https://github.com/xdebug/xdebug.git", branch: "master"
   license "PHP-3.0"
 
@@ -37,6 +37,7 @@ class XdebugAT87 < AbstractPhpExtension
     inreplace "src/develop/stack.c" do |s|
       s.gsub! "INI_STR((char*) ", "zend_ini_string_literal("
     end
+    inreplace "src/lib/usefulstuff.c", "ext/standard/flock_compat.h", "main/flock_compat.h"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-xdebug"
     system "make"
