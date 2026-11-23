@@ -124,7 +124,6 @@ class FirebirdClient < Formula
   end
 
   test do
-    expected = OS.mac? ? lib/"libfbclient.dylib" : lib/"libfbclient.so"
-    assert_path_exists expected
+    assert_path_exists lib/shared_library("libfbclient")
   end
 end

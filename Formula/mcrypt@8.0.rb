@@ -45,9 +45,9 @@ class McryptAT80 < AbstractPhpExtension
 
     resource("libmcrypt").stage do
       # Workaround for ancient config files not recognising aarch64 macos.
+      automake_version = Formula["automake"].version.major_minor
       %w[config.guess config.sub].each do |fn|
-        cp "#{Utils::Path.formula_opt_prefix("automake")}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}",
-fn
+        cp "#{Utils::Path.formula_opt_prefix("automake")}/share/automake-#{automake_version}/#{fn}", fn
       end
 
       # Avoid flat_namespace usage on macOS

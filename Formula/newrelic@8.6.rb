@@ -79,7 +79,8 @@ class NewrelicAT86 < AbstractPhpExtension
       inreplace "agent/config.m4", "-Wl,-flat_namespace -static-libgcc", "-Wl,-flat_namespace"
     end
     system "make", "-C", "axiom", "v1.pb-c.c"
-    system "make", "all", "BUILD_NUMBER=#{version.to_s.split(".").last}"
+    build_number = version.to_s.split(".").last
+    system "make", "all", "BUILD_NUMBER=#{build_number}"
     prefix.install "agent/modules/#{extension}.so"
     prefix.install "bin/daemon"
     write_config_file

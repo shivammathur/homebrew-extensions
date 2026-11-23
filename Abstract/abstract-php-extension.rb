@@ -102,7 +102,9 @@ class AbstractPhpExtension < Formula
 
     sig { params(val: T.nilable(String)).returns(T.nilable(String)) }
     def priority(val = T.unsafe(nil))
-      val.nil? ? @priority : @priority = val
+      return @priority if val.nil?
+
+      @priority = val
     end
 
     def parse_extension(matches)
