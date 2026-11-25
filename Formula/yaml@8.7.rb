@@ -10,7 +10,7 @@ class YamlAT87 < AbstractPhpExtension
   homepage "https://github.com/php/pecl-file_formats-yaml"
   url "https://pecl.php.net/get/yaml-2.3.0.tgz"
   sha256 "bc8404807a3a4dc896b310af21a7f8063aa238424ff77f27eb6ffa88b5874b8a"
-  revision 3
+  revision 2
   head "https://github.com/php/pecl-file_formats-yaml.git", branch: "php7"
   license "PHP-3.01"
 
@@ -35,8 +35,6 @@ class YamlAT87 < AbstractPhpExtension
       --with-yaml=#{Utils::Path.formula_opt_prefix("libyaml")}
     ]
     Dir.chdir "yaml-#{version}"
-    # PHP 8.7 removed ZEND_RETURN_VALUE; arginfo uses 0 for return-by-value.
-    inreplace "yaml.c", "ZEND_RETURN_VALUE", "0"
     inreplace "detect.c", "ZEND_ATOL(*lval, buf)", "*lval = ZEND_ATOL(buf)"
     %w[
       yaml.c

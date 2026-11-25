@@ -10,7 +10,7 @@ class AmqpAT87 < AbstractPhpExtension
   homepage "https://github.com/php-amqp/php-amqp"
   url "https://github.com/php-amqp/php-amqp/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "0fc9a23b54010a9ba475a1988d590b578942dbdf14c19508fd47dd09e852ab0f"
-  revision 3
+  revision 2
   head "https://github.com/php-amqp/php-amqp.git", branch: "latest"
   license "PHP-3.01"
 
@@ -40,18 +40,6 @@ class AmqpAT87 < AbstractPhpExtension
       amqp_connection.c
       php_amqp.h
     ], "XtOffsetOf", "offsetof"
-    # PHP 8.7 removed ZEND_RETURN_VALUE; arginfo uses 0 for return-by-value.
-    inreplace %w[
-      amqp_basic_properties.c
-      amqp_channel.c
-      amqp_connection.c
-      amqp_decimal.c
-      amqp_envelope.c
-      amqp_exchange.c
-      amqp_queue.c
-      amqp_timestamp.c
-      amqp_value.c
-    ], "ZEND_RETURN_VALUE", "0"
     %w[amqp_channel.c amqp_connection.c amqp_queue.c].each do |f|
       contents = File.read(f)
       inreplace f do |s|
