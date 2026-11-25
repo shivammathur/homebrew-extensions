@@ -20,13 +20,12 @@ class ZstdAT70 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any, arm64_golden_gate: "f9c6febe1504ca37f8146931233cc47dec94244b625a40b10c2e82d2a9169b19"
-    sha256 cellar: :any, arm64_tahoe:       "9fb9d6c581768ad73d84df73c4dff7723f58a00b7dbaa6e6a4f14d5d9068dddb"
-    sha256 cellar: :any, arm64_sequoia:     "767e357c9ec349aaee5315863e8d11ff9067f0d2a6eab50ed2d1967606d3e0e3"
-    sha256 cellar: :any, arm64_sonoma:      "7b23fa18d8f7ebf65993434ecec59e316d55c759cf46b6e08f83d440ce11b409"
-    sha256 cellar: :any, sonoma:            "39041d8b72582d4dee1546e3b670b0370a6ca76892d8ef292678b85514ebc9dc"
-    sha256 cellar: :any, arm64_linux:       "6f8daff192dc3ccb3abb892f7f2235cc2c049bd60d78b99cb8abee3a961cee80"
-    sha256 cellar: :any, x86_64_linux:      "a6ffb3df96be8160bf1d2891d7aff6c1da2db8f61f34a17d96a9c754c4606bb4"
+    manifest_sha256 "25aab9c129e2334d97bd12363a6aca672fad37ffcc76af2f51727ae55b35a185"
+    sha256 cellar: :any, arm64_golden_gate: "d02bb362b163c1b829c3b2c35352ce4435e1489c20e993a8a83beb77b5849742"
+    sha256 cellar: :any, arm64_tahoe:       "29a92c0fa8d6ea82264e29b719fc6498d20823fc6ab24a49ec2446ed022603a7"
+    sha256 cellar: :any, arm64_sequoia:     "28ec8277f4b39c310b89ac94c5554fa6e550e8cb13c65f236ba3547b787ab1ce"
+    sha256 cellar: :any, arm64_linux:       "53f41270693c64a0c79ec3abbdc9c1b3dd82fa2669203faafe3a74429bf8edbd"
+    sha256 cellar: :any, x86_64_linux:      "9eb956bb883e2b7b655f9d6c8b9ae9cb96131a468fa3e2de3cb6f6daf2738d3c"
   end
 
   depends_on "zstd"
