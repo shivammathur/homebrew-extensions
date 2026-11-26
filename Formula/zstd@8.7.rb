@@ -8,8 +8,8 @@ class ZstdAT87 < AbstractPhpExtension
   init
   desc "Zstd Extension for PHP"
   homepage "https://github.com/kjdev/php-ext-zstd"
-  url "https://pecl.php.net/get/zstd-0.19.0.tgz"
-  sha256 "46592a6576c2f42927659dd00dc6c3f39f1fcae7374e95e1f4e11f8ce4f477fc"
+  url "https://pecl.php.net/get/zstd-0.19.1.tgz"
+  sha256 "b280d9e9c146586648b0d4c14720220b9e1aaa1a3083a31ab1665784c90601d0"
   head "https://github.com/kjdev/php-ext-zstd.git", branch: "master"
   license "MIT"
 
