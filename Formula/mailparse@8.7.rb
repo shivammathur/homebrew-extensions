@@ -20,11 +20,12 @@ class MailparseAT87 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "22c7a3ce62b1c4a534103c4fd5e25726e1477111bed0364c9f21e56b43e76df4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "623fe8f4286d48ea7f719d6e285dd273baf6173918cc0816931bbe6fb9225c72"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3cbe77c64afe37c850bd04b7a7e999abed47c49fc7da282da7b6a4f9991c0bb7"
-    sha256 cellar: :any,                 arm64_linux:       "1ee0d31f1f5a141802a00ac69fcb06d10b777d48c888f9f31059547dd3c71c7e"
-    sha256 cellar: :any,                 x86_64_linux:      "1b0a3c83eab064c6d15159ddef4509288138a2363d57af1e68696c26341ec90b"
+    manifest_sha256 "0b2dba44d2efefbe74048752d0fd78a642328f895874cb775535f51d3ed08d87"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5591fbdfd024c20f8b426dbeedefed896f6af43b96aaa0a033408bb90b398e23"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bfa21a82d579bbca3a218c5f35edaafe93e997f07c60424fbd37fe7a999e120f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9c12f662998f6f2d422ffdab8761ac791e1e106ebb61a9765b712680eecfc9aa"
+    sha256 cellar: :any,                 arm64_linux:       "b9e7ff40417931919573d05238256b5d2b9eb801fc8b576402d1c113087aaa7d"
+    sha256 cellar: :any,                 x86_64_linux:      "1278ee67526aabaee01666dc0bb467fe77510f2d09853a8655ba4e9a15758633"
   end
 
   depends_on "re2c" => :build
