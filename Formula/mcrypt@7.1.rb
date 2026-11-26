@@ -16,12 +16,13 @@ class McryptAT71 < AbstractPhpExtension
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/extensions"
-    rebuild 27
-    sha256 cellar: :any, arm64_golden_gate: "769840c6666e6061e3f31e90c92e5c29803d3497351c2ae25eb1df9687bd9f30"
-    sha256 cellar: :any, arm64_tahoe:       "c2dc34b5a85d62a6db677d8abf296ea8c3f5980e48739494c26dbecf6c74a9d5"
-    sha256 cellar: :any, arm64_sequoia:     "00d2434f34b4742bc05e656795ee9cc256358a1dea9a834d4049a8544ed42b75"
-    sha256 cellar: :any, arm64_linux:       "cb998fa3324e5edaf903c53635c4499410296273e2a91ebb48a99273088b96f0"
-    sha256 cellar: :any, x86_64_linux:      "f6c463d475432cd5a130771d5e29003b1db65a64187096ec2d83912767351707"
+    rebuild 28
+    manifest_sha256 "550d99d24a9c92b6a1858d6e82a5059be78d09191465ebd117aa54b34d750a99"
+    sha256 cellar: :any, arm64_golden_gate: "eac0d517f03680ca92d380f799ba7a77bf56b9eb637b4182d657a2478ab4000b"
+    sha256 cellar: :any, arm64_tahoe:       "b4da8801406e198ea8a40ba7da994072be8a412bd3702791fd0bcd51c49c18d3"
+    sha256 cellar: :any, arm64_sequoia:     "b2f91821da83fa99775c7bf7dbe4c84bf2c0f51e21e18df83db79148c1894aa2"
+    sha256 cellar: :any, arm64_linux:       "d8faac0f613aeccec108cc955ddc5e494f212ef09d05c4284884df7a3546ca49"
+    sha256 cellar: :any, x86_64_linux:      "20301172f076f5bd1234708ebc18d04e6b933f40d60770fbec692692de88476c"
   end
 
   depends_on "automake" => :build
