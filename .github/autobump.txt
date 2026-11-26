@@ -335,6 +335,7 @@ pdo_firebird@8.2
 pdo_firebird@8.3
 pdo_firebird@8.4
 pdo_firebird@8.5
+pdo_firebird@8.6
 pdo_sqlsrv@8.0
 pdo_sqlsrv@8.1
 pdo_sqlsrv@8.2

@@ -50,7 +50,7 @@ case $version in
     php_url=$(get_php_url)
     patch_php_url "$php_url"
     ;;
-  pdo_firebird@8.[67]|\
+  pdo_firebird@8.7|\
   scalar_objects@7.[0-4]|scalar_objects@8.[0-7]|\
   v8js@7.[0-4]|v8js@8.[0-7]|\
   xdebug@8.[67]|\
