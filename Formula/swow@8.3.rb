@@ -8,8 +8,8 @@ class SwowAT83 < AbstractPhpExtension
   init
   desc "Concurrent coroutine network communication engine"
   homepage "https://github.com/swow/swow"
-  url "https://github.com/swow/swow/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "8f59d07e59fbadf72d623032d7923109010589ebb77a482f8ff625cceb74daa8"
+  url "https://github.com/swow/swow/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "f8c702170e1f1deb9716e4fb86f69d9c07e3d73958ae2d79544a234443ade651"
   head "https://github.com/swow/swow.git", branch: "develop"
   license "Apache-2.0"
 
